@@ -54,7 +54,7 @@ function init() {
   if (!els.agenda) return;
   state.events = normalizeEvents(window.__FIESTAS_2026_EVENTS__ || []);
   state.dates = getDates(state.events);
-  state.types = [...new Set(state.events.map((event) => event.type || 'Evento'))].sort((a, b) => collator.compare(a, b));
+  state.types = [...new Set(state.events.flatMap((event) => event.tags?.length ? event.tags : [event.type || 'Evento']))].sort((a, b) => collator.compare(a, b));
   state.selectedDate = getCurrentCandidate(state.events)?.date || state.dates[0]?.date || null;
 
   bindControls();
@@ -155,11 +155,13 @@ function normalizeEvents(events) {
   return events.map((event) => ({
     ...event,
     type: event.type || 'Evento',
+    tags: normalizeTags(event.tags, event.type),
     searchable: normalizeText([
       event.title,
       event.location,
       event.zone,
       event.type,
+      ...(event.tags || []),
       event.description,
       event.summary,
       event.ticket?.label,
@@ -269,7 +271,7 @@ function eventCard(event) {
       <span class="fiestas-event-title">${escapeHtml(event.title)}</span>
       <span class="fiestas-event-meta">${escapeHtml([event.location, event.zone].filter(Boolean).join(' · ') || 'Lugar por confirmar')}</span>
       <span class="fiestas-event-badges">
-        <span class="fiestas-badge">${escapeHtml(event.type || 'Evento')}</span>
+        ${(event.tags?.length ? event.tags : [event.type || 'Evento']).map((tag) => `<span class="fiestas-badge">${escapeHtml(tag)}</span>`).join('')}
         ${event.coordinates ? '<span class="fiestas-badge">Mapa</span>' : ''}
       </span>
     </span>
@@ -354,9 +356,15 @@ function getFilteredEvents() {
   return state.events.filter((event) => {
     if (state.onlyFavorites && !state.favorites.has(event.id)) return false;
     if (state.search && !event.searchable.includes(state.search)) return false;
-    if (state.selectedTypes.size && !state.selectedTypes.has(event.type || 'Evento')) return false;
+    if (state.selectedTypes.size && !(event.tags?.length ? event.tags : [event.type || 'Evento']).some((tag) => state.selectedTypes.has(tag))) return false;
     return true;
   });
+}
+
+function normalizeTags(tags, type) {
+  const primary = type || 'Evento';
+  const values = Array.isArray(tags) ? tags.map(String) : [];
+  return [...new Set([primary, ...values].map((tag) => tag.trim()).filter(Boolean))];
 }
 
 function groupByDayAndHour(events) {

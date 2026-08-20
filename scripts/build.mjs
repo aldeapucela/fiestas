@@ -72,6 +72,7 @@ async function loadEvents() {
     location: String(event.location || ''),
     zone: String(event.zone || ''),
     type: String(event.type || 'Evento'),
+    tags: normalizeTags(event.tags, event.type),
     description: String(event.description || ''),
     summary: String(event.summary || ''),
     performances: Array.isArray(event.performances) ? event.performances.map(String) : [],
@@ -106,8 +107,14 @@ function buildSummary(events) {
     label: event.dateLabel,
     shortLabel: event.dateLabel.split(' ').slice(0, 2).join(' ')
   }])).values()];
-  const types = [...new Set(events.map((event) => event.type || 'Evento'))].sort((a, b) => a.localeCompare(b, 'es'));
+  const types = [...new Set(events.flatMap((event) => event.tags?.length ? event.tags : [event.type || 'Evento']))].sort((a, b) => a.localeCompare(b, 'es'));
   return { dates, types };
+}
+
+function normalizeTags(tags, type) {
+  const primary = String(type || 'Evento');
+  const values = Array.isArray(tags) ? tags.map(String) : [];
+  return [...new Set([primary, ...values].map((tag) => tag.trim()).filter(Boolean))];
 }
 
 function pageContext(assetVersion) {

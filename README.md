@@ -120,7 +120,8 @@ Campos principales:
 - `date`, `dateLabel`, `startTime`, `endTime`: fecha y horarios.
 - `title`, `summary`, `description`: textos visibles y metadatos.
 - `location`, `zone`: ubicacion textual.
-- `type`: categoria usada por filtros e icono.
+- `type`: categoria principal usada por el icono y como primera etiqueta.
+- `tags`: etiquetas opcionales para eventos que encajan en mas de una categoria. Si no se indica, se usa `[type]`.
 - `performances`, `organizers`, `collaborators`: listas opcionales para la ficha.
 - `coordinates`: `{ "lat": number, "lng": number }` para mapa.
 - `ticket`: informacion opcional de entradas.
@@ -139,7 +140,7 @@ El buscador filtra en cliente por texto normalizado. Busca en titulo, lugar, zon
 
 ## Filtros Por Tipo
 
-El menu de tipos se genera a partir de los valores presentes en `events.json`. Permite combinar varios tipos y actualiza la etiqueta del boton con el tipo elegido o con el numero de tipos activos.
+El menu de tipos se genera a partir de `tags` y, si no existen, de `type`. Permite combinar varios tipos y actualiza la etiqueta del boton con el tipo elegido o con el numero de tipos activos.
 
 ![Filtro por tipo](docs/screenshots/03-filtro-tipos.png)
 

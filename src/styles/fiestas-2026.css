@@ -586,6 +586,19 @@
     color: #d4d0c7;
   }
 
+  html.dark .fiestas-view-tab.is-active,
+  html.dark .fiestas-favorite-filter.is-active,
+  html.dark .fiestas-clear-filter.is-active,
+  html.dark .fiestas-mobile-filter-toggle.is-active,
+  html.dark .fiestas-type-menu-button.is-active,
+  html.dark .fiestas-date-chip.is-active,
+  html.dark .fiestas-type-chip.is-active,
+  html.dark .fiestas-save.is-active {
+    border-color: #8b6dd8;
+    background: #7f5bb4;
+    color: #fff;
+  }
+
   html.dark .fiestas-search input,
   html.dark .fiestas-dialog-summary,
   html.dark .fiestas-dialog-section {

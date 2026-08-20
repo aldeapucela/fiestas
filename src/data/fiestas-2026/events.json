@@ -25,7 +25,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-04-1630-concentracion-de-penas-de-valladolid-con-sesion-de-djs-chack-yaiza-rub-2a24cb5b",
@@ -33,7 +36,7 @@
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "16:30",
     "endTime": null,
-    "title": "CONCENTRACIÓN DE PEÑAS DE VALLADOLID con sesión de DJ´s Chack & Yaiza, Rubio & Joel Marashi, Javi Mor & Morlac, Viti",
+    "title": "CONCENTRACIÓN DE PEÑAS DE VALLADOLID",
     "location": "Acera de Recoletos",
     "zone": "Recoletos",
     "description": "CONCENTRACIÓN DE PEÑAS DE VALLADOLID con sesión de DJ´s Chack & Yaiza, Rubio & Joel Marashi, Javi Mor & Morlac, Viti Larios & Meigo, Dani García & Félix Pérez, Finisher and Friends. Coordinadora de Peñas",
@@ -57,7 +60,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-04-1800-concentracion-de-penas-de-fevapenas-2d4b2899",
@@ -89,7 +96,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-04-1800-tio-tragaldabas-3630b563",
@@ -117,7 +128,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-04-1900-desfile-de-penas-con-carrozas-musicales-con-djs-duende-electrico-y-bat-913adecd",
@@ -125,7 +139,7 @@
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "19:00",
     "endTime": null,
-    "title": "DESFILE DE PEÑAS con carrozas musicales con DJ´s, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas",
+    "title": "DESFILE DE PEÑAS CON CARROZAS",
     "location": "Acera Recoletos, Pza. Zorrilla, C/ Miguel Íscar, C/ Duque de la Victoria, C/ Ferrari y Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "DESFILE DE PEÑAS con carrozas musicales con DJ´s, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas",
@@ -150,7 +164,12 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-04-1930-entre-bobos-anda-el-juego-52b34a57",
@@ -178,7 +197,10 @@
       "label": "Entradas Teatro Zorrilla",
       "url": "https://www.teatrozorrilla.es/venta-de-entradas/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-04-1930-gigantes-y-cabezudos-623a11e5",
@@ -208,7 +230,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-04-1930-la-historia-interminable-el-musical-ce1048da",
@@ -236,7 +262,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-04-2000-las-troyanas-261530ec",
@@ -264,7 +294,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-04-2000-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-1bb59a65",
@@ -292,7 +325,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-04-2015-imposicion-del-panuelo-y-bandera-al-conde-ansurez-por-la-pena-infofies-b733e361",
@@ -300,7 +336,7 @@
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "20:15",
     "endTime": null,
-    "title": "IMPOSICIÓN DEL PAÑUELO Y BANDERA AL CONDE ANSÚREZ por la peña “Infofiestas” Coordinadora de Peñas",
+    "title": "IMPOSICIÓN DEL PAÑUELO Y BANDERA AL CONDE ANSÚREZ",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "IMPOSICIÓN DEL PAÑUELO Y BANDERA AL CONDE ANSÚREZ por la peña “Infofiestas” Coordinadora de Peñas",
@@ -322,7 +358,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-04-2030-las-verbenas-de-la-feria-orquesta-mymos-de621c69",
@@ -350,7 +389,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-04-2030-pregon-de-la-feria-y-fiestas-de-la-virgen-de-san-lorenzo-2026-a-cargo-cf838a77",
@@ -358,7 +400,7 @@
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "PREGÓN DE LA FERIA Y FIESTAS DE LA VIRGEN DE SAN LORENZO 2026 a cargo de SILOÉ",
+    "title": "PREGÓN DE LA FERIA Y FIESTAS DE LA VIRGEN DE SAN LORENZO 2026",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "PREGÓN DE LA FERIA Y FIESTAS DE LA VIRGEN DE SAN LORENZO 2026 a cargo de SILOÉ. Acompañan dulzaineros DEL VALLE. CHUPINAZO.",
@@ -380,7 +422,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-04-2030-x-pucelarock-juantxo-skalari-la-rude-band-mas-artistas-invitados-otra-629b5d8e",
@@ -388,7 +434,7 @@
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "20:30",
     "endTime": "04:00",
-    "title": "X PUCELAROCK: JUANTXO SKALARI & LA RUDE BAND MÁS ARTISTAS INVITADOS Otra Pucela es Posible",
+    "title": "X PUCELAROCK: JUANTXO SKALARI & LA RUDE BAND MÁS ARTISTAS INVITADOS",
     "location": "Paseo de las Moreras – Escenario pistas deportivas",
     "zone": "Moreras",
     "description": "X PUCELAROCK: JUANTXO SKALARI & LA RUDE BAND MÁS ARTISTAS INVITADOS Otra Pucela es Posible",
@@ -410,7 +456,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-04-2100-carmen-sanxez-b4916225",
@@ -438,7 +487,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-04-2100-danzando-en-la-calle-style-dance-92bdfcb0",
@@ -466,7 +518,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-04-2100-genero-de-dudas-pablo-carbonell-y-pastora-vega-1094f4cd",
@@ -474,7 +529,7 @@
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "21:00",
     "endTime": null,
-    "title": "GÉNERO DE DUDAS Pablo Carbonell y Pastora Vega",
+    "title": "GÉNERO DE DUDAS",
     "location": "Teatro Carrión",
     "zone": "Teatro Carrión",
     "description": "GÉNERO DE DUDAS Pablo Carbonell y Pastora Vega",
@@ -496,7 +551,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-04-2100-hasta-que-el-divorcio-nos-separe-23694d0a",
@@ -524,7 +582,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-04-2115-moreras-beach-fest-grand-opening-moreras-con-los-djs-marcos-pramoss-ya-a2977c95",
@@ -532,7 +593,7 @@
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "21:15",
     "endTime": "04:00",
-    "title": "MORERAS BEACH FEST “GRAND OPENING MORERAS” con los DJ´s Marcos, Pramoss, Yaiza Diex, Rober Gozalo, Meigo, Jorge Acebes",
+    "title": "MORERAS BEACH FEST “GRAND OPENING MORERAS”",
     "location": "Paseo de Las Moreras",
     "zone": "Moreras",
     "description": "MORERAS BEACH FEST “GRAND OPENING MORERAS” con los DJ´s Marcos, Pramoss, Yaiza Diex, Rober Gozalo, Meigo, Jorge Acebes y Alex Alonso Coordinadora de Peñas",
@@ -556,7 +617,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-04-2200-cristongo-flower-power-las-donas-mr-kitos-los-daza-marlena-los-del-lio-32e35247",
@@ -584,7 +649,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-04-2200-lorencito-festival-oaze-underground-aa81a0ee",
@@ -612,7 +680,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-05-1100-skate-event-569cd183",
@@ -646,7 +717,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Deporte"
+    ]
   },
   {
     "id": "2026-09-05-1100-v-torneo-de-ajedrez-relampago-san-lorenzo-2026-info-inscripcion-como-p-a28704fe",
@@ -654,7 +729,7 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "11:00",
     "endTime": "13:30",
-    "title": "V TORNEO DE AJEDREZ RELÁMPAGO SAN LORENZO 2026 + Info inscripción como participante en espaciosjovenesvalladolid.es",
+    "title": "V TORNEO DE AJEDREZ RELÁMPAGO SAN LORENZO 2026",
     "location": "Cúpula del Milenio",
     "zone": "Cúpula del Milenio",
     "description": "V TORNEO DE AJEDREZ RELÁMPAGO SAN LORENZO 2026 + Info inscripción como participante en espaciosjovenesvalladolid.es Sistema de juego: suizo a 9 rondas. Partidas de 3 minutos más 2 segundos de incremento por jugada y jugador. Personas de 14 a 35 años. Organiza: Espacios Jóvenes de Valladolid. Colabora: Club de Ajedrez Promesas de Valladolid",
@@ -674,12 +749,15 @@
     },
     "type": "Deporte",
     "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Sin entrada indicada",
-      "url": null,
-      "note": "No consta venta de entradas en el programa para este evento."
-    }
+      "required": true,
+      "status": "required",
+      "label": "Inscripción espaciosjovenesvalladolid.es",
+      "url": "https://www.espaciosjovenesvalladolid.es/",
+      "note": "Inscripción necesaria. Revisa disponibilidad y condiciones en espaciosjovenesvalladolid.es."
+    },
+    "tags": [
+      "Deporte"
+    ]
   },
   {
     "id": "2026-09-05-1130-super-masterclass-zumba-les-mills-cb1bc6cc",
@@ -713,7 +791,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-1200-tia-melitona-24b322a2",
@@ -741,7 +823,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-05-1200-tio-tragaldabas-6c3f3184",
@@ -769,7 +854,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-05-1230-parque-infantil-de-hinchables-y-talleres-a1932d38",
@@ -797,7 +885,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-05-1300-exhibicion-de-perros-de-asistencia-y-perros-de-compania-63300a1f",
@@ -833,7 +925,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-1600-hinchables-infantiles-pena-divinos-picarones-fevapenas-2cf01425",
@@ -841,14 +936,15 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "16:00",
     "endTime": null,
-    "title": "HINCHABLES INFANTILES Peña Divinos Picarones, Fevapeñas",
+    "title": "HINCHABLES INFANTILES",
     "location": "Chopera de las Moreras",
     "zone": "Moreras",
     "description": "HINCHABLES INFANTILES Peña Divinos Picarones, Fevapeñas",
     "summary": "HINCHABLES INFANTILES Peña Divinos Picarones, Fevapeñas",
     "performances": [],
     "organizers": [
-      "Fevapeñas"
+      "Fevapeñas",
+      "Peña Divinos Picarones"
     ],
     "collaborators": [],
     "coordinates": {
@@ -863,7 +959,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-1630-stand-de-defaniva-c1dfd24a",
@@ -893,7 +993,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-05-1700-la-historia-interminable-el-musical-3efa75c6",
@@ -921,7 +1025,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-05-1700-tarzan-d846ef72",
@@ -949,7 +1057,11 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-05-1700-tio-tragaldabas-3c07d172",
@@ -977,7 +1089,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-05-1730-xxxiv-exposicion-ferroviaria-asvafer-05cf33f9",
@@ -1007,7 +1122,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-05-1745-abrapalabra-cuentacuentos-fevapenas-675be77a",
@@ -1015,7 +1133,7 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "17:45",
     "endTime": null,
-    "title": "ABRAPALABRA CUENTACUENTOS Fevapeñas",
+    "title": "ABRAPALABRA CUENTACUENTOS",
     "location": "Chopera de las Moreras",
     "zone": "Moreras",
     "description": "ABRAPALABRA CUENTACUENTOS Fevapeñas",
@@ -1037,7 +1155,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-1800-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-3091d2f9",
@@ -1065,7 +1187,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-1800-discomovida-tony-ruta-666-7da21804",
@@ -1073,7 +1198,7 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "18:00",
     "endTime": "23:00",
-    "title": "DISCOMOVIDA TONY Ruta 666",
+    "title": "DISCOMOVIDA TONY",
     "location": "Pza. Cantarranas",
     "zone": "Cantarranas",
     "description": "DISCOMOVIDA TONY Ruta 666",
@@ -1088,14 +1213,18 @@
       "lng": -4.7239,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-1830-cuento-recuento-y-te-cuento-6d5d36da",
@@ -1123,7 +1252,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-1830-duo-jose-antonio-58c06a13",
@@ -1151,7 +1283,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-1830-duo-marimba-acece1af",
@@ -1179,7 +1314,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-1830-el-sueno-del-dragon-8defe11c",
@@ -1207,7 +1345,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-05-1830-gigantes-y-cabezudos-b420ad7d",
@@ -1237,7 +1379,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-05-1830-silencio-por-favor-9b77d0df",
@@ -1265,7 +1411,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-1845-abrapalabra-cuentacuentos-fevapenas-b9c1bcde",
@@ -1273,7 +1422,7 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "18:45",
     "endTime": null,
-    "title": "ABRAPALABRA CUENTACUENTOS Fevapeñas",
+    "title": "ABRAPALABRA CUENTACUENTOS",
     "location": "Chopera de las Moreras",
     "zone": "Moreras",
     "description": "ABRAPALABRA CUENTACUENTOS Fevapeñas",
@@ -1295,7 +1444,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-1900-asociacion-cultural-de-danzas-del-mundo-radalaila-2d46e9c0",
@@ -1323,7 +1476,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-05-1900-folklore-castellano-9be772fe",
@@ -1351,7 +1507,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-05-1900-take-over-sound-system-reggae-a-c-2e80e783",
@@ -1379,7 +1538,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-1900-tardeo-musical-pena-bodega-paco-97fd141a",
@@ -1387,7 +1549,7 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "19:00",
     "endTime": null,
-    "title": "TARDEO MUSICAL Peña Bodega Paco",
+    "title": "TARDEO MUSICAL",
     "location": "Plaza Gutiérrez Semprún",
     "zone": "Plaza Gutiérrez Semprún",
     "description": "TARDEO MUSICAL Peña Bodega Paco",
@@ -1402,14 +1564,18 @@
       "lng": -4.716484,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Teatro",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-05-1900-tio-tragaldabas-74850ccc",
@@ -1437,7 +1603,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-05-1900-evento-de-baile-danz-fiestas-de-valladolid-info-e-inscripcion-como-par-5bdd2aaf",
@@ -1445,7 +1614,7 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "19:00",
     "endTime": "21:30",
-    "title": "EVENTO DE BAILE: DANZ! FIESTAS DE VALLADOLID + Info e inscripción como par ticipante en la web espaciosjo",
+    "title": "EVENTO DE BAILE: DANZ! FIESTAS DE VALLADOLID",
     "location": "Cúpula del Milenio",
     "zone": "Cúpula del Milenio",
     "description": "EVENTO DE BAILE: DANZ! FIESTAS DE VALLADOLID + Info e inscripción como par ticipante en la web espaciosjo venesvalladolid.es Evento donde podrás demos trarnos tus habilidades de baile. Personas de 14 a 35 años. Organiza: Espacios Jóvenes de Valladolid",
@@ -1462,12 +1631,16 @@
     },
     "type": "Otros",
     "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Sin entrada indicada",
-      "url": null,
-      "note": "No consta venta de entradas en el programa para este evento."
-    }
+      "required": true,
+      "status": "required",
+      "label": "Inscripción espaciosjovenesvalladolid.es",
+      "url": "https://www.espaciosjovenesvalladolid.es/",
+      "note": "Inscripción necesaria. Revisa disponibilidad y condiciones en espaciosjovenesvalladolid.es."
+    },
+    "tags": [
+      "Otros",
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-05-1930-punto-violeta-informativo-ceac6b30",
@@ -1497,7 +1670,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-05-2000-danzando-en-la-calle-yrason-quimbara-y-teresadance-5df7b9c7",
@@ -1527,7 +1703,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-05-2000-folklore-castellano-765a6577",
@@ -1555,7 +1734,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-05-2000-la-venganza-de-don-mendo-36082337",
@@ -1583,7 +1766,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-05-2000-las-ninas-del-sexorcista-a0dbd5e3",
@@ -1611,7 +1797,11 @@
       "label": "Entradas Teatro Zorrilla",
       "url": "https://www.teatrozorrilla.es/venta-de-entradas/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-05-2000-pasacalles-con-batucada-batuccadoos-fevapenas-b0752308",
@@ -1619,7 +1809,7 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "PASACALLES CON BATUCADA BATUCCADOOS Fevapeñas",
+    "title": "PASACALLES CON BATUCADA BATUCCADOOS",
     "location": "De Plaza de la Rinconada a Calle Marqués del Duero",
     "zone": "De Plaza de la Rinconada a Calle Marqués del Duero",
     "description": "PASACALLES CON BATUCADA BATUCCADOOS Fevapeñas",
@@ -1641,7 +1831,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-05-2000-arde26-d3bb9c20",
@@ -1674,7 +1868,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-2030-apocalipticamente-correcto-d1b78ed0",
@@ -1702,7 +1899,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-05-2030-concierto-a-cargo-de-cuatro-latas-pena-la-berrea-83acf5a0",
@@ -1710,7 +1910,7 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "CONCIERTO A CARGO DE CUATRO LATAS Peña La Berrea",
+    "title": "CONCIERTO A CARGO DE CUATRO LATAS",
     "location": "Calle Gerona, 10",
     "zone": "Calle Gerona, 10",
     "description": "CONCIERTO A CARGO DE CUATRO LATAS Peña La Berrea",
@@ -1730,7 +1930,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-2030-festival-mama-quie-ro-ser-artista-72def5e0",
@@ -1762,7 +1966,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-2030-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-97b8e35f",
@@ -1790,7 +1998,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-2030-las-verbenas-de-la-feria-orquesta-el-salon-6fad10e3",
@@ -1818,7 +2029,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-05-2030-xliii-feria-de-folklore-y-gastronomia-3715b9a0",
@@ -1850,7 +2064,13 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas",
+      "Gastronomía",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-05-2030-programa-prevencion-adicciones-young-zone-ae47263c",
@@ -1880,7 +2100,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-2030-moreras-beach-fest-especial-generacion-z-b738e94d",
@@ -1912,7 +2135,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-2030-vi-pucela-heavy-rock-fest-induction-grave-noise-kubika-y-judas-resurre-0abfb0e3",
@@ -1920,13 +2147,15 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "20:30",
     "endTime": "04:00",
-    "title": "VI PUCELA HEAVY-ROCK FEST: INDUCTION, GRAVE NOISE, KUBIKA Y JUDAS RESURRECTION Asociación Pucela HeavyRock",
+    "title": "VI PUCELA HEAVY-ROCK FEST: INDUCTION, GRAVE NOISE, KUBIKA Y JUDAS RESURRECTION",
     "location": "Paseo de las Moreras – Escenario pistas deportivas",
     "zone": "Moreras",
     "description": "VI PUCELA HEAVY-ROCK FEST: INDUCTION, GRAVE NOISE, KUBIKA Y JUDAS RESURRECTION Asociación Pucela HeavyRock",
     "summary": "VI PUCELA HEAVY-ROCK FEST: INDUCTION, GRAVE NOISE, KUBIKA Y JUDAS RESURRECTION Asociación Pucela HeavyRock",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Asociación Pucela HeavyRock"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.6573,
@@ -1940,7 +2169,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-05-2100-bianca-navajas-0ba08e37",
@@ -1968,7 +2200,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-05-2100-danzando-en-la-calle-farah-diva-xxi-edicion-exhibicion-de-danza-a-carg-0a4bfd07",
@@ -1976,7 +2211,7 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "21:00",
     "endTime": null,
-    "title": "Danzando en la calle: FARAH DIVA XXI EDICIÓN. Exhibición de danza a cargo de profesores y alumnos de diferentes disciplinas del centro: danza oriental, predanza, urban y comer cial dance. A las 21:45 h Random de kpop de libre participación. Centro de Danza Farah Diva",
+    "title": "Danzando en la calle: FARAH DIVA XXI EDICIÓN",
     "location": "Plaza España",
     "zone": "Plaza España",
     "description": "DANZANDO EN LA CALLE: FARAH DIVA XXI EDICIÓN. Exhibición de danza a cargo de profesores y alumnos de diferentes disciplinas del centro: danza oriental, predanza, urban y comer cial dance. A las 21:45 h Random de kpop de libre participación. Centro de Danza Farah Diva",
@@ -1998,7 +2233,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-05-2100-la-historia-interminable-el-musical-11771f60",
@@ -2026,7 +2264,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-05-2200-sandra-promis-13c13e34",
@@ -2054,7 +2296,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-05-2200-xxii-danzadolid-ba399d79",
@@ -2082,7 +2327,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-05-2200-la-verbena-de-fevapenas-ix-edicion-aaeb2b74",
@@ -2114,7 +2363,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-05-2200-lorencito-festival-mimosos-2f23751c",
@@ -2142,7 +2395,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-05-2215-espectaculo-de-drones-feria-y-fiestas-de-la-virgen-de-san-lorenzo-637934a6",
@@ -2170,7 +2426,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Fuegos artificiales"
+    ]
   },
   {
     "id": "2026-09-05-2300-judeline-kirill-reitenbach-62ebcf83",
@@ -2178,11 +2437,11 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "23:00",
     "endTime": null,
-    "title": "JUDELINE ©Kirill Reitenbach",
+    "title": "JUDELINE",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
-    "description": "JUDELINE ©Kirill Reitenbach",
-    "summary": "JUDELINE ©Kirill Reitenbach",
+    "description": "JUDELINE",
+    "summary": "JUDELINE",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -2191,14 +2450,17 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-1000-xxii-concentracion-y-exposicion-harley-davidson-and-custom-ciudad-de-v-ab2e8556",
@@ -2228,7 +2490,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-06-1100-mercado-del-arte-union-vallisoletana-2666af98",
@@ -2236,13 +2501,15 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "11:00",
     "endTime": "14:30",
-    "title": "MERCADO DEL ARTE Unión Vallisoletana",
+    "title": "MERCADO DEL ARTE",
     "location": "Plaza España",
     "zone": "Plaza España",
     "description": "MERCADO DEL ARTE Unión Vallisoletana",
     "summary": "MERCADO DEL ARTE Unión Vallisoletana",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Unión Vallisoletana"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.649045,
@@ -2256,7 +2523,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-06-1200-exposicion-de-vehicu-los-y-motos-clasicas-0ae627ba",
@@ -2289,7 +2559,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-06-1200-partidas-de-ajedrez-simultaneas-por-el-maestro-ivan-alonso-07dec354",
@@ -2297,7 +2571,7 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "12:00",
     "endTime": null,
-    "title": "PARTIDAS DE AJEDREZ SIMULTÁNEAS por el maestro IVÁN ALONSO",
+    "title": "PARTIDAS DE AJEDREZ SIMULTÁNEAS (IVÁN ALONSO)",
     "location": "Acera Recoletos",
     "zone": "Recoletos",
     "description": "PARTIDAS DE AJEDREZ SIMULTÁNEAS por el maestro IVÁN ALONSO. Inscripción gratuita en el número 660 007 778 Coordinadora de Peñas",
@@ -2319,7 +2593,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Deporte"
+    ]
   },
   {
     "id": "2026-09-06-1200-tia-melitona-08ae8dda",
@@ -2347,7 +2625,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-06-1200-tio-tragaldabas-8e36c21b",
@@ -2375,7 +2656,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-06-1230-la-historia-interminable-el-musical-c7cab433",
@@ -2403,7 +2687,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-1230-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-325b9142",
@@ -2431,7 +2719,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-06-1230-tarzan-9ca3e2d0",
@@ -2459,7 +2750,11 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-06-1230-hinchables-para-ninos-y-jovenes-pena-bodega-paco-09384622",
@@ -2467,7 +2762,7 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "12:30",
     "endTime": "16:30",
-    "title": "HINCHABLES PARA NIÑOS Y JÓVENES Peña Bodega Paco",
+    "title": "HINCHABLES PARA NIÑOS Y JÓVENES",
     "location": "Plaza Gutiérrez Semprún",
     "zone": "Plaza Gutiérrez Semprún",
     "description": "HINCHABLES PARA NIÑOS Y JÓVENES Peña Bodega Paco",
@@ -2489,7 +2784,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-06-1230-parque-infantil-de-hinchables-y-talleres-48969acb",
@@ -2517,7 +2816,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-06-1300-pasacalles-con-charanga-los-duendes-fevapenas-e28ff482",
@@ -2525,13 +2828,13 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "13:00",
     "endTime": null,
-    "title": "PASACALLES con Charanga LOS DUENDES Fevapeñas",
+    "title": "PASACALLES con Charanga LOS DUENDES",
     "location": "Zona centro",
     "zone": "Zona centro",
     "description": "PASACALLES con Charanga LOS DUENDES Fevapeñas",
     "summary": "PASACALLES con Charanga LOS DUENDES Fevapeñas",
     "performances": [
-      "con Charanga LOS DUENDES Fevapeñas"
+      "Charanga LOS DUENDES"
     ],
     "organizers": [
       "Fevapeñas"
@@ -2549,7 +2852,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-1300-xliii-feria-de-folklore-y-gastronomia-7fac61a9",
@@ -2577,7 +2884,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-06-1700-concierto-de-rumbeuros-fevapenas-a882d3eb",
@@ -2585,11 +2896,11 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "17:00",
     "endTime": null,
-    "title": "CONCIERTO DE RUMBEUROS Fevapeñas",
+    "title": "CONCIERTO DE RUMBEUROS",
     "location": "Cadenas de San Gregorio (delante de la Casa del Sol)",
     "zone": "Cadenas de San Gregorio (delante de la Casa del Sol)",
-    "description": "CONCIERTO DE RUMBEUROS Fevapeñas",
-    "summary": "CONCIERTO DE RUMBEUROS Fevapeñas",
+    "description": "CONCIERTO DE RUMBEUROS",
+    "summary": "CONCIERTO DE RUMBEUROS",
     "performances": [],
     "organizers": [
       "Fevapeñas"
@@ -2607,7 +2918,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-06-1700-la-ratonera-de-agatha-christie-617f9a0b",
@@ -2635,7 +2950,10 @@
       "label": "Entradas Teatro Zorrilla",
       "url": "https://www.teatrozorrilla.es/venta-de-entradas/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-06-1700-tio-tragaldabas-22cdf673",
@@ -2663,7 +2981,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-06-1730-xxxiv-exposicion-ferroviaria-asvafer-92db742c",
@@ -2693,7 +3014,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-06-1800-campeonato-mundial-de-cortes-de-equinotau-ro-para-raul-nieto-0131dad0",
@@ -2701,7 +3025,7 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "18:00",
     "endTime": null,
-    "title": "CAMPEONATO MUNDIAL DE CORTES de Equinotau ro para RAÚL NIETO",
+    "title": "CAMPEONATO MUNDIAL DE CORTES",
     "location": "Plaza de Toros",
     "zone": "Plaza de Toros",
     "description": "CAMPEONATO MUNDIAL DE CORTES de Equinotau ro para RAÚL NIETO",
@@ -2721,7 +3045,11 @@
       "label": "Entradas Plaza de Toros",
       "url": "https://tauroemocion.es/valladolid/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Toros",
+      "Deporte"
+    ]
   },
   {
     "id": "2026-09-06-1800-la-historia-interminable-el-musical-b9cbe44f",
@@ -2749,7 +3077,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-1800-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-ad1b7880",
@@ -2777,7 +3109,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-06-1800-magia-infantil-con-la-maleta-de-malastruc-08e84953",
@@ -2805,7 +3140,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-06-1800-yo-solo-quiero-irme-a-francia-48d83008",
@@ -2833,7 +3172,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-06-1830-duo-el-salon-fcfb88a3",
@@ -2861,7 +3203,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-06-1830-duo-maden-7ea89021",
@@ -2889,7 +3234,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-06-1830-el-sueno-del-dragon-2f5a845b",
@@ -2917,7 +3265,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-06-1830-gala-de-circo-de-nue-vo-fielato-0169a033",
@@ -2925,7 +3277,7 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "18:30",
     "endTime": null,
-    "title": "GALA DE CIRCO DE NUE VO FIELATO",
+    "title": "GALA DE CIRCO DE NUEVO FIELATO",
     "location": "Zona infantil Paseo de las Moreras (chopera)",
     "zone": "Moreras",
     "description": "GALA DE CIRCO DE NUE VO FIELATO. ESCUELA DE CIRCO NUEVO FIELATO Aquavall",
@@ -2947,7 +3299,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-06-1830-gigantes-y-cabezudos-1c462df8",
@@ -2977,7 +3332,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-06-1830-la-mujer-que-planta-arboles-6a76a896",
@@ -3005,7 +3364,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-06-1900-asociacion-cultural-de-danzas-del-mundo-radalaila-3cabf20b",
@@ -3033,7 +3395,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-06-1900-circuito-de-tractores-a-pedales-b95bf9bc",
@@ -3061,7 +3426,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-06-1900-folklore-castellano-39f552f9",
@@ -3089,7 +3457,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-06-1900-hinchables-pena-bodega-paco-4d12ffac",
@@ -3119,7 +3490,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-06-1900-tio-tragaldabas-2acd3975",
@@ -3147,7 +3522,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-06-1900-proyecto-47-7-edicion-hiphop-culture-event-dj-shaweed-pucela-flava-adr-931889e9",
@@ -3155,7 +3533,7 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "19:00",
     "endTime": "04:00",
-    "title": "PROYECTO 47 7.ª edición HipHop Culture Event DJ SHAWEED, PUCELA FLAVA, ADRICG, XTENTO Y MMOE23, KHEIS HODGKIN Y KPI,",
+    "title": "PROYECTO 47 7.ª edición HipHop Culture Event",
     "location": "Paseo de las Moreras – Escenario pistas deportivas",
     "zone": "Moreras",
     "description": "PROYECTO 47 7.ª edición HipHop Culture Event DJ SHAWEED, PUCELA FLAVA, ADRICG, XTENTO Y MMOE23, KHEIS HODGKIN Y KPI, WALK, DANI P. BETER, ESTADO CUERDO, MAÑOSO, ZAKE & KAOS 007, DJOTA PE Saavedrawing",
@@ -3175,7 +3553,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-1910-magia-de-salon-con-mino-y-arthur-677ee339",
@@ -3203,7 +3584,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-06-1930-la-ratonera-de-agatha-christie-3f4a4ea3",
@@ -3231,7 +3615,10 @@
       "label": "Entradas Teatro Zorrilla",
       "url": "https://www.teatrozorrilla.es/venta-de-entradas/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-06-1930-pasacalles-charanga-la-nota-coordinadora-de-penas-7165f609",
@@ -3239,7 +3626,7 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "19:30",
     "endTime": null,
-    "title": "PASACALLES CHARANGA “LA NOTA” Coordinadora de Peñas",
+    "title": "PASACALLES CHARANGA “LA NOTA”",
     "location": "Acera de Recoletos",
     "zone": "Recoletos",
     "description": "PASACALLES CHARANGA “LA NOTA” Coordinadora de Peñas",
@@ -3261,7 +3648,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-2000-cianoticas-perdidas-a22e99df",
@@ -3289,7 +3680,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-2000-danzando-en-la-calle-ritmo-latino-256503da",
@@ -3317,7 +3711,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-06-2000-folklore-castellano-e80ce733",
@@ -3345,7 +3742,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-06-2000-record-mundial-oficial-el-mosaico-de-globos-mas-grande-75-aniversario-b89e4133",
@@ -3375,7 +3776,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-06-2000-tardeo-musical-pena-bodega-paco-457b6618",
@@ -3383,7 +3787,7 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "TARDEO MUSICAL Peña Bodega Paco",
+    "title": "TARDEO MUSICAL",
     "location": "Plaza Gutiérrez Semprún",
     "zone": "Plaza Gutiérrez Semprún",
     "description": "TARDEO MUSICAL Peña Bodega Paco",
@@ -3398,14 +3802,18 @@
       "lng": -4.716484,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Teatro",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-2000-tartufo-629833da",
@@ -3433,7 +3841,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-06-2000-moreras-beach-fest-infofiestas-x-moreras-6b603dcf",
@@ -3465,7 +3876,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-06-2030-exhibicion-de-pole-dance-por-ivana-la-piana-coordinadora-de-penas-06834d5e",
@@ -3473,12 +3888,14 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "EXHIBICIÓN DE POLE DANCE POR IVANA LA PIANA Coordinadora de Peñas",
+    "title": "EXHIBICIÓN DE POLE DANCE",
     "location": "Acera de Recoletos",
     "zone": "Recoletos",
     "description": "EXHIBICIÓN DE POLE DANCE POR IVANA LA PIANA Coordinadora de Peñas",
     "summary": "EXHIBICIÓN DE POLE DANCE POR IVANA LA PIANA Coordinadora de Peñas",
-    "performances": [],
+    "performances": [
+      "IVANA LA PIANA"
+    ],
     "organizers": [
       "Coordinadora de Peñas"
     ],
@@ -3495,7 +3912,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-06-2030-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-54868fc4",
@@ -3523,7 +3944,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-06-2030-las-verbenas-de-la-feria-orquesta-tentacion-b2fdece3",
@@ -3551,7 +3975,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-2030-ni-contigo-ni-sintigo-baf3bbdb",
@@ -3579,7 +4006,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-06-2030-xliii-feria-de-folklore-y-gastronomia-f79ed30a",
@@ -3609,7 +4039,12 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Música",
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-06-2100-burning-cde1d84e",
@@ -3637,7 +4072,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-06-2130-record-mundial-oficial-el-mosaico-de-globos-mas-grande-75-aniversario-c579a5a7",
@@ -3667,7 +4105,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-06-2200-magia-ec115d53",
@@ -3697,7 +4138,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-06-2200-xxii-danzadolid-8d7d2bbc",
@@ -3725,7 +4169,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-06-2215-fuegos-artificiales-sesion-1-30156e89",
@@ -3738,7 +4185,9 @@
     "zone": "Caño Hondo",
     "description": "FUEGOS ARTIFICIALES (SESIÓN 1ª). PIROTECNIA GIRONINA (Valencia)",
     "summary": "FUEGOS ARTIFICIALES (SESIÓN 1ª). PIROTECNIA GIRONINA (Valencia)",
-    "performances": [],
+    "performances": [
+      "PIROTECNIA GIRONINA (Valencia)"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -3753,7 +4202,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Fuegos artificiales"
+    ]
   },
   {
     "id": "2026-09-06-2245-obus-9b396da3",
@@ -3781,7 +4233,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-07-1230-parque-infantil-de-hinchables-y-talleres-fca66da8",
@@ -3811,7 +4266,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-07-1700-tia-melitona-5b843b37",
@@ -3839,7 +4298,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-07-1700-caricaturistas-un-dibujo-a-cambio-de-una-sonrisa-a-ac7bd382",
@@ -3869,7 +4331,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-07-1730-xxxiv-exposicion-ferroviaria-asvafer-60ec5ed9",
@@ -3899,7 +4364,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-07-1800-magia-infantil-con-willy-monroe-b384950b",
@@ -3927,7 +4395,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-07-1800-rumburos-ruta-666-6bb4b710",
@@ -3935,12 +4407,14 @@
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "18:00",
     "endTime": null,
-    "title": "RUMB€UROS Ruta 666",
+    "title": "RUMB€UROS",
     "location": "Plaza Cantarranas",
     "zone": "Cantarranas",
     "description": "RUMB€UROS Ruta 666",
     "summary": "RUMB€UROS Ruta 666",
-    "performances": [],
+    "performances": [
+      "RUMB€UROS"
+    ],
     "organizers": [
       "Ruta 666"
     ],
@@ -3950,14 +4424,18 @@
       "lng": -4.7239,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-07-1830-25-aniversario-de-pimpineja-25-anos-de-musica-y-diversion-aquavall-b373c69d",
@@ -3965,7 +4443,7 @@
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "18:30",
     "endTime": null,
-    "title": "25 ANIVERSARIO DE PIMPINEJA: 25 AÑOS DE MÚSICA Y DIVERSIÓN Aquavall",
+    "title": "25 ANIVERSARIO DE PIMPINEJA: 25 AÑOS DE MÚSICA Y DIVERSIÓN",
     "location": "Zona infantil Paseo de las Moreras (chopera)",
     "zone": "Moreras",
     "description": "25 ANIVERSARIO DE PIMPINEJA: 25 AÑOS DE MÚSICA Y DIVERSIÓN Aquavall",
@@ -3987,7 +4465,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-07-1830-cantaclown-1cc215c5",
@@ -4015,7 +4496,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-07-1830-duo-modo-verbena-88e734d9",
@@ -4043,7 +4527,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-07-1830-duo-pinuel-92374637",
@@ -4071,7 +4558,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-07-1830-gigantes-y-cabezudos-64f34cd2",
@@ -4101,7 +4591,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-07-1830-una-tarde-de-risa-y-magia-0593b21c",
@@ -4129,7 +4623,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-07-1900-clase-abierta-de-swing-para-todos-y-baile-social-5e2245fd",
@@ -4157,7 +4654,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-07-1900-nah-wahala-african-music-a-c-b1ba0581",
@@ -4185,7 +4685,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-07-1900-talleres-de-percusion-con-tambores-desde-6-anos-c40b1a19",
@@ -4213,7 +4716,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-07-1900-tia-melitona-05fadfa2",
@@ -4241,7 +4747,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-07-1910-magia-de-salon-con-daba-07b81825",
@@ -4269,7 +4778,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-07-1930-encuentro-intergeneracional-de-bailes-en-linea-cc8303cb",
@@ -4303,7 +4815,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-07-1930-entre-picaros-anda-el-juego-8eba0a39",
@@ -4331,7 +4847,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-07-2000-danzando-en-la-calle-on-stage-c5398648",
@@ -4359,7 +4878,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-07-2000-juegos-y-actividades-de-penas-pena-bodega-paco-ba67114c",
@@ -4367,7 +4889,7 @@
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "JUEGOS Y ACTIVIDADES DE PEÑAS Peña Bodega Paco",
+    "title": "JUEGOS Y ACTIVIDADES DE PEÑAS",
     "location": "Plaza Gutiérrez Semprún",
     "zone": "Plaza Gutiérrez Semprún",
     "description": "JUEGOS Y ACTIVIDADES DE PEÑAS Peña Bodega Paco",
@@ -4389,7 +4911,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-07-2000-la-marquesa-rosalinda-b850083d",
@@ -4417,7 +4942,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-07-2000-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-f5600409",
@@ -4445,7 +4973,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-07-2000-discomovil-con-hinchables-de-agua-5b30123e",
@@ -4473,7 +5004,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-07-2000-moreras-beach-fest-gran-moreras-beach-festival-artistas-invitados-ball-71b7d2fd",
@@ -4481,12 +5015,20 @@
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "20:00",
     "endTime": "04:00",
-    "title": "MORERAS BEACH FEST “GRAN MORERAS BEACH FESTIVAL” artistas invitados Ballesteros, Javi Torres, Isma González, Rubens,",
+    "title": "MORERAS BEACH FEST “GRAN MORERAS BEACH FESTIVAL”",
     "location": "Pº de las Moreras",
     "zone": "Moreras",
     "description": "MORERAS BEACH FEST “GRAN MORERAS BEACH FESTIVAL” artistas invitados Ballesteros, Javi Torres, Isma González, Rubens, Viti Larios, Morlac y Javi Mor Coordinadora de Peñas",
     "summary": "MORERAS BEACH FEST “GRAN MORERAS BEACH FESTIVAL” artistas invitados Ballesteros, Javi Torres, Isma González, Rubens, Viti Larios, Morlac y Javi Mor Coordinadora de Peñas",
-    "performances": [],
+    "performances": [
+      "Ballesteros",
+      "Javi Torres",
+      "Isma González",
+      "Rubens",
+      "Viti Larios",
+      "Morlac",
+      "Javi Mor"
+    ],
     "organizers": [
       "Coordinadora de Peñas"
     ],
@@ -4503,7 +5045,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-07-2000-moreras-beach-fest-the-finisher-and-friends-dmentes-on-fire-musica-en-2d62b397",
@@ -4511,7 +5057,7 @@
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "20:00",
     "endTime": "04:00",
-    "title": "MORERAS BEACH FEST “THE FINISHER AND FRIENDS”, “D´MENTES ON FIRE”, música en directo con el grupo Dúo D´Mentes y “Gene",
+    "title": "MORERAS BEACH FEST “THE FINISHER AND FRIENDS”, “D´MENTES ON FIRE”",
     "location": "Escenario Pistas Deportivas - Pº de las Moreras",
     "zone": "Moreras",
     "description": "MORERAS BEACH FEST “THE FINISHER AND FRIENDS”, “D´MENTES ON FIRE”, música en directo con el grupo Dúo D´Mentes y “Gene ration Techno-Dance” con DJ´s Coordinadora de Peñas",
@@ -4536,7 +5082,12 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas",
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-07-2030-erik-urano-52662cc9",
@@ -4564,7 +5115,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-07-2030-las-verbenas-de-la-feria-orquesta-fortuna-0cb0b3b7",
@@ -4592,7 +5146,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-07-2030-xliii-feria-de-folklore-y-gastronomia-059367dc",
@@ -4622,7 +5179,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-07-2100-concierto-de-helena-bianco-con-la-banda-y-coro-escuela-municipal-de-mu-884f8f3b",
@@ -4650,7 +5211,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-07-2100-cristina-lazaro-87efba90",
@@ -4678,7 +5242,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-07-2100-petite-lorena-63ee6988",
@@ -4706,7 +5273,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-07-2200-magia-fc06c3fa",
@@ -4736,7 +5306,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-07-2200-rusowsky-136289f4",
@@ -4764,7 +5337,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-07-2200-lorencito-festival-polvora-98ef95ca",
@@ -4792,7 +5368,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-07-2215-fuegos-artificiales-sesion-2-5fc2971b",
@@ -4805,7 +5384,9 @@
     "zone": "Caño Hondo",
     "description": "FUEGOS ARTIFICIALES (SESIÓN 2.ª). PIROTECNIA CABALLER FX (Valencia)",
     "summary": "FUEGOS ARTIFICIALES (SESIÓN 2.ª). PIROTECNIA CABALLER FX (Valencia)",
-    "performances": [],
+    "performances": [
+      "PIROTECNIA ZARAGOZANA (Zaragoza)"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -4820,7 +5401,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Fuegos artificiales"
+    ]
   },
   {
     "id": "2026-09-07-2230-orquesta-marenga-20ddf952",
@@ -4848,7 +5432,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-08-1030-procesion-de-ntra-5501d139",
@@ -4878,7 +5465,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Religioso",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-08-1200-misa-solemne-en-honor-a-ntra-ec177bbb",
@@ -4906,7 +5497,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Religioso",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-08-1200-x-desfile-motero-de-banderas-peneras-y-ofrenda-floral-en-puente-de-la-5ef4638c",
@@ -4940,7 +5535,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Religioso",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-08-1200-danzando-en-la-calle-milonga-de-la-virgen-de-san-lorenzo-se-invita-a-t-14d597d6",
@@ -4948,7 +5547,7 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "12:00",
     "endTime": "14:00",
-    "title": "Danzando en la calle: MILONGA DE LA VIRGEN DE SAN LORENZO. Se invita a todos los tangueros a participar en esta Milonga celebrada en honor a la Virgen de San Lorenzo. Musicaliza Eva Alonso Vallisoletango",
+    "title": "Danzando en la calle: MILONGA DE LA VIRGEN DE SAN LORENZO",
     "location": "Plaza España",
     "zone": "Plaza España",
     "description": "DANZANDO EN LA CALLE: MILONGA DE LA VIRGEN DE SAN LORENZO. Se invita a todos los tangueros a participar en esta Milonga celebrada en honor a la Virgen de San Lorenzo. Musicaliza Eva Alonso Vallisoletango",
@@ -4968,7 +5567,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-08-1230-musica-en-directo-grupo-cuatro-latas-pena-karaoke-rosabel-490dca15",
@@ -4976,12 +5579,14 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "12:30",
     "endTime": null,
-    "title": "MÚSICA EN DIRECTO GRUPO CUATRO LATAS Peña Karaoke Rosabel",
+    "title": "MÚSICA EN DIRECTO GRUPO CUATRO LATAS",
     "location": "C/ Caamaño, 128",
     "zone": "C/ Caamaño, 128",
     "description": "MÚSICA EN DIRECTO GRUPO CUATRO LATAS Peña Karaoke Rosabel",
     "summary": "MÚSICA EN DIRECTO GRUPO CUATRO LATAS Peña Karaoke Rosabel",
-    "performances": [],
+    "performances": [
+      "CUATRO LATAS"
+    ],
     "organizers": [
       "Peña Karaoke Rosabel"
     ],
@@ -4998,7 +5603,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-08-1230-parque-infantil-de-hinchables-y-talleres-dcd0d14f",
@@ -5028,7 +5637,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-08-1700-tia-melitona-621756d4",
@@ -5056,7 +5669,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-08-1700-caricaturistas-un-dibujo-a-cambio-de-una-sonrisa-a-cd27f404",
@@ -5086,7 +5702,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-08-1730-duo-el-salon-6397c439",
@@ -5114,7 +5733,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-08-1730-duo-lazul-845a2230",
@@ -5142,7 +5764,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-08-1730-xxxiv-exposicion-ferroviaria-asvafer-963475a3",
@@ -5172,7 +5797,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-08-1800-corrida-de-toros-de-juan-pedro-domecq-para-el-fandi-tomas-rufo-y-marco-daee272a",
@@ -5180,13 +5808,13 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "18:00",
     "endTime": null,
-    "title": "CORRIDA DE TOROS de Juan Pedro Domecq para EL FANDI, TOMÁS RUFO y MARCO PÉREZ",
+    "title": "CORRIDA DE TOROS",
     "location": "Plaza de Toros",
     "zone": "Plaza de Toros",
     "description": "CORRIDA DE TOROS de Juan Pedro Domecq para EL FANDI, TOMÁS RUFO y MARCO PÉREZ",
     "summary": "CORRIDA DE TOROS de Juan Pedro Domecq para EL FANDI, TOMÁS RUFO y MARCO PÉREZ",
     "performances": [
-      "CORRIDA DE TOROS de Juan Pedro Domecq para EL FANDI, TOMÁS RUFO y MARCO PÉREZ"
+      "EL FANDI, TOMÁS RUFO y MARCO PÉREZ"
     ],
     "organizers": [],
     "collaborators": [],
@@ -5202,7 +5830,10 @@
       "label": "Entradas Plaza de Toros",
       "url": "https://tauroemocion.es/valladolid/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Toros"
+    ]
   },
   {
     "id": "2026-09-08-1800-magia-infantil-con-carlos-adriano-5c213b8b",
@@ -5230,7 +5861,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-08-1830-25-aniversario-happening-presenta-unico-1db144a1",
@@ -5262,7 +5897,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-08-1830-cantaclown-a86a9beb",
@@ -5290,7 +5928,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-08-1830-gigantes-y-cabezudos-b58d495f",
@@ -5320,7 +5961,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-08-1830-una-tarde-de-risa-y-magia-86f93cda",
@@ -5348,7 +5993,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-08-1900-circuito-de-tractores-a-pedales-eeddf224",
@@ -5376,7 +6024,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-08-1900-folklore-castellano-c39a1459",
@@ -5404,7 +6055,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-08-1900-playground-4aaa7f5c",
@@ -5432,7 +6086,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-08-1900-tia-melitona-d2ebcd12",
@@ -5460,7 +6117,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-08-1910-magia-de-salon-con-alex-louzao-cbe1d6d9",
@@ -5488,7 +6148,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-08-1930-espectaculo-de-cuentos-canciones-teatro-infantil-25-anos-de-cuentos-co-6ff1c210",
@@ -5518,7 +6181,12 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Peñas",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-08-1930-la-historia-interminable-el-musical-2fad7e1b",
@@ -5546,7 +6214,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-08-2000-cuando-deje-de-llover-e5de950f",
@@ -5574,7 +6246,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-08-2000-danzando-en-la-calle-biensuave-0d502ff8",
@@ -5602,7 +6277,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-08-2000-folklore-castellano-a3f7d073",
@@ -5630,7 +6308,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-08-2000-juegos-y-actividades-de-penas-pena-bodega-paco-c62ed522",
@@ -5638,7 +6320,7 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "JUEGOS Y ACTIVIDADES DE PEÑAS Peña Bodega Paco",
+    "title": "JUEGOS Y ACTIVIDADES DE PEÑAS",
     "location": "Plaza Gutiérrez Semprún",
     "zone": "Plaza Gutiérrez Semprún",
     "description": "JUEGOS Y ACTIVIDADES DE PEÑAS Peña Bodega Paco",
@@ -5660,7 +6342,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-08-2000-yo-sobrevivi-a-egb-2ee5690c",
@@ -5688,7 +6373,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-08-2000-lorencito-festival-faenna-sofia-gabanna-zake-y-otros-artistas-urbanos-efe22dbb",
@@ -5696,12 +6384,17 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "20:00",
     "endTime": "01:00",
-    "title": "LORENCITO FESTIVAL: FAENNA, SOFÍA GABANNA, ZAKE Y OTROS ARTISTAS URBANOS Consejo de la Juventud de Valladolid",
+    "title": "LORENCITO FESTIVAL",
     "location": "Paseo de las Moreras – Escenario pistas deportivas",
     "zone": "Moreras",
     "description": "LORENCITO FESTIVAL: FAENNA, SOFÍA GABANNA, ZAKE Y OTROS ARTISTAS URBANOS Consejo de la Juventud de Valladolid",
     "summary": "LORENCITO FESTIVAL: FAENNA, SOFÍA GABANNA, ZAKE Y OTROS ARTISTAS URBANOS Consejo de la Juventud de Valladolid",
-    "performances": [],
+    "performances": [
+      "FAENNA",
+      "SOFÍA GABANNA",
+      "ZAKE",
+      "OTROS ARTISTAS URBANOS"
+    ],
     "organizers": [
       "Consejo de la Juventud de Valladolid"
     ],
@@ -5718,7 +6411,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-08-2000-moreras-beach-fest-urban-paradise-0f3d7382",
@@ -5750,7 +6446,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-08-2030-aguadulce-habaneras-1fd95d41",
@@ -5778,7 +6478,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-08-2030-las-verbenas-de-la-feria-jose-antonio-pahino-y-su-orquesta-743f98df",
@@ -5808,7 +6511,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-08-2030-xliii-feria-de-folklore-y-gastronomia-5d023d93",
@@ -5838,7 +6544,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-08-2100-pahino-b7f97a29",
@@ -5866,7 +6576,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-08-2100-todas-las-estrellas-ebd27834",
@@ -5894,7 +6607,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-08-2200-carlos-baute-9685c33b",
@@ -5922,7 +6638,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-08-2200-magia-gran-gala-de-noche-con-magic-jose-y-daba-y-cielo-presenta-quique-fa47780b",
@@ -5952,7 +6671,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Magia"
+    ]
   },
   {
     "id": "2026-09-08-2215-fuegos-artificiales-sesion-3-pirotecnia-tamarit-valencia-6f0d3bea",
@@ -5960,12 +6682,14 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "22:15",
     "endTime": null,
-    "title": "FUEGOS ARTIFICIALES (SESIÓN 3ª) PIROTECNIA TAMARIT (Valencia)",
+    "title": "FUEGOS ARTIFICIALES (SESIÓN 3ª)",
     "location": "Paraje del Caño Hondo",
     "zone": "Caño Hondo",
     "description": "FUEGOS ARTIFICIALES (SESIÓN 3ª) PIROTECNIA TAMARIT (Valencia)",
     "summary": "FUEGOS ARTIFICIALES (SESIÓN 3ª) PIROTECNIA TAMARIT (Valencia)",
-    "performances": [],
+    "performances": [
+      "PIROTECNIA TAMARIT (Valencia)"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -5980,7 +6704,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Fuegos artificiales"
+    ]
   },
   {
     "id": "2026-09-08-2230-orquesta-avalon-10dc81e5",
@@ -6008,7 +6735,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-09-1130-xviii-torneo-de-basket-3x3-9cddefa5",
@@ -6038,7 +6768,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Deporte"
+    ]
   },
   {
     "id": "2026-09-09-1700-tio-tragaldabas-b414e7f2",
@@ -6066,7 +6799,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-09-1700-caricaturistas-un-dibu-jo-a-cambio-de-una-sonrisa-a-c9df6f3c",
@@ -6096,7 +6832,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-09-1700-parque-infantil-de-hinchables-y-talleres-3e213166",
@@ -6124,7 +6863,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-09-1730-duo-canela-fina-24cbdf12",
@@ -6152,7 +6895,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-09-1730-xxxiv-exposicion-ferroviaria-asvafer-4c381657",
@@ -6182,7 +6928,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-09-1800-carichis-en-fiestas-ac0fa82e",
@@ -6210,7 +6959,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-09-1830-duo-marimba-3f44cffb",
@@ -6238,7 +6990,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-09-1830-el-tesoro-de-roald-dahl-d10666e1",
@@ -6268,7 +7023,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-09-1830-gigantes-y-cabezudos-412da8f4",
@@ -6298,7 +7056,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-09-1830-las-que-tiene-que-limpiar-df46a842",
@@ -6326,7 +7088,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-09-1830-rockandroleando-con-tina-y-rodritmos-en-el-andamio-92377aa9",
@@ -6354,7 +7119,12 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-09-1830-tia-melitona-f440c3b8",
@@ -6382,7 +7152,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-09-1900-concierto-y-baile-swing-a-cargo-del-grupo-hot-club-valladolid-y-lindy-1ae48db2",
@@ -6390,13 +7163,15 @@
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "19:00",
     "endTime": null,
-    "title": "CONCIERTO Y BAILE SWING A CARGO DEL GRUPO HOT CLUB VALLADOLID Y LINDY MONKEYS",
+    "title": "CONCIERTO Y BAILE SWING",
     "location": "Pza. San Juan (Vadillos - Circular - San Juan)",
     "zone": "Pza. San Juan (Vadillos - Circular - San Juan)",
     "description": "CONCIERTO Y BAILE SWING A CARGO DEL GRUPO HOT CLUB VALLADOLID Y LINDY MONKEYS",
     "summary": "CONCIERTO Y BAILE SWING A CARGO DEL GRUPO HOT CLUB VALLADOLID Y LINDY MONKEYS",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "GRUPO HOT CLUB VALLADOLID Y LINDY MONKEYS"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.609199,
@@ -6410,7 +7185,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-09-1900-el-hechicero-0b0f90ff",
@@ -6438,7 +7217,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-09-1900-playground-f3463751",
@@ -6466,7 +7248,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-09-1900-talleres-de-percusion-con-tambores-desde-6-anos-402c9e5f",
@@ -6494,7 +7279,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-09-1900-tio-tragaldabas-198ca124",
@@ -6522,7 +7310,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-09-1900-el-encuentro-los-sextetos-de-tchaikovsky-y-brahms-colaboran-juventudes-c9e49acb",
@@ -6530,7 +7321,7 @@
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "19:00",
     "endTime": null,
-    "title": "“EL ENCUENTRO” LOS SEXTETOS DE TCHAIKOVSKY Y BRAHMS Colaboran: Juventudes Musicales de Valladolid y Museo Patio",
+    "title": "“EL ENCUENTRO” LOS SEXTETOS DE TCHAIKOVSKY Y BRAHMS",
     "location": "Museo Patio Herreriano. Patio de los Reyes",
     "zone": "Museo Patio Herreriano. Patio de los Reyes",
     "description": "“EL ENCUENTRO” LOS SEXTETOS DE TCHAIKOVSKY Y BRAHMS Colaboran: Juventudes Musicales de Valladolid y Museo Patio Herreriano ENTRADA: 5 € en www. info.valladolid.es a partir del 25 de agosto Organiza: Concejalía de Turismo, Eventos y Marca Ciudad. Colaboran: Funda ción Municipal de Cultura y Museo Patio Herreriano",
@@ -6559,7 +7350,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-09-1900-xiv-verbena-republicana-hula-baby-delameseta-y-canoneros-ateneo-republ-83278087",
@@ -6567,12 +7361,16 @@
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "19:00",
     "endTime": "01:00",
-    "title": "XIV VERBENA REPUBLICANA: HULA BABY, DELAMESETA Y CAÑONEROS Ateneo Republicano",
+    "title": "XIV VERBENA REPUBLICANA",
     "location": "Pza. Andrés de Laorden",
     "zone": "Pza. Andrés de Laorden",
     "description": "XIV VERBENA REPUBLICANA: HULA BABY, DELAMESETA Y CAÑONEROS Ateneo Republicano",
     "summary": "XIV VERBENA REPUBLICANA: HULA BABY, DELAMESETA Y CAÑONEROS Ateneo Republicano",
-    "performances": [],
+    "performances": [
+      "HULA BABY",
+      "DELAMESETA",
+      "CAÑONEROS"
+    ],
     "organizers": [
       "Ateneo Republicano"
     ],
@@ -6589,7 +7387,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-09-1930-la-historia-interminable-el-musical-df22c4f7",
@@ -6617,7 +7418,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-09-2000-concierto-orquesta-de-laudes-espanoles-conde-ansurez-director-miguel-r-8a9c356a",
@@ -6645,7 +7450,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-09-2000-danzando-en-la-calle-danzaye-e7d927fe",
@@ -6673,7 +7481,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-09-2000-juegos-y-actividades-de-penas-pena-bodega-paco-1b4fba11",
@@ -6681,7 +7492,7 @@
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "JUEGOS Y ACTIVIDADES DE PEÑAS Peña Bodega Paco",
+    "title": "JUEGOS Y ACTIVIDADES DE PEÑAS",
     "location": "Plaza Gutiérrez Semprún",
     "zone": "Plaza Gutiérrez Semprún",
     "description": "JUEGOS Y ACTIVIDADES DE PEÑAS Peña Bodega Paco",
@@ -6703,7 +7514,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-09-2000-la-casa-de-los-siete-balcones-4cc86398",
@@ -6731,7 +7545,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-09-2000-paco-devotion-3818bdc6",
@@ -6752,14 +7569,17 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-09-2000-moreras-beach-fest-escuela-indigo-show-fest-speaker-alberto-villa-y-re-6d91c869",
@@ -6767,7 +7587,7 @@
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "20:00",
     "endTime": "01:00",
-    "title": "MORERAS BEACH FEST: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (RPF)” con los DJ´s",
+    "title": "MORERAS BEACH FEST",
     "location": "Paseo de las Moreras",
     "zone": "Moreras",
     "description": "MORERAS BEACH FEST: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (RPF)” con los DJ´s Iker Castro y Omar. Coordinadora de Peñas",
@@ -6792,7 +7612,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-09-2000-vi-festival-rock-roll-club-valladolid-homenaje-elvis-presley-49-aniver-b446c2b1",
@@ -6824,7 +7648,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-09-2030-la-ceremonia-de-las-criadas-4d853b15",
@@ -6852,7 +7679,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-09-2030-las-verbenas-de-la-feria-orquesta-alua-bccd3b7c",
@@ -6880,7 +7710,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-09-2030-xliii-feria-de-folklore-y-gastronomia-610b476a",
@@ -6910,7 +7743,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-09-2100-asociacion-de-profesionales-de-danza-de-castilla-y-leon-prodanza-1edc7160",
@@ -6938,7 +7775,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-09-2100-de-caperucita-a-loba-en-solo-seis-tios-d02e5195",
@@ -6966,7 +7806,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-09-2100-ubi-sunt-2785afdf",
@@ -6994,7 +7837,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-09-2130-bego-martin-7741f32a",
@@ -7015,14 +7861,17 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-09-2215-fuegos-artificiales-sesion-4-ce03b92b",
@@ -7035,7 +7884,9 @@
     "zone": "Caño Hondo",
     "description": "FUEGOS ARTIFICIALES (SESIÓN 4.ª). PIROTECNIA XARAIVA (Galicia)",
     "summary": "FUEGOS ARTIFICIALES (SESIÓN 4.ª). PIROTECNIA XARAIVA (Galicia)",
-    "performances": [],
+    "performances": [
+      "PIROTECNIA XARAIVA (Ourense)"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -7050,7 +7901,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Fuegos artificiales"
+    ]
   },
   {
     "id": "2026-09-09-2230-mestiza-98ac12cc",
@@ -7071,14 +7925,17 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-09-2230-orquesta-marenga-067e3349",
@@ -7106,7 +7963,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-1500-actuacion-musical-en-directo-de-los-80-wateke-pena-vinos-merino-a9bbb489",
@@ -7114,7 +7974,7 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "15:00",
     "endTime": null,
-    "title": "ACTUACIÓN MUSICAL EN DIRECTO DE LOS 80: WATEKE Peña Vinos Merino",
+    "title": "ACTUACIÓN MUSICAL EN DIRECTO DE LOS 80: WATEKE",
     "location": "Plaza del Rosarillo",
     "zone": "Plaza del Rosarillo",
     "description": "ACTUACIÓN MUSICAL EN DIRECTO DE LOS 80: WATEKE Peña Vinos Merino",
@@ -7129,14 +7989,18 @@
       "lng": -4.724086,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Teatro",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-1500-tardeo-musical-con-los-djs-residentes-de-la-coordinadora-de-penas-a6dbb1d0",
@@ -7168,7 +8032,12 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-1700-tia-melitona-076afb86",
@@ -7196,7 +8065,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-10-1700-parque-infantil-de-hinchables-y-talleres-6344a9bb",
@@ -7224,7 +8096,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-10-1730-duo-campante-439644b0",
@@ -7252,7 +8128,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-10-1730-xxxiv-exposicion-ferroviaria-asvafer-4534f83b",
@@ -7282,7 +8161,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-10-1800-xx-concurso-de-torti-llas-interpenas-pena-simpaticos-lugarenos-fevapen-b3a0d4a6",
@@ -7290,7 +8172,7 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "18:00",
     "endTime": null,
-    "title": "XX CONCURSO DE TORTI LLAS INTERPEÑAS PEÑA SIMPÁTICOS LUGAREÑOS Fevapeñas",
+    "title": "XX CONCURSO DE TORTILLAS INTERPEÑAS PEÑA SIMPÁTICOS LUGAREÑOS",
     "location": "Paseo del Cauce, 50 A",
     "zone": "Paseo del Cauce, 50 A",
     "description": "XX CONCURSO DE TORTI LLAS INTERPEÑAS PEÑA SIMPÁTICOS LUGAREÑOS Fevapeñas",
@@ -7312,7 +8194,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-10-1800-9-edicion-festival-reggae-se-dice-regue-sumerr-unruly-youth-amazonians-bda1a658",
@@ -7320,7 +8205,7 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "18:00",
     "endTime": "01:00",
-    "title": "9ª EDICIÓN FESTIVAL REGGAE SE DICE ‘REGUE’ SUMERR & UNRULY YOUTH, AMAZONIANS, TWINKLE SISTERS & FRIENDS Asociación",
+    "title": "9ª EDICIÓN FESTIVAL REGGAE SE DICE ‘REGUE’ SUMERR & UNRULY YOUTH, AMAZONIANS, TWINKLE SISTERS & FRIENDS",
     "location": "Paseo de las Moreras – Escenario pistas deportivas",
     "zone": "Moreras",
     "description": "9ª EDICIÓN FESTIVAL REGGAE SE DICE ‘REGUE’ SUMERR & UNRULY YOUTH, AMAZONIANS, TWINKLE SISTERS & FRIENDS Asociación Cultural Sol y Reggae",
@@ -7340,7 +8225,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-1800-lorencito-festival-broke-sakuteo-skate-1ec7ae75",
@@ -7368,7 +8256,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-1830-400-001-millones-de-estrellas-f2c12235",
@@ -7396,7 +8287,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-10-1830-colorado-y-mas-coloreado-c9e62c9f",
@@ -7426,7 +8320,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-1830-duo-el-salon-736ec978",
@@ -7454,7 +8351,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-10-1830-gigantes-y-cabezudos-f6fa34ed",
@@ -7484,7 +8384,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-10-1830-las-que-tiene-que-limpiar-09af7b02",
@@ -7512,7 +8416,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-10-1830-no-hay-tiempo-que-perder-de-la-compania-el-gran-rufus-df5be9cc",
@@ -7520,12 +8427,14 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "18:30",
     "endTime": null,
-    "title": "NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS",
+    "title": "NO HAY TIEMPO QUE PERDER",
     "location": "Pza. Vadillos (Vadillos - Circular - San Juan)",
     "zone": "Pza. Vadillos (Vadillos - Circular - San Juan)",
     "description": "NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS",
     "summary": "NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS",
-    "performances": [],
+    "performances": [
+      "COMPAÑÍA EL GRAN RUFUS"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -7533,14 +8442,18 @@
       "lng": -4.713225,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Teatro",
     "ticket": {
       "required": false,
       "status": "unknown",
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-10-1830-rockandroleando-con-tina-y-rodritmos-en-el-andamio-2aeaea06",
@@ -7568,7 +8481,12 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-10-1900-corrida-de-toros-de-victoriano-del-rio-para-talavante-roca-rey-y-manue-cc5666d6",
@@ -7576,12 +8494,14 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "19:00",
     "endTime": null,
-    "title": "CORRIDA DE TOROS de Victoriano del Río para TALAVANTE, ROCA REY Y MANUEL DIOSLEGUARDE",
+    "title": "CORRIDA DE TOROS",
     "location": "Plaza de Toros",
     "zone": "Plaza de Toros",
     "description": "CORRIDA DE TOROS de Victoriano del Río para TALAVANTE, ROCA REY Y MANUEL DIOSLEGUARDE",
     "summary": "CORRIDA DE TOROS de Victoriano del Río para TALAVANTE, ROCA REY Y MANUEL DIOSLEGUARDE",
-    "performances": [],
+    "performances": [
+      "TALAVANTE, ROCA REY Y MANUEL DIOSLEGUARDE"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -7596,7 +8516,10 @@
       "label": "Entradas Plaza de Toros",
       "url": "https://tauroemocion.es/valladolid/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Toros"
+    ]
   },
   {
     "id": "2026-09-10-1900-el-hechicero-8f6b3989",
@@ -7624,7 +8547,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-10-1900-hinchable-pena-vinos-merino-f59e4554",
@@ -7632,7 +8558,7 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "19:00",
     "endTime": null,
-    "title": "HINCHABLE Peña Vinos Merino",
+    "title": "HINCHABLE",
     "location": "Plaza del Rosarillo",
     "zone": "Plaza del Rosarillo",
     "description": "HINCHABLE Peña Vinos Merino",
@@ -7654,7 +8580,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-10-1900-talleres-de-percusion-con-tambores-desde-6-anos-4ef84d41",
@@ -7682,7 +8611,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-10-1900-tia-melitona-76c6662d",
@@ -7710,7 +8642,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-10-1930-juegos-populares-in-terpenas-pena-pucelana-velardes-fevapenas-242f1095",
@@ -7718,14 +8653,14 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "19:30",
     "endTime": null,
-    "title": "JUEGOS POPULARES IN TERPEÑAS, Peña Pucelana Velardes Fevapeñas",
+    "title": "JUEGOS POPULARES IN TERPEÑAS",
     "location": "Paseo del Cauce, 50 A",
     "zone": "Paseo del Cauce, 50 A",
     "description": "JUEGOS POPULARES IN TERPEÑAS, Peña Pucelana Velardes Fevapeñas",
     "summary": "JUEGOS POPULARES IN TERPEÑAS, Peña Pucelana Velardes Fevapeñas",
     "performances": [],
     "organizers": [
-      "Fevapeñas"
+      "Peña Pucelana Velardes Fevapeñas"
     ],
     "collaborators": [],
     "coordinates": {
@@ -7740,7 +8675,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-10-1930-la-historia-interminable-el-musical-2f7164f0",
@@ -7768,7 +8706,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-2000-aqui-no-paga-nadie-40af11d6",
@@ -7796,7 +8738,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-10-2000-dos-orillas-gira-enhumorados-16cf8aba",
@@ -7826,7 +8771,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-10-2000-danzando-en-la-calle-salsealo-090cb784",
@@ -7854,7 +8802,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-10-2000-esto-no-es-fuenteovejuna-4ee51ccf",
@@ -7882,7 +8833,10 @@
       "label": "Entradas Teatro Zorrilla",
       "url": "https://www.teatrozorrilla.es/venta-de-entradas/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-10-2000-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-6370dba2",
@@ -7910,7 +8864,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-10-2000-moreras-beach-fest-epic-night-a3ab4281",
@@ -7942,7 +8899,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-10-2030-las-verbenas-de-la-feria-orquesta-fran-musical-b0fa977e",
@@ -7970,7 +8931,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-2030-xlii-feria-de-folklore-y-gastronomia-bab342dc",
@@ -8000,7 +8965,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-10-2100-concierto-de-la-banda-sinfonica-de-arroyo-bb186870",
@@ -8028,7 +8997,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-2100-los-hombres-de-lady-4970deee",
@@ -8056,7 +9028,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-10-2100-mandala-60d966c4",
@@ -8084,7 +9059,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-10-2100-maref-0f699dc5",
@@ -8112,7 +9090,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-10-2130-un-matrimonio-sin-filtros-ba25b6ef",
@@ -8140,7 +9121,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-10-2200-ronnie-wood-and-his-band-e-imelda-may-295d295b",
@@ -8168,7 +9152,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-10-2215-fuegos-artificiales-sesion-5-0764e05c",
@@ -8181,7 +9168,9 @@
     "zone": "Caño Hondo",
     "description": "FUEGOS ARTIFICIALES (SESIÓN 5.ª). PIROTECNIA VULCANO (Madrid)",
     "summary": "FUEGOS ARTIFICIALES (SESIÓN 5.ª). PIROTECNIA VULCANO (Madrid)",
-    "performances": [],
+    "performances": [
+      "PIROTECNIA PABLO (Asturias)"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -8196,7 +9185,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Fuegos artificiales"
+    ]
   },
   {
     "id": "2026-09-10-2230-orquesta-avalon-35d69796",
@@ -8224,7 +9216,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-11-1700-la-historia-interminable-el-musical-68866f8a",
@@ -8252,7 +9247,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-11-1700-tia-melitona-05385a63",
@@ -8280,7 +9279,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-11-1700-tio-tragaldabas-8c035e88",
@@ -8308,7 +9310,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-11-1700-parque-infantil-de-hinchables-y-talleres-0d5af957",
@@ -8336,7 +9341,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-11-1730-duo-modo-verbena-14a60d23",
@@ -8364,7 +9373,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-11-1730-xxxiv-exposicion-ferroviaria-asvafer-ec47c96d",
@@ -8394,7 +9406,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-11-1800-corrida-de-toros-de-garcigrande-para-morante-de-la-puebla-emilio-de-ju-6ad4e1b8",
@@ -8402,13 +9417,13 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "18:00",
     "endTime": null,
-    "title": "CORRIDA DE TOROS de Garcigrande para MORANTE DE LA PUEBLA, EMILIO DE JUSTO y MARIO NAVAS",
+    "title": "CORRIDA DE TOROS",
     "location": "Plaza de Toros",
     "zone": "Plaza de Toros",
     "description": "CORRIDA DE TOROS de Garcigrande para MORANTE DE LA PUEBLA, EMILIO DE JUSTO y MARIO NAVAS",
     "summary": "CORRIDA DE TOROS de Garcigrande para MORANTE DE LA PUEBLA, EMILIO DE JUSTO y MARIO NAVAS",
     "performances": [
-      "CORRIDA DE TOROS de Garcigrande para MORANTE DE LA PUEBLA, EMILIO DE JUSTO y MARIO NAVAS"
+      "MORANTE DE LA PUEBLA, EMILIO DE JUSTO y MARIO NAVAS"
     ],
     "organizers": [],
     "collaborators": [],
@@ -8424,7 +9439,10 @@
       "label": "Entradas Plaza de Toros",
       "url": "https://tauroemocion.es/valladolid/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Toros"
+    ]
   },
   {
     "id": "2026-09-11-1800-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-d0a06375",
@@ -8452,7 +9470,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-11-1800-pijama-para-seis-a2fff2ee",
@@ -8480,7 +9501,10 @@
       "label": "Entradas Teatro Zorrilla",
       "url": "https://www.teatrozorrilla.es/venta-de-entradas/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-11-1830-actuacion-musical-familiar-con-los-personajes-mas-famosos-de-la-tele-a-16899585",
@@ -8488,7 +9512,7 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "18:30",
     "endTime": null,
-    "title": "ACTUACIÓN MUSICAL FAMILIAR CON LOS PERSONAJES MÁS FAMOSOS DE LA TELE Aquavall",
+    "title": "ACTUACIÓN MUSICAL FAMILIAR CON LOS PERSONAJES MÁS FAMOSOS DE LA TELE",
     "location": "Zona infantil Paseo de las Moreras (chopera)",
     "zone": "Moreras",
     "description": "ACTUACIÓN MUSICAL FAMILIAR CON LOS PERSONAJES MÁS FAMOSOS DE LA TELE Aquavall",
@@ -8510,7 +9534,12 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-11-1830-amamarla-ruta-666-6a63b8b9",
@@ -8518,12 +9547,14 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "18:30",
     "endTime": null,
-    "title": "AMAMARLA Ruta 666",
+    "title": "AMAMARLA",
     "location": "Plaza Cantarranas",
     "zone": "Cantarranas",
     "description": "AMAMARLA Ruta 666",
     "summary": "AMAMARLA Ruta 666",
-    "performances": [],
+    "performances": [
+      "AMAMARLA"
+    ],
     "organizers": [
       "Ruta 666"
     ],
@@ -8540,7 +9571,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-11-1830-degustacion-gastronomica-355bc23e",
@@ -8573,7 +9607,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-11-1830-duo-lazul-33d950dc",
@@ -8601,7 +9639,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-11-1830-gigantes-y-cabezudos-afafd165",
@@ -8631,7 +9672,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-11-1830-no-hay-tiempo-que-perder-de-la-compania-el-gran-rufus-1f360ea3",
@@ -8639,12 +9684,14 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "18:30",
     "endTime": null,
-    "title": "NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS",
+    "title": "NO HAY TIEMPO QUE PERDER",
     "location": "Pza. de la Solidaridad (La Victoria - Puente Jardín)",
     "zone": "Pza. de la Solidaridad (La Victoria - Puente Jardín)",
     "description": "NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS",
     "summary": "NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS",
-    "performances": [],
+    "performances": [
+      "COMPAÑÍA EL GRAN RUFUS"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -8652,14 +9699,18 @@
       "lng": -4.736874,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Teatro",
     "ticket": {
       "required": false,
       "status": "unknown",
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-11-1900-cabaret-de-la-luz-de-las-delicias-353d2198",
@@ -8687,7 +9738,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-11-1900-circuito-de-tractores-a-pedales-2283a7d6",
@@ -8715,7 +9769,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-11-1900-espectaculo-musical-pena-huracan-8383d134",
@@ -8723,7 +9780,7 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "19:00",
     "endTime": null,
-    "title": "ESPECTÁCULO MUSICAL Peña Huracán",
+    "title": "ESPECTÁCULO MUSICAL",
     "location": "Avda. Fernando Ferreiro, 1",
     "zone": "Avda. Fernando Ferreiro, 1",
     "description": "ESPECTÁCULO MUSICAL Peña Huracán",
@@ -8745,7 +9802,12 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-11-1900-primera-concentracion-de-charangas-ohayo-gaveta-y-cucu-band-025b434c",
@@ -8777,7 +9839,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-11-1900-sesion-de-baile-guateque-dj-chack-0a6f61ce",
@@ -8810,7 +9875,12 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas",
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-11-1900-tia-melitona-4cfc52e5",
@@ -8838,7 +9908,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-11-1900-tio-tragaldabas-5eba1c4c",
@@ -8866,7 +9939,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-11-2000-aviate-pal-baile-ii-homenaje-al-folklore-vallisoletano-3687b888",
@@ -8894,7 +9970,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-11-2000-danzando-en-la-calle-sarah-fox-y-yendy-f8a692de",
@@ -8924,7 +10004,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-11-2000-educando-a-rita-675901a8",
@@ -8952,7 +10035,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-11-2000-lola-la-faraona-21e76f8c",
@@ -8980,7 +10066,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-11-2030-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-002e7e84",
@@ -9008,7 +10097,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-11-2030-las-verbenas-de-la-feria-orquesta-tentacion-c4299f90",
@@ -9036,7 +10128,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-11-2030-xliii-feria-de-folklore-y-gastronomia-9207d8d7",
@@ -9066,7 +10161,12 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Gastronomía",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-11-2100-black-blues-presenta-una-noche-de-blues-y-rhythm-blues-wax-boogie-y-fe-3b514ee5",
@@ -9096,7 +10196,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-11-2100-el-conciertazo-de-fevapenas-xiii-edicion-actuaciones-de-las-bandas-ave-a58e14d7",
@@ -9104,7 +10207,7 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "21:00",
     "endTime": "04:00",
-    "title": "EL CONCIERTAZO DE FEVAPEÑAS XIII EDICIÓN Actuaciones de las bandas AVERÍA MENTAL, HIJOS DEL TERCER ACORDE y ROCK AND",
+    "title": "EL CONCIERTAZO DE FEVAPEÑAS XIII EDICIÓN",
     "location": "C/ Andrés de la Orden",
     "zone": "C/ Andrés de la Orden",
     "description": "EL CONCIERTAZO DE FEVAPEÑAS XIII EDICIÓN Actuaciones de las bandas AVERÍA MENTAL, HIJOS DEL TERCER ACORDE y ROCK AND ROLL CIRKUS",
@@ -9127,7 +10230,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-11-2100-moreras-beach-fest-gran-dia-de-las-penas-djs-y-residentes-de-la-coordi-2d0a982d",
@@ -9135,7 +10242,7 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "21:00",
     "endTime": "04:00",
-    "title": "MORERAS BEACH FEST “GRAN DÍA DE LAS PEÑAS” DJ´s y residentes de la Coordinadora de Peñas",
+    "title": "MORERAS BEACH FEST “GRAN DÍA DE LAS PEÑAS”",
     "location": "Pº de las Moreras",
     "zone": "Moreras",
     "description": "MORERAS BEACH FEST “GRAN DÍA DE LAS PEÑAS” DJ´s y residentes de la Coordinadora de Peñas",
@@ -9160,7 +10267,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-11-2100-moreras-beach-fest-verbeneo-que-te-veo-con-chack-dani-abril-fer-gurpeg-849fca0c",
@@ -9168,7 +10279,7 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "21:00",
     "endTime": "04:00",
-    "title": "MORERAS BEACH FEST “VERBENEO QUE TE VEO” con Chack, Dani Abril, Fer Gurpegui, Charlie DJ, música en directo Orquesta",
+    "title": "MORERAS BEACH FEST “VERBENEO QUE TE VEO”",
     "location": "Escenario Pistas Deportivas - Paseo de las Moreras",
     "zone": "Moreras",
     "description": "MORERAS BEACH FEST “VERBENEO QUE TE VEO” con Chack, Dani Abril, Fer Gurpegui, Charlie DJ, música en directo Orquesta Grupo Cero, Sandrux, Lerma, Finisher and Friends y “REMEMBER NIGHT” con Miguel Alonso, Sergei Rez y Neil Coordinadora de Peñas",
@@ -9192,7 +10303,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-11-2200-bravo-maldonado-c1e490fa",
@@ -9205,7 +10320,9 @@
     "zone": "Plaza Mayor",
     "description": "BRAVO MALDONADO",
     "summary": "BRAVO MALDONADO",
-    "performances": [],
+    "performances": [
+      "BRAVO MALDONADO"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -9213,14 +10330,17 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-11-2200-lorencito-festival-la-neverita-a89a6663",
@@ -9248,7 +10368,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-11-2215-fuegos-artificiales-sesion-6-9de5109d",
@@ -9261,7 +10384,9 @@
     "zone": "Caño Hondo",
     "description": "FUEGOS ARTIFICIALES (SESIÓN 6.ª). PIROTECNIA ZARAGOZANA (Zaragoza)",
     "summary": "FUEGOS ARTIFICIALES (SESIÓN 6.ª). PIROTECNIA ZARAGOZANA (Zaragoza)",
-    "performances": [],
+    "performances": [
+      "PIROTECNIA VULCANO (Madrid)"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -9276,7 +10401,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Fuegos artificiales"
+    ]
   },
   {
     "id": "2026-09-11-2300-carolina-durante-adria-canameras-b4c3ad88",
@@ -9284,12 +10412,14 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "23:00",
     "endTime": null,
-    "title": "CAROLINA DURANTE ©Adrià Cañameras",
+    "title": "CAROLINA DURANTE",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
-    "description": "CAROLINA DURANTE ©Adrià Cañameras",
-    "summary": "CAROLINA DURANTE ©Adrià Cañameras",
-    "performances": [],
+    "description": "CAROLINA DURANTE",
+    "summary": "CAROLINA DURANTE",
+    "performances": [
+      "CAROLINA DURANTE"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -9304,7 +10434,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-12-1100-exhibicion-y-taller-de-jugger-2647e3ea",
@@ -9334,7 +10467,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Deporte",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-12-1100-campeonato-de-puzzles-individual-8-memoria-angela-segarra-info-en-espa-cea57a25",
@@ -9342,7 +10479,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "11:00",
     "endTime": "13:30",
-    "title": "CAMPEONATO DE PUZZLES INDIVIDUAL 8.º MEMORIA ÁNGELA SEGARRA + Info en espaciosjovenes Fevapeñas",
+    "title": "CAMPEONATO DE PUZZLES INDIVIDUAL 8.º MEMORIA ÁNGELA SEGARRA",
     "location": "Cúpula del Milenio",
     "zone": "Cúpula del Milenio",
     "description": "CAMPEONATO DE PUZZLES INDIVIDUAL 8.º MEMORIA ÁNGELA SEGARRA + Info en espaciosjovenes Fevapeñas",
@@ -9359,12 +10496,16 @@
     },
     "type": "Peñas",
     "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Sin entrada indicada",
-      "url": null,
-      "note": "No consta venta de entradas en el programa para este evento."
-    }
+      "required": true,
+      "status": "required",
+      "label": "Inscripción espaciosjovenesvalladolid.es",
+      "url": "https://www.espaciosjovenesvalladolid.es/",
+      "note": "Inscripción necesaria. Revisa disponibilidad y condiciones en espaciosjovenesvalladolid.es."
+    },
+    "tags": [
+      "Peñas",
+      "Deporte"
+    ]
   },
   {
     "id": "2026-09-12-1200-juegos-tradicionales-gigantes-de-madera-b4f43b55",
@@ -9392,7 +10533,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-12-1200-tio-tragaldabas-8527e826",
@@ -9420,7 +10564,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-12-1200-v-torneo-de-jugger-fiestas-de-valladolid-5274f6d9",
@@ -9450,7 +10597,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Deporte"
+    ]
   },
   {
     "id": "2026-09-12-1230-parque-infantil-de-hinchables-y-talleres-57ebcf8b",
@@ -9478,7 +10628,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-12-1700-la-historia-interminable-el-musical-2de46451",
@@ -9506,7 +10660,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-12-1700-tia-melitona-f8f163bc",
@@ -9534,7 +10692,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-12-1700-tio-tragaldabas-dae4199a",
@@ -9562,7 +10723,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-12-1730-duo-2000-9c94aacf",
@@ -9590,7 +10754,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-12-1730-campeonato-de-puzzles-por-parejas-8-memoria-angela-segarra-info-en-esp-2440cf87",
@@ -9598,7 +10765,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "17:30",
     "endTime": "20:30",
-    "title": "CAMPEONATO DE PUZZLES POR PAREJAS 8.º MEMORIA ÁNGELA SEGARRA + Info en espaciosjovenes valladolid.es Personas de 14 a",
+    "title": "CAMPEONATO DE PUZZLES POR PAREJAS 8.º MEMORIA ÁNGELA SEGARRA",
     "location": "Cúpula del Milenio",
     "zone": "Cúpula del Milenio",
     "description": "CAMPEONATO DE PUZZLES POR PAREJAS 8.º MEMORIA ÁNGELA SEGARRA + Info en espaciosjovenes valladolid.es Personas de 14 a 35 años. Organiza: Espacios Jóvenes de Valladolid. Colabora: AEPuzz Asociación Españo la de Puzzles",
@@ -9618,12 +10785,15 @@
     },
     "type": "Deporte",
     "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Sin entrada indicada",
-      "url": null,
-      "note": "No consta venta de entradas en el programa para este evento."
-    }
+      "required": true,
+      "status": "required",
+      "label": "Inscripción espaciosjovenesvalladolid.es",
+      "url": "https://www.espaciosjovenesvalladolid.es/",
+      "note": "Inscripción necesaria. Revisa disponibilidad y condiciones en espaciosjovenesvalladolid.es."
+    },
+    "tags": [
+      "Deporte"
+    ]
   },
   {
     "id": "2026-09-12-1730-xxxiv-exposicion-ferroviaria-asvafer-e07799a2",
@@ -9653,7 +10823,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-12-1800-bookcrossing-ff119917",
@@ -9681,7 +10854,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-12-1800-corrida-de-toros-de-victorino-martin-para-manuel-escribano-daniel-luqu-442dcefe",
@@ -9689,12 +10865,14 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "18:00",
     "endTime": null,
-    "title": "CORRIDA DE TOROS de Victorino Martín para MANUEL ESCRIBANO, DANIEL LUQUE Y AARÓN PALACIO",
+    "title": "CORRIDA DE TOROS",
     "location": "Plaza de Toros",
     "zone": "Plaza de Toros",
     "description": "CORRIDA DE TOROS de Victorino Martín para MANUEL ESCRIBANO, DANIEL LUQUE Y AARÓN PALACIO",
     "summary": "CORRIDA DE TOROS de Victorino Martín para MANUEL ESCRIBANO, DANIEL LUQUE Y AARÓN PALACIO",
-    "performances": [],
+    "performances": [
+      "MANUEL ESCRIBANO, DANIEL LUQUE Y AARÓN PALACIO"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -9709,7 +10887,10 @@
       "label": "Entradas Plaza de Toros",
       "url": "https://tauroemocion.es/valladolid/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Toros"
+    ]
   },
   {
     "id": "2026-09-12-1800-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-240c08b5",
@@ -9737,7 +10918,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-12-1800-moreras-beach-fest-tardeo-la-tribu-dj-by-sergei-rez-coordinadora-de-pe-d5d77f38",
@@ -9745,7 +10929,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "18:00",
     "endTime": null,
-    "title": "MORERAS BEACH FEST “TARDEO LA TRIBU DJ BY SERGEI REZ” Coordinadora de Peñas",
+    "title": "MORERAS BEACH FEST “TARDEO LA TRIBU DJ BY SERGEI REZ”",
     "location": "Playa de las Moreras",
     "zone": "Moreras",
     "description": "MORERAS BEACH FEST “TARDEO LA TRIBU DJ BY SERGEI REZ” Coordinadora de Peñas",
@@ -9767,7 +10951,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-12-1830-duo-canela-fina-efdb1b0b",
@@ -9795,7 +10983,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-12-1830-gigantes-y-cabezudos-69dcae75",
@@ -9825,7 +11016,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-12-1830-hinchables-pena-huracan-22068b8c",
@@ -9855,7 +11050,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-12-1900-cabaret-de-la-luz-de-las-delicias-80586451",
@@ -9883,7 +11082,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-12-1900-juegos-tradicionales-gigantes-de-madera-624f2264",
@@ -9911,7 +11113,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-12-1900-tia-melitona-ccf1873b",
@@ -9939,7 +11144,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-12-1900-tio-tragaldabas-1f37e920",
@@ -9967,7 +11175,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-12-1930-xi-festidagas-2026-alfredo-piedrafita-malos-vicios-xpresidentx-y-agres-ed8d4bcf",
@@ -9975,7 +11186,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "19:30",
     "endTime": "04:00",
-    "title": "XI FESTIDAGAS 2026: ALFREDO PIEDRAFITA, MALOS VICIOS, XPRESIDENTX Y AGRESIVA CSA Las Dagas",
+    "title": "XI FESTIDAGAS 2026: ALFREDO PIEDRAFITA, MALOS VICIOS, XPRESIDENTX Y AGRESIVA",
     "location": "Avda. Valle Esgueva, apeadero de trenes. (Barrio Belén - Santos Pilarica)",
     "zone": "Avda. Valle Esgueva, apeadero de trenes. (Barrio Belén - Santos Pilarica)",
     "description": "XI FESTIDAGAS 2026: ALFREDO PIEDRAFITA, MALOS VICIOS, XPRESIDENTX Y AGRESIVA CSA Las Dagas",
@@ -9990,14 +11201,18 @@
       "lng": -4.620876,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-12-2000-calistenia-c94d95c8",
@@ -10031,7 +11246,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-12-2000-danzando-en-la-calle-boogaloo-latin-dance-sesion-de-bailes-latinos-sal-e784d396",
@@ -10039,7 +11257,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "Danzando en la calle: BOOGALOO LATIN DANCE. Sesión de bailes latinos: salsa, bachata, ruda, son, bolero y danzón Boogaloo Club de Bailes Latinos",
+    "title": "Danzando en la calle: BOOGALOO LATIN DANCE",
     "location": "Plaza España",
     "zone": "Plaza España",
     "description": "DANZANDO EN LA CALLE: BOOGALOO LATIN DANCE. Sesión de bailes latinos: salsa, bachata, ruda, son, bolero y danzón Boogaloo Club de Bailes Latinos",
@@ -10059,7 +11277,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-12-2000-danzando-en-la-calle-baila-salsa-73fafd88",
@@ -10087,7 +11308,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-12-2000-el-rey-tuerto-e2eff5d5",
@@ -10115,7 +11339,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-12-2000-juegos-y-actividades-de-penas-pena-bodega-paco-178c3c01",
@@ -10123,7 +11350,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "JUEGOS Y ACTIVIDADES DE PEÑAS Peña Bodega Paco",
+    "title": "JUEGOS Y ACTIVIDADES DE PEÑAS",
     "location": "Plaza Gutiérrez Semprún",
     "zone": "Plaza Gutiérrez Semprún",
     "description": "JUEGOS Y ACTIVIDADES DE PEÑAS Peña Bodega Paco",
@@ -10145,7 +11372,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-12-2000-la-del-manojo-de-rosas-f286aac3",
@@ -10173,7 +11403,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-12-2030-fabiolo-connection-67cc34d2",
@@ -10201,7 +11434,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-12-2030-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-f8bc6c62",
@@ -10229,7 +11465,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-12-2030-las-verbenas-de-la-feria-orquesta-fortuna-f42404f7",
@@ -10257,7 +11496,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-12-2030-xliii-feria-de-folklore-y-gastronomia-bce4c6b2",
@@ -10287,7 +11529,12 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Gastronomía",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-12-2030-programa-prevencion-adicciones-young-zone-88f91151",
@@ -10317,7 +11564,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-12-2045-exhibicion-de-autos-locos-coordinadora-de-penas-2bc0a1d6",
@@ -10325,7 +11575,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "20:45",
     "endTime": null,
-    "title": "EXHIBICIÓN DE AUTOS-LOCOS Coordinadora de Peñas",
+    "title": "EXHIBICIÓN DE AUTOS-LOCOS",
     "location": "Pº de las Moreras",
     "zone": "Moreras",
     "description": "EXHIBICIÓN DE AUTOS-LOCOS Coordinadora de Peñas",
@@ -10347,7 +11597,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-12-2100-iv-pacorock-pena-bodega-paco-e6d2c37f",
@@ -10355,7 +11608,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "21:00",
     "endTime": null,
-    "title": "IV PACOROCK Peña Bodega Paco",
+    "title": "IV PACOROCK",
     "location": "Plaza Gutiérrez Semprún",
     "zone": "Plaza Gutiérrez Semprún",
     "description": "IV PACOROCK Peña Bodega Paco",
@@ -10377,7 +11630,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-12-2100-la-historia-interminable-el-musical-0bc1ae72",
@@ -10405,7 +11662,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-12-2100-night-glow-con-actuacion-de-los-pichas-c5f40f95",
@@ -10413,13 +11674,13 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "21:00",
     "endTime": null,
-    "title": "NIGHT GLOW CON ACTUACIÓN DE LOS PICHAS",
+    "title": "NIGHT GLOW",
     "location": "Explanada de la calle de las Mieses",
     "zone": "Explanada de la calle de las Mieses",
-    "description": "NIGHT GLOW CON ACTUACIÓN DE LOS PICHAS. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey",
-    "summary": "NIGHT GLOW CON ACTUACIÓN DE LOS PICHAS. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey",
+    "description": "ACTUACIÓN DE LOS PICHAS. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey.",
+    "summary": "ACTUACIÓN DE LOS PICHAS. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey.",
     "performances": [
-      "ACTUACIÓN DE LOS PICHAS. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey"
+      "ACTUACIÓN DE LOS PICHAS"
     ],
     "organizers": [],
     "collaborators": [],
@@ -10435,7 +11696,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-12-2100-erase-una-vez-los-80-7ecd6aa9",
@@ -10463,7 +11727,10 @@
       "label": "Entradas Teatro Zorrilla",
       "url": "https://www.teatrozorrilla.es/venta-de-entradas/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-12-2130-ana-guerra-d15bb0f5",
@@ -10491,7 +11758,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-12-2130-la-zarzuela-mas-resala-90b3366c",
@@ -10519,7 +11789,12 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música",
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-12-2130-un-matrimonio-sin-filtros-20691c83",
@@ -10547,7 +11822,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-12-2130-verbena-clasicos-de-los-80-en-adelante-d78347cc",
@@ -10577,7 +11855,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-12-2200-jose-vicens-y-jesus-talltavull-de-los40-espana-ramses-lopez-y-aitana-j-49e626a6",
@@ -10585,7 +11867,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "22:00",
     "endTime": "03:00",
-    "title": "JOSÉ VICENS Y JESÚS TALLTAVULL DE LOS40 ESPAÑA + RAMSÉS LÓPEZ Y AITANA JEREZ DE LOS40 URBAN Cadena Ser",
+    "title": "JOSÉ VICENS Y JESÚS TALLTAVULL DE LOS40 ESPAÑA + RAMSÉS LÓPEZ Y AITANA JEREZ",
     "location": "Paseo de las Moreras",
     "zone": "Moreras",
     "description": "JOSÉ VICENS Y JESÚS TALLTAVULL DE LOS40 ESPAÑA + RAMSÉS LÓPEZ Y AITANA JEREZ DE LOS40 URBAN Cadena Ser",
@@ -10607,7 +11889,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-12-2200-lorencito-festival-noise-room-e8c65893",
@@ -10635,7 +11920,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-12-2215-fuegos-artificiales-sesion-7-2e0e35bd",
@@ -10648,7 +11936,9 @@
     "zone": "Caño Hondo",
     "description": "FUEGOS ARTIFICIALES (SESIÓN 7.ª). PIROTECNIA PIBIERZO (León)",
     "summary": "FUEGOS ARTIFICIALES (SESIÓN 7.ª). PIROTECNIA PIBIERZO (León)",
-    "performances": [],
+    "performances": [
+      "PIROTECNIA PENIDE (A Coruña)"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -10663,7 +11953,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Fuegos artificiales"
+    ]
   },
   {
     "id": "2026-09-12-2230-fabiolo-connection-4d1aba14",
@@ -10691,7 +11984,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-12-2230-moreras-beach-fest-the-glow-experience-f57858eb",
@@ -10723,7 +12019,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-12-2300-leire-martinez-ce973582",
@@ -10751,7 +12051,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-13-1000-especial-ecomercado-acercate-a-este-espacio-de-encuentro-de-consumo-ec-f7c15d20",
@@ -10759,7 +12062,7 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "10:00",
     "endTime": "14:00",
-    "title": "ESPECIAL ECOMERCADO: acércate a este espacio de encuentro de consumo ecológico donde se comercializan productos",
+    "title": "ESPECIAL ECOMERCADO",
     "location": "Plaza España",
     "zone": "Plaza España",
     "description": "ESPECIAL ECOMERCADO: acércate a este espacio de encuentro de consumo ecológico donde se comercializan productos agroalimentarios ecológicos certificados y de proximidad, celebrando con nosotros en la Marquesina de la Plaza de España, las fiestas de la Virgen de San Lorenzo Concejalía de Medio Ambiente",
@@ -10781,7 +12084,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-13-1030-viii-marcha-cicloturistica-cdb38072",
@@ -10810,7 +12116,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-13-1200-festival-de-musica-mexicana-5316016e",
@@ -10842,7 +12151,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-13-1200-juegos-tradicionales-gigantes-de-madera-9fa86ddd",
@@ -10870,7 +12182,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1200-tia-melitona-0baef775",
@@ -10898,7 +12213,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1200-tio-tragaldabas-14c18793",
@@ -10926,7 +12244,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1200-xxii-danzadolid-espectaculo-amateur-de-escuelas-infantiles-de-danza-ha-a15a8c10",
@@ -10954,7 +12275,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1200-tu-de-que-cuento-eres-pie-izquierdo-7aa932ea",
@@ -10982,7 +12307,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-13-1230-la-historia-interminable-el-musical-09b672c9",
@@ -11010,7 +12338,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-13-1230-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-e198a90e",
@@ -11038,7 +12370,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-13-1230-running-dj-set-amenizado-por-dj-omar-6d727961",
@@ -11072,7 +12407,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-13-1230-parque-infantil-de-hinchables-y-talleres-858c1e81",
@@ -11100,7 +12439,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Talleres"
+    ]
   },
   {
     "id": "2026-09-13-1300-degustacion-gastronomica-pena-huracan-da1b16d4",
@@ -11108,7 +12451,7 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "13:00",
     "endTime": null,
-    "title": "DEGUSTACIÓN GASTRONÓMICA Peña Huracán",
+    "title": "DEGUSTACIÓN GASTRONÓMICA",
     "location": "Avda. Fernando Ferreiro",
     "zone": "Avda. Fernando Ferreiro",
     "description": "DEGUSTACIÓN GASTRONÓMICA Peña Huracán",
@@ -11130,7 +12473,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-13-1300-gigantes-y-cabezudos-4908e9b9",
@@ -11160,7 +12507,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1300-pasacalles-xxxv-aniversario-pena-comuneros-con-dulzaineros-la-atalaya-39442fa6",
@@ -11168,12 +12519,14 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "13:00",
     "endTime": null,
-    "title": "PASACALLES XXXV ANIVERSARIO Peña Comuneros con dulzaineros LA ATALAYA Fevapeñas",
+    "title": "PASACALLES XXXV ANIVERSARIO Peña Comuneros con dulzaineros LA ATALAYA",
     "location": "Zona Centro",
     "zone": "Zona Centro",
     "description": "PASACALLES XXXV ANIVERSARIO Peña Comuneros con dulzaineros LA ATALAYA Fevapeñas",
     "summary": "PASACALLES XXXV ANIVERSARIO Peña Comuneros con dulzaineros LA ATALAYA Fevapeñas",
-    "performances": [],
+    "performances": [
+      "LA ATALAYA"
+    ],
     "organizers": [
       "Fevapeñas"
     ],
@@ -11190,7 +12543,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore",
+      "Peñas"
+    ]
   },
   {
     "id": "2026-09-13-1330-charanga-cucu-band-pena-el-jumi-61f1dd13",
@@ -11198,7 +12555,7 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "13:30",
     "endTime": null,
-    "title": "CHARANGA CUCU BAND Peña El Jumi",
+    "title": "CHARANGA CUCU BAND",
     "location": "C/ Albacete 5-7",
     "zone": "C/ Albacete 5-7",
     "description": "CHARANGA CUCU BAND Peña El Jumi",
@@ -11220,7 +12577,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-13-1700-tia-melitona-e1ba3a14",
@@ -11248,7 +12609,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1700-tio-tragaldabas-0a796bf3",
@@ -11276,7 +12640,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1730-xxxiv-exposicion-ferroviaria-asvafer-cb2ba993",
@@ -11306,7 +12673,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Exposición"
+    ]
   },
   {
     "id": "2026-09-13-1800-corrida-de-toros-de-el-capea-para-andy-cartagena-sergio-galan-y-sergio-0bca6b17",
@@ -11314,13 +12684,13 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "18:00",
     "endTime": null,
-    "title": "CORRIDA DE TOROS de El Capea para ANDY CARTAGENA, SERGIO GALÁN y SERGIO PÉREZ DE GREGORIO",
+    "title": "CORRIDA DE TOROS",
     "location": "Plaza de Toros",
     "zone": "Plaza de Toros",
     "description": "CORRIDA DE TOROS de El Capea para ANDY CARTAGENA, SERGIO GALÁN y SERGIO PÉREZ DE GREGORIO",
     "summary": "CORRIDA DE TOROS de El Capea para ANDY CARTAGENA, SERGIO GALÁN y SERGIO PÉREZ DE GREGORIO",
     "performances": [
-      "CORRIDA DE TOROS de El Capea para ANDY CARTAGENA, SERGIO GALÁN y SERGIO PÉREZ DE GREGORIO"
+      "ANDY CARTAGENA, SERGIO GALÁN y SERGIO PÉREZ DE GREGORIO"
     ],
     "organizers": [],
     "collaborators": [],
@@ -11336,7 +12706,10 @@
       "label": "Entradas Plaza de Toros",
       "url": "https://tauroemocion.es/valladolid/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Toros"
+    ]
   },
   {
     "id": "2026-09-13-1800-folklore-castellano-a558d5ef",
@@ -11364,7 +12737,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-13-1800-la-historia-interminable-el-musical-523b90b2",
@@ -11392,7 +12768,11 @@
       "label": "Entradas Teatro Calderón",
       "url": "https://entradas.cultura.valladolid.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-13-1800-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-d7b66388",
@@ -11420,7 +12800,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-13-1800-los-hijos-adolescentes-el-club-de-los-malos-padres-846367b4",
@@ -11448,7 +12831,10 @@
       "label": "Entradas Teatro Zorrilla",
       "url": "https://www.teatrozorrilla.es/venta-de-entradas/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-13-1830-duo-fran-musical-e42d3c7f",
@@ -11476,7 +12862,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Teatro",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-13-1830-duo-madem-ea5bd0f2",
@@ -11504,7 +12894,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-13-1900-corta-el-cable-rojo-7b903a3c",
@@ -11532,7 +12925,10 @@
       "label": "Entradas Teatro Carrión",
       "url": "https://entradas.teatrocarrion.com/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-13-1900-folklore-castellano-8c76a4c4",
@@ -11560,7 +12956,11 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-13-1900-juegos-tradicionales-gigantes-de-madera-27f6d6b2",
@@ -11588,7 +12988,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1900-tia-melitona-9e0c1861",
@@ -11616,7 +13019,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1900-tio-tragaldabas-53289c4f",
@@ -11644,7 +13050,11 @@
       "label": "Acceso libre",
       "url": null,
       "note": "No consta venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Toros",
+      "Infantil y familiar"
+    ]
   },
   {
     "id": "2026-09-13-1930-casa-con-dos-puertas-mala-es-de-guardar-5e35777a",
@@ -11672,7 +13082,10 @@
       "label": "Consultar entradas Sala Borja",
       "url": "https://salaborja.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-13-1930-el-perrez-9613f050",
@@ -11700,7 +13113,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-13-2000-degustacion-gratuita-del-dulce-tipico-de-la-coordinadora-de-penas-e5d4d29c",
@@ -11730,7 +13146,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Gastronomía"
+    ]
   },
   {
     "id": "2026-09-13-2000-danzando-en-la-calle-little-room-c9d037a0",
@@ -11758,7 +13178,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-13-2000-las-verbenas-de-la-feria-orquesta-el-salon-50739cd7",
@@ -11786,7 +13209,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-13-2000-xxii-danzadolid-espectaculo-amateur-de-escuelas-de-danza-37b934af",
@@ -11814,7 +13240,10 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza"
+    ]
   },
   {
     "id": "2026-09-13-2000-zarzuela-4750a2a8",
@@ -11842,7 +13271,10 @@
       "label": "Entradas Teatro Cervantes",
       "url": "https://www.teatrocervantesva.es/",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Teatro"
+    ]
   },
   {
     "id": "2026-09-13-2030-lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela-f1107b8d",
@@ -11870,7 +13302,10 @@
       "label": "Entradas Lo de Ferias",
       "url": "https://tickety.es/event/lo-de-ferias-lo-que-pasa-en-pucela-se-queda-en-pucela",
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
-    }
+    },
+    "tags": [
+      "Otros"
+    ]
   },
   {
     "id": "2026-09-13-2030-xliii-feria-de-folklore-y-gastronomia-f14d9396",
@@ -11900,7 +13335,13 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "El programa no indica venta de entradas para este evento."
-    }
+    },
+    "tags": [
+      "Danza",
+      "Música",
+      "Gastronomía",
+      "Folklore"
+    ]
   },
   {
     "id": "2026-09-13-2100-pura-verdad-flamenco-enrique-heredia-lin-cortes-belen-lopez-kike-moren-6cc1562e",
@@ -11928,7 +13369,10 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Música"
+    ]
   },
   {
     "id": "2026-09-13-2130-pasacalles-retirada-del-panuelo-con-la-batucada-conclave-coordinadora-c00b9a2a",
@@ -11936,12 +13380,14 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "21:30",
     "endTime": null,
-    "title": "PASACALLES RETIRADA DEL PAÑUELO con la batucada ConClave Coordinadora de Peñas",
+    "title": "PASACALLES RETIRADA DEL PAÑUELO",
     "location": "Plaza España a Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "PASACALLES RETIRADA DEL PAÑUELO con la batucada ConClave Coordinadora de Peñas",
     "summary": "PASACALLES RETIRADA DEL PAÑUELO con la batucada ConClave Coordinadora de Peñas",
-    "performances": [],
+    "performances": [
+      "Batucada ConClave"
+    ],
     "organizers": [
       "Coordinadora de Peñas"
     ],
@@ -11958,7 +13404,11 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas",
+      "Música"
+    ]
   },
   {
     "id": "2026-09-13-2300-retirada-del-panuelo-al-conde-ansurez-por-la-pena-el-cuerpo-de-bombone-63a39dd7",
@@ -11988,6 +13438,9 @@
       "label": "Sin entrada indicada",
       "url": null,
       "note": "No consta venta de entradas en el programa para este evento."
-    }
+    },
+    "tags": [
+      "Peñas"
+    ]
   }
 ]
