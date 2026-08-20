@@ -1,0 +1,60 @@
+<div class="menu-drawer" data-menu-drawer hidden>
+  <button class="menu-drawer-backdrop" type="button" data-menu-close aria-label="Cerrar menú"></button>
+  <aside class="menu-drawer-panel" role="dialog" aria-modal="true" aria-label="Secciones">
+    <div class="menu-drawer-head">
+      <div>
+        <p class="menu-drawer-kicker">ALDEA PUCELA</p>
+        <h2 class="menu-drawer-title">Eventos</h2>
+      </div>
+      <button class="menu-drawer-close" type="button" data-menu-close aria-label="Cerrar menú">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <nav class="menu-drawer-nav" aria-label="Navegación">
+      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/">
+        <i class="menu-drawer-link-icon fa-solid fa-house" aria-hidden="true"></i>
+        <span>Inicio</span>
+      </a>
+      <a class="menu-drawer-link {% if activeNav == 'fiestas-2026' %}menu-drawer-link-active{% endif %}" href="/fiestas-2026/">
+        <i class="menu-drawer-link-icon fa-solid fa-champagne-glasses" aria-hidden="true"></i>
+        <span>Fiestas 2026</span>
+      </a>
+      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/espacios/">
+        <i class="menu-drawer-link-icon fa-solid fa-location-dot" aria-hidden="true"></i>
+        <span>Espacios</span>
+      </a>
+      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/tipos/">
+        <i class="menu-drawer-link-icon fa-solid fa-filter" aria-hidden="true"></i>
+        <span>Tipos</span>
+      </a>
+      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/guardados/">
+        <i class="menu-drawer-link-icon fa-regular fa-bookmark" aria-hidden="true"></i>
+        <span>Mis guardados</span>
+      </a>
+      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/archivo/">
+        <i class="menu-drawer-link-icon fa-solid fa-box-archive" aria-hidden="true"></i>
+        <span>Archivo</span>
+      </a>
+      <button class="menu-drawer-link" type="button" data-subscribe-open="rss">
+        <i class="menu-drawer-link-icon fa-solid fa-rss" aria-hidden="true"></i>
+        <span>Suscribirse</span>
+      </button>
+      <button class="menu-drawer-link" type="button" data-subscribe-open="calendar">
+        <i class="menu-drawer-link-icon fa-regular fa-calendar-plus" aria-hidden="true"></i>
+        <span>Calendario</span>
+      </button>
+      <a class="menu-drawer-link" href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer">
+        <i class="menu-drawer-link-icon fa-solid fa-people-group" aria-hidden="true"></i>
+        <span>Comunidad</span>
+      </a>
+      <a class="menu-drawer-link" href="https://t.me/aldeapucela/244" target="_blank" rel="noopener noreferrer">
+        <i class="menu-drawer-link-icon fa-brands fa-telegram" aria-hidden="true"></i>
+        <span>Chat sobre eventos</span>
+      </a>
+    </nav>
+    <button class="menu-drawer-link menu-drawer-theme-toggle" type="button" data-theme-toggle aria-label="Cambiar tema" aria-pressed="false">
+      <i class="menu-drawer-link-icon fa-regular fa-moon" aria-hidden="true"></i>
+      <span data-theme-toggle-label>Modo oscuro</span>
+    </button>
+  </aside>
+</div>

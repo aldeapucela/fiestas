@@ -1,0 +1,127 @@
+{% extends "layout.njk" %}
+
+{% block bodyClass %}page-event-detail fiestas-detail-page{% endblock %}
+{% block footerClass %} site-footer--event-detail{% endblock %}
+
+{% block extraHead %}
+{% if event.coordinates %}
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+{% endif %}
+{% endblock %}
+
+{% block header %}
+{% include "partials/topbar.njk" %}
+{% endblock %}
+
+{% block body %}
+<main class="page-shell detail-page-main fiestas-detail-main py-5 sm:py-8 lg:py-10">
+  <article class="fiestas-detail">
+    <a class="fiestas-back-link" href="/fiestas-2026/">
+      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      <span>Volver a Fiestas 2026</span>
+    </a>
+
+    <header class="fiestas-detail-head">
+      <div class="fiestas-detail-icon" aria-hidden="true">
+        <i class="fa-solid {{ event.icon }}"></i>
+      </div>
+      <div>
+        <p class="fiestas-kicker">{{ event.type or 'Evento' }}</p>
+        <h1 class="fiestas-detail-title">{{ event.title }}</h1>
+        <div class="fiestas-detail-meta">
+          <span><i class="fa-regular fa-calendar" aria-hidden="true"></i>{{ event.dateLabel }}</span>
+          <span><i class="fa-regular fa-clock" aria-hidden="true"></i>{{ event.startTime }}{% if event.endTime %} - {{ event.endTime }}{% endif %}</span>
+          {% if event.location %}<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ event.location }}</span>{% endif %}
+          {% if event.zone and event.zone != event.location %}<span><i class="fa-solid fa-map-pin" aria-hidden="true"></i>{{ event.zone }}</span>{% endif %}
+        </div>
+      </div>
+    </header>
+
+    <section class="fiestas-detail-card">
+      <h2>Información</h2>
+      <p>{{ event.summary or event.description or 'Sin descripción ampliada.' }}</p>
+    </section>
+
+    {% if event.ticket %}
+    <section class="fiestas-detail-card">
+      <h2>Entradas</h2>
+      <p><strong>{{ event.ticket.label or 'Información no indicada' }}</strong></p>
+      {% if event.ticket.note %}<p>{{ event.ticket.note }}</p>{% endif %}
+      {% if event.ticket.url %}
+      <a class="fiestas-action" href="{{ event.ticket.url }}" target="_blank" rel="noopener noreferrer">
+        <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+        <span>Comprar entradas</span>
+      </a>
+      {% endif %}
+    </section>
+    {% endif %}
+
+    {% if event.performances.length or event.organizers.length or event.collaborators.length %}
+    <section class="fiestas-detail-card fiestas-detail-lists">
+      {% if event.performances.length %}
+      <div>
+        <h2>Actuaciones</h2>
+        <ul>{% for item in event.performances %}<li>{{ item }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+      {% if event.organizers.length %}
+      <div>
+        <h2>Organiza</h2>
+        <ul>{% for item in event.organizers %}<li>{{ item }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+      {% if event.collaborators.length %}
+      <div>
+        <h2>Colabora</h2>
+        <ul>{% for item in event.collaborators %}<li>{{ item }}</li>{% endfor %}</ul>
+      </div>
+      {% endif %}
+    </section>
+    {% endif %}
+
+    {% if event.coordinates %}
+    <section class="fiestas-detail-card">
+      <div class="fiestas-detail-map-head">
+        <h2>Mapa</h2>
+        <div class="fiestas-dialog-actions">
+          <a class="fiestas-action" href="{{ event.mapUrl }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-map" aria-hidden="true"></i>
+            <span>Abrir mapa</span>
+          </a>
+          <a class="fiestas-action" href="{{ event.directionsUrl }}" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-route" aria-hidden="true"></i>
+            <span>Cómo llegar</span>
+          </a>
+        </div>
+      </div>
+      <div
+        class="fiestas-detail-map"
+        data-fiestas-detail-map
+        data-lat="{{ event.coordinates.lat }}"
+        data-lng="{{ event.coordinates.lng }}"
+        data-title="{{ event.title }}"
+      ></div>
+    </section>
+    {% endif %}
+  </article>
+</main>
+
+{% include "partials/menu-drawer.njk" %}
+{% include "partials/subscribe-modal.njk" %}
+{% include "partials/location-modal.njk" %}
+{% endblock %}
+
+{% block extraScripts %}
+{% if event.coordinates %}
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
+{% endif %}
+{% endblock %}

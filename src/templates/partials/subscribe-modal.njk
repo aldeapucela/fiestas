@@ -1,0 +1,79 @@
+<div class="calendar-modal" data-subscribe-modal hidden>
+  <button class="calendar-modal-backdrop" type="button" data-subscribe-close aria-label="Cerrar diálogo"></button>
+  <aside class="calendar-modal-panel subscribe-modal-panel" role="dialog" aria-modal="true" aria-labelledby="subscribe-modal-title">
+    <div class="calendar-modal-header">
+      <div>
+        <h2 class="calendar-modal-title" id="subscribe-modal-title">Suscribirse</h2>
+        <p class="calendar-modal-copy">Elige cómo seguir la agenda.</p>
+      </div>
+      <button class="calendar-modal-close" type="button" data-subscribe-close aria-label="Cerrar">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <section class="subscribe-section" data-subscribe-section="calendar">
+      <h3 class="subscribe-section-title"><i class="fa-regular fa-calendar"></i><span>Calendario completo</span></h3>
+      <p class="subscribe-section-copy">Calendario con próximos eventos e histórico.</p>
+      <div class="subscribe-url-row">
+        <input class="subscribe-url-input" type="text" value="https://eventos.aldeapucela.org/calendar.ics" readonly data-copy-source="calendar" />
+        <button class="calendar-modal-action calendar-modal-action-primary subscribe-copy-btn" type="button" data-copy-url="calendar">Copiar</button>
+      </div>
+      <div class="subscribe-links-grid">
+        <a class="calendar-modal-action" href="https://calendar.google.com/calendar/r?cid={{ 'webcal://eventos.aldeapucela.org/calendar.ics' | urlencode }}" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-google" aria-hidden="true"></i><span>Google Calendar</span></a>
+        <a class="calendar-modal-action" href="webcal://eventos.aldeapucela.org/calendar.ics"><i class="fa-brands fa-apple" aria-hidden="true"></i><span>Apple Calendar</span></a>
+        <a class="calendar-modal-action" href="webcal://eventos.aldeapucela.org/calendar.ics"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>Otros calendarios</span></a>
+      </div>
+    </section>
+
+    <section class="subscribe-section subscribe-section-featured" data-subscribe-section="newsletter">
+      <div class="subscribe-featured-copy">
+        <h3 class="subscribe-section-title"><i class="fa-regular fa-envelope"></i><span>Boletín semanal</span></h3>
+        <p class="subscribe-section-copy">Resumen semanal por email.</p>
+      </div>
+      <a class="calendar-modal-action subscribe-newsletter-action" href="https://aldeapucela.org/boletin/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-regular fa-paper-plane" aria-hidden="true"></i>
+        <span>Suscribirse por email</span>
+      </a>
+    </section>
+
+    {% if categoryFeeds and categoryFeeds.length %}
+    <section class="subscribe-section" data-subscribe-section="rss">
+      <h3 class="subscribe-section-title"><i class="fa-solid fa-layer-group"></i><span>Por categoría</span></h3>
+      <p class="subscribe-section-copy">Elige una categoría.</p>
+      <div class="subscribe-category-picker" data-category-picker data-feeds='{{ categoryFeeds | dump | safe }}'>
+        <label class="subscribe-category-field">
+          <span class="subscribe-category-field-label">Categoría</span>
+          <select class="subscribe-category-select" data-category-select>
+            {% for feed in categoryFeeds %}
+            <option value="{{ feed.slug }}">{{ feed.label }}</option>
+            {% endfor %}
+          </select>
+        </label>
+        <div class="subscribe-url-row">
+          <input class="subscribe-url-input" type="text" value="{{ categoryFeeds[0].url }}" readonly data-copy-source="category-selected" data-category-url />
+          <button class="calendar-modal-action calendar-modal-action-primary subscribe-copy-btn" type="button" data-copy-url="category-selected">Copiar</button>
+        </div>
+        <div class="subscribe-links-grid subscribe-links-grid-tight">
+          <a class="calendar-modal-action" href="https://calendar.google.com/calendar/r?cid={{ categoryFeeds[0].webcalUrl | urlencode }}" target="_blank" rel="noopener noreferrer" data-category-google><i class="fa-brands fa-google" aria-hidden="true"></i><span>Google Calendar</span></a>
+          <a class="calendar-modal-action" href="{{ categoryFeeds[0].webcalUrl }}" data-category-apple><i class="fa-brands fa-apple" aria-hidden="true"></i><span>Apple Calendar</span></a>
+          <a class="calendar-modal-action" href="{{ categoryFeeds[0].webcalUrl }}" data-category-other><i class="fa-solid fa-globe" aria-hidden="true"></i><span>Otros calendarios</span></a>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+
+    <section class="subscribe-section">
+      <h3 class="subscribe-section-title"><i class="fa-solid fa-rss"></i><span>RSS</span></h3>
+      <p class="subscribe-section-copy">Recibe nuevas publicaciones en tu lector favorito.</p>
+      <div class="subscribe-url-row">
+        <input class="subscribe-url-input" type="text" value="https://eventos.aldeapucela.org/rss.xml" readonly data-copy-source="rss" />
+        <button class="calendar-modal-action calendar-modal-action-primary subscribe-copy-btn" type="button" data-copy-url="rss">Copiar</button>
+      </div>
+      <div class="subscribe-links-grid">
+        <a class="calendar-modal-action" href="https://feedly.com/i/subscription/feed/https%3A%2F%2Feventos.aldeapucela.org%2Frss.xml" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-feedly" aria-hidden="true"></i><span>Feedly</span></a>
+        <a class="calendar-modal-action" href="https://www.inoreader.com/?add_feed=https%3A%2F%2Feventos.aldeapucela.org%2Frss.xml" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-rss" aria-hidden="true"></i><span>Inoreader</span></a>
+        <a class="calendar-modal-action" href="https://theoldreader.com/feeds/subscribe?url=https%3A%2F%2Feventos.aldeapucela.org%2Frss.xml" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-rss" aria-hidden="true"></i><span>The Old Reader</span></a>
+      </div>
+    </section>
+  </aside>
+</div>

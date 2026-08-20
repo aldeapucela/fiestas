@@ -1,0 +1,99 @@
+{% extends "layout.njk" %}
+
+{% block extraHead %}
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+{% endblock %}
+
+{% block header %}
+{% include "partials/topbar.njk" %}
+{% endblock %}
+
+{% block body %}
+<main class="page-shell fiestas-page py-5 sm:py-8 lg:py-10">
+  <script>
+    window.__FIESTAS_2026_EVENTS__ = {{ fiestasEventsJson | safe }};
+  </script>
+  <section class="home-layout fiestas-layout">
+    <section class="fiestas-hero">
+      <div>
+        <p class="fiestas-kicker">Agenda 2026</p>
+        <h1 class="fiestas-title">Fiestas Valladolid 2026</h1>
+        <p class="fiestas-intro">Programa consultable por día, hora, tipo de actividad y ubicación.</p>
+      </div>
+    </section>
+
+    <section class="fiestas-controls" aria-label="Filtros de fiestas">
+      <div class="fiestas-view-tabs" role="tablist" aria-label="Vista">
+        <button class="fiestas-view-tab is-active" type="button" data-view-tab="agenda" aria-pressed="true">
+          <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
+          <span>Agenda</span>
+        </button>
+        <button class="fiestas-view-tab" type="button" data-view-tab="map" aria-pressed="false">
+          <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+          <span>Mapa</span>
+        </button>
+      </div>
+
+      <nav class="fiestas-date-strip" data-fiestas-dates aria-label="Selector de fechas">
+        {% for day in fiestasDates %}
+        <button class="fiestas-date-chip{% if loop.first %} is-active{% endif %}" type="button" data-date="{{ day.date }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">
+          <span>{{ day.shortLabel }}</span>
+          <strong>{{ day.date | replace("2026-09-", "") | replace("2026-08-", "") }}</strong>
+        </button>
+        {% endfor %}
+      </nav>
+
+      <button class="fiestas-mobile-filter-toggle" type="button" data-fiestas-mobile-filters-toggle aria-expanded="false">
+        <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+        <span>Filtros</span>
+      </button>
+
+      <div class="fiestas-filter-row" data-fiestas-filter-panel>
+        <label class="fiestas-search">
+          <span class="sr-only">Buscar eventos de fiestas</span>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" data-fiestas-search placeholder="Buscar artista, evento o lugar" />
+        </label>
+        <div class="fiestas-type-menu">
+          <button class="fiestas-type-menu-button" type="button" data-fiestas-types-toggle aria-expanded="false">
+            <i class="fa-solid fa-filter" aria-hidden="true"></i>
+            <span data-fiestas-types-label>Todos los tipos</span>
+          </button>
+          <div class="fiestas-type-list" data-fiestas-types hidden>
+            {% for type in fiestasTypes %}
+            <label class="fiestas-type-option">
+              <input type="checkbox" value="{{ type }}" data-type="{{ type }}" />
+              <span>{{ type }}</span>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+        <button class="fiestas-favorite-filter" type="button" data-fiestas-favorites-filter aria-pressed="false">
+          <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+          <span>Favoritos</span>
+        </button>
+        <button class="fiestas-clear-filter" type="button" data-fiestas-clear-filters hidden>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          <span>Limpiar</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="fiestas-agenda" data-fiestas-agenda aria-label="Agenda de fiestas"></section>
+
+    <section class="fiestas-map-view" data-fiestas-map-view hidden>
+      <div class="fiestas-map-canvas" data-fiestas-map></div>
+      <div class="fiestas-map-empty" data-fiestas-map-empty hidden></div>
+    </section>
+  </section>
+</main>
+
+{% include "partials/menu-drawer.njk" %}
+{% include "partials/subscribe-modal.njk" %}
+{% include "partials/location-modal.njk" %}
+{% endblock %}

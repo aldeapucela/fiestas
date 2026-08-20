@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="{{ meta.description or 'Agenda de las Fiestas de Valladolid 2026' }}" />
+    <meta name="theme-color" content="#6f59a8" />
+    <title>{{ title or 'Fiestas Valladolid 2026 | Aldea Pucela' }}</title>
+    <link rel="icon" type="image/png" href="https://eventos.aldeapucela.org/assets/favicon.png" />
+    <link rel="apple-touch-icon" href="https://eventos.aldeapucela.org/assets/favicon.png" />
+    <link rel="alternate" type="application/rss+xml" title="Aldea Pucela Eventos RSS" href="https://eventos.aldeapucela.org/rss.xml" />
+    <link rel="alternate" type="text/calendar" title="Aldea Pucela Eventos Calendario" href="https://eventos.aldeapucela.org/calendar.ics" />
+    {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}" />{% endif %}
+    {% if robotsMeta %}<meta name="robots" content="{{ robotsMeta }}" />{% endif %}
+    {% if social %}
+    <meta property="og:type" content="{{ social.type or 'website' }}" />
+    <meta property="og:title" content="{{ social.title or title or 'Fiestas Valladolid 2026 | Aldea Pucela' }}" />
+    <meta property="og:description" content="{{ social.description or meta.description or 'Agenda de las Fiestas de Valladolid 2026' }}" />
+    {% if social.image %}<meta property="og:image" content="{{ social.image }}" />{% endif %}
+    {% if social.url %}<meta property="og:url" content="{{ social.url }}" />{% endif %}
+    <meta name="twitter:card" content="{{ social.card or 'summary_large_image' }}" />
+    <meta name="twitter:title" content="{{ social.title or title or 'Fiestas Valladolid 2026 | Aldea Pucela' }}" />
+    <meta name="twitter:description" content="{{ social.description or meta.description or 'Agenda de las Fiestas de Valladolid 2026' }}" />
+    {% if social.image %}<meta name="twitter:image" content="{{ social.image }}" />{% endif %}
+    {% endif %}
+    {% block extraHead %}{% endblock %}
+    <script>
+      (function () {
+        const key = 'aldeapucela_theme';
+        try {
+          const saved = window.localStorage.getItem(key);
+          const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+          const theme = saved === 'dark' || saved === 'light' ? saved : (prefersDark ? 'dark' : 'light');
+          if (theme === 'dark') document.documentElement.classList.add('dark');
+          document.documentElement.style.colorScheme = theme;
+        } catch (_) {}
+      }());
+    </script>
+    <link rel="stylesheet" href="/assets/css/{{ pageCss }}?v={{ assetVersion }}" />
+    <link rel="stylesheet" href="https://eventos.aldeapucela.org/assets/fontawesome/css/all.min.css" />
+  </head>
+  <body class="{% block bodyClass %}{% endblock %}">
+    {% block header %}{% endblock %}
+    {% block body %}{% endblock %}
+    <footer class="site-footer{% block footerClass %}{% endblock %}">
+      <div class="site-footer-inner">
+        <p class="site-footer-copy">
+          Licencia contenido
+          <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.es" target="_blank" rel="noopener noreferrer">CC BY-SA 4.0</a>
+          · Código
+          <a href="https://github.com/aldeapucela/eventos" target="_blank" rel="noopener noreferrer">GitHub</a>
+          · Proyecto creado por vecinos voluntarios de
+          <a href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer">Aldea Pucela</a>
+        </p>
+      </div>
+    </footer>
+    <script src="https://eventos.aldeapucela.org/assets/js/matomo.js?v={{ assetVersion }}"></script>
+    <script type="module" src="/assets/js/{{ pageJs }}?v={{ assetVersion }}" defer></script>
+    {% block extraScripts %}{% endblock %}
+  </body>
+</html>
