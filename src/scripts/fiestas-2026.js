@@ -270,7 +270,6 @@ function eventCard(event) {
       <span class="fiestas-event-meta">${escapeHtml([event.location, event.zone].filter(Boolean).join(' · ') || 'Lugar por confirmar')}</span>
       <span class="fiestas-event-badges">
         <span class="fiestas-badge">${escapeHtml(event.type || 'Evento')}</span>
-        ${event.ticket?.required ? '<span class="fiestas-badge">Entrada</span>' : ''}
         ${event.coordinates ? '<span class="fiestas-badge">Mapa</span>' : ''}
       </span>
     </span>
