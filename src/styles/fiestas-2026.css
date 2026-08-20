@@ -179,7 +179,7 @@
     position: absolute;
     top: calc(100% + 0.45rem);
     right: 0;
-    z-index: 30;
+    z-index: 120;
     display: grid;
     width: min(18rem, calc(100vw - 2rem));
     max-height: 22rem;
@@ -354,6 +354,7 @@
 
   .fiestas-map-view {
     position: relative;
+    z-index: 1;
     min-height: 28rem;
     border-radius: 0.5rem;
     overflow: hidden;
@@ -362,6 +363,12 @@
 
   .fiestas-map-canvas {
     min-height: 28rem;
+  }
+
+  .fiestas-map-canvas .leaflet-pane,
+  .fiestas-map-canvas .leaflet-top,
+  .fiestas-map-canvas .leaflet-bottom {
+    z-index: 1;
   }
 
   .fiestas-map-empty,

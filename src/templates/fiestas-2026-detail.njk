@@ -47,7 +47,7 @@
       <p>{{ event.summary or event.description or 'Sin descripción ampliada.' }}</p>
     </section>
 
-    {% if event.ticket %}
+    {% if event.ticket and (event.ticket.required or event.ticket.url) %}
     <section class="fiestas-detail-card">
       <h2>Entradas</h2>
       <p><strong>{{ event.ticket.label or 'Información no indicada' }}</strong></p>
