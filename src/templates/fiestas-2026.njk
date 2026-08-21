@@ -162,7 +162,31 @@
 
     <section class="fiestas-map-view" data-fiestas-map-view hidden>
       <div class="fiestas-map-canvas" data-fiestas-map></div>
+      <div class="fiestas-map-topbar" aria-label="Controles del mapa">
+        <button class="fiestas-map-control" type="button" data-fiestas-map-center>
+          <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
+          <span>Valladolid</span>
+        </button>
+        <button class="fiestas-map-control" type="button" data-fiestas-map-locate>
+          <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
+          <span data-fiestas-location-label>Activar ubicación</span>
+        </button>
+      </div>
       <div class="fiestas-map-empty" data-fiestas-map-empty hidden></div>
+      <section class="fiestas-map-sheet is-collapsed" data-fiestas-map-sheet aria-label="Actividades del mapa">
+        <button class="fiestas-map-sheet-handle" type="button" data-fiestas-map-sheet-toggle aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <strong data-fiestas-map-sheet-title>Actividades del día</strong>
+          <small data-fiestas-map-sheet-count>0 actividades</small>
+        </button>
+        <div class="fiestas-map-location-note" data-fiestas-location-note hidden></div>
+        <div class="fiestas-map-sheet-preview" data-fiestas-map-sheet-preview></div>
+        <div class="fiestas-map-sheet-list" data-fiestas-map-sheet-list></div>
+      </section>
+      <button class="fiestas-map-sheet-tab" type="button" data-fiestas-map-sheet-open hidden>
+        <i class="fa-solid fa-list" aria-hidden="true"></i>
+        <span data-fiestas-map-sheet-tab-label>Ver actividades</span>
+      </button>
     </section>
 
     <a class="fiestas-plan-card" href="/favoritos/">
