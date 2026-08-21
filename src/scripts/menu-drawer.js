@@ -2,23 +2,61 @@
 // poder usarse en páginas que no cargan home.js, como la ficha de evento.
 // ponytail: home.js todavía tiene su propia copia inline de esta lógica;
 // migrarla a este módulo cuando se toque.
+const MORE_HINT_SEEN_KEY = 'fiestasPucela:more-hint-seen';
+
+function wasMoreHintSeen() {
+  try {
+    return window.localStorage.getItem(MORE_HINT_SEEN_KEY) === 'true';
+  } catch (_) {
+    return false;
+  }
+}
+
+function markMoreHintSeen() {
+  try {
+    window.localStorage.setItem(MORE_HINT_SEEN_KEY, 'true');
+  } catch (_) {}
+}
+
+function updateMoreHint() {
+  const seen = wasMoreHintSeen();
+  document.querySelectorAll('[data-menu-hint-dot]').forEach((dot) => {
+    dot.hidden = seen;
+  });
+}
+
 export function setupMenuDrawer() {
   const drawer = document.querySelector('[data-menu-drawer]');
   if (!drawer) return;
 
+  const syncState = (isOpen) => {
+    drawer.setAttribute('aria-hidden', String(!isOpen));
+    document.querySelectorAll('[data-menu-open]').forEach((trigger) => {
+      trigger.setAttribute('aria-expanded', String(isOpen));
+      trigger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+    });
+  };
   const open = () => {
     drawer.hidden = false;
     document.body.style.overflow = 'hidden';
+    markMoreHintSeen();
+    updateMoreHint();
+    syncState(true);
+    window.dispatchEvent(new CustomEvent('fiestas:menu-opened'));
   };
   const close = () => {
     drawer.hidden = true;
     document.body.style.overflow = '';
+    syncState(false);
   };
+  const toggle = () => (drawer.hidden ? open() : close());
 
+  updateMoreHint();
+  syncState(!drawer.hidden);
   document.addEventListener('click', (event) => {
     if (event.target.closest('[data-menu-open]')) {
       event.preventDefault();
-      open();
+      toggle();
       return;
     }
     if (event.target.closest('[data-menu-close]')) {

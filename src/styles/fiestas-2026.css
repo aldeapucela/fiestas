@@ -846,6 +846,26 @@
     font-size: 1.35rem;
   }
 
+  .fiestas-hint-dot {
+    position: absolute;
+    width: 0.48rem;
+    height: 0.48rem;
+    border: 2px solid #fff;
+    border-radius: 999px;
+    background: #d95f78;
+    content: '';
+    pointer-events: none;
+  }
+
+  .fiestas-hint-dot[hidden] {
+    display: none !important;
+  }
+
+  .fiestas-bottom-link > .fiestas-hint-dot {
+    top: 0.42rem;
+    right: 30%;
+  }
+
   .fiestas-bottom-icon {
     width: 1.45rem;
     height: 1.45rem;
@@ -1388,6 +1408,7 @@
   }
 
   .menu-drawer-pwa-action {
+    position: relative;
     display: flex;
     min-height: 4.1rem;
     align-items: center;
@@ -1398,9 +1419,15 @@
     display: none !important;
   }
 
-  .menu-drawer-pwa-action span {
+  .menu-drawer-pwa-copy {
     display: grid;
     gap: 0.15rem;
+  }
+
+  .menu-drawer-pwa-action > .fiestas-hint-dot {
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
   }
 
   .menu-drawer-pwa-action strong {

@@ -7,6 +7,7 @@ import {
 } from './analytics.js';
 
 const DISMISSED_KEY = 'fiestasPucela:pwa-install-dismissed';
+const INSTALL_HINT_SEEN_KEY = 'fiestasPucela:pwa-install-hint-seen';
 let deferredInstallPrompt = null;
 let installAvailableTracked = false;
 let previousFocus = null;
@@ -35,6 +36,41 @@ function setDismissed() {
   } catch (_) {}
 }
 
+function wasInstallHintSeen() {
+  try {
+    return window.localStorage.getItem(INSTALL_HINT_SEEN_KEY) === 'true';
+  } catch (_) {
+    return false;
+  }
+}
+
+function markInstallHintSeen() {
+  try {
+    window.localStorage.setItem(INSTALL_HINT_SEEN_KEY, 'true');
+  } catch (_) {}
+}
+
+function updateInstallHint() {
+  const seen = wasInstallHintSeen();
+  const installButton = document.querySelector('[data-pwa-install]');
+  const iosButton = document.querySelector('[data-pwa-ios-help-open]');
+  const installDot = document.querySelector('[data-pwa-install-hint]');
+  const iosDot = document.querySelector('[data-pwa-ios-hint]');
+  if (installDot) installDot.hidden = seen || !installButton || installButton.hidden;
+  if (iosDot) iosDot.hidden = seen || !iosButton || iosButton.hidden;
+}
+
+function markInstallHintWhenMenuIsViewed() {
+  if (wasInstallHintSeen()) return;
+  const installButton = document.querySelector('[data-pwa-install]');
+  const iosButton = document.querySelector('[data-pwa-ios-help-open]');
+  if ((!installButton || installButton.hidden) && (!iosButton || iosButton.hidden)) return;
+  window.setTimeout(() => {
+    markInstallHintSeen();
+    updateInstallHint();
+  }, 500);
+}
+
 function updateInstallActions() {
   const installButton = document.querySelector('[data-pwa-install]');
   const iosButton = document.querySelector('[data-pwa-ios-help-open]');
@@ -43,6 +79,7 @@ function updateInstallActions() {
 
   if (installButton) installButton.hidden = !canInstall;
   if (iosButton) iosButton.hidden = !canShowIosHelp;
+  updateInstallHint();
 }
 
 function closeMenu() {
@@ -120,11 +157,15 @@ export function setupPwa() {
   document.addEventListener('click', (event) => {
     if (event.target.closest('[data-pwa-install]')) {
       event.preventDefault();
+      markInstallHintSeen();
+      updateInstallHint();
       promptInstall();
       return;
     }
     if (event.target.closest('[data-pwa-ios-help-open]')) {
       event.preventDefault();
+      markInstallHintSeen();
+      updateInstallHint();
       openIosHelp();
       return;
     }
@@ -133,6 +174,8 @@ export function setupPwa() {
       closeIosHelp();
     }
   });
+
+  window.addEventListener('fiestas:menu-opened', markInstallHintWhenMenuIsViewed);
 
   window.addEventListener('keydown', (event) => {
     const dialog = getIosDialog();
