@@ -59,6 +59,8 @@ El comando hace un build inicial y sirve `dist/` en:
 http://127.0.0.1:8002/
 ```
 
+Durante el desarrollo, `npm run dev` observa `src/`, reconstruye la salida cuando cambia un archivo y sirve HTML, CSS y JavaScript con `Cache-Control: no-store`. Así los cambios se pueden comprobar inmediatamente en el navegador integrado.
+
 Si necesitas otro puerto:
 
 ```bash
@@ -435,3 +437,13 @@ Antes de publicar:
 7. Prueba guardar y compartir desde una ficha.
 8. Revisa el drawer y los filtros en movil.
 9. Cambia entre tema claro y oscuro.
+
+## Politica De Cache De CSS Y JavaScript
+
+El build genera versiones de contenido para los recursos propios:
+
+- `cssVersion` es un hash corto del CSS compilado.
+- `jsVersion` es un hash corto de los modulos JavaScript copiados a `dist/`.
+- Las plantillas publican esos valores como `?v=<version>` en cada referencia local.
+
+Por tanto, cualquier cambio efectivo en CSS cambia la URL del CSS y cualquier cambio efectivo en JavaScript cambia la URL del modulo. El navegador puede mantener una version anterior, pero nunca la confundira con la nueva. No hay que editar manualmente nombres de archivos ni incrementar un numero a mano: basta con ejecutar `npm run build` (o usar `npm run dev`).

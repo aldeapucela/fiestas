@@ -9,6 +9,8 @@
 />
 {% endblock %}
 
+{% block footerClass %} site-footer--fiestas{% endblock %}
+
 {% block body %}
 <main class="fiestas-app" data-fiestas-app>
   <script>
@@ -16,15 +18,32 @@
   </script>
   <section class="fiestas-screen">
     <header class="fiestas-hero" aria-labelledby="fiestas-title">
-      <a class="fiestas-brand" href="https://eventos.aldeapucela.org/" aria-label="Aldea Pucela Eventos">
-        <img src="https://aldeapucela.org/img/logo-web.jpg" alt="" />
-        <span>Aldea Pucela</span>
-      </a>
+      <img class="fiestas-hero-fireworks" src="/assets/hero-fireworks.png" alt="" aria-hidden="true" />
+      <div class="fiestas-hero-top">
+        <a class="fiestas-brand" href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer" aria-label="Fiestas 2026 de Aldea Pucela">
+          <img src="/assets/favicon.png" alt="" />
+          <span id="fiestas-title" class="fiestas-title">Fiestas 2026</span>
+        </a>
+        <button class="fiestas-search-toggle" type="button" data-fiestas-search-toggle aria-expanded="false" aria-controls="fiestas-search-panel" aria-label="Abrir buscador">
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        </button>
+      </div>
       <div class="fiestas-hero-copy">
-        <h1 id="fiestas-title" class="fiestas-title">Fiestas 2026</h1>
+        <p class="fiestas-hero-credit">
+          <span>Creado por</span>
+          <a class="fiestas-hero-subtitle" href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer">Aldea Pucela</a>
+        </p>
         <p class="fiestas-intro">Valladolid · 4-13 septiembre</p>
       </div>
     </header>
+
+    <section class="fiestas-search-panel" id="fiestas-search-panel" data-fiestas-search-panel hidden>
+      <label class="fiestas-search">
+        <span class="sr-only">Buscar actividades</span>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" data-fiestas-search placeholder="Buscar actividad, lugar o barrio" autocomplete="off" />
+      </label>
+    </section>
 
     <section class="fiestas-date-panel" aria-label="Selector de fechas">
       <nav class="fiestas-date-strip" data-fiestas-dates>
@@ -43,72 +62,98 @@
       </nav>
     </section>
 
-    <section class="fiestas-controls" aria-label="Búsqueda y filtros">
-      <label class="fiestas-search">
-        <span class="sr-only">Buscar actividades</span>
-        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        <input type="search" data-fiestas-search placeholder="Buscar actividad, lugar o barrio" autocomplete="off" />
-      </label>
-
+    <section class="fiestas-controls" aria-label="Filtros">
       <div class="fiestas-filter-row" data-fiestas-filter-panel>
         <div class="fiestas-type-menu">
           <button class="fiestas-type-menu-button" type="button" data-fiestas-areas-toggle aria-expanded="false">
-            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-            <span data-fiestas-areas-label>Todas las zonas</span>
+            <svg class="fiestas-filter-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+              <circle cx="12" cy="10" r="2.35" />
+            </svg>
+            <span data-fiestas-areas-label>Zonas</span>
           </button>
           <div class="fiestas-type-list" data-fiestas-areas hidden>
-            {% for area in fiestasAreas %}
-            <label class="fiestas-type-option">
-              <input type="checkbox" value="{{ area }}" data-area="{{ area }}" />
-              <span>{{ area }}</span>
-            </label>
-            {% endfor %}
+            <div class="fiestas-type-options">
+              {% for area in fiestasAreas %}
+              <label class="fiestas-type-option">
+                <input type="checkbox" value="{{ area }}" data-area="{{ area }}" />
+                <span>{{ area }}</span>
+              </label>
+              {% endfor %}
+            </div>
+            <button class="fiestas-filter-accept" type="button" data-fiestas-filter-accept>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span>Aceptar</span>
+            </button>
           </div>
         </div>
         <div class="fiestas-type-menu">
           <button class="fiestas-type-menu-button" type="button" data-fiestas-types-toggle aria-expanded="false">
-            <i class="fa-solid fa-shapes" aria-hidden="true"></i>
+            <svg class="fiestas-filter-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="m20 13.5-6.5 6.5a2 2 0 0 1-2.83 0L4 13.33V4h9.33L20 10.67a2 2 0 0 1 0 2.83Z" />
+              <circle cx="8.5" cy="8.5" r="1.1" />
+            </svg>
             <span data-fiestas-types-label>Tipos</span>
           </button>
           <div class="fiestas-type-list" data-fiestas-types hidden>
-            {% for type in fiestasTypes %}
-            <label class="fiestas-type-option">
-              <input type="checkbox" value="{{ type }}" data-type="{{ type }}" />
-              <span>{{ type }}</span>
-            </label>
-            {% endfor %}
+            <div class="fiestas-type-options">
+              {% for type in fiestasTypes %}
+              <label class="fiestas-type-option">
+                <input type="checkbox" value="{{ type }}" data-type="{{ type }}" />
+                <span>{{ type }}</span>
+              </label>
+              {% endfor %}
+            </div>
+            <button class="fiestas-filter-accept" type="button" data-fiestas-filter-accept>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span>Aceptar</span>
+            </button>
           </div>
         </div>
         <div class="fiestas-type-menu">
           <button class="fiestas-type-menu-button" type="button" data-fiestas-tickets-toggle aria-expanded="false">
-            <i class="fa-solid fa-ticket" aria-hidden="true"></i>
-            <span data-fiestas-tickets-label>Entradas</span>
+            <svg class="fiestas-filter-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M4 7.5A2.5 2.5 0 0 0 4 12a2.5 2.5 0 0 0 0 4.5V18h16v-1.5a2.5 2.5 0 0 0 0-4.5 2.5 2.5 0 0 0 0-4.5V6H4v1.5Z" />
+              <path d="M12 6v12" stroke-dasharray="1.5 1.5" />
+            </svg>
+            <span data-fiestas-tickets-label>Precio</span>
           </button>
           <div class="fiestas-type-list" data-fiestas-tickets hidden>
-            <label class="fiestas-type-option">
-              <input type="checkbox" value="free" data-ticket-kind="free" />
-              <span>Gratis</span>
-            </label>
-            <label class="fiestas-type-option">
-              <input type="checkbox" value="paid" data-ticket-kind="paid" />
-              <span>Pago</span>
-            </label>
-            <label class="fiestas-type-option">
-              <input type="checkbox" value="registration" data-ticket-kind="registration" />
-              <span>Inscripción</span>
-            </label>
+            <div class="fiestas-type-options">
+              <label class="fiestas-type-option">
+                <input type="checkbox" value="free" data-ticket-kind="free" />
+                <span>Gratis</span>
+              </label>
+              <label class="fiestas-type-option">
+                <input type="checkbox" value="paid" data-ticket-kind="paid" />
+                <span>Pago</span>
+              </label>
+              <label class="fiestas-type-option">
+                <input type="checkbox" value="registration" data-ticket-kind="registration" />
+                <span>Inscripción</span>
+              </label>
+            </div>
+            <button class="fiestas-filter-accept" type="button" data-fiestas-filter-accept>
+              <i class="fa-solid fa-check" aria-hidden="true"></i>
+              <span>Aceptar</span>
+            </button>
           </div>
         </div>
-        <button class="fiestas-clear-filter" type="button" data-fiestas-clear-filters hidden>
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-          <span>Limpiar</span>
-        </button>
         <button class="fiestas-favorite-filter" type="button" data-fiestas-favorites-filter aria-pressed="false">
           <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
-          <span>Guardados</span>
+          <span class="sr-only">Guardados</span>
         </button>
       </div>
-      <div class="fiestas-active-filters" data-fiestas-active-filters aria-live="polite"></div>
+      <div class="fiestas-filter-summary" data-fiestas-filter-summary hidden>
+        <div class="fiestas-filter-summary-row">
+          <div class="fiestas-active-filters" data-fiestas-active-filters></div>
+          <button class="fiestas-clear-filter" type="button" data-fiestas-clear-filters hidden>
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            <span>Limpiar filtros</span>
+          </button>
+        </div>
+        <span class="fiestas-filter-count" data-fiestas-filter-count aria-live="polite"></span>
+      </div>
     </section>
 
     <section class="fiestas-agenda" data-fiestas-agenda aria-label="Agenda de fiestas">
@@ -121,7 +166,7 @@
     </section>
 
     <a class="fiestas-plan-card" href="/favoritos/">
-      <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+      <img class="fiestas-plan-icon" src="/assets/plan-confetti.png" alt="" aria-hidden="true" />
       <span>
         <strong>Vive las Fiestas</strong>
         <small>Guarda actividades y prepara tu plan.</small>
@@ -136,7 +181,10 @@
       <span>Agenda</span>
     </button>
     <button class="fiestas-bottom-link" type="button" data-view-tab="map" aria-pressed="false">
-      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+      <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+        <circle cx="12" cy="10" r="2.35" />
+      </svg>
       <span>Mapa</span>
     </button>
     <a class="fiestas-bottom-link" href="/favoritos/">
