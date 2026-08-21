@@ -11,12 +11,10 @@
     "locations:audit": "node scripts/enrich-event-locations.mjs --dry-run",
     "screenshots": "node scripts/capture-readme-screenshots.mjs"
   },
-  "dependencies": {
-    "nunjucks": "^3.2.4"
-  },
   "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.3",
+    "autoprefixer": "^10.5.4",
+    "nunjucks": "^3.2.4",
+    "postcss": "^8.5.26",
     "tailwindcss": "^3.4.17"
   }
 }
