@@ -18,7 +18,9 @@ El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe 
 - `/assets/js/fiestas-2026.js`: comportamiento de agenda, mapa, filtros y favoritos.
 - `/assets/js/plans-page.js`, `/assets/js/plan-storage.js`, `/assets/js/plan-export.js`: planes locales, selector de actividades, importación y exportación.
 - `/assets/js/analytics.js`: eventos de uso compatibles con Matomo, sin nombres personalizados de planes.
-- `/assets/js/menu-drawer.js`, `/assets/js/subscribe.js`, `/assets/js/theme.js`: modulos compartidos de UI.
+- `/assets/js/menu-drawer.js`, `/assets/js/pwa.js`, `/assets/js/subscribe.js`, `/assets/js/theme.js`: modulos compartidos de UI, instalación y service worker.
+- `/assets/manifest.webmanifest`, `/sw.js` y `/offline.html`: identidad PWA, caché versionada y fallback sin conexión.
+- `/assets/social/`: imagen de portada y miniaturas por categoría basadas en la ilustración real de Valladolid de Aldea Pucela.
 - `/sitemap.xml` y `/robots.txt`: metadatos de rastreo.
 
 ## Estructura
@@ -88,7 +90,25 @@ El build:
 7. Conserva los metadatos de procedencia de `coordinates` cuando existen.
 8. Renderiza la agenda y una pagina de detalle por evento con Nunjucks.
 9. Renderiza `/plan/` y `/plan/importar/`.
-10. Escribe `sitemap.xml` y `robots.txt`.
+10. Genera el manifest, el service worker versionado y la página offline.
+11. Escribe `sitemap.xml` y `robots.txt`.
+
+## PWA Y COMPARTICIÓN SOCIAL
+
+La aplicación se puede instalar desde navegadores compatibles. La acción aparece de forma secundaria en `Más` cuando el navegador ofrece `beforeinstallprompt`. En Safari para iPhone/iPad, el mismo menú abre instrucciones para usar `Compartir` y `Añadir a pantalla de inicio`.
+
+El service worker usa red primero para las páginas HTML y caché como fallback. Solo guarda recursos propios y páginas visitadas; no guarda favoritos, planes ni datos personales en la caché. Los favoritos y planes continúan siendo datos locales de `localStorage`.
+
+La portada y las fichas incluyen Open Graph y Twitter/X. La portada usa la imagen del Puente Mayor publicada por Aldea Pucela; las fichas usan una variante local por categoría con el icono de la categoría en la composición visible.
+
+Para validar la salida localmente:
+
+```bash
+npm run build
+node --check dist/sw.js
+```
+
+Después abre Chrome DevTools → Application para revisar Manifest y Service Workers. En Chrome Android comprueba que la aplicación ofrece instalación desde el menú del navegador. En Safari iPhone usa `Compartir → Añadir a pantalla de inicio` y verifica que la ruta abre en modo app web.
 
 Para limpiar solo la salida generada:
 
@@ -135,7 +155,7 @@ Campos principales:
 - `performances`, `organizers`, `collaborators`: listas opcionales para la ficha.
 - `coordinates`: coordenadas para mapa. Como minimo `{ "lat": number, "lng": number }`.
 - `ticket`: informacion opcional de entradas.
-- `image`: imagen editorial opcional para la ficha. Si no existe, la ficha no pinta imagen superior.
+- `image`: imagen editorial opcional para la ficha. Si no existe, el build usa la miniatura local de su categoría basada en Valladolid.
 
 Ejemplo minimo:
 

@@ -4,24 +4,40 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="{{ meta.description or 'Agenda de las Fiestas de Valladolid 2026' }}" />
-    <meta name="theme-color" content="#6f59a8" />
+    <meta name="theme-color" content="#0f9f8d" />
+    <meta name="application-name" content="Fiestas Valladolid" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Fiestas Valladolid" />
     <title>{{ title or 'Fiestas Valladolid 2026 | Aldea Pucela' }}</title>
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
-    <link rel="apple-touch-icon" href="/assets/favicon.png" />
+    <link rel="manifest" href="/assets/manifest.webmanifest" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title="Aldea Pucela Eventos RSS" href="https://eventos.aldeapucela.org/rss.xml" />
     <link rel="alternate" type="text/calendar" title="Aldea Pucela Eventos Calendario" href="https://eventos.aldeapucela.org/calendar.ics" />
     {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}" />{% endif %}
     {% if robotsMeta %}<meta name="robots" content="{{ robotsMeta }}" />{% endif %}
     {% if social %}
     <meta property="og:type" content="{{ social.type or 'website' }}" />
+    <meta property="og:site_name" content="Aldea Pucela" />
     <meta property="og:title" content="{{ social.title or title or 'Fiestas Valladolid 2026 | Aldea Pucela' }}" />
     <meta property="og:description" content="{{ social.description or meta.description or 'Agenda de las Fiestas de Valladolid 2026' }}" />
-    {% if social.image %}<meta property="og:image" content="{{ social.image }}" />{% endif %}
+    {% if social.image %}
+    <meta property="og:image" content="{{ social.image }}" />
+    <meta property="og:image:secure_url" content="{{ social.image }}" />
+    <meta property="og:image:width" content="{{ social.imageWidth or 1200 }}" />
+    <meta property="og:image:height" content="{{ social.imageHeight or 630 }}" />
+    <meta property="og:image:type" content="{{ social.imageType or 'image/jpeg' }}" />
+    <meta property="og:image:alt" content="{{ social.imageAlt or social.title or title }}" />
+    {% endif %}
     {% if social.url %}<meta property="og:url" content="{{ social.url }}" />{% endif %}
     <meta name="twitter:card" content="{{ social.card or 'summary_large_image' }}" />
     <meta name="twitter:title" content="{{ social.title or title or 'Fiestas Valladolid 2026 | Aldea Pucela' }}" />
     <meta name="twitter:description" content="{{ social.description or meta.description or 'Agenda de las Fiestas de Valladolid 2026' }}" />
-    {% if social.image %}<meta name="twitter:image" content="{{ social.image }}" />{% endif %}
+    {% if social.image %}
+    <meta name="twitter:image" content="{{ social.image }}" />
+    <meta name="twitter:image:alt" content="{{ social.imageAlt or social.title or title }}" />
+    {% endif %}
     {% endif %}
     {% block extraHead %}{% endblock %}
     <script>

@@ -42,11 +42,16 @@
       </div>
     </header>
 
-    {% if event.image %}
     <figure class="fiestas-detail-hero">
-      <img src="{{ event.image }}" alt="" loading="eager" />
+      <img src="{{ event.image or event.socialImagePath }}" alt="{{ event.socialImageAlt }}" loading="eager" />
+      <figcaption class="fiestas-detail-hero-caption">
+        <span class="fiestas-detail-hero-category">
+          <i class="fa-solid {{ event.icon }}" aria-hidden="true"></i>
+          {{ event.type }}
+        </span>
+        <strong>{{ event.title }}</strong>
+      </figcaption>
     </figure>
-    {% endif %}
 
     <section class="fiestas-detail-title-block" aria-labelledby="event-title">
       <h1 id="event-title" class="fiestas-detail-title">{{ event.title }}</h1>

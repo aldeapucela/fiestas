@@ -72,11 +72,28 @@ async function compileCss(cssVersionSeed) {
 async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  for (const file of ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'fiestas-2026.js', 'menu-drawer.js', 'subscribe.js', 'theme.js']) {
+  for (const file of ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'fiestas-2026.js', 'menu-drawer.js', 'pwa.js', 'subscribe.js', 'theme.js']) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
     jsVersionSeed.push(['assets/js/' + file, content]);
   }
+}
+
+async function loadPwaFiles() {
+  const pwaDir = path.join(root, 'src', 'pwa');
+  return {
+    serviceWorker: await fs.readFile(path.join(pwaDir, 'sw.js'), 'utf8'),
+    offlinePage: await fs.readFile(path.join(pwaDir, 'offline.html'), 'utf8')
+  };
+}
+
+async function writePwaFiles({ serviceWorker, offlinePage }, { appVersion, cssVersion, jsVersion }) {
+  const renderedServiceWorker = serviceWorker
+    .replaceAll('__APP_VERSION__', appVersion)
+    .replaceAll('__CSS_VERSION__', cssVersion)
+    .replaceAll('__JS_VERSION__', jsVersion);
+  await writeFile('sw.js', renderedServiceWorker);
+  await writeFile('offline.html', offlinePage);
 }
 
 async function copyStaticAssets(assetVersionSeed) {
@@ -147,6 +164,8 @@ async function loadEvents() {
     .map((event) => ({
       ...event,
       icon: fiestas2026Icon(event.type),
+      socialImagePath: '/assets/social/categories/' + slugify(event.type) + '.jpg',
+      socialImageAlt: 'Ilustración de Valladolid para la categoría ' + event.type,
       urlPath: '/e/' + event.id + '/',
       canonicalUrl: publicBaseUrl + '/e/' + event.id + '/',
       shareText: shareText(event),
@@ -322,13 +341,22 @@ async function build() {
   await compileCss(cssVersionSeed);
   await copyJs(jsVersionSeed);
   await copyStaticAssets(assetVersionSeed);
+  const pwaFiles = await loadPwaFiles();
   const cssVersion = contentVersion(cssVersionSeed);
   const jsVersion = contentVersion(jsVersionSeed);
   const assetVersion = contentVersion([...cssVersionSeed, ...jsVersionSeed, ...assetVersionSeed]);
+  const appVersion = contentVersion([
+    ...cssVersionSeed,
+    ...jsVersionSeed,
+    ...assetVersionSeed,
+    ['pwa/sw.js', pwaFiles.serviceWorker],
+    ['pwa/offline.html', pwaFiles.offlinePage]
+  ]);
+  await writePwaFiles(pwaFiles, { appVersion, cssVersion, jsVersion });
   const versions = { assetVersion, cssVersion, jsVersion };
   const events = await loadEvents();
   const summary = buildSummary(events);
-  const socialImage = publicBaseUrl + '/assets/social-preview.jpg';
+  const socialImage = publicBaseUrl + '/assets/social/fiestas-valladolid-2026.jpg';
 
   const homeContext = {
     ...pageContext(versions),
@@ -338,7 +366,8 @@ async function build() {
     social: {
       type: 'website', title: 'Fiestas Valladolid 2026 | Aldea Pucela',
       description: 'Agenda de las Fiestas de Valladolid 2026 por días, horarios, espacios, categorías y mapa.',
-      image: socialImage, url: publicBaseUrl + '/'
+      image: socialImage, imageAlt: 'Fiestas de Valladolid 2026 junto al Puente Mayor',
+      imageWidth: 1200, imageHeight: 630, imageType: 'image/jpeg', url: publicBaseUrl + '/'
     },
     fiestasEvents: events,
     fiestasEventsJson: JSON.stringify(events),
@@ -391,7 +420,9 @@ async function build() {
       social: {
         type: 'article', title: event.title + ' | Fiestas Valladolid 2026',
         description: event.summary || event.description || event.dateLabel,
-        image: socialImage, url: publicBaseUrl + event.urlPath
+        image: publicBaseUrl + event.socialImagePath,
+        imageAlt: event.socialImageAlt,
+        imageWidth: 1200, imageHeight: 630, imageType: 'image/jpeg', url: publicBaseUrl + event.urlPath
       },
       event,
       hideDrawerFilters: true
