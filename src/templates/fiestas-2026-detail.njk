@@ -26,7 +26,7 @@
   <article class="fiestas-detail">
     <header class="fiestas-detail-top">
       <button class="fiestas-detail-top-button" type="button" data-fiestas-back aria-label="Volver a la agenda">
-        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <i class="fiestas-detail-back-icon fa-solid fa-arrow-left" aria-hidden="true"></i>
       </button>
       <p>Detalle de actividad</p>
       <div class="fiestas-detail-top-actions">
@@ -34,7 +34,7 @@
           <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
         </button>
         <button class="fiestas-detail-top-button" type="button" data-fiestas-share aria-label="Compartir actividad">
-          <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+          <i class="fiestas-detail-share-icon fa-solid fa-share-nodes" aria-hidden="true"></i>
         </button>
       </div>
     </header>
@@ -49,10 +49,14 @@
       <h1 id="event-title" class="fiestas-detail-title">{{ event.title }}</h1>
       <div class="fiestas-detail-tags" aria-label="Categorías">
         {% for tag in event.tags %}
-        <span class="fiestas-detail-type">
+        <a
+          class="fiestas-detail-type"
+          href="/?date=all&amp;type={{ tag | urlencode }}"
+          aria-label="Ver todas las actividades de {{ tag }}"
+        >
           <i class="fa-solid {% if loop.first %}{{ event.icon }}{% else %}fa-tag{% endif %}" aria-hidden="true"></i>
           {{ tag }}
-        </span>
+        </a>
         {% endfor %}
       </div>
     </section>
@@ -64,14 +68,8 @@
       </div>
       <div class="fiestas-detail-fact">
         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-        <span>{{ event.location or 'Lugar por confirmar' }}</span>
+        <span>{{ event.location or event.zone or event.neighborhood or 'Lugar por confirmar' }}</span>
       </div>
-      {% if event.zone or event.neighborhood %}
-      <div class="fiestas-detail-fact">
-        <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
-        <span>{{ event.zone or event.neighborhood }}{% if event.neighborhood and event.zone and event.neighborhood != event.zone %} · {{ event.neighborhood }}{% endif %}</span>
-      </div>
-      {% endif %}
       <div class="fiestas-detail-fact">
         <i class="fa-solid fa-ticket" aria-hidden="true"></i>
         <span>
@@ -111,18 +109,27 @@
           <span>Ver en el mapa</span>
         </a>
         {% if event.directionsUrl %}
-        <a class="fiestas-detail-map-action" href="{{ event.directionsUrl }}" target="_blank" rel="noopener noreferrer">
-          <i class="fa-solid fa-route" aria-hidden="true"></i>
+        <a
+          class="fiestas-detail-map-action"
+          href="{{ event.directionsUrl }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-fiestas-directions
+          data-lat="{{ event.coordinates.lat }}"
+          data-lng="{{ event.coordinates.lng }}"
+          data-title="{{ event.location or event.title }}"
+        >
+          <i class="fiestas-detail-directions-icon fa-solid fa-route" aria-hidden="true"></i>
           <span>Cómo llegar</span>
         </a>
         {% elif event.osmUrl %}
         <a class="fiestas-detail-map-action" href="{{ event.osmUrl }}" target="_blank" rel="noopener noreferrer">
-          <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
+          <i class="fiestas-detail-directions-icon fa-solid fa-location-arrow" aria-hidden="true"></i>
           <span>Abrir ubicación</span>
         </a>
         {% else %}
         <span class="fiestas-detail-map-action fiestas-detail-map-action-disabled">
-          <i class="fa-solid fa-route" aria-hidden="true"></i>
+          <i class="fiestas-detail-directions-icon fa-solid fa-route" aria-hidden="true"></i>
           <span>Cómo llegar</span>
         </span>
         {% endif %}
@@ -159,6 +166,32 @@
       {% endif %}
     </section>
     {% endif %}
+
+    <aside class="fiestas-community-card" aria-labelledby="fiestas-community-title">
+      <div class="fiestas-community-heading">
+        <img class="fiestas-community-logo" src="/assets/favicon.png" alt="" />
+        <div>
+          <p class="fiestas-community-kicker">ALDEA PUCELA</p>
+          <h2 id="fiestas-community-title">Las fiestas también se viven en comunidad</h2>
+        </div>
+      </div>
+      <p class="fiestas-community-copy">Recibe lo importante cada semana, comenta los planes con otros vecinos y sigue los avisos de las fiestas.</p>
+      <a class="fiestas-community-primary" href="https://aldeapucela.org/boletin/" target="_blank" rel="noopener noreferrer">
+        <span>Recibir el boletín semanal</span>
+        <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+      </a>
+      <div class="fiestas-community-secondary">
+        <a href="https://t.me/c/AldeaPucela/59137" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+          <span>Unirme al chat de fiestas</span>
+        </a>
+        <span class="is-pending" aria-disabled="true">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          <span>Canal de WhatsApp</span>
+          <small>Próximamente</small>
+        </span>
+      </div>
+    </aside>
 
     <div class="fiestas-detail-feedback" data-fiestas-detail-feedback aria-live="polite" hidden></div>
     <div class="fiestas-detail-copy-fallback" data-fiestas-share-fallback hidden>
