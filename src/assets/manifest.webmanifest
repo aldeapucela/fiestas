@@ -1,0 +1,52 @@
+{
+  "name": "Fiestas Valladolid 2026",
+  "short_name": "Fiestas Valladolid",
+  "description": "Agenda de actividades de las Fiestas de Valladolid 2026.",
+  "lang": "es",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "display": "standalone",
+  "background_color": "#fbfaf8",
+  "theme_color": "#0f9f8d",
+  "icons": [
+    {
+      "src": "/assets/icons/fiestas-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/icons/fiestas-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Agenda",
+      "short_name": "Agenda",
+      "url": "/",
+      "icons": [
+        {
+          "src": "/assets/icons/fiestas-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Mapa",
+      "short_name": "Mapa",
+      "url": "/mapa/",
+      "icons": [
+        {
+          "src": "/assets/icons/fiestas-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ]
+}

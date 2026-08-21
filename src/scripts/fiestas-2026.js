@@ -1,4 +1,5 @@
 import { setupMenuDrawer } from './menu-drawer.js';
+import { setupPwa } from './pwa.js';
 import { setupSubscribe } from './subscribe.js';
 import { initTheme } from './theme.js';
 import {
@@ -108,6 +109,7 @@ init();
 
 function init() {
   initTheme();
+  setupPwa();
   setupMenuDrawer();
   setupSubscribe();
   setupPlanSelector();

@@ -42,11 +42,9 @@
       </div>
     </header>
 
-    {% if event.image %}
     <figure class="fiestas-detail-hero">
-      <img src="{{ event.image }}" alt="" loading="eager" />
+      <img src="{{ event.image or event.socialImagePath }}" alt="{{ event.socialImageAlt }}" loading="eager" />
     </figure>
-    {% endif %}
 
     <section class="fiestas-detail-title-block" aria-labelledby="event-title">
       <h1 id="event-title" class="fiestas-detail-title">{{ event.title }}</h1>

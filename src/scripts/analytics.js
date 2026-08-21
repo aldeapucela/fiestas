@@ -8,7 +8,8 @@ const categoryActions = {
   activity: new Set(['view_detail', 'save', 'remove_save', 'share', 'open_directions', 'open_external_link', 'open_tickets']),
   agenda: new Set(['select_date', 'select_all_dates', 'apply_filter', 'search', 'open_activity']),
   map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
-  plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'export', 'import', 'share', 'import_error'])
+  plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'export', 'import', 'share', 'import_error']),
+  pwa: new Set(['install_available', 'install_accepted', 'install_cancelled', 'ios_help_opened', 'sw_registration_error'])
 };
 
 const filterNames = new Set(['type', 'area', 'ticket']);
@@ -122,6 +123,26 @@ export function trackPlanShared(planType = 'file') {
 
 export function trackPlanImportError(errorType = 'invalid') {
   return pushEvent('plan', 'import_error', errorType);
+}
+
+export function trackPwaInstallAvailable() {
+  return pushEvent('pwa', 'install_available', 'install');
+}
+
+export function trackPwaInstallAccepted() {
+  return pushEvent('pwa', 'install_accepted', 'install');
+}
+
+export function trackPwaInstallCancelled() {
+  return pushEvent('pwa', 'install_cancelled', 'install');
+}
+
+export function trackPwaIosHelpOpened() {
+  return pushEvent('pwa', 'ios_help_opened', 'ios');
+}
+
+export function trackPwaServiceWorkerError() {
+  return pushEvent('pwa', 'sw_registration_error', 'register');
 }
 
 function getConfig() {

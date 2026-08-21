@@ -45,15 +45,64 @@
     padding-top: 0.35rem;
   }
 
-  .fiestas-hero-fireworks {
+  .fiestas-hero-visual {
+    position: relative;
+    min-width: 0;
+    min-height: clamp(13rem, 54vw, 20rem);
+    margin: 0;
+    overflow: hidden;
+    border: 1px solid rgba(115, 87, 159, 0.18);
+    border-radius: 1.4rem;
+    background: #eeeaf1;
+    box-shadow: 0 1rem 2rem rgba(70, 50, 85, 0.1);
+  }
+
+  .fiestas-hero-visual::after {
     position: absolute;
-    top: -0.55rem;
-    right: 0.3rem;
-    width: min(10rem, 39vw);
-    height: auto;
-    opacity: 0.5;
+    inset: 0;
+    content: '';
+    background: linear-gradient(90deg, rgba(37, 29, 53, 0.73), rgba(37, 29, 53, 0.08) 70%);
     pointer-events: none;
-    z-index: 0;
+  }
+
+  .fiestas-hero-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    min-height: inherit;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .fiestas-hero-visual figcaption {
+    position: absolute;
+    bottom: 1.35rem;
+    left: 1.35rem;
+    z-index: 1;
+    display: grid;
+    max-width: min(90%, 22rem);
+    gap: 0.16rem;
+    color: #fff;
+  }
+
+  .fiestas-hero-visual figcaption span,
+  .fiestas-hero-visual figcaption small {
+    color: #c7f1ea;
+    font-size: clamp(0.8rem, 2.4vw, 0.95rem);
+    font-weight: 750;
+  }
+
+  .fiestas-hero-visual figcaption strong {
+    font-size: clamp(1.8rem, 7.2vw, 3.4rem);
+    font-weight: 900;
+    letter-spacing: -0.045em;
+    line-height: 0.96;
+  }
+
+  .fiestas-hero-visual figcaption small {
+    margin-top: 0.35rem;
+    color: #fff;
+    font-size: clamp(0.74rem, 2.4vw, 0.9rem);
   }
 
   .fiestas-hero-top {
@@ -1372,15 +1421,113 @@
     margin: 0;
     overflow: hidden;
     border-radius: 1.25rem;
-    background: #102444;
+    background: #fbfaf8;
     box-shadow: 0 1rem 2rem rgba(26, 33, 45, 0.11);
   }
 
   .fiestas-detail-hero img {
     display: block;
     width: 100%;
-    aspect-ratio: 16 / 9;
+    aspect-ratio: 1;
     object-fit: cover;
+  }
+
+  .fiestas-detail-hero {
+    position: relative;
+  }
+
+  .menu-drawer-pwa-action {
+    display: flex;
+    min-height: 4.1rem;
+    align-items: center;
+    text-align: left;
+  }
+
+  .menu-drawer-pwa-action[hidden] {
+    display: none !important;
+  }
+
+  .menu-drawer-pwa-action span {
+    display: grid;
+    gap: 0.15rem;
+  }
+
+  .menu-drawer-pwa-action strong {
+    color: inherit;
+    font-size: 0.96rem;
+  }
+
+  .menu-drawer-pwa-action small {
+    color: #8b94a4;
+    font-size: 0.76rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .install-app-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 260;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+
+  .install-app-modal[hidden] {
+    display: none;
+  }
+
+  .install-app-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(18, 20, 23, 0.54);
+  }
+
+  .install-app-modal-panel {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 34rem);
+    max-height: min(42rem, calc(100dvh - 2rem));
+    overflow: auto;
+    border: 1px solid #e3e6ec;
+    border-radius: 1.35rem;
+    background: #fff;
+    padding: 1.15rem;
+    box-shadow: 0 1.5rem 4rem rgba(20, 25, 35, 0.27);
+  }
+
+  .install-app-modal-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .install-app-modal-header h2 {
+    margin: 0.25rem 0 0;
+    color: #1d222d;
+    font-size: clamp(1.3rem, 5.5vw, 1.7rem);
+    line-height: 1.1;
+  }
+
+  .install-app-modal-close {
+    display: inline-flex;
+    width: 2.5rem;
+    height: 2.5rem;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e3e6ec;
+    border-radius: 999px;
+    background: #fff;
+    color: #667085;
+  }
+
+  .install-app-modal-copy {
+    margin: 0.95rem 0 0;
+    color: #667085;
+    line-height: 1.55;
   }
 
   .fiestas-detail-title-block {
@@ -1880,6 +2027,39 @@
 
   html.dark .fiestas-detail-copy h2 {
     color: #aeb7c5;
+  }
+
+  html.dark .fiestas-hero-visual {
+    border-color: #313743;
+    background: #1a1f28;
+  }
+
+  html.dark .fiestas-hero-visual img {
+    filter: brightness(0.78) saturate(0.88);
+  }
+
+  html.dark .menu-drawer-pwa-action small {
+    color: #aab3c1;
+  }
+
+  html.dark .install-app-modal-panel {
+    border-color: #313743;
+    background: #1a1f28;
+  }
+
+  html.dark .install-app-modal-header h2,
+  html.dark .install-app-modal-panel .install-app-step {
+    color: #f8fafc;
+  }
+
+  html.dark .install-app-modal-copy {
+    color: #d4d9e2;
+  }
+
+  html.dark .install-app-modal-close {
+    border-color: #313743;
+    background: #121417;
+    color: #d4d9e2;
   }
 
   html.dark .fiestas-date-card,
