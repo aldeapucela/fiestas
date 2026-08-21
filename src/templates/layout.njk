@@ -25,6 +25,9 @@
     {% endif %}
     {% block extraHead %}{% endblock %}
     <script>
+      window.__FIESTAS_ANALYTICS_CONFIG__ = {{ analyticsConfig | dump | safe }};
+    </script>
+    <script>
       (function () {
         const key = 'aldeapucela_theme';
         try {
@@ -54,7 +57,6 @@
         </p>
       </div>
     </footer>
-    <script src="https://eventos.aldeapucela.org/assets/js/matomo.js?v={{ assetVersion }}"></script>
     <script type="module" src="/assets/js/{{ pageJs }}?v={{ assetVersion }}" defer></script>
     {% block extraScripts %}{% endblock %}
   </body>

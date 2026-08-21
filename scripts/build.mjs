@@ -11,10 +11,21 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const dist = path.join(root, 'dist');
 const publicBaseUrl = 'https://fiestas.aldeapucela.org';
+const analyticsConfig = {
+  enabled: parseBooleanEnv(process.env.FIESTAS_ANALYTICS_ENABLED),
+  trackerUrl: process.env.FIESTAS_MATOMO_URL || 'https://stats.aldeapucela.org/',
+  siteId: process.env.FIESTAS_MATOMO_SITE_ID || '29'
+};
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
 env.addFilter('dump', (value) => JSON.stringify(value));
+
+function parseBooleanEnv(value) {
+  if (value === 'true') return true;
+  if (value === 'false') return false;
+  return null;
+}
 
 function slugify(value = '') {
   return String(value).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'evento';
@@ -53,7 +64,7 @@ async function compileCss(assetVersionSeed) {
 async function copyJs(assetVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  for (const file of ['fiestas-2026.js', 'menu-drawer.js', 'subscribe.js', 'theme.js']) {
+  for (const file of ['analytics.js', 'fiestas-2026.js', 'menu-drawer.js', 'subscribe.js', 'theme.js']) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
     assetVersionSeed.push(content);
@@ -284,7 +295,8 @@ function pageContext(assetVersion) {
     pageJs: 'fiestas-2026.js',
     assetVersion,
     categoryFeeds: [],
-    publicBaseUrl
+    publicBaseUrl,
+    analyticsConfig
   };
 }
 
