@@ -105,11 +105,10 @@ async function promptInstall() {
   if (!deferredInstallPrompt) return;
   const promptEvent = deferredInstallPrompt;
   closeMenu();
-  deferredInstallPrompt = null;
-  updateInstallActions();
 
   await promptEvent.prompt();
   const choice = await promptEvent.userChoice;
+  deferredInstallPrompt = null;
   if (choice.outcome === 'accepted') {
     trackPwaInstallAccepted();
   } else {

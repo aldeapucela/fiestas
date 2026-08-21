@@ -862,8 +862,10 @@
   }
 
   .fiestas-bottom-link > .fiestas-hint-dot {
-    top: 0.42rem;
-    right: 30%;
+    top: 0.2rem;
+    right: 25%;
+    width: 0.68rem;
+    height: 0.68rem;
   }
 
   .fiestas-bottom-icon {
