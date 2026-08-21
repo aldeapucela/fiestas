@@ -35,8 +35,9 @@
         <h1 class="fiestas-detail-title">{{ event.title }}</h1>
         <div class="fiestas-detail-meta">
           <span><i class="fa-regular fa-calendar" aria-hidden="true"></i>{{ event.dateLabel }}</span>
-          <span><i class="fa-regular fa-clock" aria-hidden="true"></i>{{ event.startTime }}{% if event.endTime %} - {{ event.endTime }}{% endif %}</span>
+          <span><i class="fa-regular fa-clock" aria-hidden="true"></i>{% if event.startTime %}{{ event.startTime }}{% if event.endTime %} - {{ event.endTime }}{% endif %}{% else %}Hora por confirmar{% endif %}</span>
           {% if event.location %}<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ event.location }}</span>{% endif %}
+          {% if event.neighborhood %}<span><i class="fa-solid fa-map-pin" aria-hidden="true"></i>{{ event.neighborhood }}</span>{% endif %}
           {% if event.zone and event.zone != event.location %}<span><i class="fa-solid fa-map-pin" aria-hidden="true"></i>{{ event.zone }}</span>{% endif %}
         </div>
       </div>

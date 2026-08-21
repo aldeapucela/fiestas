@@ -62,7 +62,17 @@ async function copyJs(assetVersionSeed) {
 
 async function loadEvents() {
   const raw = await fs.readFile(path.join(root, 'src', 'data', 'fiestas-2026', 'events.json'), 'utf8');
-  return JSON.parse(raw).map((event) => ({
+  return JSON.parse(raw).map((event) => {
+    const ticket = event.ticket && typeof event.ticket === 'object'
+      ? {
+          required: Boolean(event.ticket.required),
+          status: String(event.ticket.status || ''),
+          label: String(event.ticket.label || ''),
+          url: event.ticket.url ? String(event.ticket.url) : '',
+          note: String(event.ticket.note || '')
+        }
+      : null;
+    return {
     id: String(event.id || ''),
     date: String(event.date || ''),
     dateLabel: String(event.dateLabel || event.date || ''),
@@ -71,6 +81,7 @@ async function loadEvents() {
     title: String(event.title || 'Evento'),
     location: String(event.location || ''),
     zone: String(event.zone || ''),
+    neighborhood: inferNeighborhood(event),
     type: String(event.type || 'Evento'),
     tags: normalizeTags(event.tags, event.type),
     description: String(event.description || ''),
@@ -81,17 +92,11 @@ async function loadEvents() {
     coordinates: event.coordinates && Number.isFinite(event.coordinates.lat) && Number.isFinite(event.coordinates.lng)
       ? { lat: event.coordinates.lat, lng: event.coordinates.lng }
       : null,
-    ticket: event.ticket && typeof event.ticket === 'object'
-      ? {
-          required: Boolean(event.ticket.required),
-          status: String(event.ticket.status || ''),
-          label: String(event.ticket.label || ''),
-          url: event.ticket.url ? String(event.ticket.url) : '',
-          note: String(event.ticket.note || '')
-        }
-      : null
-  })).filter((event) => event.id && event.date && event.startTime)
-    .sort((a, b) => a.date.localeCompare(b.date) || a.startTime.localeCompare(b.startTime) || a.title.localeCompare(b.title, 'es'))
+    ticket,
+    ticketKind: ticketKind(ticket)
+    };
+  }).filter((event) => event.id && event.date)
+    .sort((a, b) => a.date.localeCompare(b.date) || sortMinutes(a.startTime) - sortMinutes(b.startTime) || a.title.localeCompare(b.title, 'es'))
     .map((event) => ({
       ...event,
       icon: fiestas2026Icon(event.type),
@@ -105,10 +110,84 @@ function buildSummary(events) {
   const dates = [...new Map(events.map((event) => [event.date, {
     date: event.date,
     label: event.dateLabel,
-    shortLabel: event.dateLabel.split(' ').slice(0, 2).join(' ')
+    shortLabel: event.dateLabel.split(' ').slice(0, 2).join(' '),
+    weekday: event.dateLabel.split(' ')[0]?.replace(',', '').slice(0, 3).toUpperCase() || '',
+    dayNumber: event.date.split('-')[2]?.replace(/^0/, '') || '',
+    monthLabel: monthLabel(event.date)
   }])).values()];
   const types = [...new Set(events.flatMap((event) => event.tags?.length ? event.tags : [event.type || 'Evento']))].sort((a, b) => a.localeCompare(b, 'es'));
-  return { dates, types };
+  const areas = [...new Set(events.map((event) => event.neighborhood || event.zone).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'es'));
+  return { dates, types, areas };
+}
+
+function monthLabel(date = '') {
+  const months = { '01': 'ENE', '02': 'FEB', '03': 'MAR', '04': 'ABR', '05': 'MAY', '06': 'JUN', '07': 'JUL', '08': 'AGO', '09': 'SEP', '10': 'OCT', '11': 'NOV', '12': 'DIC' };
+  return months[String(date).split('-')[1]] || '';
+}
+
+function sortMinutes(time = '') {
+  if (!time) return 99 * 60;
+  const [hour, minute] = String(time).split(':').map(Number);
+  if (!Number.isFinite(hour) || !Number.isFinite(minute)) return 99 * 60;
+  const minutes = hour * 60 + minute;
+  return hour < 6 ? minutes + 24 * 60 : minutes;
+}
+
+function ticketKind(ticket) {
+  if (!ticket?.required) return 'free';
+  const text = normalizeForMatch([ticket.label, ticket.url, ticket.note].filter(Boolean).join(' '));
+  if (text.includes('espaciosjovenesvalladolid')) return 'registration';
+  return 'paid';
+}
+
+function inferNeighborhood(event = {}) {
+  const text = normalizeForMatch([event.zone, event.location].filter(Boolean).join(' '));
+  const rules = [
+    ['Arturo Eyries', /\barturo eyries\b/],
+    ['Barrio España', /\bbarrio espana\b/],
+    ['Belén - Pilarica', /\b(belen|pilarica|santos pilarica|padre ventura)\b/],
+    ['Buenos Aires', /\bbuenos aires\b/],
+    ['Caño Argales', /\b(estacion de ariza|cano hondo)\b/],
+    ['Centro', /\b(plaza mayor|fuente dorada|portugalete|recoletos|campo grande|academia de caballeria|san lorenzo|catedral|san pablo|san nicolas|plaza espana|plaza del salvador|plaza de la universidad|pza de la universidad|calderon|zorrilla|carrion|cervantes|sala borja|museo patio herreriano|constitucion|teresa gil|regalado|rinconada|marques del duero|cantarranas|chancilleria|cadenas de san gregorio|casa del sol|plaza poniente|plaza del rosarillo|dos de mayo|marquesina|zona centro|hospital)\b/],
+    ['Circular - Vadillos - San Juan', /\b(circular|vadillos|san juan|batallas|santa lucia|calle gerona)\b/],
+    ['Covaresa', /\bcovaresa\b/],
+    ['Delicias', /\b(delicias|parque de la paz|arca real|bombberos|bomberos|gutierrez semprun|beneficencia|camino cementerio|cno cementerio)\b/],
+    ['El Peral - Santa Ana - Las Villas', /\b(el peral|santa ana|las villas|villaverde de medina|villavaquerin)\b/],
+    ['Fuente Berrocal', /\bfuente berrocal\b/],
+    ['Girón', /\bgiron\b/],
+    ['Huerta del Rey', /\b(huerta del rey|cupula del milenio|milenio|feria de valladolid|auditorio feria|pabellon feria|calle de las mieses|mieses|pio del rio hortega|rastrojo|cebada)\b/],
+    ['La Overuela', /\boveruela\b/],
+    ['La Rubia', /\b(la rubia|lava|farola|4 de marzo|espanta)\b/],
+    ['La Victoria', /\b(la victoria|puente jardin|fuente el sol|obregon|san sebastian)\b/],
+    ['Las Flores', /\b(las flores|plaza mayo)\b/],
+    ['Moreras', /\bmoreras\b/],
+    ['Nuevo Hospital', /\b(nuevo hospital|pifano)\b/],
+    ['Pajarillos - San Isidro', /\b(pajarillos|san isidro|biologo jose antonio valverde|ciguena)\b/],
+    ['Parque Alameda', /\b(parque alameda|canada|paula lopez|andres de laorden)\b/],
+    ['Parquesol', /\b(parquesol|marcos fernandez|manuel silvela|enrique cubero|amadeo arias|jose luis bellido|feria de folklore|cardenal marcelo|contiendas)\b/],
+    ['Pinar de Antequera', /\bpinar de antequera\b/],
+    ['Pinar de Jalón', /\bpinar de jalon|everest\b/],
+    ['Plaza de Toros', /\bplaza de toros\b/],
+    ['Puente Duero', /\bpuente duero\b/],
+    ['Puente Colgante', /\bpuente colgante\b/],
+    ['Rondilla', /\b(rondilla|ribera de castilla|cardenal torquemada|alberto fernandez|rio esgueva|encuentro de los pueblos)\b/],
+    ['Valparaíso', /\b(valparaiso|quinto centenario|nuevo mundo)\b/],
+    ['Villa del Prado', /\b(villa del prado|juan pablo ii)\b/],
+    ['Zona Sur', /\b(zona sur|paseo zorrilla|ctra rueda|rueda 64|residencia asistida|caamano|santa marta|juana jugan)\b/],
+    ['Pajarillos - San Isidro', /\b(fernando ferreiro|andres de la orden)\b/],
+    ['Belén - Pilarica', /\b(paseo del cauce|cauce 50)\b/],
+    ['La Rubia', /\balbacete\b/]
+  ];
+  return rules.find(([, pattern]) => pattern.test(text))?.[0] || '';
+}
+
+function normalizeForMatch(value = '') {
+  return String(value)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .trim();
 }
 
 function normalizeTags(tags, type) {
@@ -155,7 +234,8 @@ async function build() {
     fiestasEvents: events,
     fiestasEventsJson: JSON.stringify(events),
     fiestasDates: summary.dates,
-    fiestasTypes: summary.types
+    fiestasTypes: summary.types,
+    fiestasAreas: summary.areas
   }));
 
   for (const event of events) {

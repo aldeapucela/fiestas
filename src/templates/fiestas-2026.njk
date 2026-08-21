@@ -9,60 +9,66 @@
 />
 {% endblock %}
 
-{% block header %}
-{% include "partials/topbar.njk" %}
-{% endblock %}
-
 {% block body %}
-<main class="page-shell fiestas-page py-5 sm:py-8 lg:py-10">
+<main class="fiestas-app" data-fiestas-app>
   <script>
     window.__FIESTAS_2026_EVENTS__ = {{ fiestasEventsJson | safe }};
   </script>
-  <section class="home-layout fiestas-layout">
-    <section class="fiestas-hero">
-      <div>
-        <p class="fiestas-kicker">Agenda 2026</p>
-        <h1 class="fiestas-title">Fiestas Valladolid 2026</h1>
-        <p class="fiestas-intro">Programa consultable por día, hora, tipo de actividad y ubicación.</p>
+  <section class="fiestas-screen">
+    <header class="fiestas-hero" aria-labelledby="fiestas-title">
+      <a class="fiestas-brand" href="https://eventos.aldeapucela.org/" aria-label="Aldea Pucela Eventos">
+        <img src="https://aldeapucela.org/img/logo-web.jpg" alt="" />
+        <span>Aldea Pucela</span>
+      </a>
+      <div class="fiestas-hero-copy">
+        <h1 id="fiestas-title" class="fiestas-title">Fiestas 2026</h1>
+        <p class="fiestas-intro">Valladolid · 4-13 septiembre</p>
       </div>
-    </section>
+    </header>
 
-    <section class="fiestas-controls" aria-label="Filtros de fiestas">
-      <div class="fiestas-view-tabs" role="tablist" aria-label="Vista">
-        <button class="fiestas-view-tab is-active" type="button" data-view-tab="agenda" aria-pressed="true">
-          <i class="fa-solid fa-list-ul" aria-hidden="true"></i>
-          <span>Agenda</span>
+    <section class="fiestas-date-panel" aria-label="Selector de fechas">
+      <nav class="fiestas-date-strip" data-fiestas-dates>
+        <button class="fiestas-date-card" type="button" data-date="all" aria-pressed="false">
+          <span>Todos</span>
+          <strong>Días</strong>
+          <small>4-13 SEP</small>
         </button>
-        <button class="fiestas-view-tab" type="button" data-view-tab="map" aria-pressed="false">
-          <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-          <span>Mapa</span>
-        </button>
-      </div>
-
-      <nav class="fiestas-date-strip" data-fiestas-dates aria-label="Selector de fechas">
         {% for day in fiestasDates %}
-        <button class="fiestas-date-chip{% if loop.first %} is-active{% endif %}" type="button" data-date="{{ day.date }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">
-          <span>{{ day.shortLabel }}</span>
-          <strong>{{ day.date | replace("2026-09-", "") | replace("2026-08-", "") }}</strong>
+        <button class="fiestas-date-card{% if loop.first %} is-active{% endif %}" type="button" data-date="{{ day.date }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">
+          <span>{{ day.weekday }}</span>
+          <strong>{{ day.dayNumber }}</strong>
+          <small>{{ day.monthLabel }}</small>
         </button>
         {% endfor %}
       </nav>
+    </section>
 
-      <button class="fiestas-mobile-filter-toggle" type="button" data-fiestas-mobile-filters-toggle aria-expanded="false">
-        <i class="fa-solid fa-sliders" aria-hidden="true"></i>
-        <span>Filtros</span>
-      </button>
+    <section class="fiestas-controls" aria-label="Búsqueda y filtros">
+      <label class="fiestas-search">
+        <span class="sr-only">Buscar actividades</span>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" data-fiestas-search placeholder="Buscar actividad, lugar o barrio" autocomplete="off" />
+      </label>
 
       <div class="fiestas-filter-row" data-fiestas-filter-panel>
-        <label class="fiestas-search">
-          <span class="sr-only">Buscar eventos de fiestas</span>
-          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-          <input type="search" data-fiestas-search placeholder="Buscar artista, evento o lugar" />
-        </label>
+        <div class="fiestas-type-menu">
+          <button class="fiestas-type-menu-button" type="button" data-fiestas-areas-toggle aria-expanded="false">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span data-fiestas-areas-label>Todas las zonas</span>
+          </button>
+          <div class="fiestas-type-list" data-fiestas-areas hidden>
+            {% for area in fiestasAreas %}
+            <label class="fiestas-type-option">
+              <input type="checkbox" value="{{ area }}" data-area="{{ area }}" />
+              <span>{{ area }}</span>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
         <div class="fiestas-type-menu">
           <button class="fiestas-type-menu-button" type="button" data-fiestas-types-toggle aria-expanded="false">
-            <i class="fa-solid fa-filter" aria-hidden="true"></i>
-            <span data-fiestas-types-label>Todos los tipos</span>
+            <i class="fa-solid fa-shapes" aria-hidden="true"></i>
+            <span data-fiestas-types-label>Tipos</span>
           </button>
           <div class="fiestas-type-list" data-fiestas-types hidden>
             {% for type in fiestasTypes %}
@@ -73,24 +79,75 @@
             {% endfor %}
           </div>
         </div>
-        <button class="fiestas-favorite-filter" type="button" data-fiestas-favorites-filter aria-pressed="false">
-          <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
-          <span>Favoritos</span>
-        </button>
+        <div class="fiestas-type-menu">
+          <button class="fiestas-type-menu-button" type="button" data-fiestas-tickets-toggle aria-expanded="false">
+            <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+            <span data-fiestas-tickets-label>Entradas</span>
+          </button>
+          <div class="fiestas-type-list" data-fiestas-tickets hidden>
+            <label class="fiestas-type-option">
+              <input type="checkbox" value="free" data-ticket-kind="free" />
+              <span>Gratis</span>
+            </label>
+            <label class="fiestas-type-option">
+              <input type="checkbox" value="paid" data-ticket-kind="paid" />
+              <span>Pago</span>
+            </label>
+            <label class="fiestas-type-option">
+              <input type="checkbox" value="registration" data-ticket-kind="registration" />
+              <span>Inscripción</span>
+            </label>
+          </div>
+        </div>
         <button class="fiestas-clear-filter" type="button" data-fiestas-clear-filters hidden>
           <i class="fa-solid fa-xmark" aria-hidden="true"></i>
           <span>Limpiar</span>
         </button>
+        <button class="fiestas-favorite-filter" type="button" data-fiestas-favorites-filter aria-pressed="false">
+          <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+          <span>Guardados</span>
+        </button>
       </div>
+      <div class="fiestas-active-filters" data-fiestas-active-filters aria-live="polite"></div>
     </section>
 
-    <section class="fiestas-agenda" data-fiestas-agenda aria-label="Agenda de fiestas"></section>
+    <section class="fiestas-agenda" data-fiestas-agenda aria-label="Agenda de fiestas">
+      <div class="fiestas-empty">Cargando agenda...</div>
+    </section>
 
     <section class="fiestas-map-view" data-fiestas-map-view hidden>
       <div class="fiestas-map-canvas" data-fiestas-map></div>
       <div class="fiestas-map-empty" data-fiestas-map-empty hidden></div>
     </section>
+
+    <a class="fiestas-plan-card" href="/favoritos/">
+      <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+      <span>
+        <strong>Vive las Fiestas</strong>
+        <small>Guarda actividades y prepara tu plan.</small>
+      </span>
+      <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+    </a>
   </section>
+
+  <nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+    <button class="fiestas-bottom-link is-active" type="button" data-view-tab="agenda" aria-pressed="true">
+      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+      <span>Agenda</span>
+    </button>
+    <button class="fiestas-bottom-link" type="button" data-view-tab="map" aria-pressed="false">
+      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+      <span>Mapa</span>
+    </button>
+    <a class="fiestas-bottom-link" href="/favoritos/">
+      <i class="fa-regular fa-heart" aria-hidden="true"></i>
+      <span>Mi plan</span>
+    </a>
+    <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
+      <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+      <span>Más</span>
+    </button>
+  </nav>
 </main>
 
 {% include "partials/menu-drawer.njk" %}

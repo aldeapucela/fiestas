@@ -2,20 +2,30 @@ import { setupMenuDrawer } from './menu-drawer.js';
 import { setupSubscribe } from './subscribe.js';
 import { initTheme } from './theme.js';
 
+const storageKey = 'fiestasPucela:favorites';
+const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
+const cartoLayers = {
+  light: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+  dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+};
+let leafletPromise = null;
+
 const state = {
   view: 'agenda',
   events: [],
   dates: [],
   types: [],
+  areas: [],
   selectedDate: null,
   selectedTypes: new Set(),
+  selectedAreas: new Set(),
+  selectedTicketKinds: new Set(),
   search: '',
   onlyFavorites: false,
   favorites: new Set(readFavorites()),
   map: null,
-  markers: null,
-  didInitialScroll: false,
-  scrollFrame: null
+  tileLayer: null,
+  markers: null
 };
 
 const els = {
@@ -24,21 +34,22 @@ const els = {
   mapCanvas: document.querySelector('[data-fiestas-map]'),
   mapEmpty: document.querySelector('[data-fiestas-map-empty]'),
   dateStrip: document.querySelector('[data-fiestas-dates]'),
-  typeStrip: document.querySelector('[data-fiestas-types]'),
+  typeList: document.querySelector('[data-fiestas-types]'),
   typeToggle: document.querySelector('[data-fiestas-types-toggle]'),
   typeLabel: document.querySelector('[data-fiestas-types-label]'),
+  areaList: document.querySelector('[data-fiestas-areas]'),
+  areaToggle: document.querySelector('[data-fiestas-areas-toggle]'),
+  areaLabel: document.querySelector('[data-fiestas-areas-label]'),
+  ticketList: document.querySelector('[data-fiestas-tickets]'),
+  ticketToggle: document.querySelector('[data-fiestas-tickets-toggle]'),
+  ticketLabel: document.querySelector('[data-fiestas-tickets-label]'),
   search: document.querySelector('[data-fiestas-search]'),
-  filterPanel: document.querySelector('[data-fiestas-filter-panel]'),
-  mobileFilterToggle: document.querySelector('[data-fiestas-mobile-filters-toggle]'),
+  activeFilters: document.querySelector('[data-fiestas-active-filters]'),
   favoriteFilter: document.querySelector('[data-fiestas-favorites-filter]'),
   clearFilters: document.querySelector('[data-fiestas-clear-filters]'),
   viewTabs: [...document.querySelectorAll('[data-view-tab]')],
   detailMap: document.querySelector('[data-fiestas-detail-map]')
 };
-
-const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
-const storageKey = 'fiestasPucela:favorites';
-let leafletPromise = null;
 
 init();
 
@@ -51,209 +62,227 @@ function init() {
     initDetailMap();
     return;
   }
-  if (!els.agenda) return;
-  state.events = normalizeEvents(window.__FIESTAS_2026_EVENTS__ || []);
-  state.dates = getDates(state.events);
-  state.types = [...new Set(state.events.flatMap((event) => event.tags?.length ? event.tags : [event.type || 'Evento']))].sort((a, b) => collator.compare(a, b));
-  state.selectedDate = getCurrentCandidate(state.events)?.date || state.dates[0]?.date || null;
 
-  bindControls();
-  renderDateButtons();
-  renderTypeButtons();
-  render();
+  if (!els.agenda) return;
+
+  try {
+    state.events = normalizeEvents(window.__FIESTAS_2026_EVENTS__ || []);
+    state.dates = getDates(state.events);
+    state.types = getTypes(state.events);
+    state.areas = getAreas(state.events);
+    state.selectedDate = getInitialDate(state.dates);
+    bindControls();
+    renderControlLists();
+    render();
+  } catch (error) {
+    console.error(error);
+    els.agenda.replaceChildren(emptyState('No se pudo cargar la agenda. Recarga la página para intentarlo de nuevo.', true));
+  }
 }
 
 function bindControls() {
   els.search?.addEventListener('input', (event) => {
     state.search = normalizeText(event.target.value.trim());
-    state.didInitialScroll = false;
     render();
   });
 
+  els.dateStrip?.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-date]');
+    if (!button) return;
+    state.selectedDate = button.dataset.date || 'all';
+    render({ scrollToAgenda: true });
+  });
+
+  els.typeList?.addEventListener('change', (event) => {
+    const input = event.target.closest('input[data-type]');
+    if (!input) return;
+    toggleSetValue(state.selectedTypes, input.dataset.type || input.value || 'Evento', input.checked);
+    render();
+  });
+
+  els.areaList?.addEventListener('change', (event) => {
+    const input = event.target.closest('input[data-area]');
+    if (!input) return;
+    toggleSetValue(state.selectedAreas, input.dataset.area || input.value, input.checked);
+    render();
+  });
+
+  els.ticketList?.addEventListener('change', (event) => {
+    const input = event.target.closest('input[data-ticket-kind]');
+    if (!input) return;
+    toggleSetValue(state.selectedTicketKinds, input.dataset.ticketKind || input.value, input.checked);
+    render();
+  });
+
+  els.areaToggle?.addEventListener('click', () => setMenuOpen('area', els.areaToggle.getAttribute('aria-expanded') !== 'true'));
+  els.typeToggle?.addEventListener('click', () => setMenuOpen('type', els.typeToggle.getAttribute('aria-expanded') !== 'true'));
+  els.ticketToggle?.addEventListener('click', () => setMenuOpen('ticket', els.ticketToggle.getAttribute('aria-expanded') !== 'true'));
+
   els.favoriteFilter?.addEventListener('click', () => {
     state.onlyFavorites = !state.onlyFavorites;
-    state.didInitialScroll = false;
     render();
   });
 
   els.clearFilters?.addEventListener('click', () => {
     state.search = '';
     state.selectedTypes.clear();
+    state.selectedAreas.clear();
+    state.selectedTicketKinds.clear();
     state.onlyFavorites = false;
-    state.didInitialScroll = false;
     if (els.search) els.search.value = '';
-    renderTypeButtons();
-    setTypeMenuOpen(false);
-    setMobileFiltersOpen(false);
+    setMenuOpen('type', false);
+    setMenuOpen('area', false);
+    setMenuOpen('ticket', false);
     render();
   });
 
-  els.mobileFilterToggle?.addEventListener('click', () => {
-    const expanded = els.mobileFilterToggle.getAttribute('aria-expanded') === 'true';
-    setMobileFiltersOpen(!expanded);
+  els.activeFilters?.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-remove-filter]');
+    if (!button) return;
+    removeFilter(button.dataset.removeFilter, button.dataset.value || '');
+    render();
   });
 
   els.viewTabs.forEach((button) => {
     button.addEventListener('click', () => {
       state.view = button.dataset.viewTab === 'map' ? 'map' : 'agenda';
-      render({ scrollToView: true });
+      render({ scrollToAgenda: true });
     });
-  });
-
-  els.dateStrip?.addEventListener('click', (event) => {
-    const button = event.target.closest('[data-date]');
-    if (!button) return;
-    state.selectedDate = button.dataset.date;
-    renderDateButtons();
-    if (state.view === 'agenda') {
-      document.getElementById(`fiestas-day-${state.selectedDate}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else {
-      render({ scrollToView: true });
-    }
-  });
-
-  els.typeStrip?.addEventListener('click', (event) => {
-    const input = event.target.closest('input[data-type]');
-    if (!input) return;
-    const type = input.dataset.type || input.value || 'Evento';
-    if (input.checked) state.selectedTypes.add(type);
-    else state.selectedTypes.delete(type);
-    state.didInitialScroll = false;
-    renderTypeButtons();
-    render();
-  });
-
-  els.typeToggle?.addEventListener('click', () => {
-    const expanded = els.typeToggle.getAttribute('aria-expanded') === 'true';
-    setTypeMenuOpen(!expanded);
-  });
-
-  document.addEventListener('click', (event) => {
-    if (!els.typeStrip || !els.typeToggle) return;
-    if (event.target.closest('.fiestas-type-menu')) return;
-    setTypeMenuOpen(false);
   });
 
   els.agenda?.addEventListener('click', (event) => {
     const saveButton = event.target.closest('[data-fiestas-save]');
-    if (saveButton) {
-      toggleFavorite(saveButton.dataset.eventId);
-      return;
-    }
+    if (!saveButton) return;
+    event.preventDefault();
+    event.stopPropagation();
+    toggleFavorite(saveButton.dataset.eventId);
   });
 
-  window.addEventListener('scroll', () => {
-    if (state.view !== 'agenda' || state.scrollFrame) return;
-    state.scrollFrame = window.requestAnimationFrame(() => {
-      state.scrollFrame = null;
-      updateVisibleDate();
-    });
-  }, { passive: true });
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('.fiestas-type-menu')) {
+      setMenuOpen('area', false);
+      setMenuOpen('type', false);
+      setMenuOpen('ticket', false);
+    }
+  });
 }
 
 function normalizeEvents(events) {
-  return events.map((event) => ({
-    ...event,
-    type: event.type || 'Evento',
-    tags: normalizeTags(event.tags, event.type),
-    searchable: normalizeText([
-      event.title,
-      event.location,
-      event.zone,
-      event.type,
-      ...(event.tags || []),
-      event.description,
-      event.summary,
-      event.ticket?.label,
-      event.ticket?.note,
-      event.ticket?.required ? 'entradas compra ticket' : '',
-      ...(event.performances || []),
-      ...(event.organizers || []),
-      ...(event.collaborators || []),
-      event.dateLabel
-    ].filter(Boolean).join(' '))
-  })).sort((a, b) => (
-    a.date.localeCompare(b.date) ||
-    sortMinutes(a.startTime) - sortMinutes(b.startTime) ||
-    collator.compare(a.title, b.title)
-  ));
+  return events.map((event) => {
+    const tags = normalizeTags(event.tags, event.type);
+    const area = event.neighborhood || event.zone || '';
+    const ticketKind = event.ticketKind || inferTicketKind(event.ticket);
+    return {
+      ...event,
+      type: event.type || 'Evento',
+      tags,
+      area,
+      ticketKind,
+      searchable: normalizeText([
+        event.title,
+        event.location,
+        event.zone,
+        event.neighborhood,
+        event.type,
+        ...tags,
+        event.summary,
+        event.description,
+        ...(event.performances || []),
+        ...(event.organizers || []),
+        ...(event.collaborators || []),
+        event.ticket?.label,
+        event.ticket?.note,
+        ticketKindLabel(ticketKind),
+        ticketKind === 'free' ? 'gratis gratuito libre' : '',
+        ticketKind === 'paid' ? 'pago entrada entradas' : '',
+        ticketKind === 'registration' ? 'inscripcion registro apuntarse' : ''
+      ].filter(Boolean).join(' '))
+    };
+  }).sort(compareEvents);
 }
 
 function render(options = {}) {
   const filtered = getFilteredEvents();
   renderShellState(filtered);
+
   if (state.view === 'map') {
     els.agenda.hidden = true;
     els.mapView.hidden = false;
-    const mapEvents = filtered.filter((event) => !state.selectedDate || event.date === state.selectedDate);
-    renderMap(mapEvents);
-    if (options.scrollToView) {
-      els.mapView.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    renderMap(filtered);
   } else {
     els.mapView.hidden = true;
     els.agenda.hidden = false;
     renderAgenda(filtered);
-    if (options.scrollToView) {
-      els.agenda.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+  }
+
+  if (options.scrollToAgenda) {
+    document.querySelector('.fiestas-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 }
 
 function renderShellState(filtered) {
+  document.querySelectorAll('[data-date]').forEach((button) => {
+    const active = button.dataset.date === state.selectedDate;
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-pressed', String(active));
+  });
+
   els.viewTabs.forEach((button) => {
     const active = button.dataset.viewTab === state.view;
     button.classList.toggle('is-active', active);
     button.setAttribute('aria-pressed', String(active));
   });
+
   els.favoriteFilter?.classList.toggle('is-active', state.onlyFavorites);
   els.favoriteFilter?.setAttribute('aria-pressed', String(state.onlyFavorites));
-  if (els.clearFilters) {
-    els.clearFilters.hidden = !(state.search || state.selectedTypes.size || state.onlyFavorites);
-  }
-  els.mobileFilterToggle?.classList.toggle('is-active', Boolean(state.search || state.selectedTypes.size || state.onlyFavorites));
-  renderDateButtons();
+  renderCheckedFilters();
+  renderFilterLabels();
+  renderActiveFilters(filtered.length);
 }
 
 function renderAgenda(events) {
   els.agenda.replaceChildren();
-  if (!events.length) {
-    els.agenda.append(emptyState('No hay eventos con esos filtros.'));
+
+  if (!state.events.length) {
+    els.agenda.append(emptyState('La agenda todavía no tiene actividades cargadas.', true));
     return;
   }
 
-  groupByDayAndHour(events).forEach(([date, hourGroups]) => {
+  if (!events.length) {
+    const message = hasActiveFilters()
+      ? 'No hay actividades con esos filtros.'
+      : 'No hay actividades para el día seleccionado.';
+    els.agenda.append(emptyState(message, hasActiveFilters()));
+    return;
+  }
+
+  if (state.selectedDate === 'all') {
+    const summary = document.createElement('div');
+    summary.className = 'fiestas-agenda-summary';
+    summary.textContent = `${events.length} ${events.length === 1 ? 'actividad filtrada' : 'actividades filtradas'}`;
+    els.agenda.append(summary);
+  }
+
+  const groups = state.selectedDate === 'all' ? groupByDay(events) : [[state.selectedDate, events]];
+  groups.forEach(([date, dayEvents]) => {
     const section = document.createElement('section');
     section.className = 'fiestas-day';
     section.id = `fiestas-day-${date}`;
-    section.dataset.date = date;
 
-    const title = document.createElement('h2');
-    title.className = 'fiestas-day-title';
-    title.textContent = state.dates.find((day) => day.date === date)?.label || date;
-    section.append(title);
+    const header = document.createElement('div');
+    header.className = 'fiestas-day-head';
+    header.innerHTML = `
+      <h2 class="fiestas-day-title">${escapeHtml(labelForDate(date))}</h2>
+      <span>${dayEvents.length} ${dayEvents.length === 1 ? 'actividad' : 'actividades'}</span>
+    `;
+    section.append(header);
 
-    hourGroups.forEach(([hour, groupEvents]) => {
-      const group = document.createElement('div');
-      group.className = 'fiestas-time-group';
-      const label = document.createElement('div');
-      label.className = 'fiestas-time-label';
-      label.textContent = hour;
-      group.append(label);
-      groupEvents.forEach((event) => group.append(eventCard(event)));
-      section.append(group);
-    });
-
+    const list = document.createElement('div');
+    list.className = 'fiestas-event-list';
+    dayEvents.forEach((event) => list.append(eventCard(event)));
+    section.append(list);
     els.agenda.append(section);
   });
-
-  if (!state.didInitialScroll) {
-    state.didInitialScroll = true;
-    const candidate = getCurrentCandidate(events);
-    if (candidate) {
-      document.querySelector(`[data-fiestas-card="${cssEscape(candidate.id)}"]`)?.scrollIntoView({ behavior: 'auto', block: 'center' });
-    }
-  }
 }
 
 function eventCard(event) {
@@ -261,30 +290,32 @@ function eventCard(event) {
   article.className = 'fiestas-event-card';
   article.dataset.fiestasCard = event.id;
 
+  const saved = state.favorites.has(event.id);
+  const place = event.location || 'Lugar por confirmar';
+
   const link = document.createElement('a');
   link.className = 'fiestas-event-link';
   link.href = event.urlPath;
   link.innerHTML = `
-    <span class="fiestas-event-icon" aria-hidden="true"><i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i></span>
+    <span class="fiestas-event-time">${escapeHtml(timeRange(event))}</span>
+    <span class="fiestas-event-art" aria-hidden="true">
+      <i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i>
+    </span>
     <span class="fiestas-event-copy">
-      <span class="fiestas-event-topline">${escapeHtml(timeRange(event))}</span>
-      <span class="fiestas-event-title">${escapeHtml(event.title)}</span>
-      <span class="fiestas-event-meta">${escapeHtml([event.location, event.zone].filter(Boolean).join(' · ') || 'Lugar por confirmar')}</span>
-      <span class="fiestas-event-badges">
-        ${(event.tags?.length ? event.tags : [event.type || 'Evento']).map((tag) => `<span class="fiestas-badge">${escapeHtml(tag)}</span>`).join('')}
-        ${event.coordinates ? '<span class="fiestas-badge">Mapa</span>' : ''}
-      </span>
+      <span class="fiestas-event-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
+      <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(place)}</span>
     </span>
   `;
 
   const save = document.createElement('button');
   save.className = 'fiestas-save';
-  save.classList.toggle('is-active', state.favorites.has(event.id));
+  save.classList.toggle('is-active', saved);
   save.type = 'button';
   save.dataset.fiestasSave = 'true';
   save.dataset.eventId = event.id;
-  save.setAttribute('aria-label', state.favorites.has(event.id) ? 'Quitar de favoritos' : 'Guardar favorito');
-  save.innerHTML = `<i class="${state.favorites.has(event.id) ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>`;
+  save.setAttribute('aria-label', saved ? 'Quitar de guardados' : 'Guardar actividad');
+  save.setAttribute('aria-pressed', String(saved));
+  save.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>`;
 
   article.append(link, save);
   return article;
@@ -299,24 +330,22 @@ async function renderMap(events) {
     return;
   }
   if (!withCoordinates.length) {
-    showMapEmpty('No hay eventos con mapa para estos filtros.');
+    showMapEmpty('No hay actividades con mapa para esta selección.');
   } else {
     els.mapEmpty.hidden = true;
   }
 
   if (!state.map) {
     state.map = leaflet.map(els.mapCanvas, { scrollWheelZoom: true }).setView([41.6523, -4.7245], 14);
-    leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; OpenStreetMap'
-    }).addTo(state.map);
+    state.tileLayer = createCartoLayer(leaflet).addTo(state.map);
     state.markers = leaflet.layerGroup().addTo(state.map);
+    document.addEventListener('aldeapucela:themechange', () => updateMapTheme(leaflet));
   }
 
   state.markers.clearLayers();
   withCoordinates.forEach((event) => {
     const marker = leaflet.marker([event.coordinates.lat, event.coordinates.lng]);
-    marker.bindPopup(`<strong>${escapeHtml(event.title)}</strong><br>${escapeHtml(timeRange(event))}<br>${escapeHtml(event.location || '')}<br><a href="${escapeHtml(event.urlPath)}">Ver evento</a>`);
+    marker.bindPopup(`<strong>${escapeHtml(event.title)}</strong><br>${escapeHtml(timeRange(event))}<br>${escapeHtml(event.location || 'Lugar por confirmar')}<br><a href="${escapeHtml(event.urlPath)}">Ver actividad</a>`);
     marker.addTo(state.markers);
   });
 
@@ -329,6 +358,255 @@ async function renderMap(events) {
       });
     }
   });
+}
+
+function getFilteredEvents() {
+  return state.events.filter((event) => {
+    if (state.selectedDate && state.selectedDate !== 'all' && event.date !== state.selectedDate) return false;
+    if (state.search && !event.searchable.includes(state.search)) return false;
+    if (state.selectedTypes.size && !event.tags.some((tag) => state.selectedTypes.has(tag))) return false;
+    if (state.selectedAreas.size && !state.selectedAreas.has(event.area)) return false;
+    if (state.selectedTicketKinds.size && !state.selectedTicketKinds.has(event.ticketKind)) return false;
+    if (state.onlyFavorites && !state.favorites.has(event.id)) return false;
+    return true;
+  });
+}
+
+function renderControlLists() {
+  renderTypeButtons();
+  renderAreaButtons();
+}
+
+function renderTypeButtons() {
+  if (!els.typeList) return;
+  const current = new Set([...els.typeList.querySelectorAll('input[data-type]')].map((input) => input.dataset.type));
+  if (current.size === state.types.length) return;
+  els.typeList.replaceChildren(...state.types.map((type) => checkboxOption(type, 'type')));
+}
+
+function renderAreaButtons() {
+  if (!els.areaList) return;
+  els.areaList.replaceChildren(...state.areas.map((area) => checkboxOption(area, 'area')));
+}
+
+function checkboxOption(value, kind) {
+  const label = document.createElement('label');
+  label.className = 'fiestas-type-option';
+  label.innerHTML = `
+    <input type="checkbox" value="${escapeHtml(value)}" data-${kind}="${escapeHtml(value)}" />
+    <span>${escapeHtml(value)}</span>
+  `;
+  return label;
+}
+
+function renderCheckedFilters() {
+  document.querySelectorAll('input[data-type]').forEach((input) => {
+    input.checked = state.selectedTypes.has(input.dataset.type || input.value);
+  });
+  document.querySelectorAll('input[data-area]').forEach((input) => {
+    input.checked = state.selectedAreas.has(input.dataset.area || input.value);
+  });
+  document.querySelectorAll('input[data-ticket-kind]').forEach((input) => {
+    input.checked = state.selectedTicketKinds.has(input.dataset.ticketKind || input.value);
+  });
+}
+
+function renderFilterLabels() {
+  if (els.typeLabel) els.typeLabel.textContent = setLabel(state.selectedTypes, 'Tipos', 'tipo', 'tipos');
+  if (els.areaLabel) els.areaLabel.textContent = setLabel(state.selectedAreas, 'Todas las zonas', 'zona', 'zonas');
+  if (els.ticketLabel) els.ticketLabel.textContent = ticketSetLabel();
+  els.typeToggle?.classList.toggle('is-active', state.selectedTypes.size > 0);
+  els.areaToggle?.classList.toggle('is-active', state.selectedAreas.size > 0);
+  els.ticketToggle?.classList.toggle('is-active', state.selectedTicketKinds.size > 0);
+  if (els.clearFilters) els.clearFilters.hidden = !hasActiveFilters();
+}
+
+function renderActiveFilters(count) {
+  if (!els.activeFilters) return;
+  els.activeFilters.replaceChildren();
+  const chips = [];
+  if (state.search) chips.push(filterChip('search', '', `Buscar: ${els.search?.value || state.search}`));
+  state.selectedTypes.forEach((type) => chips.push(filterChip('type', type, type)));
+  state.selectedAreas.forEach((area) => chips.push(filterChip('area', area, area)));
+  state.selectedTicketKinds.forEach((kind) => chips.push(filterChip('ticket', kind, ticketKindLabel(kind))));
+  if (state.onlyFavorites) chips.push(filterChip('favorites', '', 'Guardados'));
+  chips.forEach((chip) => els.activeFilters.append(chip));
+  if (chips.length) {
+    const summary = document.createElement('span');
+    summary.className = 'fiestas-filter-count';
+    summary.textContent = `${count} ${count === 1 ? 'resultado' : 'resultados'}`;
+    els.activeFilters.append(summary);
+  }
+}
+
+function filterChip(kind, value, label) {
+  const button = document.createElement('button');
+  button.className = 'fiestas-active-chip';
+  button.type = 'button';
+  button.dataset.removeFilter = kind;
+  button.dataset.value = value;
+  button.innerHTML = `<span>${escapeHtml(label)}</span><i class="fa-solid fa-xmark" aria-hidden="true"></i>`;
+  return button;
+}
+
+function removeFilter(kind, value) {
+  if (kind === 'search') {
+    state.search = '';
+    if (els.search) els.search.value = '';
+  }
+  if (kind === 'type') state.selectedTypes.delete(value);
+  if (kind === 'area') state.selectedAreas.delete(value);
+  if (kind === 'ticket') state.selectedTicketKinds.delete(value);
+  if (kind === 'favorites') state.onlyFavorites = false;
+}
+
+function setMenuOpen(kind, open) {
+  const menus = {
+    area: [els.areaList, els.areaToggle],
+    type: [els.typeList, els.typeToggle],
+    ticket: [els.ticketList, els.ticketToggle]
+  };
+  const [list, toggle] = menus[kind] || [];
+  if (!list || !toggle) return;
+  list.hidden = !open;
+  toggle.setAttribute('aria-expanded', String(open));
+}
+
+function getInitialDate(dates) {
+  if (!dates.length) return 'all';
+  const today = localDateKey(new Date());
+  const first = dates[0].date;
+  const last = dates[dates.length - 1].date;
+  if (today < first) return first;
+  if (today > last) return last;
+  return dates.some((date) => date.date === today) ? today : first;
+}
+
+function localDateKey(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
+
+function getDates(events) {
+  return [...new Map(events.map((event) => [event.date, { date: event.date, label: event.dateLabel || event.date }])).values()];
+}
+
+function getTypes(events) {
+  return [...new Set(events.flatMap((event) => event.tags?.length ? event.tags : [event.type || 'Evento']))].sort((a, b) => collator.compare(a, b));
+}
+
+function getAreas(events) {
+  return [...new Set(events.map((event) => event.area).filter(Boolean))].sort((a, b) => collator.compare(a, b));
+}
+
+function groupByDay(events) {
+  const days = new Map();
+  events.forEach((event) => {
+    if (!days.has(event.date)) days.set(event.date, []);
+    days.get(event.date).push(event);
+  });
+  return [...days.entries()];
+}
+
+function labelForDate(date) {
+  return state.dates.find((day) => day.date === date)?.label || date;
+}
+
+function toggleSetValue(set, value, checked) {
+  if (!value) return;
+  if (checked) set.add(value);
+  else set.delete(value);
+}
+
+function hasActiveFilters() {
+  return Boolean(state.search || state.selectedTypes.size || state.selectedAreas.size || state.selectedTicketKinds.size || state.onlyFavorites);
+}
+
+function setLabel(set, empty, singular, plural) {
+  if (!set.size) return empty;
+  if (set.size === 1) return [...set][0];
+  return `${set.size} ${set.size === 1 ? singular : plural}`;
+}
+
+function ticketSetLabel() {
+  if (!state.selectedTicketKinds.size) return 'Entradas';
+  if (state.selectedTicketKinds.size === 1) return ticketKindLabel([...state.selectedTicketKinds][0]);
+  return `${state.selectedTicketKinds.size} entradas`;
+}
+
+function toggleFavorite(id) {
+  if (!id) return;
+  if (state.favorites.has(id)) state.favorites.delete(id);
+  else state.favorites.add(id);
+  localStorage.setItem(storageKey, JSON.stringify([...state.favorites]));
+  render();
+}
+
+function readFavorites() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(storageKey) || '[]');
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function normalizeTags(tags, type) {
+  const primary = type || 'Evento';
+  const values = Array.isArray(tags) ? tags.map(String) : [];
+  return [...new Set([primary, ...values].map((tag) => tag.trim()).filter(Boolean))];
+}
+
+function compareEvents(a, b) {
+  return a.date.localeCompare(b.date) || sortMinutes(a.startTime) - sortMinutes(b.startTime) || collator.compare(a.title, b.title);
+}
+
+function sortMinutes(time = '') {
+  if (!time) return 99 * 60;
+  const [hour, minute] = String(time).split(':').map(Number);
+  if (!Number.isFinite(hour) || !Number.isFinite(minute)) return 99 * 60;
+  const minutes = hour * 60 + minute;
+  return hour < 6 ? minutes + 24 * 60 : minutes;
+}
+
+function timeRange(event) {
+  if (!event.startTime) return 'Hora por confirmar';
+  return [event.startTime, event.endTime].filter(Boolean).join(' - ');
+}
+
+function currentTheme() {
+  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+}
+
+function createCartoLayer(leaflet) {
+  return leaflet.tileLayer(cartoLayers[currentTheme()], {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap &copy; CARTO'
+  });
+}
+
+function updateMapTheme(leaflet) {
+  if (!state.map || !state.tileLayer) return;
+  state.map.removeLayer(state.tileLayer);
+  state.tileLayer = createCartoLayer(leaflet).addTo(state.map);
+}
+
+function inferTicketKind(ticket) {
+  if (!ticket?.required) return 'free';
+  const text = normalizeText([ticket.label, ticket.url, ticket.note].filter(Boolean).join(' '));
+  if (text.includes('espaciosjovenesvalladolid')) return 'registration';
+  return 'paid';
+}
+
+function ticketKindLabel(kind) {
+  const labels = {
+    free: 'Gratis',
+    paid: 'Pago',
+    registration: 'Inscripción'
+  };
+  return labels[kind] || 'Entrada';
 }
 
 function ensureLeaflet() {
@@ -352,144 +630,23 @@ function ensureLeaflet() {
   return leafletPromise;
 }
 
-function getFilteredEvents() {
-  return state.events.filter((event) => {
-    if (state.onlyFavorites && !state.favorites.has(event.id)) return false;
-    if (state.search && !event.searchable.includes(state.search)) return false;
-    if (state.selectedTypes.size && !(event.tags?.length ? event.tags : [event.type || 'Evento']).some((tag) => state.selectedTypes.has(tag))) return false;
-    return true;
-  });
-}
-
-function normalizeTags(tags, type) {
-  const primary = type || 'Evento';
-  const values = Array.isArray(tags) ? tags.map(String) : [];
-  return [...new Set([primary, ...values].map((tag) => tag.trim()).filter(Boolean))];
-}
-
-function groupByDayAndHour(events) {
-  const days = new Map();
-  events.forEach((event) => {
-    if (!days.has(event.date)) days.set(event.date, new Map());
-    const hours = days.get(event.date);
-    const hour = `${event.startTime.slice(0, 2)}:00`;
-    if (!hours.has(hour)) hours.set(hour, []);
-    hours.get(hour).push(event);
-  });
-  return [...days.entries()].map(([date, groups]) => [date, [...groups.entries()]]);
-}
-
-function renderDateButtons() {
-  document.querySelectorAll('[data-date]').forEach((button) => {
-    const active = button.dataset.date === state.selectedDate;
-    button.classList.toggle('is-active', active);
-    button.setAttribute('aria-pressed', String(active));
-  });
-}
-
-function renderTypeButtons() {
-  document.querySelectorAll('input[data-type]').forEach((input) => {
-    input.checked = state.selectedTypes.has(input.dataset.type || input.value || 'Evento');
-  });
-  if (!els.typeLabel) return;
-  if (!state.selectedTypes.size) {
-    els.typeLabel.textContent = 'Todos los tipos';
-  } else if (state.selectedTypes.size === 1) {
-    els.typeLabel.textContent = [...state.selectedTypes][0];
-  } else {
-    els.typeLabel.textContent = `${state.selectedTypes.size} tipos`;
-  }
-  els.typeToggle?.classList.toggle('is-active', state.selectedTypes.size > 0);
-}
-
-function updateVisibleDate() {
-  const sections = [...document.querySelectorAll('.fiestas-day')];
-  if (!sections.length) return;
-  const threshold = document.querySelector('.fiestas-controls')?.getBoundingClientRect().bottom || 0;
-  const visible = sections.reduce((current, section) => (
-    section.getBoundingClientRect().top <= threshold + 12 ? section : current
-  ), sections[0]);
-  if (!visible?.dataset.date || visible.dataset.date === state.selectedDate) return;
-  state.selectedDate = visible.dataset.date;
-  renderDateButtons();
-}
-
-function setTypeMenuOpen(open) {
-  if (!els.typeStrip || !els.typeToggle) return;
-  els.typeStrip.hidden = !open;
-  els.typeToggle.setAttribute('aria-expanded', String(open));
-}
-
-function setMobileFiltersOpen(open) {
-  if (!els.filterPanel || !els.mobileFilterToggle) return;
-  els.filterPanel.classList.toggle('is-open', open);
-  els.mobileFilterToggle.setAttribute('aria-expanded', String(open));
-}
-
-function getDates(events) {
-  return [...new Map(events.map((event) => [event.date, { date: event.date, label: event.dateLabel || event.date }])).values()];
-}
-
-function getCurrentCandidate(events) {
-  const now = Date.now();
-  const timed = events.map((event) => ({
-    event,
-    start: eventDateTime(event, 'startTime'),
-    end: event.endTime ? eventDateTime(event, 'endTime') : null
-  }));
-  return timed.find(({ start, end }) => {
-    const startMs = start.getTime();
-    const endMs = end ? end.getTime() : startMs + 90 * 60 * 1000;
-    return startMs <= now && now <= endMs;
-  })?.event || timed.find(({ start }) => start.getTime() >= now)?.event || events[0] || null;
-}
-
-function eventDateTime(event, field) {
-  const [hour, minute] = String(event[field] || '00:00').split(':').map(Number);
-  const date = new Date(`${event.date}T00:00:00`);
-  date.setHours(hour, minute, 0, 0);
-  if (field === 'endTime' && sortMinutes(event.endTime) < sortMinutes(event.startTime)) {
-    date.setDate(date.getDate() + 1);
-  }
-  return date;
-}
-
-function sortMinutes(time = '00:00') {
-  const [hour, minute] = String(time).split(':').map(Number);
-  const minutes = hour * 60 + minute;
-  return hour < 6 ? minutes + 24 * 60 : minutes;
-}
-
-function toggleFavorite(id) {
-  if (!id) return;
-  if (state.favorites.has(id)) {
-    state.favorites.delete(id);
-  } else {
-    state.favorites.add(id);
-  }
-  localStorage.setItem(storageKey, JSON.stringify([...state.favorites]));
-  render();
-}
-
-function readFavorites() {
-  try {
-    const parsed = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
-}
-
-function timeRange(event) {
-  return [event.startTime, event.endTime].filter(Boolean).join(' - ');
-}
-
 function hasCoordinates(coordinates) {
   return coordinates && Number.isFinite(coordinates.lat) && Number.isFinite(coordinates.lng);
 }
 
-function directionsUrl(coordinates) {
-  return `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${coordinates.lat},${coordinates.lng}`)}`;
+function showMapEmpty(message) {
+  if (!els.mapEmpty) return;
+  els.mapEmpty.hidden = false;
+  els.mapEmpty.textContent = message;
+}
+
+function emptyState(message, canClear = false) {
+  const node = document.createElement('div');
+  node.className = 'fiestas-empty';
+  const button = canClear ? '<button type="button" data-empty-clear>Limpiar filtros</button>' : '';
+  node.innerHTML = `<p>${escapeHtml(message)}</p>${button}`;
+  node.querySelector('[data-empty-clear]')?.addEventListener('click', () => els.clearFilters?.click());
+  return node;
 }
 
 function initDetailMap() {
@@ -498,11 +655,12 @@ function initDetailMap() {
   const lng = Number(els.detailMap.dataset.lng);
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
   const map = L.map(els.detailMap, { scrollWheelZoom: true }).setView([lat, lng], 16);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; OpenStreetMap'
-  }).addTo(map);
-  L.marker([lat, lng]).addTo(map).bindPopup(escapeHtml(els.detailMap.dataset.title || 'Evento'));
+  let tileLayer = createCartoLayer(L).addTo(map);
+  document.addEventListener('aldeapucela:themechange', () => {
+    map.removeLayer(tileLayer);
+    tileLayer = createCartoLayer(L).addTo(map);
+  });
+  L.marker([lat, lng]).addTo(map).bindPopup(escapeHtml(els.detailMap.dataset.title || 'Actividad'));
   window.requestAnimationFrame(() => map.invalidateSize());
 }
 
@@ -534,19 +692,6 @@ function slugify(value = '') {
     .replace(/^-+|-+$/g, '');
 }
 
-function showMapEmpty(message) {
-  if (!els.mapEmpty) return;
-  els.mapEmpty.hidden = false;
-  els.mapEmpty.textContent = message;
-}
-
-function emptyState(message) {
-  const node = document.createElement('div');
-  node.className = 'fiestas-empty';
-  node.textContent = message;
-  return node;
-}
-
 function normalizeText(value = '') {
   return String(value)
     .normalize('NFD')
@@ -561,8 +706,4 @@ function escapeHtml(value = '') {
     .replaceAll('>', '&gt;')
     .replaceAll('"', '&quot;')
     .replaceAll("'", '&#39;');
-}
-
-function cssEscape(value) {
-  return window.CSS?.escape ? window.CSS.escape(value) : String(value).replace(/"/g, '\\"');
 }
