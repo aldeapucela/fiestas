@@ -171,3 +171,9 @@ export function setupPwa() {
     if (event.key === 'Escape' && dialog && !dialog.hidden) closeIosHelp();
   });
 }
+
+try {
+  setupPwa();
+} catch (error) {
+  console.error('No se pudo inicializar la instalación PWA.', error);
+}

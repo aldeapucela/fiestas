@@ -72,10 +72,26 @@ async function compileCss(cssVersionSeed) {
 async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  for (const file of ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'fiestas-2026.js', 'menu-drawer.js', 'pwa.js', 'subscribe.js', 'theme.js']) {
+  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'fiestas-2026.js', 'menu-drawer.js', 'pwa.js', 'subscribe.js', 'theme.js'];
+  for (const file of files) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
     jsVersionSeed.push(['assets/js/' + file, content]);
+  }
+  return files;
+}
+
+async function writeVersionedJs(files, jsVersion) {
+  const contents = new Map();
+  for (const file of files) {
+    const filePath = path.join(dist, 'assets', 'js', file);
+    contents.set(file, await fs.readFile(filePath, 'utf8'));
+  }
+  for (const file of files) {
+    const content = contents.get(file);
+    const versioned = content.replace(/(['"])\.\/([A-Za-z0-9_-]+)\.js\1/g, '$1./$2.' + jsVersion + '.js$1');
+    const versionedFile = file.replace(/\.js$/, '.' + jsVersion + '.js');
+    await fs.writeFile(path.join(dist, 'assets', 'js', versionedFile), versioned);
   }
 }
 
@@ -321,7 +337,7 @@ function pageContext({ assetVersion, cssVersion, jsVersion }) {
   return {
     activeNav: 'fiestas-2026',
     pageCss: 'fiestas-2026.css',
-    pageJs: 'fiestas-2026.js',
+    pageJs: 'fiestas-2026.' + jsVersion + '.js',
     assetVersion,
     cssVersion,
     jsVersion,
@@ -341,11 +357,12 @@ async function build() {
   const jsVersionSeed = [];
   const assetVersionSeed = [];
   await compileCss(cssVersionSeed);
-  await copyJs(jsVersionSeed);
+  const jsFiles = await copyJs(jsVersionSeed);
   await copyStaticAssets(assetVersionSeed);
   const pwaFiles = await loadPwaFiles();
   const cssVersion = contentVersion(cssVersionSeed);
   const jsVersion = contentVersion(jsVersionSeed);
+  await writeVersionedJs(jsFiles, jsVersion);
   const assetVersion = contentVersion([...cssVersionSeed, ...jsVersionSeed, ...assetVersionSeed]);
   const appVersion = contentVersion([
     ...cssVersionSeed,

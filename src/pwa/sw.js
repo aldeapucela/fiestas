@@ -10,15 +10,15 @@ const APP_SHELL = [
   '/assets/icons/apple-touch-icon.png',
   '/assets/plan-confetti.png',
   '/assets/css/fiestas-2026.css?v=__CSS_VERSION__',
-  '/assets/js/analytics.js',
-  '/assets/js/plan-storage.js',
-  '/assets/js/plan-export.js',
-  '/assets/js/plans-page.js',
-  '/assets/js/fiestas-2026.js?v=__JS_VERSION__',
-  '/assets/js/menu-drawer.js',
-  '/assets/js/pwa.js',
-  '/assets/js/subscribe.js',
-  '/assets/js/theme.js'
+  '/assets/js/analytics.__JS_VERSION__.js',
+  '/assets/js/plan-storage.__JS_VERSION__.js',
+  '/assets/js/plan-export.__JS_VERSION__.js',
+  '/assets/js/plans-page.__JS_VERSION__.js',
+  '/assets/js/fiestas-2026.__JS_VERSION__.js',
+  '/assets/js/menu-drawer.__JS_VERSION__.js',
+  '/assets/js/pwa.__JS_VERSION__.js',
+  '/assets/js/subscribe.__JS_VERSION__.js',
+  '/assets/js/theme.__JS_VERSION__.js'
 ];
 
 self.addEventListener('install', (event) => {
@@ -66,7 +66,7 @@ async function networkFirst(request) {
 }
 
 async function cacheFirst(request) {
-  const cached = await caches.match(request, { ignoreSearch: true });
+  const cached = await caches.match(request);
   if (cached) return cached;
 
   try {
