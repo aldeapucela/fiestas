@@ -1784,8 +1784,7 @@
   .fiestas-community-secondary a:hover,
   .fiestas-community-secondary a:focus-visible {
     color: #4f386e;
-    text-decoration: underline;
-    text-underline-offset: 0.18rem;
+    text-decoration: none;
   }
 
   .fiestas-community-secondary a.fiestas-community-telegram,
@@ -1806,7 +1805,7 @@
   }
 
   .fiestas-community-secondary a.fiestas-community-whatsapp {
-    color: #579b6e;
+    color: #25d366;
     font-weight: 700;
   }
 
@@ -1939,7 +1938,7 @@
   }
 
   html.dark .fiestas-community-secondary a.fiestas-community-whatsapp {
-    color: #79bd8d;
+    color: #49df7c;
   }
 
   html.dark .fiestas-community-secondary a.fiestas-community-whatsapp i {
