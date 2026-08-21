@@ -165,7 +165,7 @@ async function loadEvents() {
       ...event,
       icon: fiestas2026Icon(event.type),
       socialImagePath: '/assets/social/categories/' + slugify(event.type) + '.jpg',
-      socialImageAlt: 'Ilustración de Valladolid para la categoría ' + event.type,
+      socialImageAlt: 'Icono de la categoría ' + event.type + ' sobre una ilustración de Valladolid',
       urlPath: '/e/' + event.id + '/',
       canonicalUrl: publicBaseUrl + '/e/' + event.id + '/',
       shareText: shareText(event),
@@ -366,7 +366,7 @@ async function build() {
     social: {
       type: 'website', title: 'Fiestas Valladolid 2026 | Aldea Pucela',
       description: 'Agenda de las Fiestas de Valladolid 2026 por días, horarios, espacios, categorías y mapa.',
-      image: socialImage, imageAlt: 'Fiestas de Valladolid 2026 junto al Puente Mayor',
+      image: socialImage, imageAlt: 'Fiestas de Valladolid 2026 | Aldea Pucela',
       imageWidth: 1200, imageHeight: 630, imageType: 'image/jpeg', url: publicBaseUrl + '/'
     },
     fiestasEvents: events,

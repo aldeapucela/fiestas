@@ -20,7 +20,7 @@ El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe 
 - `/assets/js/analytics.js`: eventos de uso compatibles con Matomo, sin nombres personalizados de planes.
 - `/assets/js/menu-drawer.js`, `/assets/js/pwa.js`, `/assets/js/subscribe.js`, `/assets/js/theme.js`: modulos compartidos de UI, instalación y service worker.
 - `/assets/manifest.webmanifest`, `/sw.js` y `/offline.html`: identidad PWA, caché versionada y fallback sin conexión.
-- `/assets/social/`: imagen de portada y miniaturas por categoría basadas en la ilustración real de Valladolid de Aldea Pucela.
+- `/assets/social/`: portada social en modo claro, generada a partir de la referencia de Eventos de Aldea Pucela, y miniaturas por categoría con un icono pequeño sobre Valladolid.
 - `/sitemap.xml` y `/robots.txt`: metadatos de rastreo.
 
 ## Estructura
@@ -155,7 +155,7 @@ Campos principales:
 - `performances`, `organizers`, `collaborators`: listas opcionales para la ficha.
 - `coordinates`: coordenadas para mapa. Como minimo `{ "lat": number, "lng": number }`.
 - `ticket`: informacion opcional de entradas.
-- `image`: imagen editorial opcional para la ficha. Si no existe, el build usa la miniatura local de su categoría basada en Valladolid.
+- `image`: imagen editorial opcional para la ficha. Si no existe, el build usa la miniatura clara de su categoría con un icono pequeño.
 
 Ejemplo minimo:
 

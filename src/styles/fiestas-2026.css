@@ -1421,7 +1421,7 @@
     margin: 0;
     overflow: hidden;
     border-radius: 1.25rem;
-    background: #102444;
+    background: #fbfaf8;
     box-shadow: 0 1rem 2rem rgba(26, 33, 45, 0.11);
   }
 
@@ -1434,47 +1434,6 @@
 
   .fiestas-detail-hero {
     position: relative;
-  }
-
-  .fiestas-detail-hero::after {
-    position: absolute;
-    inset: 0;
-    content: '';
-    background: linear-gradient(180deg, rgba(24, 20, 35, 0.02) 35%, rgba(24, 20, 35, 0.74));
-    pointer-events: none;
-  }
-
-  .fiestas-detail-hero-caption {
-    position: absolute;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
-    z-index: 1;
-    display: grid;
-    gap: 0.35rem;
-    color: #fff;
-  }
-
-  .fiestas-detail-hero-caption strong {
-    max-width: 40rem;
-    font-size: clamp(1.15rem, 4.8vw, 2rem);
-    font-weight: 900;
-    line-height: 1.05;
-    text-shadow: 0 0.15rem 0.6rem rgba(0, 0, 0, 0.26);
-  }
-
-  .fiestas-detail-hero-category {
-    display: inline-flex;
-    width: fit-content;
-    align-items: center;
-    gap: 0.45rem;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    border-radius: 999px;
-    background: rgba(31, 27, 48, 0.52);
-    padding: 0.28rem 0.62rem;
-    font-size: 0.8rem;
-    font-weight: 800;
-    backdrop-filter: blur(0.5rem);
   }
 
   .menu-drawer-pwa-action {
