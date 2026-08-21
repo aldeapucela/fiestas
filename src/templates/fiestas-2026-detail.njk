@@ -14,56 +14,131 @@
 {% endif %}
 {% endblock %}
 
-{% block header %}
-{% include "partials/topbar.njk" %}
-{% endblock %}
-
 {% block body %}
-<main class="page-shell detail-page-main fiestas-detail-main py-5 sm:py-8 lg:py-10">
+<main
+  class="fiestas-app fiestas-detail-app"
+  data-fiestas-detail
+  data-event-id="{{ event.id }}"
+  data-share-title="{{ event.title }}"
+  data-share-text="{{ event.shareText }}"
+  data-share-url="{{ event.canonicalUrl }}"
+>
   <article class="fiestas-detail">
-    <a class="fiestas-back-link" href="/">
-      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-      <span>Volver a Fiestas 2026</span>
-    </a>
-
-    <header class="fiestas-detail-head">
-      <div class="fiestas-detail-icon" aria-hidden="true">
-        <i class="fa-solid {{ event.icon }}"></i>
-      </div>
-      <div>
-        <p class="fiestas-kicker">{{ event.type or 'Evento' }}</p>
-        <h1 class="fiestas-detail-title">{{ event.title }}</h1>
-        <div class="fiestas-detail-meta">
-          <span><i class="fa-regular fa-calendar" aria-hidden="true"></i>{{ event.dateLabel }}</span>
-          <span><i class="fa-regular fa-clock" aria-hidden="true"></i>{% if event.startTime %}{{ event.startTime }}{% if event.endTime %} - {{ event.endTime }}{% endif %}{% else %}Hora por confirmar{% endif %}</span>
-          {% if event.location %}<span><i class="fa-solid fa-location-dot" aria-hidden="true"></i>{{ event.location }}</span>{% endif %}
-          {% if event.neighborhood %}<span><i class="fa-solid fa-map-pin" aria-hidden="true"></i>{{ event.neighborhood }}</span>{% endif %}
-          {% if event.zone and event.zone != event.location %}<span><i class="fa-solid fa-map-pin" aria-hidden="true"></i>{{ event.zone }}</span>{% endif %}
-        </div>
+    <header class="fiestas-detail-top">
+      <button class="fiestas-detail-top-button" type="button" data-fiestas-back aria-label="Volver a la agenda">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      </button>
+      <p>Detalle de actividad</p>
+      <div class="fiestas-detail-top-actions">
+        <button class="fiestas-detail-top-button" type="button" data-fiestas-detail-save aria-label="Guardar actividad" aria-pressed="false">
+          <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+        </button>
+        <button class="fiestas-detail-top-button" type="button" data-fiestas-share aria-label="Compartir actividad">
+          <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+        </button>
       </div>
     </header>
 
-    <section class="fiestas-detail-card">
-      <h2>Información</h2>
-      <p>{{ event.summary or event.description or 'Sin descripción ampliada.' }}</p>
-    </section>
-
-    {% if event.ticket and (event.ticket.required or event.ticket.url) %}
-    <section class="fiestas-detail-card">
-      <h2>Entradas</h2>
-      <p><strong>{{ event.ticket.label or 'Información no indicada' }}</strong></p>
-      {% if event.ticket.note %}<p>{{ event.ticket.note }}</p>{% endif %}
-      {% if event.ticket.url %}
-      <a class="fiestas-action" href="{{ event.ticket.url }}" target="_blank" rel="noopener noreferrer">
-        <i class="fa-solid fa-ticket" aria-hidden="true"></i>
-        <span>Comprar entradas</span>
-      </a>
-      {% endif %}
-    </section>
+    {% if event.image %}
+    <figure class="fiestas-detail-hero">
+      <img src="{{ event.image }}" alt="" loading="eager" />
+    </figure>
     {% endif %}
 
+    <section class="fiestas-detail-title-block" aria-labelledby="event-title">
+      <h1 id="event-title" class="fiestas-detail-title">{{ event.title }}</h1>
+      <div class="fiestas-detail-tags" aria-label="Categorías">
+        {% for tag in event.tags %}
+        <span class="fiestas-detail-type">
+          <i class="fa-solid {% if loop.first %}{{ event.icon }}{% else %}fa-tag{% endif %}" aria-hidden="true"></i>
+          {{ tag }}
+        </span>
+        {% endfor %}
+      </div>
+    </section>
+
+    <section class="fiestas-detail-card fiestas-detail-facts" aria-label="Datos principales">
+      <div class="fiestas-detail-fact">
+        <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+        <span>{{ event.dateLabel }}{% if event.startTime %} · {{ event.startTime }}{% if event.endTime %} - {{ event.endTime }}{% endif %}{% else %} · Hora por confirmar{% endif %}</span>
+      </div>
+      <div class="fiestas-detail-fact">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <span>{{ event.location or 'Lugar por confirmar' }}</span>
+      </div>
+      {% if event.zone or event.neighborhood %}
+      <div class="fiestas-detail-fact">
+        <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+        <span>{{ event.zone or event.neighborhood }}{% if event.neighborhood and event.zone and event.neighborhood != event.zone %} · {{ event.neighborhood }}{% endif %}</span>
+      </div>
+      {% endif %}
+      <div class="fiestas-detail-fact">
+        <i class="fa-solid fa-ticket" aria-hidden="true"></i>
+        <span>
+          {% if event.ticket and event.ticket.url %}
+          <a class="fiestas-detail-fact-link" href="{{ event.ticket.url }}" target="_blank" rel="noopener noreferrer">
+            <span>{{ event.ticketLabel }}{% if event.ticketDetail %} · {{ event.ticketDetail }}{% endif %}</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+          {% else %}
+          {{ event.ticketLabel }}{% if event.ticketDetail %} · {{ event.ticketDetail }}{% endif %}
+          {% endif %}
+        </span>
+      </div>
+    </section>
+
+    <section class="fiestas-detail-map-card" aria-labelledby="event-map-title">
+      <h2 id="event-map-title" class="sr-only">Ubicación</h2>
+      {% if event.coordinates %}
+      <div
+        class="fiestas-detail-map"
+        data-fiestas-detail-map
+        data-lat="{{ event.coordinates.lat }}"
+        data-lng="{{ event.coordinates.lng }}"
+        data-title="{{ event.location or event.title }}"
+      ></div>
+      <div class="fiestas-detail-map-error" data-fiestas-detail-map-error hidden role="status"></div>
+      {% else %}
+      <div class="fiestas-detail-map-empty">
+        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+        <p>Ubicación en mapa no disponible.</p>
+        <span>{{ event.location or 'Lugar por confirmar' }}</span>
+      </div>
+      {% endif %}
+      <div class="fiestas-detail-map-actions">
+        <a class="fiestas-detail-map-action" href="{{ event.mapUrl }}">
+          <i class="fa-regular fa-map" aria-hidden="true"></i>
+          <span>Ver en el mapa</span>
+        </a>
+        {% if event.directionsUrl %}
+        <a class="fiestas-detail-map-action" href="{{ event.directionsUrl }}" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-route" aria-hidden="true"></i>
+          <span>Cómo llegar</span>
+        </a>
+        {% elif event.osmUrl %}
+        <a class="fiestas-detail-map-action" href="{{ event.osmUrl }}" target="_blank" rel="noopener noreferrer">
+          <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
+          <span>Abrir ubicación</span>
+        </a>
+        {% else %}
+        <span class="fiestas-detail-map-action fiestas-detail-map-action-disabled">
+          <i class="fa-solid fa-route" aria-hidden="true"></i>
+          <span>Cómo llegar</span>
+        </span>
+        {% endif %}
+      </div>
+    </section>
+
+    <section class="fiestas-detail-card fiestas-detail-copy" aria-labelledby="event-description-title">
+      <h2 id="event-description-title">
+        <i class="fa-solid {{ event.icon }}" aria-hidden="true"></i>
+        Descripción
+      </h2>
+      <p>{{ event.description or event.summary or 'No hay descripción ampliada para esta actividad.' }}</p>
+    </section>
+
     {% if event.performances.length or event.organizers.length or event.collaborators.length %}
-    <section class="fiestas-detail-card fiestas-detail-lists">
+    <section class="fiestas-detail-card fiestas-detail-lists" aria-label="Información adicional">
       {% if event.performances.length %}
       <div>
         <h2>Actuaciones</h2>
@@ -85,31 +160,33 @@
     </section>
     {% endif %}
 
-    {% if event.coordinates %}
-    <section class="fiestas-detail-card">
-      <div class="fiestas-detail-map-head">
-        <h2>Mapa</h2>
-        <div class="fiestas-dialog-actions">
-          <a class="fiestas-action" href="{{ event.mapUrl }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-map" aria-hidden="true"></i>
-            <span>Abrir mapa</span>
-          </a>
-          <a class="fiestas-action" href="{{ event.directionsUrl }}" target="_blank" rel="noopener noreferrer">
-            <i class="fa-solid fa-route" aria-hidden="true"></i>
-            <span>Cómo llegar</span>
-          </a>
-        </div>
-      </div>
-      <div
-        class="fiestas-detail-map"
-        data-fiestas-detail-map
-        data-lat="{{ event.coordinates.lat }}"
-        data-lng="{{ event.coordinates.lng }}"
-        data-title="{{ event.title }}"
-      ></div>
-    </section>
-    {% endif %}
+    <div class="fiestas-detail-feedback" data-fiestas-detail-feedback aria-live="polite" hidden></div>
+    <div class="fiestas-detail-copy-fallback" data-fiestas-share-fallback hidden>
+      <label>
+        <span>Enlace de la actividad</span>
+        <input type="text" value="{{ event.canonicalUrl }}" readonly data-fiestas-share-url-input />
+      </label>
+    </div>
   </article>
+
+  <nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+    <a class="fiestas-bottom-link is-active" href="/">
+      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+      <span>Agenda</span>
+    </a>
+    <a class="fiestas-bottom-link" href="{{ event.mapUrl }}">
+      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+      <span>Mapa</span>
+    </a>
+    <span class="fiestas-bottom-link fiestas-bottom-link-disabled" aria-disabled="true">
+      <i class="fa-regular fa-heart" aria-hidden="true"></i>
+      <span>Mi plan</span>
+    </span>
+    <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
+      <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+      <span>Más</span>
+    </button>
+  </nav>
 </main>
 
 {% include "partials/menu-drawer.njk" %}

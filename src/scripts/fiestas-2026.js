@@ -48,6 +48,13 @@ const els = {
   favoriteFilter: document.querySelector('[data-fiestas-favorites-filter]'),
   clearFilters: document.querySelector('[data-fiestas-clear-filters]'),
   viewTabs: [...document.querySelectorAll('[data-view-tab]')],
+  detail: document.querySelector('[data-fiestas-detail]'),
+  detailSave: document.querySelector('[data-fiestas-detail-save]'),
+  detailShare: document.querySelector('[data-fiestas-share]'),
+  detailBack: document.querySelector('[data-fiestas-back]'),
+  detailFeedback: document.querySelector('[data-fiestas-detail-feedback]'),
+  detailShareFallback: document.querySelector('[data-fiestas-share-fallback]'),
+  detailShareInput: document.querySelector('[data-fiestas-share-url-input]'),
   detailMap: document.querySelector('[data-fiestas-detail-map]')
 };
 
@@ -58,8 +65,8 @@ function init() {
   setupMenuDrawer();
   setupSubscribe();
 
-  if (els.detailMap) {
-    initDetailMap();
+  if (els.detail) {
+    initDetailPage();
     return;
   }
 
@@ -71,6 +78,7 @@ function init() {
     state.types = getTypes(state.events);
     state.areas = getAreas(state.events);
     state.selectedDate = getInitialDate(state.dates);
+    applyInitialUrlState();
     bindControls();
     renderControlLists();
     render();
@@ -148,6 +156,11 @@ function bindControls() {
       state.view = button.dataset.viewTab === 'map' ? 'map' : 'agenda';
       render({ scrollToAgenda: true });
     });
+  });
+
+  window.addEventListener('popstate', () => {
+    applyInitialUrlState();
+    render();
   });
 
   els.agenda?.addEventListener('click', (event) => {
@@ -541,7 +554,8 @@ function toggleFavorite(id) {
   if (state.favorites.has(id)) state.favorites.delete(id);
   else state.favorites.add(id);
   localStorage.setItem(storageKey, JSON.stringify([...state.favorites]));
-  render();
+  if (els.agenda) render();
+  updateDetailFavorite();
 }
 
 function readFavorites() {
@@ -649,19 +663,118 @@ function emptyState(message, canClear = false) {
   return node;
 }
 
-function initDetailMap() {
-  if (!window.L) return;
+function applyInitialUrlState() {
+  const params = new URLSearchParams(window.location.search);
+  const view = params.get('view');
+  const eventId = params.get('event');
+  if (view === 'map') state.view = 'map';
+  if (eventId) {
+    const event = state.events.find((item) => item.id === eventId);
+    if (event?.date) state.selectedDate = event.date;
+  }
+}
+
+function initDetailPage() {
+  updateDetailFavorite({ silent: true });
+  els.detailSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
+  els.detailShare?.addEventListener('click', shareDetail);
+  els.detailBack?.addEventListener('click', goBackToAgenda);
+  if (els.detailMap) initDetailMap();
+}
+
+function updateDetailFavorite(options = {}) {
+  if (!els.detail || !els.detailSave) return;
+  const saved = state.favorites.has(els.detail.dataset.eventId);
+  els.detailSave.classList.toggle('is-active', saved);
+  els.detailSave.setAttribute('aria-pressed', String(saved));
+  els.detailSave.setAttribute('aria-label', saved ? 'Quitar de guardados' : 'Guardar actividad');
+  els.detailSave.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>`;
+  if (!options.silent) showDetailFeedback(saved ? 'Actividad guardada.' : 'Actividad eliminada de guardados.');
+}
+
+function goBackToAgenda() {
+  try {
+    const referrer = document.referrer ? new URL(document.referrer) : null;
+    if (referrer && referrer.origin === window.location.origin && window.history.length > 1) {
+      window.history.back();
+      return;
+    }
+  } catch (_) {}
+  window.location.href = '/';
+}
+
+async function shareDetail() {
+  if (!els.detail) return;
+  const title = els.detail.dataset.shareTitle || document.title;
+  const text = els.detail.dataset.shareText || title;
+  const url = els.detail.dataset.shareUrl || window.location.href;
+  try {
+    if (navigator.share) {
+      await navigator.share({ title, text, url });
+      showDetailFeedback('Actividad compartida.');
+      return;
+    }
+  } catch (error) {
+    if (error?.name === 'AbortError') return;
+  }
+
+  try {
+    if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+    await navigator.clipboard.writeText(url);
+    showDetailFeedback('Enlace copiado.');
+  } catch (_) {
+    if (els.detailShareFallback) els.detailShareFallback.hidden = false;
+    if (els.detailShareInput) {
+      els.detailShareInput.value = url;
+      els.detailShareInput.focus();
+      els.detailShareInput.select();
+    }
+    showDetailFeedback('Copia el enlace desde el campo.');
+  }
+}
+
+function showDetailFeedback(message) {
+  if (!els.detailFeedback) return;
+  els.detailFeedback.hidden = false;
+  els.detailFeedback.textContent = message;
+  window.clearTimeout(showDetailFeedback.timer);
+  showDetailFeedback.timer = window.setTimeout(() => {
+    els.detailFeedback.hidden = true;
+  }, 2800);
+}
+
+async function initDetailMap() {
+  const leaflet = await ensureLeaflet();
+  const error = document.querySelector('[data-fiestas-detail-map-error]');
+  if (!leaflet) {
+    showDetailMapError(error, 'No se pudo cargar el mapa. La ubicación textual sigue disponible.');
+    return;
+  }
   const lat = Number(els.detailMap.dataset.lat);
   const lng = Number(els.detailMap.dataset.lng);
-  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
-  const map = L.map(els.detailMap, { scrollWheelZoom: true }).setView([lat, lng], 16);
-  let tileLayer = createCartoLayer(L).addTo(map);
-  document.addEventListener('aldeapucela:themechange', () => {
-    map.removeLayer(tileLayer);
-    tileLayer = createCartoLayer(L).addTo(map);
-  });
-  L.marker([lat, lng]).addTo(map).bindPopup(escapeHtml(els.detailMap.dataset.title || 'Actividad'));
-  window.requestAnimationFrame(() => map.invalidateSize());
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) {
+    showDetailMapError(error, 'Ubicación en mapa no disponible.');
+    return;
+  }
+  try {
+    const map = leaflet.map(els.detailMap, { scrollWheelZoom: false }).setView([lat, lng], 16);
+    let tileLayer = createCartoLayer(leaflet).addTo(map);
+    document.addEventListener('aldeapucela:themechange', () => {
+      map.removeLayer(tileLayer);
+      tileLayer = createCartoLayer(leaflet).addTo(map);
+    });
+    leaflet.marker([lat, lng]).addTo(map).bindPopup(escapeHtml(els.detailMap.dataset.title || 'Actividad'));
+    window.requestAnimationFrame(() => map.invalidateSize());
+  } catch (error) {
+    console.error(error);
+    showDetailMapError(document.querySelector('[data-fiestas-detail-map-error]'), 'No se pudo mostrar el mapa. La ubicación textual sigue disponible.');
+  }
+}
+
+function showDetailMapError(error, message) {
+  if (!error) return;
+  error.hidden = false;
+  error.textContent = message;
 }
 
 function iconForType(type = '') {
