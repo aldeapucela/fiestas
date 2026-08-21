@@ -199,13 +199,13 @@ function bindControls() {
   els.typeToggle?.addEventListener('click', () => setMenuOpen('type', els.typeToggle.getAttribute('aria-expanded') !== 'true'));
   els.ticketToggle?.addEventListener('click', () => setMenuOpen('ticket', els.ticketToggle.getAttribute('aria-expanded') !== 'true'));
 
-  document.addEventListener('click', (event) => {
-    const acceptButton = event.target.closest('[data-fiestas-filter-accept]');
-    if (!acceptButton) return;
-    event.preventDefault();
-    setMenuOpen('area', false);
-    setMenuOpen('type', false);
-    setMenuOpen('ticket', false);
+  document.querySelectorAll('[data-fiestas-filter-accept]').forEach((acceptButton) => {
+    acceptButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      setMenuOpen('area', false);
+      setMenuOpen('type', false);
+      setMenuOpen('ticket', false);
+    });
   });
 
   els.favoriteFilter?.addEventListener('click', () => {
@@ -898,14 +898,18 @@ function renderControlLists() {
 
 function renderTypeButtons() {
   if (!els.typeList) return;
-  const current = new Set([...els.typeList.querySelectorAll('input[data-type]')].map((input) => input.dataset.type));
+  const options = els.typeList.querySelector('.fiestas-type-options');
+  if (!options) return;
+  const current = new Set([...options.querySelectorAll('input[data-type]')].map((input) => input.dataset.type));
   if (current.size === state.types.length) return;
-  els.typeList.replaceChildren(...state.types.map((type) => checkboxOption(type, 'type')));
+  options.replaceChildren(...state.types.map((type) => checkboxOption(type, 'type')));
 }
 
 function renderAreaButtons() {
   if (!els.areaList) return;
-  els.areaList.replaceChildren(...state.areas.map((area) => checkboxOption(area, 'area')));
+  const options = els.areaList.querySelector('.fiestas-type-options');
+  if (!options) return;
+  options.replaceChildren(...state.areas.map((area) => checkboxOption(area, 'area')));
 }
 
 function checkboxOption(value, kind) {

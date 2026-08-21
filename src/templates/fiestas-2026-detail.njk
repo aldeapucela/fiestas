@@ -1,6 +1,6 @@
 {% extends "layout.njk" %}
 
-{% block bodyClass %}page-event-detail fiestas-detail-page{% endblock %}
+{% block bodyClass %}fiestas-page page-event-detail fiestas-detail-page{% endblock %}
 {% block footerClass %} site-footer--event-detail{% endblock %}
 
 {% block extraHead %}
@@ -184,7 +184,7 @@
         <span>Recibir el boletín semanal</span>
       </a>
       <div class="fiestas-community-secondary">
-        <a class="fiestas-community-telegram" href="https://t.me/c/AldeaPucela/59137" target="_blank" rel="noopener noreferrer">
+        <a class="fiestas-community-telegram" href="https://t.me/aldeapucela/59137" target="_blank" rel="noopener noreferrer">
           <i class="fa-brands fa-telegram" aria-hidden="true"></i>
           <span>Unirme al chat de fiestas</span>
         </a>
@@ -204,28 +204,29 @@
     </div>
   </article>
 
-  <nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
-    <a class="fiestas-bottom-link is-active" href="/">
-      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
-      <span>Agenda</span>
-    </a>
-    <a class="fiestas-bottom-link" href="{{ event.mapUrl }}">
-      <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
-        <circle cx="12" cy="10" r="2.35" />
-      </svg>
-      <span>Mapa</span>
-    </a>
-    <a class="fiestas-bottom-link" href="/plan/">
-      <i class="fa-regular fa-heart" aria-hidden="true"></i>
-      <span>Mi plan</span>
-    </a>
-    <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
-      <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
-      <span>Más</span>
-    </button>
-  </nav>
 </main>
+
+<nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+  <a class="fiestas-bottom-link is-active" href="/">
+    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+    <span>Agenda</span>
+  </a>
+  <a class="fiestas-bottom-link" href="{{ event.mapUrl }}">
+    <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.35" />
+    </svg>
+    <span>Mapa</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/plan/">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span>Mi plan</span>
+  </a>
+  <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
+    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+    <span>Más</span>
+  </button>
+</nav>
 
 {% include "partials/event-options.njk" %}
 {% include "partials/plan-selector.njk" %}

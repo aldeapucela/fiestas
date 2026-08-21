@@ -419,10 +419,8 @@ export function setupPlanSelector() {
     if (moreButton) {
       event.preventDefault();
       event.stopPropagation();
-      optionsActivityId = moreButton.dataset.eventId || '';
-      if (!options || !optionsActivityId) return;
-      options.hidden = false;
-      options.querySelector('[data-event-option-plan]')?.focus();
+      closeOptions();
+      openSelector(moreButton.dataset.eventId || '');
       return;
     }
     if (event.target.closest('[data-event-option-plan]')) {

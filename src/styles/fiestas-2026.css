@@ -3,7 +3,6 @@
     min-height: 100vh;
     background: #fff;
     color: #161a23;
-    overflow-x: clip;
     padding-bottom: 1.5rem;
   }
 
@@ -2033,6 +2032,35 @@
     color: #b7f3ea;
   }
 
+  @media (max-width: 719px) {
+    .fiestas-date-strip {
+      gap: 0.4rem;
+      padding-top: 0.1rem;
+      padding-bottom: 0.4rem;
+    }
+
+    .fiestas-date-card {
+      min-height: clamp(4rem, 17vw, 5.25rem);
+      border-radius: 0.85rem;
+      padding: 0.45rem 0.5rem;
+    }
+
+    .fiestas-date-card span,
+    .fiestas-date-card small {
+      font-size: 0.68rem;
+    }
+
+    .fiestas-date-card strong {
+      font-size: clamp(1.8rem, 8vw, 2.8rem);
+      line-height: 0.86;
+    }
+
+    .fiestas-date-card.is-active::after {
+      bottom: -0.35rem;
+      height: 0.35rem;
+    }
+  }
+
   @media (min-width: 720px) {
     .fiestas-screen {
       padding-top: 2rem;
@@ -2638,6 +2666,12 @@ html.dark .fiestas-plan-import-item h3 {
   margin: 0;
   color: #b42318;
   font-size: 0.8rem;
+}
+
+.fiestas-plan-selector-accept {
+  width: 100%;
+  min-height: 3rem;
+  margin-top: 0.1rem;
 }
 
 .fiestas-plan-add {
