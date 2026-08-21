@@ -95,6 +95,12 @@ async function writeVersionedJs(files, jsVersion) {
   }
 }
 
+async function writeVersionedCss(cssVersion) {
+  const source = path.join(dist, 'assets', 'css', 'fiestas-2026.css');
+  const target = path.join(dist, 'assets', 'css', 'fiestas-2026.' + cssVersion + '.css');
+  await fs.copyFile(source, target);
+}
+
 async function loadPwaFiles() {
   const pwaDir = path.join(root, 'src', 'pwa');
   return {
@@ -336,7 +342,7 @@ function normalizeTags(tags, type) {
 function pageContext({ assetVersion, cssVersion, jsVersion }) {
   return {
     activeNav: 'fiestas-2026',
-    pageCss: 'fiestas-2026.css',
+    pageCss: 'fiestas-2026.' + cssVersion + '.css',
     pageJs: 'fiestas-2026.' + jsVersion + '.js',
     assetVersion,
     cssVersion,
@@ -362,6 +368,7 @@ async function build() {
   const pwaFiles = await loadPwaFiles();
   const cssVersion = contentVersion(cssVersionSeed);
   const jsVersion = contentVersion(jsVersionSeed);
+  await writeVersionedCss(cssVersion);
   await writeVersionedJs(jsFiles, jsVersion);
   const assetVersion = contentVersion([...cssVersionSeed, ...jsVersionSeed, ...assetVersionSeed]);
   const appVersion = contentVersion([

@@ -9,7 +9,7 @@ const APP_SHELL = [
   '/assets/icons/fiestas-512.png',
   '/assets/icons/apple-touch-icon.png',
   '/assets/plan-confetti.png',
-  '/assets/css/fiestas-2026.css?v=__CSS_VERSION__',
+  '/assets/css/fiestas-2026.__CSS_VERSION__.css',
   '/assets/js/analytics.__JS_VERSION__.js',
   '/assets/js/plan-storage.__JS_VERSION__.js',
   '/assets/js/plan-export.__JS_VERSION__.js',
