@@ -73,8 +73,12 @@ const els = {
   ticketList: document.querySelector('[data-fiestas-tickets]'),
   ticketToggle: document.querySelector('[data-fiestas-tickets-toggle]'),
   ticketLabel: document.querySelector('[data-fiestas-tickets-label]'),
+  searchToggle: document.querySelector('[data-fiestas-search-toggle]'),
+  searchPanel: document.querySelector('[data-fiestas-search-panel]'),
   search: document.querySelector('[data-fiestas-search]'),
+  filterSummary: document.querySelector('[data-fiestas-filter-summary]'),
   activeFilters: document.querySelector('[data-fiestas-active-filters]'),
+  filterCount: document.querySelector('[data-fiestas-filter-count]'),
   favoriteFilter: document.querySelector('[data-fiestas-favorites-filter]'),
   clearFilters: document.querySelector('[data-fiestas-clear-filters]'),
   viewTabs: [...document.querySelectorAll('[data-view-tab]')],
@@ -121,6 +125,8 @@ function init() {
 }
 
 function bindControls() {
+  els.searchToggle?.addEventListener('click', () => setSearchOpen(els.searchPanel?.hidden));
+
   els.search?.addEventListener('input', (event) => {
     state.search = normalizeText(event.target.value.trim());
     state.focusedClusterEventIds = null;
@@ -167,6 +173,15 @@ function bindControls() {
   els.areaToggle?.addEventListener('click', () => setMenuOpen('area', els.areaToggle.getAttribute('aria-expanded') !== 'true'));
   els.typeToggle?.addEventListener('click', () => setMenuOpen('type', els.typeToggle.getAttribute('aria-expanded') !== 'true'));
   els.ticketToggle?.addEventListener('click', () => setMenuOpen('ticket', els.ticketToggle.getAttribute('aria-expanded') !== 'true'));
+
+  document.addEventListener('click', (event) => {
+    const acceptButton = event.target.closest('[data-fiestas-filter-accept]');
+    if (!acceptButton) return;
+    event.preventDefault();
+    setMenuOpen('area', false);
+    setMenuOpen('type', false);
+    setMenuOpen('ticket', false);
+  });
 
   els.favoriteFilter?.addEventListener('click', () => {
     state.onlyFavorites = !state.onlyFavorites;
@@ -344,24 +359,19 @@ function renderAgenda(events) {
     return;
   }
 
-  if (state.selectedDate === 'all') {
-    const summary = document.createElement('div');
-    summary.className = 'fiestas-agenda-summary';
-    summary.textContent = `${events.length} ${events.length === 1 ? 'actividad filtrada' : 'actividades filtradas'}`;
-    els.agenda.append(summary);
-  }
-
   const groups = state.selectedDate === 'all' ? groupByDay(events) : [[state.selectedDate, events]];
   groups.forEach(([date, dayEvents]) => {
     const section = document.createElement('section');
     section.className = 'fiestas-day';
+    section.classList.toggle('is-all-days', state.selectedDate === 'all');
     section.id = `fiestas-day-${date}`;
 
     const header = document.createElement('div');
     header.className = 'fiestas-day-head';
+    const dayCountLabel = `${dayEvents.length} ${dayEvents.length === 1 ? 'actividad' : 'actividades'}`;
     header.innerHTML = `
       <h2 class="fiestas-day-title">${escapeHtml(labelForDate(date))}</h2>
-      <span>${dayEvents.length} ${dayEvents.length === 1 ? 'actividad' : 'actividades'}</span>
+      <span>${dayCountLabel}</span>
     `;
     section.append(header);
 
@@ -385,13 +395,13 @@ function eventCard(event) {
   link.className = 'fiestas-event-link';
   link.href = event.urlPath;
   link.innerHTML = `
-    <span class="fiestas-event-time">${escapeHtml(timeRange(event))}</span>
+    <span class="fiestas-event-time">${timeMarkup(event)}</span>
     <span class="fiestas-event-art" aria-hidden="true">
       <i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i>
     </span>
     <span class="fiestas-event-copy">
       <span class="fiestas-event-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
-      <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(place)}</span>
+      <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-event-place-text">${escapeHtml(place)}</span></span>
     </span>
   `;
 
@@ -879,7 +889,7 @@ function renderCheckedFilters() {
 
 function renderFilterLabels() {
   if (els.typeLabel) els.typeLabel.textContent = setLabel(state.selectedTypes, 'Tipos', 'tipo', 'tipos');
-  if (els.areaLabel) els.areaLabel.textContent = setLabel(state.selectedAreas, 'Todas las zonas', 'zona', 'zonas');
+  if (els.areaLabel) els.areaLabel.textContent = setLabel(state.selectedAreas, 'Zonas', 'zona', 'zonas');
   if (els.ticketLabel) els.ticketLabel.textContent = ticketSetLabel();
   els.typeToggle?.classList.toggle('is-active', state.selectedTypes.size > 0);
   els.areaToggle?.classList.toggle('is-active', state.selectedAreas.size > 0);
@@ -897,12 +907,8 @@ function renderActiveFilters(count) {
   state.selectedTicketKinds.forEach((kind) => chips.push(filterChip('ticket', kind, ticketKindLabel(kind))));
   if (state.onlyFavorites) chips.push(filterChip('favorites', '', 'Guardados'));
   chips.forEach((chip) => els.activeFilters.append(chip));
-  if (chips.length) {
-    const summary = document.createElement('span');
-    summary.className = 'fiestas-filter-count';
-    summary.textContent = `${count} ${count === 1 ? 'resultado' : 'resultados'}`;
-    els.activeFilters.append(summary);
-  }
+  if (els.filterSummary) els.filterSummary.hidden = !chips.length;
+  if (els.filterCount) els.filterCount.textContent = chips.length ? `${count} ${count === 1 ? 'resultado' : 'resultados'}` : '';
 }
 
 function filterChip(kind, value, label) {
@@ -946,6 +952,16 @@ function setMenuOpen(kind, open) {
   updateFilterModalState();
 }
 
+function setSearchOpen(open) {
+  if (!els.searchPanel || !els.searchToggle) return;
+  const isOpen = Boolean(open);
+  els.searchPanel.hidden = !isOpen;
+  els.searchToggle.setAttribute('aria-expanded', String(isOpen));
+  els.searchToggle.setAttribute('aria-label', isOpen ? 'Ocultar buscador' : 'Abrir buscador');
+  els.searchToggle.classList.toggle('is-active', isOpen);
+  if (isOpen) els.search?.focus();
+}
+
 function getInitialDate(dates) {
   if (!dates.length) return 'all';
   const today = localDateKey(new Date());
@@ -985,7 +1001,13 @@ function groupByDay(events) {
 }
 
 function labelForDate(date) {
-  return state.dates.find((day) => day.date === date)?.label || date;
+  const match = String(date).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return state.dates.find((day) => day.date === date)?.label || date;
+  const [, year, month, day] = match;
+  const dateValue = new Date(Number(year), Number(month) - 1, Number(day));
+  const weekdays = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  const months = ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sep.', 'oct.', 'nov.', 'dic.'];
+  return `${weekdays[dateValue.getDay()]} ${dateValue.getDate()} de ${months[dateValue.getMonth()]}`;
 }
 
 function toggleSetValue(set, value, checked) {
@@ -1005,9 +1027,9 @@ function setLabel(set, empty, singular, plural) {
 }
 
 function ticketSetLabel() {
-  if (!state.selectedTicketKinds.size) return 'Entradas';
+  if (!state.selectedTicketKinds.size) return 'Precio';
   if (state.selectedTicketKinds.size === 1) return ticketKindLabel([...state.selectedTicketKinds][0]);
-  return `${state.selectedTicketKinds.size} entradas`;
+  return `${state.selectedTicketKinds.size} precios`;
 }
 
 function toggleFavorite(id) {
@@ -1049,6 +1071,12 @@ function sortMinutes(time = '') {
 function timeRange(event) {
   if (!event.startTime) return 'Hora por confirmar';
   return [event.startTime, event.endTime].filter(Boolean).join(' - ');
+}
+
+function timeMarkup(event) {
+  if (!event.startTime) return '<span>Hora por confirmar</span>';
+  if (!event.endTime) return `<span>${escapeHtml(event.startTime)}</span>`;
+  return `<span>${escapeHtml(event.startTime)}</span><span>${escapeHtml(event.endTime)}</span>`;
 }
 
 function currentTheme() {
@@ -1136,6 +1164,7 @@ function applyInitialUrlState() {
   state.selectedAreas = getUrlSet(params, 'area', state.areas);
   state.selectedTicketKinds = getUrlSet(params, 'ticket', ['free', 'paid', 'registration']);
   if (els.search) els.search.value = params.get('q') || '';
+  setSearchOpen(Boolean(state.search));
   if (eventId) {
     const event = state.events.find((item) => item.id === eventId);
     if (event?.date) {

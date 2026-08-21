@@ -36,7 +36,15 @@ async function writeFile(relPath, content) {
   await fs.writeFile(filePath, content);
 }
 
-async function compileCss(assetVersionSeed) {
+function contentVersion(seed) {
+  const hash = createHash('sha256');
+  for (const [relPath, content] of seed) {
+    hash.update(relPath).update('\0').update(content).update('\0');
+  }
+  return hash.digest('hex').slice(0, 12);
+}
+
+async function compileCss(cssVersionSeed) {
   const cssDir = path.join(dist, 'assets', 'css');
   await fs.mkdir(cssDir, { recursive: true });
   const input = path.join(root, 'src', 'styles', 'fiestas-2026.css');
@@ -47,16 +55,16 @@ async function compileCss(assetVersionSeed) {
     autoprefixer()
   ]).process(base + '\n' + page, { from: input, to: path.join(cssDir, 'fiestas-2026.css') });
   await fs.writeFile(path.join(cssDir, 'fiestas-2026.css'), result.css);
-  assetVersionSeed.push(result.css);
+  cssVersionSeed.push(['assets/css/fiestas-2026.css', result.css]);
 }
 
-async function copyJs(assetVersionSeed) {
+async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
   for (const file of ['fiestas-2026.js', 'menu-drawer.js', 'subscribe.js', 'theme.js']) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
-    assetVersionSeed.push(content);
+    jsVersionSeed.push(['assets/js/' + file, content]);
   }
 }
 
@@ -83,7 +91,7 @@ async function copyAssetDir(sourceDir, currentDir, assetVersionSeed) {
     const content = await fs.readFile(sourcePath);
     await fs.mkdir(path.dirname(targetPath), { recursive: true });
     await fs.writeFile(targetPath, content);
-    assetVersionSeed.push(relPath, createHash('sha256').update(content).digest('hex'));
+    assetVersionSeed.push(['assets/' + relPath, createHash('sha256').update(content).digest('hex')]);
   }
 }
 
@@ -277,12 +285,14 @@ function normalizeTags(tags, type) {
   return [...new Set([primary, ...values].map((tag) => tag.trim()).filter(Boolean))];
 }
 
-function pageContext(assetVersion) {
+function pageContext({ assetVersion, cssVersion, jsVersion }) {
   return {
     activeNav: 'fiestas-2026',
     pageCss: 'fiestas-2026.css',
     pageJs: 'fiestas-2026.js',
     assetVersion,
+    cssVersion,
+    jsVersion,
     categoryFeeds: [],
     publicBaseUrl
   };
@@ -294,17 +304,22 @@ function render(template, context) {
 
 async function build() {
   await fs.rm(dist, { recursive: true, force: true });
+  const cssVersionSeed = [];
+  const jsVersionSeed = [];
   const assetVersionSeed = [];
-  await compileCss(assetVersionSeed);
-  await copyJs(assetVersionSeed);
+  await compileCss(cssVersionSeed);
+  await copyJs(jsVersionSeed);
   await copyStaticAssets(assetVersionSeed);
-  const assetVersion = createHash('sha256').update(assetVersionSeed.join('\\n')).digest('hex').slice(0, 10);
+  const cssVersion = contentVersion(cssVersionSeed);
+  const jsVersion = contentVersion(jsVersionSeed);
+  const assetVersion = contentVersion([...cssVersionSeed, ...jsVersionSeed, ...assetVersionSeed]);
+  const versions = { assetVersion, cssVersion, jsVersion };
   const events = await loadEvents();
   const summary = buildSummary(events);
   const socialImage = publicBaseUrl + '/assets/social-preview.jpg';
 
   const homeContext = {
-    ...pageContext(assetVersion),
+    ...pageContext(versions),
     title: 'Fiestas Valladolid 2026 | Aldea Pucela',
     meta: { description: 'Agenda de las Fiestas de Valladolid 2026 por días, horarios, espacios, categorías y mapa.' },
     canonicalUrl: publicBaseUrl + '/',
@@ -334,7 +349,7 @@ async function build() {
 
   for (const event of events) {
     await writeFile('e/' + event.id + '/index.html', render('fiestas-2026-detail.njk', {
-      ...pageContext(assetVersion),
+      ...pageContext(versions),
       title: event.title + ' | Fiestas Valladolid 2026',
       meta: { description: event.summary || event.description || event.dateLabel },
       canonicalUrl: publicBaseUrl + event.urlPath,

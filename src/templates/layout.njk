@@ -6,8 +6,8 @@
     <meta name="description" content="{{ meta.description or 'Agenda de las Fiestas de Valladolid 2026' }}" />
     <meta name="theme-color" content="#6f59a8" />
     <title>{{ title or 'Fiestas Valladolid 2026 | Aldea Pucela' }}</title>
-    <link rel="icon" type="image/png" href="https://eventos.aldeapucela.org/assets/favicon.png" />
-    <link rel="apple-touch-icon" href="https://eventos.aldeapucela.org/assets/favicon.png" />
+    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="apple-touch-icon" href="/assets/favicon.png" />
     <link rel="alternate" type="application/rss+xml" title="Aldea Pucela Eventos RSS" href="https://eventos.aldeapucela.org/rss.xml" />
     <link rel="alternate" type="text/calendar" title="Aldea Pucela Eventos Calendario" href="https://eventos.aldeapucela.org/calendar.ics" />
     {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}" />{% endif %}
@@ -36,7 +36,7 @@
         } catch (_) {}
       }());
     </script>
-    <link rel="stylesheet" href="/assets/css/{{ pageCss }}?v={{ assetVersion }}" />
+    <link rel="stylesheet" href="/assets/css/{{ pageCss }}?v={{ cssVersion }}" />
     <link rel="stylesheet" href="https://eventos.aldeapucela.org/assets/fontawesome/css/all.min.css" />
   </head>
   <body class="{% block bodyClass %}{% endblock %}">
@@ -55,7 +55,7 @@
       </div>
     </footer>
     <script src="https://eventos.aldeapucela.org/assets/js/matomo.js?v={{ assetVersion }}"></script>
-    <script type="module" src="/assets/js/{{ pageJs }}?v={{ assetVersion }}" defer></script>
+    <script type="module" src="/assets/js/{{ pageJs }}?v={{ jsVersion }}" defer></script>
     {% block extraScripts %}{% endblock %}
   </body>
 </html>
