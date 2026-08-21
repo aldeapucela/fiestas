@@ -2,7 +2,7 @@
 
 Repositorio independiente para publicar la agenda de Fiestas Valladolid 2026 dentro de Aldea Pucela Eventos.
 
-La salida generada es una web estatica bajo `/fiestas-2026/`, con listado interactivo, filtros, favoritos en navegador, mapa y paginas de detalle por evento.
+La salida generada es una web estatica para `https://fiestas.aldeapucela.org/`, con listado interactivo, filtros, favoritos en navegador, mapa y paginas de detalle por evento.
 
 ![Agenda de Fiestas Valladolid 2026](docs/screenshots/01-agenda-desktop.png)
 
@@ -10,8 +10,8 @@ La salida generada es una web estatica bajo `/fiestas-2026/`, con listado intera
 
 El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe editarse a mano.
 
-- `/fiestas-2026/`: agenda principal.
-- `/fiestas-2026/e/<id>/`: detalle de cada evento.
+- `/`: agenda principal.
+- `/e/<id>/`: detalle de cada evento.
 - `/assets/css/fiestas-2026.css`: estilos compilados con Tailwind, PostCSS y Autoprefixer.
 - `/assets/js/fiestas-2026.js`: comportamiento de agenda, mapa, filtros y favoritos.
 - `/assets/js/menu-drawer.js`, `/assets/js/subscribe.js`, `/assets/js/theme.js`: modulos compartidos de UI.
@@ -55,7 +55,7 @@ npm run dev
 El comando hace un build inicial y sirve `dist/` en:
 
 ```text
-http://127.0.0.1:8002/fiestas-2026/
+http://127.0.0.1:8002/
 ```
 
 Si necesitas otro puerto:
@@ -94,10 +94,10 @@ Con el servidor local activo:
 cloudflared tunnel --url http://127.0.0.1:8002
 ```
 
-Cloudflare devolvera una URL publica temporal de `trycloudflare.com`. La ruta de la app sigue siendo `/fiestas-2026/`, por ejemplo:
+Cloudflare devolvera una URL publica temporal de `trycloudflare.com`. La app queda disponible en la raiz del subdominio temporal, por ejemplo:
 
 ```text
-https://<subdominio>.trycloudflare.com/fiestas-2026/
+https://<subdominio>.trycloudflare.com/
 ```
 
 ## Datos De Eventos
@@ -111,7 +111,7 @@ src/data/fiestas-2026/events.json
 Cada evento debe tener un `id` lowercase y seguro para URL. Ese `id` se usa en la ruta:
 
 ```text
-/fiestas-2026/e/<id>/
+/e/<id>/
 ```
 
 Campos principales:
@@ -204,7 +204,7 @@ CHROME_PATH="/ruta/a/Google Chrome" npm run screenshots
 
 ## Politica De URLs
 
-Las rutas de Fiestas 2026 se mantienen locales bajo `/fiestas-2026/`. Los enlaces al resto de Aldea Pucela Eventos deben ser absolutos con base:
+Las rutas de Fiestas 2026 se publican en la raiz de `https://fiestas.aldeapucela.org/`. Los enlaces al resto de Aldea Pucela Eventos deben ser absolutos con base:
 
 ```text
 https://eventos.aldeapucela.org/

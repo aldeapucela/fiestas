@@ -10,7 +10,7 @@ import autoprefixer from 'autoprefixer';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const dist = path.join(root, 'dist');
-const publicBaseUrl = 'https://eventos.aldeapucela.org';
+const publicBaseUrl = 'https://fiestas.aldeapucela.org';
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
@@ -95,7 +95,7 @@ async function loadEvents() {
     .map((event) => ({
       ...event,
       icon: fiestas2026Icon(event.type),
-      urlPath: '/fiestas-2026/e/' + event.id + '/',
+      urlPath: '/e/' + event.id + '/',
       mapUrl: event.coordinates ? 'https://www.openstreetmap.org/?mlat=' + event.coordinates.lat + '&mlon=' + event.coordinates.lng + '#map=17/' + event.coordinates.lat + '/' + event.coordinates.lng : '',
       directionsUrl: event.coordinates ? 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(event.coordinates.lat + ',' + event.coordinates.lng) : ''
     }));
@@ -142,15 +142,15 @@ async function build() {
   const summary = buildSummary(events);
   const socialImage = publicBaseUrl + '/assets/social-preview.jpg';
 
-  await writeFile('fiestas-2026/index.html', render('fiestas-2026.njk', {
+  await writeFile('index.html', render('fiestas-2026.njk', {
     ...pageContext(assetVersion),
     title: 'Fiestas Valladolid 2026 | Aldea Pucela',
     meta: { description: 'Agenda de las Fiestas de Valladolid 2026 por días, horarios, espacios, categorías y mapa.' },
-    canonicalUrl: publicBaseUrl + '/fiestas-2026/',
+    canonicalUrl: publicBaseUrl + '/',
     social: {
       type: 'website', title: 'Fiestas Valladolid 2026 | Aldea Pucela',
       description: 'Agenda de las Fiestas de Valladolid 2026 por días, horarios, espacios, categorías y mapa.',
-      image: socialImage, url: publicBaseUrl + '/fiestas-2026/'
+      image: socialImage, url: publicBaseUrl + '/'
     },
     fiestasEvents: events,
     fiestasEventsJson: JSON.stringify(events),
@@ -159,7 +159,7 @@ async function build() {
   }));
 
   for (const event of events) {
-    await writeFile('fiestas-2026/e/' + event.id + '/index.html', render('fiestas-2026-detail.njk', {
+    await writeFile('e/' + event.id + '/index.html', render('fiestas-2026-detail.njk', {
       ...pageContext(assetVersion),
       title: event.title + ' | Fiestas Valladolid 2026',
       meta: { description: event.summary || event.description || event.dateLabel },
@@ -174,7 +174,7 @@ async function build() {
     }));
   }
 
-  const urls = ['/fiestas-2026/', ...events.map((event) => event.urlPath)];
+  const urls = ['/', ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -183,7 +183,7 @@ async function build() {
     ''
   ].join('\n');
   await writeFile('sitemap.xml', sitemap);
-  await writeFile('robots.txt', ['User-agent: *', 'Allow: /fiestas-2026/', 'Sitemap: ' + publicBaseUrl + '/sitemap.xml', ''].join('\n'));
+  await writeFile('robots.txt', ['User-agent: *', 'Allow: /', 'Sitemap: ' + publicBaseUrl + '/sitemap.xml', ''].join('\n'));
   console.log('Built fiestas repo with ' + events.length + ' events.');
 }
 

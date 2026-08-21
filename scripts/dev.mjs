@@ -28,4 +28,4 @@ const server = http.createServer(async (req, res) => {
     res.end('Not found');
   }
 });
-server.listen(port, '127.0.0.1', () => console.log('http://127.0.0.1:' + port + '/fiestas-2026/'));
+server.listen(port, '127.0.0.1', () => console.log('http://127.0.0.1:' + port + '/'));

@@ -12,7 +12,7 @@ const userDataDir = `/tmp/fiestas-readme-chrome-${Date.now()}`;
 const shots = [
   {
     name: '01-agenda-desktop.png',
-    path: '/fiestas-2026/',
+    path: '/',
     viewport: { width: 1440, height: 1000 },
     prepare: async (page) => {
       await page.waitForSelector('.fiestas-event-card');
@@ -20,7 +20,7 @@ const shots = [
   },
   {
     name: '02-filtro-busqueda.png',
-    path: '/fiestas-2026/',
+    path: '/',
     viewport: { width: 1440, height: 1000 },
     prepare: async (page) => {
       await page.waitForSelector('.fiestas-event-card');
@@ -34,7 +34,7 @@ const shots = [
   },
   {
     name: '03-filtro-tipos.png',
-    path: '/fiestas-2026/',
+    path: '/',
     viewport: { width: 1440, height: 1000 },
     prepare: async (page) => {
       await page.waitForSelector('.fiestas-event-card');
@@ -51,7 +51,7 @@ const shots = [
   },
   {
     name: '04-favoritos.png',
-    path: '/fiestas-2026/',
+    path: '/',
     viewport: { width: 1440, height: 1000 },
     prepare: async (page) => {
       await page.waitForSelector('.fiestas-event-card');
@@ -63,7 +63,7 @@ const shots = [
   },
   {
     name: '05-mapa.png',
-    path: '/fiestas-2026/',
+    path: '/',
     viewport: { width: 1440, height: 1000 },
     prepare: async (page) => {
       await page.waitForSelector('.fiestas-event-card');
@@ -74,7 +74,7 @@ const shots = [
   },
   {
     name: '06-detalle-evento.png',
-    path: '/fiestas-2026/e/2026-09-04-2030-pregon-de-la-feria-y-fiestas-de-la-virgen-de-san-lorenzo-2026-a-cargo-cf838a77/',
+    path: '/e/2026-09-04-2030-pregon-de-la-feria-y-fiestas-de-la-virgen-de-san-lorenzo-2026-a-cargo-cf838a77/',
     viewport: { width: 1440, height: 1100 },
     prepare: async (page) => {
       await page.waitForSelector('.fiestas-detail');
@@ -83,7 +83,7 @@ const shots = [
   },
   {
     name: '07-menu-movil.png',
-    path: '/fiestas-2026/',
+    path: '/',
     viewport: { width: 390, height: 900, mobile: true },
     prepare: async (page) => {
       await page.waitForSelector('.fiestas-event-card');
@@ -93,7 +93,7 @@ const shots = [
   },
   {
     name: '08-filtros-movil.png',
-    path: '/fiestas-2026/',
+    path: '/',
     viewport: { width: 390, height: 900, mobile: true },
     prepare: async (page) => {
       await page.waitForSelector('.fiestas-event-card');
@@ -103,7 +103,7 @@ const shots = [
   },
   {
     name: '09-tema-oscuro.png',
-    path: '/fiestas-2026/',
+    path: '/',
     viewport: { width: 1440, height: 1000 },
     theme: 'dark',
     prepare: async (page) => {
