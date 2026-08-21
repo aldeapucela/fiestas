@@ -1392,19 +1392,15 @@
     margin: 0;
     overflow: hidden;
     border-radius: 1.25rem;
-    background: #fbfaf8;
+    background: #102444;
     box-shadow: 0 1rem 2rem rgba(26, 33, 45, 0.11);
   }
 
   .fiestas-detail-hero img {
     display: block;
     width: 100%;
-    aspect-ratio: 1;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
-  }
-
-  .fiestas-detail-hero {
-    position: relative;
   }
 
   .menu-drawer-pwa-action {

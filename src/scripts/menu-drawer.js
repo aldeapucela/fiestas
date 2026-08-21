@@ -18,10 +18,10 @@ function markMoreHintSeen() {
   } catch (_) {}
 }
 
-function updateMoreHint() {
+function updateMoreHint(pwaAvailable = false) {
   const seen = wasMoreHintSeen();
   document.querySelectorAll('[data-menu-hint-dot]').forEach((dot) => {
-    dot.hidden = seen;
+    dot.hidden = seen || !pwaAvailable;
   });
 }
 
@@ -53,6 +53,9 @@ export function setupMenuDrawer() {
 
   updateMoreHint();
   syncState(!drawer.hidden);
+  window.addEventListener('fiestas:pwa-availability', (event) => {
+    updateMoreHint(Boolean(event.detail?.available));
+  });
   document.addEventListener('click', (event) => {
     if (event.target.closest('[data-menu-open]')) {
       event.preventDefault();

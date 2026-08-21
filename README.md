@@ -99,7 +99,7 @@ La aplicación se puede instalar desde navegadores compatibles. La acción apare
 
 El service worker usa red primero para las páginas HTML y caché como fallback. Solo guarda recursos propios y páginas visitadas; no guarda favoritos, planes ni datos personales en la caché. Los favoritos y planes continúan siendo datos locales de `localStorage`.
 
-La portada y las fichas incluyen Open Graph y Twitter/X. La portada conserva su hero original; la social preview usa la referencia visual clara de Eventos de Aldea Pucela y las fichas usan un icono morado sobre un lienzo cuadrado blanco.
+La portada y las fichas incluyen Open Graph y Twitter/X. La portada conserva su hero original; la social preview usa la referencia visual clara de Eventos de Aldea Pucela y las fichas usan la miniatura cuadrada de categoría solo como imagen social.
 
 Para validar la salida localmente:
 
@@ -155,7 +155,7 @@ Campos principales:
 - `performances`, `organizers`, `collaborators`: listas opcionales para la ficha.
 - `coordinates`: coordenadas para mapa. Como minimo `{ "lat": number, "lng": number }`.
 - `ticket`: informacion opcional de entradas.
-- `image`: imagen editorial opcional para la ficha. Si no existe, el build usa la miniatura cuadrada clara de su categoría con un icono morado pequeño.
+- `image`: imagen editorial opcional para la ficha. Si no existe, la ficha no muestra un hero; el build usa la miniatura cuadrada clara de su categoría únicamente para compartir en redes.
 
 Ejemplo minimo:
 

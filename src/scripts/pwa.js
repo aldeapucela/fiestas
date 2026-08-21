@@ -7,7 +7,7 @@ import {
 } from './analytics.js';
 
 const DISMISSED_KEY = 'fiestasPucela:pwa-install-dismissed';
-const INSTALL_HINT_SEEN_KEY = 'fiestasPucela:pwa-install-hint-seen';
+const INSTALLED_KEY = 'fiestasPucela:pwa-installed';
 let deferredInstallPrompt = null;
 let installAvailableTracked = false;
 let previousFocus = null;
@@ -36,50 +36,43 @@ function setDismissed() {
   } catch (_) {}
 }
 
-function wasInstallHintSeen() {
+function wasInstalled() {
   try {
-    return window.localStorage.getItem(INSTALL_HINT_SEEN_KEY) === 'true';
+    return window.localStorage.getItem(INSTALLED_KEY) === 'true';
   } catch (_) {
     return false;
   }
 }
 
-function markInstallHintSeen() {
+function markInstalled() {
   try {
-    window.localStorage.setItem(INSTALL_HINT_SEEN_KEY, 'true');
+    window.localStorage.setItem(INSTALLED_KEY, 'true');
   } catch (_) {}
 }
 
 function updateInstallHint() {
-  const seen = wasInstallHintSeen();
+  const installed = isStandalone() || wasInstalled();
   const installButton = document.querySelector('[data-pwa-install]');
   const iosButton = document.querySelector('[data-pwa-ios-help-open]');
   const installDot = document.querySelector('[data-pwa-install-hint]');
   const iosDot = document.querySelector('[data-pwa-ios-hint]');
-  if (installDot) installDot.hidden = seen || !installButton || installButton.hidden;
-  if (iosDot) iosDot.hidden = seen || !iosButton || iosButton.hidden;
-}
-
-function markInstallHintWhenMenuIsViewed() {
-  if (wasInstallHintSeen()) return;
-  const installButton = document.querySelector('[data-pwa-install]');
-  const iosButton = document.querySelector('[data-pwa-ios-help-open]');
-  if ((!installButton || installButton.hidden) && (!iosButton || iosButton.hidden)) return;
-  window.setTimeout(() => {
-    markInstallHintSeen();
-    updateInstallHint();
-  }, 500);
+  if (installDot) installDot.hidden = installed || !installButton || installButton.hidden;
+  if (iosDot) iosDot.hidden = installed || !iosButton || iosButton.hidden;
 }
 
 function updateInstallActions() {
   const installButton = document.querySelector('[data-pwa-install]');
   const iosButton = document.querySelector('[data-pwa-ios-help-open]');
-  const canInstall = Boolean(deferredInstallPrompt) && !isStandalone() && !wasDismissed();
-  const canShowIosHelp = isAppleMobile() && !isStandalone();
+  const installed = isStandalone() || wasInstalled();
+  const canInstall = Boolean(deferredInstallPrompt) && !installed && !wasDismissed();
+  const canShowIosHelp = isAppleMobile() && !installed;
 
   if (installButton) installButton.hidden = !canInstall;
   if (iosButton) iosButton.hidden = !canShowIosHelp;
   updateInstallHint();
+  window.dispatchEvent(new CustomEvent('fiestas:pwa-availability', {
+    detail: { available: canInstall || canShowIosHelp }
+  }));
 }
 
 function closeMenu() {
