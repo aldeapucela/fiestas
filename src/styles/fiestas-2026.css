@@ -1514,6 +1514,11 @@
     font-weight: 900;
   }
 
+  .fiestas-detail-copy h2 {
+    color: #667085;
+    font-weight: 500;
+  }
+
   .fiestas-detail-card h2 i {
     color: #73579f;
   }
@@ -1699,6 +1704,7 @@
   .fiestas-community-card {
     display: grid;
     gap: 0.9rem;
+    margin-top: 3rem;
     border: 1px solid #ebeef3;
     border-radius: 1.15rem;
     background: #f7f5fb;
@@ -1859,6 +1865,10 @@
   html.dark .fiestas-detail-card h2,
   html.dark .fiestas-detail-map-empty p {
     color: #f8fafc;
+  }
+
+  html.dark .fiestas-detail-copy h2 {
+    color: #aeb7c5;
   }
 
   html.dark .fiestas-date-card,
