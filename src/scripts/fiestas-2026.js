@@ -4,11 +4,16 @@ import { initTheme } from './theme.js';
 
 const storageKey = 'fiestasPucela:favorites';
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
+const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
 const cartoLayers = {
   light: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
   dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
 };
 let leafletPromise = null;
+let initialDate = null;
+let filterBackdrop = null;
+let filterScrollY = 0;
+let isApplyingUrlState = false;
 
 const state = {
   view: 'agenda',
@@ -77,7 +82,8 @@ function init() {
     state.dates = getDates(state.events);
     state.types = getTypes(state.events);
     state.areas = getAreas(state.events);
-    state.selectedDate = getInitialDate(state.dates);
+    initialDate = getInitialDate(state.dates);
+    state.selectedDate = initialDate;
     applyInitialUrlState();
     bindControls();
     renderControlLists();
@@ -91,35 +97,35 @@ function init() {
 function bindControls() {
   els.search?.addEventListener('input', (event) => {
     state.search = normalizeText(event.target.value.trim());
-    render();
+    render({ updateUrl: true });
   });
 
   els.dateStrip?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-date]');
     if (!button) return;
     state.selectedDate = button.dataset.date || 'all';
-    render({ scrollToAgenda: true });
+    render({ scrollToAgenda: true, updateUrl: true });
   });
 
   els.typeList?.addEventListener('change', (event) => {
     const input = event.target.closest('input[data-type]');
     if (!input) return;
     toggleSetValue(state.selectedTypes, input.dataset.type || input.value || 'Evento', input.checked);
-    render();
+    render({ updateUrl: true });
   });
 
   els.areaList?.addEventListener('change', (event) => {
     const input = event.target.closest('input[data-area]');
     if (!input) return;
     toggleSetValue(state.selectedAreas, input.dataset.area || input.value, input.checked);
-    render();
+    render({ updateUrl: true });
   });
 
   els.ticketList?.addEventListener('change', (event) => {
     const input = event.target.closest('input[data-ticket-kind]');
     if (!input) return;
     toggleSetValue(state.selectedTicketKinds, input.dataset.ticketKind || input.value, input.checked);
-    render();
+    render({ updateUrl: true });
   });
 
   els.areaToggle?.addEventListener('click', () => setMenuOpen('area', els.areaToggle.getAttribute('aria-expanded') !== 'true'));
@@ -141,20 +147,20 @@ function bindControls() {
     setMenuOpen('type', false);
     setMenuOpen('area', false);
     setMenuOpen('ticket', false);
-    render();
+    render({ updateUrl: true });
   });
 
   els.activeFilters?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-remove-filter]');
     if (!button) return;
     removeFilter(button.dataset.removeFilter, button.dataset.value || '');
-    render();
+    render({ updateUrl: button.dataset.removeFilter !== 'favorites' });
   });
 
   els.viewTabs.forEach((button) => {
     button.addEventListener('click', () => {
       state.view = button.dataset.viewTab === 'map' ? 'map' : 'agenda';
-      render({ scrollToAgenda: true });
+      render({ scrollToAgenda: true, updateUrl: true });
     });
   });
 
@@ -172,7 +178,7 @@ function bindControls() {
   });
 
   document.addEventListener('click', (event) => {
-    if (!event.target.closest('.fiestas-type-menu')) {
+    if (!event.target.closest('.fiestas-type-menu') && !event.target.closest('[data-fiestas-filter-backdrop]')) {
       setMenuOpen('area', false);
       setMenuOpen('type', false);
       setMenuOpen('ticket', false);
@@ -217,6 +223,8 @@ function normalizeEvents(events) {
 function render(options = {}) {
   const filtered = getFilteredEvents();
   renderShellState(filtered);
+
+  if (options.updateUrl && !isApplyingUrlState) updateUrlFromState();
 
   if (state.view === 'map') {
     els.agenda.hidden = true;
@@ -481,8 +489,16 @@ function setMenuOpen(kind, open) {
   };
   const [list, toggle] = menus[kind] || [];
   if (!list || !toggle) return;
+  if (open) {
+    Object.entries(menus).forEach(([menuKind, [menuList, menuToggle]]) => {
+      if (menuKind === kind || !menuList || !menuToggle) return;
+      menuList.hidden = true;
+      menuToggle.setAttribute('aria-expanded', 'false');
+    });
+  }
   list.hidden = !open;
   toggle.setAttribute('aria-expanded', String(open));
+  updateFilterModalState();
 }
 
 function getInitialDate(dates) {
@@ -664,14 +680,99 @@ function emptyState(message, canClear = false) {
 }
 
 function applyInitialUrlState() {
+  isApplyingUrlState = true;
   const params = new URLSearchParams(window.location.search);
   const view = params.get('view');
   const eventId = params.get('event');
-  if (view === 'map') state.view = 'map';
+  state.view = view === 'map' ? 'map' : 'agenda';
+  state.selectedDate = getUrlDate(params) || initialDate || getInitialDate(state.dates);
+  state.search = normalizeText(params.get('q') || '');
+  state.selectedTypes = getUrlSet(params, 'type', state.types);
+  state.selectedAreas = getUrlSet(params, 'area', state.areas);
+  state.selectedTicketKinds = getUrlSet(params, 'ticket', ['free', 'paid', 'registration']);
+  if (els.search) els.search.value = params.get('q') || '';
   if (eventId) {
     const event = state.events.find((item) => item.id === eventId);
     if (event?.date) state.selectedDate = event.date;
   }
+  setMenuOpen('type', false);
+  setMenuOpen('area', false);
+  setMenuOpen('ticket', false);
+  isApplyingUrlState = false;
+}
+
+function getUrlDate(params) {
+  const date = params.get('date');
+  if (!date) return null;
+  if (date === 'all') return 'all';
+  return state.dates.some((day) => day.date === date) ? date : null;
+}
+
+function getUrlSet(params, key, allowedValues) {
+  const allowed = new Set(allowedValues);
+  const values = params.getAll(key)
+    .flatMap((value) => value.split(','))
+    .map((value) => value.trim())
+    .filter((value) => value && allowed.has(value));
+  return new Set(values);
+}
+
+function updateUrlFromState() {
+  const params = new URLSearchParams(window.location.search);
+  defaultQueryKeys.forEach((key) => params.delete(key));
+
+  if (state.selectedDate && state.selectedDate !== initialDate) params.set('date', state.selectedDate);
+  if (els.search?.value.trim()) params.set('q', els.search.value.trim());
+  [...state.selectedTypes].sort((a, b) => collator.compare(a, b)).forEach((type) => params.append('type', type));
+  [...state.selectedAreas].sort((a, b) => collator.compare(a, b)).forEach((area) => params.append('area', area));
+  [...state.selectedTicketKinds].sort().forEach((ticket) => params.append('ticket', ticket));
+  if (state.view === 'map') params.set('view', 'map');
+
+  const query = params.toString();
+  const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
+  const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+  if (nextUrl !== currentUrl) window.history.replaceState(null, '', nextUrl);
+}
+
+function updateFilterModalState() {
+  const isOpen = [els.areaList, els.typeList, els.ticketList].some((list) => list && !list.hidden);
+  if (isOpen) {
+    ensureFilterBackdrop();
+    document.body.classList.add('fiestas-filter-open');
+    if (!document.body.dataset.fiestasFilterScrollLocked) {
+      filterScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+      document.body.dataset.fiestasFilterScrollLocked = 'true';
+      document.body.style.top = `-${filterScrollY}px`;
+    }
+    filterBackdrop.hidden = false;
+  } else {
+    filterBackdrop?.setAttribute('hidden', '');
+    document.body.classList.remove('fiestas-filter-open');
+    if (document.body.dataset.fiestasFilterScrollLocked) {
+      delete document.body.dataset.fiestasFilterScrollLocked;
+      document.body.style.top = '';
+      window.scrollTo(0, filterScrollY);
+    }
+  }
+}
+
+function ensureFilterBackdrop() {
+  if (filterBackdrop) return filterBackdrop;
+  filterBackdrop = document.createElement('button');
+  filterBackdrop.type = 'button';
+  filterBackdrop.className = 'fiestas-filter-backdrop';
+  filterBackdrop.dataset.fiestasFilterBackdrop = 'true';
+  filterBackdrop.setAttribute('aria-label', 'Cerrar filtros');
+  filterBackdrop.hidden = true;
+  filterBackdrop.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setMenuOpen('type', false);
+    setMenuOpen('area', false);
+    setMenuOpen('ticket', false);
+  });
+  document.body.append(filterBackdrop);
+  return filterBackdrop;
 }
 
 function initDetailPage() {

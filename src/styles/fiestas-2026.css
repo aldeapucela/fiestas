@@ -233,8 +233,29 @@
   .fiestas-clear-filter[hidden],
   .fiestas-map-view[hidden],
   .fiestas-agenda[hidden],
-  .fiestas-type-list[hidden] {
+  .fiestas-type-list[hidden],
+  .fiestas-filter-backdrop[hidden] {
     display: none;
+  }
+
+  body.fiestas-filter-open {
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    overflow: hidden;
+    overscroll-behavior: none;
+  }
+
+  .fiestas-filter-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 205;
+    display: block;
+    border: 0;
+    background: rgba(15, 23, 42, 0.2);
+    padding: 0;
+    touch-action: none;
   }
 
   .fiestas-type-list {
