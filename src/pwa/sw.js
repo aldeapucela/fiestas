@@ -8,8 +8,6 @@ const APP_SHELL = [
   '/assets/icons/fiestas-192.png',
   '/assets/icons/fiestas-512.png',
   '/assets/icons/apple-touch-icon.png',
-  '/assets/hero-valladolid.jpg',
-  '/assets/hero-valladolid-dark.jpg',
   '/assets/plan-confetti.png',
   '/assets/css/fiestas-2026.css?v=__CSS_VERSION__',
   '/assets/js/analytics.js',

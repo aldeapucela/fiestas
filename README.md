@@ -99,7 +99,7 @@ La aplicación se puede instalar desde navegadores compatibles. La acción apare
 
 El service worker usa red primero para las páginas HTML y caché como fallback. Solo guarda recursos propios y páginas visitadas; no guarda favoritos, planes ni datos personales en la caché. Los favoritos y planes continúan siendo datos locales de `localStorage`.
 
-La portada y las fichas incluyen Open Graph y Twitter/X. La portada usa la imagen del Puente Mayor publicada por Aldea Pucela; las fichas usan una variante local por categoría con el icono de la categoría en la composición visible.
+La portada y las fichas incluyen Open Graph y Twitter/X. La portada conserva su hero original; la social preview usa la referencia visual clara de Eventos de Aldea Pucela y las fichas usan un icono morado sobre un lienzo cuadrado blanco.
 
 Para validar la salida localmente:
 
