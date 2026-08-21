@@ -1,0 +1,78 @@
+{% extends "layout.njk" %}
+
+{% block bodyClass %}fiestas-plan-page{% endblock %}
+{% block footerClass %} site-footer--fiestas{% endblock %}
+
+{% block body %}
+<main class="fiestas-app fiestas-plan-app" data-fiestas-plans-page>
+  <script>
+    window.__FIESTAS_2026_EVENTS__ = {{ fiestasEventsJson | safe }};
+  </script>
+  <section class="fiestas-plan-screen">
+    <header class="fiestas-plan-page-head">
+      <div class="fiestas-plan-topbar">
+        <a class="fiestas-plan-logo" href="/" aria-label="Volver a la agenda">
+          <img src="/assets/favicon.png" alt="" />
+        </a>
+        <h1>Mi plan</h1>
+        <button class="fiestas-plan-header-share" type="button" data-plan-header-share aria-label="Compartir mi plan">
+          <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
+        </button>
+      </div>
+      <label class="fiestas-plan-picker">
+        <i class="fa-solid fa-star" aria-hidden="true"></i>
+        <span class="sr-only">Seleccionar plan</span>
+        <select data-plan-picker aria-label="Seleccionar plan"></select>
+        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+      </label>
+    </header>
+
+    <section class="fiestas-plan-section" data-plan-section="saved" hidden>
+      <div data-plan-saved-content></div>
+    </section>
+
+    <section class="fiestas-plan-section" data-plan-section="plan">
+      <form class="fiestas-plan-create-form" data-plan-create-form>
+        <label for="plan-create-input">Crear un plan nuevo</label>
+        <div>
+          <input id="plan-create-input" type="text" maxlength="80" placeholder="Ej. Sábado en familia" data-plan-create-input />
+          <button class="fiestas-plan-action fiestas-plan-action-primary" type="submit">Crear plan</button>
+        </div>
+      </form>
+      <div data-plan-list hidden></div>
+      <div class="fiestas-plan-detail" data-plan-section="detail" hidden data-plan-detail></div>
+    </section>
+
+    <div class="fiestas-plan-feedback" data-plan-feedback aria-live="polite" hidden></div>
+    <a class="fiestas-plan-import-link" data-plan-import-link href="/plan/importar/" hidden>Importar un plan compartido</a>
+  </section>
+
+  <nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+    <a class="fiestas-bottom-link" href="/">
+      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+      <span>Agenda</span>
+    </a>
+    <a class="fiestas-bottom-link" href="/mapa/">
+      <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+        <circle cx="12" cy="10" r="2.35" />
+      </svg>
+      <span>Mapa</span>
+    </a>
+    <a class="fiestas-bottom-link is-active" href="/plan/" aria-current="page">
+      <i class="fa-regular fa-heart" aria-hidden="true"></i>
+      <span>Mi plan</span>
+    </a>
+    <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
+      <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+      <span>Más</span>
+    </button>
+  </nav>
+</main>
+
+{% include "partials/event-options.njk" %}
+{% include "partials/plan-selector.njk" %}
+{% include "partials/menu-drawer.njk" %}
+{% include "partials/subscribe-modal.njk" %}
+{% include "partials/location-modal.njk" %}
+{% endblock %}
