@@ -1261,10 +1261,44 @@ function ensureFilterBackdrop() {
 
 function initDetailPage() {
   updateDetailFavorite({ silent: true });
+  initDetailDirections();
   els.detailSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
   els.detailShare?.addEventListener('click', shareDetail);
   els.detailBack?.addEventListener('click', goBackToAgenda);
   if (els.detailMap) initDetailMap();
+}
+
+function initDetailDirections() {
+  const link = document.querySelector('[data-fiestas-directions]');
+  if (!link) return;
+
+  const lat = Number(link.dataset.lat);
+  const lng = Number(link.dataset.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+
+  const title = link.dataset.title || 'Actividad';
+  const platform = getMapPlatform();
+  if (platform === 'android') {
+    const label = encodeURIComponent(title);
+    link.href = `geo:0,0?q=${lat},${lng}(${label})`;
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+    return;
+  }
+
+  if (platform === 'ios') {
+    link.href = `http://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+  }
+}
+
+function getMapPlatform() {
+  const userAgent = navigator.userAgent || '';
+  if (/Android/i.test(userAgent)) return 'android';
+  if (/iPad|iPhone|iPod/i.test(userAgent)) return 'ios';
+  if (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) return 'ios';
+  return 'desktop';
 }
 
 function updateDetailFavorite(options = {}) {
@@ -1343,12 +1377,19 @@ async function initDetailMap() {
   }
   try {
     const map = leaflet.map(els.detailMap, { scrollWheelZoom: false }).setView([lat, lng], 16);
+    const title = els.detailMap.dataset.title || 'Actividad';
+    const markerIcon = leaflet.divIcon({
+      className: 'fiestas-detail-map-marker',
+      iconSize: [0, 0],
+      iconAnchor: [0, 0],
+      html: `<span class="fiestas-detail-map-marker-content"><i class="fiestas-detail-map-marker-icon fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-detail-map-marker-label">${escapeHtml(title)}</span></span>`
+    });
     let tileLayer = createCartoLayer(leaflet).addTo(map);
     document.addEventListener('aldeapucela:themechange', () => {
       map.removeLayer(tileLayer);
       tileLayer = createCartoLayer(leaflet).addTo(map);
     });
-    leaflet.marker([lat, lng]).addTo(map).bindPopup(escapeHtml(els.detailMap.dataset.title || 'Actividad'));
+    leaflet.marker([lat, lng], { icon: markerIcon, title }).addTo(map).bindPopup(escapeHtml(title));
     window.requestAnimationFrame(() => map.invalidateSize());
   } catch (error) {
     console.error(error);
