@@ -142,6 +142,7 @@ export function setupPwa() {
   });
 
   window.addEventListener('appinstalled', () => {
+    markInstalled();
     deferredInstallPrompt = null;
     updateInstallActions();
   });
