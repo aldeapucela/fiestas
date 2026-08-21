@@ -162,6 +162,10 @@
     @apply inline-flex h-5 w-5 shrink-0 items-center justify-center text-[18px] leading-none text-slate-500;
   }
 
+  .menu-drawer-link-logo {
+    @apply h-5 w-5 shrink-0 rounded-md object-contain;
+  }
+
   .menu-drawer-link-active {
     @apply bg-brand-50/60 font-semibold text-brand-700;
   }

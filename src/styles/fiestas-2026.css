@@ -1748,7 +1748,7 @@
     display: flex;
     min-height: 3rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     gap: 0.75rem;
     border-radius: 0.9rem;
     background: #73579f;
@@ -1788,6 +1788,16 @@
     text-underline-offset: 0.18rem;
   }
 
+  .fiestas-community-secondary a.fiestas-community-telegram,
+  .fiestas-community-secondary a.fiestas-community-telegram i {
+    color: #229ed9;
+  }
+
+  .fiestas-community-secondary a.fiestas-community-telegram:hover,
+  .fiestas-community-secondary a.fiestas-community-telegram:focus-visible {
+    color: #168ac1;
+  }
+
   .fiestas-community-secondary i {
     width: 1.15rem;
     color: #0f9f8d;
@@ -1795,21 +1805,18 @@
     text-align: center;
   }
 
-  .fiestas-community-secondary .is-pending {
-    color: #8b93a0;
+  .fiestas-community-secondary a.fiestas-community-whatsapp {
+    color: #579b6e;
+    font-weight: 700;
   }
 
-  .fiestas-community-secondary .is-pending i {
-    color: #8b93a0;
+  .fiestas-community-secondary a.fiestas-community-whatsapp i {
+    color: #25d366;
   }
 
-  .fiestas-community-secondary small {
-    margin-left: auto;
-    border-radius: 9999px;
-    background: rgba(139, 147, 160, 0.14);
-    padding: 0.2rem 0.45rem;
-    font-size: 0.68rem;
-    font-weight: 750;
+  .fiestas-community-secondary a.fiestas-community-whatsapp:hover,
+  .fiestas-community-secondary a.fiestas-community-whatsapp:focus-visible {
+    color: #278b4d;
   }
 
   .fiestas-app :focus-visible,
@@ -1922,9 +1929,21 @@
     color: #bdc4cf;
   }
 
-  html.dark .fiestas-community-secondary a,
-  html.dark .fiestas-community-secondary .is-pending {
+  html.dark .fiestas-community-secondary a {
     color: #c8b3e5;
+  }
+
+  html.dark .fiestas-community-secondary a.fiestas-community-telegram,
+  html.dark .fiestas-community-secondary a.fiestas-community-telegram i {
+    color: #54b8e8;
+  }
+
+  html.dark .fiestas-community-secondary a.fiestas-community-whatsapp {
+    color: #79bd8d;
+  }
+
+  html.dark .fiestas-community-secondary a.fiestas-community-whatsapp i {
+    color: #49df7c;
   }
 
   html.dark .fiestas-type-option {
