@@ -2,7 +2,7 @@
 
 Repositorio independiente para publicar la agenda de Fiestas Valladolid 2026 dentro de Aldea Pucela Eventos.
 
-La salida generada es una web estatica para `https://fiestas.aldeapucela.org/`, con listado interactivo, filtros, favoritos en navegador, mapa y paginas de detalle por evento.
+La salida generada es una web estatica para `https://fiestas.aldeapucela.org/`, con listado interactivo, filtros, favoritos y planes locales en el navegador, mapa y paginas de detalle por evento.
 
 ![Agenda de Fiestas Valladolid 2026](docs/screenshots/01-agenda-desktop.png)
 
@@ -12,8 +12,12 @@ El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe 
 
 - `/`: agenda principal.
 - `/e/<id>/`: detalle de cada evento.
+- `/plan/`: guardados y planes personalizados.
+- `/plan/importar/`: importación de planes compartidos.
 - `/assets/css/fiestas-2026.css`: estilos compilados con Tailwind, PostCSS y Autoprefixer.
 - `/assets/js/fiestas-2026.js`: comportamiento de agenda, mapa, filtros y favoritos.
+- `/assets/js/plans-page.js`, `/assets/js/plan-storage.js`, `/assets/js/plan-export.js`: planes locales, selector de actividades, importación y exportación.
+- `/assets/js/analytics.js`: eventos de uso compatibles con Matomo, sin nombres personalizados de planes.
 - `/assets/js/menu-drawer.js`, `/assets/js/subscribe.js`, `/assets/js/theme.js`: modulos compartidos de UI.
 - `/sitemap.xml` y `/robots.txt`: metadatos de rastreo.
 
@@ -83,7 +87,8 @@ El build:
 6. Normaliza, ordena y enriquece cada evento con icono, URL local, URL canonica, texto de compartir, etiquetas de entrada y enlaces de mapa.
 7. Conserva los metadatos de procedencia de `coordinates` cuando existen.
 8. Renderiza la agenda y una pagina de detalle por evento con Nunjucks.
-9. Escribe `sitemap.xml` y `robots.txt`.
+9. Renderiza `/plan/` y `/plan/importar/`.
+10. Escribe `sitemap.xml` y `robots.txt`.
 
 Para limpiar solo la salida generada:
 
@@ -213,6 +218,12 @@ El menu de tipos se genera a partir de `tags` y, si no existen, de `type`. Permi
 Cada tarjeta tiene un boton de guardado. Los favoritos se almacenan en `localStorage` con la clave `fiestasPucela:favorites`, por lo que son locales al navegador del usuario. El boton `Favoritos` limita la agenda a los eventos guardados.
 
 ![Vista de favoritos](docs/screenshots/04-favoritos.png)
+
+## Mi Plan
+
+`/plan/` muestra por defecto `Guardados` como un plan virtual con todos los favoritos, contador y filtro de fechas. El selector permite desplegar los planes personalizados y crear uno nuevo. Los favoritos se conservan en `fiestasPucela:favorites` y los planes personalizados versionados en `fiestasPucela:plans`. Las tarjetas mantienen el marcador; las acciones adicionales se encuentran en el botón de tres puntos y permiten añadir una actividad a uno o varios planes. Los planes se pueden renombrar, exportar, compartir como `.fiestas-plan.json`, añadir al calendario y eliminar. Los archivos usan `{ schemaVersion: 1, festival, plans: [...] }` y la importación también acepta el formato anterior de un único plan. La importación se previsualiza con el número de planes, permite expandir el listado y descarta identificadores de actividades desconocidos antes de guardar.
+
+La barra inferior de la aplicación enlaza siempre a `/plan/`; no existe una ruta local `/favoritos/`.
 
 ## Mapa
 
@@ -437,6 +448,7 @@ Antes de publicar:
 7. Prueba guardar y compartir desde una ficha.
 8. Revisa el drawer y los filtros en movil.
 9. Cambia entre tema claro y oscuro.
+10. Revisa `/plan/`, `/plan/importar/`, el selector desde una actividad, la exportación ICS y la importación de un archivo invalido.
 
 ## Politica De Cache De CSS Y JavaScript
 

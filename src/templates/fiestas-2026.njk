@@ -189,7 +189,7 @@
       </button>
     </section>
 
-    <a class="fiestas-plan-card" href="/favoritos/">
+    <a class="fiestas-plan-card" href="/plan/">
       <img class="fiestas-plan-icon" src="/assets/plan-confetti.png" alt="" aria-hidden="true" />
       <span>
         <strong>Vive las Fiestas</strong>
@@ -211,7 +211,7 @@
       </svg>
       <span>Mapa</span>
     </button>
-    <a class="fiestas-bottom-link" href="/favoritos/">
+    <a class="fiestas-bottom-link" href="/plan/">
       <i class="fa-regular fa-heart" aria-hidden="true"></i>
       <span>Mi plan</span>
     </a>
@@ -223,6 +223,8 @@
 </main>
 
 {% include "partials/menu-drawer.njk" %}
+{% include "partials/event-options.njk" %}
+{% include "partials/plan-selector.njk" %}
 {% include "partials/subscribe-modal.njk" %}
 {% include "partials/location-modal.njk" %}
 {% endblock %}

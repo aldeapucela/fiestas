@@ -11,10 +11,21 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const dist = path.join(root, 'dist');
 const publicBaseUrl = 'https://fiestas.aldeapucela.org';
+const analyticsConfig = {
+  enabled: parseBooleanEnv(process.env.FIESTAS_ANALYTICS_ENABLED),
+  trackerUrl: process.env.FIESTAS_MATOMO_URL || 'https://stats.aldeapucela.org/',
+  siteId: process.env.FIESTAS_MATOMO_SITE_ID || '29'
+};
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
 env.addFilter('dump', (value) => JSON.stringify(value));
+
+function parseBooleanEnv(value) {
+  if (value === 'true') return true;
+  if (value === 'false') return false;
+  return null;
+}
 
 function slugify(value = '') {
   return String(value).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'evento';
@@ -61,7 +72,7 @@ async function compileCss(cssVersionSeed) {
 async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  for (const file of ['fiestas-2026.js', 'menu-drawer.js', 'subscribe.js', 'theme.js']) {
+  for (const file of ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'fiestas-2026.js', 'menu-drawer.js', 'subscribe.js', 'theme.js']) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
     jsVersionSeed.push(['assets/js/' + file, content]);
@@ -294,7 +305,8 @@ function pageContext({ assetVersion, cssVersion, jsVersion }) {
     cssVersion,
     jsVersion,
     categoryFeeds: [],
-    publicBaseUrl
+    publicBaseUrl,
+    analyticsConfig
   };
 }
 
@@ -347,6 +359,29 @@ async function build() {
     }
   }));
 
+  await writeFile('plan/index.html', render('fiestas-2026-plan.njk', {
+    ...homeContext,
+    title: 'Mi plan | Fiestas Valladolid 2026',
+    canonicalUrl: publicBaseUrl + '/plan/',
+    social: {
+      ...homeContext.social,
+      title: 'Mi plan | Fiestas Valladolid 2026',
+      url: publicBaseUrl + '/plan/'
+    }
+  }));
+
+  await writeFile('plan/importar/index.html', render('fiestas-2026-plan-import.njk', {
+    ...homeContext,
+    title: 'Importar plan | Fiestas Valladolid 2026',
+    canonicalUrl: publicBaseUrl + '/plan/importar/',
+    robotsMeta: 'noindex,follow',
+    social: {
+      ...homeContext.social,
+      title: 'Importar plan | Fiestas Valladolid 2026',
+      url: publicBaseUrl + '/plan/importar/'
+    }
+  }));
+
   for (const event of events) {
     await writeFile('e/' + event.id + '/index.html', render('fiestas-2026-detail.njk', {
       ...pageContext(versions),
@@ -363,7 +398,7 @@ async function build() {
     }));
   }
 
-  const urls = ['/', '/mapa/', ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/plan/', '/plan/importar/', ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

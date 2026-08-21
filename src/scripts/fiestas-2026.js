@@ -1,8 +1,20 @@
 import { setupMenuDrawer } from './menu-drawer.js';
 import { setupSubscribe } from './subscribe.js';
 import { initTheme } from './theme.js';
+import {
+  trackActivityOpened,
+  trackActivityShared,
+  trackActivityViewed,
+  trackDateSelected,
+  trackFavoriteChanged,
+  trackFilterApplied,
+  trackMapMarkerSelected,
+  trackMapOpened,
+  trackSearchResults
+} from './analytics.js';
+import { readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
+import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
 
-const storageKey = 'fiestasPucela:favorites';
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
 const cartoLayers = {
@@ -98,13 +110,18 @@ function init() {
   initTheme();
   setupMenuDrawer();
   setupSubscribe();
+  setupPlanSelector();
 
   if (els.detail) {
     initDetailPage();
     return;
   }
 
-  if (!els.agenda) return;
+  if (!els.agenda) {
+    setupPlansPage(window.__FIESTAS_2026_EVENTS__ || []);
+    setupPlanImportPage(window.__FIESTAS_2026_EVENTS__ || []);
+    return;
+  }
 
   try {
     state.events = normalizeEvents(window.__FIESTAS_2026_EVENTS__ || []);
@@ -132,11 +149,16 @@ function bindControls() {
     state.focusedClusterEventIds = null;
     render({ updateUrl: true });
   });
+  els.search?.addEventListener('change', () => trackSearchResults(getFilteredEvents().length));
+  els.search?.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') trackSearchResults(getFilteredEvents().length);
+  });
 
   els.dateStrip?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-date]');
     if (!button) return;
     state.selectedDate = button.dataset.date || 'all';
+    trackDateSelected(state.selectedDate, state.view);
     state.focusedClusterEventIds = null;
     render({ scrollToAgenda: true, updateUrl: true });
   });
@@ -145,6 +167,7 @@ function bindControls() {
     const input = event.target.closest('input[data-type]');
     if (!input) return;
     toggleSetValue(state.selectedTypes, input.dataset.type || input.value || 'Evento', input.checked);
+    trackFilterApplied('type', input.dataset.type || input.value, state.view);
     state.focusedClusterEventIds = null;
     render({ updateUrl: true });
   });
@@ -153,6 +176,7 @@ function bindControls() {
     const input = event.target.closest('input[data-area]');
     if (!input) return;
     toggleSetValue(state.selectedAreas, input.dataset.area || input.value, input.checked);
+    trackFilterApplied('area', input.dataset.area || input.value, state.view);
     state.focusedClusterEventIds = null;
     render({ updateUrl: true });
   });
@@ -161,6 +185,7 @@ function bindControls() {
     const input = event.target.closest('input[data-ticket-kind]');
     if (!input) return;
     toggleSetValue(state.selectedTicketKinds, input.dataset.ticketKind || input.value, input.checked);
+    trackFilterApplied('ticket', input.dataset.ticketKind || input.value, state.view);
     state.focusedClusterEventIds = null;
     render({ updateUrl: true });
   });
@@ -251,6 +276,12 @@ function bindControls() {
   });
 
   els.agenda?.addEventListener('click', (event) => {
+    const activityLink = event.target.closest('a.fiestas-event-link');
+    if (activityLink) {
+      const card = activityLink.closest('[data-fiestas-card]');
+      trackActivityOpened(card?.dataset.fiestasCard);
+      return;
+    }
     const saveButton = event.target.closest('[data-fiestas-save]');
     if (!saveButton) return;
     event.preventDefault();
@@ -415,11 +446,21 @@ function eventCard(event) {
   save.setAttribute('aria-pressed', String(saved));
   save.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>`;
 
-  article.append(link, save);
+  const moreOptions = document.createElement('button');
+  moreOptions.className = 'fiestas-more-options';
+  moreOptions.type = 'button';
+  moreOptions.dataset.fiestasMoreOptions = 'true';
+  moreOptions.dataset.eventId = event.id;
+  moreOptions.setAttribute('aria-label', 'Más opciones');
+  moreOptions.setAttribute('aria-haspopup', 'dialog');
+  moreOptions.innerHTML = '<i class="fa-solid fa-ellipsis" aria-hidden="true"></i>';
+
+  article.append(link, save, moreOptions);
   return article;
 }
 
 async function renderMap(events) {
+  if (state.view === 'map' && !state.map) trackMapOpened();
   const withCoordinates = events.filter((event) => hasCoordinates(event.coordinates));
   state.currentMapEvents = withCoordinates;
   if (state.selectedEventId && !events.some((event) => event.id === state.selectedEventId)) state.selectedEventId = null;
@@ -489,6 +530,7 @@ function renderMapMarkers(events, leaflet) {
         })
       });
       marker.on('click', () => {
+        group.events.forEach((event) => trackMapMarkerSelected(event.id));
         if (canZoomIn()) {
           const nextZoom = Math.min(state.map.getZoom() + 2, state.map.getMaxZoom());
           if (hasSameCoordinates(group.events)) {
@@ -520,6 +562,7 @@ function renderMapMarkers(events, leaflet) {
     });
     marker.bindPopup(mapPopup(event));
     marker.on('click', () => {
+      trackMapMarkerSelected(event.id);
       state.selectedEventId = event.id;
       state.focusedClusterEventIds = null;
       state.sheetState = 'expanded';
@@ -1034,20 +1077,17 @@ function ticketSetLabel() {
 
 function toggleFavorite(id) {
   if (!id) return;
-  if (state.favorites.has(id)) state.favorites.delete(id);
-  else state.favorites.add(id);
-  localStorage.setItem(storageKey, JSON.stringify([...state.favorites]));
+  const saved = !state.favorites.has(id);
+  if (saved) state.favorites.add(id);
+  else state.favorites.delete(id);
+  writeFavoriteIds([...state.favorites]);
+  trackFavoriteChanged(id, saved);
   if (els.agenda) render();
   updateDetailFavorite();
 }
 
 function readFavorites() {
-  try {
-    const parsed = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
+  return readFavoriteIds();
 }
 
 function normalizeTags(tags, type) {
@@ -1260,6 +1300,7 @@ function ensureFilterBackdrop() {
 }
 
 function initDetailPage() {
+  trackActivityViewed(els.detail.dataset.eventId);
   updateDetailFavorite({ silent: true });
   initDetailDirections();
   els.detailSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
@@ -1330,6 +1371,7 @@ async function shareDetail() {
   try {
     if (navigator.share) {
       await navigator.share({ title, text, url });
+      trackActivityShared(els.detail.dataset.eventId);
       showDetailFeedback('Actividad compartida.');
       return;
     }
@@ -1340,6 +1382,7 @@ async function shareDetail() {
   try {
     if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
     await navigator.clipboard.writeText(url);
+    trackActivityShared(els.detail.dataset.eventId);
     showDetailFeedback('Enlace copiado.');
   } catch (_) {
     if (els.detailShareFallback) els.detailShareFallback.hidden = false;
