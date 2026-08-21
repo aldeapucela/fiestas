@@ -574,100 +574,181 @@
     color: #0f9f8d;
   }
 
-  .fiestas-detail-main {
-    background: #fbfaf8;
+  .fiestas-detail-app {
+    padding: 1.15rem 1rem calc(env(safe-area-inset-bottom) + 8.5rem);
   }
 
   .fiestas-detail {
     display: grid;
-    gap: 1rem;
-    max-width: 58rem;
+    gap: 1.25rem;
+    max-width: 46rem;
     margin: 0 auto;
   }
 
-  .fiestas-kicker {
-    margin: 0 0 0.35rem;
-    color: #73579f;
-    font-size: 0.8rem;
+  .fiestas-detail-top {
+    display: grid;
+    grid-template-columns: 2.9rem minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .fiestas-detail-top p {
+    margin: 0;
+    color: #111827;
+    font-size: 1.45rem;
     font-weight: 900;
     letter-spacing: 0;
-    text-transform: uppercase;
   }
 
-  .fiestas-back-link {
-    display: inline-flex;
-    width: fit-content;
-    align-items: center;
+  .fiestas-detail-top-actions {
+    display: flex;
     gap: 0.45rem;
-    color: #73579f;
-    font-weight: 850;
-    text-decoration: none;
   }
 
-  .fiestas-detail-head,
-  .fiestas-detail-card {
-    border: 1px solid #e3e6ec;
-    border-radius: 1rem;
-    background: #fff;
-    box-shadow: 0 0.7rem 1.55rem rgba(26, 33, 45, 0.07);
-  }
-
-  .fiestas-detail-head {
-    display: grid;
-    grid-template-columns: 3.5rem minmax(0, 1fr);
-    gap: 1rem;
-    padding: 1rem;
-  }
-
-  .fiestas-detail-icon {
+  .fiestas-detail-top-button {
     display: inline-flex;
-    width: 3.5rem;
-    height: 3.5rem;
+    width: 2.9rem;
+    height: 2.9rem;
     align-items: center;
     justify-content: center;
-    border-radius: 0.85rem;
-    background: rgba(15, 159, 141, 0.11);
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
     color: #0f9f8d;
-    font-size: 1.35rem;
+    font-size: 1.55rem;
+  }
+
+  .fiestas-detail-top-button.is-active {
+    color: #73579f;
+  }
+
+  .fiestas-detail-hero {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 1.25rem;
+    background: #102444;
+    box-shadow: 0 1rem 2rem rgba(26, 33, 45, 0.11);
+  }
+
+  .fiestas-detail-hero img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .fiestas-detail-title-block {
+    display: grid;
+    gap: 1rem;
   }
 
   .fiestas-detail-title {
     margin: 0;
-    color: #1d222d;
-    font-size: clamp(1.7rem, 4vw, 3rem);
+    color: #111827;
+    font-size: clamp(2.25rem, 11vw, 4rem);
     font-weight: 900;
-    line-height: 1.1;
+    line-height: 1.02;
     overflow-wrap: anywhere;
   }
 
-  .fiestas-detail-meta {
+  .fiestas-detail-tags {
     display: flex;
+    min-width: 0;
     flex-wrap: wrap;
-    gap: 0.55rem 0.9rem;
-    margin-top: 0.8rem;
-    color: #667085;
-    font-size: 0.92rem;
+    gap: 0.55rem;
   }
 
-  .fiestas-detail-meta span {
+  .fiestas-detail-type {
+    display: inline-flex;
+    width: fit-content;
+    max-width: 100%;
+    min-height: 3rem;
+    align-items: center;
+    gap: 0.65rem;
+    border-radius: 9999px;
+    background: rgba(15, 159, 141, 0.12);
+    color: #0f8f80;
+    padding: 0 1rem;
+    font-size: 1.08rem;
+    font-weight: 850;
+  }
+
+  .fiestas-detail-card,
+  .fiestas-detail-map-card {
+    border: 1px solid #e3e6ec;
+    border-radius: 1.25rem;
+    background: #fff;
+    box-shadow: 0 0.8rem 1.7rem rgba(26, 33, 45, 0.07);
+  }
+
+  .fiestas-detail-facts {
+    display: grid;
+    padding: 1rem 1.15rem;
+  }
+
+  .fiestas-detail-fact {
+    display: grid;
+    grid-template-columns: 2.3rem minmax(0, 1fr);
+    gap: 0.85rem;
+    align-items: center;
+    min-height: 3.7rem;
+    color: #111827;
+    font-size: 1.03rem;
+    line-height: 1.35;
+  }
+
+  .fiestas-detail-fact + .fiestas-detail-fact {
+    border-top: 1px solid #e7eaf0;
+  }
+
+  .fiestas-detail-fact i {
+    justify-self: center;
+    color: #73579f;
+    font-size: 1.35rem;
+  }
+
+  .fiestas-detail-fact-link {
     display: inline-flex;
     min-width: 0;
+    max-width: 100%;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.45rem;
+    color: #0f8f80;
+    font-weight: 850;
+    text-decoration: none;
+  }
+
+  .fiestas-detail-fact-link span {
+    min-width: 0;
     overflow-wrap: anywhere;
+  }
+
+  .fiestas-detail-fact-link i {
+    flex: 0 0 auto;
+    justify-self: auto;
+    color: #0f9f8d;
+    font-size: 0.9rem;
   }
 
   .fiestas-detail-card {
-    padding: 1rem;
+    padding: 1.15rem;
     color: #374151;
-    line-height: 1.6;
+    line-height: 1.7;
   }
 
   .fiestas-detail-card h2 {
-    margin: 0 0 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin: 0 0 0.65rem;
     color: #1d222d;
-    font-size: 1rem;
+    font-size: 1.05rem;
     font-weight: 900;
+  }
+
+  .fiestas-detail-card h2 i {
+    color: #73579f;
   }
 
   .fiestas-detail-card p {
@@ -684,39 +765,133 @@
     padding-left: 1.1rem;
   }
 
-  .fiestas-detail-map-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 0.75rem;
-    margin-bottom: 0.8rem;
+  .fiestas-detail-map-card {
+    margin-bottom: 0.75rem;
+    overflow: hidden;
   }
 
-  .fiestas-dialog-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.55rem;
+  .fiestas-detail-map {
+    position: relative;
+    z-index: 0;
+    min-height: 11.25rem;
   }
 
-  .fiestas-action {
+  .fiestas-detail-map .leaflet-pane,
+  .fiestas-detail-map .leaflet-top,
+  .fiestas-detail-map .leaflet-bottom {
+    z-index: 1;
+  }
+
+  .fiestas-detail-map-empty,
+  .fiestas-detail-map-error {
+    display: grid;
+    min-height: 11.25rem;
+    place-items: center;
+    gap: 0.45rem;
+    background:
+      linear-gradient(135deg, rgba(15, 159, 141, 0.12), rgba(115, 87, 159, 0.1)),
+      #f7faf9;
+    color: #596273;
+    padding: 1.4rem;
+    text-align: center;
+  }
+
+  .fiestas-detail-map-empty i {
+    color: #0f9f8d;
+    font-size: 2rem;
+  }
+
+  .fiestas-detail-map-empty p,
+  .fiestas-detail-map-empty span {
+    margin: 0;
+  }
+
+  .fiestas-detail-map-empty p {
+    color: #1d222d;
+    font-weight: 900;
+  }
+
+  .fiestas-detail-map-error[hidden] {
+    display: none;
+  }
+
+  .fiestas-detail-map-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid #e7eaf0;
+  }
+
+  .fiestas-detail-map-action {
     display: inline-flex;
-    min-height: 2.55rem;
+    min-width: 0;
+    min-height: 3.75rem;
     align-items: center;
     justify-content: center;
-    gap: 0.45rem;
-    border-radius: 9999px;
-    background: #0f9f8d;
-    color: #fff;
-    padding: 0 0.95rem;
+    gap: 0.65rem;
+    color: #0f9f8d;
+    padding: 0.75rem;
+    font-size: 1rem;
     font-weight: 850;
     text-decoration: none;
   }
 
-  .fiestas-detail-map {
-    min-height: 20rem;
-    border-radius: 0.85rem;
-    overflow: hidden;
+  .fiestas-detail-map-action + .fiestas-detail-map-action {
+    border-left: 1px solid #e7eaf0;
+  }
+
+  .fiestas-detail-map-action-disabled,
+  .fiestas-bottom-link-disabled {
+    color: #98a2b3;
+  }
+
+  .fiestas-detail-feedback {
+    position: fixed;
+    right: 1rem;
+    bottom: 5.6rem;
+    left: 1rem;
+    z-index: 220;
+    max-width: 24rem;
+    margin: 0 auto;
+    border-radius: 9999px;
+    background: #111827;
+    color: #fff;
+    padding: 0.85rem 1rem;
+    font-weight: 850;
+    text-align: center;
+    box-shadow: 0 1rem 2rem rgba(17, 24, 39, 0.18);
+  }
+
+  .fiestas-detail-feedback[hidden],
+  .fiestas-detail-copy-fallback[hidden] {
+    display: none;
+  }
+
+  .fiestas-detail-copy-fallback {
+    border-radius: 1rem;
+    background: rgba(15, 159, 141, 0.08);
+    padding: 0.9rem;
+  }
+
+  .fiestas-detail-copy-fallback label,
+  .fiestas-detail-copy-fallback span {
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .fiestas-detail-copy-fallback span {
+    color: #374151;
+    font-size: 0.9rem;
+    font-weight: 850;
+  }
+
+  .fiestas-detail-copy-fallback input {
+    width: 100%;
+    border: 1px solid #d4dae4;
+    border-radius: 0.65rem;
+    background: #fff;
+    color: #111827;
+    padding: 0.75rem;
+    font: inherit;
   }
 
   .fiestas-app :focus-visible,
@@ -735,8 +910,10 @@
   html.dark .fiestas-brand,
   html.dark .fiestas-day-title,
   html.dark .fiestas-event-title,
+  html.dark .fiestas-detail-top p,
   html.dark .fiestas-detail-title,
-  html.dark .fiestas-detail-card h2 {
+  html.dark .fiestas-detail-card h2,
+  html.dark .fiestas-detail-map-empty p {
     color: #f8fafc;
   }
 
@@ -750,8 +927,8 @@
   html.dark .fiestas-agenda-summary,
   html.dark .fiestas-map-view,
   html.dark .fiestas-bottom-nav,
-  html.dark .fiestas-detail-head,
-  html.dark .fiestas-detail-card {
+  html.dark .fiestas-detail-card,
+  html.dark .fiestas-detail-map-card {
     border-color: #313743;
     background: #1a1f28;
     color: #f5f3ee;
@@ -761,8 +938,33 @@
   html.dark .fiestas-event-place,
   html.dark .fiestas-plan-card small,
   html.dark .fiestas-detail-card,
-  html.dark .fiestas-detail-meta {
+  html.dark .fiestas-detail-fact,
+  html.dark .fiestas-detail-copy-fallback span {
     color: #d4d9e2;
+  }
+
+  html.dark .fiestas-detail-fact + .fiestas-detail-fact,
+  html.dark .fiestas-detail-map-actions,
+  html.dark .fiestas-detail-map-action + .fiestas-detail-map-action {
+    border-color: #313743;
+  }
+
+  html.dark .fiestas-detail-map-empty,
+  html.dark .fiestas-detail-map-error {
+    background:
+      linear-gradient(135deg, rgba(23, 184, 164, 0.16), rgba(115, 87, 159, 0.18)),
+      #171c24;
+    color: #d4d9e2;
+  }
+
+  html.dark .fiestas-detail-copy-fallback {
+    background: rgba(23, 184, 164, 0.12);
+  }
+
+  html.dark .fiestas-detail-copy-fallback input {
+    border-color: #313743;
+    background: #121417;
+    color: #f8fafc;
   }
 
   html.dark .fiestas-type-option {

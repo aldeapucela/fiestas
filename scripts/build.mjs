@@ -60,6 +60,33 @@ async function copyJs(assetVersionSeed) {
   }
 }
 
+async function copyStaticAssets(assetVersionSeed) {
+  const sourceDir = path.join(root, 'src', 'assets');
+  try {
+    await copyAssetDir(sourceDir, sourceDir, assetVersionSeed);
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+}
+
+async function copyAssetDir(sourceDir, currentDir, assetVersionSeed) {
+  const entries = await fs.readdir(currentDir, { withFileTypes: true });
+  for (const entry of entries) {
+    const sourcePath = path.join(currentDir, entry.name);
+    if (entry.isDirectory()) {
+      await copyAssetDir(sourceDir, sourcePath, assetVersionSeed);
+      continue;
+    }
+    if (!entry.isFile()) continue;
+    const relPath = path.relative(sourceDir, sourcePath);
+    const targetPath = path.join(dist, 'assets', relPath);
+    const content = await fs.readFile(sourcePath);
+    await fs.mkdir(path.dirname(targetPath), { recursive: true });
+    await fs.writeFile(targetPath, content);
+    assetVersionSeed.push(relPath, createHash('sha256').update(content).digest('hex'));
+  }
+}
+
 async function loadEvents() {
   const raw = await fs.readFile(path.join(root, 'src', 'data', 'fiestas-2026', 'events.json'), 'utf8');
   return JSON.parse(raw).map((event) => {
@@ -79,6 +106,7 @@ async function loadEvents() {
     startTime: String(event.startTime || ''),
     endTime: String(event.endTime || ''),
     title: String(event.title || 'Evento'),
+    image: event.image ? String(event.image) : '',
     location: String(event.location || ''),
     zone: String(event.zone || ''),
     neighborhood: inferNeighborhood(event),
@@ -89,8 +117,8 @@ async function loadEvents() {
     performances: Array.isArray(event.performances) ? event.performances.map(String) : [],
     organizers: Array.isArray(event.organizers) ? event.organizers.map(String) : [],
     collaborators: Array.isArray(event.collaborators) ? event.collaborators.map(String) : [],
-    coordinates: event.coordinates && Number.isFinite(event.coordinates.lat) && Number.isFinite(event.coordinates.lng)
-      ? { lat: event.coordinates.lat, lng: event.coordinates.lng }
+    coordinates: hasCoordinates(event.coordinates)
+      ? normalizeCoordinates(event.coordinates)
       : null,
     ticket,
     ticketKind: ticketKind(ticket)
@@ -101,9 +129,62 @@ async function loadEvents() {
       ...event,
       icon: fiestas2026Icon(event.type),
       urlPath: '/e/' + event.id + '/',
-      mapUrl: event.coordinates ? 'https://www.openstreetmap.org/?mlat=' + event.coordinates.lat + '&mlon=' + event.coordinates.lng + '#map=17/' + event.coordinates.lat + '/' + event.coordinates.lng : '',
+      canonicalUrl: publicBaseUrl + '/e/' + event.id + '/',
+      shareText: shareText(event),
+      ticketLabel: ticketKindLabel(event.ticketKind),
+      ticketDetail: ticketDetail(event.ticketKind, event.ticket),
+      mapUrl: '/?view=map&event=' + encodeURIComponent(event.id),
+      osmUrl: event.coordinates ? 'https://www.openstreetmap.org/?mlat=' + event.coordinates.lat + '&mlon=' + event.coordinates.lng + '#map=17/' + event.coordinates.lat + '/' + event.coordinates.lng : '',
       directionsUrl: event.coordinates ? 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(event.coordinates.lat + ',' + event.coordinates.lng) : ''
     }));
+}
+
+function hasCoordinates(coordinates) {
+  return coordinates && Number.isFinite(coordinates.lat) && Number.isFinite(coordinates.lng);
+}
+
+function normalizeCoordinates(coordinates) {
+  return Object.fromEntries(Object.entries({
+    lat: coordinates.lat,
+    lng: coordinates.lng,
+    source: coordinates.source,
+    osmType: coordinates.osmType,
+    osmId: coordinates.osmId,
+    query: coordinates.query,
+    accuracy: coordinates.accuracy,
+    geocodedAt: coordinates.geocodedAt
+  }).filter(([, value]) => value !== undefined && value !== null && value !== ''));
+}
+
+function shareText(event) {
+  return [
+    event.title,
+    [event.dateLabel, [event.startTime, event.endTime].filter(Boolean).join(' - ')].filter(Boolean).join(' · '),
+    event.location
+  ].filter(Boolean).join('\n');
+}
+
+function ticketKindLabel(kind) {
+  const labels = {
+    free: 'Gratis',
+    paid: 'De pago',
+    registration: 'Inscripción'
+  };
+  return labels[kind] || 'Entrada no indicada';
+}
+
+function ticketDetail(kind, ticket) {
+  const genericText = normalizeForMatch([
+    'Entrada no indicada',
+    'Sin entrada indicada',
+    'El programa no indica venta de entradas para este evento.',
+    'No consta venta de entradas en el programa para este evento.'
+  ].join(' '));
+  const label = ticket?.label || '';
+  const note = ticket?.note || '';
+  if (label && label !== ticketKindLabel(kind) && !genericText.includes(normalizeForMatch(label))) return label;
+  if (kind !== 'free' && note && !genericText.includes(normalizeForMatch(note))) return note;
+  return '';
 }
 
 function buildSummary(events) {
@@ -216,6 +297,7 @@ async function build() {
   const assetVersionSeed = [];
   await compileCss(assetVersionSeed);
   await copyJs(assetVersionSeed);
+  await copyStaticAssets(assetVersionSeed);
   const assetVersion = createHash('sha256').update(assetVersionSeed.join('\\n')).digest('hex').slice(0, 10);
   const events = await loadEvents();
   const summary = buildSummary(events);
