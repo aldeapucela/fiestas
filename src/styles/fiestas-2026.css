@@ -1676,10 +1676,12 @@
     overflow: hidden;
   }
 
-  .fiestas-detail-map {
+  .fiestas-detail-map,
+  .fiestas-detail-map.leaflet-container {
     position: relative;
     z-index: 0;
     min-height: 11.25rem;
+    touch-action: pan-y !important;
   }
 
   .fiestas-detail-map .leaflet-pane,
@@ -1958,6 +1960,116 @@
     color: #278b4d;
   }
 
+  .fiestas-related-card {
+    display: grid;
+    gap: 0.85rem;
+    margin-top: 0.35rem;
+  }
+
+  .fiestas-related-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+  }
+
+  .fiestas-related-heading h2 {
+    margin: 0;
+  }
+
+  .fiestas-related-heading > span {
+    color: #73579f;
+    font-size: 0.76rem;
+    font-weight: 800;
+    text-align: right;
+  }
+
+  .fiestas-related-list {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .fiestas-related-item {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.65rem;
+    align-items: center;
+    border: 1px solid #ebeef3;
+    border-radius: 0.8rem;
+    color: inherit;
+    padding: 0.65rem 0.7rem;
+    text-decoration: none;
+    transition: border-color 160ms ease, background-color 160ms ease;
+  }
+
+  .fiestas-related-item:hover,
+  .fiestas-related-item:focus-visible {
+    border-color: rgba(15, 159, 141, 0.45);
+    background: rgba(15, 159, 141, 0.05);
+  }
+
+  .fiestas-related-time {
+    min-width: 2.45rem;
+    color: #0f9f8d;
+    font-size: 0.78rem;
+    font-weight: 850;
+    text-align: center;
+  }
+
+  .fiestas-related-copy {
+    display: grid;
+    min-width: 0;
+    gap: 0.2rem;
+  }
+
+  .fiestas-related-copy strong,
+  .fiestas-related-copy > span {
+    overflow: hidden;
+    overflow-wrap: anywhere;
+  }
+
+  .fiestas-related-copy strong {
+    display: -webkit-box;
+    color: #1d222d;
+    font-size: 0.88rem;
+    font-weight: 850;
+    line-height: 1.18;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .fiestas-related-copy > span {
+    display: -webkit-box;
+    color: #667085;
+    font-size: 0.76rem;
+    line-height: 1.2;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+  }
+
+  .fiestas-related-arrow {
+    color: #73579f;
+    font-size: 0.8rem;
+  }
+
+  .fiestas-related-more {
+    display: inline-flex;
+    justify-self: center;
+    align-items: center;
+    gap: 0.45rem;
+    color: #0f8f80;
+    font-size: 0.88rem;
+    font-weight: 850;
+    text-decoration: none;
+  }
+
+  .fiestas-related-more:hover,
+  .fiestas-related-more:focus-visible {
+    color: #087569;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+  }
+
   .fiestas-app :focus-visible,
   .fiestas-detail-main :focus-visible {
     outline: 3px solid rgba(15, 159, 141, 0.45);
@@ -2111,6 +2223,33 @@
 
   html.dark .fiestas-community-secondary a.fiestas-community-whatsapp i {
     color: #49df7c;
+  }
+
+  html.dark .fiestas-related-heading > span,
+  html.dark .fiestas-related-arrow {
+    color: #c8b3e5;
+  }
+
+  html.dark .fiestas-related-item {
+    border-color: #313743;
+  }
+
+  html.dark .fiestas-related-item:hover,
+  html.dark .fiestas-related-item:focus-visible {
+    border-color: rgba(23, 184, 164, 0.55);
+    background: rgba(23, 184, 164, 0.08);
+  }
+
+  html.dark .fiestas-related-copy strong {
+    color: #f7f8fa;
+  }
+
+  html.dark .fiestas-related-copy > span {
+    color: #bdc4cf;
+  }
+
+  html.dark .fiestas-related-more {
+    color: #5dd4c4;
   }
 
   html.dark .fiestas-type-option {

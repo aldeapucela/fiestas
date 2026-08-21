@@ -1425,7 +1425,11 @@ async function initDetailMap() {
     return;
   }
   try {
-    const map = leaflet.map(els.detailMap, { scrollWheelZoom: false }).setView([lat, lng], 16);
+    const isTouchDevice = window.matchMedia?.('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
+    const map = leaflet.map(els.detailMap, {
+      scrollWheelZoom: false,
+      dragging: !isTouchDevice
+    }).setView([lat, lng], 16);
     const title = els.detailMap.dataset.title || 'Actividad';
     const markerIcon = leaflet.divIcon({
       className: 'fiestas-detail-map-marker',

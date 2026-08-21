@@ -195,6 +195,34 @@
       </div>
     </aside>
 
+    {% if relatedEvents.length %}
+    <section class="fiestas-detail-card fiestas-related-card" aria-labelledby="fiestas-related-title">
+      <div class="fiestas-related-heading">
+        <h2 id="fiestas-related-title">
+          <i class="fa-solid {{ event.icon }}" aria-hidden="true"></i>
+          Relacionados
+        </h2>
+        <span>{{ event.type }}</span>
+      </div>
+      <div class="fiestas-related-list">
+        {% for related in relatedEvents %}
+        <a class="fiestas-related-item" href="{{ related.urlPath }}">
+          <span class="fiestas-related-time">{{ related.startTime or '—' }}</span>
+          <span class="fiestas-related-copy">
+            <strong>{{ related.title }}</strong>
+            <span>{{ related.dateLabel }}{% if related.location %} · {{ related.location }}{% endif %}</span>
+          </span>
+          <i class="fa-solid fa-chevron-right fiestas-related-arrow" aria-hidden="true"></i>
+        </a>
+        {% endfor %}
+      </div>
+      <a class="fiestas-related-more" href="/?date=all&amp;type={{ event.type | urlencode }}">
+        <span>Ver más</span>
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </section>
+    {% endif %}
+
     <div class="fiestas-detail-feedback" data-fiestas-detail-feedback aria-live="polite" hidden></div>
     <div class="fiestas-detail-copy-fallback" data-fiestas-share-fallback hidden>
       <label>

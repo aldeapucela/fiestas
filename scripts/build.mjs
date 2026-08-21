@@ -428,6 +428,7 @@ async function build() {
         imageType: 'image/jpeg', url: publicBaseUrl + event.urlPath
       },
       event,
+      relatedEvents: getRelatedEvents(events, event),
       hideDrawerFilters: true
     }));
   }
@@ -443,6 +444,27 @@ async function build() {
   await writeFile('sitemap.xml', sitemap);
   await writeFile('robots.txt', ['User-agent: *', 'Allow: /', 'Sitemap: ' + publicBaseUrl + '/sitemap.xml', ''].join('\n'));
   console.log('Built fiestas repo with ' + events.length + ' events.');
+}
+
+function getRelatedEvents(events, event, limit = 3) {
+  return events
+    .filter((candidate) => candidate.id !== event.id && candidate.type === event.type)
+    .map((candidate) => ({
+      event: candidate,
+      score: stableHash(event.id + ':' + candidate.id)
+    }))
+    .sort((a, b) => a.score - b.score)
+    .slice(0, limit)
+    .map(({ event: candidate }) => candidate);
+}
+
+function stableHash(value) {
+  let hash = 2166136261;
+  for (const character of String(value)) {
+    hash ^= character.codePointAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
 }
 
 build().catch((error) => {
