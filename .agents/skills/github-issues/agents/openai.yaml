@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Issues"
+  short_description: "Lee e interpreta issues con gh"
+  default_prompt: "Use $github-issues para leer e interpretar issues de GitHub en este repositorio."

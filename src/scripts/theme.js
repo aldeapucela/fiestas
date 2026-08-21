@@ -39,6 +39,7 @@ export function applyTheme(theme) {
   root.classList.toggle('dark', nextTheme === 'dark');
   root.style.colorScheme = nextTheme;
   updateThemeToggles(nextTheme);
+  document.dispatchEvent(new CustomEvent('aldeapucela:themechange', { detail: { theme: nextTheme } }));
 }
 
 export function toggleTheme() {
