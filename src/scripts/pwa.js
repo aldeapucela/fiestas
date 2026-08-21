@@ -150,14 +150,12 @@ export function setupPwa() {
   document.addEventListener('click', (event) => {
     if (event.target.closest('[data-pwa-install]')) {
       event.preventDefault();
-      markInstallHintSeen();
       updateInstallHint();
       promptInstall();
       return;
     }
     if (event.target.closest('[data-pwa-ios-help-open]')) {
       event.preventDefault();
-      markInstallHintSeen();
       updateInstallHint();
       openIosHelp();
       return;
@@ -167,8 +165,6 @@ export function setupPwa() {
       closeIosHelp();
     }
   });
-
-  window.addEventListener('fiestas:menu-opened', markInstallHintWhenMenuIsViewed);
 
   window.addEventListener('keydown', (event) => {
     const dialog = getIosDialog();
