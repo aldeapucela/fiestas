@@ -165,7 +165,9 @@ async function loadEvents() {
       ...event,
       icon: fiestas2026Icon(event.type),
       socialImagePath: '/assets/social/categories/' + slugify(event.type) + '.jpg',
-      socialImageAlt: 'Icono de la categoría ' + event.type + ' sobre una ilustración de Valladolid',
+      socialImageAlt: 'Icono morado de la categoría ' + event.type + ' sobre fondo blanco',
+      socialImageWidth: 512,
+      socialImageHeight: 512,
       urlPath: '/e/' + event.id + '/',
       canonicalUrl: publicBaseUrl + '/e/' + event.id + '/',
       shareText: shareText(event),
@@ -422,7 +424,8 @@ async function build() {
         description: event.summary || event.description || event.dateLabel,
         image: publicBaseUrl + event.socialImagePath,
         imageAlt: event.socialImageAlt,
-        imageWidth: 1200, imageHeight: 630, imageType: 'image/jpeg', url: publicBaseUrl + event.urlPath
+        imageWidth: event.socialImageWidth, imageHeight: event.socialImageHeight,
+        imageType: 'image/jpeg', url: publicBaseUrl + event.urlPath
       },
       event,
       hideDrawerFilters: true
