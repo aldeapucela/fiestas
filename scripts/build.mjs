@@ -133,7 +133,7 @@ async function loadEvents() {
       shareText: shareText(event),
       ticketLabel: ticketKindLabel(event.ticketKind),
       ticketDetail: ticketDetail(event.ticketKind, event.ticket),
-      mapUrl: '/?view=map&event=' + encodeURIComponent(event.id),
+      mapUrl: '/mapa/?event=' + encodeURIComponent(event.id),
       osmUrl: event.coordinates ? 'https://www.openstreetmap.org/?mlat=' + event.coordinates.lat + '&mlon=' + event.coordinates.lng + '#map=17/' + event.coordinates.lat + '/' + event.coordinates.lng : '',
       directionsUrl: event.coordinates ? 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(event.coordinates.lat + ',' + event.coordinates.lng) : ''
     }));
@@ -303,7 +303,7 @@ async function build() {
   const summary = buildSummary(events);
   const socialImage = publicBaseUrl + '/assets/social-preview.jpg';
 
-  await writeFile('index.html', render('fiestas-2026.njk', {
+  const homeContext = {
     ...pageContext(assetVersion),
     title: 'Fiestas Valladolid 2026 | Aldea Pucela',
     meta: { description: 'Agenda de las Fiestas de Valladolid 2026 por días, horarios, espacios, categorías y mapa.' },
@@ -318,6 +318,18 @@ async function build() {
     fiestasDates: summary.dates,
     fiestasTypes: summary.types,
     fiestasAreas: summary.areas
+  };
+
+  await writeFile('index.html', render('fiestas-2026.njk', homeContext));
+  await writeFile('mapa/index.html', render('fiestas-2026.njk', {
+    ...homeContext,
+    title: 'Mapa de Fiestas Valladolid 2026 | Aldea Pucela',
+    canonicalUrl: publicBaseUrl + '/mapa/',
+    social: {
+      ...homeContext.social,
+      title: 'Mapa de Fiestas Valladolid 2026 | Aldea Pucela',
+      url: publicBaseUrl + '/mapa/'
+    }
   }));
 
   for (const event of events) {
@@ -336,7 +348,7 @@ async function build() {
     }));
   }
 
-  const urls = ['/', ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

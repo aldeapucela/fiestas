@@ -176,9 +176,23 @@
   .fiestas-active-filters {
     display: flex;
     min-width: 0;
-    flex-wrap: wrap;
     gap: 0.6rem;
+    overflow-x: auto;
     padding-bottom: 0.15rem;
+    scrollbar-width: none;
+  }
+
+  .fiestas-filter-row {
+    flex-wrap: nowrap;
+  }
+
+  .fiestas-active-filters {
+    flex-wrap: nowrap;
+  }
+
+  .fiestas-filter-row::-webkit-scrollbar,
+  .fiestas-active-filters::-webkit-scrollbar {
+    display: none;
   }
 
   .fiestas-filter-row > *,
@@ -232,6 +246,7 @@
 
   .fiestas-clear-filter[hidden],
   .fiestas-map-view[hidden],
+  .fiestas-map-sheet-tab[hidden],
   .fiestas-agenda[hidden],
   .fiestas-type-list[hidden],
   .fiestas-filter-backdrop[hidden] {
@@ -562,10 +577,393 @@
     min-height: min(34rem, 70vh);
   }
 
+  .fiestas-app.is-map-mode {
+    padding-bottom: 0;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-screen {
+    width: 100%;
+    height: calc(100dvh - 4.9rem);
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-hero,
+  .fiestas-app.is-map-mode .fiestas-agenda,
+  .fiestas-app.is-map-mode .fiestas-plan-card {
+    display: none;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-date-panel {
+    position: fixed;
+    top: max(0.55rem, env(safe-area-inset-top));
+    right: 0;
+    left: 0;
+    z-index: 60;
+    pointer-events: none;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-date-strip {
+    margin: 0;
+    padding: 0.15rem 0.85rem 0.65rem;
+    pointer-events: auto;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-date-card {
+    min-width: 4.75rem;
+    min-height: 4.35rem;
+    border-radius: 0.85rem;
+    padding: 0.55rem;
+    box-shadow: 0 0.8rem 1.8rem rgba(15, 23, 42, 0.14);
+  }
+
+  .fiestas-app.is-map-mode .fiestas-date-card strong {
+    font-size: 1.9rem;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-controls {
+    position: fixed;
+    top: calc(max(0.55rem, env(safe-area-inset-top)) + 5.25rem);
+    right: 0.85rem;
+    left: 0.85rem;
+    z-index: 220;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.55rem;
+    pointer-events: none;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-search,
+  .fiestas-app.is-map-mode .fiestas-filter-row,
+  .fiestas-app.is-map-mode .fiestas-active-filters,
+  .fiestas-app.is-map-mode .fiestas-type-list {
+    z-index: 230;
+    pointer-events: auto;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-search {
+    min-height: 2.85rem;
+    width: 100%;
+    box-shadow: 0 0.8rem 1.8rem rgba(15, 23, 42, 0.16);
+  }
+
+  .fiestas-app.is-map-mode .fiestas-filter-row {
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 0 -0.85rem;
+    overflow-x: auto;
+    padding: 0 0.85rem 0.2rem;
+    scrollbar-width: none;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-filter-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-filter-row > * {
+    flex: 0 0 auto;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-active-filters {
+    flex-wrap: nowrap;
+    margin: 0 -0.85rem;
+    overflow-x: auto;
+    padding: 0 0.85rem 0.2rem;
+    scrollbar-width: none;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-active-filters::-webkit-scrollbar {
+    display: none;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-map-view {
+    position: fixed;
+    inset: 0 0 calc(4.85rem + env(safe-area-inset-bottom)) 0;
+    z-index: 10;
+    min-height: 0;
+    border: 0;
+    border-radius: 0;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-map-canvas {
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+  }
+
   .fiestas-map-canvas .leaflet-pane,
   .fiestas-map-canvas .leaflet-top,
   .fiestas-map-canvas .leaflet-bottom {
     z-index: 1;
+  }
+
+  .fiestas-map-topbar {
+    position: absolute;
+    right: 0.85rem;
+    bottom: 13.4rem;
+    z-index: 25;
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .fiestas-map-control,
+  .fiestas-map-sheet-tab {
+    display: inline-flex;
+    min-height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    border: 1px solid #d7dde7;
+    border-radius: 9999px;
+    background: #fff;
+    color: #1f2937;
+    padding: 0 0.85rem;
+    font-size: 0.88rem;
+    font-weight: 850;
+    box-shadow: 0 0.8rem 1.9rem rgba(15, 23, 42, 0.18);
+  }
+
+  .fiestas-map-control i,
+  .fiestas-map-sheet-tab i {
+    color: #0f9f8d;
+  }
+
+  .fiestas-map-marker,
+  .fiestas-map-cluster {
+    border: 0;
+    background: transparent;
+  }
+
+  .fiestas-map-marker button,
+  .fiestas-map-cluster button {
+    display: grid;
+    width: 2.35rem;
+    height: 2.35rem;
+    place-items: center;
+    border: 2px solid #fff;
+    border-radius: 9999px;
+    background: #73579f;
+    color: #fff;
+    font-size: 0.95rem;
+    font-weight: 900;
+    box-shadow: 0 0.45rem 1.1rem rgba(15, 23, 42, 0.28);
+  }
+
+  .fiestas-map-marker.is-selected button {
+    width: 2.75rem;
+    height: 2.75rem;
+    background: #0f9f8d;
+    box-shadow: 0 0 0 4px rgba(15, 159, 141, 0.26), 0 0.45rem 1.1rem rgba(15, 23, 42, 0.28);
+  }
+
+  .fiestas-map-cluster button {
+    width: 2.75rem;
+    height: 2.75rem;
+    background: #202532;
+  }
+
+  .fiestas-map-popup {
+    display: grid;
+    gap: 0.25rem;
+    color: #1f2937;
+    font-size: 0.88rem;
+  }
+
+  .fiestas-map-popup strong {
+    font-size: 0.95rem;
+  }
+
+  .fiestas-map-popup a {
+    color: #0f766e;
+    font-weight: 850;
+  }
+
+  .fiestas-map-sheet {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 30;
+    display: grid;
+    grid-template-rows: auto auto minmax(0, 1fr);
+    max-height: min(74dvh, 36rem);
+    min-height: 0;
+    border-radius: 1.35rem 1.35rem 0 0;
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 -1rem 2.4rem rgba(15, 23, 42, 0.18);
+    transition: transform 180ms ease;
+  }
+
+  .fiestas-map-sheet.is-expanded {
+    height: min(74dvh, 36rem);
+  }
+
+  .fiestas-map-sheet.is-expanded .fiestas-map-sheet-list {
+    align-self: stretch;
+    max-height: calc(min(74dvh, 36rem) - 5.4rem);
+  }
+
+  .fiestas-map-sheet.is-collapsed {
+    transform: translateY(calc(100% - 10.8rem));
+  }
+
+  .fiestas-map-sheet.is-hidden {
+    transform: translateY(100%);
+  }
+
+  .fiestas-map-sheet-handle {
+    display: grid;
+    gap: 0.25rem;
+    border: 0;
+    background: transparent;
+    color: #1d222d;
+    padding: 0.7rem 1rem 0.55rem;
+    text-align: left;
+  }
+
+  .fiestas-map-sheet-handle span {
+    width: 2.8rem;
+    height: 0.28rem;
+    margin: 0 auto 0.2rem;
+    border-radius: 9999px;
+    background: #cfd6e2;
+  }
+
+  .fiestas-map-sheet-handle strong {
+    font-size: 1rem;
+    font-weight: 900;
+  }
+
+  .fiestas-map-sheet-handle small {
+    color: #667085;
+    font-size: 0.84rem;
+    font-weight: 800;
+  }
+
+  .fiestas-map-location-note {
+    margin: 0 1rem 0.65rem;
+    border: 1px solid rgba(15, 159, 141, 0.2);
+    border-radius: 0.8rem;
+    background: rgba(15, 159, 141, 0.08);
+    color: #285b55;
+    padding: 0.65rem 0.75rem;
+    font-size: 0.88rem;
+    font-weight: 750;
+  }
+
+  .fiestas-map-location-note[hidden] {
+    display: none;
+  }
+
+  .fiestas-map-sheet-preview,
+  .fiestas-map-sheet-list {
+    display: grid;
+    gap: 0.55rem;
+    min-height: 0;
+    padding: 0 1rem 1rem;
+  }
+
+  .fiestas-map-sheet-list {
+    overflow: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: calc(1rem + env(safe-area-inset-bottom));
+  }
+
+  .fiestas-map-sheet.is-collapsed .fiestas-map-sheet-list {
+    display: none;
+  }
+
+  .fiestas-map-sheet.is-expanded .fiestas-map-sheet-preview {
+    display: none;
+  }
+
+  .fiestas-map-result {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 2.65rem;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1px solid #e3e6ec;
+    border-radius: 0.8rem;
+    background: #fff;
+  }
+
+  .fiestas-map-cluster-reset {
+    display: inline-flex;
+    width: fit-content;
+    min-height: 2.35rem;
+    align-items: center;
+    gap: 0.45rem;
+    border: 1px solid rgba(15, 159, 141, 0.28);
+    border-radius: 9999px;
+    background: rgba(15, 159, 141, 0.1);
+    color: #0f766e;
+    padding: 0 0.8rem;
+    font-size: 0.84rem;
+    font-weight: 850;
+  }
+
+  .fiestas-map-result.is-selected {
+    border-color: #0f9f8d;
+    box-shadow: inset 0 0 0 1px #0f9f8d;
+  }
+
+  .fiestas-map-result a {
+    display: grid;
+    min-width: 0;
+    gap: 0.2rem;
+    color: inherit;
+    padding: 0.75rem 0 0.75rem 0.85rem;
+    text-decoration: none;
+  }
+
+  .fiestas-map-result-time,
+  .fiestas-map-result-distance {
+    color: #0f766e;
+    font-size: 0.82rem;
+    font-weight: 900;
+  }
+
+  .fiestas-map-result-title {
+    overflow: hidden;
+    color: #1f2937;
+    font-size: 0.96rem;
+    font-weight: 900;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .fiestas-map-result-meta {
+    overflow: hidden;
+    color: #667085;
+    font-size: 0.82rem;
+    font-weight: 750;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .fiestas-map-result-focus {
+    display: grid;
+    width: 2.2rem;
+    height: 2.2rem;
+    place-items: center;
+    border: 0;
+    border-radius: 9999px;
+    background: rgba(15, 159, 141, 0.12);
+    color: #0f766e;
+  }
+
+  .fiestas-map-result-focus:disabled {
+    color: #98a2b3;
+    background: #eef2f6;
+  }
+
+  .fiestas-map-sheet-tab {
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 35;
   }
 
   .fiestas-map-empty,
@@ -578,6 +976,14 @@
     padding: 1.2rem;
     color: #667085;
     text-align: center;
+  }
+
+  .fiestas-map-empty {
+    position: absolute;
+    top: 12rem;
+    right: 1rem;
+    left: 1rem;
+    z-index: 28;
   }
 
   .fiestas-map-empty[hidden] {
@@ -1003,6 +1409,40 @@
   html.dark .fiestas-plan-card {
     background: #272235;
     color: #f5f3ee;
+  }
+
+  html.dark .fiestas-map-control,
+  html.dark .fiestas-map-sheet,
+  html.dark .fiestas-map-sheet-tab,
+  html.dark .fiestas-map-result {
+    border-color: #313743;
+    background: #1a1f28;
+    color: #f5f3ee;
+  }
+
+  html.dark .fiestas-map-cluster-reset {
+    border-color: rgba(23, 184, 164, 0.32);
+    background: rgba(23, 184, 164, 0.14);
+    color: #b7f3ea;
+  }
+
+  html.dark .fiestas-map-sheet-handle {
+    color: #f8fafc;
+  }
+
+  html.dark .fiestas-map-sheet-handle small,
+  html.dark .fiestas-map-result-meta {
+    color: #d4d9e2;
+  }
+
+  html.dark .fiestas-map-result-title {
+    color: #f8fafc;
+  }
+
+  html.dark .fiestas-map-location-note {
+    border-color: rgba(23, 184, 164, 0.3);
+    background: rgba(23, 184, 164, 0.12);
+    color: #b7f3ea;
   }
 
   @media (min-width: 720px) {
