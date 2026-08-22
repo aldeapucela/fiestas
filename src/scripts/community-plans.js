@@ -59,13 +59,14 @@ export function setupCommunityPlansPage(rawEvents = []) {
     setActionText(addLink, 'Añadiendo…', 'fa-spinner');
     try {
       const imported = await loadExportedPlan(entry.url, eventById);
-      const plan = createPlan(makeUniquePlanName(entry.name), imported.activityIds);
+      const existing = findExistingCommunityPlan(entry, imported);
+      if (existing) {
+        markAddedLink(addLink, existing);
+        return;
+      }
+      const plan = createPlan(entry.name || imported.name, imported.activityIds, { sourcePlanId: entry.id });
       trackPlanCreated('community');
-      addLink.dataset.communityPlanAdded = 'true';
-      addLink.removeAttribute('aria-busy');
-      addLink.removeAttribute('data-community-plan-busy');
-      setActionText(addLink, 'Añadido a Mi plan', 'fa-check');
-      showLinkFeedback(addLink, `${plan.name} ya está disponible en Mi plan.`);
+      markAddedLink(addLink, plan);
     } catch (_) {
       addLink.removeAttribute('aria-busy');
       addLink.removeAttribute('data-community-plan-busy');
