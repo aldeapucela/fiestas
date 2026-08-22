@@ -3350,6 +3350,25 @@ html.dark .fiestas-plan-more:focus-visible {
   color: #c8b3e5;
 }
 
+.fiestas-plan-timeline-card-footer {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  margin: 0 0.85rem 0.7rem;
+}
+
+.fiestas-plan-timeline-card-footer .fiestas-plan-tag {
+  min-width: 0;
+  margin: 0;
+}
+
+.fiestas-plan-timeline-card-footer .fiestas-plan-more {
+  flex: 0 0 auto;
+  margin-left: auto;
+}
+
 html.dark .fiestas-plan-app {
   background: #121417;
   color: #f5f3ee;

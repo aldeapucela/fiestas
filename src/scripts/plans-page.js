@@ -894,15 +894,7 @@ function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {
     bookmarkButton.setAttribute('aria-label', 'Quitar de guardados');
     bookmarkButton.setAttribute('aria-pressed', 'true');
     bookmarkButton.append(iconNode('fa-solid fa-bookmark'));
-    const moreButton = document.createElement('button');
-    moreButton.type = 'button';
-    moreButton.className = 'fiestas-plan-more';
-    moreButton.dataset.fiestasMoreOptions = 'true';
-    moreButton.dataset.eventId = event.id;
-    moreButton.setAttribute('aria-label', 'Más opciones para esta actividad');
-    moreButton.setAttribute('aria-haspopup', 'dialog');
-    moreButton.append(iconNode('fa-solid fa-ellipsis'));
-    sideActions.append(bookmarkButton, moreButton);
+    sideActions.append(bookmarkButton);
     top.append(sideActions);
   } else {
     const favoriteButton = document.createElement('button');
@@ -923,7 +915,22 @@ function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {
 
   const tag = textNode('span', `#${slugifyPlanTag(event.tags?.[0] || event.type || 'Actividad')}`);
   tag.className = 'fiestas-plan-tag';
-  card.append(tag);
+  if (options.isSaved) {
+    const footer = document.createElement('div');
+    footer.className = 'fiestas-plan-timeline-card-footer';
+    const moreButton = document.createElement('button');
+    moreButton.type = 'button';
+    moreButton.className = 'fiestas-plan-more';
+    moreButton.dataset.fiestasMoreOptions = 'true';
+    moreButton.dataset.eventId = event.id;
+    moreButton.setAttribute('aria-label', 'Más opciones para esta actividad');
+    moreButton.setAttribute('aria-haspopup', 'dialog');
+    moreButton.append(iconNode('fa-solid fa-ellipsis'));
+    footer.append(tag, moreButton);
+    card.append(footer);
+  } else {
+    card.append(tag);
+  }
 
   const overlap = findPlanOverlap(event, planId, plans, events);
   if (overlap) {
