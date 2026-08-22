@@ -943,7 +943,7 @@ function iconForPlanEvent(event) {
   const type = String(event.type || '').toLowerCase();
   if (type.includes('música') || type.includes('concierto')) return 'fa-music';
   if (type.includes('deporte')) return 'fa-person-running';
-  if (type.includes('teatro') || type.includes('danza')) return 'fa-masks-theater';
+  if (type.includes('humor') || type.includes('monólogo') || type.includes('teatro') || type.includes('danza')) return 'fa-masks-theater';
   if (type.includes('peña') || type.includes('pasacalle')) return 'fa-drum';
   if (type.includes('infantil') || type.includes('famil')) return 'fa-child-reaching';
   return 'fa-calendar-day';

@@ -18,7 +18,7 @@
       "lng": -4.7289,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Infantil y familiar",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -27,7 +27,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Infantil y familiar"
     ]
   },
   {
@@ -318,7 +318,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -327,7 +327,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -480,7 +480,7 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -489,7 +489,7 @@
       "note": "No consta venta de entradas en el programa para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -1180,7 +1180,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -1189,7 +1189,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -1245,7 +1245,7 @@
       "lng": -4.746555,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Infantil y familiar",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -1254,7 +1254,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Infantil y familiar"
     ]
   },
   {
@@ -1276,7 +1276,7 @@
       "lng": -4.839831,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -1285,7 +1285,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -1307,7 +1307,7 @@
       "lng": -4.738641,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -1316,7 +1316,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -1404,7 +1404,7 @@
       "lng": -4.714,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Teatro",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -1413,7 +1413,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Teatro"
     ]
   },
   {
@@ -1531,7 +1531,7 @@
       "lng": -4.74635,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -1540,7 +1540,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -1629,7 +1629,7 @@
       "lng": -4.735417,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Danza",
     "ticket": {
       "required": true,
       "status": "required",
@@ -1638,7 +1638,6 @@
       "note": "Inscripción necesaria. Revisa disponibilidad y condiciones en espaciosjovenesvalladolid.es."
     },
     "tags": [
-      "Otros",
       "Danza"
     ]
   },
@@ -1861,7 +1860,7 @@
       "lng": -4.73018,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -1870,7 +1869,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -1991,7 +1990,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -2000,7 +1999,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -2289,7 +2288,7 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -2298,7 +2297,7 @@
       "note": "No consta venta de entradas en el programa para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -2712,7 +2711,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -2721,7 +2720,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -3102,7 +3101,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -3111,7 +3110,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -3196,7 +3195,7 @@
       "lng": -4.7432,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -3205,7 +3204,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -3227,7 +3226,7 @@
       "lng": -4.7179,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -3236,7 +3235,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -3357,7 +3356,7 @@
       "lng": -4.755242,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Teatro",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -3366,7 +3365,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Teatro"
     ]
   },
   {
@@ -3937,7 +3936,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -3946,7 +3945,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -4551,7 +4550,7 @@
       "lng": -4.6976,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -4560,7 +4559,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -4678,7 +4677,7 @@
       "lng": -4.706921,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -4687,7 +4686,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -4966,7 +4965,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -4975,7 +4974,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -5108,7 +5107,7 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -5117,7 +5116,7 @@
       "note": "No consta venta de entradas en el programa para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -5235,7 +5234,7 @@
       "lng": -4.718177,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -5244,7 +5243,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -5330,7 +5329,7 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -5339,7 +5338,7 @@
       "note": "No consta venta de entradas en el programa para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -5726,7 +5725,7 @@
       "lng": -4.742799,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -5735,7 +5734,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -5757,7 +5756,7 @@
       "lng": -4.7573,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -5766,7 +5765,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -6569,7 +6568,7 @@
       "lng": -4.736874,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -6578,7 +6577,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -6600,7 +6599,7 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -6609,7 +6608,7 @@
       "note": "No consta venta de entradas en el programa para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -6888,7 +6887,7 @@
       "lng": -4.7145,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -6897,7 +6896,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -6983,7 +6982,7 @@
       "lng": -4.720771,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -6992,7 +6991,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -7081,7 +7080,7 @@
       "lng": -4.717327,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Teatro",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -7090,7 +7089,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Teatro"
     ]
   },
   {
@@ -7210,7 +7209,7 @@
       "lng": -4.7656,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Magia",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -7219,7 +7218,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Magia"
     ]
   },
   {
@@ -7830,7 +7829,7 @@
       "lng": -4.760659,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -7839,7 +7838,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -8121,7 +8120,7 @@
       "lng": -4.7233,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -8130,7 +8129,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -8344,7 +8343,7 @@
       "lng": -4.726322,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -8353,7 +8352,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -8409,7 +8408,7 @@
       "lng": -4.70118,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Teatro",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -8418,7 +8417,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Teatro"
     ]
   },
   {
@@ -8540,7 +8539,7 @@
       "lng": -4.712016,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Magia",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -8549,7 +8548,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Magia"
     ]
   },
   {
@@ -8764,7 +8763,7 @@
       "lng": -4.735417,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -8773,7 +8772,7 @@
       "note": "No consta venta de entradas en el programa para este evento."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -8857,7 +8856,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -8866,7 +8865,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -9052,7 +9051,7 @@
       "lng": -4.72618,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -9061,7 +9060,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -9083,7 +9082,7 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -9092,7 +9091,7 @@
       "note": "No consta venta de entradas en el programa para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -9463,7 +9462,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -9472,7 +9471,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -9564,7 +9563,7 @@
       "lng": -4.7239,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -9573,7 +9572,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -9632,7 +9631,7 @@
       "lng": -4.783542,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -9641,7 +9640,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -9731,7 +9730,7 @@
       "lng": -4.747024,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -9740,7 +9739,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -10090,7 +10089,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -10099,7 +10098,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -10747,7 +10746,7 @@
       "lng": -4.7614,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -10756,7 +10755,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -10911,7 +10910,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -10920,7 +10919,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -10976,7 +10975,7 @@
       "lng": -4.716356,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -10985,7 +10984,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -11075,7 +11074,7 @@
       "lng": -4.716444,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -11084,7 +11083,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -11458,7 +11457,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -11467,7 +11466,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -11882,7 +11881,7 @@
       "lng": -4.733252,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -11891,7 +11890,7 @@
       "note": "No consta venta de entradas en el programa para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -12300,7 +12299,7 @@
       "lng": -4.693519,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Infantil y familiar",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -12309,7 +12308,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Infantil y familiar"
     ]
   },
   {
@@ -12363,7 +12362,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -12372,7 +12371,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -12793,7 +12792,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -12802,7 +12801,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {
@@ -12887,7 +12886,7 @@
       "lng": -4.7244,
       "source": "Manual/alias from OpenStreetMap geocoding"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -12896,7 +12895,7 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -13106,7 +13105,7 @@
       "lng": -4.728548,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -13115,7 +13114,7 @@
       "note": "No consta venta de entradas en el programa para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -13295,7 +13294,7 @@
       "lng": -4.738248,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Otros",
+    "type": "Humor y monólogos",
     "ticket": {
       "required": true,
       "status": "required",
@@ -13304,7 +13303,7 @@
       "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
     },
     "tags": [
-      "Otros"
+      "Humor y monólogos"
     ]
   },
   {

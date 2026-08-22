@@ -1,63 +1,75 @@
-# Analisis De Etiquetas De Eventos
+# Análisis de etiquetas de eventos
 
-El modelo original de datos tenia una sola categoria por evento mediante `type`.
-Al revisar los 414 eventos con reglas heuristicas conservadoras por texto, se han añadido etiquetas secundarias claras a 132 eventos.
+El modelo de datos mantiene una categoría principal por evento mediante `type` y etiquetas secundarias mediante `tags`.
+Tras revisar los eventos que estaban en `Otros`, se han reclasificado 59 actividades claras. `Otros` queda reservado para los dos pases de `PROGRAMA PREVENCIÓN ADICCIONES YOUNG ZONE`, que no representan un contenido cultural concreto.
 
-## Tipos Actuales
+## Tipos actuales
 
 ```text
- 74 Musica
- 74 Teatro
- 71 Otros
- 61 Infantil y familiar
- 33 Penas
- 28 Danza
+116 Música
+ 77 Teatro
+ 64 Infantil y familiar
+ 33 Peñas
+ 29 Danza
  23 Folklore
- 11 Exposicion
+ 18 Humor y monólogos
+ 11 Exposición
+ 10 Magia
   8 Fuegos artificiales
-  8 Magia
   7 Talleres
   7 Toros
   5 Deporte
   3 Religioso
-  1 Gastronomia
+  2 Otros
+  1 Gastronomía
 ```
 
-## Etiquetas Probables
+`Otros` pasa de 61 eventos (14,7 %) a 2 (0,5 %).
 
-Las reglas detectan senales de multietiqueta en titulos, resumenes, descripcion, actuaciones, organizadores y colaboradores.
-No se aplican automaticamente a los datos porque algunas coincidencias necesitan revision editorial.
+## Etiquetas probables
+
+Las reglas detectan señales de multietiqueta en títulos, resúmenes, descripción, actuaciones, organizadores y colaboradores.
+No se aplican automáticamente a los datos porque algunas coincidencias necesitan revisión editorial.
 
 ```text
-117 Música
- 84 Infantil y familiar
+148 Música
+ 87 Infantil y familiar
+ 77 Teatro
  76 Peñas
- 73 Teatro
- 61 Otros
  37 Danza
  33 Folklore
+ 18 Humor y monólogos
  17 Talleres
  14 Gastronomía
  13 Exposición
- 11 Magia
-  9 Deporte
-  8 Fuegos artificiales
-  7 Toros
-  3 Religioso
+ 13 Magia
+ 9 Deporte
+ 8 Fuegos artificiales
+ 7 Toros
+ 3 Religioso
+  2 Otros
 ```
 
-## Ejemplos Claros
+## Ejemplos claros
 
-- `CONCENTRACION DE PENAS DE VALLADOLID...` puede ser `Musica` y `Penas`.
+- `CONCENTRACIÓN DE PEÑAS DE VALLADOLID...` puede ser `Música` y `Peñas`.
 - `PARQUE INFANTIL DE HINCHABLES Y TALLERES` puede ser `Infantil y familiar` y `Talleres`.
-- `XLIII FERIA DE FOLKLORE Y GASTRONOMIA` puede ser `Folklore` y `Gastronomia`.
+- `XLIII FERIA DE FOLKLORE Y GASTRONOMÍA` puede ser `Folklore` y `Gastronomía`.
 - `GIGANTES Y CABEZUDOS` puede ser `Folklore` e `Infantil y familiar`.
-- `MORERAS BEACH FEST...` puede ser `Musica` y `Penas`.
-- `EXPOSICION DE VEHICULOS Y MOTOS CLASICAS` puede ser `Exposicion`, `Deporte` y `Penas`.
+- `MORERAS BEACH FEST...` puede ser `Música` y `Peñas`.
+- `EXPOSICIÓN DE VEHÍCULOS Y MOTOS CLÁSICAS` puede ser `Exposición`, `Deporte` y `Peñas`.
 
-## Implementacion
+## Reclasificaciones principales
+
+- `LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA`, `DOS ORILLAS GIRA “ENHUMORADOS”` y `CABARET DE LA LUZ DE LAS DELICIAS` pasan a `Humor y monólogos`.
+- Los dúos, solistas y propuestas identificables como conciertos pasan a `Música`.
+- `SILENCIO, POR FAVOR`, `LA MUJER QUE PLANTA ÁRBOLES` y `LAS QUE TIENE QUE LIMPIAR` pasan a `Teatro`; `EL HECHICERO` pasa a `Magia`.
+- `GIRA DE VERANO NINTENDO`, `CUENTO, RECUENTO Y TE CUENTO` y `¿TÚ DE QUÉ CUENTO ERES? PIE IZQUIERDO` pasan a `Infantil y familiar`.
+- `EVENTO DE BAILE: DANZ! FIESTAS DE VALLADOLID` pasa a `Danza`; ya tenía esa etiqueta secundaria.
+
+## Implementación
 
 Los 414 eventos tienen ahora un array `tags`.
 Si un evento futuro no tiene `tags`, el build usa `[type]`.
-El icono sigue saliendo de `type`, que queda como categoria principal.
+El icono sigue saliendo de `type`, que queda como categoría principal. `Humor y monólogos` usa el icono de artes escénicas y la imagen social de teatro mientras no exista una ilustración de categoría propia.
 Los filtros y las badges usan todas las etiquetas disponibles.

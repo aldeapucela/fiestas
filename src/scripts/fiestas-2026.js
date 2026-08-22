@@ -1574,6 +1574,7 @@ function iconForType(type = '') {
     'infantil-y-familiar': 'fa-children',
     magia: 'fa-hat-wizard',
     musica: 'fa-music',
+    'humor-y-monologos': 'fa-masks-theater',
     otros: 'fa-star',
     penas: 'fa-people-group',
     religioso: 'fa-place-of-worship',
