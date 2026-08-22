@@ -365,13 +365,10 @@ function render(options = {}) {
   if (options.updateUrl && !isApplyingUrlState) updateUrlFromState();
 
   if (state.view === 'map') {
-    if (lastTrackedView !== 'map') trackMapOpened();
-    lastTrackedView = 'map';
     els.agenda.hidden = true;
     els.mapView.hidden = false;
     renderMap(filtered);
   } else {
-    lastTrackedView = 'agenda';
     els.mapView.hidden = true;
     els.agenda.hidden = false;
     renderAgenda(filtered);
