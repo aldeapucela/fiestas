@@ -18,7 +18,7 @@ import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
 const SITE_SHARE_URL = 'https://fiestas.aldeapucela.org/?mtm_campaign=share';
-const SITE_SHARE_MESSAGE = `descubre la mejor app para sobrevivir en las fiestas de Valladolid 2026\n\n${SITE_SHARE_URL}`;
+const SITE_SHARE_MESSAGE = `Mira, la mejor web para seguir las fiestas y ferias de Valladolid 2026\n\n${SITE_SHARE_URL}`;
 const cartoLayers = {
   light: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
   dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
