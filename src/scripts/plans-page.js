@@ -11,7 +11,7 @@ import {
   updatePlan,
   writeFavoriteIds
 } from './plan-storage.js';
-import { createIcsFile, createPlanFile, shareFileOrDownload } from './plan-export.js';
+import { createIcsFile, createPlanFile, downloadFile, shareFileOrDownload } from './plan-export.js';
 import {
   trackActivityShared,
   trackFavoriteChanged,
@@ -43,6 +43,8 @@ export function setupPlansPage(rawEvents = []) {
     selectedDay: new URLSearchParams(window.location.search).get('date') || 'all',
     creatingPlan: false
   };
+  let shareDialogPlan = null;
+  let shareDialogReturnFocus = null;
 
   if (state.view === 'plan' && !state.selectedPlanId) state.selectedPlanId = state.plans[0]?.id || '';
 
@@ -56,7 +58,48 @@ export function setupPlansPage(rawEvents = []) {
     feedback: page.querySelector('[data-plan-feedback]'),
     picker: page.querySelector('[data-plan-picker]'),
     headerShare: page.querySelector('[data-plan-header-share]'),
-    importLink: page.querySelector('[data-plan-import-link]')
+    importLink: page.querySelector('[data-plan-import-link]'),
+    shareDialog: document.querySelector('[data-plan-share-dialog]'),
+    shareDialogName: document.querySelector('[data-plan-share-name]'),
+    shareDialogMessage: document.querySelector('[data-plan-share-message]'),
+    shareDialogFeedback: document.querySelector('[data-plan-share-feedback]'),
+    shareDialogCopy: document.querySelector('[data-plan-share-copy]'),
+    shareDialogDownload: document.querySelector('[data-plan-share-download]')
+  };
+
+  const showShareDialogFeedback = (message, isError = false) => {
+    if (!els.shareDialogFeedback) return;
+    els.shareDialogFeedback.hidden = false;
+    els.shareDialogFeedback.textContent = message;
+    els.shareDialogFeedback.classList.toggle('is-error', isError);
+  };
+
+  const closeShareDialog = () => {
+    if (!els.shareDialog) return;
+    els.shareDialog.hidden = true;
+    document.body.classList.remove('fiestas-plan-share-open');
+    shareDialogPlan = null;
+    const returnFocus = shareDialogReturnFocus;
+    shareDialogReturnFocus = null;
+    returnFocus?.focus();
+  };
+
+  const openShareDialog = (plan, trigger) => {
+    if (!plan || !els.shareDialog) return;
+    shareDialogPlan = plan;
+    shareDialogReturnFocus = trigger || null;
+    if (els.shareDialogName) els.shareDialogName.textContent = plan.name;
+    if (els.shareDialogMessage) {
+      els.shareDialogMessage.value = createPlanShareMessage(plan, page.dataset.planImportUrl);
+    }
+    if (els.shareDialogFeedback) {
+      els.shareDialogFeedback.hidden = true;
+      els.shareDialogFeedback.classList.remove('is-error');
+      els.shareDialogFeedback.textContent = '';
+    }
+    els.shareDialog.hidden = false;
+    document.body.classList.add('fiestas-plan-share-open');
+    els.shareDialogCopy?.focus();
   };
 
   const render = () => {
@@ -110,7 +153,27 @@ export function setupPlansPage(rawEvents = []) {
 
   els.headerShare?.addEventListener('click', async () => {
     const plan = state.view === 'saved' ? savedPlan(state.events) : state.plans.find((item) => item.id === state.selectedPlanId);
-    if (plan) await exportPlanFile(plan, els.feedback);
+    if (plan) openShareDialog(plan, els.headerShare);
+  });
+
+  els.shareDialog?.querySelectorAll('[data-plan-share-close]').forEach((button) => {
+    button.addEventListener('click', closeShareDialog);
+  });
+  els.shareDialogCopy?.addEventListener('click', async () => {
+    const message = els.shareDialogMessage?.value || '';
+    if (!message) return;
+    try {
+      await copyText(message);
+      showShareDialogFeedback('Mensaje copiado al portapapeles.');
+    } catch (_) {
+      showShareDialogFeedback('No se pudo copiar el mensaje.', true);
+    }
+  });
+  els.shareDialogDownload?.addEventListener('click', () => {
+    if (!shareDialogPlan) return;
+    downloadFile(createPlanFile(shareDialogPlan));
+    trackPlanExported('file');
+    showShareDialogFeedback('Plan descargado.');
   });
 
   els.createForm?.addEventListener('submit', (event) => {
@@ -224,7 +287,7 @@ export function setupPlansPage(rawEvents = []) {
     const shareButton = event.target.closest('[data-plan-share]');
     if (shareButton) {
       const plan = getActionPlan(shareButton.dataset.planShare, state, state.events);
-      if (plan) await exportPlanFile(plan, els.feedback);
+      if (plan) openShareDialog(plan, shareButton);
       return;
     }
 
@@ -269,6 +332,9 @@ export function setupPlansPage(rawEvents = []) {
     state.selectedDay = params.get('date') || 'all';
     state.creatingPlan = false;
     render();
+  });
+  window.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && els.shareDialog && !els.shareDialog.hidden) closeShareDialog();
   });
   subscribeToPlans(() => render());
   render();
@@ -788,6 +854,27 @@ async function exportPlanFile(plan, feedback) {
   if (result === 'shared') trackPlanShared('file');
   else if (result === 'downloaded') trackPlanExported('file');
   showFeedback(feedback, result === 'shared' ? 'Plan compartido.' : result === 'downloaded' ? 'Archivo descargado.' : 'Compartición cancelada.');
+}
+
+function createPlanShareMessage(plan, importUrl = 'https://fiestas.aldeapucela.org/plan/importar/') {
+  return `Échale un vistazo al plan «${plan.name}» para las Fiestas y Ferias de Valladolid 2026.\n\nPuedes importar el archivo que te mando en ${importUrl}`;
+}
+
+async function copyText(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.append(textarea);
+  textarea.select();
+  const copied = document.execCommand('copy');
+  textarea.remove();
+  if (!copied) throw new Error('Copy failed');
 }
 
 function validateImport(text, eventIds) {

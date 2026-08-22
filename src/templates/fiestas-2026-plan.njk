@@ -4,7 +4,7 @@
 {% block footerClass %} site-footer--fiestas{% endblock %}
 
 {% block body %}
-<main class="fiestas-app fiestas-plan-app" data-fiestas-plans-page>
+<main class="fiestas-app fiestas-plan-app" data-fiestas-plans-page data-plan-import-url="{{ publicBaseUrl }}/plan/importar/">
   <script>
     window.__FIESTAS_2026_EVENTS__ = {{ fiestasEventsJson | safe }};
   </script>
@@ -77,4 +77,50 @@
 {% include "partials/menu-drawer.njk" %}
 {% include "partials/subscribe-modal.njk" %}
 {% include "partials/location-modal.njk" %}
+
+<div class="fiestas-plan-share-dialog" data-plan-share-dialog hidden>
+  <button class="fiestas-plan-share-dialog-backdrop" type="button" data-plan-share-close aria-label="Cerrar diálogo"></button>
+  <section class="fiestas-plan-share-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="plan-share-dialog-title">
+    <header class="fiestas-plan-share-dialog-head">
+      <div>
+        <p class="fiestas-plan-kicker">COMPARTIR PLAN</p>
+        <h2 id="plan-share-dialog-title">Comparte tu plan</h2>
+      </div>
+      <button class="fiestas-plan-share-dialog-close" type="button" data-plan-share-close aria-label="Cerrar diálogo">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </header>
+
+    <ol class="fiestas-plan-share-steps">
+      <li>
+        <span>1</span>
+        <p>Se va a descargar un archivo con este plan llamado <strong data-plan-share-name>tu plan</strong>.</p>
+      </li>
+      <li>
+        <span>2</span>
+        <p>Puedes compartir este archivo con cualquier persona por WhatsApp, Telegram, etcétera.</p>
+      </li>
+      <li>
+        <span>3</span>
+        <p>Copia este texto y mándales el archivo para que lo puedan importar a sus planes.</p>
+      </li>
+    </ol>
+
+    <label class="fiestas-plan-share-message-label">
+      <span>Mensaje para compartir</span>
+      <textarea data-plan-share-message rows="5" readonly></textarea>
+    </label>
+    <p class="fiestas-plan-share-feedback" data-plan-share-feedback aria-live="polite" hidden></p>
+    <div class="fiestas-plan-share-dialog-actions">
+      <button class="fiestas-plan-action fiestas-plan-share-copy" type="button" data-plan-share-copy>
+        <i class="fa-regular fa-copy" aria-hidden="true"></i>
+        <span>Copiar mensaje</span>
+      </button>
+      <button class="fiestas-plan-action fiestas-plan-share-download" type="button" data-plan-share-download>
+        <i class="fa-solid fa-download" aria-hidden="true"></i>
+        <span>Descargar el plan</span>
+      </button>
+    </div>
+  </section>
+</div>
 {% endblock %}

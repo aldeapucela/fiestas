@@ -3713,6 +3713,230 @@ html.dark .fiestas-plan-selector-create input {
   color: #b42318;
 }
 
+.fiestas-plan-share-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 650;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+body.fiestas-plan-share-open {
+  overflow: hidden;
+}
+
+.fiestas-plan-share-dialog[hidden] {
+  display: none;
+}
+
+.fiestas-plan-share-dialog-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(17, 24, 39, 0.48);
+}
+
+.fiestas-plan-share-dialog-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(100%, 36rem);
+  max-height: min(90dvh, 48rem);
+  gap: 1rem;
+  overflow: auto;
+  border: 1px solid #e3e6ec;
+  border-radius: 1.35rem 1.35rem 0 0;
+  background: #fff;
+  padding: 1.1rem 1rem calc(env(safe-area-inset-bottom) + 1rem);
+  box-shadow: 0 -1rem 2rem rgba(17, 24, 39, 0.18);
+}
+
+.fiestas-plan-share-dialog-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.fiestas-plan-share-dialog-head h2 {
+  margin: 0.25rem 0 0;
+  color: #1d2430;
+  font-size: clamp(1.45rem, 6vw, 1.9rem);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.fiestas-plan-share-dialog-close {
+  display: inline-flex;
+  width: 2.45rem;
+  height: 2.45rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: #f1f3f6;
+  color: #445066;
+  font-size: 1rem;
+}
+
+.fiestas-plan-share-steps {
+  display: grid;
+  gap: 0.85rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fiestas-plan-share-steps li {
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0.7rem;
+  align-items: start;
+}
+
+.fiestas-plan-share-steps li > span {
+  display: inline-flex;
+  width: 2rem;
+  height: 2rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f4eff8;
+  color: #73579f;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.fiestas-plan-share-steps p {
+  margin: 0.1rem 0 0;
+  color: #445066;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.fiestas-plan-share-steps strong {
+  color: #20232b;
+  font-weight: 850;
+}
+
+.fiestas-plan-share-message-label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.fiestas-plan-share-message-label > span {
+  color: #20232b;
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+.fiestas-plan-share-message-label textarea {
+  width: 100%;
+  min-height: 7.2rem;
+  resize: vertical;
+  border: 1px solid #d9dee7;
+  border-radius: 0.8rem;
+  background: #fbfcfd;
+  color: #303743;
+  padding: 0.75rem;
+  font: inherit;
+  font-size: 0.86rem;
+  line-height: 1.45;
+}
+
+.fiestas-plan-share-dialog-actions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+}
+
+.fiestas-plan-share-dialog-actions .fiestas-plan-action {
+  min-height: 3.1rem;
+  border-radius: 0.8rem;
+  font-size: 0.82rem;
+}
+
+.fiestas-plan-share-copy {
+  border-color: #d9cbea;
+  background: #f4eff8;
+  color: #73579f;
+}
+
+.fiestas-plan-share-download {
+  border-color: #159b8b;
+  background: #159b8b;
+  color: #fff;
+}
+
+.fiestas-plan-share-download:hover,
+.fiestas-plan-share-download:focus-visible {
+  border-color: #0f766e;
+  background: #0f766e;
+  color: #fff;
+}
+
+.fiestas-plan-share-feedback {
+  margin: -0.25rem 0 0;
+  color: #0f766e;
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.fiestas-plan-share-feedback.is-error {
+  color: #b42318;
+}
+
+.fiestas-plan-share-feedback[hidden] {
+  display: none;
+}
+
+html.dark .fiestas-plan-share-dialog-panel {
+  border-color: #313743;
+  background: #1a1f28;
+}
+
+html.dark .fiestas-plan-share-dialog-head h2,
+html.dark .fiestas-plan-share-message-label > span,
+html.dark .fiestas-plan-share-steps strong {
+  color: #f8fafc;
+}
+
+html.dark .fiestas-plan-share-dialog-close {
+  background: #121417;
+  color: #d4d9e2;
+}
+
+html.dark .fiestas-plan-share-steps p {
+  color: #c2c9d3;
+}
+
+html.dark .fiestas-plan-share-steps li > span {
+  background: #30283c;
+  color: #c8b3e5;
+}
+
+html.dark .fiestas-plan-share-message-label textarea {
+  border-color: #414958;
+  background: #121417;
+  color: #f8fafc;
+}
+
+html.dark .fiestas-plan-share-copy {
+  border-color: #51436a;
+  background: #30283c;
+  color: #d7c4ee;
+}
+
+html.dark .fiestas-plan-share-feedback {
+  color: #78e2d4;
+}
+
+html.dark .fiestas-plan-share-feedback.is-error {
+  color: #f58b82;
+}
+
 .fiestas-plan-create-form[hidden],
 .fiestas-plan-import-link[hidden],
 .fiestas-plan-header-share[hidden] {
@@ -3765,6 +3989,16 @@ html.dark .fiestas-plan-overlap-warning {
 }
 
 @media (min-width: 720px) {
+  .fiestas-plan-share-dialog {
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .fiestas-plan-share-dialog-panel {
+    border-radius: 1.35rem;
+    padding-bottom: 1.1rem;
+  }
+
   .fiestas-plan-screen {
     padding-top: 2rem;
   }
