@@ -5,6 +5,7 @@
   "plans": [
     {
       "name": "Conciertos en la Plaza Mayor",
+      "icon": "microphone",
       "activityIds": [
         "15", "20",
         "70", "75", "113", "125", "130", "157", "164",

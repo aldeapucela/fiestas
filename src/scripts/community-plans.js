@@ -1,4 +1,4 @@
-import { createPlan, readPlans } from './plan-storage.js';
+import { createPlan, getPlanIcon, normalizePlanIcon, readPlans } from './plan-storage.js';
 import { trackPlanCreated } from './analytics.js';
 
 const CATALOG_SCHEMA_VERSION = 1;
@@ -64,7 +64,10 @@ export function setupCommunityPlansPage(rawEvents = []) {
         markAddedLink(addLink, existing);
         return;
       }
-      const plan = createPlan(entry.name || imported.name, imported.activityIds, { sourcePlanId: entry.id });
+      const plan = createPlan(entry.name || imported.name, imported.activityIds, {
+        sourcePlanId: entry.id,
+        icon: imported.icon || entry.icon
+      });
       trackPlanCreated('community');
       markAddedLink(addLink, plan);
     } catch (_) {
@@ -91,7 +94,8 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
     id: String(page.dataset.communityPlanId || '').trim(),
     name: cleanText(page.dataset.communityPlanName, MAX_PLAN_NAME_LENGTH),
     author: cleanText(page.dataset.communityPlanAuthor, MAX_PLAN_NAME_LENGTH),
-    url: safeJsonPlanUrl(page.dataset.communityPlanJsonUrl)
+    url: safeJsonPlanUrl(page.dataset.communityPlanJsonUrl),
+    icon: normalizePlanIcon(page.dataset.communityPlanIcon)
   };
   let imported = null;
 
@@ -114,7 +118,10 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
     addLink.setAttribute('aria-busy', 'true');
     setActionText(addLink, 'Añadiendo…', 'fa-spinner');
     try {
-      const plan = createPlan(entry.name || imported.name, imported.activityIds, { sourcePlanId: entry.id });
+      const plan = createPlan(entry.name || imported.name, imported.activityIds, {
+        sourcePlanId: entry.id,
+        icon: imported.icon || entry.icon
+      });
       trackPlanCreated('community');
       markAddedLink(addLink, plan);
       setStatus(`${plan.name} ya está disponible en Mi plan.`, 'success');
@@ -155,7 +162,7 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
 async function enrichEntry(entry, eventById) {
   try {
     const imported = await loadExportedPlan(entry.url, eventById);
-    return { ...entry, summary: formatImportedSummary(imported) };
+    return { ...entry, icon: imported.icon || entry.icon, summary: formatImportedSummary(imported) };
   } catch (_) {
     return entry;
   }
@@ -198,7 +205,7 @@ function normalizeCatalog(value) {
       throw new Error('Invalid community plan catalog metadata');
     }
     ids.add(id);
-    return { id, name, author, url, icon: communityPlanIcon(id, name) };
+    return { id, name, author, url, icon: normalizePlanIcon(rawEntry.icon || communityPlanIcon(id, name)) };
   });
 }
 
@@ -215,6 +222,7 @@ function validateExportPayload(value, eventById) {
   const activityIds = ids.filter((id) => eventById.has(id));
   return {
     name,
+    icon: normalizePlanIcon(sourcePlan.icon),
     activityIds,
     missingIds: ids.filter((id) => !eventById.has(id)),
     events: activityIds.map((id) => eventById.get(id)).sort(compareEvents)
@@ -227,7 +235,7 @@ function createPlanCard(entry) {
 
   const icon = document.createElement('span');
   icon.className = 'fiestas-community-plan-card-icon';
-  icon.append(createIcon(entry.icon || 'fa-layer-group'));
+  icon.append(createIcon(getPlanIcon(entry.icon).className));
   card.append(icon);
 
   const body = document.createElement('div');
@@ -262,6 +270,9 @@ function renderDetail(container, entry, imported) {
 
   const header = document.createElement('header');
   header.className = 'fiestas-community-plan-detail-head';
+  const icon = document.createElement('span');
+  icon.className = 'fiestas-community-plan-detail-icon';
+  icon.append(createIcon(getPlanIcon(entry.icon || imported.icon).className));
   const kicker = document.createElement('p');
   kicker.className = 'fiestas-plan-kicker';
   kicker.textContent = 'PLAN VECINAL';
@@ -273,7 +284,7 @@ function renderDetail(container, entry, imported) {
   const summary = document.createElement('p');
   summary.className = 'fiestas-community-plan-detail-summary';
   summary.textContent = formatImportedSummary(imported);
-  header.append(kicker, title, author, summary);
+  header.append(icon, kicker, title, author, summary);
   container.append(header);
 
   if (imported.missingIds.length) {
@@ -437,9 +448,9 @@ function cleanText(value, maxLength) {
 
 function communityPlanIcon(id, name) {
   const text = `${id} ${name}`.toLocaleLowerCase('es');
-  if (text.includes('cielo') || text.includes('estrella')) return 'fa-star';
-  if (text.includes('plaza') || text.includes('concierto')) return 'fa-landmark';
-  return 'fa-layer-group';
+  if (text.includes('cielo') || text.includes('estrella')) return 'stars';
+  if (text.includes('plaza') || text.includes('concierto')) return 'microphone';
+  return 'layers';
 }
 
 function safeJsonUrl(value) {

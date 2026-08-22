@@ -1,3 +1,5 @@
+import { normalizePlanIcon } from './plan-storage.js';
+
 const TIME_ZONE = 'Europe/Madrid';
 const FESTIVAL_ID = 'valladolid-2026';
 
@@ -42,6 +44,7 @@ export function createPlanPayload(plan, options = {}) {
     exportedAt: new Date().toISOString(),
     plans: [{
       name: String(plan?.name || 'Mi plan').trim(),
+      icon: normalizePlanIcon(plan?.icon),
       activityIds: [...new Set((plan?.activityIds || []).map(String).filter(Boolean))]
     }],
     ...options

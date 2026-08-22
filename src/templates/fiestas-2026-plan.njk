@@ -21,7 +21,7 @@
       </div>
       <div class="fiestas-plan-tools">
         <label class="fiestas-plan-picker">
-          <i class="fa-solid fa-star" aria-hidden="true"></i>
+          <i class="fa-solid fa-star" data-plan-picker-icon aria-hidden="true"></i>
           <span class="sr-only">Seleccionar plan</span>
           <select data-plan-picker aria-label="Seleccionar plan"></select>
           <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
@@ -44,6 +44,10 @@
           <input id="plan-create-input" type="text" maxlength="80" placeholder="Ej. Sábado en familia" data-plan-create-input />
           <button class="fiestas-plan-action fiestas-plan-action-primary" type="submit">Crear plan</button>
         </div>
+        <fieldset class="fiestas-plan-icon-picker">
+          <legend>Elige un icono</legend>
+          <div data-plan-create-icons data-plan-icon-picker="create"></div>
+        </fieldset>
       </form>
       <div data-plan-list hidden></div>
       <div class="fiestas-plan-detail" data-plan-section="detail" hidden data-plan-detail></div>
@@ -57,6 +61,32 @@
         <button class="fiestas-plan-action" type="button" data-plan-delete-confirm-cancel>Cancelar</button>
         <button class="fiestas-plan-action fiestas-plan-action-danger" type="button" data-plan-delete-confirm-accept>Eliminar plan</button>
       </div>
+    </div>
+    <div class="fiestas-plan-editor" data-plan-editor hidden>
+      <button class="fiestas-plan-editor-backdrop" type="button" data-plan-editor-close aria-label="Cerrar edición"></button>
+      <form class="fiestas-plan-editor-panel" data-plan-editor-form role="dialog" aria-modal="true" aria-labelledby="plan-editor-title">
+        <div class="fiestas-plan-editor-head">
+          <div>
+            <p class="fiestas-plan-kicker">PERSONALIZA TU PLAN</p>
+            <h2 id="plan-editor-title">Editar plan</h2>
+          </div>
+          <button class="fiestas-plan-editor-close" type="button" data-plan-editor-close aria-label="Cerrar edición">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </div>
+        <label class="fiestas-plan-editor-name">
+          <span>Nombre del plan</span>
+          <input type="text" maxlength="80" data-plan-editor-name />
+        </label>
+        <fieldset class="fiestas-plan-icon-picker">
+          <legend>Elige un icono</legend>
+          <div data-plan-editor-icons data-plan-icon-picker="edit"></div>
+        </fieldset>
+        <div class="fiestas-plan-editor-actions">
+          <button class="fiestas-plan-action" type="button" data-plan-editor-close>Cancelar</button>
+          <button class="fiestas-plan-action fiestas-plan-action-primary" type="submit">Guardar cambios</button>
+        </div>
+      </form>
     </div>
     <a class="fiestas-plan-import-link" data-plan-import-link href="/plan/importar/" hidden>Importar un plan compartido</a>
   </section>

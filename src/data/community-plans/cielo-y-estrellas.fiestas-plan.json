@@ -5,6 +5,7 @@
   "plans": [
     {
       "name": "Cielo y estrellas",
+      "icon": "stars",
       "activityIds": ["255", "74", "129", "360"]
     }
   ]

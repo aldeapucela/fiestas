@@ -1,7 +1,11 @@
 import {
   createPlan,
+  DEFAULT_PLAN_ICON,
   deletePlan,
+  getPlanIcon,
   makeUniquePlanName,
+  normalizePlanIcon,
+  PLAN_ICON_OPTIONS,
   planHasActivity,
   readFavoriteIds,
   readPlans,
@@ -43,7 +47,10 @@ export function setupPlansPage(rawEvents = []) {
     selectedPlanId: new URLSearchParams(window.location.search).get('plan') || '',
     selectedDay: new URLSearchParams(window.location.search).get('date') || 'all',
     creatingPlan: false,
-    pendingDeletePlanId: ''
+    pendingDeletePlanId: '',
+    newPlanIcon: DEFAULT_PLAN_ICON,
+    editingPlanId: '',
+    editingIcon: DEFAULT_PLAN_ICON
   };
   let shareDialogPlan = null;
   let shareDialogReturnFocus = null;
@@ -59,12 +66,18 @@ export function setupPlansPage(rawEvents = []) {
     createInput: page.querySelector('[data-plan-create-input]'),
     feedback: page.querySelector('[data-plan-feedback]'),
     picker: page.querySelector('[data-plan-picker]'),
+    pickerIcon: page.querySelector('[data-plan-picker-icon]'),
+    createIcons: page.querySelector('[data-plan-create-icons]'),
     headerShare: page.querySelector('[data-plan-header-share]'),
     importLink: page.querySelector('[data-plan-import-link]'),
     deleteConfirm: page.querySelector('[data-plan-delete-confirm]'),
     deleteConfirmName: page.querySelector('[data-plan-delete-confirm-name]'),
     deleteConfirmCancel: page.querySelector('[data-plan-delete-confirm-cancel]'),
     deleteConfirmAccept: page.querySelector('[data-plan-delete-confirm-accept]'),
+    editor: page.querySelector('[data-plan-editor]'),
+    editorForm: page.querySelector('[data-plan-editor-form]'),
+    editorName: page.querySelector('[data-plan-editor-name]'),
+    editorIcons: page.querySelector('[data-plan-editor-icons]'),
     shareDialog: document.querySelector('[data-plan-share-dialog]'),
     shareDialogName: document.querySelector('[data-plan-share-name]'),
     shareDialogMessage: document.querySelector('[data-plan-share-message]'),
@@ -117,7 +130,9 @@ export function setupPlansPage(rawEvents = []) {
       state.selectedDay = 'all';
       updatePlanUrl(state);
     }
-    renderPlanPicker(els.picker, state.plans, state.view, state.selectedPlanId);
+    renderPlanPicker(els.picker, els.pickerIcon, state.plans, state.view, state.selectedPlanId);
+    renderPlanIconPicker(els.createIcons, state.newPlanIcon, 'create');
+    renderPlanIconPicker(els.editorIcons, state.editingIcon, 'edit');
     els.sections.forEach((section) => {
       const sectionName = section.dataset.planSection;
       section.hidden = sectionName === 'saved' ? state.view !== 'saved' : sectionName === 'plan' ? state.view !== 'plan' : !state.selectedPlanId || state.view !== 'plan';
@@ -134,6 +149,26 @@ export function setupPlansPage(rawEvents = []) {
     if (els.importLink) els.importLink.hidden = true;
     if (els.headerShare) els.headerShare.hidden = state.view === 'plan' && !state.selectedPlanId;
     renderDeleteConfirmation(els.deleteConfirm, els.deleteConfirmName, state.plans, state.pendingDeletePlanId);
+  };
+
+  const closePlanEditor = () => {
+    if (!els.editor) return;
+    els.editor.hidden = true;
+    document.body.classList.remove('fiestas-plan-editor-open');
+    state.editingPlanId = '';
+    state.editingIcon = DEFAULT_PLAN_ICON;
+  };
+
+  const openPlanEditor = (plan, trigger) => {
+    if (!plan || !els.editor) return;
+    state.editingPlanId = plan.id;
+    state.editingIcon = normalizePlanIcon(plan.icon);
+    if (els.editorName) els.editorName.value = plan.name;
+    renderPlanIconPicker(els.editorIcons, state.editingIcon, 'edit');
+    els.editor.hidden = false;
+    document.body.classList.add('fiestas-plan-editor-open');
+    els.editorName?.focus();
+    if (trigger) els.editor.dataset.returnFocus = trigger.dataset.planRename || '';
   };
 
   els.picker?.addEventListener('change', () => {
@@ -159,6 +194,24 @@ export function setupPlansPage(rawEvents = []) {
     }
     updatePlanUrl(state);
     render();
+  });
+
+  els.editorForm?.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const plan = state.plans.find((item) => item.id === state.editingPlanId);
+    const name = String(els.editorName?.value || '').trim();
+    if (!plan) {
+      closePlanEditor();
+      return;
+    }
+    if (!name || name.length > MAX_PLAN_NAME_LENGTH) {
+      showFeedback(els.feedback, `Escribe un nombre de entre 1 y ${MAX_PLAN_NAME_LENGTH} caracteres.`);
+      return;
+    }
+    updatePlan(plan.id, { name, icon: state.editingIcon });
+    closePlanEditor();
+    render();
+    showFeedback(els.feedback, 'Plan actualizado.');
   });
 
   els.headerShare?.addEventListener('click', async () => {
@@ -193,9 +246,10 @@ export function setupPlansPage(rawEvents = []) {
       showFeedback(els.feedback, `Escribe un nombre de entre 1 y ${MAX_PLAN_NAME_LENGTH} caracteres.`);
       return;
     }
-    const plan = createPlan(makeUniquePlanName(name));
+    const plan = createPlan(makeUniquePlanName(name), [], { icon: state.newPlanIcon });
     trackPlanCreated('manual');
     if (els.createInput) els.createInput.value = '';
+    state.newPlanIcon = DEFAULT_PLAN_ICON;
     state.view = 'plan';
     state.selectedPlanId = plan.id;
     state.creatingPlan = false;
@@ -205,6 +259,21 @@ export function setupPlansPage(rawEvents = []) {
   });
 
   page.addEventListener('click', async (event) => {
+    const iconChoice = event.target.closest('[data-plan-icon-choice]');
+    if (iconChoice && page.contains(iconChoice)) {
+      const picker = iconChoice.closest('[data-plan-icon-picker]');
+      const icon = normalizePlanIcon(iconChoice.dataset.planIconChoice);
+      if (picker?.dataset.planIconPicker === 'create') state.newPlanIcon = icon;
+      if (picker?.dataset.planIconPicker === 'edit') state.editingIcon = icon;
+      renderPlanIconPicker(picker, icon, picker?.dataset.planIconPicker || 'create');
+      return;
+    }
+
+    if (event.target.closest('[data-plan-editor-close]')) {
+      closePlanEditor();
+      return;
+    }
+
     const openButton = event.target.closest('[data-plan-open]');
     if (openButton && !event.target.closest('button, a')) {
       state.view = 'plan';
@@ -230,15 +299,7 @@ export function setupPlansPage(rawEvents = []) {
     const renameButton = event.target.closest('[data-plan-rename]');
     if (renameButton) {
       const plan = state.plans.find((item) => item.id === renameButton.dataset.planRename);
-      if (!plan) return;
-      const nextName = window.prompt('Nuevo nombre del plan', plan.name)?.trim();
-      if (!nextName || nextName.length > MAX_PLAN_NAME_LENGTH) {
-        if (nextName) showFeedback(els.feedback, `El nombre no puede superar ${MAX_PLAN_NAME_LENGTH} caracteres.`);
-        return;
-      }
-      updatePlan(plan.id, { name: nextName });
-      render();
-      showFeedback(els.feedback, 'Plan renombrado.');
+      if (plan) openPlanEditor(plan, renameButton);
       return;
     }
 
@@ -371,6 +432,7 @@ export function setupPlansPage(rawEvents = []) {
   });
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && els.shareDialog && !els.shareDialog.hidden) closeShareDialog();
+    if (event.key === 'Escape' && els.editor && !els.editor.hidden) closePlanEditor();
   });
   subscribeToPlans(() => render());
   render();
@@ -454,7 +516,7 @@ export function setupPlanImportPage(rawEvents = []) {
     if (!importablePlans.length) return;
     const importedPlans = importablePlans.map((plan) => {
       const name = makeUniquePlanName(plan.name);
-      return createPlan(name, plan.validIds);
+      return createPlan(name, plan.validIds, { icon: plan.icon });
     });
     trackPlanImported(pending.source);
     const skippedCount = pending.plans.length - importablePlans.length;
@@ -489,6 +551,7 @@ export function setupPlanSelector() {
 
   let activityId = '';
   let optionsActivityId = '';
+  let selectedIcon = DEFAULT_PLAN_ICON;
   const close = () => {
     selector.hidden = true;
     activityId = '';
@@ -522,9 +585,17 @@ export function setupPlanSelector() {
       return label;
     }));
     if (empty) empty.hidden = plans.length > 0;
+    renderPlanIconPicker(selector.querySelector('[data-plan-selector-icons]'), selectedIcon, 'selector');
   };
 
   document.addEventListener('click', (event) => {
+    const iconChoice = event.target.closest('[data-plan-icon-choice]');
+    if (iconChoice && selector.contains(iconChoice)) {
+      selectedIcon = normalizePlanIcon(iconChoice.dataset.planIconChoice);
+      renderPlanIconPicker(selector.querySelector('[data-plan-selector-icons]'), selectedIcon, 'selector');
+      return;
+    }
+
     const openButton = event.target.closest('[data-fiestas-plan-add]');
     if (openButton) {
       event.preventDefault();
@@ -567,10 +638,11 @@ export function setupPlanSelector() {
       selector.querySelector('[data-plan-selector-feedback]').textContent = `Usa entre 1 y ${MAX_PLAN_NAME_LENGTH} caracteres.`;
       return;
     }
-    const plan = createPlan(makeUniquePlanName(name), activityId ? [activityId] : []);
+    const plan = createPlan(makeUniquePlanName(name), activityId ? [activityId] : [], { icon: selectedIcon });
     trackPlanCreated('manual');
     if (activityId) trackPlanActivityAdded(activityId);
     if (input) input.value = '';
+    selectedIcon = DEFAULT_PLAN_ICON;
     render();
     selector.querySelector('[data-plan-selector-feedback]').textContent = 'Plan creado y actividad añadida.';
   });
@@ -627,7 +699,13 @@ function renderPlanList(container, plans, events, selectedPlanId, feedback) {
     card.setAttribute('role', 'button');
     card.setAttribute('tabindex', '0');
     card.setAttribute('aria-label', `Abrir ${plan.name}`);
-    card.append(textNode('h3', plan.name));
+    const heading = document.createElement('div');
+    heading.className = 'fiestas-plan-summary-heading';
+    const planIcon = document.createElement('span');
+    planIcon.className = 'fiestas-plan-summary-icon';
+    planIcon.append(iconNode(`fa-solid ${getPlanIcon(plan.icon).className}`));
+    heading.append(planIcon, textNode('h3', plan.name));
+    card.append(heading);
     const planEvents = eventsForPlan(plan, events);
     const next = planEvents[0];
     card.append(textNode('p', `${planEvents.length} ${planEvents.length === 1 ? 'actividad' : 'actividades'}`));
@@ -968,6 +1046,7 @@ function validateImport(text, eventIds) {
     const validIds = ids.filter((id) => eventIds.has(id));
     plans.push({
       name,
+      icon: normalizePlanIcon(rawPlan.icon),
       ids,
       validIds,
       missingIds: ids.filter((id) => !eventIds.has(id))
@@ -998,7 +1077,13 @@ function renderImportPreview(container, result, events) {
       item.hidden = true;
       item.dataset.planImportExtra = 'true';
     }
-    item.append(textNode('h3', plan.name));
+    const title = document.createElement('div');
+    title.className = 'fiestas-plan-import-item-title';
+    const icon = document.createElement('span');
+    icon.className = 'fiestas-plan-import-item-icon';
+    icon.append(iconNode(`fa-solid ${getPlanIcon(plan.icon).className}`));
+    title.append(icon, textNode('h3', plan.name));
+    item.append(title);
     item.append(textNode('p', `${plan.validIds.length} actividades válidas de ${plan.ids.length}.`));
     if (plan.missingIds.length) {
       const missing = textNode('p', `${plan.missingIds.length} actividad${plan.missingIds.length === 1 ? '' : 'es'} no encontrada${plan.missingIds.length === 1 ? '' : 's'}.`);
@@ -1077,7 +1162,7 @@ function getPlanView() {
   return params.get('view') === 'plans' || params.get('tab') === 'plans' || params.get('plan') ? 'plan' : 'saved';
 }
 
-function renderPlanPicker(select, plans, view, selectedPlanId) {
+function renderPlanPicker(select, pickerIcon, plans, view, selectedPlanId) {
   if (!select) return;
   select.replaceChildren();
   const saved = document.createElement('option');
@@ -1099,6 +1184,28 @@ function renderPlanPicker(select, plans, view, selectedPlanId) {
   importOption.textContent = 'Importar un plan';
   select.append(importOption);
   select.value = view === 'saved' ? '__saved__' : selectedPlanId || '__create__';
+  if (pickerIcon) {
+    const selectedPlan = plans.find((plan) => plan.id === selectedPlanId);
+    pickerIcon.className = `fa-solid ${getPlanIcon(view === 'saved' ? 'stars' : selectedPlan?.icon).className}`;
+  }
+}
+
+function renderPlanIconPicker(container, selectedIcon, pickerName) {
+  if (!container) return;
+  container.replaceChildren(...PLAN_ICON_OPTIONS.map((option) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'fiestas-plan-icon-choice';
+    button.dataset.planIconChoice = option.id;
+    button.setAttribute('aria-label', option.label);
+    button.setAttribute('aria-pressed', String(option.id === normalizePlanIcon(selectedIcon)));
+    button.classList.toggle('is-selected', option.id === normalizePlanIcon(selectedIcon));
+    button.title = option.label;
+    button.append(iconNode(`fa-solid ${option.className}`));
+    container.append(button);
+    return button;
+  }));
+  container.dataset.planIconPicker = pickerName;
 }
 
 function getPlanDateChoices(events) {

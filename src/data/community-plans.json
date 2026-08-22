@@ -7,12 +7,14 @@
       "id": "cielo-y-estrellas",
       "name": "Cielo y estrellas",
       "author": "Aldea Pucela",
+      "icon": "stars",
       "url": "/data/community-plans/cielo-y-estrellas.fiestas-plan.json"
     },
     {
       "id": "plaza-mayor-2026",
       "name": "Conciertos en la Plaza Mayor",
       "author": "Aldea Pucela",
+      "icon": "microphone",
       "url": "/data/community-plans/plaza-mayor-2026.fiestas-plan.json"
     }
   ]

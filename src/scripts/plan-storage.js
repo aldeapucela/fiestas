@@ -1,6 +1,31 @@
 export const FAVORITES_STORAGE_KEY = 'fiestasPucela:favorites';
 export const PLANS_STORAGE_KEY = 'fiestasPucela:plans';
 export const PLANS_SCHEMA_VERSION = 1;
+export const DEFAULT_PLAN_ICON = 'layers';
+export const PLAN_ICON_OPTIONS = Object.freeze([
+  { id: 'stars', label: 'Estrellas', className: 'fa-star' },
+  { id: 'music', label: 'Música', className: 'fa-music' },
+  { id: 'microphone', label: 'Micrófono', className: 'fa-microphone' },
+  { id: 'cocktail', label: 'Copas', className: 'fa-wine-glass' },
+  { id: 'beer', label: 'Cerveza', className: 'fa-beer-mug-empty' },
+  { id: 'food', label: 'Gastronomía', className: 'fa-utensils' },
+  { id: 'dance', label: 'Baile', className: 'fa-person-dress' },
+  { id: 'theater', label: 'Teatro', className: 'fa-masks-theater' },
+  { id: 'masks', label: 'Disfraces', className: 'fa-mask-face' },
+  { id: 'fireworks', label: 'Fuegos artificiales', className: 'fa-wand-sparkles' },
+  { id: 'parade', label: 'Desfiles', className: 'fa-drum' },
+  { id: 'family', label: 'Familia', className: 'fa-people-roof' },
+  { id: 'children', label: 'Infantil', className: 'fa-child-reaching' },
+  { id: 'sports', label: 'Deporte', className: 'fa-person-running' },
+  { id: 'religious', label: 'Religioso', className: 'fa-place-of-worship' },
+  { id: 'camera', label: 'Fotografía', className: 'fa-camera' },
+  { id: 'art', label: 'Arte', className: 'fa-palette' },
+  { id: 'culture', label: 'Cultura', className: 'fa-book-open' },
+  { id: 'map', label: 'Rutas', className: 'fa-map-location-dot' },
+  { id: 'calendar', label: 'Agenda', className: 'fa-calendar-days' },
+  { id: 'heart', label: 'Favoritos', className: 'fa-heart' },
+  { id: 'layers', label: 'Otros', className: 'fa-layer-group' }
+]);
 
 const plansChangedEvent = 'fiestas:plans-changed';
 
@@ -39,7 +64,8 @@ export function createPlan(name, activityIds = [], metadata = {}) {
     name: String(name || '').trim(),
     createdAt: now,
     updatedAt: now,
-    activityIds: uniqueIds(activityIds)
+    activityIds: uniqueIds(activityIds),
+    icon: normalizePlanIcon(metadata?.icon)
   };
   if (sourcePlanId) plan.sourcePlanId = sourcePlanId;
   const plans = [...readPlans(), plan];
@@ -92,6 +118,16 @@ export function planHasActivity(plan, activityId) {
   return Boolean(plan?.activityIds?.includes(String(activityId)));
 }
 
+export function normalizePlanIcon(value) {
+  const icon = String(value || '').trim().toLocaleLowerCase('en');
+  return PLAN_ICON_OPTIONS.some((option) => option.id === icon) ? icon : DEFAULT_PLAN_ICON;
+}
+
+export function getPlanIcon(value) {
+  const iconId = normalizePlanIcon(value);
+  return PLAN_ICON_OPTIONS.find((option) => option.id === iconId) || PLAN_ICON_OPTIONS.at(-1);
+}
+
 export function makeUniquePlanName(name, plans = readPlans()) {
   const base = String(name || '').trim() || 'Mi plan';
   const names = new Set(plans.map((plan) => plan.name.toLocaleLowerCase('es')));
@@ -128,6 +164,7 @@ function normalizePlan(value) {
     createdAt,
     updatedAt,
     activityIds: uniqueIds(value.activityIds),
+    icon: normalizePlanIcon(value.icon),
     ...(String(value.sourcePlanId || '').trim() ? { sourcePlanId: String(value.sourcePlanId).trim() } : {})
   };
 }

@@ -16,6 +16,11 @@ const analyticsConfig = {
   trackerUrl: process.env.FIESTAS_MATOMO_URL || 'https://stats.aldeapucela.org/',
   siteId: process.env.FIESTAS_MATOMO_SITE_ID || '29'
 };
+const communityPlanIcons = new Set([
+  'stars', 'music', 'microphone', 'cocktail', 'beer', 'food', 'dance', 'theater', 'masks',
+  'fireworks', 'parade', 'family', 'children', 'sports', 'religious', 'camera', 'art',
+  'culture', 'map', 'calendar', 'heart', 'layers'
+]);
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
@@ -145,6 +150,8 @@ async function copyCommunityPlansData(assetVersionSeed) {
     const id = String(entry.id || '').trim();
     const name = String(entry.name || '').trim();
     const author = String(entry.author || '').trim();
+    const iconValue = String(entry.icon || 'layers').trim().toLowerCase();
+    const icon = communityPlanIcons.has(iconValue) ? iconValue : 'layers';
     const url = normalizeCommunityPlanUrl(entry.url);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) throw new Error(`Community plan ${index + 1} has an invalid stable id.`);
     if (ids.has(id)) throw new Error(`Community plan id "${id}" is duplicated.`);
@@ -152,7 +159,7 @@ async function copyCommunityPlansData(assetVersionSeed) {
     if (!author || author.length > 80) throw new Error(`Community plan "${id}" must have an author between 1 and 80 characters.`);
     if (!url) throw new Error(`Community plan "${id}" must have a valid JSON url.`);
     ids.add(id);
-    return { id, name, author, url };
+    return { id, name, author, icon, url };
   });
   const content = JSON.stringify({
     schemaVersion: 1,
