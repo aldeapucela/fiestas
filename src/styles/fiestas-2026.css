@@ -3314,17 +3314,6 @@ html.dark .fiestas-event-option {
   }
 }
 
-.fiestas-plan-side-actions {
-  display: grid;
-  justify-items: center;
-  align-content: start;
-  gap: 0.15rem;
-}
-
-.fiestas-plan-side-actions .fiestas-plan-heart {
-  justify-self: center;
-}
-
 .fiestas-plan-more {
   display: inline-flex;
   width: 2.35rem;
@@ -3744,7 +3733,7 @@ html.dark .fiestas-plan-selector-create input {
   text-decoration: none;
 }
 
-.fiestas-plan-heart {
+.fiestas-plan-bookmark {
   display: inline-flex;
   width: 3rem;
   height: 3rem;
@@ -3752,10 +3741,25 @@ html.dark .fiestas-plan-selector-create input {
   justify-content: center;
   justify-self: end;
   border: 0;
-  border-radius: 50%;
-  background: #f4eff8;
-  color: #73579f;
+  border-radius: 0;
+  background: transparent;
+  color: #159b8b;
   font-size: 1.35rem;
+}
+
+.fiestas-plan-bookmark.is-active {
+  color: #73579f;
+}
+
+.fiestas-plan-bookmark:hover,
+.fiestas-plan-bookmark:focus-visible {
+  background: transparent;
+  color: #0f806f;
+}
+
+.fiestas-plan-bookmark.is-active:hover,
+.fiestas-plan-bookmark.is-active:focus-visible {
+  color: #5e4387;
 }
 
 .fiestas-plan-timeline-location {
@@ -4126,9 +4130,16 @@ html.dark .fiestas-plan-management .fiestas-plan-action {
   color: #bbc2cd;
 }
 
-html.dark .fiestas-plan-tag,
-html.dark .fiestas-plan-heart {
+html.dark .fiestas-plan-tag {
   background: #30283c;
+}
+
+html.dark .fiestas-plan-bookmark {
+  color: #78e2d4;
+}
+
+html.dark .fiestas-plan-bookmark.is-active {
+  color: #c8b3e5;
 }
 
 html.dark .fiestas-plan-overlap-warning {
@@ -4379,7 +4390,7 @@ html.dark .fiestas-plan-overlap-warning {
   letter-spacing: -0.02em;
 }
 
-.fiestas-plan-heart {
+.fiestas-plan-bookmark {
   width: 2.35rem;
   height: 2.35rem;
   font-size: 1.05rem;
