@@ -622,8 +622,18 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
         rail.className = 'fiestas-plan-timeline-rail';
         rail.append(textNode('time', event.startTime || '—'));
         const icon = document.createElement('span');
-        icon.className = 'fiestas-plan-timeline-icon';
-        icon.append(iconNode(`fa-solid ${iconForPlanEvent(event)}`));
+        icon.className = `fiestas-plan-timeline-icon${event.image ? ' has-image' : ''}`;
+        if (event.image) {
+          const image = document.createElement('img');
+          image.className = 'fiestas-plan-timeline-image';
+          image.src = event.image;
+          image.alt = '';
+          image.loading = 'lazy';
+          image.decoding = 'async';
+          icon.append(image);
+        } else {
+          icon.append(iconNode(`fa-solid ${iconForPlanEvent(event)}`));
+        }
         rail.append(icon);
         if (index < group.length - 1) {
           const line = document.createElement('span');

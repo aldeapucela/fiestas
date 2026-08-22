@@ -729,6 +729,21 @@
     font-size: 2rem;
   }
 
+  .fiestas-event-art.has-image {
+    overflow: hidden;
+    border-left-color: transparent;
+    border-radius: 0.85rem;
+    background: #edf7f5;
+  }
+
+  .fiestas-event-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    object-fit: cover;
+  }
+
   .fiestas-event-copy {
     display: grid;
     min-width: 0;
@@ -3474,6 +3489,18 @@ html.dark .fiestas-plan-selector-create input {
   background: #e2f1ef;
   color: #159b8b;
   font-size: 1.65rem;
+}
+
+.fiestas-plan-timeline-icon.has-image {
+  overflow: hidden;
+  background: #edf7f5;
+}
+
+.fiestas-plan-timeline-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .fiestas-plan-timeline-line {

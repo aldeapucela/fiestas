@@ -453,12 +453,13 @@ function eventCard(event) {
 
   const link = document.createElement('a');
   link.className = 'fiestas-event-link';
+  const artMarkup = event.image
+    ? `<img class="fiestas-event-image" src="${escapeHtml(event.image)}" alt="" loading="lazy" decoding="async">`
+    : `<i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i>`;
   link.href = event.urlPath;
   link.innerHTML = `
     <span class="fiestas-event-time">${timeMarkup(event)}</span>
-    <span class="fiestas-event-art" aria-hidden="true">
-      <i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i>
-    </span>
+    <span class="fiestas-event-art${event.image ? ' has-image' : ''}" aria-hidden="true">${artMarkup}</span>
     <span class="fiestas-event-copy">
       <span class="fiestas-event-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
       <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-event-place-text">${escapeHtml(place)}</span></span>
