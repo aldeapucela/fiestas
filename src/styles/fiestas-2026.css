@@ -65,6 +65,13 @@
     gap: 1rem;
   }
 
+  .fiestas-hero-actions {
+    display: inline-flex;
+    flex: 0 0 auto;
+    align-items: center;
+    gap: 0.45rem;
+  }
+
   .fiestas-brand {
     display: inline-flex;
     min-width: 0;
@@ -139,6 +146,17 @@
     line-height: 1.12;
   }
 
+  .fiestas-share-feedback {
+    margin: 0;
+    color: #0f766e;
+    font-size: 0.78rem;
+    font-weight: 800;
+  }
+
+  .fiestas-share-feedback.is-error {
+    color: #b42318;
+  }
+
   .fiestas-search-toggle {
     position: relative;
     z-index: 1;
@@ -154,6 +172,28 @@
     color: #73579f;
     font-size: 1rem;
     transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .fiestas-share-toggle {
+    display: inline-flex;
+    width: 2.8rem;
+    height: 2.8rem;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e3e6ec;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.78);
+    color: #73579f;
+    font-size: 1rem;
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
+  }
+
+  .fiestas-share-toggle:hover,
+  .fiestas-share-toggle:focus-visible {
+    border-color: #0f9f8d;
+    background: #0f9f8d;
+    color: #fff;
   }
 
   .fiestas-search-toggle:hover,
@@ -2144,6 +2184,7 @@
 
   html.dark .fiestas-date-card,
   html.dark .fiestas-search,
+  html.dark .fiestas-share-toggle,
   html.dark .fiestas-search-toggle,
   html.dark .fiestas-type-menu-button,
   html.dark .fiestas-favorite-filter,

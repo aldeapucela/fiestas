@@ -17,6 +17,8 @@ import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
+const SITE_SHARE_URL = 'https://fiestas.aldeapucela.org/?mtm_campaign=share';
+const SITE_SHARE_MESSAGE = `descubre la mejor app para sobrevivir en las fiestas de Valladolid 2026\n\n${SITE_SHARE_URL}`;
 const cartoLayers = {
   light: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
   dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
@@ -28,6 +30,7 @@ let initialDate = null;
 let filterBackdrop = null;
 let filterScrollY = 0;
 let isApplyingUrlState = false;
+let siteShareFeedbackTimer = null;
 
 const state = {
   view: 'agenda',
@@ -85,6 +88,8 @@ const els = {
   ticketList: document.querySelector('[data-fiestas-tickets]'),
   ticketToggle: document.querySelector('[data-fiestas-tickets-toggle]'),
   ticketLabel: document.querySelector('[data-fiestas-tickets-label]'),
+  siteShare: document.querySelector('[data-fiestas-share-site]'),
+  siteShareFeedback: document.querySelector('[data-fiestas-share-feedback]'),
   searchToggle: document.querySelector('[data-fiestas-search-toggle]'),
   searchPanel: document.querySelector('[data-fiestas-search-panel]'),
   search: document.querySelector('[data-fiestas-search]'),
@@ -111,6 +116,7 @@ function init() {
   setupMenuDrawer();
   setupSubscribe();
   setupPlanSelector();
+  els.siteShare?.addEventListener('click', shareSite);
 
   if (els.detail) {
     initDetailPage();
@@ -1397,6 +1403,58 @@ async function shareDetail() {
     }
     showDetailFeedback('Copia el enlace desde el campo.');
   }
+}
+
+async function shareSite() {
+  try {
+    if (navigator.share) {
+      await navigator.share({
+        title: 'Fiestas Valladolid 2026',
+        text: SITE_SHARE_MESSAGE
+      });
+      showSiteShareFeedback('Compartido.');
+      return;
+    }
+  } catch (error) {
+    if (error?.name === 'AbortError') return;
+  }
+
+  try {
+    await copyTextToClipboard(SITE_SHARE_MESSAGE);
+    showSiteShareFeedback('Mensaje y enlace copiados.');
+  } catch (_) {
+    showSiteShareFeedback('No se pudo copiar el mensaje. Mantén pulsado para copiarlo.', true);
+  }
+}
+
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.append(textarea);
+  textarea.focus();
+  textarea.select();
+  const copied = document.execCommand('copy');
+  textarea.remove();
+  if (!copied) throw new Error('Clipboard unavailable');
+}
+
+function showSiteShareFeedback(message, isError = false) {
+  if (!els.siteShareFeedback) return;
+  window.clearTimeout(siteShareFeedbackTimer);
+  els.siteShareFeedback.textContent = message;
+  els.siteShareFeedback.classList.toggle('is-error', isError);
+  els.siteShareFeedback.hidden = false;
+  siteShareFeedbackTimer = window.setTimeout(() => {
+    els.siteShareFeedback.hidden = true;
+  }, 4000);
 }
 
 function showDetailFeedback(message) {
