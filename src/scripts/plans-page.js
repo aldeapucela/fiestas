@@ -994,8 +994,8 @@ function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {
     const warning = document.createElement('div');
     warning.className = 'fiestas-plan-overlap-warning';
     warning.append(iconNode('fa-solid fa-triangle-exclamation'));
-    warning.append(textNode('span', `Se solapa con «${overlap.name}»`));
-    const review = actionButton('Ver plan', 'fa-chevron-right', { className: 'fiestas-plan-overlap-review', 'data-plan-overlap-open': overlap.planId });
+    warning.append(textNode('span', `Se solapa con «${overlap.activityName}»`));
+    const review = actionButton('Ver', 'fa-chevron-right', { className: 'fiestas-plan-overlap-review', 'data-plan-overlap-open': overlap.planId });
     warning.append(review);
     card.append(warning);
   }
@@ -1380,7 +1380,13 @@ function findPlanOverlap(event, planId, plans, events) {
       const otherStart = sortMinutes(other.startTime);
       const otherEnd = other.endTime ? sortMinutes(other.endTime) : otherStart + 60;
       if (other.id === event.id) continue;
-      if (start < otherEnd && otherStart < end) return { planId: plan.id, name: plan.name };
+      if (start < otherEnd && otherStart < end) {
+        return {
+          planId: plan.id,
+          name: plan.name,
+          activityName: other.title || 'Actividad sin título'
+        };
+      }
     }
   }
   return null;
