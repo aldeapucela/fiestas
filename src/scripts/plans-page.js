@@ -42,7 +42,8 @@ export function setupPlansPage(rawEvents = []) {
     view: getPlanView(),
     selectedPlanId: new URLSearchParams(window.location.search).get('plan') || '',
     selectedDay: new URLSearchParams(window.location.search).get('date') || 'all',
-    creatingPlan: false
+    creatingPlan: false,
+    pendingDeletePlanId: ''
   };
   let shareDialogPlan = null;
   let shareDialogReturnFocus = null;
@@ -60,6 +61,10 @@ export function setupPlansPage(rawEvents = []) {
     picker: page.querySelector('[data-plan-picker]'),
     headerShare: page.querySelector('[data-plan-header-share]'),
     importLink: page.querySelector('[data-plan-import-link]'),
+    deleteConfirm: page.querySelector('[data-plan-delete-confirm]'),
+    deleteConfirmName: page.querySelector('[data-plan-delete-confirm-name]'),
+    deleteConfirmCancel: page.querySelector('[data-plan-delete-confirm-cancel]'),
+    deleteConfirmAccept: page.querySelector('[data-plan-delete-confirm-accept]'),
     shareDialog: document.querySelector('[data-plan-share-dialog]'),
     shareDialogName: document.querySelector('[data-plan-share-name]'),
     shareDialogMessage: document.querySelector('[data-plan-share-message]'),
@@ -128,6 +133,7 @@ export function setupPlansPage(rawEvents = []) {
     if (els.createForm) els.createForm.hidden = state.view !== 'plan' || Boolean(state.selectedPlanId);
     if (els.importLink) els.importLink.hidden = true;
     if (els.headerShare) els.headerShare.hidden = state.view === 'plan' && !state.selectedPlanId;
+    renderDeleteConfirmation(els.deleteConfirm, els.deleteConfirmName, state.plans, state.pendingDeletePlanId);
   };
 
   els.picker?.addEventListener('change', () => {
@@ -136,10 +142,12 @@ export function setupPlansPage(rawEvents = []) {
       state.view = 'saved';
       state.selectedPlanId = '';
       state.creatingPlan = false;
+      state.pendingDeletePlanId = '';
     } else if (value === '__create__') {
       state.view = 'plan';
       state.selectedPlanId = '';
       state.creatingPlan = true;
+      state.pendingDeletePlanId = '';
     } else if (value === '__import__') {
       window.location.href = '/plan/importar/';
       return;
@@ -147,6 +155,7 @@ export function setupPlansPage(rawEvents = []) {
       state.view = 'plan';
       state.selectedPlanId = value;
       state.creatingPlan = false;
+      state.pendingDeletePlanId = '';
     }
     updatePlanUrl(state);
     render();
@@ -201,6 +210,7 @@ export function setupPlansPage(rawEvents = []) {
       state.view = 'plan';
       state.selectedPlanId = openButton.dataset.planOpen || '';
       state.creatingPlan = false;
+      state.pendingDeletePlanId = '';
       updatePlanUrl(state);
       render();
       return;
@@ -211,6 +221,7 @@ export function setupPlansPage(rawEvents = []) {
       state.selectedPlanId = '';
       state.view = 'plan';
       state.creatingPlan = false;
+      state.pendingDeletePlanId = '';
       updatePlanUrl(state);
       render();
       return;
@@ -234,11 +245,34 @@ export function setupPlansPage(rawEvents = []) {
     const deleteButton = event.target.closest('[data-plan-delete]');
     if (deleteButton) {
       const plan = state.plans.find((item) => item.id === deleteButton.dataset.planDelete);
-      if (!plan || !window.confirm(`¿Eliminar el plan “${plan.name}”?`)) return;
+      if (!plan) return;
+      state.pendingDeletePlanId = plan.id;
+      render();
+      els.deleteConfirm?.scrollIntoView({ block: 'nearest' });
+      els.deleteConfirmAccept?.focus();
+      return;
+    }
+
+    const cancelDeleteButton = event.target.closest('[data-plan-delete-confirm-cancel]');
+    if (cancelDeleteButton) {
+      state.pendingDeletePlanId = '';
+      render();
+      return;
+    }
+
+    const acceptDeleteButton = event.target.closest('[data-plan-delete-confirm-accept]');
+    if (acceptDeleteButton) {
+      const plan = state.plans.find((item) => item.id === state.pendingDeletePlanId);
+      if (!plan) {
+        state.pendingDeletePlanId = '';
+        render();
+        return;
+      }
       deletePlan(plan.id);
       state.selectedPlanId = '';
       state.view = 'plan';
-      state.creatingPlan = false;
+      state.creatingPlan = true;
+      state.pendingDeletePlanId = '';
       updatePlanUrl(state);
       render();
       showFeedback(els.feedback, 'Plan eliminado.');
@@ -332,6 +366,7 @@ export function setupPlansPage(rawEvents = []) {
     state.selectedPlanId = params.get('plan') || '';
     state.selectedDay = params.get('date') || 'all';
     state.creatingPlan = false;
+    state.pendingDeletePlanId = '';
     render();
   });
   window.addEventListener('keydown', (event) => {
@@ -617,6 +652,13 @@ function renderPlanList(container, plans, events, selectedPlanId, feedback) {
     list.append(card);
   });
   container.append(list);
+}
+
+function renderDeleteConfirmation(container, nameElement, plans, pendingPlanId) {
+  if (!container) return;
+  const plan = plans.find((item) => item.id === pendingPlanId);
+  container.hidden = !plan;
+  if (plan && nameElement) nameElement.textContent = `“${plan.name}”`;
 }
 
 function renderPlanDetail(container, plan, events, plans, selectedDay, feedback, options = {}) {

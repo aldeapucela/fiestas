@@ -50,6 +50,14 @@
     </section>
 
     <div class="fiestas-plan-feedback" data-plan-feedback aria-live="polite" hidden></div>
+    <div class="fiestas-plan-delete-confirm" data-plan-delete-confirm hidden role="alertdialog" aria-labelledby="plan-delete-confirm-title" aria-describedby="plan-delete-confirm-copy">
+      <p class="fiestas-plan-delete-confirm-title" id="plan-delete-confirm-title">¿Eliminar este plan?</p>
+      <p id="plan-delete-confirm-copy">Se borrará <strong data-plan-delete-confirm-name></strong> de este navegador.</p>
+      <div class="fiestas-plan-delete-confirm-actions">
+        <button class="fiestas-plan-action" type="button" data-plan-delete-confirm-cancel>Cancelar</button>
+        <button class="fiestas-plan-action fiestas-plan-action-danger" type="button" data-plan-delete-confirm-accept>Eliminar plan</button>
+      </div>
+    </div>
     <a class="fiestas-plan-import-link" data-plan-import-link href="/plan/importar/" hidden>Importar un plan compartido</a>
   </section>
 

@@ -1,4 +1,4 @@
-import { createPlan, makeUniquePlanName } from './plan-storage.js';
+import { createPlan, readPlans } from './plan-storage.js';
 import { trackPlanCreated } from './analytics.js';
 
 const CATALOG_SCHEMA_VERSION = 1;
@@ -52,8 +52,8 @@ export function setupCommunityPlansPage(rawEvents = []) {
     if (!addLink || !page.contains(addLink)) return;
     const entry = entries.find((item) => item.id === addLink.dataset.communityPlanId);
     if (!entry) return;
-    event.preventDefault();
     if (addLink.dataset.communityPlanAdded === 'true') return;
+    event.preventDefault();
     addLink.dataset.communityPlanBusy = 'true';
     addLink.setAttribute('aria-busy', 'true');
     setActionText(addLink, 'Añadiendo…', 'fa-spinner');
@@ -103,16 +103,19 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
 
   const addToMyPlans = async () => {
     if (!imported || !addLink || addLink.dataset.communityPlanAdded === 'true') return;
+    const existing = findExistingCommunityPlan(entry, imported);
+    if (existing) {
+      markAddedLink(addLink, existing);
+      setStatus(`${existing.name} ya está disponible en Mi plan.`, 'success');
+      return;
+    }
     addLink.dataset.communityPlanBusy = 'true';
     addLink.setAttribute('aria-busy', 'true');
     setActionText(addLink, 'Añadiendo…', 'fa-spinner');
     try {
-      const plan = createPlan(makeUniquePlanName(entry.name || imported.name), imported.activityIds);
+      const plan = createPlan(entry.name || imported.name, imported.activityIds, { sourcePlanId: entry.id });
       trackPlanCreated('community');
-      addLink.dataset.communityPlanAdded = 'true';
-      addLink.removeAttribute('aria-busy');
-      addLink.removeAttribute('data-community-plan-busy');
-      setActionText(addLink, 'Añadido a Mi plan', 'fa-check');
+      markAddedLink(addLink, plan);
       setStatus(`${plan.name} ya está disponible en Mi plan.`, 'success');
     } catch (_) {
       addLink.removeAttribute('aria-busy');
@@ -137,6 +140,8 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
       imported = await loadExportedPlan(entry.url, eventById);
       renderDetail(detail, entry, imported);
       setStatus('', '');
+      const existing = findExistingCommunityPlan(entry, imported);
+      if (existing) markAddedLink(addLink, existing);
       if (new URLSearchParams(window.location.search).get('add') === '1') await addToMyPlans();
     } catch (_) {
       setStatus('No se ha podido cargar el archivo de este plan. Vuelve a intentarlo más tarde.', 'error');
@@ -243,6 +248,8 @@ function createPlanCard(entry) {
   const addLink = createTextAction(`${entry.pageUrl}?add=1`, 'Añadir a mis planes', 'fa-plus');
   addLink.dataset.communityPlanAdd = '';
   addLink.dataset.communityPlanId = entry.id;
+  const existing = findExistingCatalogPlan(entry);
+  if (existing) markAddedLink(addLink, existing);
   actions.append(addLink);
   card.append(actions);
   return card;
@@ -316,6 +323,33 @@ function createTextAction(href, label, iconName) {
 
 function setActionText(link, label, iconName) {
   link.replaceChildren(createIcon(iconName), document.createTextNode(label));
+}
+
+function markAddedLink(link, plan) {
+  if (!link) return;
+  link.dataset.communityPlanAdded = 'true';
+  link.removeAttribute('aria-busy');
+  link.removeAttribute('data-community-plan-busy');
+  link.removeAttribute('aria-disabled');
+  if (plan?.id) link.href = `/plan/?tab=plans&plan=${encodeURIComponent(plan.id)}`;
+  setActionText(link, 'Ver plan', 'fa-eye');
+}
+
+function findExistingCatalogPlan(entry) {
+  return readPlans().find((plan) => plan.sourcePlanId === entry.id || normalizePlanName(plan.name) === normalizePlanName(entry.name)) || null;
+}
+
+function findExistingCommunityPlan(entry, imported) {
+  const ids = new Set(imported?.activityIds || []);
+  return readPlans().find((plan) => {
+    if (plan.sourcePlanId === entry.id) return true;
+    if (normalizePlanName(plan.name) !== normalizePlanName(entry.name || imported?.name)) return false;
+    return plan.activityIds.length === ids.size && plan.activityIds.every((id) => ids.has(id));
+  }) || null;
+}
+
+function normalizePlanName(value) {
+  return String(value || '').trim().toLocaleLowerCase('es');
 }
 
 function createIcon(name) {

@@ -5016,7 +5016,7 @@ html.dark .fiestas-community-plan-preview-item {
 }
 
 .fiestas-community-plan-link-feedback {
-  flex: 1 0 100%;
+  grid-column: 2 / -1;
   color: #0f766e;
   font-size: 0.72rem;
   font-weight: 750;
@@ -5232,6 +5232,7 @@ html.dark .fiestas-community-plan-detail-item {
   }
 
   .fiestas-community-plan-link-feedback {
+    grid-column: 2;
     text-align: left;
   }
 }
@@ -5251,4 +5252,62 @@ html.dark .fiestas-community-plan-text-action:focus-visible {
   border-color: #78e2d4;
   background: #1d3938;
   color: #b9f0e8;
+}
+
+.fiestas-plan-delete-confirm {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0.75rem 0;
+  border: 1px solid #efc6a4;
+  border-radius: 0.9rem;
+  background: #fff8f0;
+  color: #5d3924;
+  padding: 0.85rem 0.95rem;
+}
+
+.fiestas-plan-delete-confirm p {
+  margin: 0;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.fiestas-plan-delete-confirm-title {
+  color: #9a4c18;
+  font-size: 0.9rem !important;
+  font-weight: 850;
+}
+
+.fiestas-plan-delete-confirm-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.fiestas-plan-delete-confirm-actions .fiestas-plan-action {
+  min-height: 2.2rem;
+  padding-inline: 0.75rem;
+  font-size: 0.78rem;
+}
+
+.fiestas-plan-action-danger {
+  border-color: #c94d32;
+  background: #c94d32;
+  color: #fff;
+}
+
+.fiestas-plan-action-danger:hover,
+.fiestas-plan-action-danger:focus-visible {
+  border-color: #a63b25;
+  background: #a63b25;
+  color: #fff;
+}
+
+html.dark .fiestas-plan-delete-confirm {
+  border-color: #704832;
+  background: #30241e;
+  color: #f0c5a7;
+}
+
+html.dark .fiestas-plan-delete-confirm-title {
+  color: #ffb27e;
 }

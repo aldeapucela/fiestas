@@ -31,8 +31,9 @@ export function writePlans(plans) {
   return normalized;
 }
 
-export function createPlan(name, activityIds = []) {
+export function createPlan(name, activityIds = [], metadata = {}) {
   const now = new Date().toISOString();
+  const sourcePlanId = String(metadata?.sourcePlanId || '').trim();
   const plan = {
     id: createId(),
     name: String(name || '').trim(),
@@ -40,6 +41,7 @@ export function createPlan(name, activityIds = []) {
     updatedAt: now,
     activityIds: uniqueIds(activityIds)
   };
+  if (sourcePlanId) plan.sourcePlanId = sourcePlanId;
   const plans = [...readPlans(), plan];
   writePlans(plans);
   return plan;
@@ -125,7 +127,8 @@ function normalizePlan(value) {
     name,
     createdAt,
     updatedAt,
-    activityIds: uniqueIds(value.activityIds)
+    activityIds: uniqueIds(value.activityIds),
+    ...(String(value.sourcePlanId || '').trim() ? { sourcePlanId: String(value.sourcePlanId).trim() } : {})
   };
 }
 
