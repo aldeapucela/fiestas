@@ -134,6 +134,7 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
   };
 
   addLink?.addEventListener('click', async (event) => {
+    if (addLink.dataset.communityPlanAdded === 'true') return;
     event.preventDefault();
     if (!imported) return;
     await addToMyPlans();
