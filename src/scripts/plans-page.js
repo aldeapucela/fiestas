@@ -29,6 +29,7 @@ const FESTIVAL_ID = 'valladolid-2026';
 const MAX_IMPORT_BYTES = 256 * 1024;
 const MAX_PLAN_NAME_LENGTH = 80;
 const MAX_IMPORT_ACTIVITIES = 200;
+const IMPORT_PREVIEW_ACTIVITY_LIMIT = 3;
 let selectorInitialized = false;
 
 export function setupPlansPage(rawEvents = []) {
@@ -352,6 +353,8 @@ export function setupPlanImportPage(rawEvents = []) {
   const actions = page.querySelector('[data-plan-import-actions]');
   const cancelButton = page.querySelector('[data-plan-import-cancel]');
   const confirmButton = page.querySelector('[data-plan-import-confirm]');
+  const success = page.querySelector('[data-plan-import-success]');
+  const viewLink = page.querySelector('[data-plan-import-view]');
   let pending = null;
 
   const reset = () => {
@@ -359,6 +362,11 @@ export function setupPlanImportPage(rawEvents = []) {
     if (preview) preview.hidden = true;
     if (actions) actions.hidden = true;
     if (confirmButton) confirmButton.hidden = true;
+    if (success) success.hidden = true;
+    if (viewLink) {
+      viewLink.hidden = true;
+      viewLink.removeAttribute('href');
+    }
   };
 
   const processText = (text, source = 'file') => {
@@ -409,20 +417,28 @@ export function setupPlanImportPage(rawEvents = []) {
     if (!pending) return;
     const importablePlans = pending.plans.filter((plan) => plan.validIds.length);
     if (!importablePlans.length) return;
-    const importedNames = importablePlans.map((plan) => {
+    const importedPlans = importablePlans.map((plan) => {
       const name = makeUniquePlanName(plan.name);
-      createPlan(name, plan.validIds);
-      return name;
+      return createPlan(name, plan.validIds);
     });
     trackPlanImported(pending.source);
     const skippedCount = pending.plans.length - importablePlans.length;
-    const importedLabel = importedNames.length === 1
-      ? `Plan “${importedNames[0]}” importado correctamente.`
-      : `${importedNames.length} planes importados correctamente.`;
+    const importedLabel = importedPlans.length === 1
+      ? `Plan “${importedPlans[0].name}” importado correctamente.`
+      : `${importedPlans.length} planes importados correctamente.`;
     const skippedLabel = skippedCount ? ` ${skippedCount} sin actividades compatibles no se han guardado.` : '';
     setStatus(status, `${importedLabel}${skippedLabel}`, false);
     if (actions) actions.hidden = true;
     confirmButton.hidden = true;
+    if (success) success.hidden = false;
+    if (viewLink) {
+      const multiple = importedPlans.length > 1;
+      viewLink.hidden = false;
+      viewLink.textContent = multiple ? 'Ver planes importados' : 'Ver plan importado';
+      viewLink.href = multiple
+        ? '/plan/?tab=plans'
+        : `/plan/?tab=plans&plan=${encodeURIComponent(importedPlans[0].id)}`;
+    }
     if (input) input.value = '';
     pending = null;
   });
@@ -949,7 +965,46 @@ function renderImportPreview(container, result, events) {
     }
     const validEvents = events.filter((event) => plan.validIds.includes(event.id));
     if (validEvents.length) item.append(textNode('p', `Fechas: ${validEvents[0].dateLabel || validEvents[0].date} — ${validEvents.at(-1).dateLabel || validEvents.at(-1).date}.`));
-    if (!plan.validIds.length) item.append(textNode('p', 'No hay actividades compatibles para importar.'));
+    if (validEvents.length) {
+      const activityList = document.createElement('ul');
+      activityList.className = 'fiestas-plan-import-activity-list';
+      validEvents.forEach((event, eventIndex) => {
+        const activity = document.createElement('li');
+        activity.className = 'fiestas-plan-import-activity';
+        if (eventIndex >= IMPORT_PREVIEW_ACTIVITY_LIMIT) {
+          activity.hidden = true;
+          activity.dataset.planImportActivityExtra = 'true';
+        }
+        const time = textNode('time', event.startTime || '—');
+        const copy = document.createElement('span');
+        copy.className = 'fiestas-plan-import-activity-copy';
+        copy.append(
+          textNode('strong', event.title || 'Actividad sin título'),
+          textNode('span', [event.dateLabel || event.date, formatTime(event), event.location || event.zone || event.neighborhood || 'Lugar por confirmar'].join(' · '))
+        );
+        activity.append(time, copy);
+        activityList.append(activity);
+      });
+      item.append(activityList);
+
+      if (validEvents.length > IMPORT_PREVIEW_ACTIVITY_LIMIT) {
+        const extraCount = validEvents.length - IMPORT_PREVIEW_ACTIVITY_LIMIT;
+        const expand = document.createElement('button');
+        expand.type = 'button';
+        expand.className = 'fiestas-plan-import-activity-toggle';
+        expand.setAttribute('aria-expanded', 'false');
+        expand.textContent = `Ver ${extraCount} actividad${extraCount === 1 ? '' : 'es'} más`;
+        expand.addEventListener('click', () => {
+          const expanded = expand.getAttribute('aria-expanded') === 'true';
+          activityList.querySelectorAll('[data-plan-import-activity-extra]').forEach((activity) => { activity.hidden = expanded; });
+          expand.setAttribute('aria-expanded', String(!expanded));
+          expand.textContent = expanded ? `Ver ${extraCount} actividad${extraCount === 1 ? '' : 'es'} más` : 'Ocultar actividades';
+        });
+        item.append(expand);
+      }
+    } else {
+      item.append(textNode('p', 'No hay actividades compatibles para importar.'));
+    }
     list.append(item);
   });
   container.append(list);
