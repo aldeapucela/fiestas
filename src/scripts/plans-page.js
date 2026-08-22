@@ -46,6 +46,7 @@ export function setupPlansPage(rawEvents = []) {
     view: getPlanView(),
     selectedPlanId: new URLSearchParams(window.location.search).get('plan') || '',
     selectedDay: new URLSearchParams(window.location.search).get('date') || 'all',
+    focusActivityId: '',
     creatingPlan: false,
     pendingDeletePlanId: '',
     newPlanIcon: DEFAULT_PLAN_ICON,
@@ -152,6 +153,21 @@ export function setupPlansPage(rawEvents = []) {
     if (els.importLink) els.importLink.hidden = true;
     if (els.headerShare) els.headerShare.hidden = state.view === 'plan' && !state.selectedPlanId;
     renderDeleteConfirmation(els.deleteConfirm, els.deleteConfirmName, state.plans, state.pendingDeletePlanId);
+    if (state.focusActivityId) scrollToPlanActivity();
+  };
+
+  const scrollToPlanActivity = () => {
+    const activityId = state.focusActivityId;
+    if (!activityId) return;
+    state.focusActivityId = '';
+    window.requestAnimationFrame(() => {
+      const target = [...(els.planDetail?.querySelectorAll('[data-plan-event-id]') || [])]
+        .find((card) => card.dataset.planEventId === activityId);
+      if (!target) return;
+      target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      target.classList.add('is-overlap-target');
+      window.setTimeout(() => target.classList.remove('is-overlap-target'), 1800);
+    });
   };
 
   const closePlanEditor = () => {
@@ -351,6 +367,8 @@ export function setupPlansPage(rawEvents = []) {
     if (overlapOpenButton) {
       state.view = 'plan';
       state.selectedPlanId = overlapOpenButton.dataset.planOverlapOpen || '';
+      state.selectedDay = 'all';
+      state.focusActivityId = overlapOpenButton.dataset.planOverlapActivity || '';
       state.creatingPlan = false;
       state.pendingDeletePlanId = '';
       updatePlanUrl(state);
@@ -950,6 +968,7 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
 function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {
   const card = document.createElement('article');
   card.className = 'fiestas-plan-timeline-card';
+  card.dataset.planEventId = event.id;
 
   const top = document.createElement('div');
   top.className = 'fiestas-plan-timeline-card-top';
@@ -995,7 +1014,11 @@ function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {
     warning.className = 'fiestas-plan-overlap-warning';
     warning.append(iconNode('fa-solid fa-triangle-exclamation'));
     warning.append(textNode('span', `Se solapa con «${overlap.activityName}»`));
-    const review = actionButton('Ver', 'fa-chevron-right', { className: 'fiestas-plan-overlap-review', 'data-plan-overlap-open': overlap.planId });
+    const review = actionButton('Ver', 'fa-chevron-right', {
+      className: 'fiestas-plan-overlap-review',
+      'data-plan-overlap-open': overlap.planId,
+      'data-plan-overlap-activity': overlap.activityId
+    });
     warning.append(review);
     card.append(warning);
   }
@@ -1384,6 +1407,7 @@ function findPlanOverlap(event, planId, plans, events) {
         return {
           planId: plan.id,
           name: plan.name,
+          activityId: other.id,
           activityName: other.title || 'Actividad sin título'
         };
       }

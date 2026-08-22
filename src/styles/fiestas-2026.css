@@ -3824,6 +3824,11 @@ html.dark .fiestas-plan-selector-create input {
   box-shadow: 0 0.55rem 1.1rem rgba(34, 39, 47, 0.09);
 }
 
+.fiestas-plan-timeline-card.is-overlap-target {
+  border-color: #159b8b;
+  box-shadow: 0 0 0 0.22rem rgba(21, 155, 139, 0.18), 0 0.55rem 1.1rem rgba(34, 39, 47, 0.12);
+}
+
 .fiestas-plan-timeline-card-top {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 3rem;
@@ -3900,30 +3905,30 @@ html.dark .fiestas-plan-selector-create input {
 
 .fiestas-plan-overlap-warning {
   display: grid;
-  grid-template-columns: 1.8rem minmax(0, 1fr) auto;
-  gap: 0.55rem;
+  grid-template-columns: 1.35rem minmax(0, 1fr) auto;
+  gap: 0.5rem;
   align-items: center;
   margin-top: -0.8rem;
-  border-top: 1px solid #e9d39b;
-  background: #fff8e8;
-  color: #252a32;
-  padding: 0.9rem 1.1rem;
-  font-size: 0.9rem;
-  font-weight: 750;
+  border-top: 1px solid #ece4d2;
+  background: #fbf9f4;
+  color: #5e5b55;
+  padding: 0.65rem 0.9rem;
+  font-size: 0.82rem;
+  font-weight: 700;
 }
 
 .fiestas-plan-overlap-warning > i {
-  color: #e99000;
-  font-size: 1.25rem;
+  color: #b59662;
+  font-size: 1rem;
 }
 
 .fiestas-plan-overlap-review {
   border: 0;
   background: transparent;
-  color: #159b8b;
+  color: #5b8f86;
   padding: 0;
-  font-size: 0.9rem;
-  font-weight: 900;
+  font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .fiestas-plan-overlap-review i {
@@ -4217,7 +4222,7 @@ html.dark .fiestas-plan-picker-option,
 html.dark .fiestas-plan-hero h2,
 html.dark .fiestas-plan-date,
 html.dark .fiestas-plan-timeline-title,
-html.dark .fiestas-plan-overlap-warning {
+html.dark .fiestas-plan-timeline-title {
   color: #f7f8fa;
 }
 
@@ -4252,6 +4257,11 @@ html.dark .fiestas-plan-picker-divider {
   background: #303640;
 }
 
+html.dark .fiestas-plan-timeline-card.is-overlap-target {
+  border-color: #78e2d4;
+  box-shadow: 0 0 0 0.22rem rgba(120, 226, 212, 0.18), 0 0.55rem 1.1rem rgba(0, 0, 0, 0.28);
+}
+
 html.dark .fiestas-plan-date.is-active {
   background: #159b8b;
 }
@@ -4275,8 +4285,17 @@ html.dark .fiestas-plan-bookmark.is-active {
 }
 
 html.dark .fiestas-plan-overlap-warning {
-  border-color: #66522b;
-  background: #332c1e;
+  border-color: #4a4538;
+  background: #28271f;
+  color: #d2cec3;
+}
+
+html.dark .fiestas-plan-overlap-warning > i {
+  color: #b5a276;
+}
+
+html.dark .fiestas-plan-overlap-review {
+  color: #8bb8ae;
 }
 
 @media (min-width: 720px) {
