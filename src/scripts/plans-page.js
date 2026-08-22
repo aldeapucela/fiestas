@@ -668,7 +668,7 @@ function renderPlanTimelineEvent(event, planId, plans, events) {
 
   const top = document.createElement('div');
   top.className = 'fiestas-plan-timeline-card-top';
-  const title = linkNode(event.title || 'Actividad sin título', event.urlPath || `/e/${event.id}/`);
+  const title = linkNode(event.title || 'Actividad sin título', event.urlPath || eventUrl(event));
   title.className = 'fiestas-plan-timeline-title';
   top.append(title);
   const favoriteButton = document.createElement('button');
@@ -719,7 +719,7 @@ function eventPlanCard(event, planId = '') {
   card.append(time);
   const body = document.createElement('div');
   body.className = 'fiestas-plan-event-body';
-  body.append(linkNode(event.title || 'Actividad sin título', event.urlPath || `/e/${event.id}/`));
+  body.append(linkNode(event.title || 'Actividad sin título', event.urlPath || eventUrl(event)));
   body.append(textNode('span', [event.type, event.location || event.zone || 'Lugar por confirmar'].filter(Boolean).join(' · ')));
   card.append(body);
   const actions = document.createElement('div');
@@ -993,6 +993,21 @@ function getActionPlan(planId, state, events) {
 
 function normalizeEvents(events) {
   return (Array.isArray(events) ? events : []).map((event) => ({ ...event })).filter((event) => event.id && event.date).sort(compareEvents);
+}
+
+function eventUrl(event) {
+  const slug = event.slug || slugifyPlanUrl(event.title || 'evento');
+  return `/e/${event.id}/${slug}/`;
+}
+
+function slugifyPlanUrl(value = '') {
+  return String(value)
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '') || 'evento';
 }
 
 function compareEvents(a, b) {

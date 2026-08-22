@@ -74,7 +74,7 @@ const shots = [
   },
   {
     name: '06-detalle-evento.png',
-    path: '/e/2026-09-04-2030-pregon-de-la-feria-y-fiestas-de-la-virgen-de-san-lorenzo-2026-a-cargo-cf838a77/',
+    path: '/e/1/gira-de-verano-nintendo/',
     viewport: { width: 1440, height: 1100 },
     prepare: async (page) => {
       await page.waitForSelector('.fiestas-detail');
