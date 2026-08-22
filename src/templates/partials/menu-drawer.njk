@@ -4,57 +4,88 @@
     <div class="menu-drawer-head">
       <div>
         <p class="menu-drawer-kicker">ALDEA PUCELA</p>
-        <h2 class="menu-drawer-title">Eventos</h2>
+        <h2 class="menu-drawer-title">Fiestas 2026</h2>
       </div>
       <button class="menu-drawer-close" type="button" data-menu-close aria-label="Cerrar menú">
         <i class="fa-solid fa-xmark"></i>
       </button>
     </div>
     <nav class="menu-drawer-nav" aria-label="Navegación">
-      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/">
-        <i class="menu-drawer-link-icon fa-solid fa-house" aria-hidden="true"></i>
-        <span>Inicio</span>
-      </a>
-      <a class="menu-drawer-link {% if activeNav == 'fiestas-2026' %}menu-drawer-link-active{% endif %}" href="/">
-        <i class="menu-drawer-link-icon fa-solid fa-champagne-glasses" aria-hidden="true"></i>
-        <span>Fiestas 2026</span>
-      </a>
-      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/espacios/">
-        <i class="menu-drawer-link-icon fa-solid fa-location-dot" aria-hidden="true"></i>
-        <span>Espacios</span>
-      </a>
-      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/tipos/">
-        <i class="menu-drawer-link-icon fa-solid fa-filter" aria-hidden="true"></i>
-        <span>Tipos</span>
-      </a>
-      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/guardados/">
-        <i class="menu-drawer-link-icon fa-regular fa-bookmark" aria-hidden="true"></i>
-        <span>Mis guardados</span>
-      </a>
-      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org/archivo/">
-        <i class="menu-drawer-link-icon fa-solid fa-box-archive" aria-hidden="true"></i>
-        <span>Archivo</span>
-      </a>
-      <button class="menu-drawer-link" type="button" data-subscribe-open="rss">
-        <i class="menu-drawer-link-icon fa-solid fa-rss" aria-hidden="true"></i>
-        <span>Suscribirse</span>
-      </button>
-      <button class="menu-drawer-link" type="button" data-subscribe-open="calendar">
-        <i class="menu-drawer-link-icon fa-regular fa-calendar-plus" aria-hidden="true"></i>
-        <span>Calendario</span>
-      </button>
       <a class="menu-drawer-link" href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer">
-        <i class="menu-drawer-link-icon fa-solid fa-people-group" aria-hidden="true"></i>
-        <span>Comunidad</span>
+        <img class="menu-drawer-link-logo" src="/assets/favicon.png" alt="" />
+        <span>Aldea Pucela</span>
       </a>
-      <a class="menu-drawer-link" href="https://t.me/aldeapucela/244" target="_blank" rel="noopener noreferrer">
+      <a class="menu-drawer-link" href="https://eventos.aldeapucela.org" target="_blank" rel="noopener noreferrer">
+        <i class="menu-drawer-link-icon fa-solid fa-calendar-days" aria-hidden="true"></i>
+        <span>Eventos culturales</span>
+      </a>
+      <p class="menu-drawer-section-title">Sigue las fiestas</p>
+      <a class="menu-drawer-link" href="https://aldeapucela.org/boletin/" target="_blank" rel="noopener noreferrer">
+        <i class="menu-drawer-link-icon fa-regular fa-envelope" aria-hidden="true"></i>
+        <span>Boletín semanal</span>
+      </a>
+      <a class="menu-drawer-link" href="https://t.me/aldeapucela/59137" target="_blank" rel="noopener noreferrer">
         <i class="menu-drawer-link-icon fa-brands fa-telegram" aria-hidden="true"></i>
-        <span>Chat sobre eventos</span>
+        <span>Chat de fiestas</span>
       </a>
+      <a class="menu-drawer-link" href="https://aldeapucela.org/whatsapp" target="_blank" rel="noopener noreferrer">
+        <i class="menu-drawer-link-icon fa-brands fa-whatsapp" aria-hidden="true"></i>
+        <span>Canal de WhatsApp</span>
+      </a>
+      <p class="menu-drawer-section-title">En tu dispositivo</p>
+      <button class="menu-drawer-link menu-drawer-pwa-action" type="button" data-pwa-install hidden>
+        <i class="menu-drawer-link-icon fa-solid fa-download" aria-hidden="true"></i>
+        <span class="menu-drawer-pwa-copy">
+          <strong>Instalar la app</strong>
+          <small>Accede más rápido desde tu dispositivo.</small>
+        </span>
+        <span class="fiestas-hint-dot" data-pwa-install-hint hidden aria-hidden="true"></span>
+      </button>
+      <button class="menu-drawer-link menu-drawer-pwa-action" type="button" data-pwa-ios-help-open hidden>
+        <i class="menu-drawer-link-icon fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+        <span class="menu-drawer-pwa-copy">
+          <strong>Añadir a pantalla de inicio</strong>
+          <small>Instrucciones para Safari.</small>
+        </span>
+        <span class="fiestas-hint-dot" data-pwa-ios-hint hidden aria-hidden="true"></span>
+      </button>
     </nav>
     <button class="menu-drawer-link menu-drawer-theme-toggle" type="button" data-theme-toggle aria-label="Cambiar tema" aria-pressed="false">
       <i class="menu-drawer-link-icon fa-regular fa-moon" aria-hidden="true"></i>
       <span data-theme-toggle-label>Modo oscuro</span>
     </button>
   </aside>
+  <div class="install-app-modal" data-pwa-ios-help hidden>
+    <button class="install-app-modal-backdrop" type="button" data-pwa-ios-help-backdrop aria-label="Cerrar ayuda"></button>
+    <section class="install-app-modal-panel" role="dialog" aria-modal="true" aria-labelledby="pwa-ios-help-title" aria-describedby="pwa-ios-help-description">
+      <div class="install-app-modal-header">
+        <div>
+          <p class="fiestas-plan-kicker">EN TU IPHONE</p>
+          <h2 id="pwa-ios-help-title">Añade Fiestas Valladolid a tu pantalla de inicio</h2>
+        </div>
+        <button class="install-app-modal-close" type="button" data-pwa-ios-help-close aria-label="Cerrar ayuda">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p id="pwa-ios-help-description" class="install-app-modal-copy">Safari permite guardar esta agenda como una app web desde el menú de compartir.</p>
+      <ol class="install-app-steps">
+        <li class="install-app-step">
+          <span class="install-app-step-number">1</span>
+          <span class="install-app-step-copy"><strong>Abre esta página en Safari.</strong></span>
+        </li>
+        <li class="install-app-step">
+          <span class="install-app-step-icon"><i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i></span>
+          <span class="install-app-step-copy">Pulsa el botón de compartir.</span>
+        </li>
+        <li class="install-app-step">
+          <span class="install-app-step-icon"><i class="fa-regular fa-square-plus" aria-hidden="true"></i></span>
+          <span class="install-app-step-copy">Desliza hacia abajo y pulsa <strong>Añadir a pantalla de inicio</strong>.</span>
+        </li>
+        <li class="install-app-step">
+          <span class="install-app-step-icon"><i class="fa-solid fa-check" aria-hidden="true"></i></span>
+          <span class="install-app-step-copy">Pulsa <strong>Añadir</strong> y, si aparece, activa <strong>Abrir como app web</strong>.</span>
+        </li>
+      </ol>
+    </section>
+  </div>
 </div>

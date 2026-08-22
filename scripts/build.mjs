@@ -47,7 +47,15 @@ async function writeFile(relPath, content) {
   await fs.writeFile(filePath, content);
 }
 
-async function compileCss(assetVersionSeed) {
+function contentVersion(seed) {
+  const hash = createHash('sha256');
+  for (const [relPath, content] of seed) {
+    hash.update(relPath).update('\0').update(content).update('\0');
+  }
+  return hash.digest('hex').slice(0, 12);
+}
+
+async function compileCss(cssVersionSeed) {
   const cssDir = path.join(dist, 'assets', 'css');
   await fs.mkdir(cssDir, { recursive: true });
   const input = path.join(root, 'src', 'styles', 'fiestas-2026.css');
@@ -58,17 +66,56 @@ async function compileCss(assetVersionSeed) {
     autoprefixer()
   ]).process(base + '\n' + page, { from: input, to: path.join(cssDir, 'fiestas-2026.css') });
   await fs.writeFile(path.join(cssDir, 'fiestas-2026.css'), result.css);
-  assetVersionSeed.push(result.css);
+  cssVersionSeed.push(['assets/css/fiestas-2026.css', result.css]);
 }
 
-async function copyJs(assetVersionSeed) {
+async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  for (const file of ['analytics.js', 'fiestas-2026.js', 'menu-drawer.js', 'subscribe.js', 'theme.js']) {
+  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'fiestas-2026.js', 'menu-drawer.js', 'pwa.js', 'subscribe.js', 'theme.js'];
+  for (const file of files) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
-    assetVersionSeed.push(content);
+    jsVersionSeed.push(['assets/js/' + file, content]);
   }
+  return files;
+}
+
+async function writeVersionedJs(files, jsVersion) {
+  const contents = new Map();
+  for (const file of files) {
+    const filePath = path.join(dist, 'assets', 'js', file);
+    contents.set(file, await fs.readFile(filePath, 'utf8'));
+  }
+  for (const file of files) {
+    const content = contents.get(file);
+    const versioned = content.replace(/(['"])\.\/([A-Za-z0-9_-]+)\.js\1/g, '$1./$2.' + jsVersion + '.js$1');
+    const versionedFile = file.replace(/\.js$/, '.' + jsVersion + '.js');
+    await fs.writeFile(path.join(dist, 'assets', 'js', versionedFile), versioned);
+  }
+}
+
+async function writeVersionedCss(cssVersion) {
+  const source = path.join(dist, 'assets', 'css', 'fiestas-2026.css');
+  const target = path.join(dist, 'assets', 'css', 'fiestas-2026.' + cssVersion + '.css');
+  await fs.copyFile(source, target);
+}
+
+async function loadPwaFiles() {
+  const pwaDir = path.join(root, 'src', 'pwa');
+  return {
+    serviceWorker: await fs.readFile(path.join(pwaDir, 'sw.js'), 'utf8'),
+    offlinePage: await fs.readFile(path.join(pwaDir, 'offline.html'), 'utf8')
+  };
+}
+
+async function writePwaFiles({ serviceWorker, offlinePage }, { appVersion, cssVersion, jsVersion }) {
+  const renderedServiceWorker = serviceWorker
+    .replaceAll('__APP_VERSION__', appVersion)
+    .replaceAll('__CSS_VERSION__', cssVersion)
+    .replaceAll('__JS_VERSION__', jsVersion);
+  await writeFile('sw.js', renderedServiceWorker);
+  await writeFile('offline.html', offlinePage);
 }
 
 async function copyStaticAssets(assetVersionSeed) {
@@ -94,7 +141,7 @@ async function copyAssetDir(sourceDir, currentDir, assetVersionSeed) {
     const content = await fs.readFile(sourcePath);
     await fs.mkdir(path.dirname(targetPath), { recursive: true });
     await fs.writeFile(targetPath, content);
-    assetVersionSeed.push(relPath, createHash('sha256').update(content).digest('hex'));
+    assetVersionSeed.push(['assets/' + relPath, createHash('sha256').update(content).digest('hex')]);
   }
 }
 
@@ -139,12 +186,16 @@ async function loadEvents() {
     .map((event) => ({
       ...event,
       icon: fiestas2026Icon(event.type),
+      socialImagePath: '/assets/social/categories/' + slugify(event.type) + '.jpg',
+      socialImageAlt: 'Icono morado de la categoría ' + event.type + ' sobre fondo blanco',
+      socialImageWidth: 512,
+      socialImageHeight: 512,
       urlPath: '/e/' + event.id + '/',
       canonicalUrl: publicBaseUrl + '/e/' + event.id + '/',
       shareText: shareText(event),
       ticketLabel: ticketKindLabel(event.ticketKind),
       ticketDetail: ticketDetail(event.ticketKind, event.ticket),
-      mapUrl: '/?view=map&event=' + encodeURIComponent(event.id),
+      mapUrl: '/mapa/?event=' + encodeURIComponent(event.id),
       osmUrl: event.coordinates ? 'https://www.openstreetmap.org/?mlat=' + event.coordinates.lat + '&mlon=' + event.coordinates.lng + '#map=17/' + event.coordinates.lat + '/' + event.coordinates.lng : '',
       directionsUrl: event.coordinates ? 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(event.coordinates.lat + ',' + event.coordinates.lng) : ''
     }));
@@ -288,12 +339,14 @@ function normalizeTags(tags, type) {
   return [...new Set([primary, ...values].map((tag) => tag.trim()).filter(Boolean))];
 }
 
-function pageContext(assetVersion) {
+function pageContext({ assetVersion, cssVersion, jsVersion }) {
   return {
     activeNav: 'fiestas-2026',
-    pageCss: 'fiestas-2026.css',
-    pageJs: 'fiestas-2026.js',
+    pageCss: 'fiestas-2026.' + cssVersion + '.css',
+    pageJs: 'fiestas-2026.' + jsVersion + '.js',
     assetVersion,
+    cssVersion,
+    jsVersion,
     categoryFeeds: [],
     publicBaseUrl,
     analyticsConfig
@@ -306,49 +359,105 @@ function render(template, context) {
 
 async function build() {
   await fs.rm(dist, { recursive: true, force: true });
+  const cssVersionSeed = [];
+  const jsVersionSeed = [];
   const assetVersionSeed = [];
-  await compileCss(assetVersionSeed);
-  await copyJs(assetVersionSeed);
+  await compileCss(cssVersionSeed);
+  const jsFiles = await copyJs(jsVersionSeed);
   await copyStaticAssets(assetVersionSeed);
-  const assetVersion = createHash('sha256').update(assetVersionSeed.join('\\n')).digest('hex').slice(0, 10);
+  const pwaFiles = await loadPwaFiles();
+  const cssVersion = contentVersion(cssVersionSeed);
+  const jsVersion = contentVersion(jsVersionSeed);
+  await writeVersionedCss(cssVersion);
+  await writeVersionedJs(jsFiles, jsVersion);
+  const assetVersion = contentVersion([...cssVersionSeed, ...jsVersionSeed, ...assetVersionSeed]);
+  const appVersion = contentVersion([
+    ...cssVersionSeed,
+    ...jsVersionSeed,
+    ...assetVersionSeed,
+    ['pwa/sw.js', pwaFiles.serviceWorker],
+    ['pwa/offline.html', pwaFiles.offlinePage]
+  ]);
+  await writePwaFiles(pwaFiles, { appVersion, cssVersion, jsVersion });
+  const versions = { assetVersion, cssVersion, jsVersion };
   const events = await loadEvents();
   const summary = buildSummary(events);
-  const socialImage = publicBaseUrl + '/assets/social-preview.jpg';
+  const socialImage = publicBaseUrl + '/assets/social/fiestas-valladolid-2026.jpg';
 
-  await writeFile('index.html', render('fiestas-2026.njk', {
-    ...pageContext(assetVersion),
+  const homeContext = {
+    ...pageContext(versions),
     title: 'Fiestas Valladolid 2026 | Aldea Pucela',
     meta: { description: 'Agenda de las Fiestas de Valladolid 2026 por días, horarios, espacios, categorías y mapa.' },
     canonicalUrl: publicBaseUrl + '/',
     social: {
       type: 'website', title: 'Fiestas Valladolid 2026 | Aldea Pucela',
       description: 'Agenda de las Fiestas de Valladolid 2026 por días, horarios, espacios, categorías y mapa.',
-      image: socialImage, url: publicBaseUrl + '/'
+      image: socialImage, imageAlt: 'Fiestas de Valladolid 2026 | Aldea Pucela',
+      imageWidth: 1200, imageHeight: 630, imageType: 'image/jpeg', url: publicBaseUrl + '/'
     },
     fiestasEvents: events,
     fiestasEventsJson: JSON.stringify(events),
     fiestasDates: summary.dates,
     fiestasTypes: summary.types,
     fiestasAreas: summary.areas
+  };
+
+  await writeFile('index.html', render('fiestas-2026.njk', homeContext));
+  await writeFile('mapa/index.html', render('fiestas-2026.njk', {
+    ...homeContext,
+    title: 'Mapa de Fiestas Valladolid 2026 | Aldea Pucela',
+    canonicalUrl: publicBaseUrl + '/mapa/',
+    social: {
+      ...homeContext.social,
+      title: 'Mapa de Fiestas Valladolid 2026 | Aldea Pucela',
+      url: publicBaseUrl + '/mapa/'
+    }
+  }));
+
+  await writeFile('plan/index.html', render('fiestas-2026-plan.njk', {
+    ...homeContext,
+    title: 'Mi plan | Fiestas Valladolid 2026',
+    canonicalUrl: publicBaseUrl + '/plan/',
+    social: {
+      ...homeContext.social,
+      title: 'Mi plan | Fiestas Valladolid 2026',
+      url: publicBaseUrl + '/plan/'
+    }
+  }));
+
+  await writeFile('plan/importar/index.html', render('fiestas-2026-plan-import.njk', {
+    ...homeContext,
+    title: 'Importar plan | Fiestas Valladolid 2026',
+    canonicalUrl: publicBaseUrl + '/plan/importar/',
+    robotsMeta: 'noindex,follow',
+    social: {
+      ...homeContext.social,
+      title: 'Importar plan | Fiestas Valladolid 2026',
+      url: publicBaseUrl + '/plan/importar/'
+    }
   }));
 
   for (const event of events) {
     await writeFile('e/' + event.id + '/index.html', render('fiestas-2026-detail.njk', {
-      ...pageContext(assetVersion),
+      ...pageContext(versions),
       title: event.title + ' | Fiestas Valladolid 2026',
       meta: { description: event.summary || event.description || event.dateLabel },
       canonicalUrl: publicBaseUrl + event.urlPath,
       social: {
         type: 'article', title: event.title + ' | Fiestas Valladolid 2026',
         description: event.summary || event.description || event.dateLabel,
-        image: socialImage, url: publicBaseUrl + event.urlPath
+        image: publicBaseUrl + event.socialImagePath,
+        imageAlt: event.socialImageAlt,
+        imageWidth: event.socialImageWidth, imageHeight: event.socialImageHeight,
+        imageType: 'image/jpeg', url: publicBaseUrl + event.urlPath
       },
       event,
+      relatedEvents: getRelatedEvents(events, event),
       hideDrawerFilters: true
     }));
   }
 
-  const urls = ['/', ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/plan/', '/plan/importar/', ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
@@ -359,6 +468,27 @@ async function build() {
   await writeFile('sitemap.xml', sitemap);
   await writeFile('robots.txt', ['User-agent: *', 'Allow: /', 'Sitemap: ' + publicBaseUrl + '/sitemap.xml', ''].join('\n'));
   console.log('Built fiestas repo with ' + events.length + ' events.');
+}
+
+function getRelatedEvents(events, event, limit = 3) {
+  return events
+    .filter((candidate) => candidate.id !== event.id && candidate.type === event.type)
+    .map((candidate) => ({
+      event: candidate,
+      score: stableHash(event.id + ':' + candidate.id)
+    }))
+    .sort((a, b) => a.score - b.score)
+    .slice(0, limit)
+    .map(({ event: candidate }) => candidate);
+}
+
+function stableHash(value) {
+  let hash = 2166136261;
+  for (const character of String(value)) {
+    hash ^= character.codePointAt(0);
+    hash = Math.imul(hash, 16777619);
+  }
+  return hash >>> 0;
 }
 
 build().catch((error) => {

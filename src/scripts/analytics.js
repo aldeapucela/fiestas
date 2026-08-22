@@ -7,7 +7,9 @@ const DEFAULT_SITE_ID = '29';
 const categoryActions = {
   activity: new Set(['view_detail', 'save', 'remove_save', 'share', 'open_directions', 'open_external_link', 'open_tickets']),
   agenda: new Set(['select_date', 'select_all_dates', 'apply_filter', 'search', 'open_activity']),
-  map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter'])
+  map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
+  plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'export', 'import', 'share', 'import_error']),
+  pwa: new Set(['install_available', 'install_accepted', 'install_cancelled', 'ios_help_opened', 'sw_registration_error'])
 };
 
 const filterNames = new Set(['type', 'area', 'ticket']);
@@ -57,8 +59,7 @@ export function trackActivityShared(activityId) {
 
 export function trackDateSelected(date, view = 'agenda') {
   const category = view === 'map' ? 'map' : 'agenda';
-  if (date === 'all') return pushEvent(category, 'select_all_dates', 'all');
-  return pushEvent(category, 'select_date', date);
+  return pushEvent(category, date === 'all' ? 'select_all_dates' : 'select_date', date);
 }
 
 export function trackFilterApplied(filterName, filterValue, view = 'agenda') {
@@ -92,6 +93,58 @@ export function trackExternalLinkOpened(linkType) {
   return pushEvent('activity', 'open_external_link', linkType);
 }
 
+export function trackPlanCreated(planType = 'manual') {
+  return pushEvent('plan', 'create', planType);
+}
+
+export function trackPlanActivityAdded(activityId) {
+  return pushEvent('plan', 'add_activity', activityId);
+}
+
+export function trackPlanActivityRemoved(activityId) {
+  return pushEvent('plan', 'remove_activity', activityId);
+}
+
+export function trackPlanCalendarExported(activityId = 'plan') {
+  return pushEvent('plan', 'add_to_calendar', activityId);
+}
+
+export function trackPlanExported(planType = 'file') {
+  return pushEvent('plan', 'export', planType);
+}
+
+export function trackPlanImported(planType = 'file') {
+  return pushEvent('plan', 'import', planType);
+}
+
+export function trackPlanShared(planType = 'file') {
+  return pushEvent('plan', 'share', planType);
+}
+
+export function trackPlanImportError(errorType = 'invalid') {
+  return pushEvent('plan', 'import_error', errorType);
+}
+
+export function trackPwaInstallAvailable() {
+  return pushEvent('pwa', 'install_available', 'install');
+}
+
+export function trackPwaInstallAccepted() {
+  return pushEvent('pwa', 'install_accepted', 'install');
+}
+
+export function trackPwaInstallCancelled() {
+  return pushEvent('pwa', 'install_cancelled', 'install');
+}
+
+export function trackPwaIosHelpOpened() {
+  return pushEvent('pwa', 'ios_help_opened', 'ios');
+}
+
+export function trackPwaServiceWorkerError() {
+  return pushEvent('pwa', 'sw_registration_error', 'register');
+}
+
 function getConfig() {
   const configured = window[CONFIG_KEY] && typeof window[CONFIG_KEY] === 'object'
     ? window[CONFIG_KEY]
@@ -103,7 +156,6 @@ function getConfig() {
     : !LOCAL_HOSTS.has(hostname);
   const trackerUrl = normalizeTrackerUrl(configured.trackerUrl || DEFAULT_TRACKER_URL);
   const siteId = normalizeToken(configured.siteId || DEFAULT_SITE_ID);
-
   return { enabled, trackerUrl, siteId };
 }
 
@@ -112,14 +164,13 @@ function normalizeTrackerUrl(value) {
     const url = new URL(String(value), window.location.href);
     if (!['http:', 'https:'].includes(url.protocol)) return DEFAULT_TRACKER_URL;
     return url.href.endsWith('/') ? url.href : `${url.href}/`;
-  } catch {
+  } catch (_) {
     return DEFAULT_TRACKER_URL;
   }
 }
 
 function isDoNotTrackEnabled() {
-  return window.navigator?.doNotTrack === '1'
-    || window.doNotTrack === '1';
+  return window.navigator?.doNotTrack === '1' || window.doNotTrack === '1';
 }
 
 function pushEvent(category, action, name, value) {
@@ -127,7 +178,6 @@ function pushEvent(category, action, name, value) {
   const queue = window._paq;
   const normalizedName = normalizeToken(name);
   if (!Array.isArray(queue) || !normalizedName) return false;
-
   const event = ['trackEvent', category, action, normalizedName];
   if (value !== undefined) event.push(value);
   queue.push(event);

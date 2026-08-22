@@ -15,21 +15,26 @@ import {
   trackSearchResults,
   trackTicketsOpened
 } from './analytics.js';
+import { readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
+import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
 
-const storageKey = 'fiestasPucela:favorites';
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
+const SITE_SHARE_URL = 'https://fiestas.aldeapucela.org/?mtm_campaign=share';
+const SITE_SHARE_MESSAGE = `Mira, la mejor web para seguir las fiestas y ferias de Valladolid 2026\n\n${SITE_SHARE_URL}`;
 const cartoLayers = {
   light: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
   dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
 };
+const valladolidCenter = [41.6523, -4.7245];
+const nearbyRadiusMeters = 2000;
 let leafletPromise = null;
 let initialDate = null;
 let filterBackdrop = null;
 let filterScrollY = 0;
 let isApplyingUrlState = false;
 let lastTrackedSearchKey = '';
-let lastTrackedView = null;
+let siteShareFeedbackTimer = null;
 
 const state = {
   view: 'agenda',
@@ -46,14 +51,37 @@ const state = {
   favorites: new Set(readFavorites()),
   map: null,
   tileLayer: null,
-  markers: null
+  markers: null,
+  userMarker: null,
+  selectedEventId: null,
+  sheetState: 'collapsed',
+  locationStatus: 'idle',
+  userLocation: null,
+  hasRequestedLocation: false,
+  mapLoadError: false,
+  currentMapEvents: [],
+  preferredMapCenter: null,
+  focusedClusterEventIds: null
 };
 
 const els = {
+  app: document.querySelector('[data-fiestas-app]'),
   agenda: document.querySelector('[data-fiestas-agenda]'),
   mapView: document.querySelector('[data-fiestas-map-view]'),
   mapCanvas: document.querySelector('[data-fiestas-map]'),
   mapEmpty: document.querySelector('[data-fiestas-map-empty]'),
+  mapCenter: document.querySelector('[data-fiestas-map-center]'),
+  mapLocate: document.querySelector('[data-fiestas-map-locate]'),
+  locationLabel: document.querySelector('[data-fiestas-location-label]'),
+  locationNote: document.querySelector('[data-fiestas-location-note]'),
+  mapSheet: document.querySelector('[data-fiestas-map-sheet]'),
+  mapSheetToggle: document.querySelector('[data-fiestas-map-sheet-toggle]'),
+  mapSheetOpen: document.querySelector('[data-fiestas-map-sheet-open]'),
+  mapSheetTitle: document.querySelector('[data-fiestas-map-sheet-title]'),
+  mapSheetCount: document.querySelector('[data-fiestas-map-sheet-count]'),
+  mapSheetTabLabel: document.querySelector('[data-fiestas-map-sheet-tab-label]'),
+  mapSheetPreview: document.querySelector('[data-fiestas-map-sheet-preview]'),
+  mapSheetList: document.querySelector('[data-fiestas-map-sheet-list]'),
   dateStrip: document.querySelector('[data-fiestas-dates]'),
   typeList: document.querySelector('[data-fiestas-types]'),
   typeToggle: document.querySelector('[data-fiestas-types-toggle]'),
@@ -64,8 +92,14 @@ const els = {
   ticketList: document.querySelector('[data-fiestas-tickets]'),
   ticketToggle: document.querySelector('[data-fiestas-tickets-toggle]'),
   ticketLabel: document.querySelector('[data-fiestas-tickets-label]'),
+  siteShare: document.querySelector('[data-fiestas-share-site]'),
+  siteShareFeedback: document.querySelector('[data-fiestas-share-feedback]'),
+  searchToggle: document.querySelector('[data-fiestas-search-toggle]'),
+  searchPanel: document.querySelector('[data-fiestas-search-panel]'),
   search: document.querySelector('[data-fiestas-search]'),
+  filterSummary: document.querySelector('[data-fiestas-filter-summary]'),
   activeFilters: document.querySelector('[data-fiestas-active-filters]'),
+  filterCount: document.querySelector('[data-fiestas-filter-count]'),
   favoriteFilter: document.querySelector('[data-fiestas-favorites-filter]'),
   clearFilters: document.querySelector('[data-fiestas-clear-filters]'),
   viewTabs: [...document.querySelectorAll('[data-view-tab]')],
@@ -86,13 +120,19 @@ function init() {
   initTheme();
   setupMenuDrawer();
   setupSubscribe();
+  setupPlanSelector();
+  els.siteShare?.addEventListener('click', shareSite);
 
   if (els.detail) {
     initDetailPage();
     return;
   }
 
-  if (!els.agenda) return;
+  if (!els.agenda) {
+    setupPlansPage(window.__FIESTAS_2026_EVENTS__ || []);
+    setupPlanImportPage(window.__FIESTAS_2026_EVENTS__ || []);
+    return;
+  }
 
   try {
     state.events = normalizeEvents(window.__FIESTAS_2026_EVENTS__ || []);
@@ -103,6 +143,7 @@ function init() {
     state.selectedDate = initialDate;
     applyInitialUrlState();
     bindControls();
+    if (state.view === 'map') requestLocationOnce();
     renderControlLists();
     render();
   } catch (error) {
@@ -112,11 +153,13 @@ function init() {
 }
 
 function bindControls() {
+  els.searchToggle?.addEventListener('click', () => setSearchOpen(els.searchPanel?.hidden));
+
   els.search?.addEventListener('input', (event) => {
     state.search = normalizeText(event.target.value.trim());
+    state.focusedClusterEventIds = null;
     render({ updateUrl: true });
   });
-
   els.search?.addEventListener('change', trackCommittedSearch);
   els.search?.addEventListener('keydown', (event) => {
     if (event.key !== 'Enter') return;
@@ -129,6 +172,7 @@ function bindControls() {
     if (!button) return;
     state.selectedDate = button.dataset.date || 'all';
     trackDateSelected(state.selectedDate, state.view);
+    state.focusedClusterEventIds = null;
     render({ scrollToAgenda: true, updateUrl: true });
   });
 
@@ -137,6 +181,7 @@ function bindControls() {
     if (!input) return;
     toggleSetValue(state.selectedTypes, input.dataset.type || input.value || 'Evento', input.checked);
     trackFilterApplied('type', input.dataset.type || input.value, state.view);
+    state.focusedClusterEventIds = null;
     render({ updateUrl: true });
   });
 
@@ -145,6 +190,7 @@ function bindControls() {
     if (!input) return;
     toggleSetValue(state.selectedAreas, input.dataset.area || input.value, input.checked);
     trackFilterApplied('area', input.dataset.area || input.value, state.view);
+    state.focusedClusterEventIds = null;
     render({ updateUrl: true });
   });
 
@@ -153,15 +199,31 @@ function bindControls() {
     if (!input) return;
     toggleSetValue(state.selectedTicketKinds, input.dataset.ticketKind || input.value, input.checked);
     trackFilterApplied('ticket', input.dataset.ticketKind || input.value, state.view);
+    state.focusedClusterEventIds = null;
     render({ updateUrl: true });
+  });
+
+  [els.areaList, els.typeList, els.ticketList].forEach((list) => {
+    list?.addEventListener('pointerdown', (event) => event.stopPropagation());
+    list?.addEventListener('click', (event) => event.stopPropagation());
   });
 
   els.areaToggle?.addEventListener('click', () => setMenuOpen('area', els.areaToggle.getAttribute('aria-expanded') !== 'true'));
   els.typeToggle?.addEventListener('click', () => setMenuOpen('type', els.typeToggle.getAttribute('aria-expanded') !== 'true'));
   els.ticketToggle?.addEventListener('click', () => setMenuOpen('ticket', els.ticketToggle.getAttribute('aria-expanded') !== 'true'));
 
+  document.querySelectorAll('[data-fiestas-filter-accept]').forEach((acceptButton) => {
+    acceptButton.addEventListener('click', (event) => {
+      event.preventDefault();
+      setMenuOpen('area', false);
+      setMenuOpen('type', false);
+      setMenuOpen('ticket', false);
+    });
+  });
+
   els.favoriteFilter?.addEventListener('click', () => {
     state.onlyFavorites = !state.onlyFavorites;
+    state.focusedClusterEventIds = null;
     render();
   });
 
@@ -171,6 +233,7 @@ function bindControls() {
     state.selectedAreas.clear();
     state.selectedTicketKinds.clear();
     state.onlyFavorites = false;
+    state.focusedClusterEventIds = null;
     if (els.search) els.search.value = '';
     setMenuOpen('type', false);
     setMenuOpen('area', false);
@@ -182,18 +245,46 @@ function bindControls() {
     const button = event.target.closest('[data-remove-filter]');
     if (!button) return;
     removeFilter(button.dataset.removeFilter, button.dataset.value || '');
+    state.focusedClusterEventIds = null;
     render({ updateUrl: button.dataset.removeFilter !== 'favorites' });
   });
 
   els.viewTabs.forEach((button) => {
     button.addEventListener('click', () => {
       state.view = button.dataset.viewTab === 'map' ? 'map' : 'agenda';
+      if (state.view === 'map') requestLocationOnce();
       render({ scrollToAgenda: true, updateUrl: true });
     });
   });
 
+  els.mapCenter?.addEventListener('click', () => {
+    if (!state.map) return;
+    state.map.setView(valladolidCenter, 14);
+  });
+
+  els.mapLocate?.addEventListener('click', () => {
+    if (state.userLocation && state.map) {
+      state.map.setView([state.userLocation.lat, state.userLocation.lng], 15);
+      return;
+    }
+    requestLocation({ centerOnSuccess: true, force: true });
+  });
+
+  els.mapSheetToggle?.addEventListener('click', () => {
+    state.sheetState = state.sheetState === 'expanded' ? 'collapsed' : 'expanded';
+    renderMapSheet(getFilteredEvents());
+  });
+
+  els.mapSheetOpen?.addEventListener('click', () => {
+    state.sheetState = 'collapsed';
+    renderMapSheet(getFilteredEvents());
+  });
+
+  bindMapSheetGestures();
+
   window.addEventListener('popstate', () => {
     applyInitialUrlState();
+    if (state.view === 'map') requestLocationOnce();
     render();
   });
 
@@ -292,6 +383,7 @@ function render(options = {}) {
 }
 
 function renderShellState(filtered) {
+  els.app?.classList.toggle('is-map-mode', state.view === 'map');
   document.querySelectorAll('[data-date]').forEach((button) => {
     const active = button.dataset.date === state.selectedDate;
     button.classList.toggle('is-active', active);
@@ -327,24 +419,19 @@ function renderAgenda(events) {
     return;
   }
 
-  if (state.selectedDate === 'all') {
-    const summary = document.createElement('div');
-    summary.className = 'fiestas-agenda-summary';
-    summary.textContent = `${events.length} ${events.length === 1 ? 'actividad filtrada' : 'actividades filtradas'}`;
-    els.agenda.append(summary);
-  }
-
   const groups = state.selectedDate === 'all' ? groupByDay(events) : [[state.selectedDate, events]];
   groups.forEach(([date, dayEvents]) => {
     const section = document.createElement('section');
     section.className = 'fiestas-day';
+    section.classList.toggle('is-all-days', state.selectedDate === 'all');
     section.id = `fiestas-day-${date}`;
 
     const header = document.createElement('div');
     header.className = 'fiestas-day-head';
+    const dayCountLabel = `${dayEvents.length} ${dayEvents.length === 1 ? 'actividad' : 'actividades'}`;
     header.innerHTML = `
       <h2 class="fiestas-day-title">${escapeHtml(labelForDate(date))}</h2>
-      <span>${dayEvents.length} ${dayEvents.length === 1 ? 'actividad' : 'actividades'}</span>
+      <span>${dayCountLabel}</span>
     `;
     section.append(header);
 
@@ -368,13 +455,13 @@ function eventCard(event) {
   link.className = 'fiestas-event-link';
   link.href = event.urlPath;
   link.innerHTML = `
-    <span class="fiestas-event-time">${escapeHtml(timeRange(event))}</span>
+    <span class="fiestas-event-time">${timeMarkup(event)}</span>
     <span class="fiestas-event-art" aria-hidden="true">
       <i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i>
     </span>
     <span class="fiestas-event-copy">
       <span class="fiestas-event-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
-      <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(place)}</span>
+      <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-event-place-text">${escapeHtml(place)}</span></span>
     </span>
   `;
 
@@ -388,47 +475,436 @@ function eventCard(event) {
   save.setAttribute('aria-pressed', String(saved));
   save.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>`;
 
-  article.append(link, save);
+  const moreOptions = document.createElement('button');
+  moreOptions.className = 'fiestas-more-options';
+  moreOptions.type = 'button';
+  moreOptions.dataset.fiestasMoreOptions = 'true';
+  moreOptions.dataset.eventId = event.id;
+  moreOptions.setAttribute('aria-label', 'Más opciones');
+  moreOptions.setAttribute('aria-haspopup', 'dialog');
+  moreOptions.innerHTML = '<i class="fa-solid fa-ellipsis" aria-hidden="true"></i>';
+
+  article.append(link, save, moreOptions);
   return article;
 }
 
 async function renderMap(events) {
+  if (state.view === 'map' && !state.map) trackMapOpened();
   const withCoordinates = events.filter((event) => hasCoordinates(event.coordinates));
+  state.currentMapEvents = withCoordinates;
+  if (state.selectedEventId && !events.some((event) => event.id === state.selectedEventId)) state.selectedEventId = null;
   if (!els.mapCanvas) return;
   const leaflet = await ensureLeaflet();
   if (!leaflet) {
-    showMapEmpty('No se pudo cargar el mapa.');
+    state.mapLoadError = true;
+    showMapEmpty('No se pudo cargar el mapa. Puedes seguir consultando las actividades en la lista inferior.');
+    renderMapSheet(events);
     return;
   }
+  state.mapLoadError = false;
   if (!withCoordinates.length) {
-    showMapEmpty('No hay actividades con mapa para esta selección.');
+    const message = hasActiveFilters()
+      ? 'No hay actividades con mapa para esos filtros.'
+      : 'No hay actividades con mapa para esta fecha.';
+    showMapEmpty(message);
   } else {
     els.mapEmpty.hidden = true;
   }
 
   if (!state.map) {
-    state.map = leaflet.map(els.mapCanvas, { scrollWheelZoom: true }).setView([41.6523, -4.7245], 14);
+    state.map = leaflet.map(els.mapCanvas, { maxZoom: 19, scrollWheelZoom: true }).setView(valladolidCenter, 14);
     state.tileLayer = createCartoLayer(leaflet).addTo(state.map);
+    state.tileLayer.on('tileerror', () => {
+      showMapEmpty('El mapa tiene problemas de conexión. Puedes seguir consultando las actividades en la lista inferior.');
+    });
     state.markers = leaflet.layerGroup().addTo(state.map);
+    state.map.on('zoomend moveend', () => renderMapMarkers(state.currentMapEvents, leaflet));
     document.addEventListener('aldeapucela:themechange', () => updateMapTheme(leaflet));
   }
 
-  state.markers.clearLayers();
-  withCoordinates.forEach((event) => {
-    const marker = leaflet.marker([event.coordinates.lat, event.coordinates.lng]);
-    marker.on('click', () => trackMapMarkerSelected(event.id));
-    marker.bindPopup(`<strong>${escapeHtml(event.title)}</strong><br>${escapeHtml(timeRange(event))}<br>${escapeHtml(event.location || 'Lugar por confirmar')}<br><a href="${escapeHtml(event.urlPath)}">Ver actividad</a>`);
-    marker.addTo(state.markers);
-  });
+  renderMapMarkers(withCoordinates, leaflet);
+  renderUserMarker(leaflet);
+  renderMapSheet(events);
 
   window.requestAnimationFrame(() => {
     state.map.invalidateSize();
-    if (withCoordinates.length) {
-      state.map.fitBounds(leaflet.latLngBounds(withCoordinates.map((event) => [event.coordinates.lat, event.coordinates.lng])), {
+    if (state.preferredMapCenter) {
+      state.map.setView(state.preferredMapCenter.latLng, state.preferredMapCenter.zoom);
+      state.preferredMapCenter = null;
+    } else if (withCoordinates.length) {
+      const bounds = leaflet.latLngBounds(withCoordinates.map((event) => [event.coordinates.lat, event.coordinates.lng]));
+      if (state.userLocation && state.locationStatus === 'granted') bounds.extend([state.userLocation.lat, state.userLocation.lng]);
+      state.map.fitBounds(bounds, {
         padding: [26, 26],
         maxZoom: 16
       });
+    } else {
+      state.map.setView(valladolidCenter, 14);
     }
+  });
+}
+
+function renderMapMarkers(events, leaflet) {
+  if (!state.markers || !state.map) return;
+  state.markers.clearLayers();
+  const groups = clusterEvents(events);
+  groups.forEach((group) => {
+    if (group.events.length > 1) {
+      const marker = leaflet.marker(group.center, {
+        icon: leaflet.divIcon({
+          className: 'fiestas-map-cluster',
+          html: `<button type="button" aria-label="${group.events.length} actividades en esta zona">${group.events.length}</button>`,
+          iconSize: [44, 44],
+          iconAnchor: [22, 22]
+        })
+      });
+      marker.on('click', () => {
+        group.events.forEach((event) => trackMapMarkerSelected(event.id));
+        if (canZoomIn()) {
+          const nextZoom = Math.min(state.map.getZoom() + 2, state.map.getMaxZoom());
+          if (hasSameCoordinates(group.events)) {
+            state.map.setView(group.center, nextZoom);
+            return;
+          }
+          const bounds = leaflet.latLngBounds(group.events.map((event) => [event.coordinates.lat, event.coordinates.lng]));
+          state.map.fitBounds(bounds, { padding: [44, 44], maxZoom: nextZoom });
+          return;
+        }
+
+        showClusterEvents(group.events);
+      });
+      marker.addTo(state.markers);
+      return;
+    }
+
+    const event = group.events[0];
+    const selected = event.id === state.selectedEventId;
+    const marker = leaflet.marker([event.coordinates.lat, event.coordinates.lng], {
+      title: `${event.title}. ${event.type || 'Actividad'}`,
+      alt: `${event.title}. ${event.type || 'Actividad'}`,
+      icon: leaflet.divIcon({
+        className: `fiestas-map-marker${selected ? ' is-selected' : ''}`,
+        html: `<button type="button" aria-label="${escapeHtml(event.title)}. ${escapeHtml(event.type || 'Actividad')}"><i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}" aria-hidden="true"></i></button>`,
+        iconSize: [38, 38],
+        iconAnchor: [19, 19]
+      })
+    });
+    marker.bindPopup(mapPopup(event));
+    marker.on('click', () => {
+      trackMapMarkerSelected(event.id);
+      state.selectedEventId = event.id;
+      state.focusedClusterEventIds = null;
+      state.sheetState = 'expanded';
+      renderMapMarkers(events, leaflet);
+      renderMapSheet(getFilteredEvents(), { scrollToSelected: true });
+    });
+    marker.addTo(state.markers);
+  });
+}
+
+function hasSameCoordinates(events) {
+  if (events.length < 2) return false;
+  const first = events[0].coordinates;
+  return events.every((event) => {
+    const coordinates = event.coordinates;
+    return coordinates && Math.abs(coordinates.lat - first.lat) < 0.00001 && Math.abs(coordinates.lng - first.lng) < 0.00001;
+  });
+}
+
+function canZoomIn() {
+  if (!state.map) return false;
+  return state.map.getZoom() < state.map.getMaxZoom();
+}
+
+function showClusterEvents(events) {
+  state.focusedClusterEventIds = new Set(events.map((event) => event.id));
+  state.selectedEventId = events[0]?.id || null;
+  state.sheetState = 'expanded';
+  renderMapSheet(getFilteredEvents(), { scrollToSelected: true });
+}
+
+function clusterEvents(events) {
+  if (!state.map) return events.map((event) => ({ center: [event.coordinates.lat, event.coordinates.lng], events: [event] }));
+  const threshold = state.map.getZoom() >= 17 ? 18 : state.map.getZoom() >= 15 ? 30 : 46;
+  const groups = [];
+  events.forEach((event) => {
+    const point = state.map.latLngToLayerPoint([event.coordinates.lat, event.coordinates.lng]);
+    const group = groups.find((item) => item.point.distanceTo(point) < threshold);
+    if (group) {
+      group.events.push(event);
+      group.point = group.point.add(point).divideBy(2);
+      group.center = [
+        group.events.reduce((sum, item) => sum + item.coordinates.lat, 0) / group.events.length,
+        group.events.reduce((sum, item) => sum + item.coordinates.lng, 0) / group.events.length
+      ];
+    } else {
+      groups.push({ point, center: [event.coordinates.lat, event.coordinates.lng], events: [event] });
+    }
+  });
+  return groups;
+}
+
+function mapPopup(event) {
+  return `
+    <div class="fiestas-map-popup">
+      <strong>${escapeHtml(event.title)}</strong>
+      <span>${escapeHtml(timeRange(event))}</span>
+      <span>${escapeHtml(event.location || 'Lugar por confirmar')}</span>
+      <a href="${escapeHtml(event.urlPath)}">Ver actividad</a>
+    </div>
+  `;
+}
+
+function renderUserMarker(leaflet) {
+  if (!state.map) return;
+  if (state.userMarker) {
+    state.userMarker.remove();
+    state.userMarker = null;
+  }
+  if (!state.userLocation || state.locationStatus !== 'granted') return;
+  state.userMarker = leaflet.circleMarker([state.userLocation.lat, state.userLocation.lng], {
+    radius: 8,
+    color: '#0f9f8d',
+    fillColor: '#17b8a4',
+    fillOpacity: 0.85,
+    weight: 3
+  }).addTo(state.map);
+  state.userMarker.bindPopup('Tu ubicación aproximada');
+}
+
+function renderMapSheet(events, options = {}) {
+  if (!els.mapSheet) return;
+  const withCoordinates = events.filter((event) => hasCoordinates(event.coordinates));
+  const sheetEvents = getMapSheetEvents(events);
+  const sorted = sortMapEvents(sheetEvents);
+  const context = state.focusedClusterEventIds
+    ? 'Actividades en este punto'
+    : state.locationStatus === 'granted' ? 'Cerca de ti' : 'Actividades del día';
+  const count = state.focusedClusterEventIds ? sorted.length : withCoordinates.length;
+  const countText = `${count} ${count === 1 ? 'actividad' : 'actividades'}`;
+
+  els.mapSheet.classList.toggle('is-expanded', state.sheetState === 'expanded');
+  els.mapSheet.classList.toggle('is-collapsed', state.sheetState === 'collapsed');
+  els.mapSheet.classList.toggle('is-hidden', state.sheetState === 'hidden');
+  if (els.mapSheetOpen) els.mapSheetOpen.hidden = state.sheetState !== 'hidden';
+  if (els.mapSheetToggle) els.mapSheetToggle.setAttribute('aria-expanded', String(state.sheetState === 'expanded'));
+  if (els.mapSheetTitle) els.mapSheetTitle.textContent = context;
+  if (els.mapSheetCount) els.mapSheetCount.textContent = countText;
+  if (els.mapSheetTabLabel) els.mapSheetTabLabel.textContent = countText;
+  renderLocationStatus();
+
+  els.mapSheetPreview?.replaceChildren();
+  els.mapSheetList?.replaceChildren();
+
+  if (!sheetEvents.length) {
+    const message = hasActiveFilters()
+      ? 'No hay actividades con esos filtros.'
+      : 'No hay actividades para el día seleccionado.';
+    els.mapSheetPreview?.append(emptyState(message, hasActiveFilters()));
+    return;
+  }
+
+  if (!withCoordinates.length) {
+    els.mapSheetPreview?.append(emptyState('Las actividades de esta selección no tienen coordenadas.', hasActiveFilters()));
+    sorted.slice(0, 8).forEach((event) => els.mapSheetList?.append(mapSheetItem(event)));
+    return;
+  }
+
+  if (state.focusedClusterEventIds) {
+    const reset = document.createElement('button');
+    reset.type = 'button';
+    reset.className = 'fiestas-map-cluster-reset';
+    reset.innerHTML = '<i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Ver todas las actividades</span>';
+    reset.addEventListener('click', () => {
+      state.focusedClusterEventIds = null;
+      renderMapSheet(getFilteredEvents());
+    });
+    els.mapSheetList?.append(reset);
+  }
+
+  sorted.slice(0, 2).forEach((event) => els.mapSheetPreview?.append(mapSheetItem(event, true)));
+  sorted.forEach((event) => els.mapSheetList?.append(mapSheetItem(event)));
+  if (options.scrollToSelected) scrollSelectedMapResult();
+}
+
+function getMapSheetEvents(events) {
+  if (!state.focusedClusterEventIds) return events;
+  const focused = events.filter((event) => state.focusedClusterEventIds.has(event.id));
+  return focused.length ? focused : events;
+}
+
+function renderLocationStatus() {
+  if (els.locationLabel) {
+    const labels = {
+      idle: 'Activar ubicación',
+      pending: 'Localizando...',
+      granted: 'Mi ubicación',
+      denied: 'Activar ubicación',
+      blocked: 'Ubicación bloqueada',
+      unavailable: 'Ubicación no disponible'
+    };
+    els.locationLabel.textContent = labels[state.locationStatus] || 'Activar ubicación';
+  }
+  if (!els.locationNote) return;
+  const messages = {
+    idle: 'Activa tu ubicación para ver qué hay cerca de ti.',
+    pending: 'Solicitando permiso de ubicación...',
+    denied: 'Activa tu ubicación para ver qué hay cerca de ti.',
+    blocked: 'El navegador ha bloqueado la ubicación. Puedes activarla desde sus ajustes.',
+    unavailable: 'No se pudo obtener tu ubicación. El mapa sigue funcionando sin distancias.'
+  };
+  const message = messages[state.locationStatus];
+  els.locationNote.hidden = !message || state.sheetState === 'hidden';
+  els.locationNote.textContent = message || '';
+}
+
+function mapSheetItem(event, compact = false) {
+  const article = document.createElement('article');
+  article.className = `fiestas-map-result${compact ? ' is-compact' : ''}`;
+  article.dataset.mapResultId = event.id;
+  article.classList.toggle('is-selected', event.id === state.selectedEventId);
+
+  const distance = distanceLabel(event);
+  const meta = [
+    event.type,
+    event.location || 'Lugar por confirmar',
+    event.area,
+    event.ticketKind === 'free' ? 'Gratis' : ''
+  ].filter(Boolean);
+
+  const link = document.createElement('a');
+  link.href = event.urlPath;
+  link.innerHTML = `
+    <span class="fiestas-map-result-time">${escapeHtml(timeRange(event))}</span>
+    <span class="fiestas-map-result-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
+    <span class="fiestas-map-result-meta">${escapeHtml(meta.join(' · '))}</span>
+    ${distance ? `<span class="fiestas-map-result-distance">${escapeHtml(distance)}</span>` : ''}
+  `;
+
+  const locate = document.createElement('button');
+  locate.type = 'button';
+  locate.className = 'fiestas-map-result-focus';
+  locate.setAttribute('aria-label', `Ver ${event.title} en el mapa`);
+  locate.innerHTML = '<i class="fa-solid fa-location-dot" aria-hidden="true"></i>';
+  locate.disabled = !hasCoordinates(event.coordinates) || state.mapLoadError;
+  locate.addEventListener('click', () => {
+    if (!state.map || !hasCoordinates(event.coordinates)) return;
+    state.selectedEventId = event.id;
+    state.focusedClusterEventIds = null;
+    state.map.setView([event.coordinates.lat, event.coordinates.lng], 17);
+    renderMapMarkers(state.currentMapEvents, window.L);
+    renderMapSheet(getFilteredEvents(), { scrollToSelected: true });
+  });
+
+  article.append(link, locate);
+  return article;
+}
+
+function scrollSelectedMapResult() {
+  if (!state.selectedEventId || !els.mapSheetList) return;
+  window.requestAnimationFrame(() => {
+    const selected = els.mapSheetList.querySelector(`[data-map-result-id="${escapeCssIdentifier(state.selectedEventId)}"]`);
+    selected?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+  });
+}
+
+function escapeCssIdentifier(value = '') {
+  if (window.CSS?.escape) return window.CSS.escape(String(value));
+  return String(value).replaceAll('\\', '\\\\').replaceAll('"', '\\"');
+}
+
+function sortMapEvents(events) {
+  if (state.locationStatus !== 'granted' || !state.userLocation) return [...events].sort(compareEvents);
+  return [...events].sort((a, b) => {
+    const aDistance = distanceToEvent(a);
+    const bDistance = distanceToEvent(b);
+    const aNear = aDistance <= nearbyRadiusMeters;
+    const bNear = bDistance <= nearbyRadiusMeters;
+    if (aNear !== bNear) return aNear ? -1 : 1;
+    if (Number.isFinite(aDistance) && Number.isFinite(bDistance) && aDistance !== bDistance) return aDistance - bDistance;
+    if (Number.isFinite(aDistance) !== Number.isFinite(bDistance)) return Number.isFinite(aDistance) ? -1 : 1;
+    return compareEvents(a, b);
+  });
+}
+
+function distanceToEvent(event) {
+  if (!state.userLocation || !hasCoordinates(event.coordinates)) return Infinity;
+  return haversineMeters(state.userLocation, { lat: event.coordinates.lat, lng: event.coordinates.lng });
+}
+
+function distanceLabel(event) {
+  if (state.locationStatus !== 'granted' || !state.userLocation || !hasCoordinates(event.coordinates)) return '';
+  const meters = distanceToEvent(event);
+  if (!Number.isFinite(meters)) return '';
+  if (meters < 1000) return `${Math.round(meters / 50) * 50} m`;
+  return `${(meters / 1000).toFixed(meters < 10000 ? 1 : 0).replace('.', ',')} km`;
+}
+
+function haversineMeters(a, b) {
+  const radius = 6371000;
+  const toRad = (value) => value * Math.PI / 180;
+  const dLat = toRad(b.lat - a.lat);
+  const dLng = toRad(b.lng - a.lng);
+  const lat1 = toRad(a.lat);
+  const lat2 = toRad(b.lat);
+  const h = Math.sin(dLat / 2) ** 2 + Math.cos(lat1) * Math.cos(lat2) * Math.sin(dLng / 2) ** 2;
+  return 2 * radius * Math.asin(Math.sqrt(h));
+}
+
+function requestLocationOnce() {
+  if (state.hasRequestedLocation || state.locationStatus === 'pending' || state.locationStatus === 'granted') return;
+  requestLocation({ centerOnSuccess: true });
+}
+
+function requestLocation(options = {}) {
+  if (!navigator.geolocation) {
+    state.locationStatus = 'unavailable';
+    renderMapSheet(getFilteredEvents());
+    return;
+  }
+  if (state.locationStatus === 'pending') return;
+  state.hasRequestedLocation = true;
+  state.locationStatus = 'pending';
+  renderMapSheet(getFilteredEvents());
+  navigator.geolocation.getCurrentPosition((position) => {
+    state.locationStatus = 'granted';
+    state.userLocation = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+      accuracy: position.coords.accuracy
+    };
+    if (options.centerOnSuccess) state.preferredMapCenter = { latLng: [state.userLocation.lat, state.userLocation.lng], zoom: 15 };
+    renderMap(getFilteredEvents());
+  }, (error) => {
+    state.userLocation = null;
+    state.locationStatus = error?.code === error?.PERMISSION_DENIED
+      ? (state.hasRequestedLocation && options.force ? 'blocked' : 'denied')
+      : 'unavailable';
+    renderMap(getFilteredEvents());
+  }, {
+    enableHighAccuracy: false,
+    maximumAge: 5 * 60 * 1000,
+    timeout: 9000
+  });
+}
+
+function bindMapSheetGestures() {
+  if (!els.mapSheet) return;
+  let startY = 0;
+  let tracking = false;
+  els.mapSheet.addEventListener('pointerdown', (event) => {
+    if (!event.target.closest('[data-fiestas-map-sheet-toggle]')) return;
+    tracking = true;
+    startY = event.clientY;
+  });
+  els.mapSheet.addEventListener('pointerup', (event) => {
+    if (!tracking) return;
+    tracking = false;
+    const delta = event.clientY - startY;
+    if (delta < -28) state.sheetState = 'expanded';
+    else if (delta > 44 && state.sheetState === 'expanded') state.sheetState = 'collapsed';
+    else if (delta > 44) state.sheetState = 'hidden';
+    renderMapSheet(getFilteredEvents());
   });
 }
 
@@ -451,14 +927,18 @@ function renderControlLists() {
 
 function renderTypeButtons() {
   if (!els.typeList) return;
-  const current = new Set([...els.typeList.querySelectorAll('input[data-type]')].map((input) => input.dataset.type));
+  const options = els.typeList.querySelector('.fiestas-type-options');
+  if (!options) return;
+  const current = new Set([...options.querySelectorAll('input[data-type]')].map((input) => input.dataset.type));
   if (current.size === state.types.length) return;
-  els.typeList.replaceChildren(...state.types.map((type) => checkboxOption(type, 'type')));
+  options.replaceChildren(...state.types.map((type) => checkboxOption(type, 'type')));
 }
 
 function renderAreaButtons() {
   if (!els.areaList) return;
-  els.areaList.replaceChildren(...state.areas.map((area) => checkboxOption(area, 'area')));
+  const options = els.areaList.querySelector('.fiestas-type-options');
+  if (!options) return;
+  options.replaceChildren(...state.areas.map((area) => checkboxOption(area, 'area')));
 }
 
 function checkboxOption(value, kind) {
@@ -485,7 +965,7 @@ function renderCheckedFilters() {
 
 function renderFilterLabels() {
   if (els.typeLabel) els.typeLabel.textContent = setLabel(state.selectedTypes, 'Tipos', 'tipo', 'tipos');
-  if (els.areaLabel) els.areaLabel.textContent = setLabel(state.selectedAreas, 'Todas las zonas', 'zona', 'zonas');
+  if (els.areaLabel) els.areaLabel.textContent = setLabel(state.selectedAreas, 'Zonas', 'zona', 'zonas');
   if (els.ticketLabel) els.ticketLabel.textContent = ticketSetLabel();
   els.typeToggle?.classList.toggle('is-active', state.selectedTypes.size > 0);
   els.areaToggle?.classList.toggle('is-active', state.selectedAreas.size > 0);
@@ -503,12 +983,8 @@ function renderActiveFilters(count) {
   state.selectedTicketKinds.forEach((kind) => chips.push(filterChip('ticket', kind, ticketKindLabel(kind))));
   if (state.onlyFavorites) chips.push(filterChip('favorites', '', 'Guardados'));
   chips.forEach((chip) => els.activeFilters.append(chip));
-  if (chips.length) {
-    const summary = document.createElement('span');
-    summary.className = 'fiestas-filter-count';
-    summary.textContent = `${count} ${count === 1 ? 'resultado' : 'resultados'}`;
-    els.activeFilters.append(summary);
-  }
+  if (els.filterSummary) els.filterSummary.hidden = !chips.length;
+  if (els.filterCount) els.filterCount.textContent = chips.length ? `${count} ${count === 1 ? 'resultado' : 'resultados'}` : '';
 }
 
 function filterChip(kind, value, label) {
@@ -552,6 +1028,16 @@ function setMenuOpen(kind, open) {
   updateFilterModalState();
 }
 
+function setSearchOpen(open) {
+  if (!els.searchPanel || !els.searchToggle) return;
+  const isOpen = Boolean(open);
+  els.searchPanel.hidden = !isOpen;
+  els.searchToggle.setAttribute('aria-expanded', String(isOpen));
+  els.searchToggle.setAttribute('aria-label', isOpen ? 'Ocultar buscador' : 'Abrir buscador');
+  els.searchToggle.classList.toggle('is-active', isOpen);
+  if (isOpen) els.search?.focus();
+}
+
 function getInitialDate(dates) {
   if (!dates.length) return 'all';
   const today = localDateKey(new Date());
@@ -591,7 +1077,13 @@ function groupByDay(events) {
 }
 
 function labelForDate(date) {
-  return state.dates.find((day) => day.date === date)?.label || date;
+  const match = String(date).match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return state.dates.find((day) => day.date === date)?.label || date;
+  const [, year, month, day] = match;
+  const dateValue = new Date(Number(year), Number(month) - 1, Number(day));
+  const weekdays = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+  const months = ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sep.', 'oct.', 'nov.', 'dic.'];
+  return `${weekdays[dateValue.getDay()]} ${dateValue.getDate()} de ${months[dateValue.getMonth()]}`;
 }
 
 function toggleSetValue(set, value, checked) {
@@ -611,9 +1103,9 @@ function setLabel(set, empty, singular, plural) {
 }
 
 function ticketSetLabel() {
-  if (!state.selectedTicketKinds.size) return 'Entradas';
+  if (!state.selectedTicketKinds.size) return 'Precio';
   if (state.selectedTicketKinds.size === 1) return ticketKindLabel([...state.selectedTicketKinds][0]);
-  return `${state.selectedTicketKinds.size} entradas`;
+  return `${state.selectedTicketKinds.size} precios`;
 }
 
 function toggleFavorite(id) {
@@ -621,19 +1113,14 @@ function toggleFavorite(id) {
   const saved = !state.favorites.has(id);
   if (saved) state.favorites.add(id);
   else state.favorites.delete(id);
-  localStorage.setItem(storageKey, JSON.stringify([...state.favorites]));
+  writeFavoriteIds([...state.favorites]);
   trackFavoriteChanged(id, saved);
   if (els.agenda) render();
   updateDetailFavorite();
 }
 
 function readFavorites() {
-  try {
-    const parsed = JSON.parse(localStorage.getItem(storageKey) || '[]');
-    return Array.isArray(parsed) ? parsed : [];
-  } catch {
-    return [];
-  }
+  return readFavoriteIds();
 }
 
 function normalizeTags(tags, type) {
@@ -657,6 +1144,12 @@ function sortMinutes(time = '') {
 function timeRange(event) {
   if (!event.startTime) return 'Hora por confirmar';
   return [event.startTime, event.endTime].filter(Boolean).join(' - ');
+}
+
+function timeMarkup(event) {
+  if (!event.startTime) return '<span>Hora por confirmar</span>';
+  if (!event.endTime) return `<span>${escapeHtml(event.startTime)}</span>`;
+  return `<span>${escapeHtml(event.startTime)}</span><span>${escapeHtml(event.endTime)}</span>`;
 }
 
 function currentTheme() {
@@ -737,16 +1230,23 @@ function applyInitialUrlState() {
   const params = new URLSearchParams(window.location.search);
   const view = params.get('view');
   const eventId = params.get('event');
-  state.view = view === 'map' ? 'map' : 'agenda';
+  state.view = isMapPath() || view === 'map' ? 'map' : 'agenda';
   state.selectedDate = getUrlDate(params) || initialDate || getInitialDate(state.dates);
   state.search = normalizeText(params.get('q') || '');
   state.selectedTypes = getUrlSet(params, 'type', state.types);
   state.selectedAreas = getUrlSet(params, 'area', state.areas);
   state.selectedTicketKinds = getUrlSet(params, 'ticket', ['free', 'paid', 'registration']);
   if (els.search) els.search.value = params.get('q') || '';
+  setSearchOpen(Boolean(state.search));
   if (eventId) {
     const event = state.events.find((item) => item.id === eventId);
-    if (event?.date) state.selectedDate = event.date;
+    if (event?.date) {
+      state.selectedDate = event.date;
+      state.selectedEventId = event.id;
+      if (hasCoordinates(event.coordinates)) {
+        state.preferredMapCenter = { latLng: [event.coordinates.lat, event.coordinates.lng], zoom: 17 };
+      }
+    }
   }
   setMenuOpen('type', false);
   setMenuOpen('area', false);
@@ -779,12 +1279,16 @@ function updateUrlFromState() {
   [...state.selectedTypes].sort((a, b) => collator.compare(a, b)).forEach((type) => params.append('type', type));
   [...state.selectedAreas].sort((a, b) => collator.compare(a, b)).forEach((area) => params.append('area', area));
   [...state.selectedTicketKinds].sort().forEach((ticket) => params.append('ticket', ticket));
-  if (state.view === 'map') params.set('view', 'map');
 
   const query = params.toString();
-  const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
+  const nextPath = state.view === 'map' ? '/mapa/' : '/';
+  const nextUrl = `${nextPath}${query ? `?${query}` : ''}${window.location.hash}`;
   const currentUrl = `${window.location.pathname}${window.location.search}${window.location.hash}`;
   if (nextUrl !== currentUrl) window.history.replaceState(null, '', nextUrl);
+}
+
+function isMapPath() {
+  return window.location.pathname.replace(/\/+$/, '') === '/mapa';
 }
 
 function updateFilterModalState() {
@@ -831,6 +1335,7 @@ function ensureFilterBackdrop() {
 function initDetailPage() {
   trackActivityViewed(els.detail.dataset.eventId);
   updateDetailFavorite({ silent: true });
+  initDetailDirections();
   els.detailSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
   els.detailShare?.addEventListener('click', shareDetail);
   els.detailShareCopy?.addEventListener('click', copyShareFallback);
@@ -846,6 +1351,39 @@ function trackDetailExternalAction(action) {
   if (action === 'directions') trackDirectionsOpened(activityId);
   else if (action === 'tickets') trackTicketsOpened(activityId);
   else if (action) trackExternalLinkOpened(action);
+}
+
+function initDetailDirections() {
+  const link = document.querySelector('[data-fiestas-directions]');
+  if (!link) return;
+
+  const lat = Number(link.dataset.lat);
+  const lng = Number(link.dataset.lng);
+  if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
+
+  const title = link.dataset.title || 'Actividad';
+  const platform = getMapPlatform();
+  if (platform === 'android') {
+    const label = encodeURIComponent(title);
+    link.href = `geo:0,0?q=${lat},${lng}(${label})`;
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+    return;
+  }
+
+  if (platform === 'ios') {
+    link.href = `http://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+    link.removeAttribute('target');
+    link.removeAttribute('rel');
+  }
+}
+
+function getMapPlatform() {
+  const userAgent = navigator.userAgent || '';
+  if (/Android/i.test(userAgent)) return 'android';
+  if (/iPad|iPhone|iPod/i.test(userAgent)) return 'ios';
+  if (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) return 'ios';
+  return 'desktop';
 }
 
 function updateDetailFavorite(options = {}) {
@@ -920,6 +1458,58 @@ async function copyShareFallback() {
   }
 }
 
+async function shareSite() {
+  try {
+    if (navigator.share) {
+      await navigator.share({
+        title: 'Fiestas Valladolid 2026',
+        text: SITE_SHARE_MESSAGE
+      });
+      showSiteShareFeedback('Compartido.');
+      return;
+    }
+  } catch (error) {
+    if (error?.name === 'AbortError') return;
+  }
+
+  try {
+    await copyTextToClipboard(SITE_SHARE_MESSAGE);
+    showSiteShareFeedback('Mensaje y enlace copiados.');
+  } catch (_) {
+    showSiteShareFeedback('No se pudo copiar el mensaje. Mantén pulsado para copiarlo.', true);
+  }
+}
+
+async function copyTextToClipboard(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement('textarea');
+  textarea.value = text;
+  textarea.setAttribute('readonly', '');
+  textarea.style.position = 'fixed';
+  textarea.style.opacity = '0';
+  document.body.append(textarea);
+  textarea.focus();
+  textarea.select();
+  const copied = document.execCommand('copy');
+  textarea.remove();
+  if (!copied) throw new Error('Clipboard unavailable');
+}
+
+function showSiteShareFeedback(message, isError = false) {
+  if (!els.siteShareFeedback) return;
+  window.clearTimeout(siteShareFeedbackTimer);
+  els.siteShareFeedback.textContent = message;
+  els.siteShareFeedback.classList.toggle('is-error', isError);
+  els.siteShareFeedback.hidden = false;
+  siteShareFeedbackTimer = window.setTimeout(() => {
+    els.siteShareFeedback.hidden = true;
+  }, 4000);
+}
+
 function showDetailFeedback(message) {
   if (!els.detailFeedback) return;
   els.detailFeedback.hidden = false;
@@ -944,13 +1534,24 @@ async function initDetailMap() {
     return;
   }
   try {
-    const map = leaflet.map(els.detailMap, { scrollWheelZoom: false }).setView([lat, lng], 16);
+    const isTouchDevice = window.matchMedia?.('(pointer: coarse)').matches || navigator.maxTouchPoints > 0;
+    const map = leaflet.map(els.detailMap, {
+      scrollWheelZoom: false,
+      dragging: !isTouchDevice
+    }).setView([lat, lng], 16);
+    const title = els.detailMap.dataset.title || 'Actividad';
+    const markerIcon = leaflet.divIcon({
+      className: 'fiestas-detail-map-marker',
+      iconSize: [0, 0],
+      iconAnchor: [0, 0],
+      html: `<span class="fiestas-detail-map-marker-content"><i class="fiestas-detail-map-marker-icon fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-detail-map-marker-label">${escapeHtml(title)}</span></span>`
+    });
     let tileLayer = createCartoLayer(leaflet).addTo(map);
     document.addEventListener('aldeapucela:themechange', () => {
       map.removeLayer(tileLayer);
       tileLayer = createCartoLayer(leaflet).addTo(map);
     });
-    leaflet.marker([lat, lng]).addTo(map).bindPopup(escapeHtml(els.detailMap.dataset.title || 'Actividad'));
+    leaflet.marker([lat, lng], { icon: markerIcon, title }).addTo(map).bindPopup(escapeHtml(title));
     trackMapOpened();
     window.requestAnimationFrame(() => map.invalidateSize());
   } catch (error) {

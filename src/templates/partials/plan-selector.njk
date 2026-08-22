@@ -1,0 +1,27 @@
+<div class="fiestas-plan-selector" data-fiestas-plan-selector hidden>
+  <button class="fiestas-plan-selector-backdrop" type="button" data-plan-selector-close aria-label="Cerrar selector"></button>
+  <section class="fiestas-plan-selector-panel" role="dialog" aria-modal="true" aria-labelledby="plan-selector-title">
+    <div class="fiestas-plan-selector-head">
+      <div>
+        <p class="fiestas-plan-kicker">MIS PLANES</p>
+        <h2 id="plan-selector-title">Añadir a un plan</h2>
+      </div>
+      <button class="fiestas-plan-selector-close" type="button" data-plan-selector-close aria-label="Cerrar">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+    <p class="fiestas-plan-selector-empty" data-plan-selector-empty>No tienes planes creados todavía.</p>
+    <div class="fiestas-plan-selector-list" data-plan-selector-list></div>
+    <form class="fiestas-plan-selector-create" data-plan-selector-create-form>
+      <label for="plan-selector-create-input">Crear un plan nuevo</label>
+      <div>
+        <input id="plan-selector-create-input" type="text" maxlength="80" placeholder="Ej. Sábado en familia" data-plan-selector-create-input />
+        <button class="fiestas-plan-action fiestas-plan-action-primary" type="submit">Crear</button>
+      </div>
+      <p class="fiestas-plan-selector-feedback" data-plan-selector-feedback aria-live="polite"></p>
+    </form>
+    <button class="fiestas-plan-action fiestas-plan-action-primary fiestas-plan-selector-accept" type="button" data-plan-selector-close>
+      Aceptar
+    </button>
+  </section>
+</div>

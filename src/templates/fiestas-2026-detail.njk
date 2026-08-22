@@ -1,6 +1,6 @@
 {% extends "layout.njk" %}
 
-{% block bodyClass %}page-event-detail fiestas-detail-page{% endblock %}
+{% block bodyClass %}fiestas-page page-event-detail fiestas-detail-page{% endblock %}
 {% block footerClass %} site-footer--event-detail{% endblock %}
 
 {% block extraHead %}
@@ -26,15 +26,18 @@
   <article class="fiestas-detail">
     <header class="fiestas-detail-top">
       <button class="fiestas-detail-top-button" type="button" data-fiestas-back aria-label="Volver a la agenda">
-        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <i class="fiestas-detail-back-icon fa-solid fa-arrow-left" aria-hidden="true"></i>
       </button>
       <p>Detalle de actividad</p>
       <div class="fiestas-detail-top-actions">
         <button class="fiestas-detail-top-button" type="button" data-fiestas-detail-save aria-label="Guardar actividad" aria-pressed="false">
           <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
         </button>
+        <button class="fiestas-detail-top-button" type="button" data-fiestas-more-options data-event-id="{{ event.id }}" aria-label="Más opciones" aria-haspopup="dialog">
+          <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+        </button>
         <button class="fiestas-detail-top-button" type="button" data-fiestas-share aria-label="Compartir actividad">
-          <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+          <i class="fiestas-detail-share-icon fa-solid fa-share-nodes" aria-hidden="true"></i>
         </button>
       </div>
     </header>
@@ -49,10 +52,14 @@
       <h1 id="event-title" class="fiestas-detail-title">{{ event.title }}</h1>
       <div class="fiestas-detail-tags" aria-label="Categorías">
         {% for tag in event.tags %}
-        <span class="fiestas-detail-type">
+        <a
+          class="fiestas-detail-type"
+          href="/?date=all&amp;type={{ tag | urlencode }}"
+          aria-label="Ver todas las actividades de {{ tag }}"
+        >
           <i class="fa-solid {% if loop.first %}{{ event.icon }}{% else %}fa-tag{% endif %}" aria-hidden="true"></i>
           {{ tag }}
-        </span>
+        </a>
         {% endfor %}
       </div>
     </section>
@@ -64,14 +71,8 @@
       </div>
       <div class="fiestas-detail-fact">
         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-        <span>{{ event.location or 'Lugar por confirmar' }}</span>
+        <span>{{ event.location or event.zone or event.neighborhood or 'Lugar por confirmar' }}</span>
       </div>
-      {% if event.zone or event.neighborhood %}
-      <div class="fiestas-detail-fact">
-        <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
-        <span>{{ event.zone or event.neighborhood }}{% if event.neighborhood and event.zone and event.neighborhood != event.zone %} · {{ event.neighborhood }}{% endif %}</span>
-      </div>
-      {% endif %}
       <div class="fiestas-detail-fact">
         <i class="fa-solid fa-ticket" aria-hidden="true"></i>
         <span>
@@ -111,18 +112,28 @@
           <span>Ver en el mapa</span>
         </a>
         {% if event.directionsUrl %}
-        <a class="fiestas-detail-map-action" href="{{ event.directionsUrl }}" target="_blank" rel="noopener noreferrer" data-fiestas-analytics-action="directions">
-          <i class="fa-solid fa-route" aria-hidden="true"></i>
+        <a
+          class="fiestas-detail-map-action"
+          href="{{ event.directionsUrl }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-fiestas-directions
+          data-fiestas-analytics-action="directions"
+          data-lat="{{ event.coordinates.lat }}"
+          data-lng="{{ event.coordinates.lng }}"
+          data-title="{{ event.location or event.title }}"
+        >
+          <i class="fiestas-detail-directions-icon fa-solid fa-route" aria-hidden="true"></i>
           <span>Cómo llegar</span>
         </a>
         {% elif event.osmUrl %}
         <a class="fiestas-detail-map-action" href="{{ event.osmUrl }}" target="_blank" rel="noopener noreferrer" data-fiestas-analytics-action="location">
-          <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
+          <i class="fiestas-detail-directions-icon fa-solid fa-location-arrow" aria-hidden="true"></i>
           <span>Abrir ubicación</span>
         </a>
         {% else %}
         <span class="fiestas-detail-map-action fiestas-detail-map-action-disabled">
-          <i class="fa-solid fa-route" aria-hidden="true"></i>
+          <i class="fiestas-detail-directions-icon fa-solid fa-route" aria-hidden="true"></i>
           <span>Cómo llegar</span>
         </span>
         {% endif %}
@@ -160,6 +171,59 @@
     </section>
     {% endif %}
 
+    <aside class="fiestas-community-card" aria-labelledby="fiestas-community-title">
+      <div class="fiestas-community-heading">
+        <img class="fiestas-community-logo" src="/assets/favicon.png" alt="" />
+        <div>
+          <p class="fiestas-community-kicker">ALDEA PUCELA</p>
+          <h2 id="fiestas-community-title">Las fiestas también se viven en comunidad</h2>
+        </div>
+      </div>
+      <p class="fiestas-community-copy">Recibe lo importante cada semana, comenta los planes con otros vecinos y sigue los avisos de las fiestas.</p>
+      <a class="fiestas-community-primary" href="https://aldeapucela.org/boletin/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+        <span>Recibir el boletín semanal</span>
+      </a>
+      <div class="fiestas-community-secondary">
+        <a class="fiestas-community-telegram" href="https://t.me/aldeapucela/59137" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+          <span>Unirme al chat de fiestas</span>
+        </a>
+        <a class="fiestas-community-whatsapp" href="https://aldeapucela.org/whatsapp" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          <span>Canal de WhatsApp</span>
+        </a>
+      </div>
+    </aside>
+
+    {% if relatedEvents.length %}
+    <section class="fiestas-detail-card fiestas-related-card" aria-labelledby="fiestas-related-title">
+      <div class="fiestas-related-heading">
+        <h2 id="fiestas-related-title">
+          <i class="fa-solid {{ event.icon }}" aria-hidden="true"></i>
+          Relacionados
+        </h2>
+        <span>{{ event.type }}</span>
+      </div>
+      <div class="fiestas-related-list">
+        {% for related in relatedEvents %}
+        <a class="fiestas-related-item" href="{{ related.urlPath }}">
+          <span class="fiestas-related-time">{{ related.startTime or '—' }}</span>
+          <span class="fiestas-related-copy">
+            <strong>{{ related.title }}</strong>
+            <span>{{ related.dateLabel }}{% if related.location %} · {{ related.location }}{% endif %}</span>
+          </span>
+          <i class="fa-solid fa-chevron-right fiestas-related-arrow" aria-hidden="true"></i>
+        </a>
+        {% endfor %}
+      </div>
+      <a class="fiestas-related-more" href="/?date=all&amp;type={{ event.type | urlencode }}">
+        <span>Ver más</span>
+        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </section>
+    {% endif %}
+
     <div class="fiestas-detail-feedback" data-fiestas-detail-feedback aria-live="polite" hidden></div>
     <div class="fiestas-detail-copy-fallback" data-fiestas-share-fallback hidden>
       <label>
@@ -170,26 +234,33 @@
     </div>
   </article>
 
-  <nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
-    <a class="fiestas-bottom-link is-active" href="/">
-      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
-      <span>Agenda</span>
-    </a>
-    <a class="fiestas-bottom-link" href="{{ event.mapUrl }}">
-      <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
-      <span>Mapa</span>
-    </a>
-    <span class="fiestas-bottom-link fiestas-bottom-link-disabled" aria-disabled="true">
-      <i class="fa-regular fa-heart" aria-hidden="true"></i>
-      <span>Mi plan</span>
-    </span>
-    <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
-      <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
-      <span>Más</span>
-    </button>
-  </nav>
 </main>
 
+<nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+  <a class="fiestas-bottom-link is-active" href="/">
+    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+    <span>Agenda</span>
+  </a>
+  <a class="fiestas-bottom-link" href="{{ event.mapUrl }}">
+    <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.35" />
+    </svg>
+    <span>Mapa</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/plan/">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span>Mi plan</span>
+  </a>
+  <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
+    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+    <span>Más</span>
+    <span class="fiestas-hint-dot" data-menu-hint-dot hidden aria-hidden="true"></span>
+  </button>
+</nav>
+
+{% include "partials/event-options.njk" %}
+{% include "partials/plan-selector.njk" %}
 {% include "partials/menu-drawer.njk" %}
 {% include "partials/subscribe-modal.njk" %}
 {% include "partials/location-modal.njk" %}

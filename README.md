@@ -2,7 +2,7 @@
 
 Repositorio independiente para publicar la agenda de Fiestas Valladolid 2026 dentro de Aldea Pucela Eventos.
 
-La salida generada es una web estatica para `https://fiestas.aldeapucela.org/`, con listado interactivo, filtros, favoritos en navegador, mapa y paginas de detalle por evento.
+La salida generada es una web estatica para `https://fiestas.aldeapucela.org/`, con listado interactivo, filtros, favoritos y planes locales en el navegador, mapa y paginas de detalle por evento.
 
 ![Agenda de Fiestas Valladolid 2026](docs/screenshots/01-agenda-desktop.png)
 
@@ -12,9 +12,15 @@ El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe 
 
 - `/`: agenda principal.
 - `/e/<id>/`: detalle de cada evento.
+- `/plan/`: guardados y planes personalizados.
+- `/plan/importar/`: importación de planes compartidos.
 - `/assets/css/fiestas-2026.css`: estilos compilados con Tailwind, PostCSS y Autoprefixer.
 - `/assets/js/fiestas-2026.js`: comportamiento de agenda, mapa, filtros y favoritos.
-- `/assets/js/menu-drawer.js`, `/assets/js/subscribe.js`, `/assets/js/theme.js`: modulos compartidos de UI.
+- `/assets/js/plans-page.js`, `/assets/js/plan-storage.js`, `/assets/js/plan-export.js`: planes locales, selector de actividades, importación y exportación.
+- `/assets/js/analytics.js`: eventos de uso compatibles con Matomo, sin nombres personalizados de planes.
+- `/assets/js/menu-drawer.js`, `/assets/js/pwa.js`, `/assets/js/subscribe.js`, `/assets/js/theme.js`: modulos compartidos de UI, instalación y service worker.
+- `/assets/manifest.webmanifest`, `/sw.js` y `/offline.html`: identidad PWA, caché versionada y fallback sin conexión.
+- `/assets/social/`: portada social en modo claro, generada a partir de la referencia de Eventos de Aldea Pucela, y miniaturas cuadradas de 512×512 por categoría con un icono morado pequeño sobre fondo blanco.
 - `/sitemap.xml` y `/robots.txt`: metadatos de rastreo.
 
 ## Estructura
@@ -59,6 +65,8 @@ El comando hace un build inicial y sirve `dist/` en:
 http://127.0.0.1:8002/
 ```
 
+Durante el desarrollo, `npm run dev` observa `src/`, reconstruye la salida cuando cambia un archivo y sirve HTML, CSS y JavaScript con `Cache-Control: no-store`. Así los cambios se pueden comprobar inmediatamente en el navegador integrado.
+
 Si necesitas otro puerto:
 
 ```bash
@@ -81,7 +89,26 @@ El build:
 6. Normaliza, ordena y enriquece cada evento con icono, URL local, URL canonica, texto de compartir, etiquetas de entrada y enlaces de mapa.
 7. Conserva los metadatos de procedencia de `coordinates` cuando existen.
 8. Renderiza la agenda y una pagina de detalle por evento con Nunjucks.
-9. Escribe `sitemap.xml` y `robots.txt`.
+9. Renderiza `/plan/` y `/plan/importar/`.
+10. Genera el manifest, el service worker versionado y la página offline.
+11. Escribe `sitemap.xml` y `robots.txt`.
+
+## PWA Y COMPARTICIÓN SOCIAL
+
+La aplicación se puede instalar desde navegadores compatibles. La acción aparece de forma secundaria en `Más` cuando el navegador ofrece `beforeinstallprompt`. En Safari para iPhone/iPad, el mismo menú abre instrucciones para usar `Compartir` y `Añadir a pantalla de inicio`.
+
+El service worker usa red primero para las páginas HTML y caché como fallback. Solo guarda recursos propios y páginas visitadas; no guarda favoritos, planes ni datos personales en la caché. Los favoritos y planes continúan siendo datos locales de `localStorage`.
+
+La portada y las fichas incluyen Open Graph y Twitter/X. La portada conserva su hero original; la social preview usa la referencia visual clara de Eventos de Aldea Pucela y las fichas usan la miniatura cuadrada de categoría solo como imagen social.
+
+Para validar la salida localmente:
+
+```bash
+npm run build
+node --check dist/sw.js
+```
+
+Después abre Chrome DevTools → Application para revisar Manifest y Service Workers. En Chrome Android comprueba que la aplicación ofrece instalación desde el menú del navegador. En Safari iPhone usa `Compartir → Añadir a pantalla de inicio` y verifica que la ruta abre en modo app web.
 
 Para limpiar solo la salida generada:
 
@@ -128,7 +155,7 @@ Campos principales:
 - `performances`, `organizers`, `collaborators`: listas opcionales para la ficha.
 - `coordinates`: coordenadas para mapa. Como minimo `{ "lat": number, "lng": number }`.
 - `ticket`: informacion opcional de entradas.
-- `image`: imagen editorial opcional para la ficha. Si no existe, la ficha no pinta imagen superior.
+- `image`: imagen editorial opcional para la ficha. Si no existe, la ficha no muestra un hero; el build usa la miniatura cuadrada clara de su categoría únicamente para compartir en redes.
 
 Ejemplo minimo:
 
@@ -211,6 +238,12 @@ El menu de tipos se genera a partir de `tags` y, si no existen, de `type`. Permi
 Cada tarjeta tiene un boton de guardado. Los favoritos se almacenan en `localStorage` con la clave `fiestasPucela:favorites`, por lo que son locales al navegador del usuario. El boton `Favoritos` limita la agenda a los eventos guardados.
 
 ![Vista de favoritos](docs/screenshots/04-favoritos.png)
+
+## Mi Plan
+
+`/plan/` muestra por defecto `Guardados` como un plan virtual con todos los favoritos, contador y filtro de fechas. El selector permite desplegar los planes personalizados y crear uno nuevo. Los favoritos se conservan en `fiestasPucela:favorites` y los planes personalizados versionados en `fiestasPucela:plans`. Las tarjetas mantienen el marcador; las acciones adicionales se encuentran en el botón de tres puntos y permiten añadir una actividad a uno o varios planes. Los planes se pueden renombrar, exportar, compartir como `.fiestas-plan.json`, añadir al calendario y eliminar. Los archivos usan `{ schemaVersion: 1, festival, plans: [...] }` y la importación también acepta el formato anterior de un único plan. La importación se previsualiza con el número de planes, permite expandir el listado y descarta identificadores de actividades desconocidos antes de guardar.
+
+La barra inferior de la aplicación enlaza siempre a `/plan/`; no existe una ruta local `/favoritos/`.
 
 ## Mapa
 
@@ -439,3 +472,14 @@ Antes de publicar:
 7. Prueba guardar y compartir desde una ficha.
 8. Revisa el drawer y los filtros en movil.
 9. Cambia entre tema claro y oscuro.
+10. Revisa `/plan/`, `/plan/importar/`, el selector desde una actividad, la exportación ICS y la importación de un archivo invalido.
+
+## Politica De Cache De CSS Y JavaScript
+
+El build genera versiones de contenido para los recursos propios:
+
+- `cssVersion` es un hash corto del CSS compilado.
+- `jsVersion` es un hash corto de los modulos JavaScript copiados a `dist/`.
+- Las plantillas publican esos valores como `?v=<version>` en cada referencia local.
+
+Por tanto, cualquier cambio efectivo en CSS cambia la URL del CSS y cualquier cambio efectivo en JavaScript cambia la URL del modulo. El navegador puede mantener una version anterior, pero nunca la confundira con la nueva. No hay que editar manualmente nombres de archivos ni incrementar un numero a mano: basta con ejecutar `npm run build` (o usar `npm run dev`).
