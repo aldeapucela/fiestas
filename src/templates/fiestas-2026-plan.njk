@@ -20,12 +20,14 @@
         </button>
       </div>
       <div class="fiestas-plan-tools">
-        <label class="fiestas-plan-picker">
+        <div class="fiestas-plan-picker" data-plan-picker>
+          <button class="fiestas-plan-picker-trigger" type="button" data-plan-picker-trigger aria-haspopup="listbox" aria-expanded="false" aria-controls="plan-picker-menu">
           <i class="fa-solid fa-star" data-plan-picker-icon aria-hidden="true"></i>
-          <span class="sr-only">Seleccionar plan</span>
-          <select data-plan-picker aria-label="Seleccionar plan"></select>
+          <span class="fiestas-plan-picker-label" data-plan-picker-label>Guardados</span>
           <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </label>
+          </button>
+          <div class="fiestas-plan-picker-menu" id="plan-picker-menu" data-plan-picker-menu role="listbox" aria-label="Seleccionar plan" hidden></div>
+        </div>
         <a class="fiestas-plan-community-link" href="/planes/">
           <i class="fa-solid fa-people-group" aria-hidden="true"></i>
           <span>Planes vecinales</span>

@@ -66,6 +66,9 @@ export function setupPlansPage(rawEvents = []) {
     createInput: page.querySelector('[data-plan-create-input]'),
     feedback: page.querySelector('[data-plan-feedback]'),
     picker: page.querySelector('[data-plan-picker]'),
+    pickerTrigger: page.querySelector('[data-plan-picker-trigger]'),
+    pickerMenu: page.querySelector('[data-plan-picker-menu]'),
+    pickerLabel: page.querySelector('[data-plan-picker-label]'),
     pickerIcon: page.querySelector('[data-plan-picker-icon]'),
     createIcons: page.querySelector('[data-plan-create-icons]'),
     headerShare: page.querySelector('[data-plan-header-share]'),
@@ -171,8 +174,14 @@ export function setupPlansPage(rawEvents = []) {
     if (trigger) els.editor.dataset.returnFocus = trigger.dataset.planRename || '';
   };
 
-  els.picker?.addEventListener('change', () => {
-    const value = els.picker.value;
+  const closePlanPicker = (restoreFocus = false) => {
+    if (!els.pickerMenu || !els.pickerTrigger) return;
+    els.pickerMenu.hidden = true;
+    els.pickerTrigger.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) els.pickerTrigger.focus();
+  };
+
+  const selectPlan = (value) => {
     if (value === '__saved__') {
       state.view = 'saved';
       state.selectedPlanId = '';
@@ -192,8 +201,61 @@ export function setupPlansPage(rawEvents = []) {
       state.creatingPlan = false;
       state.pendingDeletePlanId = '';
     }
+    closePlanPicker();
     updatePlanUrl(state);
     render();
+  };
+
+  els.picker?.addEventListener('click', (event) => {
+    const option = event.target.closest('[data-plan-picker-option]');
+    if (option) {
+      selectPlan(option.dataset.planPickerOption || '__saved__');
+      return;
+    }
+    if (event.target.closest('[data-plan-picker-trigger]')) {
+      const isOpen = els.pickerTrigger?.getAttribute('aria-expanded') === 'true';
+      if (isOpen) closePlanPicker(true);
+      else {
+        els.pickerMenu.hidden = false;
+        els.pickerTrigger.setAttribute('aria-expanded', 'true');
+        els.pickerMenu.querySelector('[aria-selected="true"]')?.focus();
+      }
+    }
+  });
+
+  els.picker?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      event.preventDefault();
+      closePlanPicker(true);
+      return;
+    }
+    const options = [...(els.pickerMenu?.querySelectorAll('[data-plan-picker-option]') || [])];
+    if (!options.length) return;
+    const currentIndex = options.indexOf(document.activeElement);
+    if (event.key === 'ArrowDown' || event.key === 'ArrowUp') {
+      event.preventDefault();
+      if (els.pickerTrigger === document.activeElement) {
+        els.pickerMenu.hidden = false;
+        els.pickerTrigger.setAttribute('aria-expanded', 'true');
+      }
+      const nextIndex = currentIndex < 0
+        ? 0
+        : (currentIndex + (event.key === 'ArrowDown' ? 1 : -1) + options.length) % options.length;
+      options[nextIndex].focus();
+    } else if (event.key === 'Home' || event.key === 'End') {
+      event.preventDefault();
+      options[event.key === 'Home' ? 0 : options.length - 1].focus();
+    } else if (event.key === 'Enter' || event.key === ' ') {
+      const option = event.target.closest('[data-plan-picker-option]');
+      if (option) {
+        event.preventDefault();
+        selectPlan(option.dataset.planPickerOption || '__saved__');
+      }
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (els.picker && !els.picker.contains(event.target)) closePlanPicker();
   });
 
   els.editorForm?.addEventListener('submit', (event) => {
@@ -1186,32 +1248,52 @@ function getPlanView() {
   return params.get('view') === 'plans' || params.get('tab') === 'plans' || params.get('plan') ? 'plan' : 'saved';
 }
 
-function renderPlanPicker(select, pickerIcon, plans, view, selectedPlanId) {
-  if (!select) return;
-  select.replaceChildren();
-  const saved = document.createElement('option');
-  saved.value = '__saved__';
-  saved.textContent = 'Guardados';
-  select.append(saved);
-  plans.forEach((plan) => {
-    const option = document.createElement('option');
-    option.value = plan.id;
-    option.textContent = plan.name;
-    select.append(option);
-  });
-  const create = document.createElement('option');
-  create.value = '__create__';
-  create.textContent = 'Crear un plan nuevo';
-  select.append(create);
-  const importOption = document.createElement('option');
-  importOption.value = '__import__';
-  importOption.textContent = 'Importar un plan';
-  select.append(importOption);
-  select.value = view === 'saved' ? '__saved__' : selectedPlanId || '__create__';
-  if (pickerIcon) {
-    const selectedPlan = plans.find((plan) => plan.id === selectedPlanId);
-    pickerIcon.className = `fa-solid ${getPlanIcon(view === 'saved' ? 'stars' : selectedPlan?.icon).className}`;
+function renderPlanPicker(picker, pickerIcon, plans, view, selectedPlanId) {
+  if (!picker) return;
+  const trigger = picker.querySelector('[data-plan-picker-trigger]');
+  const label = picker.querySelector('[data-plan-picker-label]');
+  const menu = picker.querySelector('[data-plan-picker-menu]');
+  if (!trigger || !label || !menu) return;
+
+  const selectedValue = view === 'saved' ? '__saved__' : selectedPlanId || '__create__';
+  const selectedPlan = plans.find((plan) => plan.id === selectedPlanId);
+  const selectedLabel = view === 'saved' ? 'Guardados' : selectedPlan?.name || 'Crear un plan nuevo';
+  const selectedIcon = getPlanIcon(view === 'saved' ? 'stars' : selectedPlan?.icon);
+  label.textContent = selectedLabel;
+  trigger.setAttribute('aria-label', `Seleccionar plan: ${selectedLabel}`);
+  if (pickerIcon) pickerIcon.className = `fa-solid ${selectedIcon.className}`;
+  menu.replaceChildren();
+
+  const appendOption = ({ value, text, icon, kind = '' }) => {
+    const option = document.createElement('button');
+    option.type = 'button';
+    option.className = `fiestas-plan-picker-option${kind ? ` is-${kind}` : ''}`;
+    option.dataset.planPickerOption = value;
+    option.setAttribute('role', 'option');
+    option.setAttribute('aria-selected', String(value === selectedValue));
+    option.append(iconNode(`fa-solid ${icon}`), textNode('span', text));
+    if (value === selectedValue) option.append(iconNode('fa-solid fa-check'));
+    menu.append(option);
+  };
+
+  appendOption({ value: '__saved__', text: 'Guardados', icon: getPlanIcon('stars').className });
+  if (plans.length) {
+    const plansLabel = textNode('p', 'Mis planes');
+    plansLabel.className = 'fiestas-plan-picker-group-label';
+    menu.append(plansLabel);
+    plans.forEach((plan) => appendOption({
+      value: plan.id,
+      text: plan.name,
+      icon: getPlanIcon(plan.icon).className
+    }));
   }
+  const divider = document.createElement('div');
+  divider.className = 'fiestas-plan-picker-divider';
+  menu.append(divider);
+  appendOption({ value: '__create__', text: 'Crear un plan nuevo', icon: 'fa-plus', kind: 'action' });
+  appendOption({ value: '__import__', text: 'Importar un plan', icon: 'fa-file-arrow-up', kind: 'action' });
+  menu.hidden = true;
+  trigger.setAttribute('aria-expanded', 'false');
 }
 
 function renderPlanIconPicker(container, selectedIcon, pickerName) {
