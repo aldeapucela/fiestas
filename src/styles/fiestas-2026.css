@@ -4943,14 +4943,16 @@ html.dark .fiestas-community-plan-preview-item {
 }
 
 .fiestas-community-plan-card h2 {
+  display: -webkit-box;
   overflow: hidden;
   color: #1d2430;
   font-size: 0.98rem;
   font-weight: 850;
   letter-spacing: -0.015em;
   line-height: 1.2;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
   text-overflow: ellipsis;
-  white-space: nowrap;
 }
 
 .fiestas-community-plan-card-author,
@@ -4969,19 +4971,26 @@ html.dark .fiestas-community-plan-preview-item {
 }
 
 .fiestas-community-plan-card-actions {
-  display: grid;
-  justify-items: end;
-  gap: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  flex-wrap: wrap;
   margin: 0;
 }
 
 .fiestas-community-plan-text-action {
   display: inline-flex;
+  min-height: 1.95rem;
   align-items: center;
   justify-content: flex-end;
   gap: 0.35rem;
+  border: 1px solid #dce8e6;
+  border-radius: 9999px;
+  background: #fbfdfd;
   color: #0f8f80;
-  font-size: 0.74rem;
+  padding: 0.24rem 0.55rem;
+  font-size: 0.7rem;
   font-weight: 850;
   line-height: 1.2;
   text-align: right;
@@ -4990,14 +4999,15 @@ html.dark .fiestas-community-plan-preview-item {
 }
 
 .fiestas-community-plan-text-action i {
-  font-size: 0.66rem;
+  color: #73579f;
+  font-size: 0.65rem;
 }
 
 .fiestas-community-plan-text-action:hover,
 .fiestas-community-plan-text-action:focus-visible {
+  border-color: #0f9f8d;
+  background: #f0faf8;
   color: #0f766e;
-  text-decoration: underline;
-  text-underline-offset: 0.18em;
 }
 
 .fiestas-community-plan-text-action[data-community-plan-busy="true"] {
@@ -5006,7 +5016,7 @@ html.dark .fiestas-community-plan-preview-item {
 }
 
 .fiestas-community-plan-link-feedback {
-  grid-column: 2 / -1;
+  flex: 1 0 100%;
   color: #0f766e;
   font-size: 0.72rem;
   font-weight: 750;
@@ -5210,9 +5220,9 @@ html.dark .fiestas-community-plan-detail-item {
     height: 2.35rem;
   }
 
-  .fiestas-community-plan-card-actions {
+.fiestas-community-plan-card-actions {
     grid-column: 2;
-    justify-items: start;
+    justify-content: flex-start;
     margin-top: 0.18rem;
   }
 
@@ -5222,7 +5232,23 @@ html.dark .fiestas-community-plan-detail-item {
   }
 
   .fiestas-community-plan-link-feedback {
-    grid-column: 2;
     text-align: left;
   }
+}
+
+html.dark .fiestas-community-plan-text-action {
+  border-color: #3b5a57;
+  background: #182524;
+  color: #78e2d4;
+}
+
+html.dark .fiestas-community-plan-text-action i {
+  color: #c7b4e7;
+}
+
+html.dark .fiestas-community-plan-text-action:hover,
+html.dark .fiestas-community-plan-text-action:focus-visible {
+  border-color: #78e2d4;
+  background: #1d3938;
+  color: #b9f0e8;
 }

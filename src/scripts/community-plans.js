@@ -192,7 +192,7 @@ function normalizeCatalog(value) {
       throw new Error('Invalid community plan catalog metadata');
     }
     ids.add(id);
-    return { id, name, author, url };
+    return { id, name, author, url, icon: communityPlanIcon(id, name) };
   });
 }
 
@@ -221,7 +221,7 @@ function createPlanCard(entry) {
 
   const icon = document.createElement('span');
   icon.className = 'fiestas-community-plan-card-icon';
-  icon.append(createIcon('fa-layer-group'));
+  icon.append(createIcon(entry.icon || 'fa-layer-group'));
   card.append(icon);
 
   const body = document.createElement('div');
@@ -239,7 +239,7 @@ function createPlanCard(entry) {
 
   const actions = document.createElement('div');
   actions.className = 'fiestas-community-plan-card-actions';
-  actions.append(createTextAction(entry.pageUrl, 'Previsualizar', 'fa-arrow-right'));
+  actions.append(createTextAction(entry.pageUrl, 'Previsualizar', 'fa-eye'));
   const addLink = createTextAction(`${entry.pageUrl}?add=1`, 'Añadir a mis planes', 'fa-plus');
   addLink.dataset.communityPlanAdd = '';
   addLink.dataset.communityPlanId = entry.id;
@@ -398,6 +398,13 @@ function uniqueIds(value) {
 
 function cleanText(value, maxLength) {
   return String(value || '').trim().slice(0, maxLength);
+}
+
+function communityPlanIcon(id, name) {
+  const text = `${id} ${name}`.toLocaleLowerCase('es');
+  if (text.includes('cielo') || text.includes('estrella')) return 'fa-star';
+  if (text.includes('plaza') || text.includes('concierto')) return 'fa-landmark';
+  return 'fa-layer-group';
 }
 
 function safeJsonUrl(value) {
