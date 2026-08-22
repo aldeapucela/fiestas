@@ -4428,3 +4428,801 @@ html.dark .fiestas-plan-date.is-disabled strong {
   min-height: 2.3rem;
   padding-inline: 0.55rem;
 }
+
+/* Colecciones públicas de planes vecinales. */
+.fiestas-plan-tools {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+}
+
+.fiestas-plan-community-link {
+  display: inline-flex;
+  min-height: 2.8rem;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid #dfe4ea;
+  border-radius: 9999px;
+  color: #0f8f80;
+  padding: 0.2rem 0.8rem;
+  font-size: 0.76rem;
+  font-weight: 850;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.fiestas-plan-community-link:hover,
+.fiestas-plan-community-link:focus-visible {
+  border-color: #159b8b;
+  background: #e8f7f4;
+  color: #0f766e;
+}
+
+.fiestas-community-plans-screen {
+  gap: 1.15rem;
+}
+
+.fiestas-community-plans-intro {
+  display: grid;
+  gap: 0.45rem;
+  max-width: 38rem;
+  padding: 0.8rem 0 0.35rem;
+}
+
+.fiestas-community-plans-intro .fiestas-plan-kicker {
+  margin: 0;
+}
+
+.fiestas-community-plans-intro h2,
+.fiestas-community-plans-intro p {
+  margin: 0;
+}
+
+.fiestas-community-plans-intro h2 {
+  color: #111827;
+  font-size: clamp(1.7rem, 6vw, 2.35rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.fiestas-community-plans-intro > p:last-child {
+  max-width: 33rem;
+  color: #667085;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.fiestas-community-plans-catalog {
+  min-width: 0;
+}
+
+.fiestas-community-plans-loading,
+.fiestas-community-plans-empty {
+  display: flex;
+  min-height: 12rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  border: 1px dashed #d4dae4;
+  border-radius: 1.25rem;
+  background: #fbfcfd;
+  color: #667085;
+  padding: 1.35rem;
+}
+
+.fiestas-community-plans-loading {
+  min-height: 7rem;
+}
+
+.fiestas-community-plans-loading i {
+  color: #159b8b;
+  animation: fiestas-community-plans-spin 0.9s linear infinite;
+}
+
+.fiestas-community-plans-empty > i {
+  flex: 0 0 auto;
+  color: #73579f;
+  font-size: 1.6rem;
+}
+
+.fiestas-community-plans-empty > div {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.fiestas-community-plans-empty .fiestas-plan-kicker {
+  margin: 0;
+}
+
+.fiestas-community-plans-empty h2,
+.fiestas-community-plans-empty p {
+  margin: 0;
+}
+
+.fiestas-community-plans-empty h2 {
+  color: #1d2430;
+  font-size: 1.1rem;
+  font-weight: 900;
+}
+
+.fiestas-community-plans-empty p {
+  line-height: 1.45;
+}
+
+.fiestas-community-plans-empty.is-error > i {
+  color: #b42318;
+}
+
+.fiestas-community-plans-list {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.fiestas-community-plan-card {
+  display: grid;
+  gap: 0.42rem;
+  border: 1px solid #e1e5ec;
+  border-radius: 1.1rem;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 0.65rem 1.6rem rgba(31, 41, 55, 0.06);
+}
+
+.fiestas-community-plan-card-kicker {
+  margin: 0;
+  color: #73579f;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.11em;
+}
+
+.fiestas-community-plan-card h2,
+.fiestas-community-plan-card p {
+  margin: 0;
+}
+
+.fiestas-community-plan-card h2 {
+  color: #1d2430;
+  font-size: 1.16rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.fiestas-community-plan-card-author {
+  color: #3c424b;
+  font-size: 0.86rem;
+  font-weight: 750;
+}
+
+.fiestas-community-plan-card-meta,
+.fiestas-community-plan-preview-summary {
+  color: #667085;
+  font-size: 0.8rem;
+}
+
+.fiestas-community-plan-card-actions,
+.fiestas-community-plan-dialog-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 0.45rem;
+}
+
+.fiestas-community-plan-card-actions .fiestas-plan-action,
+.fiestas-community-plan-dialog-actions .fiestas-plan-action {
+  min-height: 2.45rem;
+  padding-inline: 0.75rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+}
+
+.fiestas-community-plan-dialog {
+  position: fixed;
+  z-index: 70;
+  inset: 0;
+  display: grid;
+  place-items: end center;
+  padding: 0;
+}
+
+.fiestas-community-plan-dialog[hidden] {
+  display: none;
+}
+
+.fiestas-community-plan-dialog-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(17, 24, 39, 0.5);
+}
+
+.fiestas-community-plan-dialog-panel {
+  position: relative;
+  display: grid;
+  width: min(100%, 38rem);
+  max-height: min(84vh, 48rem);
+  gap: 0.85rem;
+  overflow: auto;
+  border-radius: 1.25rem 1.25rem 0 0;
+  background: #fff;
+  padding: 1.15rem 1rem calc(env(safe-area-inset-bottom) + 1rem);
+  box-shadow: 0 -1rem 3rem rgba(17, 24, 39, 0.18);
+}
+
+.fiestas-community-plan-dialog-head {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.fiestas-community-plan-dialog-head h2,
+.fiestas-community-plan-dialog-head p {
+  margin: 0;
+}
+
+.fiestas-community-plan-dialog-head h2 {
+  color: #1d2430;
+  font-size: 1.35rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.fiestas-community-plan-dialog-head > div > p:last-child {
+  margin-top: 0.3rem;
+  color: #667085;
+  font-size: 0.84rem;
+}
+
+.fiestas-community-plan-dialog-close {
+  display: inline-grid;
+  width: 2.25rem;
+  height: 2.25rem;
+  place-items: center;
+  border: 1px solid #dfe4ea;
+  border-radius: 50%;
+  background: #fff;
+  color: #475467;
+}
+
+.fiestas-community-plan-preview-list {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.65rem;
+}
+
+.fiestas-community-plan-preview-item {
+  display: grid;
+  grid-template-columns: 3.4rem minmax(0, 1fr);
+  gap: 0.65rem;
+  border-bottom: 1px solid #edf0f3;
+  padding: 0.45rem 0;
+}
+
+.fiestas-community-plan-preview-item time {
+  color: #0f8f80;
+  font-size: 0.8rem;
+  font-weight: 900;
+}
+
+.fiestas-community-plan-preview-item div {
+  display: grid;
+  gap: 0.15rem;
+}
+
+.fiestas-community-plan-preview-item strong {
+  color: #1d2430;
+  font-size: 0.86rem;
+}
+
+.fiestas-community-plan-preview-item span,
+.fiestas-community-plan-preview-empty {
+  color: #667085;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.fiestas-community-plan-preview-warning {
+  margin: 0.65rem 0 0;
+  border-radius: 0.65rem;
+  background: #fff7e6;
+  color: #925f00;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.fiestas-community-plan-dialog-feedback {
+  margin: 0;
+  border-radius: 0.65rem;
+  background: #e8f7f4;
+  color: #0f766e;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.fiestas-community-plan-dialog-feedback[hidden] {
+  display: none;
+}
+
+@keyframes fiestas-community-plans-spin {
+  to { transform: rotate(360deg); }
+}
+
+html.dark .fiestas-plan-community-link,
+html.dark .fiestas-community-plan-dialog-close {
+  border-color: #313743;
+  background: #1a1f28;
+  color: #78e2d4;
+}
+
+html.dark .fiestas-plan-community-link:hover,
+html.dark .fiestas-plan-community-link:focus-visible {
+  background: #1d3938;
+}
+
+html.dark .fiestas-community-plans-intro h2,
+html.dark .fiestas-community-plans-empty h2,
+html.dark .fiestas-community-plan-card h2,
+html.dark .fiestas-community-plan-dialog-head h2,
+html.dark .fiestas-community-plan-preview-item strong {
+  color: #f8fafc;
+}
+
+html.dark .fiestas-community-plans-intro > p:last-child,
+html.dark .fiestas-community-plans-empty,
+html.dark .fiestas-community-plan-card-author,
+html.dark .fiestas-community-plan-card-meta,
+html.dark .fiestas-community-plan-preview-summary,
+html.dark .fiestas-community-plan-dialog-head > div > p:last-child,
+html.dark .fiestas-community-plan-preview-item span,
+html.dark .fiestas-community-plan-preview-empty {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-community-plans-loading,
+html.dark .fiestas-community-plans-empty,
+html.dark .fiestas-community-plan-card,
+html.dark .fiestas-community-plan-dialog-panel {
+  border-color: #313743;
+  background: #1a1f28;
+}
+
+html.dark .fiestas-community-plan-preview-item {
+  border-color: #313743;
+}
+
+@media (min-width: 720px) {
+  .fiestas-community-plans-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .fiestas-community-plan-dialog {
+    place-items: center;
+    padding: 1rem;
+  }
+
+  .fiestas-community-plan-dialog-panel {
+    border-radius: 1.25rem;
+    padding-bottom: 1.15rem;
+  }
+}
+
+/* Planes vecinales: directorio editorial ligero y ficha estática por colección. */
+.fiestas-community-plans-screen,
+.fiestas-community-plan-screen {
+  gap: 1rem;
+}
+
+.fiestas-community-plans-screen .fiestas-plan-topbar,
+.fiestas-community-plan-screen .fiestas-plan-topbar {
+  margin-bottom: 0.25rem;
+}
+
+.fiestas-community-plans-screen .fiestas-plan-topbar h1,
+.fiestas-community-plan-screen .fiestas-plan-topbar h1 {
+  font-size: 1.45rem;
+}
+
+.fiestas-community-plans-intro {
+  gap: 0.55rem;
+  max-width: none;
+  border-radius: 1.15rem;
+  background: #f3eff7;
+  padding: 1.05rem 1.05rem 1.15rem;
+}
+
+.fiestas-community-plans-intro .fiestas-plan-kicker {
+  color: #73579f;
+  font-size: 0.66rem;
+}
+
+.fiestas-community-plans-intro h2 {
+  font-size: clamp(1.65rem, 7vw, 2.15rem);
+  line-height: 1.08;
+}
+
+.fiestas-community-plans-intro > p:last-child {
+  max-width: 34rem;
+  color: #667085;
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
+
+.fiestas-community-plans-catalog {
+  border-top: 1px solid #e3e6ec;
+}
+
+.fiestas-community-plans-loading,
+.fiestas-community-plans-empty {
+  min-height: 7rem;
+  justify-content: flex-start;
+  border: 0;
+  border-bottom: 1px solid #e3e6ec;
+  border-radius: 0;
+  background: transparent;
+  padding: 1.15rem 0;
+}
+
+.fiestas-community-plans-loading p,
+.fiestas-community-plans-empty p {
+  margin: 0;
+  color: #667085;
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.fiestas-community-plans-empty > i {
+  display: inline-grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: #f3eff7;
+  color: #73579f;
+  font-size: 1rem;
+}
+
+.fiestas-community-plans-empty > div {
+  gap: 0.25rem;
+}
+
+.fiestas-community-plans-empty .fiestas-plan-kicker {
+  margin: 0;
+  font-size: 0.62rem;
+}
+
+.fiestas-community-plans-empty h2 {
+  font-size: 1rem;
+}
+
+.fiestas-community-plans-list {
+  gap: 0;
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.fiestas-community-plan-card {
+  display: grid;
+  grid-template-columns: 2.8rem minmax(0, 1fr) minmax(7.3rem, auto);
+  gap: 0.75rem;
+  align-items: center;
+  border: 0;
+  border-bottom: 1px solid #e3e6ec;
+  border-radius: 0;
+  background: transparent;
+  padding: 0.95rem 0;
+  box-shadow: none;
+}
+
+.fiestas-community-plan-card-icon {
+  display: inline-grid;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #f3eff7;
+  color: #73579f;
+  font-size: 0.95rem;
+}
+
+.fiestas-community-plan-card-body {
+  display: grid;
+  min-width: 0;
+  gap: 0.16rem;
+}
+
+.fiestas-community-plan-card h2,
+.fiestas-community-plan-card p {
+  margin: 0;
+}
+
+.fiestas-community-plan-card h2 {
+  overflow: hidden;
+  color: #1d2430;
+  font-size: 0.98rem;
+  font-weight: 850;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fiestas-community-plan-card-author,
+.fiestas-community-plan-card-meta {
+  overflow: hidden;
+  color: #667085;
+  font-size: 0.75rem;
+  line-height: 1.35;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fiestas-community-plan-card-meta {
+  color: #73579f;
+  font-weight: 750;
+}
+
+.fiestas-community-plan-card-actions {
+  display: grid;
+  justify-items: end;
+  gap: 0.25rem;
+  margin: 0;
+}
+
+.fiestas-community-plan-text-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem;
+  color: #0f8f80;
+  font-size: 0.74rem;
+  font-weight: 850;
+  line-height: 1.2;
+  text-align: right;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.fiestas-community-plan-text-action i {
+  font-size: 0.66rem;
+}
+
+.fiestas-community-plan-text-action:hover,
+.fiestas-community-plan-text-action:focus-visible {
+  color: #0f766e;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.fiestas-community-plan-text-action[data-community-plan-busy="true"] {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.fiestas-community-plan-link-feedback {
+  grid-column: 2 / -1;
+  color: #0f766e;
+  font-size: 0.72rem;
+  font-weight: 750;
+  text-align: right;
+}
+
+.fiestas-community-plan-detail {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.fiestas-community-plan-detail-head {
+  display: grid;
+  gap: 0.3rem;
+}
+
+.fiestas-community-plan-detail-head .fiestas-plan-kicker {
+  margin: 0;
+}
+
+.fiestas-community-plan-detail-head h2 {
+  margin: 0;
+  color: #1d2430;
+  font-size: clamp(1.55rem, 7vw, 2.25rem);
+  font-weight: 900;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+.fiestas-community-plan-detail-head > p:not(.fiestas-plan-kicker):not(.fiestas-community-plan-detail-summary) {
+  margin: 0;
+  color: #667085;
+  font-size: 0.83rem;
+}
+
+.fiestas-community-plan-detail-summary {
+  margin: 0.35rem 0 0;
+  color: #0f8f80;
+  font-size: 0.86rem;
+  font-weight: 850;
+}
+
+.fiestas-community-plan-detail-list {
+  display: grid;
+  border-top: 1px solid #e3e6ec;
+}
+
+.fiestas-community-plan-detail-item {
+  display: grid;
+  grid-template-columns: 3.6rem minmax(0, 1fr);
+  gap: 0.7rem;
+  border-bottom: 1px solid #e3e6ec;
+  padding: 0.85rem 0;
+}
+
+.fiestas-community-plan-detail-item time {
+  color: #0f8f80;
+  font-size: 0.86rem;
+  font-weight: 900;
+}
+
+.fiestas-community-plan-detail-item-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.18rem;
+}
+
+.fiestas-community-plan-detail-item-copy strong,
+.fiestas-community-plan-detail-item-copy a {
+  overflow: hidden;
+  color: #1d2430;
+  font-size: 0.88rem;
+  font-weight: 850;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  text-decoration: none;
+}
+
+.fiestas-community-plan-detail-item-copy a:hover,
+.fiestas-community-plan-detail-item-copy a:focus-visible {
+  color: #0f8f80;
+  text-decoration: underline;
+}
+
+.fiestas-community-plan-detail-item-copy span,
+.fiestas-community-plan-detail-empty {
+  color: #667085;
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+.fiestas-community-plan-detail-warning,
+.fiestas-community-plan-status {
+  margin: 0;
+  border-radius: 0.75rem;
+  background: #fff5df;
+  color: #925f00;
+  padding: 0.7rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.4;
+}
+
+.fiestas-community-plan-status.is-success {
+  background: #e8f7f4;
+  color: #0f766e;
+}
+
+.fiestas-community-plan-status.is-error {
+  background: #fff0ee;
+  color: #b42318;
+}
+
+.fiestas-community-plan-detail-actions {
+  display: grid;
+  gap: 0.7rem;
+  padding-top: 0.2rem;
+}
+
+.fiestas-community-plan-add {
+  display: inline-flex;
+  min-height: 2.9rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border-radius: 9999px;
+  background: #0f9f8d;
+  color: #fff;
+  font-size: 0.88rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.fiestas-community-plan-add:hover,
+.fiestas-community-plan-add:focus-visible {
+  background: #0f766e;
+}
+
+.fiestas-community-plan-add[data-community-plan-busy="true"] {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.fiestas-community-plan-detail-back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  color: #0f8f80;
+  font-size: 0.8rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.fiestas-community-plan-detail-back:hover,
+.fiestas-community-plan-detail-back:focus-visible {
+  text-decoration: underline;
+}
+
+html.dark .fiestas-community-plans-intro,
+html.dark .fiestas-community-plan-card-icon,
+html.dark .fiestas-community-plans-empty > i {
+  background: #292332;
+}
+
+html.dark .fiestas-community-plans-intro h2,
+html.dark .fiestas-community-plan-card h2,
+html.dark .fiestas-community-plan-detail-head h2,
+html.dark .fiestas-community-plan-detail-item-copy strong,
+html.dark .fiestas-community-plan-detail-item-copy a {
+  color: #f8fafc;
+}
+
+html.dark .fiestas-community-plans-intro > p:last-child,
+html.dark .fiestas-community-plan-card-author,
+html.dark .fiestas-community-plan-detail-head > p:not(.fiestas-plan-kicker):not(.fiestas-community-plan-detail-summary),
+html.dark .fiestas-community-plan-detail-item-copy span,
+html.dark .fiestas-community-plan-detail-empty,
+html.dark .fiestas-community-plans-loading p,
+html.dark .fiestas-community-plans-empty p {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-community-plans-catalog,
+html.dark .fiestas-community-plans-loading,
+html.dark .fiestas-community-plans-empty,
+html.dark .fiestas-community-plan-card,
+html.dark .fiestas-community-plan-detail-list,
+html.dark .fiestas-community-plan-detail-item {
+  border-color: #313743;
+}
+
+@media (max-width: 520px) {
+  .fiestas-community-plan-card {
+    grid-template-columns: 2.55rem minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .fiestas-community-plan-card-icon {
+    width: 2.35rem;
+    height: 2.35rem;
+  }
+
+  .fiestas-community-plan-card-actions {
+    grid-column: 2;
+    justify-items: start;
+    margin-top: 0.18rem;
+  }
+
+  .fiestas-community-plan-text-action {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .fiestas-community-plan-link-feedback {
+    grid-column: 2;
+    text-align: left;
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "festival": "valladolid-2026",
+  "updatedAt": "2026-08-22T00:00:00Z",
+  "plans": [
+    {
+      "id": "cielo-y-estrellas",
+      "name": "Cielo y estrellas",
+      "author": "Aldea Pucela",
+      "url": "/data/community-plans/cielo-y-estrellas.fiestas-plan.json"
+    },
+    {
+      "id": "plaza-mayor-2026",
+      "name": "La Plaza Mayor, de tarde a noche",
+      "author": "Aldea Pucela",
+      "url": "/data/community-plans/plaza-mayor-2026.fiestas-plan.json"
+    }
+  ]
+}

@@ -77,7 +77,7 @@ async function compileCss(cssVersionSeed) {
 async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'fiestas-2026.js', 'menu-drawer.js', 'pwa.js', 'subscribe.js', 'theme.js'];
+  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'fiestas-2026.js', 'menu-drawer.js', 'pwa.js', 'subscribe.js', 'theme.js'];
   for (const file of files) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
@@ -127,6 +127,69 @@ async function copyStaticAssets(assetVersionSeed) {
   const sourceDir = path.join(root, 'src', 'assets');
   try {
     await copyAssetDir(sourceDir, sourceDir, assetVersionSeed);
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+}
+
+async function copyCommunityPlansData(assetVersionSeed) {
+  const sourcePath = path.join(root, 'src', 'data', 'community-plans.json');
+  const raw = await fs.readFile(sourcePath, 'utf8');
+  const value = JSON.parse(raw);
+  if (value?.schemaVersion !== 1 || value?.festival !== 'valladolid-2026' || !Array.isArray(value?.plans)) {
+    throw new Error('The community plans catalog must use schemaVersion 1 and festival valladolid-2026.');
+  }
+  const ids = new Set();
+  const plans = value.plans.map((entry, index) => {
+    if (!entry || typeof entry !== 'object') throw new Error(`Community plan ${index + 1} must be an object.`);
+    const id = String(entry.id || '').trim();
+    const name = String(entry.name || '').trim();
+    const author = String(entry.author || '').trim();
+    const url = normalizeCommunityPlanUrl(entry.url);
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) throw new Error(`Community plan ${index + 1} has an invalid stable id.`);
+    if (ids.has(id)) throw new Error(`Community plan id "${id}" is duplicated.`);
+    if (!name || name.length > 80) throw new Error(`Community plan "${id}" must have a name between 1 and 80 characters.`);
+    if (!author || author.length > 80) throw new Error(`Community plan "${id}" must have an author between 1 and 80 characters.`);
+    if (!url) throw new Error(`Community plan "${id}" must have a valid JSON url.`);
+    ids.add(id);
+    return { id, name, author, url };
+  });
+  const content = JSON.stringify({
+    schemaVersion: 1,
+    festival: 'valladolid-2026',
+    ...(value.updatedAt ? { updatedAt: String(value.updatedAt) } : {}),
+    plans
+  }, null, 2) + '\n';
+  await writeFile('data/planes.json', content);
+  assetVersionSeed.push(['data/planes.json', createHash('sha256').update(content).digest('hex')]);
+  return plans;
+}
+
+function normalizeCommunityPlanUrl(value) {
+  const text = String(value || '').trim();
+  if (!text) return '';
+  if (text.startsWith('/') && !text.startsWith('/data/')) return '';
+  try {
+    const url = new URL(text, publicBaseUrl);
+    if (!['http:', 'https:'].includes(url.protocol) || !url.pathname.toLowerCase().endsWith('.fiestas-plan.json')) return '';
+    return text.startsWith('/') ? url.pathname + url.search : url.href;
+  } catch (_) {
+    return '';
+  }
+}
+
+async function copyCommunityPlanFiles(assetVersionSeed) {
+  const sourceDir = path.join(root, 'src', 'data', 'community-plans');
+  try {
+    const entries = await fs.readdir(sourceDir, { withFileTypes: true });
+    for (const entry of entries) {
+      if (!entry.isFile() || !entry.name.endsWith('.json')) continue;
+      const sourcePath = path.join(sourceDir, entry.name);
+      const content = await fs.readFile(sourcePath);
+      const relPath = 'data/community-plans/' + entry.name;
+      await writeFile(relPath, content);
+      assetVersionSeed.push([relPath, createHash('sha256').update(content).digest('hex')]);
+    }
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
@@ -401,6 +464,7 @@ function pageContext({ assetVersion, cssVersion, jsVersion }) {
     activeNav: 'fiestas-2026',
     pageCss: 'fiestas-2026.' + cssVersion + '.css',
     pageJs: 'fiestas-2026.' + jsVersion + '.js',
+    communityPlansUrl: '/data/planes.json',
     assetVersion,
     cssVersion,
     jsVersion,
@@ -422,6 +486,8 @@ async function build() {
   await compileCss(cssVersionSeed);
   const jsFiles = await copyJs(jsVersionSeed);
   await copyStaticAssets(assetVersionSeed);
+  const communityPlans = await copyCommunityPlansData(assetVersionSeed);
+  await copyCommunityPlanFiles(assetVersionSeed);
   const pwaFiles = await loadPwaFiles();
   const cssVersion = contentVersion(cssVersionSeed);
   const jsVersion = contentVersion(jsVersionSeed);
@@ -456,7 +522,8 @@ async function build() {
     fiestasEventsJson: JSON.stringify(events),
     fiestasDates: summary.dates,
     fiestasTypes: summary.types,
-    fiestasAreas: summary.areas
+    fiestasAreas: summary.areas,
+    communityPlans
   };
 
   await writeFile('index.html', render('fiestas-2026.njk', homeContext));
@@ -495,6 +562,40 @@ async function build() {
     }
   }));
 
+  await writeFile('planes/index.html', render('fiestas-2026-community-plans.njk', {
+    ...homeContext,
+    title: 'Planes vecinales | Fiestas Valladolid 2026',
+    canonicalUrl: publicBaseUrl + '/planes/',
+    social: {
+      ...homeContext.social,
+      title: 'Planes vecinales | Fiestas Valladolid 2026',
+      description: 'Descubre colecciones de actividades creadas por vecinos para las Fiestas de Valladolid 2026.',
+      url: publicBaseUrl + '/planes/'
+    }
+  }));
+
+  for (const communityPlan of communityPlans) {
+    const planPath = `/planes/${communityPlan.id}/`;
+    const planTitle = `${communityPlan.name} | Planes vecinales | Fiestas Valladolid 2026`;
+    const planDescription = `${communityPlan.name}, creado por ${communityPlan.author}, para disfrutar las Fiestas de Valladolid 2026.`;
+    await writeFile(`planes/${communityPlan.id}/index.html`, render('fiestas-2026-community-plan.njk', {
+      ...homeContext,
+      title: planTitle,
+      meta: { description: planDescription },
+      canonicalUrl: publicBaseUrl + planPath,
+      social: {
+        ...homeContext.social,
+        title: planTitle,
+        description: planDescription,
+        url: publicBaseUrl + planPath
+      },
+      communityPlan: {
+        ...communityPlan,
+        pageUrl: publicBaseUrl + planPath
+      }
+    }));
+  }
+
   for (const event of events) {
     await writeFile('e/' + event.id + '/' + event.slug + '/index.html', render('fiestas-2026-detail.njk', {
       ...pageContext(versions),
@@ -517,7 +618,7 @@ async function build() {
     }));
   }
 
-  const urls = ['/', '/mapa/', ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/planes/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

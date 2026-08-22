@@ -19,6 +19,7 @@ import {
 import { readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
 import { createIcsFile, shareFileOrDownload } from './plan-export.js';
 import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
+import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './community-plans.js';
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
@@ -137,6 +138,8 @@ function init() {
   }
 
   if (!els.agenda) {
+    setupCommunityPlansPage(window.__FIESTAS_2026_EVENTS__ || []);
+    setupCommunityPlanDetailPage(window.__FIESTAS_2026_EVENTS__ || []);
     setupPlansPage(window.__FIESTAS_2026_EVENTS__ || []);
     setupPlanImportPage(window.__FIESTAS_2026_EVENTS__ || []);
     return;

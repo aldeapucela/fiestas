@@ -23,4 +23,12 @@
 - The decorative illustration uses the repository asset available for the plan surface; event cards and overlap notices remain data-driven.
 - Desktop and dark-mode rules are included without changing the mobile composition.
 
+## Planes vecinales
+
+- `/planes/`: cabecera compacta, enlace de vuelta, introducción lavanda y listado editorial con separadores ligeros.
+- `/planes/<id>/`: ficha estática con nombre, autor, resumen, actividades ordenadas, aviso de identificadores desconocidos y acciones de volver/añadir.
+- El catálogo vacío se muestra como placeholder sin tarjetas sobredimensionadas.
+- Los enlaces `Previsualizar` y `Añadir a mis planes` son accesibles y mantienen una jerarquía visual ligera.
+- Se revisó la salida en el navegador integrado y en modo oscuro mediante los estilos específicos de la aplicación.
+
 Final result: passed

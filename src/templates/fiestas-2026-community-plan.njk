@@ -1,0 +1,81 @@
+{% extends "layout.njk" %}
+
+{% block bodyClass %}fiestas-page fiestas-community-plan-page{% endblock %}
+{% block footerClass %} site-footer--fiestas{% endblock %}
+
+{% block body %}
+<main class="fiestas-app fiestas-plan-app fiestas-community-plan-app"
+  data-community-plan-page
+  data-community-plan-id="{{ communityPlan.id }}"
+  data-community-plan-name="{{ communityPlan.name }}"
+  data-community-plan-author="{{ communityPlan.author }}"
+  data-community-plan-json-url="{{ communityPlan.url }}"
+  data-community-plan-page-url="{{ communityPlan.pageUrl }}">
+  <script>
+    window.__FIESTAS_2026_EVENTS__ = {{ fiestasEventsJson | safe }};
+  </script>
+
+  <section class="fiestas-plan-screen fiestas-community-plan-screen">
+    <header class="fiestas-plan-page-head">
+      <div class="fiestas-plan-topbar">
+        <a class="fiestas-plan-logo" href="/planes/" aria-label="Volver a Planes vecinales">
+          <img src="/assets/favicon.png" alt="" />
+        </a>
+        <h1>Vista previa</h1>
+        <span class="fiestas-plan-header-share" aria-hidden="true"></span>
+      </div>
+      <a class="fiestas-plan-import-back" href="/planes/">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span>Volver a Planes vecinales</span>
+      </a>
+    </header>
+
+    <section class="fiestas-community-plan-detail" aria-labelledby="community-plan-detail-title">
+      <div class="fiestas-community-plan-detail-status" data-community-plan-detail-status aria-live="polite" hidden></div>
+      <div data-community-plan-detail>
+        <div class="fiestas-community-plans-loading">
+          <i class="fa-solid fa-spinner" aria-hidden="true"></i>
+          <p>Cargando plan…</p>
+        </div>
+      </div>
+      <div class="fiestas-community-plan-detail-actions">
+        <a class="fiestas-community-plan-add" data-community-plan-add href="?add=1">
+          <i class="fa-solid fa-plus" aria-hidden="true"></i>
+          <span>Añadir a mis planes</span>
+        </a>
+        <a class="fiestas-community-plan-detail-back" href="/planes/">
+          <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+          <span>Volver a Planes vecinales</span>
+        </a>
+      </div>
+    </section>
+  </section>
+</main>
+
+<nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+  <a class="fiestas-bottom-link" href="/">
+    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+    <span>Agenda</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/mapa/">
+    <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.35" />
+    </svg>
+    <span>Mapa</span>
+  </a>
+  <a class="fiestas-bottom-link is-active" href="/plan/" aria-current="page">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span>Mi plan</span>
+  </a>
+  <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
+    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+    <span>Más</span>
+    <span class="fiestas-hint-dot" data-menu-hint-dot hidden aria-hidden="true"></span>
+  </button>
+</nav>
+
+{% include "partials/menu-drawer.njk" %}
+{% include "partials/subscribe-modal.njk" %}
+{% include "partials/location-modal.njk" %}
+{% endblock %}

@@ -14,6 +14,7 @@ El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe 
 - `/e/<id>/<slug>/`: detalle de cada evento; el ID numérico identifica la actividad y el slug es decorativo.
 - `/plan/`: guardados y planes personalizados.
 - `/plan/importar/`: importación de planes compartidos.
+- `/planes/`: catálogo público de planes vecinales leído desde `/data/planes.json`.
 - `/assets/css/fiestas-2026.css`: estilos compilados con Tailwind, PostCSS y Autoprefixer.
 - `/assets/js/fiestas-2026.js`: comportamiento de agenda, mapa, filtros y favoritos.
 - `/assets/js/plans-page.js`, `/assets/js/plan-storage.js`, `/assets/js/plan-export.js`: planes locales, selector de actividades, importación y exportación.
@@ -23,7 +24,7 @@ El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe 
 - `/assets/social/`: portada social en modo claro, generada a partir de la referencia de Eventos de Aldea Pucela, y miniaturas cuadradas de 512×512 por categoría con un icono morado pequeño sobre fondo blanco.
 - `/sitemap.xml` y `/robots.txt`: metadatos de rastreo.
 
-El sitemap contiene únicamente rutas públicas canónicas: portada, mapa y fichas `/e/<id>/<slug>/`. Las páginas locales `/plan/` y `/plan/importar/` llevan `noindex,follow` y no se incluyen en el sitemap.
+El sitemap contiene únicamente rutas públicas canónicas: portada, mapa, `/planes/` y fichas `/e/<id>/<slug>/`. Las páginas locales `/plan/` y `/plan/importar/` llevan `noindex,follow` y no se incluyen en el sitemap.
 
 ## Estructura
 
@@ -91,7 +92,7 @@ El build:
 6. Valida los IDs numéricos, normaliza, ordena y enriquece cada evento con icono, slug, URL local, URL canónica, texto de compartir, etiquetas de entrada y enlaces de mapa.
 7. Conserva los metadatos de procedencia de `coordinates` cuando existen.
 8. Renderiza la agenda y una pagina de detalle por evento con Nunjucks.
-9. Renderiza `/plan/` y `/plan/importar/`.
+9. Renderiza `/plan/`, `/plan/importar/` y `/planes/`, además del catálogo remoto de planes vecinales en `/data/planes.json`.
 10. Genera el manifest, el service worker versionado y la página offline.
 11. Escribe `sitemap.xml` y `robots.txt`.
 
@@ -246,6 +247,27 @@ Cada tarjeta tiene un boton de guardado. Los favoritos se almacenan en `localSto
 `/plan/` muestra por defecto `Guardados` como un plan virtual con todos los favoritos, contador y filtro de fechas. El selector permite desplegar los planes personalizados y crear uno nuevo. Los favoritos se conservan en `fiestasPucela:favorites` y los planes personalizados versionados en `fiestasPucela:plans`. Las tarjetas mantienen el marcador; las acciones adicionales se encuentran en el botón de tres puntos y permiten añadir una actividad a uno o varios planes. Los planes se pueden renombrar, exportar, compartir como `.fiestas-plan.json`, añadir al calendario y eliminar. Los archivos usan `{ schemaVersion: 1, festival, plans: [...] }` y la importación también acepta el formato anterior de un único plan. La importación se previsualiza con el número de planes, permite expandir el listado y descarta identificadores de actividades desconocidos antes de guardar.
 
 La barra inferior de la aplicación enlaza siempre a `/plan/`; no existe una ruta local `/favoritos/`.
+
+`/planes/` está preparada para mostrar colecciones públicas seleccionadas por la comunidad. El build publica el catálogo remoto inicial en `/data/planes.json`, con este contrato:
+
+```json
+{
+  "schemaVersion": 1,
+  "festival": "valladolid-2026",
+  "plans": [
+    {
+      "id": "plan-rumbero",
+      "name": "Plan rumbero",
+      "author": "Justin",
+      "url": "https://cdn.example.org/plan-rumbero.fiestas-plan.json"
+    }
+  ]
+}
+```
+
+`url` apunta únicamente al archivo `.fiestas-plan.json` exportado por esta web. El build genera la página estable `/planes/plan-rumbero/` a partir de `id`; el nombre y el autor pueden cambiar sin romper esa dirección. La pantalla valida el catálogo y el archivo remoto, permite previsualizar las actividades y añadir una copia local con nombre alternativo si ya existe. El catálogo vacío actual es un placeholder.
+
+Para publicar archivos en el mismo sitio se pueden colocar los JSON en `src/data/community-plans/` y referenciarlos como `/data/community-plans/nombre.fiestas-plan.json`; también se aceptan URLs HTTPS externas con CORS. El archivo no se incrusta en el catálogo ni se ejecuta como HTML.
 
 ## Mapa
 

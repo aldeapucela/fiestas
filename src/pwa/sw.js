@@ -3,6 +3,7 @@ const APP_SHELL = [
   '/',
   '/mapa/',
   '/plan/',
+  '/planes/',
   '/offline.html',
   '/assets/manifest.webmanifest',
   '/assets/icons/fiestas-192.png',
@@ -14,6 +15,7 @@ const APP_SHELL = [
   '/assets/js/plan-storage.__JS_VERSION__.js',
   '/assets/js/plan-export.__JS_VERSION__.js',
   '/assets/js/plans-page.__JS_VERSION__.js',
+  '/assets/js/community-plans.__JS_VERSION__.js',
   '/assets/js/fiestas-2026.__JS_VERSION__.js',
   '/assets/js/menu-drawer.__JS_VERSION__.js',
   '/assets/js/pwa.__JS_VERSION__.js',
@@ -46,6 +48,11 @@ self.addEventListener('fetch', (event) => {
   if (url.origin !== self.location.origin) return;
 
   if (request.mode === 'navigate') {
+    event.respondWith(networkFirst(request));
+    return;
+  }
+
+  if (url.pathname === '/data/planes.json' || url.pathname.startsWith('/data/community-plans/')) {
     event.respondWith(networkFirst(request));
     return;
   }
