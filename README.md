@@ -331,6 +331,10 @@ El tema claro/oscuro se controla desde `src/scripts/theme.js` y se guarda en `lo
 
 ![Tema oscuro](docs/screenshots/09-tema-oscuro.png)
 
+## Analítica
+
+La integración de Matomo, su taxonomía de eventos, configuración y límites de privacidad están documentados en [docs/matomo.md](docs/matomo.md).
+
 ## Auditoria Y Enriquecimiento De Ubicaciones
 
 El repositorio incluye un script manual para revisar eventos sin lugar, zona o coordenadas:

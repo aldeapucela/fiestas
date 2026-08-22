@@ -1878,6 +1878,22 @@
     font: inherit;
   }
 
+  .fiestas-detail-copy-button {
+    margin-top: 0.7rem;
+    border: 0;
+    border-radius: 0.65rem;
+    background: #0f9f8d;
+    color: #fff;
+    padding: 0.7rem 0.9rem;
+    font: inherit;
+    font-weight: 800;
+    cursor: pointer;
+  }
+
+  .fiestas-detail-copy-button:hover {
+    background: #0b8879;
+  }
+
   .fiestas-community-card {
     display: grid;
     gap: 0.9rem;

@@ -77,7 +77,7 @@
         <i class="fa-solid fa-ticket" aria-hidden="true"></i>
         <span>
           {% if event.ticket and event.ticket.url %}
-          <a class="fiestas-detail-fact-link" href="{{ event.ticket.url }}" target="_blank" rel="noopener noreferrer">
+          <a class="fiestas-detail-fact-link" href="{{ event.ticket.url }}" target="_blank" rel="noopener noreferrer" data-fiestas-analytics-action="tickets">
             <span>{{ event.ticketLabel }}{% if event.ticketDetail %} · {{ event.ticketDetail }}{% endif %}</span>
             <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
@@ -118,6 +118,7 @@
           target="_blank"
           rel="noopener noreferrer"
           data-fiestas-directions
+          data-fiestas-analytics-action="directions"
           data-lat="{{ event.coordinates.lat }}"
           data-lng="{{ event.coordinates.lng }}"
           data-title="{{ event.location or event.title }}"
@@ -126,7 +127,7 @@
           <span>Cómo llegar</span>
         </a>
         {% elif event.osmUrl %}
-        <a class="fiestas-detail-map-action" href="{{ event.osmUrl }}" target="_blank" rel="noopener noreferrer">
+        <a class="fiestas-detail-map-action" href="{{ event.osmUrl }}" target="_blank" rel="noopener noreferrer" data-fiestas-analytics-action="location">
           <i class="fiestas-detail-directions-icon fa-solid fa-location-arrow" aria-hidden="true"></i>
           <span>Abrir ubicación</span>
         </a>
@@ -229,6 +230,7 @@
         <span>Enlace de la actividad</span>
         <input type="text" value="{{ event.canonicalUrl }}" readonly data-fiestas-share-url-input />
       </label>
+      <button class="fiestas-detail-copy-button" type="button" data-fiestas-copy-share>Copiar enlace</button>
     </div>
   </article>
 

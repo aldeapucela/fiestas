@@ -6,11 +6,14 @@ import {
   trackActivityShared,
   trackActivityViewed,
   trackDateSelected,
+  trackDirectionsOpened,
+  trackExternalLinkOpened,
   trackFavoriteChanged,
   trackFilterApplied,
   trackMapMarkerSelected,
   trackMapOpened,
-  trackSearchResults
+  trackSearchResults,
+  trackTicketsOpened
 } from './analytics.js';
 import { readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
 import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
@@ -30,6 +33,7 @@ let initialDate = null;
 let filterBackdrop = null;
 let filterScrollY = 0;
 let isApplyingUrlState = false;
+let lastTrackedSearchKey = '';
 let siteShareFeedbackTimer = null;
 
 const state = {
@@ -105,6 +109,7 @@ const els = {
   detailBack: document.querySelector('[data-fiestas-back]'),
   detailFeedback: document.querySelector('[data-fiestas-detail-feedback]'),
   detailShareFallback: document.querySelector('[data-fiestas-share-fallback]'),
+  detailShareCopy: document.querySelector('[data-fiestas-copy-share]'),
   detailShareInput: document.querySelector('[data-fiestas-share-url-input]'),
   detailMap: document.querySelector('[data-fiestas-detail-map]')
 };
@@ -155,9 +160,11 @@ function bindControls() {
     state.focusedClusterEventIds = null;
     render({ updateUrl: true });
   });
-  els.search?.addEventListener('change', () => trackSearchResults(getFilteredEvents().length));
+  els.search?.addEventListener('change', trackCommittedSearch);
   els.search?.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') trackSearchResults(getFilteredEvents().length);
+    if (event.key !== 'Enter') return;
+    event.preventDefault();
+    trackCommittedSearch();
   });
 
   els.dateStrip?.addEventListener('click', (event) => {
@@ -302,6 +309,19 @@ function bindControls() {
       setMenuOpen('ticket', false);
     }
   });
+}
+
+function trackCommittedSearch() {
+  const query = normalizeText(els.search?.value.trim() || '');
+  if (!query) {
+    lastTrackedSearchKey = '';
+    return;
+  }
+  const resultCount = getFilteredEvents().length;
+  const searchKey = `${query}:${resultCount}`;
+  if (searchKey === lastTrackedSearchKey) return;
+  lastTrackedSearchKey = searchKey;
+  trackSearchResults(resultCount);
 }
 
 function normalizeEvents(events) {
@@ -1315,8 +1335,19 @@ function initDetailPage() {
   initDetailDirections();
   els.detailSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
   els.detailShare?.addEventListener('click', shareDetail);
+  els.detailShareCopy?.addEventListener('click', copyShareFallback);
   els.detailBack?.addEventListener('click', goBackToAgenda);
+  document.querySelectorAll('[data-fiestas-analytics-action]').forEach((link) => {
+    link.addEventListener('click', () => trackDetailExternalAction(link.dataset.fiestasAnalyticsAction));
+  });
   if (els.detailMap) initDetailMap();
+}
+
+function trackDetailExternalAction(action) {
+  const activityId = els.detail?.dataset.eventId;
+  if (action === 'directions') trackDirectionsOpened(activityId);
+  else if (action === 'tickets') trackTicketsOpened(activityId);
+  else if (action) trackExternalLinkOpened(action);
 }
 
 function initDetailDirections() {
@@ -1402,6 +1433,25 @@ async function shareDetail() {
       els.detailShareInput.select();
     }
     showDetailFeedback('Copia el enlace desde el campo.');
+  }
+}
+
+async function copyShareFallback() {
+  if (!els.detail) return;
+  const url = els.detail.dataset.shareUrl || window.location.href;
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(url);
+    } else {
+      if (!els.detailShareInput) throw new Error('Share input unavailable');
+      els.detailShareInput.focus();
+      els.detailShareInput.select();
+      if (!document.execCommand('copy')) throw new Error('Copy failed');
+    }
+    trackActivityShared(els.detail.dataset.eventId);
+    showDetailFeedback('Enlace copiado.');
+  } catch (_) {
+    showDetailFeedback('No se pudo copiar el enlace.');
   }
 }
 
@@ -1499,6 +1549,7 @@ async function initDetailMap() {
       tileLayer = createCartoLayer(leaflet).addTo(map);
     });
     leaflet.marker([lat, lng], { icon: markerIcon, title }).addTo(map).bindPopup(escapeHtml(title));
+    trackMapOpened();
     window.requestAnimationFrame(() => map.invalidateSize());
   } catch (error) {
     console.error(error);
