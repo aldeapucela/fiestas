@@ -35,10 +35,15 @@ function fiestas2026Icon(type = '') {
   const icons = {
     danza: 'fa-person-dress', deporte: 'fa-person-running', exposicion: 'fa-image', folklore: 'fa-guitar',
     'fuegos-artificiales': 'fa-wand-sparkles', gastronomia: 'fa-utensils', 'infantil-y-familiar': 'fa-children',
-    magia: 'fa-hat-wizard', musica: 'fa-music', otros: 'fa-star', penas: 'fa-people-group',
+    magia: 'fa-hat-wizard', musica: 'fa-music', 'humor-y-monologos': 'fa-masks-theater', otros: 'fa-star', penas: 'fa-people-group',
     religioso: 'fa-place-of-worship', talleres: 'fa-screwdriver-wrench', teatro: 'fa-masks-theater', toros: 'fa-circle-dot'
   };
   return icons[slugify(type)] || 'fa-calendar-day';
+}
+
+function socialCategorySlug(type = '') {
+  const slug = slugify(type);
+  return slug === 'humor-y-monologos' ? 'teatro' : slug;
 }
 
 async function writeFile(relPath, content) {
@@ -192,7 +197,7 @@ async function loadEvents() {
       ...event,
       slug: slugify(event.title),
       icon: fiestas2026Icon(event.type),
-      socialImagePath: '/assets/social/categories/' + slugify(event.type) + '.jpg',
+      socialImagePath: '/assets/social/categories/' + socialCategorySlug(event.type) + '.jpg',
       socialImageAlt: 'Icono morado de la categoría ' + event.type + ' sobre fondo blanco',
       socialImageWidth: 512,
       socialImageHeight: 512,
