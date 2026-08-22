@@ -1736,6 +1736,53 @@
     margin: 0.4rem 0 0;
   }
 
+  .fiestas-detail-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+    padding: 0.55rem;
+  }
+
+  .fiestas-detail-action {
+    display: grid;
+    min-width: 0;
+    min-height: 4rem;
+    place-items: center;
+    gap: 0.3rem;
+    border: 0;
+    border-radius: 0.85rem;
+    background: transparent;
+    color: #0f9f8d;
+    padding: 0.55rem 0.35rem;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 750;
+    line-height: 1.15;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .fiestas-detail-action:hover,
+  .fiestas-detail-action:focus-visible {
+    background: rgba(15, 159, 141, 0.08);
+    color: #087569;
+  }
+
+  .fiestas-detail-action.is-active {
+    background: rgba(115, 87, 159, 0.1);
+    color: #73579f;
+  }
+
+  .fiestas-detail-action i {
+    font-size: 1.25rem;
+  }
+
+  .fiestas-detail-action .fa-share-nodes,
+  .fiestas-detail-action.is-active .fa-solid {
+    -webkit-text-fill-color: currentColor;
+    -webkit-text-stroke: 0;
+  }
+
   .fiestas-detail-lists {
     display: grid;
     gap: 1rem;
@@ -2281,6 +2328,17 @@
     border-color: #313743;
     background: #121417;
     color: #f8fafc;
+  }
+
+  html.dark .fiestas-detail-action:hover,
+  html.dark .fiestas-detail-action:focus-visible {
+    background: rgba(23, 184, 164, 0.12);
+    color: #5dd4c4;
+  }
+
+  html.dark .fiestas-detail-action.is-active {
+    background: rgba(200, 179, 229, 0.12);
+    color: #c8b3e5;
   }
 
   html.dark .fiestas-community-card {

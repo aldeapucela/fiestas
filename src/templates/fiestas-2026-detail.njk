@@ -19,6 +19,19 @@
   class="fiestas-app fiestas-detail-app"
   data-fiestas-detail
   data-event-id="{{ event.id }}"
+  data-event-date="{{ event.date }}"
+  data-event-date-label="{{ event.dateLabel }}"
+  data-event-start-time="{{ event.startTime }}"
+  data-event-end-time="{{ event.endTime }}"
+  data-event-title="{{ event.title }}"
+  data-event-location="{{ event.location or event.zone or event.neighborhood }}"
+  data-event-description="{{ event.description }}"
+  data-event-summary="{{ event.summary }}"
+  data-event-url="{{ event.canonicalUrl }}"
+  {% if event.coordinates %}
+  data-event-lat="{{ event.coordinates.lat }}"
+  data-event-lng="{{ event.coordinates.lng }}"
+  {% endif %}
   data-share-title="{{ event.title }}"
   data-share-text="{{ event.shareText }}"
   data-share-url="{{ event.canonicalUrl }}"
@@ -164,6 +177,21 @@
         Descripción
       </h2>
       <p>{{ event.description or event.summary or 'No hay descripción ampliada para esta actividad.' }}</p>
+    </section>
+
+    <section class="fiestas-detail-card fiestas-detail-actions" aria-label="Acciones de actividad">
+      <button class="fiestas-detail-action" type="button" data-fiestas-detail-action-save aria-label="Guardar actividad" aria-pressed="false">
+        <i class="fa-regular fa-bookmark" aria-hidden="true"></i>
+        <span>Guardar</span>
+      </button>
+      <button class="fiestas-detail-action" type="button" data-fiestas-detail-action-share aria-label="Compartir actividad">
+        <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+        <span>Compartir</span>
+      </button>
+      <button class="fiestas-detail-action" type="button" data-fiestas-detail-action-calendar aria-label="Añadir actividad al calendario">
+        <i class="fa-regular fa-calendar-plus" aria-hidden="true"></i>
+        <span>Añadir a calendario</span>
+      </button>
     </section>
 
     {% if event.performances.length or event.organizers.length or event.collaborators.length %}

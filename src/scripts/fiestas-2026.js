@@ -12,10 +12,12 @@ import {
   trackFilterApplied,
   trackMapMarkerSelected,
   trackMapOpened,
+  trackPlanCalendarExported,
   trackSearchResults,
   trackTicketsOpened
 } from './analytics.js';
 import { readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
+import { createIcsFile, shareFileOrDownload } from './plan-export.js';
 import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
@@ -105,6 +107,9 @@ const els = {
   viewTabs: [...document.querySelectorAll('[data-view-tab]')],
   detail: document.querySelector('[data-fiestas-detail]'),
   detailSave: document.querySelector('[data-fiestas-detail-save]'),
+  detailActionSave: document.querySelector('[data-fiestas-detail-action-save]'),
+  detailActionShare: document.querySelector('[data-fiestas-detail-action-share]'),
+  detailActionCalendar: document.querySelector('[data-fiestas-detail-action-calendar]'),
   detailShare: document.querySelector('[data-fiestas-share]'),
   detailBack: document.querySelector('[data-fiestas-back]'),
   detailFeedback: document.querySelector('[data-fiestas-detail-feedback]'),
@@ -1338,7 +1343,10 @@ function initDetailPage() {
   updateDetailFavorite({ silent: true });
   initDetailDirections();
   els.detailSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
+  els.detailActionSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
   els.detailShare?.addEventListener('click', shareDetail);
+  els.detailActionShare?.addEventListener('click', shareDetail);
+  els.detailActionCalendar?.addEventListener('click', addDetailToCalendar);
   els.detailShareCopy?.addEventListener('click', copyShareFallback);
   els.detailBack?.addEventListener('click', goBackToAgenda);
   initDetailLightbox();
@@ -1413,12 +1421,14 @@ function getMapPlatform() {
 }
 
 function updateDetailFavorite(options = {}) {
-  if (!els.detail || !els.detailSave) return;
+  if (!els.detail) return;
   const saved = state.favorites.has(els.detail.dataset.eventId);
-  els.detailSave.classList.toggle('is-active', saved);
-  els.detailSave.setAttribute('aria-pressed', String(saved));
-  els.detailSave.setAttribute('aria-label', saved ? 'Quitar de guardados' : 'Guardar actividad');
-  els.detailSave.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>`;
+  document.querySelectorAll('[data-fiestas-detail-save], [data-fiestas-detail-action-save]').forEach((button) => {
+    button.classList.toggle('is-active', saved);
+    button.setAttribute('aria-pressed', String(saved));
+    button.setAttribute('aria-label', saved ? 'Quitar de guardados' : 'Guardar actividad');
+    button.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>${button === els.detailActionSave ? `<span>${saved ? 'Guardado' : 'Guardar'}</span>` : ''}`;
+  });
   if (!options.silent) showDetailFeedback(saved ? 'Actividad guardada.' : 'Actividad eliminada de guardados.');
 }
 
@@ -1482,6 +1492,38 @@ async function copyShareFallback() {
   } catch (_) {
     showDetailFeedback('No se pudo copiar el enlace.');
   }
+}
+
+async function addDetailToCalendar() {
+  if (!els.detail) return;
+  const data = els.detail.dataset;
+  const event = {
+    id: data.eventId,
+    date: data.eventDate,
+    dateLabel: data.eventDateLabel,
+    startTime: data.eventStartTime,
+    endTime: data.eventEndTime,
+    title: data.eventTitle,
+    location: data.eventLocation,
+    description: data.eventDescription,
+    summary: data.eventSummary,
+    canonicalUrl: data.eventUrl
+  };
+  if (data.eventLat && data.eventLng) {
+    event.coordinates = { lat: Number(data.eventLat), lng: Number(data.eventLng) };
+  }
+  if (!event.id || !event.date || !event.title) {
+    showDetailFeedback('No se pudo preparar el evento para el calendario.');
+    return;
+  }
+
+  const result = await shareFileOrDownload(createIcsFile([event], event.title), {
+    title: event.title,
+    text: 'Añade esta actividad al calendario de Fiestas Valladolid 2026'
+  });
+  if (result !== 'cancelled') trackPlanCalendarExported(event.id);
+  if (result === 'shared' || result === 'downloaded') showDetailFeedback(result === 'shared' ? 'Actividad compartida para añadirla al calendario.' : 'Calendario descargado.');
+  else showDetailFeedback('Compartición cancelada.');
 }
 
 async function shareSite() {
