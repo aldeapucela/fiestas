@@ -1434,9 +1434,16 @@
     min-width: 0;
     margin: 0;
     overflow: hidden;
-    border-radius: 1.25rem;
     background: #102444;
-    box-shadow: 0 1rem 2rem rgba(26, 33, 45, 0.11);
+  }
+
+  .fiestas-detail-hero-button {
+    display: block;
+    width: 100%;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    cursor: zoom-in;
   }
 
   .fiestas-detail-hero img {
@@ -1444,6 +1451,18 @@
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: cover;
+  }
+
+  .fiestas-detail-hero-button:focus-visible {
+    outline: 3px solid #0f9f8d;
+    outline-offset: -3px;
+  }
+
+  @media (max-width: 40rem) {
+    .fiestas-detail-hero {
+      width: calc(100% + 2rem);
+      margin-left: -1rem;
+    }
   }
 
   .menu-drawer-pwa-action {

@@ -241,6 +241,11 @@ function eventDateTime(date, time) {
   return time && /^\d{2}:\d{2}$/.test(time) ? date + 'T' + time + ':00+02:00' : date;
 }
 
+function eventImageUrl(event) {
+  if (!event.image) return publicBaseUrl + event.socialImagePath;
+  return /^https?:\/\//i.test(event.image) ? event.image : publicBaseUrl + event.image;
+}
+
 function eventStructuredData(event) {
   const data = {
     '@context': 'https://schema.org',
@@ -249,7 +254,7 @@ function eventStructuredData(event) {
     description: event.summary || event.description || event.dateLabel,
     startDate: eventDateTime(event.date, event.startTime),
     url: event.canonicalUrl,
-    image: [publicBaseUrl + event.socialImagePath],
+    image: [eventImageUrl(event)],
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
     location: {
@@ -499,9 +504,10 @@ async function build() {
       social: {
         type: 'article', title: event.title + ' | Fiestas Valladolid 2026',
         description: event.summary || event.description || event.dateLabel,
-        image: publicBaseUrl + event.socialImagePath,
-        imageAlt: event.socialImageAlt,
-        imageWidth: event.socialImageWidth, imageHeight: event.socialImageHeight,
+        image: eventImageUrl(event),
+        imageAlt: event.image ? event.title : event.socialImageAlt,
+        imageWidth: event.image ? 1200 : event.socialImageWidth,
+        imageHeight: event.image ? 630 : event.socialImageHeight,
         imageType: 'image/jpeg', url: publicBaseUrl + event.urlPath
       },
       event,

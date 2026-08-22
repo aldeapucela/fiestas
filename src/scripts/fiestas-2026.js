@@ -111,7 +111,10 @@ const els = {
   detailShareFallback: document.querySelector('[data-fiestas-share-fallback]'),
   detailShareCopy: document.querySelector('[data-fiestas-copy-share]'),
   detailShareInput: document.querySelector('[data-fiestas-share-url-input]'),
-  detailMap: document.querySelector('[data-fiestas-detail-map]')
+  detailMap: document.querySelector('[data-fiestas-detail-map]'),
+  detailImage: document.querySelector('[data-fiestas-detail-image]'),
+  detailLightbox: document.querySelector('[data-fiestas-detail-lightbox]'),
+  detailLightboxImage: document.querySelector('[data-fiestas-detail-lightbox-image]')
 };
 
 init();
@@ -1337,10 +1340,35 @@ function initDetailPage() {
   els.detailShare?.addEventListener('click', shareDetail);
   els.detailShareCopy?.addEventListener('click', copyShareFallback);
   els.detailBack?.addEventListener('click', goBackToAgenda);
+  initDetailLightbox();
   document.querySelectorAll('[data-fiestas-analytics-action]').forEach((link) => {
     link.addEventListener('click', () => trackDetailExternalAction(link.dataset.fiestasAnalyticsAction));
   });
   if (els.detailMap) initDetailMap();
+}
+
+function initDetailLightbox() {
+  if (!els.detailImage || !els.detailLightbox || !els.detailLightboxImage) return;
+
+  const closeButtons = els.detailLightbox.querySelectorAll('[data-fiestas-detail-lightbox-close]');
+  const openLightbox = () => {
+    els.detailLightboxImage.src = els.detailImage.dataset.imageSrc || els.detailLightboxImage.src;
+    els.detailLightboxImage.alt = els.detailImage.dataset.imageAlt || '';
+    els.detailLightbox.hidden = false;
+    document.body.classList.add('detail-lightbox-open');
+    closeButtons[closeButtons.length - 1]?.focus();
+  };
+  const closeLightbox = () => {
+    els.detailLightbox.hidden = true;
+    document.body.classList.remove('detail-lightbox-open');
+    els.detailImage.focus();
+  };
+
+  els.detailImage.addEventListener('click', openLightbox);
+  closeButtons.forEach((button) => button.addEventListener('click', closeLightbox));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !els.detailLightbox.hidden) closeLightbox();
+  });
 }
 
 function trackDetailExternalAction(action) {

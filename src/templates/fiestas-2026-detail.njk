@@ -44,8 +44,26 @@
 
     {% if event.image %}
     <figure class="fiestas-detail-hero">
-      <img src="{{ event.image }}" alt="" loading="eager" />
+      <button
+        class="fiestas-detail-hero-button"
+        type="button"
+        data-fiestas-detail-image
+        data-image-src="{{ event.image }}"
+        data-image-alt="{{ event.title }}"
+        aria-label="Ver imagen completa"
+      >
+        <img src="{{ event.image }}" alt="" loading="eager" />
+      </button>
     </figure>
+    <div class="detail-lightbox" data-fiestas-detail-lightbox role="dialog" aria-modal="true" aria-label="Imagen de {{ event.title }}" hidden>
+      <button class="detail-lightbox-backdrop" type="button" data-fiestas-detail-lightbox-close aria-label="Cerrar imagen"></button>
+      <div class="detail-lightbox-panel">
+        <button class="detail-lightbox-close" type="button" data-fiestas-detail-lightbox-close aria-label="Cerrar imagen">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <img class="detail-lightbox-image" data-fiestas-detail-lightbox-image src="{{ event.image }}" alt="{{ event.title }}" />
+      </div>
+    </div>
     {% endif %}
 
     <section class="fiestas-detail-title-block" aria-labelledby="event-title">
