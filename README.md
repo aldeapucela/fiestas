@@ -11,7 +11,7 @@ La salida generada es una web estatica para `https://fiestas.aldeapucela.org/`, 
 El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe editarse a mano.
 
 - `/`: agenda principal.
-- `/e/<id>/`: detalle de cada evento.
+- `/e/<id>/<slug>/`: detalle de cada evento; el ID numérico identifica la actividad y el slug es decorativo.
 - `/plan/`: guardados y planes personalizados.
 - `/plan/importar/`: importación de planes compartidos.
 - `/assets/css/fiestas-2026.css`: estilos compilados con Tailwind, PostCSS y Autoprefixer.
@@ -22,6 +22,8 @@ El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe 
 - `/assets/manifest.webmanifest`, `/sw.js` y `/offline.html`: identidad PWA, caché versionada y fallback sin conexión.
 - `/assets/social/`: portada social en modo claro, generada a partir de la referencia de Eventos de Aldea Pucela, y miniaturas cuadradas de 512×512 por categoría con un icono morado pequeño sobre fondo blanco.
 - `/sitemap.xml` y `/robots.txt`: metadatos de rastreo.
+
+El sitemap contiene únicamente rutas públicas canónicas: portada, mapa y fichas `/e/<id>/<slug>/`. Las páginas locales `/plan/` y `/plan/importar/` llevan `noindex,follow` y no se incluyen en el sitemap.
 
 ## Estructura
 
@@ -86,7 +88,7 @@ El build:
 3. Copia los modulos JS de `src/scripts/`.
 4. Copia assets estaticos desde `src/assets/`, si existen.
 5. Lee `src/data/fiestas-2026/events.json`.
-6. Normaliza, ordena y enriquece cada evento con icono, URL local, URL canonica, texto de compartir, etiquetas de entrada y enlaces de mapa.
+6. Valida los IDs numéricos, normaliza, ordena y enriquece cada evento con icono, slug, URL local, URL canónica, texto de compartir, etiquetas de entrada y enlaces de mapa.
 7. Conserva los metadatos de procedencia de `coordinates` cuando existen.
 8. Renderiza la agenda y una pagina de detalle por evento con Nunjucks.
 9. Renderiza `/plan/` y `/plan/importar/`.
@@ -138,15 +140,15 @@ La fuente unica de eventos esta en:
 src/data/fiestas-2026/events.json
 ```
 
-Cada evento debe tener un `id` lowercase y seguro para URL. Ese `id` se usa en la ruta:
+Cada evento debe tener un `id` numérico, único y estable dentro de Fiestas 2026. El build genera el slug desde el título y usa ambos en la ruta:
 
 ```text
-/e/<id>/
+/e/<id>/<slug>/
 ```
 
 Campos principales:
 
-- `id`: identificador estable y URL-safe.
+- `id`: identificador numérico, único y estable.
 - `date`, `dateLabel`, `startTime`, `endTime`: fecha y horarios.
 - `title`, `summary`, `description`: textos visibles y metadatos.
 - `location`, `zone`: ubicacion textual.
@@ -161,7 +163,7 @@ Ejemplo minimo:
 
 ```json
 {
-  "id": "2026-09-04-1200-gira-de-verano-nintendo-8abd9b5d",
+  "id": 1,
   "date": "2026-09-04",
   "dateLabel": "Viernes 4 de septiembre",
   "startTime": "12:00",
@@ -253,7 +255,7 @@ La vista `Mapa` carga Leaflet bajo demanda y solo pinta eventos con `coordinates
 
 ## Detalle De Evento
 
-Cada evento genera una ficha estatica en `/e/<id>/` con una composicion mobile-first:
+Cada evento genera una ficha estatica en `/e/<id>/<slug>/` con una composicion mobile-first:
 
 - Cabecera con volver, guardar y compartir.
 - Titulo completo de la actividad.
@@ -289,7 +291,7 @@ El boton de compartir sigue esta prioridad:
 El texto de compartir se deriva en build con titulo, fecha, hora y lugar cuando existen. La URL compartida apunta siempre a la ruta canonica:
 
 ```text
-https://fiestas.aldeapucela.org/e/<id>/
+https://fiestas.aldeapucela.org/e/<id>/<slug>/
 ```
 
 ### Mapa De La Ficha
@@ -439,15 +441,15 @@ Se pueden regenerar con Playwright usando Chrome del sistema, sin instalar Playw
 
 ```bash
 npx -y playwright@latest screenshot --channel=chrome --viewport-size=430,940 --wait-for-timeout=3000 \
-  http://127.0.0.1:8002/e/2026-09-04-1200-gira-de-verano-nintendo-8abd9b5d/ \
+  http://127.0.0.1:8002/e/1/gira-de-verano-nintendo/ \
   docs/screenshots/issue-2/event-detail-mobile-map.png
 
 npx -y playwright@latest screenshot --channel=chrome --viewport-size=430,940 --wait-for-timeout=3000 \
-  http://127.0.0.1:8002/e/2026-09-04-1930-la-historia-interminable-el-musical-ce1048da/ \
+  http://127.0.0.1:8002/e/8/la-historia-interminable-el-musical/ \
   docs/screenshots/issue-2/event-detail-mobile-paid-tags.png
 
 npx -y playwright@latest screenshot --channel=chrome --viewport-size=430,940 --wait-for-timeout=3000 \
-  http://127.0.0.1:8002/e/2026-09-13-1030-viii-marcha-cicloturistica-cdb38072/ \
+  http://127.0.0.1:8002/e/373/viii-marcha-cicloturistica/ \
   docs/screenshots/issue-2/event-detail-mobile-no-coordinates.png
 ```
 

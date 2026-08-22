@@ -147,7 +147,12 @@ async function copyAssetDir(sourceDir, currentDir, assetVersionSeed) {
 
 async function loadEvents() {
   const raw = await fs.readFile(path.join(root, 'src', 'data', 'fiestas-2026', 'events.json'), 'utf8');
-  return JSON.parse(raw).map((event) => {
+  const sourceEvents = JSON.parse(raw);
+  const ids = sourceEvents.map((event) => event.id);
+  if (sourceEvents.some((event) => !Number.isInteger(event.id) || event.id < 1) || new Set(ids).size !== ids.length) {
+    throw new Error('Each event must have a unique positive numeric id.');
+  }
+  return sourceEvents.map((event) => {
     const ticket = event.ticket && typeof event.ticket === 'object'
       ? {
           required: Boolean(event.ticket.required),
@@ -185,13 +190,14 @@ async function loadEvents() {
     .sort((a, b) => a.date.localeCompare(b.date) || sortMinutes(a.startTime) - sortMinutes(b.startTime) || a.title.localeCompare(b.title, 'es'))
     .map((event) => ({
       ...event,
+      slug: slugify(event.title),
       icon: fiestas2026Icon(event.type),
       socialImagePath: '/assets/social/categories/' + slugify(event.type) + '.jpg',
       socialImageAlt: 'Icono morado de la categoría ' + event.type + ' sobre fondo blanco',
       socialImageWidth: 512,
       socialImageHeight: 512,
-      urlPath: '/e/' + event.id + '/',
-      canonicalUrl: publicBaseUrl + '/e/' + event.id + '/',
+      urlPath: '/e/' + event.id + '/' + slugify(event.title) + '/',
+      canonicalUrl: publicBaseUrl + '/e/' + event.id + '/' + slugify(event.title) + '/',
       shareText: shareText(event),
       ticketLabel: ticketKindLabel(event.ticketKind),
       ticketDetail: ticketDetail(event.ticketKind, event.ticket),
@@ -224,6 +230,47 @@ function shareText(event) {
     [event.dateLabel, [event.startTime, event.endTime].filter(Boolean).join(' - ')].filter(Boolean).join(' · '),
     event.location
   ].filter(Boolean).join('\n');
+}
+
+function eventDateTime(date, time) {
+  return time && /^\d{2}:\d{2}$/.test(time) ? date + 'T' + time + ':00+02:00' : date;
+}
+
+function eventStructuredData(event) {
+  const data = {
+    '@context': 'https://schema.org',
+    '@type': 'Event',
+    name: event.title,
+    description: event.summary || event.description || event.dateLabel,
+    startDate: eventDateTime(event.date, event.startTime),
+    url: event.canonicalUrl,
+    image: [publicBaseUrl + event.socialImagePath],
+    eventStatus: 'https://schema.org/EventScheduled',
+    eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
+    location: {
+      '@type': 'Place',
+      name: event.location || event.zone || 'Valladolid',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Valladolid',
+        addressCountry: 'ES'
+      }
+    },
+    organizer: {
+      '@type': 'Organization',
+      name: 'Aldea Pucela',
+      url: 'https://aldeapucela.org'
+    }
+  };
+  if (event.endTime) data.endDate = eventDateTime(event.date, event.endTime);
+  if (event.coordinates) {
+    data.location.geo = {
+      '@type': 'GeoCoordinates',
+      latitude: event.coordinates.lat,
+      longitude: event.coordinates.lng
+    };
+  }
+  return data;
 }
 
 function ticketKindLabel(kind) {
@@ -417,6 +464,7 @@ async function build() {
   await writeFile('plan/index.html', render('fiestas-2026-plan.njk', {
     ...homeContext,
     title: 'Mi plan | Fiestas Valladolid 2026',
+    robotsMeta: 'noindex,follow',
     canonicalUrl: publicBaseUrl + '/plan/',
     social: {
       ...homeContext.social,
@@ -438,7 +486,7 @@ async function build() {
   }));
 
   for (const event of events) {
-    await writeFile('e/' + event.id + '/index.html', render('fiestas-2026-detail.njk', {
+    await writeFile('e/' + event.id + '/' + event.slug + '/index.html', render('fiestas-2026-detail.njk', {
       ...pageContext(versions),
       title: event.title + ' | Fiestas Valladolid 2026',
       meta: { description: event.summary || event.description || event.dateLabel },
@@ -452,12 +500,13 @@ async function build() {
         imageType: 'image/jpeg', url: publicBaseUrl + event.urlPath
       },
       event,
+      structuredData: eventStructuredData(event),
       relatedEvents: getRelatedEvents(events, event),
       hideDrawerFilters: true
     }));
   }
 
-  const urls = ['/', '/mapa/', '/plan/', '/plan/importar/', ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

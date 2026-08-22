@@ -28,7 +28,7 @@ Un fallo o una indisponibilidad de Matomo no impide cargar la agenda, guardar ac
 
 ## Taxonomía de eventos
 
-Los identificadores de actividad son sus `id` estables y URL-safe. Los valores de filtros y enlaces se normalizan a tokens controlados.
+Los identificadores de actividad son sus `id` numéricos y estables. Los valores de filtros y enlaces se normalizan a tokens controlados.
 
 | Categoría | Acción | Nombre / valor | Cuándo |
 | --- | --- | --- | --- |
