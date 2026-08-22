@@ -3314,6 +3314,42 @@ html.dark .fiestas-event-option {
   }
 }
 
+.fiestas-plan-side-actions {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 0.15rem;
+}
+
+.fiestas-plan-side-actions .fiestas-plan-heart {
+  justify-self: center;
+}
+
+.fiestas-plan-more {
+  display: inline-flex;
+  width: 2.35rem;
+  height: 1.8rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: #667085;
+  font-size: 0.9rem;
+}
+
+.fiestas-plan-more:hover,
+.fiestas-plan-more:focus-visible {
+  background: #f3eff7;
+  color: #73579f;
+}
+
+html.dark .fiestas-plan-more:hover,
+html.dark .fiestas-plan-more:focus-visible {
+  background: #30283c;
+  color: #c8b3e5;
+}
+
 html.dark .fiestas-plan-app {
   background: #121417;
   color: #f5f3ee;

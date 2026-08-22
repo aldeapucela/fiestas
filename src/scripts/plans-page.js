@@ -842,7 +842,7 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
           line.className = 'fiestas-plan-timeline-line';
           rail.append(line);
         }
-        row.append(rail, renderPlanTimelineEvent(event, plan.id, plans, events));
+        row.append(rail, renderPlanTimelineEvent(event, plan.id, plans, events, options));
         timeline.append(row);
       });
     });
@@ -874,7 +874,7 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
   }
 }
 
-function renderPlanTimelineEvent(event, planId, plans, events) {
+function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {
   const card = document.createElement('article');
   card.className = 'fiestas-plan-timeline-card';
 
@@ -883,15 +883,37 @@ function renderPlanTimelineEvent(event, planId, plans, events) {
   const title = linkNode(event.title || 'Actividad sin título', event.urlPath || eventUrl(event));
   title.className = 'fiestas-plan-timeline-title';
   top.append(title);
-  const favoriteButton = document.createElement('button');
   const saved = readFavoriteIds().includes(event.id);
-  favoriteButton.type = 'button';
-  favoriteButton.className = 'fiestas-plan-heart';
-  favoriteButton.dataset.planToggleFavorite = event.id;
-  favoriteButton.setAttribute('aria-label', saved ? 'Quitar de guardados' : 'Guardar actividad');
-  favoriteButton.setAttribute('aria-pressed', String(saved));
-  favoriteButton.append(iconNode(`${saved ? 'fa-solid' : 'fa-regular'} fa-heart`));
-  top.append(favoriteButton);
+  if (options.isSaved) {
+    const sideActions = document.createElement('div');
+    sideActions.className = 'fiestas-plan-side-actions';
+    const bookmarkButton = document.createElement('button');
+    bookmarkButton.type = 'button';
+    bookmarkButton.className = 'fiestas-plan-heart fiestas-plan-bookmark';
+    bookmarkButton.dataset.planToggleFavorite = event.id;
+    bookmarkButton.setAttribute('aria-label', 'Quitar de guardados');
+    bookmarkButton.setAttribute('aria-pressed', 'true');
+    bookmarkButton.append(iconNode('fa-solid fa-bookmark'));
+    const moreButton = document.createElement('button');
+    moreButton.type = 'button';
+    moreButton.className = 'fiestas-plan-more';
+    moreButton.dataset.fiestasMoreOptions = 'true';
+    moreButton.dataset.eventId = event.id;
+    moreButton.setAttribute('aria-label', 'Más opciones para esta actividad');
+    moreButton.setAttribute('aria-haspopup', 'dialog');
+    moreButton.append(iconNode('fa-solid fa-ellipsis'));
+    sideActions.append(bookmarkButton, moreButton);
+    top.append(sideActions);
+  } else {
+    const favoriteButton = document.createElement('button');
+    favoriteButton.type = 'button';
+    favoriteButton.className = 'fiestas-plan-heart';
+    favoriteButton.dataset.planToggleFavorite = event.id;
+    favoriteButton.setAttribute('aria-label', saved ? 'Quitar de guardados' : 'Guardar actividad');
+    favoriteButton.setAttribute('aria-pressed', String(saved));
+    favoriteButton.append(iconNode(`${saved ? 'fa-solid' : 'fa-regular'} fa-heart`));
+    top.append(favoriteButton);
+  }
   card.append(top);
 
   const location = document.createElement('p');
