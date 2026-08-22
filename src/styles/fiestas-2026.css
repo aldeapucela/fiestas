@@ -2661,6 +2661,7 @@ html:not(.dark) body:has(.fiestas-app) {
 .fiestas-plan-detail[hidden],
 .fiestas-plan-selector[hidden],
 .fiestas-plan-feedback[hidden],
+.fiestas-plan-delete-confirm[hidden],
 .fiestas-plan-import-status[hidden],
 .fiestas-plan-import-preview[hidden],
 .fiestas-plan-import-confirm[hidden] {
