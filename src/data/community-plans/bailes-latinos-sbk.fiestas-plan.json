@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "festival": "valladolid-2026",
+  "exportedAt": "2026-08-23T10:41:14.785Z",
+  "plans": [
+    {
+      "name": "Bailes Latinos SBK",
+      "icon": "music",
+      "activityIds": [
+        "16",
+        "52",
+        "114",
+        "128",
+        "150",
+        "193",
+        "230",
+        "308",
+        "348",
+        "347"
+      ]
+    }
+  ]
+}

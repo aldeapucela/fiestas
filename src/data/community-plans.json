@@ -37,6 +37,27 @@
       "author": "Aldea Pucela",
       "icon": "food",
       "url": "/data/community-plans/folklore-gastronomia-2026.fiestas-plan.json"
+    },
+    {
+      "id": "conciertos-moreras",
+      "name": "Conciertos Moreras",
+      "author": "Spacebom",
+      "icon": "microphone",
+      "url": "/data/community-plans/conciertos-moreras.fiestas-plan.json"
+    },
+    {
+      "id": "musica-y-ocio-alternativo",
+      "name": "Música y ocio alternativo",
+      "author": "Spacebom",
+      "icon": "parade",
+      "url": "/data/community-plans/musica-y-ocio-alternativo.fiestas-plan.json"
+    },
+    {
+      "id": "bailes-latinos-sbk",
+      "name": "Bailes Latinos SBK",
+      "author": "Clara",
+      "icon": "music",
+      "url": "/data/community-plans/bailes-latinos-sbk.fiestas-plan.json"
     }
   ]
 }

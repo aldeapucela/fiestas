@@ -1,0 +1,22 @@
+{
+  "schemaVersion": 1,
+  "festival": "valladolid-2026",
+  "exportedAt": "2026-08-23T10:42:32.856Z",
+  "plans": [
+    {
+      "name": "Música y ocio alternativo",
+      "icon": "parade",
+      "activityIds": [
+        "37",
+        "136",
+        "295",
+        "21",
+        "73",
+        "165",
+        "254",
+        "319",
+        "367"
+      ]
+    }
+  ]
+}
