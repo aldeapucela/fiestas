@@ -679,10 +679,14 @@ function updateCommunityPlansCard(card) {
 }
 
 function setupCommunityCtaPwa() {
-  window.addEventListener('fiestas:pwa-availability', (event) => {
-    state.communityCtaMode = getCommunityCtaMode(event.detail);
+  const syncPwaCta = (detail = window.__FIESTAS_PWA_STATE__) => {
+    if (!detail) return;
+    state.communityCtaMode = getCommunityCtaMode(detail);
     document.querySelectorAll('[data-fiestas-community-cta]').forEach(updateCommunityPlansCard);
-  });
+  };
+
+  window.addEventListener('fiestas:pwa-availability', (event) => syncPwaCta(event.detail));
+  syncPwaCta();
 }
 
 function eventCard(event) {
