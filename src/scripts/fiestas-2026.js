@@ -43,6 +43,7 @@ let isApplyingUrlState = false;
 let lastTrackedSearchKey = '';
 let siteShareFeedbackTimer = null;
 let scrollHeaderFrame = null;
+let syncDateCarousel = () => {};
 
 function getCommunityCtaMode(pwaState = window.__FIESTAS_PWA_STATE__ || {}) {
   if (pwaState.installed) return 'community';
@@ -106,6 +107,8 @@ const els = {
   mapSheetPreview: document.querySelector('[data-fiestas-map-sheet-preview]'),
   mapSheetList: document.querySelector('[data-fiestas-map-sheet-list]'),
   dateStrip: document.querySelector('[data-fiestas-dates]'),
+  datePrevious: document.querySelector('[data-fiestas-date-prev]'),
+  dateNext: document.querySelector('[data-fiestas-date-next]'),
   typeList: document.querySelector('[data-fiestas-types]'),
   typeToggle: document.querySelector('[data-fiestas-types-toggle]'),
   typeLabel: document.querySelector('[data-fiestas-types-label]'),
@@ -181,6 +184,7 @@ function init() {
     renderControlLists();
     setupCommunityCtaPwa();
     render();
+    setupDateCarousel();
     setupScrollHeader();
   } catch (error) {
     console.error(error);
@@ -221,6 +225,9 @@ function bindControls() {
     state.focusedClusterEventIds = null;
     render({ scrollToAgenda: true, updateUrl: true });
   });
+
+  els.datePrevious?.addEventListener('click', () => scrollDateCarousel(-1));
+  els.dateNext?.addEventListener('click', () => scrollDateCarousel(1));
 
   els.typeList?.addEventListener('change', (event) => {
     const input = event.target.closest('input[data-type]');
@@ -464,10 +471,45 @@ function render(options = {}) {
   }
 
   updateScrollHeader();
+  syncDateCarousel();
 
   if (options.scrollToAgenda) {
     document.querySelector('.fiestas-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+}
+
+function setupDateCarousel() {
+  if (!els.dateStrip || !els.datePrevious || !els.dateNext) return;
+
+  const update = () => {
+    const isDesktop = window.matchMedia?.('(min-width: 720px)').matches ?? true;
+    const isMapMode = state.view === 'map';
+    const maxScrollLeft = Math.max(0, els.dateStrip.scrollWidth - els.dateStrip.clientWidth);
+    const hasOverflow = maxScrollLeft > 2;
+    const visible = isDesktop && !isMapMode && hasOverflow;
+
+    els.datePrevious.hidden = !visible;
+    els.dateNext.hidden = !visible;
+    els.datePrevious.disabled = !visible || els.dateStrip.scrollLeft <= 2;
+    els.dateNext.disabled = !visible || els.dateStrip.scrollLeft >= maxScrollLeft - 2;
+  };
+
+  syncDateCarousel = update;
+  els.dateStrip.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update, { passive: true });
+  if ('ResizeObserver' in window) {
+    new ResizeObserver(update).observe(els.dateStrip);
+  }
+  requestAnimationFrame(update);
+}
+
+function scrollDateCarousel(direction) {
+  if (!els.dateStrip || !direction) return;
+  const maxScrollLeft = Math.max(0, els.dateStrip.scrollWidth - els.dateStrip.clientWidth);
+  const distance = Math.max(240, Math.round(els.dateStrip.clientWidth * 0.75));
+  const target = Math.max(0, Math.min(maxScrollLeft, els.dateStrip.scrollLeft + direction * distance));
+  const behavior = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+  els.dateStrip.scrollTo({ left: target, behavior });
 }
 
 function setupScrollHeader() {

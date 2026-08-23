@@ -60,7 +60,11 @@
     </header>
 
     <section class="fiestas-date-panel" id="fiestas-date-panel" aria-label="Selector de fechas">
-      <nav class="fiestas-date-strip" data-fiestas-dates>
+      <div class="fiestas-date-carousel" data-fiestas-date-carousel>
+        <button class="fiestas-date-nav fiestas-date-nav-prev" type="button" data-fiestas-date-prev aria-label="Ver días anteriores" aria-controls="fiestas-dates" hidden>
+          <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <nav class="fiestas-date-strip" id="fiestas-dates" data-fiestas-dates>
         <button class="fiestas-date-card is-active" type="button" data-date="all" aria-pressed="true">
           <span>Todos</span>
           <strong>Días</strong>
@@ -73,7 +77,11 @@
           <small>{{ day.monthLabel }}</small>
         </button>
         {% endfor %}
-      </nav>
+        </nav>
+        <button class="fiestas-date-nav fiestas-date-nav-next" type="button" data-fiestas-date-next aria-label="Ver días siguientes" aria-controls="fiestas-dates" hidden>
+          <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
     </section>
 
     <section class="fiestas-filter-region" data-fiestas-filter-region aria-labelledby="fiestas-filter-region-title">

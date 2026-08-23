@@ -351,6 +351,54 @@
     display: none;
   }
 
+  .fiestas-date-carousel {
+    position: relative;
+    min-width: 0;
+  }
+
+  .fiestas-date-nav {
+    display: none;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    width: 2.6rem;
+    height: 2.6rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e1e4eb;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.97);
+    box-shadow: 0 0.45rem 1rem rgba(36, 41, 53, 0.1);
+    color: #66517d;
+    font-size: 0.95rem;
+    transform: translateY(-50%);
+    transition: border-color 160ms ease, background 160ms ease, color 160ms ease, opacity 160ms ease;
+  }
+
+  .fiestas-date-nav[hidden] {
+    display: none;
+  }
+
+  .fiestas-date-nav:hover,
+  .fiestas-date-nav:focus-visible {
+    border-color: #66517d;
+    background: #f4f0f8;
+    color: #0f9f8d;
+  }
+
+  .fiestas-date-nav:disabled {
+    cursor: not-allowed;
+    opacity: 0.38;
+  }
+
+  .fiestas-date-nav-prev {
+    left: 0.3rem;
+  }
+
+  .fiestas-date-nav-next {
+    right: 0.3rem;
+  }
+
   .fiestas-date-strip {
     display: flex;
     gap: 0.5rem;
@@ -1234,6 +1282,10 @@
     padding: 0.65rem;
     box-shadow: 0 1rem 2.5rem rgba(15, 23, 42, 0.2);
     pointer-events: auto;
+  }
+
+  .fiestas-app.is-map-mode .fiestas-date-nav {
+    display: none !important;
   }
 
   .fiestas-app.is-map-mode .fiestas-date-card {
@@ -2856,6 +2908,7 @@
   }
 
   html.dark .fiestas-date-card,
+  html.dark .fiestas-date-nav,
   html.dark .fiestas-search,
   html.dark .fiestas-type-menu-button,
   html.dark .fiestas-favorite-filter,
@@ -2869,6 +2922,13 @@
     border-color: #313743;
     background: #1a1f28;
     color: #f5f3ee;
+  }
+
+  html.dark .fiestas-date-nav:hover,
+  html.dark .fiestas-date-nav:focus-visible {
+    border-color: #c8b3e5;
+    background: #30283c;
+    color: #71d8cb;
   }
 
   html.dark .fiestas-search input,
@@ -3219,6 +3279,19 @@
       margin: 0;
       padding-right: 0;
       padding-left: 0;
+    }
+
+    .fiestas-date-carousel {
+      margin: 0 -1rem;
+      padding: 0 1.55rem;
+    }
+
+    .fiestas-date-strip {
+      scroll-behavior: smooth;
+    }
+
+    .fiestas-date-nav:not([hidden]) {
+      display: inline-flex;
     }
 
     .fiestas-event-link {
