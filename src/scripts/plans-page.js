@@ -928,7 +928,7 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
   hero.className = 'fiestas-plan-hero';
   const copy = document.createElement('div');
   copy.className = 'fiestas-plan-hero-copy';
-  copy.append(textNode('h2', 'Tu plan de fiestas'));
+  copy.append(textNode('h2', options.isSaved ? 'Mis guardados' : 'Tu plan'));
   const summary = document.createElement('p');
   summary.className = 'fiestas-plan-summary';
   summary.classList.toggle('is-day-filtered', activeDay !== 'all');
