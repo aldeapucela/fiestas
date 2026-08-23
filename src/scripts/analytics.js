@@ -24,7 +24,7 @@ export function initAnalytics() {
   const config = getConfig();
   if (!config.enabled || isDoNotTrackEnabled()) return;
 
-  const queue = Array.isArray(window._paq) ? window._paq : [];
+  const queue = hasPushQueue(window._paq) ? window._paq : [];
   window._paq = queue;
   queue.push(['setTrackerUrl', `${config.trackerUrl}matomo.php`]);
   queue.push(['setSiteId', config.siteId]);
@@ -193,7 +193,7 @@ function pushEvent(category, action, name, value) {
   if (!analyticsReady || !categoryActions[category]?.has(action)) return false;
   const queue = window._paq;
   const normalizedName = normalizeToken(name);
-  if (!Array.isArray(queue) || !normalizedName) return false;
+  if (!hasPushQueue(queue) || !normalizedName) return false;
   const event = ['trackEvent', category, action, normalizedName];
   if (value !== undefined) event.push(value);
   queue.push(event);
@@ -237,6 +237,10 @@ function normalizeToken(value) {
     .replace(/[^a-z0-9]+/g, '_')
     .replace(/^_+|_+$/g, '')
     .slice(0, 120);
+}
+
+function hasPushQueue(value) {
+  return Boolean(value && typeof value.push === 'function');
 }
 
 initAnalytics();
