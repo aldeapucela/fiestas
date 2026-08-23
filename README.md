@@ -1,168 +1,150 @@
-# Fiestas Valladolid 2026
++# Fiestas Valladolid 2026
 
-Repositorio independiente para publicar la agenda de Fiestas Valladolid 2026 dentro de Aldea Pucela Eventos.
+Agenda web independiente para las Fiestas y Ferias de Valladolid 2026, creada por vecinos voluntarios de [Aldea Pucela](https://aldeapucela.org/).
 
-La salida generada es una web estatica para `https://fiestas.aldeapucela.org/`, con listado interactivo, filtros, favoritos y planes locales en el navegador, mapa y paginas de detalle por evento.
+La aplicación publicada está disponible en [fiestas.aldeapucela.org](https://fiestas.aldeapucela.org/). Es una web estática con agenda por días, búsqueda, filtros, mapa, favoritos, planes personalizados, planes vecinales, calendario, compartición y soporte PWA.
 
 ![Agenda de Fiestas Valladolid 2026](docs/screenshots/01-agenda-desktop.png)
 
-## Que Genera
+## Rutas generadas
 
-El build crea el contenido en `dist/`. Esa carpeta es salida generada y no debe editarse a mano.
+El comando <code>npm run build</code> genera el sitio completo dentro de <code>dist/</code>. Esa carpeta es salida generada y no debe editarse a mano.
 
-- `/`: agenda principal.
-- `/e/<id>/<slug>/`: detalle de cada evento; el ID numérico identifica la actividad y el slug es decorativo.
-- `/plan/`: guardados y planes personalizados.
-- `/plan/importar/`: importación de planes compartidos.
-- `/planes/`: catálogo público de planes vecinales leído desde `/data/planes.json`.
-- `/assets/css/fiestas-2026.css`: estilos compilados con Tailwind, PostCSS y Autoprefixer.
-- `/assets/js/fiestas-2026.js`: comportamiento de agenda, mapa, filtros y favoritos.
-- `/assets/js/plans-page.js`, `/assets/js/plan-storage.js`, `/assets/js/plan-export.js`: planes locales, selector de actividades, importación y exportación.
-- `/assets/js/analytics.js`: eventos de uso compatibles con Matomo, sin nombres personalizados de planes.
-- `/assets/js/menu-drawer.js`, `/assets/js/pwa.js`, `/assets/js/subscribe.js`, `/assets/js/theme.js`: modulos compartidos de UI, instalación y service worker.
-- `/assets/manifest.webmanifest`, `/sw.js` y `/offline.html`: identidad PWA, caché versionada y fallback sin conexión.
-- `/assets/social/`: portada social en modo claro, generada a partir de la referencia de Eventos de Aldea Pucela, y miniaturas cuadradas de 512×512 por categoría con un icono morado pequeño sobre fondo blanco.
-- `/sitemap.xml` y `/robots.txt`: metadatos de rastreo.
+| Ruta | Contenido |
+| --- | --- |
+| <code>/</code> | Agenda principal por días y horas. |
+| <code>/mapa/</code> | Mapa de actividades con coordenadas válidas. |
+| <code>/e/&lt;id&gt;/&lt;slug&gt;/</code> | Ficha estática de cada actividad. El <code>id</code> numérico es estable y el <code>slug</code> se deriva del título. |
+| <code>/plan/</code> | Favoritos y planes personalizados guardados en el navegador. |
+| <code>/plan/importar/</code> | Importación de uno o varios planes <code>.fiestas-plan.json</code>. |
+| <code>/planes/</code> | Catálogo público de planes vecinales. |
+| <code>/planes/&lt;id&gt;/</code> | Página pública de cada plan del catálogo. |
+| <code>/data/planes.json</code> | Catálogo validado de planes públicos. |
+| <code>/sitemap.xml</code>, <code>/robots.txt</code> | Metadatos de rastreo. |
 
-El sitemap contiene únicamente rutas públicas canónicas: portada, mapa, `/planes/` y fichas `/e/<id>/<slug>/`. Las páginas locales `/plan/` y `/plan/importar/` llevan `noindex,follow` y no se incluyen en el sitemap.
+El sitemap incluye la agenda, el mapa, el catálogo de planes, las páginas individuales de los planes públicos y las fichas de actividades. <code>/plan/</code> y <code>/plan/importar/</code> son páginas locales y se publican con <code>noindex,follow</code>.
 
-## Estructura
+## Estructura del proyecto
 
-```text
+~~~text
 src/
-  data/fiestas-2026/events.json     Datos fuente de los eventos
-  scripts/                          Modulos ES para el navegador
-  styles/                           CSS base y CSS especifico de fiestas
-  templates/                        Layouts, paginas y parciales Nunjucks
+  assets/                           Imágenes, iconos, favicon y manifest
+  data/fiestas-2026/events.json    Fuente normalizada de actividades
+  data/fiestas-2026/programa2026.md  Programa de referencia
+  data/community-plans.json        Catálogo de planes públicos
+  data/community-plans/            Archivos .fiestas-plan.json publicados
+  pwa/                              Service worker y página offline
+  scripts/                          Módulos ES del navegador
+  styles/                           CSS base y estilos de Fiestas
+  templates/                        Layouts, páginas y parciales Nunjucks
 scripts/
-  build.mjs                         Generador estatico
-  dev.mjs                           Build + servidor local
-  enrich-event-locations.mjs        Auditoria y enriquecimiento manual de ubicaciones
-  capture-readme-screenshots.mjs    Capturas para esta documentacion
-dist/                               Salida generada
-docs/screenshots/                   Capturas enlazadas en el README
-```
+  build.mjs                         Generador estático
+  dev.mjs                           Build, watcher y servidor local
+  enrich-event-locations.mjs        Auditoría y enriquecimiento de ubicaciones
+  link-event-images.mjs             Enlazado opcional de imágenes desde eventos.aldeapucela.org
+  capture-readme-screenshots.mjs     Capturas para esta documentación
+tests/
+  analytics.test.mjs                Prueba unitaria del módulo de analítica
+docs/
+  screenshots/                      Capturas enlazadas en este README
+  matomo.md                         Configuración y taxonomía de Matomo
+dist/                                Salida generada; no editar
+~~~
 
 ## Requisitos
 
-- Node.js 24 o compatible con ES modules.
+- Node.js 24, igual que en el workflow de GitHub Actions.
 - npm.
-- Google Chrome, solo para regenerar capturas.
-- `cloudflared`, solo si se quiere exponer el servidor local con Cloudflare Tunnel.
+- Google Chrome, solo para regenerar las capturas.
+- cloudflared, solo si se quiere compartir temporalmente el servidor local.
 
-## Instalacion
+## Instalación y comandos
 
-```bash
+~~~bash
 npm install
-```
+~~~
 
-## Desarrollo Local
+| Comando | Uso |
+| --- | --- |
+| <code>npm run build</code> | Compila CSS, copia recursos, procesa datos y genera <code>dist/</code>. |
+| <code>npm run dev</code> | Ejecuta un build, observa <code>src/</code> y sirve la web en <code>http://127.0.0.1:8002/</code>. |
+| <code>npm test</code> | Ejecuta las pruebas de Node disponibles. |
+| <code>npm run clean</code> | Elimina únicamente <code>dist/</code>. |
+| <code>npm run locations:audit</code> | Audita ubicaciones localmente, sin red y sin modificar los datos. |
+| <code>npm run images:link</code> | Consulta el sitio de Eventos y escribe las imágenes coincidentes en <code>events.json</code>. |
+| <code>npm run screenshots</code> | Regenera las capturas del README usando Chrome. |
 
-```bash
-npm run dev
-```
+Para usar otro puerto:
 
-El comando hace un build inicial y sirve `dist/` en:
-
-```text
-http://127.0.0.1:8002/
-```
-
-Durante el desarrollo, `npm run dev` observa `src/`, reconstruye la salida cuando cambia un archivo y sirve HTML, CSS y JavaScript con `Cache-Control: no-store`. Así los cambios se pueden comprobar inmediatamente en el navegador integrado.
-
-Si necesitas otro puerto:
-
-```bash
+~~~bash
 PORT=8010 npm run dev
-```
+~~~
 
-## Build
+El servidor de desarrollo reconstruye la salida cuando cambia un archivo de <code>src/</code> y desactiva la caché HTTP. Para detenerlo, usa <code>Ctrl+C</code>.
 
-```bash
-npm run build
-```
+## Build y despliegue
 
 El build:
 
-1. Limpia `dist/`.
-2. Compila `src/styles/base.css` y `src/styles/fiestas-2026.css`.
-3. Copia los modulos JS de `src/scripts/`.
-4. Copia assets estaticos desde `src/assets/`, si existen.
-5. Lee `src/data/fiestas-2026/events.json`.
-6. Valida los IDs numéricos, normaliza, ordena y enriquece cada evento con icono, slug, URL local, URL canónica, texto de compartir, etiquetas de entrada y enlaces de mapa.
-7. Conserva los metadatos de procedencia de `coordinates` cuando existen.
-8. Renderiza la agenda y una pagina de detalle por evento con Nunjucks.
-9. Renderiza `/plan/`, `/plan/importar/` y `/planes/`, además del catálogo remoto de planes vecinales en `/data/planes.json`.
-10. Genera el manifest, el service worker versionado y la página offline.
-11. Escribe `sitemap.xml` y `robots.txt`.
+1. Limpia <code>dist/</code>.
+2. Compila <code>src/styles/base.css</code> y <code>src/styles/fiestas-2026.css</code> con Tailwind, PostCSS y Autoprefixer.
+3. Copia los módulos JavaScript, imágenes, iconos y demás recursos de <code>src/</code>.
+4. Valida y normaliza <code>src/data/fiestas-2026/events.json</code>, incluyendo IDs, etiquetas, categorías, entradas, ubicaciones y coordenadas.
+5. Genera la agenda, el mapa, las fichas de actividades y las páginas de planes.
+6. Copia y valida el catálogo y los archivos de planes vecinales.
+7. Genera manifest, service worker versionado, página offline, sitemap y robots.
 
-## PWA Y COMPARTICIÓN SOCIAL
+El workflow [<code>.github/workflows/deploy-pages.yml</code>](.github/workflows/deploy-pages.yml) ejecuta <code>npm ci</code> y <code>npm run build</code> en cada push a <code>main</code> o <code>master</code>, y publica <code>dist/</code> mediante GitHub Pages.
 
-La aplicación se puede instalar desde navegadores compatibles. La acción aparece de forma secundaria en `Más` cuando el navegador ofrece `beforeinstallprompt`. En Safari para iPhone/iPad, el mismo menú abre instrucciones para usar `Compartir` y `Añadir a pantalla de inicio`.
+Para probar el build y el service worker:
 
-El service worker usa red primero para las páginas HTML y caché como fallback. Solo guarda recursos propios y páginas visitadas; no guarda favoritos, planes ni datos personales en la caché. Los favoritos y planes continúan siendo datos locales de `localStorage`.
-
-La portada y las fichas incluyen Open Graph y Twitter/X. La portada conserva su hero original; la social preview usa la referencia visual clara de Eventos de Aldea Pucela y las fichas usan la miniatura cuadrada de categoría solo como imagen social.
-
-Para validar la salida localmente:
-
-```bash
+~~~bash
 npm run build
 node --check dist/sw.js
-```
+npm test
+~~~
 
-Después abre Chrome DevTools → Application para revisar Manifest y Service Workers. En Chrome Android comprueba que la aplicación ofrece instalación desde el menú del navegador. En Safari iPhone usa `Compartir → Añadir a pantalla de inicio` y verifica que la ruta abre en modo app web.
+## Desarrollo con Cloudflare Tunnel
 
-Para limpiar solo la salida generada:
+Con <code>npm run dev</code> activo:
 
-```bash
-npm run clean
-```
-
-## Exponer Con Cloudflare
-
-Con el servidor local activo:
-
-```bash
+~~~bash
 cloudflared tunnel --url http://127.0.0.1:8002
-```
+~~~
 
-Cloudflare devolvera una URL publica temporal de `trycloudflare.com`. La app queda disponible en la raiz del subdominio temporal, por ejemplo:
+El comando muestra una URL temporal de <code>trycloudflare.com</code>. La aplicación se sirve en la raíz de esa URL.
 
-```text
-https://<subdominio>.trycloudflare.com/
-```
+## Datos de actividades
 
-## Datos De Eventos
+La fuente que consume el build es:
 
-La fuente unica de eventos esta en:
-
-```text
+~~~text
 src/data/fiestas-2026/events.json
-```
+~~~
 
-Cada evento debe tener un `id` numérico, único y estable dentro de Fiestas 2026. El build genera el slug desde el título y usa ambos en la ruta:
+El programa original de referencia se conserva en <code>src/data/fiestas-2026/programa2026.md</code>, pero no se edita la salida generada para cambiar actividades.
 
-```text
-/e/<id>/<slug>/
-```
+Cada actividad debe tener un <code>id</code> entero positivo, único y estable. El build genera el slug a partir de <code>title</code> y crea una ruta como:
+
+~~~text
+/e/1/gira-de-verano-nintendo/
+~~~
 
 Campos principales:
 
-- `id`: identificador numérico, único y estable.
-- `date`, `dateLabel`, `startTime`, `endTime`: fecha y horarios.
-- `title`, `summary`, `description`: textos visibles y metadatos.
-- `location`, `zone`: ubicacion textual.
-- `type`: categoria principal usada por el icono y como primera etiqueta.
-- `tags`: etiquetas opcionales para eventos que encajan en mas de una categoria. Si no se indica, se usa `[type]`.
-- `performances`, `organizers`, `collaborators`: listas opcionales para la ficha.
-- `coordinates`: coordenadas para mapa. Como minimo `{ "lat": number, "lng": number }`.
-- `ticket`: informacion opcional de entradas.
-- `image`: imagen editorial opcional para la ficha. Si no existe, la ficha no muestra un hero; el build usa la miniatura cuadrada clara de su categoría únicamente para compartir en redes.
+- <code>id</code>: identificador numérico estable.
+- <code>date</code>, <code>dateLabel</code>, <code>startTime</code>, <code>endTime</code>: fecha y horarios.
+- <code>title</code>, <code>summary</code>, <code>description</code>: contenido visible y metadatos.
+- <code>location</code>, <code>zone</code>: lugar y zona de texto.
+- <code>type</code>, <code>tags</code>: categoría principal y etiquetas adicionales.
+- <code>performances</code>, <code>organizers</code>, <code>collaborators</code>: listas opcionales para la ficha.
+- <code>coordinates</code>: <code>{ "lat": number, "lng": number }</code> y metadatos opcionales de procedencia.
+- <code>ticket</code>: estado, enlace y nota opcionales de entradas.
+- <code>image</code>: imagen editorial opcional, local o remota.
 
-Ejemplo minimo:
+Ejemplo mínimo:
 
-```json
+~~~json
 {
   "id": 1,
   "date": "2026-09-04",
@@ -170,14 +152,14 @@ Ejemplo minimo:
   "startTime": "12:00",
   "endTime": "16:00",
   "title": "GIRA DE VERANO NINTENDO",
-  "location": "Paseo Central del Campo Grande junto a Colon",
+  "location": "Paseo Central del Campo Grande junto a Colón",
   "zone": "Campo Grande",
   "type": "Otros",
   "tags": ["Otros"],
   "coordinates": {
     "lat": 41.6468,
     "lng": -4.7289,
-    "source": "Manual/alias from OpenStreetMap geocoding"
+    "source": "Manual"
   },
   "ticket": {
     "required": false,
@@ -187,323 +169,196 @@ Ejemplo minimo:
     "note": "El programa no indica venta de entradas para este evento."
   }
 }
-```
+~~~
 
-### Coordenadas
+Las coordenadas pueden incluir <code>source</code>, <code>osmType</code>, <code>osmId</code>, <code>query</code>, <code>accuracy</code> y <code>geocodedAt</code>. Si <code>lat</code> o <code>lng</code> no son números válidos, la actividad no aparece en el mapa.
 
-Cuando exista ubicacion geografica, `coordinates` puede conservar metadatos para poder revisar su procedencia:
+El estado de entrada se normaliza en tres categorías: <code>Gratis</code>, <code>De pago</code> e <code>Inscripción</code>. Si existe <code>ticket.url</code>, la ficha lo muestra como enlace externo.
 
-```json
-{
-  "lat": 41.6468,
-  "lng": -4.7289,
-  "source": "OpenStreetMap Nominatim",
-  "osmType": "way",
-  "osmId": 123456,
-  "query": "Campo Grande, Valladolid, Espana",
-  "accuracy": 0.92,
-  "geocodedAt": "2026-08-21T10:00:00.000Z"
-}
-```
+## Agenda y mapa
 
-El build mantiene esos metadatos en el objeto derivado del evento. Si `lat` o `lng` no son numeros validos, el evento se trata como sin mapa.
+La agenda permite:
 
-### Entradas
+- seleccionar todos los días o un día concreto;
+- buscar por título, lugar, zona, categoría, descripción, entradas, actuaciones y responsables;
+- combinar filtros por zona, tipo y precio;
+- mostrar solo actividades guardadas;
+- compartir la agenda o añadir una actividad al calendario.
 
-La ficha muestra siempre un estado normalizado de entrada:
+La vista de mapa usa Leaflet bajo demanda y muestra únicamente actividades con coordenadas válidas. Los marcadores respetan los filtros activos, enlazan a las fichas y permiten abrir indicaciones. También puede solicitar permiso para centrar el mapa en la ubicación actual del dispositivo.
 
-- `Gratis`: `ticket.required` es falso o no hay entrada obligatoria.
-- `De pago`: `ticket.required` es verdadero y no se detecta un flujo de inscripcion.
-- `Inscripcion`: `ticket.required` es verdadero y la informacion apunta a un registro, por ejemplo `espaciosjovenesvalladolid`.
+![Agenda por día y hora](docs/screenshots/01-agenda-desktop.png)
 
-Si `ticket.url` existe, el estado de entrada se muestra como enlace en la tarjeta principal con icono de enlace externo. No se renderiza una tarjeta separada de entradas.
-
-## Agenda
-
-La pantalla principal agrupa los eventos por dia y hora. Al cargar, el script selecciona el evento actual si coincide con la fecha/hora del navegador; si no, salta al siguiente evento futuro y mantiene activo el chip de fecha correspondiente.
-
-![Agenda por dia y hora](docs/screenshots/01-agenda-desktop.png)
-
-## Busqueda
-
-El buscador filtra en cliente por texto normalizado. Busca en titulo, lugar, zona, tipo, descripcion, resumen, entradas, actuaciones, organizadores, colaboradores y etiqueta de fecha.
-
-![Filtro de busqueda](docs/screenshots/02-filtro-busqueda.png)
-
-## Filtros Por Tipo
-
-El menu de tipos se genera a partir de `tags` y, si no existen, de `type`. Permite combinar varios tipos y actualiza la etiqueta del boton con el tipo elegido o con el numero de tipos activos.
+![Filtro de búsqueda](docs/screenshots/02-filtro-busqueda.png)
 
 ![Filtro por tipo](docs/screenshots/03-filtro-tipos.png)
 
-## Favoritos
+![Vista de mapa](docs/screenshots/05-mapa.png)
 
-Cada tarjeta tiene un boton de guardado. Los favoritos se almacenan en `localStorage` con la clave `fiestasPucela:favorites`, por lo que son locales al navegador del usuario. El boton `Favoritos` limita la agenda a los eventos guardados.
+## Favoritos y planes
+
+Los favoritos y planes personalizados son datos locales del navegador:
+
+~~~text
+localStorage["fiestasPucela:favorites"]
+localStorage["fiestasPucela:plans"]
+~~~
+
+<code>/plan/</code> muestra los favoritos como <code>Guardados</code> y permite crear, renombrar, editar, eliminar, compartir y exportar planes. Los planes se pueden añadir al calendario y exportar como archivos <code>.fiestas-plan.json</code>.
+
+El formato de exportación usa <code>schemaVersion: 1</code>, <code>festival: "valladolid-2026"</code> y una lista de planes con <code>name</code>, <code>icon</code> y <code>activityIds</code>. <code>/plan/importar/</code> acepta uno o varios planes, muestra una previsualización y descarta IDs de actividades que ya no existan.
 
 ![Vista de favoritos](docs/screenshots/04-favoritos.png)
 
-## Mi Plan
+## Planes vecinales públicos
 
-`/plan/` muestra por defecto `Guardados` como un plan virtual con todos los favoritos, contador y filtro de fechas. El selector permite desplegar los planes personalizados y crear uno nuevo. Los favoritos se conservan en `fiestasPucela:favorites` y los planes personalizados versionados en `fiestasPucela:plans`. Las tarjetas mantienen el marcador; las acciones adicionales se encuentran en el botón de tres puntos y permiten añadir una actividad a uno o varios planes. Los planes se pueden renombrar, exportar, compartir como `.fiestas-plan.json`, añadir al calendario y eliminar. Los archivos usan `{ schemaVersion: 1, festival, plans: [...] }` y la importación también acepta el formato anterior de un único plan. La importación se previsualiza con el número de planes, permite expandir el listado y descarta identificadores de actividades desconocidos antes de guardar.
+El catálogo se mantiene en <code>src/data/community-plans.json</code> y actualmente incluye ocho planes. Cada entrada tiene un <code>id</code>, nombre, autor, icono y URL a un archivo <code>.fiestas-plan.json</code>:
 
-La barra inferior de la aplicación enlaza siempre a `/plan/`; no existe una ruta local `/favoritos/`.
-
-`/planes/` está preparada para mostrar colecciones públicas seleccionadas por la comunidad. El build publica el catálogo remoto inicial en `/data/planes.json`, con este contrato:
-
-```json
+~~~json
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
   "plans": [
     {
-      "id": "plan-rumbero",
-      "name": "Plan rumbero",
-      "author": "Justin",
-      "url": "https://cdn.example.org/plan-rumbero.fiestas-plan.json"
+      "id": "cielo-y-estrellas",
+      "name": "Cielo y estrellas",
+      "author": "Aldea Pucela",
+      "icon": "stars",
+      "url": "/data/community-plans/cielo-y-estrellas.fiestas-plan.json"
     }
   ]
 }
-```
+~~~
 
-`url` apunta únicamente al archivo `.fiestas-plan.json` exportado por esta web. El build genera la página estable `/planes/plan-rumbero/` a partir de `id`; el nombre y el autor pueden cambiar sin romper esa dirección. La pantalla valida el catálogo y el archivo remoto, permite previsualizar las actividades y añadir una copia local con nombre alternativo si ya existe. El catálogo vacío actual es un placeholder.
+Los archivos locales se guardan en <code>src/data/community-plans/</code>. También se aceptan URLs HTTPS externas si permiten CORS. El build valida el catálogo y genera <code>/planes/&lt;id&gt;/</code> para cada entrada.
 
-Para publicar archivos en el mismo sitio se pueden colocar los JSON en `src/data/community-plans/` y referenciarlos como `/data/community-plans/nombre.fiestas-plan.json`; también se aceptan URLs HTTPS externas con CORS. El archivo no se incrusta en el catálogo ni se ejecuta como HTML.
+## Fichas de actividad
 
-## Mapa
+Cada ficha <code>/e/&lt;id&gt;/&lt;slug&gt;/</code> incluye, cuando existen:
 
-La vista `Mapa` carga Leaflet bajo demanda y solo pinta eventos con `coordinates`. Los marcadores se ajustan a los eventos filtrados y el popup enlaza con la ficha del evento.
+- fecha, hora, lugar, zona o barrio y estado de entrada;
+- etiquetas, descripción, actuaciones, organizadores y colaboradores;
+- imagen editorial ampliable;
+- mapa compacto, enlace a la vista general e indicaciones;
+- guardar, compartir y añadir al calendario;
+- actividades relacionadas.
 
-![Vista de mapa](docs/screenshots/05-mapa.png)
-
-## Detalle De Evento
-
-Cada evento genera una ficha estatica en `/e/<id>/<slug>/` con una composicion mobile-first:
-
-- Cabecera con volver, guardar y compartir.
-- Titulo completo de la actividad.
-- Todos los `tags` del evento como chips.
-- Tarjeta principal con fecha, hora, lugar, zona/barrio y estado de entrada.
-- Mapa compacto si hay coordenadas validas.
-- Estado textual si faltan coordenadas.
-- Descripcion, actuaciones, organizadores y colaboradores cuando existen.
-- Navegacion inferior coherente con la agenda.
-
-La imagen superior es opcional. Solo se pinta si el evento trae `image`; no hay fallback visual automatico para eventos sin imagen.
+El botón de volver usa el historial del mismo sitio cuando es posible; si la ficha se abre directamente, vuelve a <code>/</code>. La compartición usa Web Share API y, como alternativa, copia la URL canónica al portapapeles.
 
 ![Detalle de evento](docs/screenshots/06-detalle-evento.png)
 
-### Guardar
+Ejemplos de fichas con mapa, entradas y ausencia de coordenadas:
 
-El boton de guardar de la ficha reutiliza el mismo almacenamiento local que la agenda:
-
-```text
-localStorage["fiestasPucela:favorites"]
-```
-
-El guardado se hace por `id` estable, actualiza `aria-pressed`, cambia el icono y muestra feedback inmediato. El estado se mantiene tras recargar.
-
-### Compartir
-
-El boton de compartir sigue esta prioridad:
-
-1. Usa Web Share API si `navigator.share` esta disponible.
-2. Si no esta disponible, copia la URL canonica con `navigator.clipboard.writeText`.
-3. Si tampoco hay portapapeles, muestra un campo con la URL para copiar manualmente.
-
-El texto de compartir se deriva en build con titulo, fecha, hora y lugar cuando existen. La URL compartida apunta siempre a la ruta canonica:
-
-```text
-https://fiestas.aldeapucela.org/e/<id>/<slug>/
-```
-
-### Mapa De La Ficha
-
-Si el evento tiene coordenadas validas, la ficha inicializa Leaflet con un unico marcador centrado en la actividad. La atribucion de OpenStreetMap/CARTO permanece visible, y los controles de Leaflet quedan por debajo de la navegacion inferior.
-
-Las acciones del mapa son:
-
-- `Ver en el mapa`: abre la agenda en modo mapa con `/?view=map&event=<id>`.
-- `Como llegar`: abre Google Maps con destino en las coordenadas.
-
-Ejemplo de ficha con mapa y entrada gratis:
-
-![Ficha con mapa y entrada gratis](docs/screenshots/issue-2/event-detail-mobile-map.png)
-
-Ejemplo de ficha con varios tags y entrada de pago:
+![Ficha con mapa](docs/screenshots/issue-2/event-detail-mobile-map.png)
 
 ![Ficha con varios tags y entrada de pago](docs/screenshots/issue-2/event-detail-mobile-paid-tags.png)
 
-Si faltan coordenadas, no se monta Leaflet y se muestra el estado `Ubicacion en mapa no disponible` sin romper la ficha.
-
 ![Ficha sin coordenadas](docs/screenshots/issue-2/event-detail-mobile-no-coordinates.png)
 
-### Volver Desde La Ficha
+## PWA, tema y suscripciones
 
-El boton de volver usa `history.back()` cuando el `referrer` pertenece al mismo origen y hay historial disponible. Si se accede directamente a la ficha, el fallback lleva a `/`.
+La web incluye manifest, iconos instalables, service worker versionado y una página offline. La caché utiliza red primero para documentos HTML y datos dinámicos, y caché primero para recursos propios. Los favoritos y planes no se almacenan en la caché.
 
-## Movil
+El tema claro/oscuro se guarda con la clave <code>aldeapucela_theme</code>. En navegadores compatibles, la instalación PWA aparece desde el menú <code>Más</code>; en Safari para iPhone/iPad se muestran instrucciones para usar <code>Compartir → Añadir a pantalla de inicio</code>.
 
-En pantallas pequenas, la navegacion principal pasa a un drawer lateral. Los filtros se pliegan detras del boton `Filtros` para mantener visible la agenda.
+El menú <code>Suscribirse</code> enlaza al calendario ICS y RSS de Aldea Pucela Eventos, además del boletín.
 
-![Menu movil](docs/screenshots/07-menu-movil.png)
+![Menú móvil](docs/screenshots/07-menu-movil.png)
 
-![Filtros en movil](docs/screenshots/08-filtros-movil.png)
-
-## Tema
-
-El tema claro/oscuro se controla desde `src/scripts/theme.js` y se guarda en `localStorage` con la clave `aldeapucela_theme`. El layout aplica el tema pronto para evitar parpadeos al cargar.
+![Filtros en móvil](docs/screenshots/08-filtros-movil.png)
 
 ![Tema oscuro](docs/screenshots/09-tema-oscuro.png)
 
 ## Analítica
 
-La integración de Matomo, su taxonomía de eventos, configuración y límites de privacidad están documentados en [docs/matomo.md](docs/matomo.md).
+La integración opcional de Matomo, su taxonomía y sus límites de privacidad están documentados en [docs/matomo.md](docs/matomo.md).
 
-## Auditoria Y Enriquecimiento De Ubicaciones
+Variables disponibles durante el build:
 
-El repositorio incluye un script manual para revisar eventos sin lugar, zona o coordenadas:
+| Variable | Valor por defecto | Uso |
+| --- | --- | --- |
+| <code>FIESTAS_ANALYTICS_ENABLED</code> | automático | <code>true</code> activa y <code>false</code> desactiva la analítica. En localhost queda desactivada por defecto. |
+| <code>FIESTAS_MATOMO_URL</code> | <code>https://stats.aldeapucela.org/</code> | URL base de Matomo. |
+| <code>FIESTAS_MATOMO_SITE_ID</code> | <code>29</code> | Site ID de Matomo. |
 
-```bash
+Para desarrollo local:
+
+~~~bash
+FIESTAS_ANALYTICS_ENABLED=false npm run dev
+~~~
+
+## Auditoría de ubicaciones
+
+El comando recomendado para revisar actividades sin lugar, zona o coordenadas es:
+
+~~~bash
 npm run locations:audit
-```
+~~~
 
-Ese comando ejecuta:
+Por defecto ejecuta una auditoría local sin red y escribe informes en <code>.cache/fiestas/reports/</code>. La caché de geocodificación, si se usa Nominatim, está en <code>.cache/fiestas/nominatim-location-cache.json</code>; <code>.cache/</code> está ignorado por Git.
 
-```bash
+Modos disponibles:
+
+~~~bash
+# Auditoría local sin peticiones externas
 node scripts/enrich-event-locations.mjs --dry-run
-```
 
-Por defecto solo audita localmente y no hace peticiones externas. Genera un informe JSON en:
-
-```text
-.cache/fiestas/reports/
-```
-
-La cache local de geocodificacion, cuando se usa un proveedor externo, vive en:
-
-```text
-.cache/fiestas/nominatim-location-cache.json
-```
-
-`.cache/` esta ignorado por Git.
-
-### Modos Del Script
-
-Auditoria local sin red:
-
-```bash
-node scripts/enrich-event-locations.mjs --dry-run
-```
-
-Consultar Nominatim sin modificar `events.json`:
-
-```bash
+# Consultar Nominatim sin modificar events.json
 node scripts/enrich-event-locations.mjs --dry-run --provider=nominatim
-```
 
-Aplicar resultados de confianza suficiente:
-
-```bash
+# Aplicar resultados con confianza suficiente
 node scripts/enrich-event-locations.mjs --apply --provider=nominatim
-```
 
-Reparar tambien eventos que ya tienen coordenadas:
-
-```bash
+# Revisar también actividades que ya tienen coordenadas
 node scripts/enrich-event-locations.mjs --dry-run --provider=nominatim --repair
-```
+~~~
 
-El script:
-
-- Normaliza consultas con lugar/zona y `Valladolid, Espana`.
-- No vuelve a geocodificar eventos con coordenadas validas salvo `--repair`.
-- Usa cache local por consulta normalizada.
-- Ejecuta una cola secuencial.
-- Respeta una espera de 1100 ms entre consultas a Nominatim.
-- Usa `User-Agent: AldeaPucelaFiestas/1.0 (contacto@aldeapucela.org)`.
-- Separa resultados modificables, ambiguos y sin coincidencia.
-- No aplica automaticamente resultados ambiguos o de baja confianza.
-- Mantiene el proveedor encapsulado para poder sustituirlo.
+El script usa una cola secuencial, cachea consultas y no aplica automáticamente resultados ambiguos o de baja confianza.
 
 ## Capturas
 
-Las capturas del README se regeneran con:
+Con la aplicación ejecutándose:
 
-```bash
+~~~bash
 npm run screenshots
-```
+~~~
 
-Antes de ejecutarlo, levanta la app:
+Por defecto usa <code>http://127.0.0.1:8002</code> y Chrome en <code>/Applications/Google Chrome.app/Contents/MacOS/Google Chrome</code>. Puedes cambiar ambos valores:
 
-```bash
-npm run dev
-```
-
-Por defecto el script captura `http://127.0.0.1:8002`. Puedes cambiar la base:
-
-```bash
+~~~bash
 FIESTAS_BASE_URL=http://127.0.0.1:8010 npm run screenshots
-```
-
-Si Chrome esta en otra ruta:
-
-```bash
 CHROME_PATH="/ruta/a/Google Chrome" npm run screenshots
-```
+~~~
 
-### Capturas De Fichas Para PR
+Las capturas específicas de fichas están en <code>docs/screenshots/issue-2/</code> y se pueden regenerar con Chrome y Playwright si hace falta.
 
-Las capturas especificas de la issue 2 estan en:
+## Política de URLs
 
-```text
-docs/screenshots/issue-2/
-```
+Las rutas de Fiestas 2026 son locales a <code>https://fiestas.aldeapucela.org/</code>. Los enlaces al resto de Aldea Pucela Eventos deben usar la base absoluta:
 
-Se pueden regenerar con Playwright usando Chrome del sistema, sin instalar Playwright como dependencia del proyecto:
-
-```bash
-npx -y playwright@latest screenshot --channel=chrome --viewport-size=430,940 --wait-for-timeout=3000 \
-  http://127.0.0.1:8002/e/1/gira-de-verano-nintendo/ \
-  docs/screenshots/issue-2/event-detail-mobile-map.png
-
-npx -y playwright@latest screenshot --channel=chrome --viewport-size=430,940 --wait-for-timeout=3000 \
-  http://127.0.0.1:8002/e/8/la-historia-interminable-el-musical/ \
-  docs/screenshots/issue-2/event-detail-mobile-paid-tags.png
-
-npx -y playwright@latest screenshot --channel=chrome --viewport-size=430,940 --wait-for-timeout=3000 \
-  http://127.0.0.1:8002/e/373/viii-marcha-cicloturistica/ \
-  docs/screenshots/issue-2/event-detail-mobile-no-coordinates.png
-```
-
-## Politica De URLs
-
-Las rutas de Fiestas 2026 se publican en la raiz de `https://fiestas.aldeapucela.org/`. Los enlaces al resto de Aldea Pucela Eventos deben ser absolutos con base:
-
-```text
+~~~text
 https://eventos.aldeapucela.org/
-```
+~~~
 
-## Verificacion Manual
+## Verificación manual
 
 Antes de publicar:
 
-1. Ejecuta `npm run build`.
-2. Revisa la agenda principal.
-3. Prueba busqueda, filtro por tipo, favoritos y limpiar filtros.
-4. Cambia entre agenda y mapa.
-5. Abre una ficha de evento con coordenadas.
-6. Abre una ficha de evento sin coordenadas y comprueba el estado textual.
-7. Prueba guardar y compartir desde una ficha.
-8. Revisa el drawer y los filtros en movil.
+1. Ejecuta <code>npm run build</code> y <code>npm test</code>.
+2. Revisa la agenda, las fechas y la búsqueda.
+3. Prueba filtros por zona, tipo, precio y guardados.
+4. Cambia entre agenda y mapa; prueba una actividad con coordenadas y otra sin ellas.
+5. Abre una ficha, guarda, comparte y añade la actividad al calendario.
+6. Revisa <code>/plan/</code>, la exportación, <code>/plan/importar/</code> y un archivo inválido.
+7. Revisa <code>/planes/</code> y al menos una página <code>/planes/&lt;id&gt;/</code>.
+8. Comprueba menú y filtros en móvil.
 9. Cambia entre tema claro y oscuro.
-10. Revisa `/plan/`, `/plan/importar/`, el selector desde una actividad, la exportación ICS y la importación de un archivo invalido.
+10. En DevTools → Application revisa manifest, service worker y fallback offline.
 
-## Politica De Cache De CSS Y JavaScript
+## Caché de CSS y JavaScript
 
-El build genera versiones de contenido para los recursos propios:
+El build calcula hashes cortos del CSS y JavaScript y publica copias versionadas, por ejemplo <code>fiestas-2026.&lt;hash&gt;.css</code> y <code>fiestas-2026.&lt;hash&gt;.js</code>. Las plantillas referencian automáticamente esas versiones. No hay que renombrar archivos ni incrementar versiones a mano: basta con ejecutar <code>npm run build</code> o <code>npm run dev</code>.
 
-- `cssVersion` es un hash corto del CSS compilado.
-- `jsVersion` es un hash corto de los modulos JavaScript copiados a `dist/`.
-- Las plantillas publican esos valores como `?v=<version>` en cada referencia local.
+## Licencia
 
-Por tanto, cualquier cambio efectivo en CSS cambia la URL del CSS y cualquier cambio efectivo en JavaScript cambia la URL del modulo. El navegador puede mantener una version anterior, pero nunca la confundira con la nueva. No hay que editar manualmente nombres de archivos ni incrementar un numero a mano: basta con ejecutar `npm run build` (o usar `npm run dev`).
+El contenido se publica bajo [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es). El código está disponible en [GitHub](https://github.com/aldeapucela/fiestas).
