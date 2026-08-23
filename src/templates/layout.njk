@@ -74,8 +74,20 @@
         </p>
       </div>
     </footer>
+    <button
+      class="scroll-top-btn is-hidden"
+      type="button"
+      data-scroll-top
+      aria-label="Volver arriba"
+      title="Volver arriba"
+      aria-hidden="true"
+      tabindex="-1"
+    >
+      <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
+    </button>
     <script type="module" src="/assets/js/{{ pageJs }}?v={{ jsVersion }}" defer></script>
     {% block extraScripts %}{% endblock %}
+    <script type="module" src="/assets/js/scroll-top.{{ jsVersion }}.js" defer></script>
     <script type="module" src="/assets/js/pwa.{{ jsVersion }}.js" defer></script>
   </body>
 </html>

@@ -771,12 +771,14 @@
   }
 
   .scroll-top-btn {
-    @apply fixed right-5 z-[35] inline-flex h-12 w-12 items-center justify-center rounded-full border border-line bg-white text-slate-600 shadow-md transition hover:text-brand-700;
-    bottom: 9.5rem;
+    @apply fixed z-[35] inline-flex h-11 w-11 items-center justify-center rounded-full border border-line bg-white text-slate-600 shadow-md transition hover:text-brand-700;
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: calc(5.5rem + env(safe-area-inset-bottom));
   }
 
   .scroll-top-btn.is-hidden {
     @apply pointer-events-none opacity-0;
+    visibility: hidden;
   }
 
   .share-site-btn {
