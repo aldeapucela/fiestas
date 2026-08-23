@@ -463,7 +463,8 @@
     },
     "tags": [
       "Música"
-    ]
+    ],
+    "image": "/assets/events/pucelarock-2026.jpg"
   },
   {
     "id": 15,
@@ -2186,7 +2187,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://www.castillaleonmetal.es/wp-content/uploads/2025/01/pucela_heavy_rock_fest_2026-400x400.jpg"
+    "image": "/assets/events/pucela-heavy-rock-fest-2026.jpg"
   },
   {
     "id": 67,
@@ -6455,7 +6456,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0c69a397160fbea7f00422109462214661fd2427_2_819x1024.jpeg"
+    "image": "/assets/events/lorencito-festival-2026.jpg"
   },
   {
     "id": 198,
@@ -8279,7 +8280,8 @@
     },
     "tags": [
       "Música"
-    ]
+    ],
+    "image": "/assets/events/se-dice-regue-2026.jpg"
   },
   {
     "id": 254,
@@ -11281,7 +11283,7 @@
       "Peñas",
       "Música"
     ],
-    "image": "https://www.thesoundoftheembryo.es/wp-content/uploads/2026/07/736592788_1648903690242943_7130703887093218119_n.webp"
+    "image": "/assets/events/festidagas-2026.jpg"
   },
   {
     "id": 346,
