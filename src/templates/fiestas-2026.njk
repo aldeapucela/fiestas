@@ -45,23 +45,15 @@
       </div>
     </header>
 
-    <section class="fiestas-search-panel" id="fiestas-search-panel" data-fiestas-search-panel hidden>
-      <label class="fiestas-search">
-        <span class="sr-only">Buscar actividades</span>
-        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-        <input type="search" data-fiestas-search placeholder="Buscar actividad, lugar o barrio" autocomplete="off" />
-      </label>
-    </section>
-
-    <section class="fiestas-date-panel" aria-label="Selector de fechas">
+    <section class="fiestas-date-panel" id="fiestas-date-panel" aria-label="Selector de fechas">
       <nav class="fiestas-date-strip" data-fiestas-dates>
-        <button class="fiestas-date-card" type="button" data-date="all" aria-pressed="false">
+        <button class="fiestas-date-card is-active" type="button" data-date="all" aria-pressed="true">
           <span>Todos</span>
           <strong>Días</strong>
           <small>4-13 SEP</small>
         </button>
         {% for day in fiestasDates %}
-        <button class="fiestas-date-card{% if loop.first %} is-active{% endif %}" type="button" data-date="{{ day.date }}" aria-pressed="{{ 'true' if loop.first else 'false' }}">
+        <button class="fiestas-date-card" type="button" data-date="{{ day.date }}" aria-pressed="false">
           <span>{{ day.weekday }}</span>
           <strong>{{ day.dayNumber }}</strong>
           <small>{{ day.monthLabel }}</small>
@@ -70,8 +62,27 @@
       </nav>
     </section>
 
-    <section class="fiestas-controls" aria-label="Filtros">
-      <div class="fiestas-filter-row" data-fiestas-filter-panel>
+    <section class="fiestas-filter-region" data-fiestas-filter-region aria-labelledby="fiestas-filter-region-title">
+      <div class="fiestas-map-filter-header">
+        <div>
+          <span class="fiestas-map-filter-kicker">Explora el mapa</span>
+          <h2 id="fiestas-filter-region-title">Filtros</h2>
+        </div>
+        <button class="fiestas-map-filter-close" type="button" data-fiestas-map-filter-close aria-label="Cerrar filtros">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <section class="fiestas-search-panel" id="fiestas-search-panel" data-fiestas-search-panel hidden>
+        <label class="fiestas-search">
+          <span class="sr-only">Buscar actividades</span>
+          <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+          <input type="search" data-fiestas-search placeholder="Buscar actividad, lugar o barrio" autocomplete="off" />
+        </label>
+      </section>
+
+      <section class="fiestas-controls" aria-label="Filtros">
+        <div class="fiestas-filter-row" data-fiestas-filter-panel>
         <div class="fiestas-type-menu">
           <button class="fiestas-type-menu-button" type="button" data-fiestas-areas-toggle aria-expanded="false">
             <svg class="fiestas-filter-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -162,6 +173,7 @@
         </div>
         <span class="fiestas-filter-count" data-fiestas-filter-count aria-live="polite"></span>
       </div>
+      </section>
     </section>
 
     <section class="fiestas-agenda" data-fiestas-agenda aria-label="Agenda de fiestas">
@@ -169,15 +181,26 @@
     </section>
 
     <section class="fiestas-map-view" data-fiestas-map-view hidden>
+      <header class="fiestas-map-header" aria-label="Cabecera del mapa">
+        <a class="fiestas-map-brand" href="/" aria-label="Volver a la agenda de Fiestas 2026">
+          <img src="/assets/favicon.png" alt="" aria-hidden="true" />
+          <span>Mapa</span>
+        </a>
+        <button class="fiestas-map-date-toggle" type="button" data-fiestas-map-date-toggle aria-expanded="false" aria-controls="fiestas-date-panel">
+          <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+          <span data-fiestas-map-date-label>Todos</span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+      </header>
+      <button class="fiestas-map-filter-toggle" type="button" data-fiestas-map-filter-toggle aria-expanded="false" aria-controls="fiestas-filter-region">
+        <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+        <span>Filtros</span>
+        <span class="fiestas-map-filter-count" data-fiestas-map-filter-count hidden aria-label="Filtros activos">0</span>
+      </button>
       <div class="fiestas-map-canvas" data-fiestas-map></div>
       <div class="fiestas-map-topbar" aria-label="Controles del mapa">
-        <button class="fiestas-map-control" type="button" data-fiestas-map-center>
+        <button class="fiestas-map-control fiestas-map-control--icon" type="button" data-fiestas-map-locate aria-label="Centrar en mi ubicación" title="Centrar en mi ubicación">
           <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
-          <span>Valladolid</span>
-        </button>
-        <button class="fiestas-map-control" type="button" data-fiestas-map-locate>
-          <i class="fa-solid fa-location-arrow" aria-hidden="true"></i>
-          <span data-fiestas-location-label>Activar ubicación</span>
         </button>
       </div>
       <div class="fiestas-map-empty" data-fiestas-map-empty hidden></div>
@@ -187,7 +210,10 @@
           <strong data-fiestas-map-sheet-title>Actividades del día</strong>
           <small data-fiestas-map-sheet-count>0 actividades</small>
         </button>
-        <div class="fiestas-map-location-note" data-fiestas-location-note hidden></div>
+        <button class="fiestas-map-location-note" type="button" data-fiestas-location-note aria-label="Clic para compartir ubicación" hidden>
+          <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
+          <span>Clic para compartir ubicación</span>
+        </button>
         <div class="fiestas-map-sheet-preview" data-fiestas-map-sheet-preview></div>
         <div class="fiestas-map-sheet-list" data-fiestas-map-sheet-list></div>
       </section>

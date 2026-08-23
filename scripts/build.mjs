@@ -25,6 +25,7 @@ const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
 env.addFilter('dump', (value) => JSON.stringify(value));
+env.addFilter('slugify', (value) => slugify(value));
 
 function parseBooleanEnv(value) {
   if (value === 'true') return true;

@@ -1,5 +1,6 @@
 export default {
   content: ['./src/templates/**/*.njk', './src/scripts/**/*.js'],
+  safelist: [{ pattern: /^fiestas-type-/ }],
   theme: {
     extend: {
       colors: {

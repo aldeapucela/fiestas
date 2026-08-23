@@ -84,11 +84,11 @@
       <div class="fiestas-detail-tags" aria-label="Categorías">
         {% for tag in event.tags %}
         <a
-          class="fiestas-detail-type"
+          class="fiestas-detail-type fiestas-type-{{ tag | slugify }}"
           href="/?date=all&amp;type={{ tag | urlencode }}"
           aria-label="Ver todas las actividades de {{ tag }}"
         >
-          <i class="fa-solid {% if loop.first %}{{ event.icon }}{% else %}fa-tag{% endif %}" aria-hidden="true"></i>
+          <i class="fa-solid {% if loop.first %}{{ event.icon }}{% else %}fa-tag{% endif %} fiestas-type-{{ tag | slugify }}" aria-hidden="true"></i>
           {{ tag }}
         </a>
         {% endfor %}
@@ -246,7 +246,7 @@
     <section class="fiestas-detail-card fiestas-related-card" aria-labelledby="fiestas-related-title">
       <div class="fiestas-related-heading">
         <h2 id="fiestas-related-title">
-          <i class="fa-solid {{ event.icon }}" aria-hidden="true"></i>
+          <i class="fa-solid {{ event.icon }} fiestas-type-{{ event.type | slugify }}" aria-hidden="true"></i>
           Relacionados
         </h2>
         <span>{{ event.type }}</span>

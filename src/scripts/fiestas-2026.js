@@ -30,11 +30,14 @@ const cartoLayers = {
   dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
 };
 const valladolidCenter = [41.6523, -4.7245];
+const userLocationZoom = 14;
 const nearbyRadiusMeters = 2000;
 let leafletPromise = null;
 let initialDate = null;
 let filterBackdrop = null;
 let filterScrollY = 0;
+let filterReturnFocus = null;
+let suppressMapSheetClick = false;
 let isApplyingUrlState = false;
 let lastTrackedSearchKey = '';
 let siteShareFeedbackTimer = null;
@@ -58,6 +61,8 @@ const state = {
   userMarker: null,
   selectedEventId: null,
   sheetState: 'collapsed',
+  mapDateOpen: false,
+  mapFilterPanelOpen: false,
   locationStatus: 'idle',
   userLocation: null,
   hasRequestedLocation: false,
@@ -73,9 +78,14 @@ const els = {
   mapView: document.querySelector('[data-fiestas-map-view]'),
   mapCanvas: document.querySelector('[data-fiestas-map]'),
   mapEmpty: document.querySelector('[data-fiestas-map-empty]'),
-  mapCenter: document.querySelector('[data-fiestas-map-center]'),
+  datePanel: document.querySelector('[data-fiestas-dates]')?.closest('.fiestas-date-panel'),
+  filterRegion: document.querySelector('[data-fiestas-filter-region]'),
+  mapDateToggle: document.querySelector('[data-fiestas-map-date-toggle]'),
+  mapDateLabel: document.querySelector('[data-fiestas-map-date-label]'),
+  mapFilterToggle: document.querySelector('[data-fiestas-map-filter-toggle]'),
+  mapFilterCount: document.querySelector('[data-fiestas-map-filter-count]'),
+  mapFilterClose: document.querySelector('[data-fiestas-map-filter-close]'),
   mapLocate: document.querySelector('[data-fiestas-map-locate]'),
-  locationLabel: document.querySelector('[data-fiestas-location-label]'),
   locationNote: document.querySelector('[data-fiestas-location-note]'),
   mapSheet: document.querySelector('[data-fiestas-map-sheet]'),
   mapSheetToggle: document.querySelector('[data-fiestas-map-sheet-toggle]'),
@@ -182,6 +192,7 @@ function bindControls() {
     const button = event.target.closest('[data-date]');
     if (!button) return;
     state.selectedDate = button.dataset.date || 'all';
+    if (state.view === 'map') setMapDateOpen(false);
     trackDateSelected(state.selectedDate, state.view);
     state.focusedClusterEventIds = null;
     render({ scrollToAgenda: true, updateUrl: true });
@@ -238,6 +249,18 @@ function bindControls() {
     render();
   });
 
+  els.mapDateToggle?.addEventListener('click', () => {
+    setMapDateOpen(!state.mapDateOpen);
+  });
+
+  els.mapFilterToggle?.addEventListener('click', () => {
+    setMapFilterPanelOpen(!state.mapFilterPanelOpen);
+  });
+
+  els.mapFilterClose?.addEventListener('click', () => {
+    setMapFilterPanelOpen(false);
+  });
+
   els.clearFilters?.addEventListener('click', () => {
     state.search = '';
     state.selectedTypes.clear();
@@ -263,25 +286,33 @@ function bindControls() {
   els.viewTabs.forEach((button) => {
     button.addEventListener('click', () => {
       state.view = button.dataset.viewTab === 'map' ? 'map' : 'agenda';
+      if (state.view !== 'map') {
+        setMapDateOpen(false, { restoreFocus: false });
+        setMapFilterPanelOpen(false, { restoreFocus: false });
+        setSearchOpen(Boolean(state.search), { focus: false });
+      }
       if (state.view === 'map') requestLocationOnce();
       render({ scrollToAgenda: true, updateUrl: true });
     });
   });
 
-  els.mapCenter?.addEventListener('click', () => {
-    if (!state.map) return;
-    state.map.setView(valladolidCenter, 14);
-  });
-
   els.mapLocate?.addEventListener('click', () => {
     if (state.userLocation && state.map) {
-      state.map.setView([state.userLocation.lat, state.userLocation.lng], 15);
+      state.map.setView([state.userLocation.lat, state.userLocation.lng], userLocationZoom);
       return;
     }
     requestLocation({ centerOnSuccess: true, force: true });
   });
 
+  els.locationNote?.addEventListener('click', () => {
+    requestLocation({ centerOnSuccess: true, force: true });
+  });
+
   els.mapSheetToggle?.addEventListener('click', () => {
+    if (suppressMapSheetClick) {
+      suppressMapSheetClick = false;
+      return;
+    }
     state.sheetState = state.sheetState === 'expanded' ? 'collapsed' : 'expanded';
     renderMapSheet(getFilteredEvents());
   });
@@ -314,12 +345,20 @@ function bindControls() {
   });
 
   document.addEventListener('click', (event) => {
+    if (!event.target.closest('[data-fiestas-map-date-toggle]') && !event.target.closest('#fiestas-date-panel')) {
+      setMapDateOpen(false, { restoreFocus: false });
+    }
+    if (!event.target.closest('[data-fiestas-map-filter-toggle]') && !event.target.closest('[data-fiestas-filter-region]')) {
+      setMapFilterPanelOpen(false, { restoreFocus: false });
+    }
     if (!event.target.closest('.fiestas-type-menu') && !event.target.closest('[data-fiestas-filter-backdrop]')) {
       setMenuOpen('area', false);
       setMenuOpen('type', false);
       setMenuOpen('ticket', false);
     }
   });
+
+  document.addEventListener('keydown', handleOverlayKeydown);
 }
 
 function trackCommittedSearch() {
@@ -406,6 +445,31 @@ function renderShellState(filtered) {
 
   els.favoriteFilter?.classList.toggle('is-active', state.onlyFavorites);
   els.favoriteFilter?.setAttribute('aria-pressed', String(state.onlyFavorites));
+  const mapMode = state.view === 'map';
+  const activeFilterCount = getActiveFilterCount();
+  els.app?.classList.toggle('is-map-date-open', mapMode && state.mapDateOpen);
+  els.app?.classList.toggle('is-map-filters-open', mapMode && state.mapFilterPanelOpen);
+  els.mapDateLabel && (els.mapDateLabel.textContent = compactDateLabel(state.selectedDate));
+  els.mapDateToggle?.setAttribute('aria-expanded', String(state.mapDateOpen));
+  els.mapFilterToggle?.setAttribute('aria-expanded', String(state.mapFilterPanelOpen));
+  els.mapFilterToggle?.classList.toggle('is-active', activeFilterCount > 0);
+  els.mapFilterToggle?.setAttribute('aria-label', activeFilterCount ? `Abrir filtros. ${activeFilterCount} activos` : 'Abrir filtros');
+  if (els.mapFilterCount) {
+    els.mapFilterCount.hidden = activeFilterCount === 0;
+    els.mapFilterCount.textContent = String(activeFilterCount);
+  }
+  if (els.datePanel) els.datePanel.setAttribute('aria-hidden', String(mapMode && !state.mapDateOpen));
+  if (els.filterRegion) {
+    const dialogOpen = mapMode && state.mapFilterPanelOpen;
+    els.filterRegion.setAttribute('aria-hidden', String(mapMode && !dialogOpen));
+    if (dialogOpen) {
+      els.filterRegion.setAttribute('role', 'dialog');
+      els.filterRegion.setAttribute('aria-modal', 'true');
+    } else {
+      els.filterRegion.removeAttribute('role');
+      els.filterRegion.removeAttribute('aria-modal');
+    }
+  }
   renderCheckedFilters();
   renderFilterLabels();
   renderActiveFilters(filtered.length);
@@ -461,13 +525,14 @@ function eventCard(event) {
 
   const link = document.createElement('a');
   link.className = 'fiestas-event-link';
+  const typeClass = typeColorClass(event.type);
   const artMarkup = event.image
     ? `<img class="fiestas-event-image" src="${escapeHtml(event.image)}" alt="" loading="lazy" decoding="async">`
     : `<i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i>`;
   link.href = event.urlPath;
   link.innerHTML = `
     <span class="fiestas-event-time">${timeMarkup(event)}</span>
-    <span class="fiestas-event-art${event.image ? ' has-image' : ''}" aria-hidden="true">${artMarkup}</span>
+    <span class="fiestas-event-art ${typeClass}${event.image ? ' has-image' : ''}" aria-hidden="true">${artMarkup}</span>
     <span class="fiestas-event-copy">
       <span class="fiestas-event-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
       <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-event-place-text">${escapeHtml(place)}</span></span>
@@ -540,13 +605,8 @@ async function renderMap(events) {
     if (state.preferredMapCenter) {
       state.map.setView(state.preferredMapCenter.latLng, state.preferredMapCenter.zoom);
       state.preferredMapCenter = null;
-    } else if (withCoordinates.length) {
-      const bounds = leaflet.latLngBounds(withCoordinates.map((event) => [event.coordinates.lat, event.coordinates.lng]));
-      if (state.userLocation && state.locationStatus === 'granted') bounds.extend([state.userLocation.lat, state.userLocation.lng]);
-      state.map.fitBounds(bounds, {
-        padding: [26, 26],
-        maxZoom: 16
-      });
+    } else if (state.userLocation && state.locationStatus === 'granted') {
+      state.map.setView([state.userLocation.lat, state.userLocation.lng], userLocationZoom);
     } else {
       state.map.setView(valladolidCenter, 14);
     }
@@ -559,9 +619,11 @@ function renderMapMarkers(events, leaflet) {
   const groups = clusterEvents(events);
   groups.forEach((group) => {
     if (group.events.length > 1) {
+      const clusterType = sharedEventType(group.events);
+      const clusterTypeClass = clusterType ? ` ${typeColorClass(clusterType)}` : '';
       const marker = leaflet.marker(group.center, {
         icon: leaflet.divIcon({
-          className: 'fiestas-map-cluster',
+          className: `fiestas-map-cluster${clusterTypeClass}`,
           html: `<button type="button" aria-label="${group.events.length} actividades en esta zona">${group.events.length}</button>`,
           iconSize: [44, 44],
           iconAnchor: [22, 22]
@@ -592,7 +654,7 @@ function renderMapMarkers(events, leaflet) {
       title: `${event.title}. ${event.type || 'Actividad'}`,
       alt: `${event.title}. ${event.type || 'Actividad'}`,
       icon: leaflet.divIcon({
-        className: `fiestas-map-marker${selected ? ' is-selected' : ''}`,
+        className: `fiestas-map-marker ${typeColorClass(event.type)}${selected ? ' is-selected' : ''}`,
         html: `<button type="button" aria-label="${escapeHtml(event.title)}. ${escapeHtml(event.type || 'Actividad')}"><i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}" aria-hidden="true"></i></button>`,
         iconSize: [38, 38],
         iconAnchor: [19, 19]
@@ -609,6 +671,11 @@ function renderMapMarkers(events, leaflet) {
     });
     marker.addTo(state.markers);
   });
+}
+
+function sharedEventType(events) {
+  const type = events[0]?.type || 'Evento';
+  return events.every((event) => (event.type || 'Evento') === type) ? type : null;
 }
 
 function hasSameCoordinates(events) {
@@ -731,7 +798,7 @@ function renderMapSheet(events, options = {}) {
     els.mapSheetList?.append(reset);
   }
 
-  sorted.slice(0, 2).forEach((event) => els.mapSheetPreview?.append(mapSheetItem(event, true)));
+  sorted.slice(0, 3).forEach((event) => els.mapSheetPreview?.append(mapSheetItem(event, true)));
   sorted.forEach((event) => els.mapSheetList?.append(mapSheetItem(event)));
   if (options.scrollToSelected) scrollSelectedMapResult();
 }
@@ -743,58 +810,58 @@ function getMapSheetEvents(events) {
 }
 
 function renderLocationStatus() {
-  if (els.locationLabel) {
+  if (els.mapLocate) {
     const labels = {
-      idle: 'Activar ubicación',
-      pending: 'Localizando...',
-      granted: 'Mi ubicación',
-      denied: 'Activar ubicación',
-      blocked: 'Ubicación bloqueada',
-      unavailable: 'Ubicación no disponible'
+      idle: 'Centrar en mi ubicación',
+      pending: 'Localizando ubicación',
+      granted: 'Centrar en mi ubicación',
+      denied: 'Solicitar permiso de ubicación',
+      blocked: 'Activar ubicación en los ajustes',
+      unavailable: 'Volver a solicitar ubicación'
     };
-    els.locationLabel.textContent = labels[state.locationStatus] || 'Activar ubicación';
+    const label = labels[state.locationStatus] || 'Centrar en mi ubicación';
+    els.mapLocate.setAttribute('aria-label', label);
+    els.mapLocate.title = label;
   }
   if (!els.locationNote) return;
-  const messages = {
-    idle: 'Activa tu ubicación para ver qué hay cerca de ti.',
-    pending: 'Solicitando permiso de ubicación...',
-    denied: 'Activa tu ubicación para ver qué hay cerca de ti.',
-    blocked: 'El navegador ha bloqueado la ubicación. Puedes activarla desde sus ajustes.',
-    unavailable: 'No se pudo obtener tu ubicación. El mapa sigue funcionando sin distancias.'
-  };
-  const message = messages[state.locationStatus];
-  els.locationNote.hidden = !message || state.sheetState === 'hidden';
-  els.locationNote.textContent = message || '';
+  const canRequestLocation = !['pending', 'granted'].includes(state.locationStatus);
+  els.locationNote.hidden = !canRequestLocation || state.sheetState === 'hidden' || Boolean(state.focusedClusterEventIds);
+  els.locationNote.disabled = !canRequestLocation;
 }
 
 function mapSheetItem(event, compact = false) {
   const article = document.createElement('article');
-  article.className = `fiestas-map-result${compact ? ' is-compact' : ''}`;
+  const typeClass = typeColorClass(event.type);
+  article.className = `fiestas-map-result ${typeClass}${compact ? ' is-compact' : ''}`;
   article.dataset.mapResultId = event.id;
-  article.classList.toggle('is-selected', event.id === state.selectedEventId);
 
   const distance = distanceLabel(event);
-  const meta = [
-    event.type,
-    event.location || 'Lugar por confirmar',
-    event.area,
-    event.ticketKind === 'free' ? 'Gratis' : ''
-  ].filter(Boolean);
+  const title = event.title || 'Actividad sin título';
+  const place = event.location || 'Lugar por confirmar';
+  const type = event.type || 'Evento';
+  const distanceMarkup = distance
+    ? `<span class="fiestas-map-result-distance"><i class="fa-solid fa-person-walking" aria-hidden="true"></i>${escapeHtml(distance)}</span>`
+    : '';
 
   const link = document.createElement('a');
   link.href = event.urlPath;
   link.innerHTML = `
-    <span class="fiestas-map-result-time">${escapeHtml(timeRange(event))}</span>
-    <span class="fiestas-map-result-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
-    <span class="fiestas-map-result-meta">${escapeHtml(meta.join(' · '))}</span>
-    ${distance ? `<span class="fiestas-map-result-distance">${escapeHtml(distance)}</span>` : ''}
+    <span class="fiestas-map-result-icon ${typeClass}" aria-hidden="true"><i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i></span>
+    <span class="fiestas-map-result-copy">
+      <span class="fiestas-map-result-title-line">
+        <span class="fiestas-map-result-title">${escapeHtml(title)}</span>
+        <span class="fiestas-map-result-type">${escapeHtml(type)}</span>
+      </span>
+      <span class="fiestas-map-result-meta"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(place)}</span>
+      ${distanceMarkup}
+    </span>
   `;
 
   const locate = document.createElement('button');
   locate.type = 'button';
   locate.className = 'fiestas-map-result-focus';
-  locate.setAttribute('aria-label', `Ver ${event.title} en el mapa`);
-  locate.innerHTML = '<i class="fa-solid fa-location-dot" aria-hidden="true"></i>';
+  locate.setAttribute('aria-label', `Ver ${title} en el mapa`);
+  locate.innerHTML = '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>';
   locate.disabled = !hasCoordinates(event.coordinates) || state.mapLoadError;
   locate.addEventListener('click', () => {
     if (!state.map || !hasCoordinates(event.coordinates)) return;
@@ -882,7 +949,7 @@ function requestLocation(options = {}) {
       lng: position.coords.longitude,
       accuracy: position.coords.accuracy
     };
-    if (options.centerOnSuccess) state.preferredMapCenter = { latLng: [state.userLocation.lat, state.userLocation.lng], zoom: 15 };
+    if (options.centerOnSuccess) state.preferredMapCenter = { latLng: [state.userLocation.lat, state.userLocation.lng], zoom: userLocationZoom };
     renderMap(getFilteredEvents());
   }, (error) => {
     state.userLocation = null;
@@ -898,23 +965,72 @@ function requestLocation(options = {}) {
 }
 
 function bindMapSheetGestures() {
-  if (!els.mapSheet) return;
+  if (!els.mapSheet || !els.mapSheetToggle) return;
   let startY = 0;
+  let startTransformY = 0;
+  let pointerId = null;
   let tracking = false;
-  els.mapSheet.addEventListener('pointerdown', (event) => {
-    if (!event.target.closest('[data-fiestas-map-sheet-toggle]')) return;
-    tracking = true;
-    startY = event.clientY;
-  });
-  els.mapSheet.addEventListener('pointerup', (event) => {
-    if (!tracking) return;
+  let dragged = false;
+
+  const readTransformY = () => {
+    const transform = getComputedStyle(els.mapSheet).transform;
+    if (!transform || transform === 'none') return 0;
+    const values = transform.slice(transform.indexOf('(') + 1, -1).split(',').map(Number);
+    return values.length === 6 ? values[5] : values.length === 16 ? values[13] : 0;
+  };
+
+  const resetDrag = () => {
     tracking = false;
+    dragged = false;
+    pointerId = null;
+    els.mapSheet.classList.remove('is-dragging');
+    els.mapSheet.style.removeProperty('transform');
+  };
+
+  els.mapSheetToggle.addEventListener('pointerdown', (event) => {
+    if (event.button !== undefined && event.button !== 0) return;
+    tracking = true;
+    dragged = false;
+    pointerId = event.pointerId;
+    startY = event.clientY;
+    startTransformY = readTransformY();
+    els.mapSheet.classList.add('is-dragging');
+    els.mapSheetToggle.setPointerCapture?.(event.pointerId);
+  });
+
+  els.mapSheetToggle.addEventListener('pointermove', (event) => {
+    if (!tracking || event.pointerId !== pointerId) return;
     const delta = event.clientY - startY;
+    if (Math.abs(delta) > 8) {
+      dragged = true;
+      event.preventDefault();
+    }
+    if (!dragged) return;
+    const nextTransformY = Math.max(-80, Math.min(els.mapSheet.offsetHeight, startTransformY + delta));
+    els.mapSheet.style.transform = `translateY(${nextTransformY}px)`;
+  });
+
+  const finishDrag = (event, cancelled = false) => {
+    if (!tracking || event.pointerId !== pointerId) return;
+    const delta = event.clientY - startY;
+    const didDrag = dragged && Math.abs(delta) >= 28;
+    resetDrag();
+    els.mapSheetToggle.releasePointerCapture?.(event.pointerId);
+    if (cancelled || !didDrag) return;
+
+    suppressMapSheetClick = true;
+    window.setTimeout(() => {
+      suppressMapSheetClick = false;
+    }, 0);
     if (delta < -28) state.sheetState = 'expanded';
     else if (delta > 44 && state.sheetState === 'expanded') state.sheetState = 'collapsed';
     else if (delta > 44) state.sheetState = 'hidden';
     renderMapSheet(getFilteredEvents());
-  });
+  };
+
+  els.mapSheetToggle.addEventListener('pointerup', (event) => finishDrag(event));
+  els.mapSheetToggle.addEventListener('pointercancel', (event) => finishDrag(event, true));
+  els.mapSheetToggle.addEventListener('lostpointercapture', (event) => finishDrag(event, true));
 }
 
 function getFilteredEvents() {
@@ -1037,24 +1153,128 @@ function setMenuOpen(kind, open) {
   updateFilterModalState();
 }
 
-function setSearchOpen(open) {
+function setMapDateOpen(open, options = {}) {
+  const isOpen = Boolean(open);
+  if (isOpen && state.view !== 'map') return;
+  if (isOpen && state.mapFilterPanelOpen) setMapFilterPanelOpen(false, { restoreFocus: false });
+  state.mapDateOpen = isOpen;
+  renderShellState(getFilteredEvents());
+
+  if (isOpen) {
+    window.requestAnimationFrame(() => {
+      const dateButton = [...(els.dateStrip?.querySelectorAll('[data-date]') || [])]
+        .find((button) => button.dataset.date === state.selectedDate);
+      dateButton?.focus();
+    });
+    return;
+  }
+
+  if (options.restoreFocus !== false) {
+    window.requestAnimationFrame(() => els.mapDateToggle?.focus());
+  }
+}
+
+function setMapFilterPanelOpen(open, options = {}) {
+  const isOpen = Boolean(open);
+  if (isOpen && state.view !== 'map') return;
+  if (isOpen && state.mapDateOpen) setMapDateOpen(false, { restoreFocus: false });
+
+  if (isOpen) {
+    const activeElement = document.activeElement;
+    filterReturnFocus = activeElement instanceof HTMLElement
+      && activeElement !== document.body
+      && activeElement !== document.documentElement
+      ? activeElement
+      : els.mapFilterToggle;
+    state.mapFilterPanelOpen = true;
+    setMenuOpen('type', false);
+    setMenuOpen('area', false);
+    setMenuOpen('ticket', false);
+    setSearchOpen(true, { focus: false });
+    renderShellState(getFilteredEvents());
+    updateFilterModalState();
+    window.requestAnimationFrame(() => els.search?.focus());
+    return;
+  }
+
+  state.mapFilterPanelOpen = false;
+  setMenuOpen('type', false);
+  setMenuOpen('area', false);
+  setMenuOpen('ticket', false);
+  if (state.view === 'map') setSearchOpen(false, { focus: false });
+  renderShellState(getFilteredEvents());
+  updateFilterModalState();
+  if (options.restoreFocus !== false) {
+    filterReturnFocus?.focus();
+  }
+  filterReturnFocus = null;
+}
+
+function getActiveFilterCount() {
+  return (state.search ? 1 : 0)
+    + state.selectedTypes.size
+    + state.selectedAreas.size
+    + state.selectedTicketKinds.size
+    + (state.onlyFavorites ? 1 : 0);
+}
+
+function compactDateLabel(date) {
+  if (date === 'all') return 'Todos';
+  if (!date) return 'Fecha';
+  const value = new Date(`${date}T12:00:00`);
+  if (Number.isNaN(value.getTime())) return 'Fecha';
+  const weekday = new Intl.DateTimeFormat('es-ES', { weekday: 'short' }).format(value).replace('.', '');
+  const day = new Intl.DateTimeFormat('es-ES', { day: 'numeric' }).format(value);
+  return `${weekday.charAt(0).toUpperCase()}${weekday.slice(1)} ${day}`;
+}
+
+function handleOverlayKeydown(event) {
+  if (event.key === 'Escape') {
+    if (state.mapFilterPanelOpen) {
+      event.preventDefault();
+      setMapFilterPanelOpen(false);
+      return;
+    }
+    if (state.mapDateOpen) {
+      event.preventDefault();
+      setMapDateOpen(false);
+      return;
+    }
+    setMenuOpen('type', false);
+    setMenuOpen('area', false);
+    setMenuOpen('ticket', false);
+    return;
+  }
+
+  if (!state.mapFilterPanelOpen || event.key !== 'Tab' || !els.filterRegion) return;
+  const focusable = [...els.filterRegion.querySelectorAll('button:not([disabled]), input:not([disabled]), a[href], select, textarea, [tabindex]:not([tabindex="-1"])')]
+    .filter((element) => element.getClientRects().length > 0);
+  if (!focusable.length) return;
+  const first = focusable[0];
+  const last = focusable[focusable.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+}
+
+function setSearchOpen(open, options = {}) {
   if (!els.searchPanel || !els.searchToggle) return;
   const isOpen = Boolean(open);
   els.searchPanel.hidden = !isOpen;
   els.searchToggle.setAttribute('aria-expanded', String(isOpen));
   els.searchToggle.setAttribute('aria-label', isOpen ? 'Ocultar buscador' : 'Abrir buscador');
   els.searchToggle.classList.toggle('is-active', isOpen);
-  if (isOpen) els.search?.focus();
+  if (isOpen && options.focus !== false) els.search?.focus();
 }
 
 function getInitialDate(dates) {
   if (!dates.length) return 'all';
   const today = localDateKey(new Date());
-  const first = dates[0].date;
-  const last = dates[dates.length - 1].date;
-  if (today < first) return first;
-  if (today > last) return last;
-  return dates.some((date) => date.date === today) ? today : first;
+  return dates.some((date) => date.date === today) ? today : 'all';
 }
 
 function localDateKey(date) {
@@ -1245,6 +1465,8 @@ function applyInitialUrlState() {
   state.selectedTypes = getUrlSet(params, 'type', state.types);
   state.selectedAreas = getUrlSet(params, 'area', state.areas);
   state.selectedTicketKinds = getUrlSet(params, 'ticket', ['free', 'paid', 'registration']);
+  state.mapDateOpen = false;
+  state.mapFilterPanelOpen = false;
   if (els.search) els.search.value = params.get('q') || '';
   setSearchOpen(Boolean(state.search));
   if (eventId) {
@@ -1301,7 +1523,7 @@ function isMapPath() {
 }
 
 function updateFilterModalState() {
-  const isOpen = [els.areaList, els.typeList, els.ticketList].some((list) => list && !list.hidden);
+  const isOpen = state.mapFilterPanelOpen || [els.areaList, els.typeList, els.ticketList].some((list) => list && !list.hidden);
   if (isOpen) {
     ensureFilterBackdrop();
     document.body.classList.add('fiestas-filter-open');
@@ -1333,6 +1555,10 @@ function ensureFilterBackdrop() {
   filterBackdrop.addEventListener('click', (event) => {
     event.preventDefault();
     event.stopPropagation();
+    if (state.mapFilterPanelOpen) {
+      setMapFilterPanelOpen(false);
+      return;
+    }
     setMenuOpen('type', false);
     setMenuOpen('area', false);
     setMenuOpen('ticket', false);
@@ -1657,6 +1883,10 @@ function iconForType(type = '') {
     toros: 'fa-circle-dot'
   };
   return icons[slugify(type)] || 'fa-calendar-day';
+}
+
+function typeColorClass(type = '') {
+  return `fiestas-type-${slugify(type)}`;
 }
 
 function slugify(value = '') {
