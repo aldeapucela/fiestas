@@ -5462,7 +5462,20 @@ html.dark .fiestas-community-plan-preview-item {
 
 .fiestas-community-plan-detail {
   display: grid;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
   gap: 0.95rem;
+}
+
+.fiestas-community-plan-detail > *,
+.fiestas-community-plan-detail .fiestas-plan-timeline,
+.fiestas-community-plan-detail .fiestas-plan-timeline-row,
+.fiestas-community-plan-detail .fiestas-plan-timeline-card,
+.fiestas-community-plan-detail .fiestas-plan-timeline-card-top {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .fiestas-community-plan-detail-actions-top {
