@@ -72,7 +72,7 @@ function updateInstallHint() {
   const iosButton = document.querySelector('[data-pwa-ios-help-open]');
   const installDot = document.querySelector('[data-pwa-install-hint]');
   const iosDot = document.querySelector('[data-pwa-ios-hint]');
-  if (installDot) installDot.hidden = installed || !installButton || installButton.hidden;
+  if (installDot) installDot.hidden = installed || !installButton || installButton.hidden || installButton.dataset.pwaInstallReady !== 'true';
   if (iosDot) iosDot.hidden = installed || !iosButton || iosButton.hidden;
 }
 
@@ -80,18 +80,24 @@ function updateInstallActions() {
   const installButton = document.querySelector('[data-pwa-install]');
   const iosButton = document.querySelector('[data-pwa-ios-help-open]');
   const installed = isStandalone() || wasInstalled();
-  const canInstall = Boolean(deferredInstallPrompt) && !installed && !wasDismissed();
+  const dismissed = wasDismissed();
+  const canInstall = Boolean(deferredInstallPrompt) && !installed;
+  const canShowInlineInstall = canInstall && !dismissed;
+  const canKeepInstallMenuItem = !installed && dismissed;
   const canShowIosHelp = isAppleMobile() && !installed;
   const iosHelpSeen = wasIosHelpSeen();
 
-  if (installButton) installButton.hidden = !canInstall;
+  if (installButton) {
+    installButton.hidden = !(canInstall || canKeepInstallMenuItem);
+    installButton.dataset.pwaInstallReady = String(canInstall);
+  }
   if (iosButton) iosButton.hidden = !canShowIosHelp;
   updateInstallHint();
   const detail = {
     available: canInstall || canShowIosHelp,
     installable: canInstall,
     iosHelp: canShowIosHelp,
-    inlineAvailable: canInstall || (canShowIosHelp && !iosHelpSeen),
+    inlineAvailable: canShowInlineInstall || (canShowIosHelp && !iosHelpSeen),
     installed,
     iosHelpSeen
   };

@@ -46,7 +46,7 @@ let scrollHeaderFrame = null;
 
 function getCommunityCtaMode(pwaState = window.__FIESTAS_PWA_STATE__ || {}) {
   if (pwaState.installed) return 'community';
-  if (pwaState.installable) return 'install';
+  if (pwaState.installable && pwaState.inlineAvailable !== false) return 'install';
   if (pwaState.iosHelp && !pwaState.iosHelpSeen && pwaState.inlineAvailable !== false) return 'ios-help';
   return 'community';
 }
