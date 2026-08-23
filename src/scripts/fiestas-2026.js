@@ -359,7 +359,7 @@ function bindControls() {
     if (communityCta && communityCta.dataset.ctaMode !== 'community') {
       event.preventDefault();
       window.dispatchEvent(new CustomEvent('fiestas:pwa-install-request', {
-        detail: { mode: communityCta.dataset.ctaMode }
+        detail: { mode: communityCta.dataset.ctaMode, source: 'agenda_cta' }
       }));
       return;
     }

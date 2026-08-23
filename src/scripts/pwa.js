@@ -13,6 +13,7 @@ const IOS_HELP_SEEN_KEY = 'fiestasPucela:pwa-ios-help-seen';
 let deferredInstallPrompt = null;
 let installAvailableTracked = false;
 let previousFocus = null;
+let installRequestSource = 'install';
 
 function isStandalone() {
   return window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
@@ -126,21 +127,33 @@ function closeIosHelp() {
   previousFocus = null;
 }
 
-async function promptInstall() {
-  if (!deferredInstallPrompt) return;
+async function promptInstall(source = 'install') {
+  if (!deferredInstallPrompt) return false;
   const promptEvent = deferredInstallPrompt;
+  installRequestSource = source;
   closeMenu();
 
-  await promptEvent.prompt();
-  const choice = await promptEvent.userChoice;
+  let choice;
+  try {
+    await promptEvent.prompt();
+    choice = await promptEvent.userChoice;
+  } catch (_) {
+    deferredInstallPrompt = null;
+    installRequestSource = 'install';
+    updateInstallActions();
+    return false;
+  }
+
   deferredInstallPrompt = null;
   if (choice.outcome === 'accepted') {
-    trackPwaInstallAccepted();
-  } else {
+    trackPwaInstallAccepted(source);
+  } else if (choice.outcome === 'dismissed') {
     setDismissed();
-    trackPwaInstallCancelled();
+    trackPwaInstallCancelled(source);
+    installRequestSource = 'install';
   }
   updateInstallActions();
+  return choice.outcome === 'accepted';
 }
 
 function registerServiceWorker() {
@@ -169,7 +182,8 @@ export function setupPwa() {
   window.addEventListener('appinstalled', () => {
     markInstalled();
     deferredInstallPrompt = null;
-    trackPwaInstalled();
+    trackPwaInstalled(installRequestSource);
+    installRequestSource = 'install';
     updateInstallActions();
   });
 
@@ -178,14 +192,14 @@ export function setupPwa() {
       openIosHelp();
       return;
     }
-    promptInstall();
+    promptInstall(event.detail?.source || 'agenda_cta');
   });
 
   document.addEventListener('click', (event) => {
     if (event.target.closest('[data-pwa-install]')) {
       event.preventDefault();
       updateInstallHint();
-      promptInstall();
+      promptInstall('menu');
       return;
     }
     if (event.target.closest('[data-pwa-ios-help-open]')) {

@@ -141,16 +141,16 @@ export function trackPwaInstallAvailable() {
   return pushEvent('pwa', 'install_available', 'install');
 }
 
-export function trackPwaInstallAccepted() {
-  return pushEvent('pwa', 'install_accepted', 'install');
+export function trackPwaInstallAccepted(source = 'install') {
+  return pushEvent('pwa', 'install_accepted', 'install', source);
 }
 
-export function trackPwaInstallCancelled() {
-  return pushEvent('pwa', 'install_cancelled', 'install');
+export function trackPwaInstallCancelled(source = 'install') {
+  return pushEvent('pwa', 'install_cancelled', 'install', source);
 }
 
-export function trackPwaInstalled() {
-  return pushEvent('pwa', 'installed', 'install');
+export function trackPwaInstalled(source = 'install') {
+  return pushEvent('pwa', 'installed', 'install', source);
 }
 
 export function trackPwaIosHelpOpened() {
