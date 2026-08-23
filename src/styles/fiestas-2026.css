@@ -1942,6 +1942,19 @@
   }
 
   .fiestas-map-result-meta,
+  .fiestas-map-result-time-line {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.35rem;
+    overflow: hidden;
+    color: #667085;
+    font-size: 0.78rem;
+    font-weight: 750;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .fiestas-map-result-date,
   .fiestas-map-result-distance {
     display: inline-flex;
@@ -1956,6 +1969,10 @@
     white-space: nowrap;
   }
 
+  .fiestas-map-result-date {
+    flex: 0 0 auto;
+  }
+
   .fiestas-map-result-meta i {
     flex: 0 0 auto;
     color: #98a2b3;
@@ -1965,6 +1982,10 @@
     color: #0f766e;
     font-size: 0.78rem;
     font-weight: 850;
+  }
+
+  .fiestas-map-result-distance i {
+    flex: 0 0 auto;
   }
 
   .fiestas-map-result-focus {

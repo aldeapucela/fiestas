@@ -1014,9 +1014,10 @@ function mapSheetItem(event, compact = false) {
   const title = event.title || 'Actividad sin título';
   const place = event.location || 'Lugar por confirmar';
   const type = event.type || 'Evento';
-  const distanceMarkup = distance
-    ? `<span class="fiestas-map-result-distance"><i class="fa-solid fa-person-walking" aria-hidden="true"></i>${escapeHtml(distance)}</span>`
-    : '';
+  const distanceMarkup = `<span class="fiestas-map-result-time-line">
+    <span class="fiestas-map-result-date">${escapeHtml(eventDateTime)}</span>
+    ${distance ? `<span class="fiestas-map-result-distance"><i class="fa-solid fa-person-walking" aria-hidden="true"></i>${escapeHtml(distance)}</span>` : ''}
+  </span>`;
 
   const link = document.createElement('a');
   link.href = event.urlPath;
@@ -1028,7 +1029,6 @@ function mapSheetItem(event, compact = false) {
         <span class="fiestas-map-result-type">${escapeHtml(type)}</span>
       </span>
       <span class="fiestas-map-result-meta"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(place)}</span>
-      <span class="fiestas-map-result-date">${escapeHtml(eventDateTime)}</span>
       ${distanceMarkup}
     </span>
   `;
