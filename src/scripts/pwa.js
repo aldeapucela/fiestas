@@ -2,6 +2,7 @@ import {
   trackPwaInstallAccepted,
   trackPwaInstallAvailable,
   trackPwaInstallCancelled,
+  trackPwaInstalled,
   trackPwaIosHelpOpened,
   trackPwaServiceWorkerError
 } from './analytics.js';
@@ -144,6 +145,7 @@ export function setupPwa() {
   window.addEventListener('appinstalled', () => {
     markInstalled();
     deferredInstallPrompt = null;
+    trackPwaInstalled();
     updateInstallActions();
   });
 

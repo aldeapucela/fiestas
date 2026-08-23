@@ -10,7 +10,7 @@ const categoryActions = {
   agenda: new Set(['select_date', 'select_all_dates', 'apply_filter', 'search', 'open_activity']),
   map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
   plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'export', 'import', 'share', 'import_error']),
-  pwa: new Set(['install_available', 'install_accepted', 'install_cancelled', 'ios_help_opened', 'sw_registration_error'])
+  pwa: new Set(['install_available', 'install_accepted', 'install_cancelled', 'installed', 'ios_help_opened', 'sw_registration_error'])
 };
 
 const filterNames = new Set(['type', 'area', 'ticket']);
@@ -147,6 +147,10 @@ export function trackPwaInstallAccepted() {
 
 export function trackPwaInstallCancelled() {
   return pushEvent('pwa', 'install_cancelled', 'install');
+}
+
+export function trackPwaInstalled() {
+  return pushEvent('pwa', 'installed', 'install');
 }
 
 export function trackPwaIosHelpOpened() {

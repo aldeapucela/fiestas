@@ -48,6 +48,11 @@ Los identificadores de actividad son sus `id` numéricos y estables. Los valores
 | `map` | `select_marker` | `activityId` | Al seleccionar un marcador. |
 | `map` | `select_date` / `select_all_dates` | fecha o `all` | Al cambiar la fecha dentro del mapa. |
 | `map` | `apply_filter` | nombre y valor controlados | Al aplicar filtros desde el mapa. |
+| `pwa` | `install_available` | `install` | Cuando el navegador ofrece la instalación PWA. |
+| `pwa` | `install_accepted` | `install` | Cuando la persona acepta el diálogo de instalación. |
+| `pwa` | `installed` | `install` | Cuando el navegador confirma la instalación con `appinstalled`. |
+| `pwa` | `install_cancelled` | `install` | Cuando se cancela el diálogo de instalación. |
+| `pwa` | `ios_help_opened` | `ios` | Al abrir las instrucciones de instalación en iPhone/iPad. |
 
 Los pageviews se envían mediante `trackPageView` durante la única inicialización del tracker. `enableLinkTracking` cubre enlaces simples, pero las acciones relevantes anteriores se registran explícitamente.
 
@@ -59,6 +64,7 @@ Los pageviews se envían mediante `trackPageView` durante la única inicializaci
 - Sin cuentas, las métricas representan visitas/dispositivos y acciones observadas, no personas identificadas de forma exacta.
 - Los eventos `activity / save` se cuentan una sola vez por actividad y navegador mediante `fiestasPucela:analytics:saved-activities` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, no se puede garantizar la deduplicación entre sesiones.
 - Para ordenar actividades por popularidad se debe usar el total de eventos `activity / save`, no `remove_save` ni el total de visitas. No se envía una IP ni un identificador de usuario propio.
+- Para el embudo PWA, usa `nb_visits` de `pwa / install_available`, `install_accepted`, `installed` e `ios_help_opened`; `nb_events` mide repeticiones, no personas. En iOS solo podemos medir la apertura de instrucciones, no confirmar técnicamente que se añadió a la pantalla de inicio.
 - La instancia de Matomo debe mantener activada la anonimización de IP y sus controles de privacidad deben revisarse en servidor.
 - Este repositorio no contiene mecanismo de consentimiento de cookies; si se incorpora en el futuro, la inicialización debe conectarse a él.
 - La versión actual no tiene geolocalización, botón de centrar en el usuario, panel inferior del mapa ni planes/colecciones; por eso no se generan esos eventos todavía.
