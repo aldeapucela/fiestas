@@ -9,6 +9,7 @@ import {
 
 const DISMISSED_KEY = 'fiestasPucela:pwa-install-dismissed';
 const INSTALLED_KEY = 'fiestasPucela:pwa-installed';
+const IOS_HELP_SEEN_KEY = 'fiestasPucela:pwa-ios-help-seen';
 let deferredInstallPrompt = null;
 let installAvailableTracked = false;
 let previousFocus = null;
@@ -19,8 +20,7 @@ function isStandalone() {
 
 function isAppleMobile() {
   const userAgent = window.navigator.userAgent || '';
-  const isSafari = /Safari/i.test(userAgent) && !/Chrome|CriOS|FxiOS|Android/i.test(userAgent);
-  return isSafari && (/iPad|iPhone|iPod/i.test(userAgent) || (window.navigator.platform === 'MacIntel' && window.navigator.maxTouchPoints > 1));
+  return /iPad|iPhone|iPod/i.test(userAgent) || (window.navigator.platform === 'MacIntel' && window.navigator.maxTouchPoints > 1);
 }
 
 function wasDismissed() {
@@ -51,6 +51,20 @@ function markInstalled() {
   } catch (_) {}
 }
 
+function wasIosHelpSeen() {
+  try {
+    return window.localStorage.getItem(IOS_HELP_SEEN_KEY) === 'true';
+  } catch (_) {
+    return false;
+  }
+}
+
+function markIosHelpSeen() {
+  try {
+    window.localStorage.setItem(IOS_HELP_SEEN_KEY, 'true');
+  } catch (_) {}
+}
+
 function updateInstallHint() {
   const installed = isStandalone() || wasInstalled();
   const installButton = document.querySelector('[data-pwa-install]');
@@ -67,13 +81,21 @@ function updateInstallActions() {
   const installed = isStandalone() || wasInstalled();
   const canInstall = Boolean(deferredInstallPrompt) && !installed && !wasDismissed();
   const canShowIosHelp = isAppleMobile() && !installed;
+  const iosHelpSeen = wasIosHelpSeen();
 
   if (installButton) installButton.hidden = !canInstall;
   if (iosButton) iosButton.hidden = !canShowIosHelp;
   updateInstallHint();
-  window.dispatchEvent(new CustomEvent('fiestas:pwa-availability', {
-    detail: { available: canInstall || canShowIosHelp }
-  }));
+  const detail = {
+    available: canInstall || canShowIosHelp,
+    installable: canInstall,
+    iosHelp: canShowIosHelp,
+    inlineAvailable: canInstall || (canShowIosHelp && !iosHelpSeen),
+    installed,
+    iosHelpSeen
+  };
+  window.__FIESTAS_PWA_STATE__ = detail;
+  window.dispatchEvent(new CustomEvent('fiestas:pwa-availability', { detail }));
 }
 
 function closeMenu() {
@@ -89,8 +111,10 @@ function openIosHelp() {
   if (!dialog) return;
   previousFocus = document.activeElement;
   closeMenu();
+  markIosHelpSeen();
   dialog.hidden = false;
   trackPwaIosHelpOpened();
+  updateInstallActions();
   dialog.querySelector('[data-pwa-ios-help-close]')?.focus();
 }
 
@@ -147,6 +171,14 @@ export function setupPwa() {
     deferredInstallPrompt = null;
     trackPwaInstalled();
     updateInstallActions();
+  });
+
+  window.addEventListener('fiestas:pwa-install-request', (event) => {
+    if (event.detail?.mode === 'ios-help') {
+      openIosHelp();
+      return;
+    }
+    promptInstall();
   });
 
   document.addEventListener('click', (event) => {

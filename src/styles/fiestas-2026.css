@@ -1066,6 +1066,21 @@
     line-height: 1.35;
   }
 
+  .fiestas-community-plans-cta.is-install {
+    background: #e8f7f4;
+  }
+
+  .fiestas-community-plans-cta.is-install:hover,
+  .fiestas-community-plans-cta.is-install:focus-visible {
+    background: #ddf3ee;
+  }
+
+  .fiestas-community-plans-cta.is-install .fiestas-community-plans-cta-icon,
+  .fiestas-community-plans-cta.is-install strong,
+  .fiestas-community-plans-cta.is-install > i:last-child {
+    color: #0f8f80;
+  }
+
   .fiestas-bottom-nav {
     position: fixed;
     right: 0;
@@ -3034,6 +3049,21 @@
 
   html.dark .fiestas-community-plans-cta small {
     color: #d4d9e2;
+  }
+
+  html.dark .fiestas-community-plans-cta.is-install {
+    background: #183a37;
+  }
+
+  html.dark .fiestas-community-plans-cta.is-install:hover,
+  html.dark .fiestas-community-plans-cta.is-install:focus-visible {
+    background: #1e4641;
+  }
+
+  html.dark .fiestas-community-plans-cta.is-install .fiestas-community-plans-cta-icon,
+  html.dark .fiestas-community-plans-cta.is-install strong,
+  html.dark .fiestas-community-plans-cta.is-install > i:last-child {
+    color: #7be0d1;
   }
 
   html.dark .fiestas-map-control,

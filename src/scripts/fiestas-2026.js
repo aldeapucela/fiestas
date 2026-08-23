@@ -44,6 +44,13 @@ let lastTrackedSearchKey = '';
 let siteShareFeedbackTimer = null;
 let scrollHeaderFrame = null;
 
+function getCommunityCtaMode(pwaState = window.__FIESTAS_PWA_STATE__ || {}) {
+  if (pwaState.installed) return 'community';
+  if (pwaState.installable) return 'install';
+  if (pwaState.iosHelp && !pwaState.iosHelpSeen && pwaState.inlineAvailable !== false) return 'ios-help';
+  return 'community';
+}
+
 const state = {
   view: 'agenda',
   events: [],
@@ -71,7 +78,8 @@ const state = {
   mapLoadError: false,
   currentMapEvents: [],
   preferredMapCenter: null,
-  focusedClusterEventIds: null
+  focusedClusterEventIds: null,
+  communityCtaMode: getCommunityCtaMode()
 };
 
 const els = {
@@ -171,6 +179,7 @@ function init() {
     bindControls();
     if (state.view === 'map') requestLocationOnce();
     renderControlLists();
+    setupCommunityCtaPwa();
     render();
     setupScrollHeader();
   } catch (error) {
@@ -346,6 +355,14 @@ function bindControls() {
   });
 
   els.agenda?.addEventListener('click', (event) => {
+    const communityCta = event.target.closest('[data-fiestas-community-cta]');
+    if (communityCta && communityCta.dataset.ctaMode !== 'community') {
+      event.preventDefault();
+      window.dispatchEvent(new CustomEvent('fiestas:pwa-install-request', {
+        detail: { mode: communityCta.dataset.ctaMode }
+      }));
+      return;
+    }
     const activityLink = event.target.closest('a.fiestas-event-link');
     if (activityLink) {
       const card = activityLink.closest('[data-fiestas-card]');
@@ -357,6 +374,13 @@ function bindControls() {
     event.preventDefault();
     event.stopPropagation();
     toggleFavorite(saveButton.dataset.eventId);
+  });
+
+  els.agenda?.addEventListener('keydown', (event) => {
+    const communityCta = event.target.closest('[data-fiestas-community-cta]');
+    if (!communityCta || communityCta.dataset.ctaMode === 'community' || event.key !== ' ') return;
+    event.preventDefault();
+    communityCta.click();
   });
 
   document.addEventListener('click', (event) => {
@@ -574,16 +598,49 @@ function renderAgenda(events) {
 function communityPlansCard() {
   const card = document.createElement('a');
   card.className = 'fiestas-community-plans-cta';
-  card.href = els.app?.dataset.communityPlansHref || '/planes/';
-  card.innerHTML = `
+  card.dataset.fiestasCommunityCta = 'true';
+  updateCommunityPlansCard(card);
+  return card;
+}
+
+function updateCommunityPlansCard(card) {
+  const mode = state.communityCtaMode;
+  const communityHref = els.app?.dataset.communityPlansHref || '/planes/';
+  const isCommunity = mode === 'community';
+  const isIosHelp = mode === 'ios-help';
+
+  card.classList.toggle('is-install', !isCommunity);
+  card.dataset.ctaMode = mode;
+  card.href = isCommunity ? communityHref : '#fiestas-pwa-install';
+  if (isCommunity) {
+    card.removeAttribute('role');
+    card.removeAttribute('aria-label');
+  } else {
+    card.setAttribute('role', 'button');
+    card.setAttribute('aria-label', isIosHelp ? 'Ver cómo añadir la agenda a la pantalla de inicio' : 'Añadir la agenda a la pantalla de inicio');
+  }
+  card.innerHTML = isCommunity ? `
     <i class="fiestas-community-plans-cta-icon fa-solid fa-people-group" aria-hidden="true"></i>
     <span>
       <strong>Descubre los planes vecinales</strong>
       <small>Creados por vecinos para disfrutar las fiestas.</small>
     </span>
     <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+  ` : `
+    <i class="fiestas-community-plans-cta-icon fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+    <span>
+      <strong>Añadir a pantalla de inicio</strong>
+      <small>${isIosHelp ? 'Consulta cómo instalarla en Safari.' : 'Consúltalo cuando lo necesites.'}</small>
+    </span>
+    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
   `;
-  return card;
+}
+
+function setupCommunityCtaPwa() {
+  window.addEventListener('fiestas:pwa-availability', (event) => {
+    state.communityCtaMode = getCommunityCtaMode(event.detail);
+    document.querySelectorAll('[data-fiestas-community-cta]').forEach(updateCommunityPlansCard);
+  });
 }
 
 function eventCard(event) {
