@@ -3549,7 +3549,7 @@ html.dark .fiestas-plan-selector-create input {
   position: relative;
   display: flex;
   align-items: center;
-  gap: 0.1rem;
+  gap: 0.45rem;
 }
 
 .fiestas-plan-header-manage {
