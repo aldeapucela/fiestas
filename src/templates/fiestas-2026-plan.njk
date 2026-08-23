@@ -162,27 +162,31 @@
     <ol class="fiestas-plan-share-steps">
       <li>
         <span>1</span>
-        <p>Se va a descargar un archivo con este plan llamado <strong data-plan-share-name>tu plan</strong>.</p>
+        <p>Se generará un enlace con el plan <strong data-plan-share-name>tu plan</strong>.</p>
       </li>
       <li>
         <span>2</span>
-        <p>Puedes compartir este archivo con cualquier persona por WhatsApp, Telegram, etcétera.</p>
+        <p>Quien abra el enlace verá una vista previa antes de importarlo.</p>
       </li>
       <li>
         <span>3</span>
-        <p>Copia este texto y mándales el archivo para que lo puedan importar a sus planes.</p>
+        <p>También puedes descargar el archivo JSON si prefieres enviarlo manualmente.</p>
       </li>
     </ol>
 
     <label class="fiestas-plan-share-message-label">
-      <span>Mensaje para compartir</span>
+      <span>Enlace para compartir</span>
       <textarea data-plan-share-message rows="5" readonly></textarea>
     </label>
     <p class="fiestas-plan-share-feedback" data-plan-share-feedback aria-live="polite" hidden></p>
     <div class="fiestas-plan-share-dialog-actions">
+      <button class="fiestas-plan-action fiestas-plan-share-native" type="button" data-plan-share-native>
+        <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
+        <span>Compartir enlace</span>
+      </button>
       <button class="fiestas-plan-action fiestas-plan-share-copy" type="button" data-plan-share-copy>
         <i class="fa-regular fa-copy" aria-hidden="true"></i>
-        <span>Copiar mensaje</span>
+        <span>Copiar enlace</span>
       </button>
       <button class="fiestas-plan-action fiestas-plan-share-download" type="button" data-plan-share-download>
         <i class="fa-solid fa-download" aria-hidden="true"></i>

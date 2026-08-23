@@ -54,10 +54,28 @@ export function createPlanPayload(plan, options = {}) {
   };
 }
 
+export function createPlanJson(plan) {
+  return JSON.stringify(createPlanPayload(plan), null, 2) + '\n';
+}
+
 export function createPlanFile(plan) {
-  const payload = createPlanPayload(plan);
-  const text = JSON.stringify(payload, null, 2) + '\n';
-  return makeFile(`${slugify(plan?.name || 'mi-plan')}.fiestas-plan.json`, text, 'application/json');
+  return makeFile(`${slugify(plan?.name || 'mi-plan')}.fiestas-plan.json`, createPlanJson(plan), 'application/json');
+}
+
+export function createPlanImportUrl(plan, importUrl = '/plan/importar/') {
+  const url = new URL(importUrl, window.location.origin);
+  url.searchParams.set('hash', encodeBase64(createPlanJson(plan)));
+  return url.toString();
+}
+
+export function decodePlanImportHash(hash) {
+  const value = String(hash || '');
+  if (!value) throw new Error('empty_hash');
+  try {
+    return decodeBase64(value);
+  } catch (_) {
+    throw new Error('invalid_base64');
+  }
 }
 
 export function createIcsFile(events, name = 'fiestas-valladolid-2026') {
@@ -96,6 +114,19 @@ export function downloadFile(file) {
 
 function makeFile(name, text, type) {
   return new File([text], name, { type });
+}
+
+function encodeBase64(text) {
+  const bytes = new TextEncoder().encode(String(text || ''));
+  let binary = '';
+  bytes.forEach((byte) => { binary += String.fromCharCode(byte); });
+  return btoa(binary);
+}
+
+function decodeBase64(value) {
+  const binary = atob(String(value || ''));
+  const bytes = Uint8Array.from(binary, (character) => character.charCodeAt(0));
+  return new TextDecoder('utf-8', { fatal: true }).decode(bytes);
 }
 
 function formatLocalDateTime(date, time) {
