@@ -55,6 +55,7 @@ export function setupPlansPage(rawEvents = []) {
   };
   let shareDialogPlan = null;
   let shareDialogReturnFocus = null;
+  let deleteDialogReturnFocus = null;
 
   if (state.view === 'plan' && !state.selectedPlanId) state.selectedPlanId = state.plans[0]?.id || '';
 
@@ -73,6 +74,8 @@ export function setupPlansPage(rawEvents = []) {
     pickerIcon: page.querySelector('[data-plan-picker-icon]'),
     createIcons: page.querySelector('[data-plan-create-icons]'),
     headerShare: page.querySelector('[data-plan-header-share]'),
+    manageMenuTrigger: page.querySelector('[data-plan-manage-menu-trigger]'),
+    manageMenu: page.querySelector('[data-plan-manage-menu]'),
     importLink: page.querySelector('[data-plan-import-link]'),
     deleteConfirm: page.querySelector('[data-plan-delete-confirm]'),
     deleteConfirmName: page.querySelector('[data-plan-delete-confirm-name]'),
@@ -105,6 +108,20 @@ export function setupPlansPage(rawEvents = []) {
     const returnFocus = shareDialogReturnFocus;
     shareDialogReturnFocus = null;
     returnFocus?.focus();
+  };
+
+  const closePlanManageMenu = (restoreFocus = false) => {
+    if (!els.manageMenu || !els.manageMenuTrigger) return;
+    els.manageMenu.hidden = true;
+    els.manageMenuTrigger.setAttribute('aria-expanded', 'false');
+    if (restoreFocus) els.manageMenuTrigger.focus();
+  };
+
+  const openPlanManageMenu = () => {
+    if (!els.manageMenu || !els.manageMenuTrigger || els.manageMenuTrigger.hidden) return;
+    els.manageMenu.hidden = false;
+    els.manageMenuTrigger.setAttribute('aria-expanded', 'true');
+    els.manageMenu.querySelector('[role="menuitem"]')?.focus();
   };
 
   const openShareDialog = (plan, trigger) => {
@@ -152,6 +169,9 @@ export function setupPlansPage(rawEvents = []) {
     if (els.createForm) els.createForm.hidden = state.view !== 'plan' || Boolean(state.selectedPlanId);
     if (els.importLink) els.importLink.hidden = true;
     if (els.headerShare) els.headerShare.hidden = state.view === 'plan' && !state.selectedPlanId;
+    const canManagePlan = state.view === 'plan' && Boolean(state.selectedPlanId) && state.plans.some((plan) => plan.id === state.selectedPlanId);
+    if (els.manageMenuTrigger) els.manageMenuTrigger.hidden = !canManagePlan;
+    if (!canManagePlan) closePlanManageMenu();
     renderDeleteConfirmation(els.deleteConfirm, els.deleteConfirmName, state.plans, state.pendingDeletePlanId);
     if (state.focusActivityId) scrollToPlanActivity();
   };
@@ -176,6 +196,22 @@ export function setupPlansPage(rawEvents = []) {
     document.body.classList.remove('fiestas-plan-editor-open');
     state.editingPlanId = '';
     state.editingIcon = DEFAULT_PLAN_ICON;
+  };
+
+  const openDeleteConfirmation = (plan, trigger) => {
+    if (!plan || !els.deleteConfirm) return;
+    deleteDialogReturnFocus = trigger || null;
+    state.pendingDeletePlanId = plan.id;
+    closePlanManageMenu();
+    render();
+    els.deleteConfirmAccept?.focus();
+  };
+
+  const closeDeleteConfirmation = (restoreFocus = true) => {
+    state.pendingDeletePlanId = '';
+    render();
+    if (restoreFocus) deleteDialogReturnFocus?.focus();
+    deleteDialogReturnFocus = null;
   };
 
   const openPlanEditor = (plan, trigger) => {
@@ -272,6 +308,7 @@ export function setupPlansPage(rawEvents = []) {
 
   document.addEventListener('click', (event) => {
     if (els.picker && !els.picker.contains(event.target)) closePlanPicker();
+    if (els.manageMenu && !els.manageMenu.contains(event.target) && !els.manageMenuTrigger?.contains(event.target)) closePlanManageMenu();
   });
 
   els.editorForm?.addEventListener('submit', (event) => {
@@ -347,6 +384,30 @@ export function setupPlansPage(rawEvents = []) {
       return;
     }
 
+    const manageTrigger = event.target.closest('[data-plan-manage-menu-trigger]');
+    if (manageTrigger) {
+      const isOpen = els.manageMenuTrigger?.getAttribute('aria-expanded') === 'true';
+      if (isOpen) closePlanManageMenu(true);
+      else openPlanManageMenu();
+      return;
+    }
+
+    const manageAction = event.target.closest('[data-plan-manage-action]');
+    if (manageAction) {
+      const plan = state.plans.find((item) => item.id === state.selectedPlanId);
+      if (!plan) return;
+      const action = manageAction.dataset.planManageAction;
+      closePlanManageMenu();
+      if (action === 'calendar') {
+        await exportCalendar(eventsForPlan(plan, state.events), plan.name, els.feedback, plan.id);
+      } else if (action === 'edit') {
+        openPlanEditor(plan, manageAction);
+      } else if (action === 'delete') {
+        openDeleteConfirmation(plan, els.manageMenuTrigger);
+      }
+      return;
+    }
+
     if (event.target.closest('[data-plan-editor-close]')) {
       closePlanEditor();
       return;
@@ -398,17 +459,13 @@ export function setupPlansPage(rawEvents = []) {
     if (deleteButton) {
       const plan = state.plans.find((item) => item.id === deleteButton.dataset.planDelete);
       if (!plan) return;
-      state.pendingDeletePlanId = plan.id;
-      render();
-      els.deleteConfirm?.scrollIntoView({ block: 'nearest' });
-      els.deleteConfirmAccept?.focus();
+      openDeleteConfirmation(plan, deleteButton);
       return;
     }
 
     const cancelDeleteButton = event.target.closest('[data-plan-delete-confirm-cancel]');
     if (cancelDeleteButton) {
-      state.pendingDeletePlanId = '';
-      render();
+      closeDeleteConfirmation();
       return;
     }
 
@@ -425,6 +482,7 @@ export function setupPlansPage(rawEvents = []) {
       state.view = 'plan';
       state.creatingPlan = true;
       state.pendingDeletePlanId = '';
+      deleteDialogReturnFocus = null;
       updatePlanUrl(state);
       render();
       showFeedback(els.feedback, 'Plan eliminado.');
@@ -524,6 +582,8 @@ export function setupPlansPage(rawEvents = []) {
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && els.shareDialog && !els.shareDialog.hidden) closeShareDialog();
     if (event.key === 'Escape' && els.editor && !els.editor.hidden) closePlanEditor();
+    if (event.key === 'Escape' && els.deleteConfirm && !els.deleteConfirm.hidden) closeDeleteConfirmation();
+    if (event.key === 'Escape' && els.manageMenu && !els.manageMenu.hidden) closePlanManageMenu(true);
   });
   subscribeToPlans(() => render());
   render();
@@ -643,9 +703,12 @@ export function setupPlanSelector() {
   let activityId = '';
   let optionsActivityId = '';
   let selectedIcon = DEFAULT_PLAN_ICON;
+  let creatingPlan = false;
   const close = () => {
     selector.hidden = true;
     activityId = '';
+    creatingPlan = false;
+    selectedIcon = DEFAULT_PLAN_ICON;
   };
   const closeOptions = () => {
     if (options) options.hidden = true;
@@ -654,6 +717,7 @@ export function setupPlanSelector() {
   const openSelector = (nextActivityId) => {
     activityId = nextActivityId || '';
     if (!activityId) return;
+    creatingPlan = false;
     render();
     selector.hidden = false;
     selector.querySelector('[data-plan-selector-close]')?.focus();
@@ -661,6 +725,8 @@ export function setupPlanSelector() {
   const render = () => {
     const list = selector.querySelector('[data-plan-selector-list]');
     const empty = selector.querySelector('[data-plan-selector-empty]');
+    const createToggle = selector.querySelector('[data-plan-selector-create-toggle]');
+    const createForm = selector.querySelector('[data-plan-selector-create-form]');
     if (!list) return;
     const plans = readPlans();
     list.replaceChildren(...plans.map((plan) => {
@@ -676,6 +742,11 @@ export function setupPlanSelector() {
       return label;
     }));
     if (empty) empty.hidden = plans.length > 0;
+    if (createToggle) {
+      createToggle.hidden = plans.length === 0 || creatingPlan;
+      createToggle.setAttribute('aria-expanded', String(creatingPlan));
+    }
+    if (createForm) createForm.hidden = plans.length > 0 && !creatingPlan;
     renderPlanIconPicker(selector.querySelector('[data-plan-selector-icons]'), selectedIcon, 'selector');
   };
 
@@ -709,6 +780,12 @@ export function setupPlanSelector() {
       openSelector(nextActivityId);
       return;
     }
+    if (event.target.closest('[data-plan-selector-create-toggle]')) {
+      creatingPlan = true;
+      render();
+      selector.querySelector('[data-plan-selector-create-input]')?.focus();
+      return;
+    }
     if (event.target.closest('[data-plan-selector-close]') || event.target.matches('[data-fiestas-plan-selector]')) close();
     if (event.target.closest('[data-event-options-close]') || event.target.matches('[data-fiestas-event-options]')) closeOptions();
   });
@@ -734,6 +811,7 @@ export function setupPlanSelector() {
     if (activityId) trackPlanActivityAdded(activityId);
     if (input) input.value = '';
     selectedIcon = DEFAULT_PLAN_ICON;
+    creatingPlan = false;
     render();
     selector.querySelector('[data-plan-selector-feedback]').textContent = 'Plan creado y actividad añadida.';
   });
@@ -827,6 +905,7 @@ function renderDeleteConfirmation(container, nameElement, plans, pendingPlanId) 
   if (!container) return;
   const plan = plans.find((item) => item.id === pendingPlanId);
   container.hidden = !plan;
+  document.body.classList.toggle('fiestas-plan-delete-open', Boolean(plan));
   if (plan && nameElement) nameElement.textContent = `“${plan.name}”`;
 }
 
@@ -952,17 +1031,6 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
     actionButton('Añadir al calendario', 'fa-calendar-plus', { className: 'fiestas-plan-calendar-button', 'data-plan-export-calendar': plan.id })
   );
   container.append(bottomActions);
-
-  if (!options.isSaved) {
-    const management = document.createElement('div');
-    management.className = 'fiestas-plan-management';
-    management.append(
-      actionButton('Renombrar', 'fa-pen', { 'data-plan-rename': plan.id }),
-      actionButton('Exportar archivo', 'fa-file-arrow-down', { 'data-plan-export-file': plan.id }),
-      actionButton('Eliminar plan', 'fa-trash', { 'data-plan-delete': plan.id, className: 'is-danger' })
-    );
-    container.append(management);
-  }
 }
 
 function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {

@@ -15,9 +15,28 @@
           <img src="/assets/favicon.png" alt="" />
         </a>
         <h1>Mi plan</h1>
-        <button class="fiestas-plan-header-share" type="button" data-plan-header-share aria-label="Compartir mi plan">
-          <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
-        </button>
+        <div class="fiestas-plan-header-actions">
+          <button class="fiestas-plan-header-manage" type="button" data-plan-manage-menu-trigger aria-haspopup="menu" aria-expanded="false" aria-controls="plan-manage-menu" aria-label="Más opciones del plan" hidden>
+            <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+          </button>
+          <button class="fiestas-plan-header-share" type="button" data-plan-header-share aria-label="Compartir mi plan">
+            <i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>
+          </button>
+          <div class="fiestas-plan-manage-menu" id="plan-manage-menu" data-plan-manage-menu role="menu" hidden>
+            <button type="button" role="menuitem" data-plan-manage-action="calendar">
+              <i class="fa-solid fa-calendar-plus" aria-hidden="true"></i>
+              <span>Añadir al calendario</span>
+            </button>
+            <button type="button" role="menuitem" data-plan-manage-action="edit">
+              <i class="fa-solid fa-pen" aria-hidden="true"></i>
+              <span>Editar</span>
+            </button>
+            <button type="button" role="menuitem" data-plan-manage-action="delete" class="is-danger">
+              <i class="fa-solid fa-trash" aria-hidden="true"></i>
+              <span>Eliminar</span>
+            </button>
+          </div>
+        </div>
       </div>
       <div class="fiestas-plan-tools">
         <div class="fiestas-plan-picker" data-plan-picker>
@@ -56,13 +75,17 @@
     </section>
 
     <div class="fiestas-plan-feedback" data-plan-feedback aria-live="polite" hidden></div>
-    <div class="fiestas-plan-delete-confirm" data-plan-delete-confirm hidden role="alertdialog" aria-labelledby="plan-delete-confirm-title" aria-describedby="plan-delete-confirm-copy">
-      <p class="fiestas-plan-delete-confirm-title" id="plan-delete-confirm-title">¿Eliminar este plan?</p>
-      <p id="plan-delete-confirm-copy">Se borrará <strong data-plan-delete-confirm-name></strong> de este navegador.</p>
-      <div class="fiestas-plan-delete-confirm-actions">
-        <button class="fiestas-plan-action" type="button" data-plan-delete-confirm-cancel>Cancelar</button>
-        <button class="fiestas-plan-action fiestas-plan-action-danger" type="button" data-plan-delete-confirm-accept>Eliminar plan</button>
-      </div>
+    <div class="fiestas-plan-delete-dialog" data-plan-delete-confirm hidden>
+      <button class="fiestas-plan-delete-dialog-backdrop" type="button" data-plan-delete-confirm-cancel aria-label="Cerrar diálogo"></button>
+      <section class="fiestas-plan-delete-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="plan-delete-confirm-title" aria-describedby="plan-delete-confirm-copy">
+        <p class="fiestas-plan-kicker">GESTIONAR PLAN</p>
+        <h2 class="fiestas-plan-delete-confirm-title" id="plan-delete-confirm-title">¿Eliminar este plan?</h2>
+        <p id="plan-delete-confirm-copy">Se borrará <strong data-plan-delete-confirm-name></strong> de este navegador.</p>
+        <div class="fiestas-plan-delete-confirm-actions">
+          <button class="fiestas-plan-action" type="button" data-plan-delete-confirm-cancel>Cancelar</button>
+          <button class="fiestas-plan-action fiestas-plan-action-danger" type="button" data-plan-delete-confirm-accept>Eliminar plan</button>
+        </div>
+      </section>
     </div>
     <div class="fiestas-plan-editor" data-plan-editor hidden>
       <button class="fiestas-plan-editor-backdrop" type="button" data-plan-editor-close aria-label="Cerrar edición"></button>

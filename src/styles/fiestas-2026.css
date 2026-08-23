@@ -2661,6 +2661,7 @@ html:not(.dark) body:has(.fiestas-app) {
 .fiestas-plan-detail[hidden],
 .fiestas-plan-selector[hidden],
 .fiestas-plan-feedback[hidden],
+.fiestas-plan-delete-dialog[hidden],
 .fiestas-plan-delete-confirm[hidden],
 .fiestas-plan-import-status[hidden],
 .fiestas-plan-import-preview[hidden],
@@ -3172,6 +3173,32 @@ html.dark .fiestas-plan-import-activity-toggle {
   gap: 0.4rem;
 }
 
+.fiestas-plan-selector-create-toggle {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.4rem;
+  border: 0;
+  background: transparent;
+  color: #0f766e;
+  padding: 0.15rem 0;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 850;
+}
+
+.fiestas-plan-selector-create-toggle:hover,
+.fiestas-plan-selector-create-toggle:focus-visible {
+  color: #73579f;
+  text-decoration: underline;
+  text-underline-offset: 0.18rem;
+}
+
+.fiestas-plan-selector-create-toggle[hidden],
+.fiestas-plan-selector-create[hidden] {
+  display: none;
+}
+
 .fiestas-plan-selector-option {
   display: flex;
   min-height: 3rem;
@@ -3415,6 +3442,15 @@ html.dark .fiestas-plan-selector-option {
   color: #e5e9ef;
 }
 
+html.dark .fiestas-plan-selector-create-toggle {
+  color: #78e2d4;
+}
+
+html.dark .fiestas-plan-selector-create-toggle:hover,
+html.dark .fiestas-plan-selector-create-toggle:focus-visible {
+  color: #c8b3e5;
+}
+
 html.dark .fiestas-plan-create-form,
 html.dark .fiestas-plan-selector-create {
   background: #272235;
@@ -3467,7 +3503,7 @@ html.dark .fiestas-plan-selector-create input {
 
 .fiestas-plan-topbar {
   display: grid;
-  grid-template-columns: 3.7rem minmax(0, 1fr) 3.7rem;
+  grid-template-columns: 3.7rem minmax(0, 1fr) auto;
   align-items: center;
   min-height: 3.7rem;
 }
@@ -3507,6 +3543,93 @@ html.dark .fiestas-plan-selector-create input {
   background: transparent;
   color: #159b8b;
   font-size: 1.65rem;
+}
+
+.fiestas-plan-header-actions {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+
+.fiestas-plan-header-manage {
+  display: inline-flex;
+  width: 2.7rem;
+  height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #667085;
+  font-size: 1.35rem;
+}
+
+.fiestas-plan-header-manage:hover,
+.fiestas-plan-header-manage:focus-visible,
+.fiestas-plan-header-share:hover,
+.fiestas-plan-header-share:focus-visible {
+  background: #f4eff8;
+  color: #73579f;
+}
+
+.fiestas-plan-header-manage[hidden] {
+  display: none;
+}
+
+.fiestas-plan-manage-menu {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  right: 0;
+  z-index: 30;
+  display: grid;
+  width: min(15rem, calc(100vw - 2.2rem));
+  gap: 0.15rem;
+  border: 1px solid #e3e6ec;
+  border-radius: 0.95rem;
+  background: #fff;
+  padding: 0.35rem;
+  box-shadow: 0 0.65rem 1.5rem rgba(34, 39, 47, 0.15);
+}
+
+.fiestas-plan-manage-menu[hidden] {
+  display: none;
+}
+
+.fiestas-plan-manage-menu button {
+  display: flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.65rem;
+  border: 0;
+  border-radius: 0.65rem;
+  background: transparent;
+  color: #445066;
+  padding: 0.45rem 0.65rem;
+  font: inherit;
+  font-size: 0.84rem;
+  font-weight: 800;
+  text-align: left;
+}
+
+.fiestas-plan-manage-menu button:hover,
+.fiestas-plan-manage-menu button:focus-visible {
+  background: #f4eff8;
+  color: #73579f;
+}
+
+.fiestas-plan-manage-menu button i {
+  width: 1.1rem;
+  color: #73579f;
+  text-align: center;
+}
+
+.fiestas-plan-manage-menu button.is-danger {
+  color: #b42318;
+}
+
+.fiestas-plan-manage-menu button.is-danger i {
+  color: #b42318;
 }
 
 .fiestas-plan-picker {
@@ -4235,6 +4358,38 @@ html.dark .fiestas-plan-timeline-card {
 html.dark .fiestas-plan-picker-trigger {
   background: #1b2028;
   color: #f7f8fa;
+}
+
+html.dark .fiestas-plan-header-manage {
+  color: #bbc2cd;
+}
+
+html.dark .fiestas-plan-header-manage:hover,
+html.dark .fiestas-plan-header-manage:focus-visible,
+html.dark .fiestas-plan-header-share:hover,
+html.dark .fiestas-plan-header-share:focus-visible {
+  background: #30283c;
+  color: #c8b3e5;
+}
+
+html.dark .fiestas-plan-manage-menu {
+  border-color: #303640;
+  background: #1b2028;
+}
+
+html.dark .fiestas-plan-manage-menu button {
+  color: #e5e9ef;
+}
+
+html.dark .fiestas-plan-manage-menu button:hover,
+html.dark .fiestas-plan-manage-menu button:focus-visible {
+  background: #30283c;
+  color: #f7f8fa;
+}
+
+html.dark .fiestas-plan-manage-menu button.is-danger,
+html.dark .fiestas-plan-manage-menu button.is-danger i {
+  color: #ff9b90;
 }
 
 html.dark .fiestas-plan-picker-menu {
@@ -5476,26 +5631,55 @@ html.dark .fiestas-community-plan-text-action:focus-visible {
   color: #b9f0e8;
 }
 
-.fiestas-plan-delete-confirm {
-  display: grid;
-  gap: 0.55rem;
-  margin: 0.75rem 0;
-  border: 1px solid #efc6a4;
-  border-radius: 0.9rem;
-  background: #fff8f0;
-  color: #5d3924;
-  padding: 0.85rem 0.95rem;
+.fiestas-plan-delete-dialog {
+  position: fixed;
+  inset: 0;
+  z-index: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.fiestas-plan-delete-confirm p {
+body.fiestas-plan-delete-open {
+  overflow: hidden;
+}
+
+.fiestas-plan-delete-dialog[hidden] {
+  display: none;
+}
+
+.fiestas-plan-delete-dialog-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(17, 24, 39, 0.48);
+}
+
+.fiestas-plan-delete-dialog-panel {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(100%, 25rem);
+  gap: 0.7rem;
+  border: 1px solid #efc6a4;
+  border-radius: 1.15rem;
+  background: #fff8f0;
+  color: #5d3924;
+  padding: 1.15rem;
+  box-shadow: 0 1rem 2rem rgba(17, 24, 39, 0.2);
+}
+
+.fiestas-plan-delete-dialog-panel p {
   margin: 0;
-  font-size: 0.82rem;
+  font-size: 0.86rem;
   line-height: 1.4;
 }
 
 .fiestas-plan-delete-confirm-title {
+  margin: 0;
   color: #9a4c18;
-  font-size: 0.9rem !important;
+  font-size: 1.25rem !important;
   font-weight: 850;
 }
 
@@ -5503,12 +5687,13 @@ html.dark .fiestas-community-plan-text-action:focus-visible {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  margin-top: 0.25rem;
 }
 
 .fiestas-plan-delete-confirm-actions .fiestas-plan-action {
-  min-height: 2.2rem;
-  padding-inline: 0.75rem;
-  font-size: 0.78rem;
+  min-height: 2.4rem;
+  padding-inline: 0.85rem;
+  font-size: 0.8rem;
 }
 
 .fiestas-plan-action-danger {
@@ -5524,7 +5709,7 @@ html.dark .fiestas-community-plan-text-action:focus-visible {
   color: #fff;
 }
 
-html.dark .fiestas-plan-delete-confirm {
+html.dark .fiestas-plan-delete-dialog-panel {
   border-color: #704832;
   background: #30241e;
   color: #f0c5a7;
