@@ -918,6 +918,12 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
   }
   container.hidden = false;
 
+  const planEvents = eventsForPlan(plan, events);
+  const activeDay = selectedDay !== 'all' && selectedDay && planEvents.some((event) => event.date === selectedDay)
+    ? selectedDay
+    : 'all';
+  const dayEvents = activeDay === 'all' ? planEvents : planEvents.filter((event) => event.date === activeDay);
+
   const hero = document.createElement('section');
   hero.className = 'fiestas-plan-hero';
   const copy = document.createElement('div');

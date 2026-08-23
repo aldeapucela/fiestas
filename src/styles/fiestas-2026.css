@@ -5492,30 +5492,37 @@ html.dark .fiestas-community-plan-preview-item {
 
 .fiestas-community-plan-detail-head {
   display: grid;
-  gap: 0.3rem;
+  grid-template-columns: 3.2rem minmax(0, 1fr);
+  column-gap: 0.7rem;
+  row-gap: 0.2rem;
+  align-items: start;
 }
 
-.fiestas-community-plan-detail-head .fiestas-plan-kicker {
-  margin: 0;
+.fiestas-community-plan-detail-head-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.15rem;
 }
 
 .fiestas-community-plan-detail-head h2 {
   margin: 0;
   color: #1d2430;
-  font-size: clamp(1.55rem, 7vw, 2.25rem);
+  font-size: clamp(1.35rem, 6vw, 2rem);
   font-weight: 900;
   letter-spacing: -0.035em;
   line-height: 1.05;
 }
 
-.fiestas-community-plan-detail-head > p:not(.fiestas-plan-kicker):not(.fiestas-community-plan-detail-summary) {
+.fiestas-community-plan-detail-head-copy > p {
   margin: 0;
   color: #667085;
-  font-size: 0.83rem;
+  font-size: 0.8rem;
+  line-height: 1.25;
 }
 
 .fiestas-community-plan-detail-summary {
-  margin: 0.35rem 0 0;
+  grid-column: 2;
+  margin: 0.05rem 0 0;
   color: #0f8f80;
   font-size: 0.86rem;
   font-weight: 850;
@@ -5654,7 +5661,7 @@ html.dark .fiestas-community-plan-detail-item-copy a {
 
 html.dark .fiestas-community-plans-intro > p:last-child,
 html.dark .fiestas-community-plan-card-author,
-html.dark .fiestas-community-plan-detail-head > p:not(.fiestas-plan-kicker):not(.fiestas-community-plan-detail-summary),
+html.dark .fiestas-community-plan-detail-head-copy > p,
 html.dark .fiestas-community-plan-detail-item-copy span,
 html.dark .fiestas-community-plan-detail-empty,
 html.dark .fiestas-community-plans-loading p,
@@ -5924,10 +5931,10 @@ html.dark .fiestas-plan-delete-confirm-title {
 }
 
 .fiestas-community-plan-detail-icon {
-  width: 2.6rem;
-  height: 2.6rem;
-  margin-bottom: 0.15rem;
-  font-size: 1rem;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0.05rem 0 0;
+  font-size: 1.2rem;
 }
 
 .fiestas-plan-editor {

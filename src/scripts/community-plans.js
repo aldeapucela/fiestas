@@ -327,7 +327,7 @@ function createPlanCard(entry) {
   title.textContent = entry.name;
   const author = document.createElement('p');
   author.className = 'fiestas-community-plan-card-author';
-  author.textContent = `Creado por ${entry.author}`;
+  author.textContent = `por ${entry.author}`;
   const meta = document.createElement('p');
   meta.className = 'fiestas-community-plan-card-meta';
   meta.textContent = entry.summary;
@@ -358,18 +358,18 @@ function renderDetail(container, entry, imported, selectedDay, events) {
   const icon = document.createElement('span');
   icon.className = 'fiestas-community-plan-detail-icon';
   icon.append(createIcon(getPlanIcon(entry.icon || imported.icon).className));
-  const kicker = document.createElement('p');
-  kicker.className = 'fiestas-plan-kicker';
-  kicker.textContent = 'PLAN VECINAL';
   const title = document.createElement('h2');
   title.id = 'community-plan-detail-title';
   title.textContent = entry.name || imported.name;
   const author = document.createElement('p');
-  author.textContent = `Creado por ${entry.author}`;
+  author.textContent = `por ${entry.author}`;
+  const headCopy = document.createElement('div');
+  headCopy.className = 'fiestas-community-plan-detail-head-copy';
+  headCopy.append(title, author);
   const summary = document.createElement('p');
   summary.className = 'fiestas-community-plan-detail-summary';
   summary.textContent = formatImportedSummary(imported);
-  header.append(icon, kicker, title, author, summary);
+  header.append(icon, headCopy, summary);
   container.append(header);
 
   const topActions = document.createElement('div');
