@@ -18,6 +18,20 @@
   <script>
     window.__FIESTAS_2026_EVENTS__ = {{ fiestasEventsJson | safe }};
   </script>
+  <div class="fiestas-scroll-header" data-fiestas-scroll-header aria-hidden="true" inert>
+    <button class="fiestas-scroll-brand" type="button" data-fiestas-scroll-top aria-label="Volver arriba" title="Volver arriba">
+      <img src="/assets/favicon.png" alt="" aria-hidden="true" />
+    </button>
+    <span class="fiestas-scroll-day" data-fiestas-scroll-day aria-live="polite">Agenda de fiestas</span>
+    <div class="fiestas-scroll-actions">
+      <button class="fiestas-scroll-action" type="button" data-fiestas-share-site aria-label="Compartir Fiestas Valladolid 2026" title="Compartir Fiestas Valladolid 2026">
+        <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+      </button>
+      <button class="fiestas-scroll-action" type="button" data-fiestas-scroll-search aria-label="Abrir buscador" title="Abrir buscador">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      </button>
+    </div>
+  </div>
   <section class="fiestas-screen">
     <header class="fiestas-hero" aria-labelledby="fiestas-title">
       <img class="fiestas-hero-fireworks" src="/assets/hero-fireworks.png" alt="" aria-hidden="true" />

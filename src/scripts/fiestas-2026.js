@@ -42,6 +42,7 @@ let suppressMapSheetClick = false;
 let isApplyingUrlState = false;
 let lastTrackedSearchKey = '';
 let siteShareFeedbackTimer = null;
+let scrollHeaderFrame = null;
 
 const state = {
   view: 'agenda',
@@ -109,6 +110,10 @@ const els = {
   siteShare: document.querySelector('[data-fiestas-share-site]'),
   siteShareFeedback: document.querySelector('[data-fiestas-share-feedback]'),
   searchToggle: document.querySelector('[data-fiestas-search-toggle]'),
+  scrollHeader: document.querySelector('[data-fiestas-scroll-header]'),
+  scrollHeaderDay: document.querySelector('[data-fiestas-scroll-day]'),
+  scrollHeaderTop: document.querySelector('[data-fiestas-scroll-top]'),
+  scrollSearchToggle: document.querySelector('[data-fiestas-scroll-search]'),
   searchPanel: document.querySelector('[data-fiestas-search-panel]'),
   search: document.querySelector('[data-fiestas-search]'),
   filterSummary: document.querySelector('[data-fiestas-filter-summary]'),
@@ -141,7 +146,6 @@ function init() {
   setupMenuDrawer();
   setupSubscribe();
   setupPlanSelector();
-  els.siteShare?.addEventListener('click', shareSite);
 
   if (els.detail) {
     initDetailPage();
@@ -168,6 +172,7 @@ function init() {
     if (state.view === 'map') requestLocationOnce();
     renderControlLists();
     render();
+    setupScrollHeader();
   } catch (error) {
     console.error(error);
     els.agenda.replaceChildren(emptyState('No se pudo cargar la agenda. Recarga la página para intentarlo de nuevo.', true));
@@ -175,7 +180,16 @@ function init() {
 }
 
 function bindControls() {
-  els.searchToggle?.addEventListener('click', () => setSearchOpen(els.searchPanel?.hidden));
+  [els.searchToggle, els.scrollSearchToggle].forEach((toggle) => {
+    toggle?.addEventListener('click', () => setSearchOpen(els.searchPanel?.hidden));
+  });
+  els.scrollHeaderTop?.addEventListener('click', () => {
+    const behavior = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+    window.scrollTo({ top: 0, behavior });
+  });
+  document.querySelectorAll('[data-fiestas-share-site]').forEach((button) => {
+    button.addEventListener('click', shareSite);
+  });
 
   els.search?.addEventListener('input', (event) => {
     state.search = normalizeText(event.target.value.trim());
@@ -425,9 +439,45 @@ function render(options = {}) {
     renderAgenda(filtered);
   }
 
+  updateScrollHeader();
+
   if (options.scrollToAgenda) {
     document.querySelector('.fiestas-screen')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
+}
+
+function setupScrollHeader() {
+  if (!els.scrollHeader) return;
+  const scheduleUpdate = () => {
+    if (scrollHeaderFrame) return;
+    scrollHeaderFrame = window.requestAnimationFrame(() => {
+      scrollHeaderFrame = null;
+      updateScrollHeader();
+    });
+  };
+
+  window.addEventListener('scroll', scheduleUpdate, { passive: true });
+  window.addEventListener('resize', scheduleUpdate, { passive: true });
+  updateScrollHeader();
+}
+
+function updateScrollHeader() {
+  if (!els.scrollHeader) return;
+  const sections = [...(els.agenda?.querySelectorAll('.fiestas-day') || [])];
+  const visible = state.view === 'agenda'
+    && sections.length > 0
+    && (window.scrollY || document.documentElement.scrollTop || 0) > Math.max(180, window.innerHeight * 0.2);
+
+  els.scrollHeader.classList.toggle('is-visible', visible);
+  els.scrollHeader.setAttribute('aria-hidden', String(!visible));
+  els.scrollHeader.inert = !visible;
+  if (!visible || !els.scrollHeaderDay) return;
+
+  const headerOffset = els.scrollHeader.getBoundingClientRect().height + 24;
+  const passedSections = sections.filter((section) => section.getBoundingClientRect().top <= headerOffset);
+  const activeSection = passedSections[passedSections.length - 1] || sections[0];
+  const label = activeSection.querySelector('.fiestas-day-title')?.textContent?.trim() || 'Agenda de fiestas';
+  els.scrollHeaderDay.textContent = label;
 }
 
 function renderShellState(filtered) {
@@ -1281,9 +1331,11 @@ function setSearchOpen(open, options = {}) {
   if (!els.searchPanel || !els.searchToggle) return;
   const isOpen = Boolean(open);
   els.searchPanel.hidden = !isOpen;
-  els.searchToggle.setAttribute('aria-expanded', String(isOpen));
-  els.searchToggle.setAttribute('aria-label', isOpen ? 'Ocultar buscador' : 'Abrir buscador');
-  els.searchToggle.classList.toggle('is-active', isOpen);
+  [els.searchToggle, els.scrollSearchToggle].forEach((toggle) => {
+    toggle?.setAttribute('aria-expanded', String(isOpen));
+    toggle?.setAttribute('aria-label', isOpen ? 'Ocultar buscador' : 'Abrir buscador');
+    toggle?.classList.toggle('is-active', isOpen);
+  });
   if (isOpen && options.focus !== false) els.search?.focus();
 }
 
