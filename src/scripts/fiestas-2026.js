@@ -857,20 +857,11 @@ function mapSheetItem(event, compact = false) {
     </span>
   `;
 
-  const locate = document.createElement('button');
-  locate.type = 'button';
+  const locate = document.createElement('a');
+  locate.href = event.urlPath;
   locate.className = 'fiestas-map-result-focus';
-  locate.setAttribute('aria-label', `Ver ${title} en el mapa`);
+  locate.setAttribute('aria-label', `Ver ${title}`);
   locate.innerHTML = '<i class="fa-solid fa-chevron-right" aria-hidden="true"></i>';
-  locate.disabled = !hasCoordinates(event.coordinates) || state.mapLoadError;
-  locate.addEventListener('click', () => {
-    if (!state.map || !hasCoordinates(event.coordinates)) return;
-    state.selectedEventId = event.id;
-    state.focusedClusterEventIds = null;
-    state.map.setView([event.coordinates.lat, event.coordinates.lng], 17);
-    renderMapMarkers(state.currentMapEvents, window.L);
-    renderMapSheet(getFilteredEvents(), { scrollToSelected: true });
-  });
 
   article.append(link, locate);
   return article;

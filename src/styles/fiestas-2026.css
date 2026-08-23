@@ -1733,10 +1733,7 @@
     background: transparent;
     color: #0f9f8d;
     font-size: 1.15rem;
-  }
-
-  .fiestas-map-result-focus:disabled {
-    color: #98a2b3;
+    text-decoration: none;
   }
 
   .fiestas-map-sheet-tab {
