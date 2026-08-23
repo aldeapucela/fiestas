@@ -19,7 +19,10 @@ export function createIcs(events = [], calendarName = 'Fiestas Valladolid 2026')
     lines.push(`UID:${escapeIcs(`${event.id}@fiestas.aldeapucela.org`)}`);
     lines.push(`DTSTAMP:${formatUtc(new Date())}`);
     lines.push(`DTSTART;TZID=${TIME_ZONE}:${formatLocalDateTime(event.date, event.startTime)}`);
-    if (event.endTime) lines.push(`DTEND;TZID=${TIME_ZONE}:${formatLocalDateTime(event.date, event.endTime)}`);
+    if (event.endTime) {
+      const endDate = eventEndDate(event.date, event.startTime, event.endTime);
+      lines.push(`DTEND;TZID=${TIME_ZONE}:${formatLocalDateTime(endDate, event.endTime)}`);
+    }
     lines.push(`SUMMARY:${escapeIcs(event.title || 'Actividad')}`);
     const location = event.location || event.zone || event.neighborhood;
     if (location) lines.push(`LOCATION:${escapeIcs(location)}`);
@@ -99,6 +102,26 @@ function formatLocalDateTime(date, time) {
   const [year, month, day] = String(date).split('-');
   const [hour = '00', minute = '00'] = String(time || '00:00').split(':');
   return `${year}${month}${day}T${hour.padStart(2, '0')}${minute.padStart(2, '0')}00`;
+}
+
+function eventEndDate(date, startTime, endTime) {
+  const startMinutes = timeToMinutes(startTime);
+  const endMinutes = timeToMinutes(endTime);
+  if (startMinutes === null || endMinutes === null || endMinutes >= startMinutes) return date;
+
+  const nextDate = new Date(`${date}T00:00:00Z`);
+  if (Number.isNaN(nextDate.getTime())) return date;
+  nextDate.setUTCDate(nextDate.getUTCDate() + 1);
+  return nextDate.toISOString().slice(0, 10);
+}
+
+function timeToMinutes(value) {
+  const match = String(value || '').match(/^(\d{2}):(\d{2})$/);
+  if (!match) return null;
+  const hours = Number(match[1]);
+  const minutes = Number(match[2]);
+  if (hours > 23 || minutes > 59) return null;
+  return hours * 60 + minutes;
 }
 
 function formatUtc(date) {

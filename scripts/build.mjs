@@ -312,6 +312,26 @@ function eventDateTime(date, time) {
   return time && /^\d{2}:\d{2}$/.test(time) ? date + 'T' + time + ':00+02:00' : date;
 }
 
+function eventEndDate(date, startTime, endTime) {
+  const startMinutes = timeToMinutes(startTime);
+  const endMinutes = timeToMinutes(endTime);
+  if (startMinutes === null || endMinutes === null || endMinutes >= startMinutes) return date;
+
+  const nextDate = new Date(date + 'T00:00:00Z');
+  if (Number.isNaN(nextDate.getTime())) return date;
+  nextDate.setUTCDate(nextDate.getUTCDate() + 1);
+  return nextDate.toISOString().slice(0, 10);
+}
+
+function timeToMinutes(value) {
+  const match = String(value || '').match(/^(\d{2}):(\d{2})$/);
+  if (!match) return null;
+  const hours = Number(match[1]);
+  const minutes = Number(match[2]);
+  if (hours > 23 || minutes > 59) return null;
+  return hours * 60 + minutes;
+}
+
 function eventImageUrl(event) {
   if (!event.image) return publicBaseUrl + event.socialImagePath;
   return /^https?:\/\//i.test(event.image) ? event.image : publicBaseUrl + event.image;
@@ -343,7 +363,7 @@ function eventStructuredData(event) {
       url: 'https://aldeapucela.org'
     }
   };
-  if (event.endTime) data.endDate = eventDateTime(event.date, event.endTime);
+  if (event.endTime) data.endDate = eventDateTime(eventEndDate(event.date, event.startTime, event.endTime), event.endTime);
   if (event.coordinates) {
     data.location.geo = {
       '@type': 'GeoCoordinates',
