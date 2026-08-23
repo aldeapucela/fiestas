@@ -1875,6 +1875,7 @@
   }
 
   .fiestas-map-result-meta,
+  .fiestas-map-result-date,
   .fiestas-map-result-distance {
     display: inline-flex;
     min-width: 0;
@@ -3097,7 +3098,8 @@
   }
 
   html.dark .fiestas-map-sheet-handle small,
-  html.dark .fiestas-map-result-meta {
+  html.dark .fiestas-map-result-meta,
+  html.dark .fiestas-map-result-date {
     color: #d4d9e2;
   }
 

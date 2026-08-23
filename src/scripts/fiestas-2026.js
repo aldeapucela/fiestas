@@ -911,6 +911,7 @@ function mapSheetItem(event, compact = false) {
   if (selected) article.setAttribute('aria-current', 'true');
 
   const distance = distanceLabel(event);
+  const eventDateTime = `${compactDateLabel(event.date)} ${event.startTime || 'Hora por confirmar'}`;
   const title = event.title || 'Actividad sin título';
   const place = event.location || 'Lugar por confirmar';
   const type = event.type || 'Evento';
@@ -928,6 +929,7 @@ function mapSheetItem(event, compact = false) {
         <span class="fiestas-map-result-type">${escapeHtml(type)}</span>
       </span>
       <span class="fiestas-map-result-meta"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(place)}</span>
+      <span class="fiestas-map-result-date">${escapeHtml(eventDateTime)}</span>
       ${distanceMarkup}
     </span>
   `;
