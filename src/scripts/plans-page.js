@@ -917,12 +917,6 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
     return;
   }
   container.hidden = false;
-  const planEvents = eventsForPlan(plan, events);
-  const activeDay = selectedDay !== 'all' && selectedDay && planEvents.some((event) => event.date === selectedDay)
-    ? selectedDay
-    : 'all';
-  const dayEvents = activeDay === 'all' ? planEvents : planEvents.filter((event) => event.date === activeDay);
-  const dateChoices = getPlanDateChoices(events);
 
   const hero = document.createElement('section');
   hero.className = 'fiestas-plan-hero';
@@ -949,6 +943,26 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
   illustration.setAttribute('aria-hidden', 'true');
   hero.append(copy, illustration);
   container.append(hero);
+
+  renderPlanTimeline(container, plan, events, plans, selectedDay, options);
+
+  const bottomActions = document.createElement('div');
+  bottomActions.className = 'fiestas-plan-bottom-actions';
+  bottomActions.append(
+    actionButton('Compartir mi plan', 'fa-arrow-up-from-bracket', { className: 'fiestas-plan-share-button', 'data-plan-share': plan.id }),
+    actionButton('Añadir al calendario', 'fa-calendar-plus', { className: 'fiestas-plan-calendar-button', 'data-plan-export-calendar': plan.id })
+  );
+  container.append(bottomActions);
+}
+
+export function renderPlanTimeline(container, plan, events, plans = [], selectedDay = 'all', options = {}) {
+  if (!container || !plan) return;
+  const planEvents = eventsForPlan(plan, events);
+  const activeDay = selectedDay !== 'all' && selectedDay && planEvents.some((event) => event.date === selectedDay)
+    ? selectedDay
+    : 'all';
+  const dayEvents = activeDay === 'all' ? planEvents : planEvents.filter((event) => event.date === activeDay);
+  const dateChoices = getPlanDateChoices(events);
 
   const dateStrip = document.createElement('div');
   dateStrip.className = 'fiestas-plan-date-strip';
@@ -1023,14 +1037,6 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
     empty.append(textNode('p', planEvents.length ? 'No hay actividades guardadas para este día.' : 'Añade actividades desde la agenda o desde una ficha de actividad.'));
     container.append(empty);
   }
-
-  const bottomActions = document.createElement('div');
-  bottomActions.className = 'fiestas-plan-bottom-actions';
-  bottomActions.append(
-    actionButton('Compartir mi plan', 'fa-arrow-up-from-bracket', { className: 'fiestas-plan-share-button', 'data-plan-share': plan.id }),
-    actionButton('Añadir al calendario', 'fa-calendar-plus', { className: 'fiestas-plan-calendar-button', 'data-plan-export-calendar': plan.id })
-  );
-  container.append(bottomActions);
 }
 
 function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {

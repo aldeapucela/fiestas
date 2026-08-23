@@ -1,5 +1,6 @@
-import { createPlan, getPlanIcon, normalizePlanIcon, readPlans } from './plan-storage.js';
-import { trackPlanCreated, trackPlanShared } from './analytics.js';
+import { createPlan, getPlanIcon, normalizePlanIcon, readFavoriteIds, readPlans, writeFavoriteIds } from './plan-storage.js';
+import { trackFavoriteChanged, trackPlanCreated, trackPlanShared } from './analytics.js';
+import { renderPlanTimeline } from './plans-page.js';
 
 const CATALOG_SCHEMA_VERSION = 1;
 const FESTIVAL_ID = 'valladolid-2026';
@@ -58,33 +59,49 @@ export function setupCommunityPlansPage(rawEvents = []) {
     }
 
     const addLink = event.target.closest('[data-community-plan-add]');
-    if (!addLink || !page.contains(addLink)) return;
-    const entry = entries.find((item) => item.id === addLink.dataset.communityPlanId);
-    if (!entry) return;
-    if (addLink.dataset.communityPlanAdded === 'true') return;
-    event.preventDefault();
-    addLink.dataset.communityPlanBusy = 'true';
-    addLink.setAttribute('aria-busy', 'true');
-    setActionText(addLink, 'Añadiendo…', 'fa-spinner');
-    try {
-      const imported = await loadExportedPlan(entry.url, eventById);
-      const existing = findExistingCommunityPlan(entry, imported);
-      if (existing) {
-        markAddedLink(addLink, existing);
-        return;
+    if (addLink && page.contains(addLink)) {
+      const entry = entries.find((item) => item.id === addLink.dataset.communityPlanId);
+      if (!entry) return;
+      if (addLink.dataset.communityPlanAdded === 'true') return;
+      event.preventDefault();
+      addLink.dataset.communityPlanBusy = 'true';
+      addLink.setAttribute('aria-busy', 'true');
+      setActionText(addLink, 'Añadiendo…', 'fa-spinner');
+      try {
+        const imported = await loadExportedPlan(entry.url, eventById);
+        const existing = findExistingCommunityPlan(entry, imported);
+        if (existing) {
+          markAddedLink(addLink, existing);
+          return;
+        }
+        const plan = createPlan(entry.name || imported.name, imported.activityIds, {
+          sourcePlanId: entry.id,
+          icon: imported.icon || entry.icon
+        });
+        trackPlanCreated('community');
+        markAddedLink(addLink, plan);
+      } catch (_) {
+        addLink.removeAttribute('aria-busy');
+        addLink.removeAttribute('data-community-plan-busy');
+        setActionText(addLink, 'Añadir a mis planes', 'fa-plus');
+        showLinkFeedback(addLink, 'No se ha podido cargar este plan. Puedes intentarlo de nuevo desde su ficha.');
       }
-      const plan = createPlan(entry.name || imported.name, imported.activityIds, {
-        sourcePlanId: entry.id,
-        icon: imported.icon || entry.icon
-      });
-      trackPlanCreated('community');
-      markAddedLink(addLink, plan);
-    } catch (_) {
-      addLink.removeAttribute('aria-busy');
-      addLink.removeAttribute('data-community-plan-busy');
-      setActionText(addLink, 'Añadir a mis planes', 'fa-plus');
-      showLinkFeedback(addLink, 'No se ha podido cargar este plan. Puedes intentarlo de nuevo desde su ficha.');
+      return;
     }
+
+    const card = event.target.closest('[data-community-plan-preview]');
+    if (card && page.contains(card) && !event.target.closest('a, button')) {
+      event.preventDefault();
+      window.location.href = card.dataset.communityPlanPreview;
+    }
+  });
+
+  page.addEventListener('keydown', (event) => {
+    const card = event.target.closest('[data-community-plan-preview]');
+    if (!card || !page.contains(card) || (event.key !== 'Enter' && event.key !== ' ')) return;
+    if (event.target.closest('a, button')) return;
+    event.preventDefault();
+    window.location.href = card.dataset.communityPlanPreview;
   });
 
   loadCatalog();
@@ -98,7 +115,6 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
   const eventById = new Map(events.map((event) => [event.id, event]));
   const detail = page.querySelector('[data-community-plan-detail]');
   const status = page.querySelector('[data-community-plan-detail-status]');
-  const addLink = page.querySelector('[data-community-plan-add]');
   const shareButton = page.querySelector('[data-community-plan-share]');
   const entry = {
     id: String(page.dataset.communityPlanId || '').trim(),
@@ -109,6 +125,14 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
     pageUrl: page.dataset.communityPlanPageUrl || window.location.pathname
   };
   let imported = null;
+  let selectedDay = new URLSearchParams(window.location.search).get('date') || 'all';
+
+  const addLinks = () => [...page.querySelectorAll('[data-community-plan-add]')];
+
+  const syncAddedLinks = (plan = findExistingCommunityPlan(entry, imported)) => {
+    if (!plan) return;
+    addLinks().forEach((link) => markAddedLink(link, plan));
+  };
 
   const setStatus = (message, kind = '') => {
     if (!status) return;
@@ -118,41 +142,81 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
   };
 
   const addToMyPlans = async () => {
-    if (!imported || !addLink || addLink.dataset.communityPlanAdded === 'true') return;
+    const links = addLinks();
+    if (!imported || !links.length || links.every((link) => link.dataset.communityPlanAdded === 'true')) return;
     const existing = findExistingCommunityPlan(entry, imported);
     if (existing) {
-      markAddedLink(addLink, existing);
+      syncAddedLinks(existing);
       setStatus(`${existing.name} ya está disponible en Mi plan.`, 'success');
       return;
     }
-    addLink.dataset.communityPlanBusy = 'true';
-    addLink.setAttribute('aria-busy', 'true');
-    setActionText(addLink, 'Añadiendo…', 'fa-spinner');
+    links.forEach((link) => {
+      link.dataset.communityPlanBusy = 'true';
+      link.setAttribute('aria-busy', 'true');
+      setActionText(link, 'Añadiendo…', 'fa-spinner');
+    });
     try {
       const plan = createPlan(entry.name || imported.name, imported.activityIds, {
         sourcePlanId: entry.id,
         icon: imported.icon || entry.icon
       });
       trackPlanCreated('community');
-      markAddedLink(addLink, plan);
+      syncAddedLinks(plan);
       setStatus(`${plan.name} ya está disponible en Mi plan.`, 'success');
     } catch (_) {
-      addLink.removeAttribute('aria-busy');
-      addLink.removeAttribute('data-community-plan-busy');
-      setActionText(addLink, 'Añadir a mis planes', 'fa-plus');
+      links.forEach((link) => {
+        link.removeAttribute('aria-busy');
+        link.removeAttribute('data-community-plan-busy');
+        setActionText(link, 'Añadir a mis planes', 'fa-plus');
+      });
       setStatus('No se ha podido guardar este plan en este navegador.', 'error');
     }
   };
 
-  addLink?.addEventListener('click', async (event) => {
+  page.addEventListener('click', async (event) => {
+    const addLink = event.target.closest('[data-community-plan-add]');
+    if (!addLink || !page.contains(addLink)) return;
     if (addLink.dataset.communityPlanAdded === 'true') return;
     event.preventDefault();
     if (!imported) return;
     await addToMyPlans();
   });
 
+  detail?.addEventListener('click', (event) => {
+    const dayButton = event.target.closest('[data-plan-day]');
+    if (dayButton && !dayButton.disabled) {
+      selectedDay = dayButton.dataset.planDay || 'all';
+      const url = new URL(window.location.href);
+      if (selectedDay === 'all') url.searchParams.delete('date');
+      else url.searchParams.set('date', selectedDay);
+      window.history.replaceState({}, '', url);
+      renderDetail(detail, entry, imported, selectedDay, events);
+      syncAddedLinks();
+      return;
+    }
+
+    const favoriteButton = event.target.closest('[data-plan-toggle-favorite]');
+    if (!favoriteButton) return;
+    const id = favoriteButton.dataset.planToggleFavorite || '';
+    const ids = new Set(readFavoriteIds());
+    const isSaved = ids.has(id);
+    if (isSaved) ids.delete(id);
+    else ids.add(id);
+    writeFavoriteIds([...ids]);
+    trackFavoriteChanged(id, !isSaved);
+    renderDetail(detail, entry, imported, selectedDay, events);
+    syncAddedLinks();
+  });
+
   shareButton?.addEventListener('click', async () => {
     await shareCommunityPlan(entry, page.querySelector('.fiestas-community-plan-detail'));
+  });
+
+  window.addEventListener('popstate', () => {
+    selectedDay = new URLSearchParams(window.location.search).get('date') || 'all';
+    if (!imported) return;
+    renderDetail(detail, entry, imported, selectedDay, events);
+    syncAddedLinks();
   });
 
   const loadDetail = async () => {
@@ -162,10 +226,9 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
     }
     try {
       imported = await loadExportedPlan(entry.url, eventById);
-      renderDetail(detail, entry, imported);
+      renderDetail(detail, entry, imported, selectedDay, events);
       setStatus('', '');
-      const existing = findExistingCommunityPlan(entry, imported);
-      if (existing) markAddedLink(addLink, existing);
+      syncAddedLinks();
       if (new URLSearchParams(window.location.search).get('add') === '1') await addToMyPlans();
     } catch (_) {
       setStatus('No se ha podido cargar el archivo de este plan. Vuelve a intentarlo más tarde.', 'error');
@@ -248,6 +311,10 @@ function validateExportPayload(value, eventById) {
 function createPlanCard(entry) {
   const card = document.createElement('article');
   card.className = 'fiestas-community-plan-card';
+  card.dataset.communityPlanPreview = entry.pageUrl;
+  card.tabIndex = 0;
+  card.setAttribute('role', 'group');
+  card.setAttribute('aria-label', `Abrir la previsualización de ${entry.name}`);
 
   const icon = document.createElement('span');
   icon.className = 'fiestas-community-plan-card-icon';
@@ -267,6 +334,8 @@ function createPlanCard(entry) {
   body.append(title, author, meta);
   card.append(body);
 
+  card.append(createShareAction(entry));
+
   const actions = document.createElement('div');
   actions.className = 'fiestas-community-plan-card-actions';
   actions.append(createTextAction(entry.pageUrl, 'Previsualizar', 'fa-eye'));
@@ -276,13 +345,11 @@ function createPlanCard(entry) {
   const existing = findExistingCatalogPlan(entry);
   if (existing) markAddedLink(addLink, existing);
   actions.append(addLink);
-  const shareButton = createShareAction(entry, 'Compartir');
-  actions.append(shareButton);
   card.append(actions);
   return card;
 }
 
-function renderDetail(container, entry, imported) {
+function renderDetail(container, entry, imported, selectedDay, events) {
   if (!container) return;
   container.replaceChildren();
 
@@ -305,6 +372,11 @@ function renderDetail(container, entry, imported) {
   header.append(icon, kicker, title, author, summary);
   container.append(header);
 
+  const topActions = document.createElement('div');
+  topActions.className = 'fiestas-community-plan-detail-actions fiestas-community-plan-detail-actions-top';
+  topActions.append(createDetailAddLink());
+  container.append(topActions);
+
   if (imported.missingIds.length) {
     const warning = document.createElement('p');
     warning.className = 'fiestas-community-plan-detail-warning';
@@ -312,35 +384,7 @@ function renderDetail(container, entry, imported) {
     container.append(warning);
   }
 
-  const list = document.createElement('div');
-  list.className = 'fiestas-community-plan-detail-list';
-  imported.events.forEach((event) => list.append(createDetailEvent(event)));
-  if (!imported.events.length) {
-    const empty = document.createElement('p');
-    empty.className = 'fiestas-community-plan-detail-empty';
-    empty.textContent = 'Este plan no tiene actividades disponibles para esta edición.';
-    list.append(empty);
-  }
-  container.append(list);
-}
-
-function createDetailEvent(event) {
-  const item = document.createElement('article');
-  item.className = 'fiestas-community-plan-detail-item';
-  const time = document.createElement('time');
-  time.textContent = event.startTime || '—';
-  const copy = document.createElement('div');
-  copy.className = 'fiestas-community-plan-detail-item-copy';
-  const title = event.urlPath ? document.createElement('a') : document.createElement('strong');
-  title.textContent = event.title;
-  if (event.urlPath) title.href = event.urlPath;
-  const date = document.createElement('span');
-  date.textContent = event.dateLabel || event.date;
-  const location = document.createElement('span');
-  location.textContent = event.location || 'Valladolid';
-  copy.append(title, date, location);
-  item.append(time, copy);
-  return item;
+  renderPlanTimeline(container, { id: `community-${entry.id}`, activityIds: imported.activityIds }, events, [], selectedDay);
 }
 
 function createTextAction(href, label, iconName) {
@@ -351,15 +395,25 @@ function createTextAction(href, label, iconName) {
   return link;
 }
 
-function createShareAction(entry, label) {
+function createShareAction(entry) {
   const button = document.createElement('button');
   button.type = 'button';
-  button.className = 'fiestas-community-plan-text-action fiestas-community-plan-share-action';
+  button.className = 'fiestas-community-plan-share-action';
   button.dataset.communityPlanShare = '';
   button.dataset.communityPlanId = entry.id;
-  button.setAttribute('aria-label', `${label} ${entry.name}`);
-  button.append(createIcon('fa-share-nodes'), document.createTextNode(label));
+  button.setAttribute('aria-label', `Compartir ${entry.name}`);
+  button.title = `Compartir ${entry.name}`;
+  button.append(createIcon('fa-share-nodes'));
   return button;
+}
+
+function createDetailAddLink() {
+  const link = document.createElement('a');
+  link.className = 'fiestas-community-plan-add';
+  link.dataset.communityPlanAdd = '';
+  link.href = `${window.location.pathname}?add=1`;
+  link.append(createIcon('fa-plus'), document.createTextNode('Añadir a mis planes'));
+  return link;
 }
 
 async function shareCommunityPlan(entry, feedbackContainer) {
@@ -484,14 +538,21 @@ function formatImportedSummary(imported) {
 
 function normalizeEvents(rawEvents) {
   return (Array.isArray(rawEvents) ? rawEvents : []).map((event) => ({
+    ...event,
     id: String(event?.id || '').trim(),
     date: String(event?.date || ''),
     dateLabel: String(event?.dateLabel || event?.date || ''),
     startTime: String(event?.startTime || ''),
+    endTime: String(event?.endTime || ''),
     title: String(event?.title || 'Actividad'),
+    type: String(event?.type || ''),
+    tags: Array.isArray(event?.tags) ? event.tags : [],
+    icon: String(event?.icon || ''),
+    image: String(event?.image || ''),
+    zone: String(event?.zone || ''),
     location: String(event?.location || ''),
     urlPath: String(event?.urlPath || '')
-  })).filter((event) => event.id);
+  })).filter((event) => event.id && event.date).sort(compareEvents);
 }
 
 function compareEvents(a, b) {
