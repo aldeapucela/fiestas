@@ -33,7 +33,8 @@ Los identificadores de actividad son sus `id` numéricos y estables. Los valores
 | Categoría | Acción | Nombre / valor | Cuándo |
 | --- | --- | --- | --- |
 | `activity` | `view_detail` | `activityId` | Al cargar una ficha. |
-| `activity` | `save` / `remove_save` | `activityId` | Al guardar o eliminar un favorito. |
+| `activity` | `save` | `activityId` | La primera vez que ese navegador guarda un favorito; se deduplica con `localStorage`. |
+| `activity` | `remove_save` | `activityId` | Al eliminar un favorito; no afecta al ranking de guardados. |
 | `activity` | `share` | `activityId` | Después de compartir o copiar correctamente. |
 | `activity` | `open_directions` | `activityId` | Al abrir Cómo llegar. |
 | `activity` | `open_tickets` | `activityId` | Al abrir el enlace de entradas. |
@@ -56,6 +57,8 @@ Los pageviews se envían mediante `trackPageView` durante la única inicializaci
 - No se envían latitud, longitud, dirección exacta ni permisos de ubicación.
 - No se envían nombres, correos, teléfonos, nombres personalizados de planes ni identificadores de usuario.
 - Sin cuentas, las métricas representan visitas/dispositivos y acciones observadas, no personas identificadas de forma exacta.
+- Los eventos `activity / save` se cuentan una sola vez por actividad y navegador mediante `fiestasPucela:analytics:saved-activities` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, no se puede garantizar la deduplicación entre sesiones.
+- Para ordenar actividades por popularidad se debe usar el total de eventos `activity / save`, no `remove_save` ni el total de visitas. No se envía una IP ni un identificador de usuario propio.
 - La instancia de Matomo debe mantener activada la anonimización de IP y sus controles de privacidad deben revisarse en servidor.
 - Este repositorio no contiene mecanismo de consentimiento de cookies; si se incorpora en el futuro, la inicialización debe conectarse a él.
 - La versión actual no tiene geolocalización, botón de centrar en el usuario, panel inferior del mapa ni planes/colecciones; por eso no se generan esos eventos todavía.

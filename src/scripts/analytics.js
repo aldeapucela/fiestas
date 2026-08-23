@@ -3,6 +3,7 @@ const INITIALIZED_KEY = '__FIESTAS_MATOMO_INITIALIZED__';
 const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]', '::1']);
 const DEFAULT_TRACKER_URL = 'https://stats.aldeapucela.org/';
 const DEFAULT_SITE_ID = '29';
+const TRACKED_FAVORITES_STORAGE_KEY = 'fiestasPucela:analytics:saved-activities';
 
 const categoryActions = {
   activity: new Set(['view_detail', 'save', 'remove_save', 'share', 'open_directions', 'open_external_link', 'open_tickets']),
@@ -14,6 +15,7 @@ const categoryActions = {
 
 const filterNames = new Set(['type', 'area', 'ticket']);
 let analyticsReady = false;
+const trackedFavoriteIds = new Set();
 
 export function initAnalytics() {
   if (typeof window === 'undefined' || window[INITIALIZED_KEY]) return;
@@ -50,7 +52,17 @@ export function trackActivityOpened(activityId) {
 }
 
 export function trackFavoriteChanged(activityId, saved) {
-  return pushEvent('activity', saved ? 'save' : 'remove_save', activityId);
+  try {
+    const normalizedActivityId = normalizeToken(activityId);
+    if (saved && (!normalizedActivityId || hasTrackedFavorite(normalizedActivityId))) return false;
+
+    const tracked = pushEvent('activity', saved ? 'save' : 'remove_save', normalizedActivityId);
+    if (saved && tracked) rememberTrackedFavorite(normalizedActivityId);
+    return tracked;
+  } catch (_) {
+    // Analytics must never prevent the local favorite from being saved.
+    return false;
+  }
 }
 
 export function trackActivityShared(activityId) {
@@ -182,6 +194,35 @@ function pushEvent(category, action, name, value) {
   if (value !== undefined) event.push(value);
   queue.push(event);
   return true;
+}
+
+function hasTrackedFavorite(activityId) {
+  if (trackedFavoriteIds.has(activityId)) return true;
+  const storedIds = readTrackedFavoriteIds();
+  const alreadyTracked = storedIds.includes(activityId);
+  if (alreadyTracked) trackedFavoriteIds.add(activityId);
+  return alreadyTracked;
+}
+
+function rememberTrackedFavorite(activityId) {
+  trackedFavoriteIds.add(activityId);
+  const storedIds = new Set(readTrackedFavoriteIds());
+  storedIds.add(activityId);
+  try {
+    window.localStorage.setItem(TRACKED_FAVORITES_STORAGE_KEY, JSON.stringify([...storedIds]));
+  } catch (_) {
+    // An unavailable localStorage still deduplicates saves for this page load.
+  }
+}
+
+function readTrackedFavoriteIds() {
+  try {
+    const value = JSON.parse(window.localStorage.getItem(TRACKED_FAVORITES_STORAGE_KEY) || '[]');
+    if (!Array.isArray(value)) return [];
+    return [...new Set(value.map(normalizeToken).filter(Boolean))];
+  } catch (_) {
+    return [];
+  }
 }
 
 function normalizeToken(value) {
