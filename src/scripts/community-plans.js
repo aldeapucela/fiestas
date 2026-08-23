@@ -419,10 +419,10 @@ function createDetailAddLink() {
 async function shareCommunityPlan(entry, feedbackContainer) {
   const url = new URL(entry.pageUrl, window.location.href).href;
   const title = entry.name || 'Plan vecinal';
-  const text = `${title} · Creado por ${entry.author}`;
+  const message = `Mira el plan "${title}" para estas fiestas y ferias:\n\n${url}`;
   try {
     if (navigator.share) {
-      await navigator.share({ title, text, url });
+      await navigator.share({ title, text: message });
       trackPlanShared('community');
       showCommunityShareFeedback(feedbackContainer, 'Plan compartido.');
       return;
@@ -433,7 +433,7 @@ async function shareCommunityPlan(entry, feedbackContainer) {
 
   try {
     if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
-    await navigator.clipboard.writeText(url);
+    await navigator.clipboard.writeText(message);
     trackPlanShared('community');
     showCommunityShareFeedback(feedbackContainer, 'Enlace copiado.');
   } catch (_) {
