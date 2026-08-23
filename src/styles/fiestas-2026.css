@@ -5375,6 +5375,11 @@ html.dark .fiestas-community-plan-preview-item {
   white-space: nowrap;
 }
 
+.fiestas-community-plan-share-action {
+  cursor: pointer;
+  font: inherit;
+}
+
 .fiestas-community-plan-text-action i {
   color: #73579f;
   font-size: 0.65rem;
@@ -5398,6 +5403,22 @@ html.dark .fiestas-community-plan-preview-item {
   font-size: 0.72rem;
   font-weight: 750;
   text-align: right;
+}
+
+.fiestas-community-plan-share-feedback {
+  margin: 0;
+  color: #0f766e;
+  font-size: 0.72rem;
+  font-weight: 750;
+}
+
+.fiestas-community-plan-card > .fiestas-community-plan-share-feedback {
+  grid-column: 2 / -1;
+  text-align: right;
+}
+
+.fiestas-community-plan-share-feedback.is-error {
+  color: #b42318;
 }
 
 .fiestas-community-plan-detail {
@@ -5575,6 +5596,14 @@ html.dark .fiestas-community-plan-detail-empty,
 html.dark .fiestas-community-plans-loading p,
 html.dark .fiestas-community-plans-empty p {
   color: #b9c1ce;
+}
+
+html.dark .fiestas-community-plan-share-feedback {
+  color: #78e2d4;
+}
+
+html.dark .fiestas-community-plan-share-feedback.is-error {
+  color: #ff9b90;
 }
 
 html.dark .fiestas-community-plans-catalog,

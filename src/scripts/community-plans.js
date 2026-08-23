@@ -1,5 +1,5 @@
 import { createPlan, getPlanIcon, normalizePlanIcon, readPlans } from './plan-storage.js';
-import { trackPlanCreated } from './analytics.js';
+import { trackPlanCreated, trackPlanShared } from './analytics.js';
 
 const CATALOG_SCHEMA_VERSION = 1;
 const FESTIVAL_ID = 'valladolid-2026';
@@ -48,6 +48,15 @@ export function setupCommunityPlansPage(rawEvents = []) {
   };
 
   page.addEventListener('click', async (event) => {
+    const shareButton = event.target.closest('[data-community-plan-share]');
+    if (shareButton && page.contains(shareButton)) {
+      const entry = entries.find((item) => item.id === shareButton.dataset.communityPlanId);
+      if (!entry) return;
+      event.preventDefault();
+      await shareCommunityPlan(entry, shareButton.closest('.fiestas-community-plan-card'));
+      return;
+    }
+
     const addLink = event.target.closest('[data-community-plan-add]');
     if (!addLink || !page.contains(addLink)) return;
     const entry = entries.find((item) => item.id === addLink.dataset.communityPlanId);
@@ -90,12 +99,14 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
   const detail = page.querySelector('[data-community-plan-detail]');
   const status = page.querySelector('[data-community-plan-detail-status]');
   const addLink = page.querySelector('[data-community-plan-add]');
+  const shareButton = page.querySelector('[data-community-plan-share]');
   const entry = {
     id: String(page.dataset.communityPlanId || '').trim(),
     name: cleanText(page.dataset.communityPlanName, MAX_PLAN_NAME_LENGTH),
     author: cleanText(page.dataset.communityPlanAuthor, MAX_PLAN_NAME_LENGTH),
     url: safeJsonPlanUrl(page.dataset.communityPlanJsonUrl),
-    icon: normalizePlanIcon(page.dataset.communityPlanIcon)
+    icon: normalizePlanIcon(page.dataset.communityPlanIcon),
+    pageUrl: page.dataset.communityPlanPageUrl || window.location.pathname
   };
   let imported = null;
 
@@ -138,6 +149,10 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
     event.preventDefault();
     if (!imported) return;
     await addToMyPlans();
+  });
+
+  shareButton?.addEventListener('click', async () => {
+    await shareCommunityPlan(entry, page.querySelector('.fiestas-community-plan-detail'));
   });
 
   const loadDetail = async () => {
@@ -261,6 +276,8 @@ function createPlanCard(entry) {
   const existing = findExistingCatalogPlan(entry);
   if (existing) markAddedLink(addLink, existing);
   actions.append(addLink);
+  const shareButton = createShareAction(entry, 'Compartir');
+  actions.append(shareButton);
   card.append(actions);
   return card;
 }
@@ -332,6 +349,52 @@ function createTextAction(href, label, iconName) {
   link.href = href;
   link.append(createIcon(iconName), document.createTextNode(label));
   return link;
+}
+
+function createShareAction(entry, label) {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.className = 'fiestas-community-plan-text-action fiestas-community-plan-share-action';
+  button.dataset.communityPlanShare = '';
+  button.dataset.communityPlanId = entry.id;
+  button.setAttribute('aria-label', `${label} ${entry.name}`);
+  button.append(createIcon('fa-share-nodes'), document.createTextNode(label));
+  return button;
+}
+
+async function shareCommunityPlan(entry, feedbackContainer) {
+  const url = new URL(entry.pageUrl, window.location.href).href;
+  const title = entry.name || 'Plan vecinal';
+  const text = `${title} · Creado por ${entry.author}`;
+  try {
+    if (navigator.share) {
+      await navigator.share({ title, text, url });
+      trackPlanShared('community');
+      showCommunityShareFeedback(feedbackContainer, 'Plan compartido.');
+      return;
+    }
+  } catch (error) {
+    if (error?.name === 'AbortError') return;
+  }
+
+  try {
+    if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+    await navigator.clipboard.writeText(url);
+    trackPlanShared('community');
+    showCommunityShareFeedback(feedbackContainer, 'Enlace copiado.');
+  } catch (_) {
+    showCommunityShareFeedback(feedbackContainer, 'No se pudo compartir el enlace.', true);
+  }
+}
+
+function showCommunityShareFeedback(container, message, isError = false) {
+  if (!container) return;
+  const feedback = document.createElement('p');
+  feedback.className = `fiestas-community-plan-share-feedback${isError ? ' is-error' : ''}`;
+  feedback.textContent = message;
+  container.querySelector('.fiestas-community-plan-share-feedback')?.remove();
+  container.append(feedback);
+  window.setTimeout(() => feedback.remove(), 3000);
 }
 
 function setActionText(link, label, iconName) {
