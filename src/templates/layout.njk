@@ -13,6 +13,7 @@
     <link rel="icon" type="image/png" href="/assets/favicon.png" />
     <link rel="manifest" href="/assets/manifest.webmanifest" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
+    {# Integraciones externas aprobadas de Aldea Pucela Eventos. #}
     <link rel="alternate" type="application/rss+xml" title="Aldea Pucela Eventos RSS" href="https://eventos.aldeapucela.org/rss.xml" />
     <link rel="alternate" type="text/calendar" title="Aldea Pucela Eventos Calendario" href="https://eventos.aldeapucela.org/calendar.ics" />
     {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}" />{% endif %}
@@ -57,6 +58,7 @@
       }());
     </script>
     <link rel="stylesheet" href="/assets/css/{{ pageCss }}" />
+    {# Se mantiene remoto para aprovechar la caché compartida con eventos.aldeapucela.org. #}
     <link rel="stylesheet" href="https://eventos.aldeapucela.org/assets/fontawesome/css/all.min.css" />
   </head>
   <body class="{% block bodyClass %}{% endblock %}">

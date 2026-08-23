@@ -496,6 +496,7 @@ function pageContext({ assetVersion, cssVersion, jsVersion }) {
     assetVersion,
     cssVersion,
     jsVersion,
+    // Integración externa aprobada: el modal de suscripción usa el calendario/RSS global de Aldea Pucela Eventos.
     categoryFeeds: [],
     publicBaseUrl,
     analyticsConfig
