@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "exportedAt": "2026-08-23T10:42:32.856Z",
+  "exportedAt": "2026-08-23T11:17:01.229Z",
   "plans": [
     {
       "name": "Música y ocio alternativo",
@@ -15,7 +15,8 @@
         "165",
         "254",
         "319",
-        "367"
+        "367",
+        "345"
       ]
     }
   ]
