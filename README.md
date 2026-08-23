@@ -33,7 +33,7 @@ La aplicación permite:
 - compartir actividades y la agenda;
 - instalar la web como PWA y consultar contenido visitado sin conexión;
 - cambiar entre tema claro y oscuro;
-- suscribirse al calendario y al RSS de Aldea Pucela Eventos.
+- suscribirse al calendario y al RSS de Aldea Pucela Eventos como integración externa.
 
 Los favoritos y planes personales se guardan localmente en el navegador. No requieren cuenta y no se sincronizan con un servidor.
 
@@ -64,6 +64,8 @@ Las rutas de Fiestas viven en la raíz de su propio dominio. Los enlaces al rest
 ~~~text
 https://eventos.aldeapucela.org/
 ~~~
+
+La app conserva integraciones externas aprobadas con Aldea Pucela Eventos: calendario/RSS globales, boletín, enlaces de comunidad del menú y Font Awesome servido desde `eventos.aldeapucela.org` para aprovechar caché compartida.
 
 ## Estructura técnica
 

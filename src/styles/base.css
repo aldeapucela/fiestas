@@ -22,11 +22,18 @@
   }
 
   html {
-    @apply bg-paper text-ink antialiased;
+    background-color: #fbfaf8;
+    color: #1f2430;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
-    @apply min-h-screen bg-paper font-sans leading-6 text-ink;
+    min-height: 100vh;
+    background-color: #fbfaf8;
+    color: #1f2430;
+    font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+    line-height: 1.5rem;
   }
 
   a {
@@ -64,53 +71,8 @@
     @apply rounded-3xl border border-line bg-white/90 shadow-soft backdrop-blur;
   }
 
-  .topbar {
-    @apply sticky top-0 z-40 border-b border-line bg-white;
-  }
-
   .detail-topbar {
     @apply bg-white;
-  }
-
-  .topbar-inner {
-    @apply page-shell flex h-20 items-center justify-between gap-6;
-  }
-
-  .header-brand {
-    @apply py-1;
-  }
-
-  .home-brand-mobile {
-    @apply min-w-0 flex-none items-center gap-4;
-  }
-
-  .home-brand-mobile-mark {
-    @apply h-12 w-12 rounded-2xl object-cover shadow-sm;
-  }
-
-  .home-brand-mobile-copy {
-    @apply flex flex-col leading-none;
-  }
-
-  .home-brand-mobile-kicker {
-    @apply text-[10px] font-semibold uppercase tracking-[0.3em] text-brand-500;
-  }
-
-  .home-brand-mobile-title {
-    @apply font-display text-[15px] font-bold tracking-tight text-ink;
-  }
-
-  .header-search-btn {
-    @apply ml-auto shrink-0;
-  }
-
-  /* La búsqueda y el menú forman un único grupo de acciones en móvil. */
-  .header-search-btn + .header-search-btn {
-    margin-left: -0.25rem;
-  }
-
-  .header-main-nav {
-    @apply items-center gap-1;
   }
 
   .menu-drawer {
@@ -205,22 +167,6 @@
 
   .search-field {
     @apply flex h-12 items-center gap-3 rounded-full border border-line bg-white px-4 text-sm text-slate-500 shadow-sm;
-  }
-
-  .nav-link {
-    @apply inline-flex min-h-11 items-center gap-2 rounded-full px-3 text-sm font-medium text-slate-600 transition hover:bg-slate-100 hover:text-brand-700;
-  }
-
-  .nav-link i {
-    @apply text-sm text-slate-500;
-  }
-
-  .nav-link-active {
-    @apply bg-brand-50 text-brand-700;
-  }
-
-  .nav-link-active i {
-    @apply text-brand-700;
   }
 
   .pill {
@@ -711,19 +657,13 @@
   }
 
   .week-day-group .event-compact-action.event-compact-action-active,
-  .saved-day-group .event-compact-action.event-compact-action-active,
-  .event-row-list .event-compact-action.event-compact-action-active {
+  .saved-day-group .event-compact-action.event-compact-action-active {
     @apply border-[#6a4d9b] bg-[#6a4d9b] text-white shadow-md;
   }
 
   .week-day-group .event-compact-action.event-compact-action-active i,
-  .saved-day-group .event-compact-action.event-compact-action-active i,
-  .event-row-list .event-compact-action.event-compact-action-active i {
+  .saved-day-group .event-compact-action.event-compact-action-active i {
     @apply text-white;
-  }
-
-  .event-row-list > .event-compact:first-child {
-    @apply mt-0;
   }
 
   .week-groups {
@@ -804,193 +744,6 @@
 
   .week-day-label {
     @apply text-sm font-semibold uppercase tracking-[0.2em] text-brand-500;
-  }
-
-  .event-row {
-    @apply surface overflow-hidden;
-  }
-
-  .event-row-link {
-    @apply grid grid-cols-[96px_minmax(0,1fr)] gap-3 p-0;
-  }
-
-  .event-row-image {
-    @apply aspect-[4/5] rounded-2xl bg-cover bg-center;
-  }
-
-  .event-row-title {
-    @apply text-base font-semibold leading-tight text-ink;
-  }
-
-  .event-row-meta {
-    @apply mt-1 text-sm leading-5 text-slate-500;
-  }
-
-  .event-row-badges {
-    @apply mt-2 flex flex-wrap gap-1.5;
-  }
-
-  .detail-mobile-hero {
-    @apply aspect-[16/10] bg-cover bg-center sm:aspect-[16/9];
-  }
-
-  .detail-mobile-section {
-    @apply p-4 sm:p-6;
-  }
-
-  .detail-mobile-title {
-    @apply mt-3 font-display text-3xl font-bold leading-tight text-ink sm:text-5xl;
-  }
-
-  .detail-mobile-meta {
-    @apply mt-4 flex flex-wrap gap-3 text-sm text-slate-600;
-  }
-
-  .detail-mobile-btns {
-    @apply mt-5 grid gap-3 sm:flex sm:flex-wrap;
-  }
-
-  .detail-mobile-btns > * {
-    @apply w-full sm:w-auto;
-  }
-
-  .detail-mobile-card {
-    @apply rounded-2xl border border-line bg-white p-4;
-  }
-
-  .detail-mobile-copy {
-    @apply text-sm leading-7 text-slate-600;
-  }
-
-  .detail-clean {
-    @apply mx-auto max-w-[760px];
-  }
-
-  .detail-clean-hero {
-    @apply w-full bg-cover bg-center;
-    aspect-ratio: 16 / 10;
-  }
-
-  .detail-clean-hero-button {
-    @apply block border-0 p-0 text-left;
-  }
-
-  .detail-clean-body {
-    @apply px-4 py-5 sm:px-0 sm:py-6;
-  }
-
-  .detail-clean-title {
-    @apply mt-3 font-display text-[2.35rem] font-bold leading-[0.98] tracking-tight text-ink sm:text-5xl;
-  }
-
-  .detail-clean-meta {
-    @apply mt-4 space-y-2 text-base text-slate-600;
-  }
-
-  .detail-clean-meta-row {
-    @apply flex items-center gap-3;
-  }
-
-  .detail-clean-meta-row-location {
-    @apply mt-0;
-  }
-
-  .detail-clean-meta-row i {
-    @apply text-slate-500;
-  }
-
-  .detail-clean-meta-row-button {
-    @apply inline-flex w-fit items-center gap-2 rounded-none border-0 bg-transparent p-0 text-left font-semibold text-ink no-underline shadow-none appearance-none transition hover:text-ink focus-visible:outline-none;
-  }
-
-  .detail-clean-meta-row-icon {
-    @apply shrink-0 text-sm text-current no-underline;
-  }
-
-  .detail-clean-meta-row-button span {
-    @apply text-current;
-    text-decoration: underline;
-    text-underline-offset: 0.18em;
-    text-decoration-thickness: 1px;
-  }
-
-  .detail-clean-meta-row-button-muted {
-    @apply font-medium text-slate-500;
-  }
-
-  .detail-clean-meta-row-button-muted span {
-    text-decoration: none;
-  }
-
-  .detail-clean-meta-row-comments {
-    @apply mt-1 flex w-full;
-  }
-
-  .detail-clean-summary {
-    @apply mt-6 text-base leading-7 text-slate-600;
-  }
-
-  .detail-clean-extra {
-    @apply mt-6 space-y-4;
-  }
-
-  .detail-clean-extra-row {
-    @apply border-t border-line pt-4;
-  }
-
-  .detail-clean-extra-label {
-    @apply text-sm text-slate-500;
-  }
-
-  .detail-clean-extra-value {
-    @apply mt-1 text-base leading-6 text-ink;
-  }
-
-  .detail-clean-actions {
-    @apply mt-8 space-y-3;
-  }
-
-  .detail-ticket-search-mobile {
-    @apply mt-6 mb-6;
-  }
-
-  .detail-clean-actions-sticky {
-    @apply sticky bottom-0 z-[35] -mx-4 mt-8 border-t border-line/70 bg-transparent px-4 pb-[calc(env(safe-area-inset-bottom)+0.75rem)] pt-3 backdrop-blur-none;
-  }
-
-  .detail-clean-action {
-    @apply flex min-h-12 w-full items-center justify-center gap-3 rounded-full border border-line bg-white px-5 py-3 text-base font-medium text-ink shadow-sm transition hover:border-brand-300 hover:text-brand-700;
-  }
-  .detail-clean-action-primary {
-    @apply bg-brand-500 text-white hover:border-brand-600 hover:bg-brand-600 hover:text-white;
-  }
-
-  .detail-comments {
-    @apply mt-8 -mx-4 rounded-none border-x-0 border-line bg-white p-4 shadow-none sm:mx-0 sm:rounded-3xl sm:border-x sm:p-6 sm:shadow-soft;
-  }
-
-  .detail-comments-head {
-    @apply flex items-center justify-between gap-3;
-  }
-
-  .detail-comments-title {
-    @apply font-display text-xl font-bold text-ink;
-  }
-
-  .detail-comments-link {
-    @apply min-h-[2.5rem] px-4 py-2 text-xs sm:text-sm;
-  }
-
-  .detail-comments-iframe {
-    @apply mt-4 h-[520px] w-full rounded-2xl border border-line bg-white;
-  }
-
-  .detail-comments-empty-title {
-    @apply text-slate-900;
-  }
-
-  .detail-comments-empty-copy {
-    @apply text-slate-700;
   }
 
   .calendar-modal {
@@ -1307,100 +1060,9 @@
     @apply absolute right-3 top-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-white/90 text-slate-700 shadow-sm;
   }
 
-  .location-modal {
-    @apply fixed inset-0 z-[5000];
-  }
-
-  .location-modal[hidden] {
-    display: none !important;
-  }
-
-  .location-modal-backdrop {
-    @apply absolute inset-0 z-[1] bg-slate-950/70;
-  }
-
-  .location-modal-panel {
-    @apply absolute left-1/2 top-1/2 z-[2] w-[min(92vw,32rem)] -translate-x-1/2 -translate-y-1/2 rounded-[2rem] border border-line bg-white p-5 shadow-2xl sm:p-6;
-  }
-
-  .location-modal-header {
-    @apply flex items-start justify-between gap-4;
-  }
-
-  .location-modal-title {
-    @apply font-display text-2xl font-bold text-ink;
-  }
-
-  .location-modal-close {
-    @apply inline-flex h-10 w-10 items-center justify-center rounded-full border border-line text-slate-500;
-  }
-
-  .location-modal-copy {
-    @apply mt-2 text-sm leading-6 text-slate-600;
-  }
-
-  .location-modal-actions {
-    @apply mt-5 grid gap-3;
-  }
-
-  .location-modal-action {
-    @apply flex min-h-12 items-center gap-3 rounded-2xl border border-line bg-paper px-4 text-sm font-medium text-ink shadow-sm transition hover:border-brand-300 hover:text-brand-700;
-  }
-
-  .location-modal-action i {
-    @apply w-5 text-base text-brand-500;
-  }
-
   @media (min-width: 640px) {
-    .detail-clean {
-      @apply mx-auto max-w-[1180px] overflow-hidden rounded-[2.5rem] border border-line bg-white/95 shadow-soft;
-    }
-
-    .detail-clean-hero {
-      @apply min-h-[420px] bg-contain bg-no-repeat;
-      background-color: #f6f1e8;
-      background-position: center top;
-      aspect-ratio: 16 / 7;
-    }
-
-    .detail-clean-body {
-      @apply mx-auto flex max-w-[760px] flex-col px-8 py-12 xl:px-12 xl:py-14;
-    }
-
     .compact-badge {
       @apply self-start w-fit;
-    }
-
-    .detail-clean-title {
-      @apply mt-4 text-[3rem] leading-[0.95] xl:text-[3.35rem];
-    }
-
-    .detail-clean-meta {
-      @apply mt-5 grid gap-y-3 text-[1.03rem];
-    }
-
-    .detail-clean-meta-row {
-      @apply items-center;
-    }
-
-    .detail-clean-meta-row-location {
-      @apply mt-0;
-    }
-
-    .detail-clean-summary {
-      @apply mt-7 max-w-[46rem] text-[1.03rem] leading-8;
-    }
-
-    .detail-clean-extra {
-      @apply mt-8 space-y-3;
-    }
-
-    .detail-clean-actions {
-      @apply mt-10 grid gap-3;
-    }
-
-    .detail-clean-action {
-      @apply min-h-12 text-[1.02rem];
     }
 
     .detail-brand-mobile {
@@ -1533,9 +1195,6 @@
       @apply text-[2.2rem] leading-[0.98] xl:text-[2.4rem];
     }
 
-    .event-row-list {
-      @apply grid gap-4;
-    }
   }
 
   @media (min-width: 768px) {
@@ -1640,16 +1299,6 @@
 
 @media (min-width: 768px) {
 
-  .event-row-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.25rem;
-  }
-
-  .week-day-group .event-row-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.25rem;
-  }
-
   .section-mobile-head {
     margin-bottom: 1.25rem;
   }
@@ -1734,20 +1383,6 @@
     @apply font-semibold text-slate-900 underline decoration-slate-400 underline-offset-4;
   }
 
-  .detail-clean-actions-sticky {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    z-index: 35;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-top: 0.5rem;
-    padding-bottom: calc(env(safe-area-inset-bottom) + 0.5rem);
-    background: color-mix(in oklab, var(--bg-body) 88%, transparent);
-    backdrop-filter: blur(10px);
-  }
 }
 
 html.dark .site-footer {
@@ -1762,26 +1397,9 @@ html.dark .site-footer-copy a {
   @apply text-slate-100 decoration-slate-500 hover:text-brand-200 hover:decoration-brand-300 focus-visible:ring-offset-slate-950;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .home-layout .event-row-list,
-  .home-layout .week-day-group .event-row-list {
-    display: grid !important;
-    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-    gap: 1.25rem;
-  }
-}
-
   @media (max-width: 767px) {
-    .topbar {
-      @apply border-b border-line bg-white;
-    }
-
     .detail-topbar {
       @apply border-b border-line bg-white;
-    }
-
-    .topbar-inner {
-      @apply h-16 gap-3 px-0;
     }
 
   .page-shell {
@@ -1851,50 +1469,6 @@ html.dark .site-footer-copy a {
     @apply text-[1.35rem] leading-tight;
   }
 
-  .event-row-link {
-    @apply grid-cols-[72px_minmax(0,1fr)] gap-3 p-3;
-  }
-
-  .event-row-title {
-    @apply text-sm leading-snug;
-  }
-
-  .event-row-meta {
-    @apply text-xs leading-4;
-  }
-
-  .event-row-image {
-    @apply rounded-xl;
-  }
-
-  .detail-mobile-hero {
-    min-height: 220px;
-  }
-
-  .detail-mobile-section {
-    @apply p-4;
-  }
-
-  .detail-mobile-title {
-    @apply text-[2.2rem];
-  }
-
-  .detail-mobile-meta {
-    @apply gap-x-4 gap-y-2 text-xs;
-  }
-
-  .detail-mobile-btns > * {
-    @apply min-h-11;
-  }
-
-  .detail-mobile-card {
-    @apply p-3;
-  }
-
-    .detail-mobile-copy {
-      @apply text-sm leading-6;
-    }
-
     .saved-toast-copy {
       @apply max-w-[22rem] px-4 py-3 text-sm leading-6;
     }
@@ -1906,18 +1480,6 @@ html.dark .site-footer-copy a {
 
     #event-grid {
       display: none !important;
-    }
-
-    .event-row-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
-    }
-
-    .week-day-group .event-row-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
     }
 
     .week-day-group .event-compact {
@@ -1942,12 +1504,6 @@ html.dark .site-footer-copy a {
 
     .week-day-group .event-compact-action {
       @apply h-8 w-8 rounded-full bg-white/90 text-slate-500 shadow-sm;
-    }
-
-    .saved-day-group .event-row-list {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.75rem;
     }
 
     .saved-day-group .event-compact {
@@ -1978,105 +1534,12 @@ html.dark .site-footer-copy a {
       @apply px-5;
     }
 
-    .topbar-inner {
-      @apply px-4;
-    }
-
-    .home-brand-mobile {
-      @apply gap-3;
-    }
-
-    .home-brand-mobile-mark {
-      @apply h-11 w-11;
-    }
-
-    .home-brand-mobile-kicker {
-      @apply text-[9px] tracking-[0.28em];
-    }
-
-    .home-brand-mobile-title {
-      @apply text-[14px];
-    }
-
-    .detail-clean {
-      @apply max-w-none;
-      margin-left: -1rem;
-      margin-right: -1rem;
-    }
-
-    .detail-clean-hero {
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      aspect-ratio: 1 / 0.82;
-    }
-
     .detail-lightbox {
       @apply p-0;
     }
 
     .detail-lightbox-image {
       @apply max-h-[100vh] rounded-none;
-    }
-
-    .detail-clean-body {
-      @apply px-4 pb-8 pt-5;
-    }
-
-  .detail-clean-title {
-    @apply mt-3 text-[2rem] leading-[0.98];
-  }
-
-    .detail-clean-meta {
-      @apply mt-3 text-[1rem] leading-6;
-    }
-
-    .detail-clean-summary {
-      @apply mt-5 text-[1rem] leading-7;
-    }
-
-    .detail-clean-extra {
-      @apply mt-5 space-y-3;
-    }
-
-    .detail-clean-actions {
-      @apply mt-6 space-y-2;
-    }
-
-    .detail-clean-action {
-      @apply min-h-11 text-sm;
-    }
-
-    .detail-clean-actions-sticky {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      width: 100vw;
-      margin-left: calc(50% - 50vw);
-      margin-right: calc(50% - 50vw);
-      z-index: 35;
-      @apply mt-0 grid grid-cols-[1.35fr_1fr_1fr] gap-2 space-y-0 rounded-none border-t border-line/80 border-b-0 border-x-0 bg-white/95 px-4 pb-[calc(env(safe-area-inset-bottom)+0.7rem)] pt-2 shadow-[0_-10px_24px_rgba(15,23,42,0.06)] backdrop-blur-md;
-    }
-
-    .detail-clean-actions-sticky .detail-clean-action {
-      @apply min-h-12 rounded-full px-5 text-[0.95rem] font-medium;
-    }
-
-    .detail-clean-actions-sticky .detail-clean-action-primary {
-      @apply flex-row items-center justify-center gap-2 border-[#4a3a70] bg-[#4a3a70] py-2 text-white hover:border-[#413262] hover:bg-[#413262];
-    }
-
-    .detail-clean-actions-sticky .detail-clean-action-icon-only {
-      @apply flex-row items-center justify-center gap-2 py-2;
-    }
-
-    .detail-clean-actions-sticky .detail-clean-action-icon-only span:not(.js-comment-count-number) {
-      @apply sr-only;
-    }
-
-    .detail-clean-actions-sticky .detail-clean-action i {
-      @apply text-base;
     }
 
     .detail-brand-mobile {
@@ -2162,10 +1625,7 @@ html.dark .site-footer-copy a {
 }
 
 @layer components {
-  html.dark .page-shell,
-  html.dark main,
-  html.dark .detail-clean,
-  html.dark .detail-clean-body {
+  html.dark .page-shell {
     background: var(--bg-body);
     color: var(--text-main);
   }
@@ -2176,22 +1636,15 @@ html.dark .site-footer-copy a {
     box-shadow: 0 8px 20px -18px var(--shadow-card);
   }
 
-  html.dark .topbar,
   html.dark .detail-topbar {
     border-color: var(--border-light);
     background: color-mix(in srgb, var(--bg-body) 95%, transparent);
   }
 
-  html.dark .topbar-inner,
   html.dark .detail-topbar-inner {
     @apply bg-transparent;
   }
 
-  html.dark .home-brand-mobile-kicker {
-    @apply text-brand-300;
-  }
-
-  html.dark .home-brand-mobile-title,
   html.dark .section-heading,
   html.dark .hero-mobile-title,
   html.dark .menu-drawer-title {
@@ -2213,10 +1666,7 @@ html.dark .site-footer-copy a {
   html.dark .week-day-label,
   html.dark .saved-day-label,
   html.dark .event-compact-title,
-  html.dark .detail-clean-title,
-  html.dark .detail-comments-title,
   html.dark .calendar-modal-title,
-  html.dark .location-modal-title,
   html.dark .subscribe-section-title {
     color: var(--text-header);
   }
@@ -2273,36 +1723,11 @@ html.dark .site-footer-copy a {
   html.dark .featured-mobile-summary,
   html.dark .featured-mobile-meta,
   html.dark .event-compact-topline,
-  html.dark .event-compact-meta,
-  html.dark .detail-clean-summary,
-  html.dark .detail-clean-meta,
-  html.dark .detail-clean-extra-label {
+  html.dark .event-compact-meta {
     color: var(--text-secondary);
-  }
-
-  html.dark .detail-clean-meta-row,
-  html.dark .detail-clean-extra-value,
-  html.dark .detail-clean-meta-row-button,
-  html.dark .detail-clean-meta-row-button span {
-    color: var(--text-main);
-  }
-
-  html.dark .detail-clean-meta-row i,
-  html.dark .detail-clean-meta-row-icon {
-    color: var(--text-muted);
-  }
-
-  html.dark .detail-clean-meta-row-button-muted {
-    color: var(--text-secondary);
-  }
-
-  html.dark .detail-clean-extra-row {
-    border-color: var(--border-light);
   }
 
   html.dark .event-compact,
-  html.dark .detail-comments,
-  html.dark .detail-comments-iframe,
   html.dark .saved-empty {
     border-color: var(--border-light);
     background: var(--bg-card);
@@ -2323,14 +1748,6 @@ html.dark .site-footer-copy a {
     color: var(--text-secondary);
   }
 
-  html.dark .detail-comments-empty-title {
-    color: var(--text-header);
-  }
-
-  html.dark .detail-comments-empty-copy {
-    color: var(--text-secondary);
-  }
-
   html.dark .event-compact-action {
     border-color: var(--border-light);
     background: color-mix(in srgb, var(--bg-card) 95%, transparent);
@@ -2347,14 +1764,12 @@ html.dark .site-footer-copy a {
   }
 
   html.dark .week-day-group .event-compact-action.event-compact-action-active,
-  html.dark .saved-day-group .event-compact-action.event-compact-action-active,
-  html.dark .event-row-list .event-compact-action.event-compact-action-active {
+  html.dark .saved-day-group .event-compact-action.event-compact-action-active {
     @apply border-[#6f59a8] bg-[#6f59a8] text-white shadow-md;
   }
 
   html.dark .week-day-group .event-compact-action.event-compact-action-active i,
-  html.dark .saved-day-group .event-compact-action.event-compact-action-active i,
-  html.dark .event-row-list .event-compact-action.event-compact-action-active i {
+  html.dark .saved-day-group .event-compact-action.event-compact-action-active i {
     @apply text-white;
   }
 
@@ -2365,48 +1780,6 @@ html.dark .site-footer-copy a {
 
   html.dark .compact-badge-success {
     @apply bg-emerald-900/35 text-emerald-200;
-  }
-
-  html.dark .detail-clean-actions-sticky {
-    border-color: var(--border-light);
-    background: color-mix(in srgb, var(--bg-body) 95%, transparent);
-    backdrop-filter: blur(10px);
-  }
-
-  html.dark .detail-clean-hero,
-  html.dark .detail-clean-hero-button {
-    background-color: var(--bg-card);
-  }
-
-  html.dark .detail-clean {
-    border-color: var(--border-light);
-    background: var(--bg-body);
-  }
-
-  html.dark .detail-clean-action {
-    border-color: var(--border-light);
-    background: var(--bg-card);
-    color: var(--text-main);
-  }
-
-  html.dark .detail-clean-action-primary {
-    @apply border-[#3a2f58] bg-[#3a2f58] text-white hover:border-[#342a50] hover:bg-[#342a50] hover:text-white;
-  }
-
-  html.dark .nav-link {
-    color: var(--text-secondary);
-  }
-
-  html.dark .nav-link i {
-    color: var(--text-muted);
-  }
-
-  html.dark .nav-link-active {
-    @apply bg-brand-900/40 text-brand-200;
-  }
-
-  html.dark .nav-link-active i {
-    @apply text-brand-200;
   }
 
   html.dark .pill,
@@ -2467,21 +1840,17 @@ html.dark .site-footer-copy a {
 
   html.dark .calendar-modal-panel,
   html.dark .mobile-filter-sheet-panel,
-  html.dark .location-modal-panel,
-  html.dark .add-event-modal-panel,
   html.dark .subscribe-modal-panel {
     border-color: var(--border-light);
     background: var(--bg-container);
     color: var(--text-main);
   }
 
-  html.dark .calendar-modal-header,
-  html.dark .location-modal-header {
+  html.dark .calendar-modal-header {
     border-color: var(--border-light);
   }
 
-  html.dark .calendar-modal-close,
-  html.dark .location-modal-close {
+  html.dark .calendar-modal-close {
     border-color: var(--border-light);
     background: var(--bg-card);
     color: var(--text-main);
@@ -2497,9 +1866,7 @@ html.dark .site-footer-copy a {
   }
 
   html.dark .calendar-modal-action,
-  html.dark .mobile-filter-sheet-option,
-  html.dark .location-modal-action,
-  html.dark .add-event-modal-cta {
+  html.dark .mobile-filter-sheet-option {
     border-color: var(--border-light);
     background: var(--bg-card);
     color: var(--text-main);
@@ -2583,12 +1950,8 @@ html.dark .site-footer-copy a {
 
   /* Reduce visual punch of imagery in dark mode */
   html.dark .event-compact-image,
-  html.dark .event-row-image,
   html.dark .featured-mobile-image,
-  html.dark .detail-clean-hero,
-  html.dark .detail-clean-hero-button,
-  html.dark .detail-lightbox-image,
-  html.dark .detail-mobile-hero {
+  html.dark .detail-lightbox-image {
     filter: brightness(0.9);
   }
 
@@ -2609,10 +1972,6 @@ html.dark .site-footer-copy a {
       background: color-mix(in srgb, var(--bg-body) 95%, transparent);
     }
 
-    html.dark .detail-clean-body {
-      background: var(--bg-body);
-    }
-
     html.dark .week-day-group .event-compact,
     html.dark .saved-day-group .event-compact {
       border-color: var(--border-light);
@@ -2626,13 +1985,6 @@ html.dark .site-footer-copy a {
       color: var(--text-main);
     }
 
-    html.dark .detail-clean-actions-sticky {
-      border-color: var(--border-light);
-      background: color-mix(in srgb, var(--bg-body) 95%, transparent);
-      box-shadow: 0 -10px 24px var(--shadow-card);
-    }
-
-    html.dark .topbar,
     html.dark .detail-topbar {
       border-bottom-color: var(--border-light);
       background: color-mix(in srgb, var(--bg-body) 95%, transparent);
@@ -2640,144 +1992,9 @@ html.dark .site-footer-copy a {
   }
 
   @media (min-width: 640px) {
-    html.dark .detail-clean {
-      border-color: var(--border-light);
-      background: var(--bg-body);
-    }
-
-    html.dark .detail-clean-hero {
-      background-color: var(--bg-card);
-    }
-
     html.dark .detail-topbar-inner {
       border-bottom-color: var(--border-light);
       box-shadow: none;
     }
-  }
-}
-
-@layer components {
-  /* Buscador global (overlay). Reutiliza la base .calendar-modal para el
-     posicionamiento fijo y el backdrop; aquí se ajusta a un panel superior
-     tipo "spotlight" y se estilan campo y resultados. */
-  .search-modal {
-    @apply items-start;
-    padding-top: max(4.5rem, env(safe-area-inset-top));
-  }
-
-  .search-modal-panel {
-    @apply w-full max-w-2xl p-0;
-    max-height: min(80vh, 44rem);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-
-  .search-modal-field {
-    @apply flex items-center gap-3 px-5 py-4;
-    border-bottom: 1px solid var(--border-light);
-  }
-
-  .search-modal-field-icon {
-    @apply text-lg;
-    color: var(--text-muted);
-  }
-
-  .search-modal-input {
-    @apply flex-1 border-0 bg-transparent text-base font-medium outline-none;
-    color: var(--text-main);
-    min-width: 0;
-  }
-
-  .search-modal-input::placeholder {
-    color: var(--text-muted);
-  }
-
-  /* Oculta la cruz nativa del input[type=search] (usamos el botón propio). */
-  .search-modal-input::-webkit-search-decoration,
-  .search-modal-input::-webkit-search-cancel-button {
-    -webkit-appearance: none;
-    appearance: none;
-  }
-
-  .search-modal-close {
-    @apply inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-line text-slate-500 transition;
-  }
-
-  .search-modal-close:hover {
-    @apply border-brand-300 text-brand-700;
-  }
-
-  .search-modal-results {
-    @apply overflow-y-auto px-2 py-2;
-  }
-
-  .search-modal-hint,
-  .search-modal-empty {
-    @apply px-3 py-6 text-center text-sm leading-6;
-    color: var(--text-secondary);
-  }
-
-  .search-modal-section {
-    @apply px-1 py-2;
-  }
-
-  .search-modal-section + .search-modal-section {
-    border-top: 1px solid var(--border-subtle);
-  }
-
-  .search-modal-section-title {
-    @apply flex items-center gap-2 px-3 pb-1 pt-1 text-xs font-bold uppercase tracking-wide;
-    color: var(--text-muted);
-  }
-
-  .search-modal-count {
-    @apply ml-auto rounded-full px-2 py-0.5 text-[11px] font-semibold;
-    background: var(--bg-highlight);
-    color: var(--text-secondary);
-  }
-
-  .search-modal-list {
-    @apply flex flex-col;
-  }
-
-  .search-modal-result {
-    @apply flex flex-col gap-0.5 rounded-2xl px-3 py-2.5 transition;
-    color: var(--text-main);
-  }
-
-  .search-modal-result:hover,
-  .search-modal-result:focus-visible {
-    background: var(--bg-card-hover);
-    outline: none;
-  }
-
-  .search-modal-result-main {
-    @apply flex items-center gap-2;
-  }
-
-  .search-modal-result-title {
-    @apply text-sm font-semibold;
-  }
-
-  .search-modal-badge {
-    @apply shrink-0 rounded-full px-2 py-0.5 text-[11px] font-semibold;
-    background: var(--bg-highlight);
-    color: var(--text-secondary);
-  }
-
-  .search-modal-result-meta {
-    @apply text-xs;
-    color: var(--text-muted);
-  }
-
-  .search-modal-more {
-    @apply px-3 pb-1 pt-1 text-xs;
-    color: var(--text-muted);
-  }
-
-  html.dark .search-modal-panel {
-    border-color: var(--border-light);
-    background: var(--bg-card);
   }
 }
