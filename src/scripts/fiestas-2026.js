@@ -32,6 +32,7 @@ const cartoLayers = {
 const valladolidCenter = [41.6523, -4.7245];
 const userLocationZoom = 14;
 const nearbyRadiusMeters = 2000;
+const COMMUNITY_PLANS_INSERT_AFTER = 15;
 let leafletPromise = null;
 let initialDate = null;
 let filterBackdrop = null;
@@ -492,6 +493,7 @@ function renderAgenda(events) {
   }
 
   const groups = state.selectedDate === 'all' ? groupByDay(events) : [[state.selectedDate, events]];
+  let renderedEventCount = 0;
   groups.forEach(([date, dayEvents]) => {
     const section = document.createElement('section');
     section.className = 'fiestas-day';
@@ -509,10 +511,29 @@ function renderAgenda(events) {
 
     const list = document.createElement('div');
     list.className = 'fiestas-event-list';
-    dayEvents.forEach((event) => list.append(eventCard(event)));
+    dayEvents.forEach((event) => {
+      list.append(eventCard(event));
+      renderedEventCount += 1;
+      if (renderedEventCount === COMMUNITY_PLANS_INSERT_AFTER) list.append(communityPlansCard());
+    });
     section.append(list);
     els.agenda.append(section);
   });
+}
+
+function communityPlansCard() {
+  const card = document.createElement('a');
+  card.className = 'fiestas-community-plans-cta';
+  card.href = els.app?.dataset.communityPlansHref || '/planes/';
+  card.innerHTML = `
+    <i class="fiestas-community-plans-cta-icon fa-solid fa-people-group" aria-hidden="true"></i>
+    <span>
+      <strong>Descubre los planes vecinales</strong>
+      <small>Creados por vecinos para disfrutar las fiestas.</small>
+    </span>
+    <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+  `;
+  return card;
 }
 
 function eventCard(event) {

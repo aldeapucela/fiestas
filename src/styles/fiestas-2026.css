@@ -912,6 +912,70 @@
     line-height: 1.35;
   }
 
+  .fiestas-community-plans-cta {
+    display: grid;
+    grid-template-columns: 3.35rem minmax(0, 1fr) 2.65rem;
+    gap: 0.7rem;
+    align-items: center;
+    border-radius: 1rem;
+    background: #f0eaf8;
+    color: #1d222d;
+    padding: 1rem;
+    text-decoration: none;
+    transition: background-color 160ms ease, transform 160ms ease;
+  }
+
+  .fiestas-community-plans-cta:hover,
+  .fiestas-community-plans-cta:focus-visible {
+    background: #ece3f7;
+    transform: translateY(-1px);
+  }
+
+  .fiestas-community-plans-cta:focus-visible {
+    outline: 3px solid rgba(15, 159, 141, 0.45);
+    outline-offset: 0.2rem;
+  }
+
+  .fiestas-community-plans-cta-icon {
+    display: inline-flex;
+    width: 3.2rem;
+    height: 3.2rem;
+    align-items: center;
+    justify-content: center;
+    color: #73579f;
+    font-size: 2.1rem;
+  }
+
+  .fiestas-community-plans-cta > i:last-child {
+    display: inline-flex;
+    width: 3.2rem;
+    height: 3.2rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.55);
+    color: #73579f;
+    font-size: 1.2rem;
+  }
+
+  .fiestas-community-plans-cta span {
+    display: grid;
+    min-width: 0;
+    gap: 0.2rem;
+  }
+
+  .fiestas-community-plans-cta strong {
+    color: #73579f;
+    font-size: 1.05rem;
+    font-weight: 900;
+  }
+
+  .fiestas-community-plans-cta small {
+    color: #252b37;
+    font-size: 0.95rem;
+    line-height: 1.35;
+  }
+
   .fiestas-bottom-nav {
     position: fixed;
     right: 0;
@@ -2838,6 +2902,26 @@
   html.dark .fiestas-plan-card {
     background: #272235;
     color: #f5f3ee;
+  }
+
+  html.dark .fiestas-community-plans-cta {
+    background: #272235;
+    color: #f5f3ee;
+  }
+
+  html.dark .fiestas-community-plans-cta:hover,
+  html.dark .fiestas-community-plans-cta:focus-visible {
+    background: #30283c;
+  }
+
+  html.dark .fiestas-community-plans-cta strong,
+  html.dark .fiestas-community-plans-cta-icon,
+  html.dark .fiestas-community-plans-cta > i:last-child {
+    color: #c8b3e5;
+  }
+
+  html.dark .fiestas-community-plans-cta small {
+    color: #d4d9e2;
   }
 
   html.dark .fiestas-map-control,
@@ -5967,8 +6051,8 @@ html.dark .fiestas-community-plan-preview-item {
   max-width: 100%;
 }
 
-.fiestas-community-plan-detail-actions-top {
-  padding-top: 0;
+.fiestas-community-plan-detail .fiestas-community-plan-detail-actions-top {
+  padding-block: 0.55rem 0.65rem;
 }
 
 .fiestas-community-plan-detail .fiestas-plan-date-strip {
