@@ -793,6 +793,7 @@ function renderMapSheet(events, options = {}) {
     reset.innerHTML = '<i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Ver todas las actividades</span>';
     reset.addEventListener('click', () => {
       state.focusedClusterEventIds = null;
+      state.selectedEventId = null;
       renderMapSheet(getFilteredEvents());
     });
     els.mapSheetList?.append(reset);
@@ -832,8 +833,11 @@ function renderLocationStatus() {
 function mapSheetItem(event, compact = false) {
   const article = document.createElement('article');
   const typeClass = typeColorClass(event.type);
+  const selected = event.id === state.selectedEventId && !state.focusedClusterEventIds;
   article.className = `fiestas-map-result ${typeClass}${compact ? ' is-compact' : ''}`;
   article.dataset.mapResultId = event.id;
+  article.classList.toggle('is-selected', selected);
+  if (selected) article.setAttribute('aria-current', 'true');
 
   const distance = distanceLabel(event);
   const title = event.title || 'Actividad sin título';
@@ -871,7 +875,7 @@ function scrollSelectedMapResult() {
   if (!state.selectedEventId || !els.mapSheetList) return;
   window.requestAnimationFrame(() => {
     const selected = els.mapSheetList.querySelector(`[data-map-result-id="${escapeCssIdentifier(state.selectedEventId)}"]`);
-    selected?.scrollIntoView({ block: 'center', behavior: 'smooth' });
+    selected?.scrollIntoView({ block: 'center', behavior: 'auto' });
   });
 }
 

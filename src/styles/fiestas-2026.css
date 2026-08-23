@@ -1607,6 +1607,7 @@
   }
 
   .fiestas-map-result {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr) 2.65rem;
     align-items: center;
@@ -1619,6 +1620,26 @@
 
   .fiestas-map-result:last-child {
     border-bottom: 0;
+  }
+
+  .fiestas-map-result.is-selected {
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .fiestas-map-result.is-selected::before {
+    position: absolute;
+    z-index: 0;
+    inset: 0 -1rem;
+    background: color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 8%, #fff);
+    box-shadow: inset 0.25rem 0 0 var(--fiestas-type-color, #0f9f8d);
+    content: '';
+    pointer-events: none;
+  }
+
+  .fiestas-map-result.is-selected > * {
+    position: relative;
+    z-index: 1;
   }
 
   .fiestas-map-cluster-reset {
@@ -2887,6 +2908,14 @@
 
   html.dark .fiestas-map-result-title {
     color: #f8fafc;
+  }
+
+  html.dark .fiestas-map-result.is-selected {
+    background: transparent;
+  }
+
+  html.dark .fiestas-map-result.is-selected::before {
+    background: color-mix(in srgb, var(--fiestas-type-color, #17b8a4) 15%, #1a1f28);
   }
 
   html.dark .fiestas-map-result-type,
