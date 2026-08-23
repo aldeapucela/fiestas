@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "festival": "valladolid-2026",
+  "exportedAt": "2026-08-23T12:00:00Z",
+  "plans": [
+    {
+      "name": "Feria de Folklore y Gastronomía",
+      "icon": "food",
+      "activityIds": [
+        "63", "88", "124", "159", "201", "238", "276", "313", "355", "411"
+      ]
+    }
+  ]
+}

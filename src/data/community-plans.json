@@ -16,6 +16,27 @@
       "author": "Aldea Pucela",
       "icon": "microphone",
       "url": "/data/community-plans/plaza-mayor-2026.fiestas-plan.json"
+    },
+    {
+      "id": "moreras-penas-2026",
+      "name": "Moreras: peñas y charangas",
+      "author": "Aldea Pucela",
+      "icon": "music",
+      "url": "/data/community-plans/moreras-penas-2026.fiestas-plan.json"
+    },
+    {
+      "id": "ferias-en-familia-2026",
+      "name": "Ferias en familia",
+      "author": "Aldea Pucela",
+      "icon": "family",
+      "url": "/data/community-plans/ferias-en-familia-2026.fiestas-plan.json"
+    },
+    {
+      "id": "folklore-gastronomia-2026",
+      "name": "Feria de Folklore y Gastronomía",
+      "author": "Aldea Pucela",
+      "icon": "food",
+      "url": "/data/community-plans/folklore-gastronomia-2026.fiestas-plan.json"
     }
   ]
 }
