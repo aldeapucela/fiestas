@@ -1501,7 +1501,7 @@
   }
 
   .fiestas-map-sheet.is-collapsed {
-    transform: translateY(calc(100% - 24rem));
+    transform: translateY(calc(100% - 11rem));
   }
 
   .fiestas-map-sheet.is-hidden {

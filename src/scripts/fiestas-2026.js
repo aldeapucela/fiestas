@@ -755,9 +755,9 @@ function renderMapSheet(events, options = {}) {
   const sorted = sortMapEvents(sheetEvents);
   const context = state.focusedClusterEventIds
     ? 'Actividades en este punto'
-    : state.locationStatus === 'granted' ? 'Cerca de ti' : 'Actividades del día';
+    : state.locationStatus === 'granted' ? 'Cerca de ti' : state.selectedDate === 'all' ? 'Actividades' : 'Actividades del día';
   const count = state.focusedClusterEventIds ? sorted.length : withCoordinates.length;
-  const countText = `${count} ${count === 1 ? 'actividad' : 'actividades'}`;
+  const countText = `${count} ${count === 1 ? 'actividad' : 'actividades'} · ${compactDateLabel(state.selectedDate)}`;
 
   els.mapSheet.classList.toggle('is-expanded', state.sheetState === 'expanded');
   els.mapSheet.classList.toggle('is-collapsed', state.sheetState === 'collapsed');
