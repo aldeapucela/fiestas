@@ -3483,7 +3483,6 @@ html:not(.dark) body:has(.fiestas-app) {
 
 .fiestas-plan-section-head h2,
 .fiestas-plan-day h3,
-.fiestas-plan-import-card h2,
 .fiestas-plan-import-preview h2 {
   margin: 0;
   color: #1d2430;
@@ -3549,7 +3548,6 @@ html:not(.dark) body:has(.fiestas-app) {
 }
 
 .fiestas-plan-empty,
-.fiestas-plan-import-card,
 .fiestas-plan-import-preview {
   display: grid;
   gap: 0.75rem;
@@ -3561,7 +3559,6 @@ html:not(.dark) body:has(.fiestas-app) {
 }
 
 .fiestas-plan-empty p,
-.fiestas-plan-import-card p,
 .fiestas-plan-import-preview p {
   margin: 0;
   line-height: 1.5;
@@ -3687,34 +3684,6 @@ html:not(.dark) body:has(.fiestas-app) {
 .fiestas-plan-import-status.is-error {
   background: #fff1f0;
   color: #b42318;
-}
-
-.fiestas-plan-import-card code {
-  border-radius: 0.35rem;
-  background: #eef1f5;
-  padding: 0.1rem 0.25rem;
-  font-size: 0.85em;
-}
-
-.fiestas-plan-file-input {
-  display: inline-flex;
-  width: fit-content;
-  min-height: 2.8rem;
-  align-items: center;
-  border-radius: 9999px;
-  background: #0f9f8d;
-  color: #fff;
-  cursor: pointer;
-  padding: 0.6rem 1rem;
-  font-weight: 850;
-}
-
-.fiestas-plan-file-input input {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
 }
 
 .fiestas-plan-import-confirm {
@@ -4192,7 +4161,6 @@ html.dark .fiestas-plan-page-head h1,
 html.dark .fiestas-plan-detail-head h2,
 html.dark .fiestas-plan-section-head h2,
 html.dark .fiestas-plan-day h3,
-html.dark .fiestas-plan-import-card h2,
 html.dark .fiestas-plan-import-preview h2,
 html.dark .fiestas-plan-event-body a,
 html.dark .fiestas-plan-summary-card h3,
@@ -4213,7 +4181,6 @@ html.dark .fiestas-plan-day h3,
 html.dark .fiestas-plan-event-body span,
 html.dark .fiestas-plan-summary-card p,
 html.dark .fiestas-plan-empty,
-html.dark .fiestas-plan-import-card,
 html.dark .fiestas-plan-import-preview,
 html.dark .fiestas-plan-selector-empty {
   color: #b9c1ce;
@@ -4225,7 +4192,6 @@ html.dark .fiestas-plan-tab.is-active {
 
 html.dark .fiestas-plan-event-card,
 html.dark .fiestas-plan-summary-card,
-html.dark .fiestas-plan-import-card,
 html.dark .fiestas-plan-import-preview,
 html.dark .fiestas-plan-empty,
 html.dark .fiestas-plan-action,
@@ -4860,7 +4826,7 @@ html.dark .fiestas-plan-selector-create input {
 
 .fiestas-plan-bottom-actions {
   display: grid;
-  gap: 0.55rem;
+  gap: 0.95rem;
   margin-top: 0.35rem;
 }
 
@@ -5050,19 +5016,6 @@ body.fiestas-plan-share-open {
   border-color: #d9cbea;
   background: #f4eff8;
   color: #73579f;
-}
-
-.fiestas-plan-share-download {
-  border-color: #159b8b;
-  background: #159b8b;
-  color: #fff;
-}
-
-.fiestas-plan-share-download:hover,
-.fiestas-plan-share-download:focus-visible {
-  border-color: #0f766e;
-  background: #0f766e;
-  color: #fff;
 }
 
 .fiestas-plan-share-feedback {
@@ -5519,7 +5472,7 @@ html.dark .fiestas-plan-overlap-review {
 }
 
 .fiestas-plan-bottom-actions {
-  gap: 0.25rem;
+  gap: 0.8rem;
   margin-top: 1.1rem;
 }
 

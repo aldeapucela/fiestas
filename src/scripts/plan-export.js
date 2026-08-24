@@ -58,10 +58,6 @@ export function createPlanJson(plan) {
   return JSON.stringify(createPlanPayload(plan), null, 2) + '\n';
 }
 
-export function createPlanFile(plan) {
-  return makeFile(`${slugify(plan?.name || 'mi-plan')}.fiestas-plan.json`, createPlanJson(plan), 'application/json');
-}
-
 export function createPlanImportUrl(plan, importUrl = '/plan/importar/') {
   const url = new URL(importUrl, window.location.origin);
   url.searchParams.set('hash', encodeBase64(createPlanJson(plan)));
@@ -100,7 +96,7 @@ export async function shareFileOrDownload(file, options = {}) {
   return 'downloaded';
 }
 
-export function downloadFile(file) {
+function downloadFile(file) {
   const url = URL.createObjectURL(file);
   const link = document.createElement('a');
   link.href = url;
