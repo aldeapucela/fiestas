@@ -83,7 +83,7 @@ async function compileCss(cssVersionSeed) {
 async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'fiestas-2026.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js'];
+  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'fiestas-2026.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js'];
   for (const file of files) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
@@ -184,6 +184,69 @@ function normalizeCommunityPlanUrl(value) {
   } catch (_) {
     return '';
   }
+}
+
+function communityPlanIconClass(icon = '') {
+  const icons = {
+    stars: 'fa-star',
+    music: 'fa-music',
+    microphone: 'fa-microphone',
+    cocktail: 'fa-wine-glass',
+    beer: 'fa-beer-mug-empty',
+    food: 'fa-utensils',
+    dance: 'fa-person-dress',
+    theater: 'fa-masks-theater',
+    masks: 'fa-mask-face',
+    fireworks: 'fa-wand-sparkles',
+    parade: 'fa-drum',
+    family: 'fa-people-roof',
+    children: 'fa-child-reaching',
+    sports: 'fa-person-running',
+    religious: 'fa-place-of-worship',
+    camera: 'fa-camera',
+    art: 'fa-palette',
+    culture: 'fa-book-open',
+    map: 'fa-map-location-dot',
+    calendar: 'fa-calendar-days',
+    heart: 'fa-heart',
+    layers: 'fa-layer-group'
+  };
+  return icons[icon] || icons.layers;
+}
+
+async function loadCommunityPlanMemberships(communityPlans) {
+  const sourceDir = path.join(root, 'src', 'data', 'community-plans');
+  const memberships = new Map();
+
+  for (const communityPlan of communityPlans) {
+    const fileName = path.basename(new URL(communityPlan.url, publicBaseUrl).pathname);
+    const raw = await fs.readFile(path.join(sourceDir, fileName), 'utf8');
+    const value = JSON.parse(raw);
+    if (value?.schemaVersion !== 1 || value?.festival !== 'valladolid-2026' || !Array.isArray(value?.plans)) {
+      throw new Error(`Community plan "${communityPlan.id}" has an invalid export.`);
+    }
+
+    const activityIds = new Set();
+    for (const sourcePlan of value.plans) {
+      if (!sourcePlan || typeof sourcePlan !== 'object' || !Array.isArray(sourcePlan.activityIds)) continue;
+      for (const activityId of sourcePlan.activityIds) activityIds.add(String(activityId).trim());
+    }
+
+    for (const activityId of activityIds) {
+      if (!activityId) continue;
+      const plansForEvent = memberships.get(activityId) || [];
+      plansForEvent.push({
+        id: communityPlan.id,
+        name: communityPlan.name,
+        author: communityPlan.author,
+        iconClass: communityPlanIconClass(communityPlan.icon),
+        pageUrl: `/planes/${communityPlan.id}/`
+      });
+      memberships.set(activityId, plansForEvent);
+    }
+  }
+
+  return memberships;
 }
 
 async function copyCommunityPlanFiles(assetVersionSeed) {
@@ -517,6 +580,7 @@ async function build() {
   await copyStaticAssets(assetVersionSeed);
   const communityPlans = await copyCommunityPlansData(assetVersionSeed);
   await copyCommunityPlanFiles(assetVersionSeed);
+  const communityPlanMemberships = await loadCommunityPlanMemberships(communityPlans);
   const pwaFiles = await loadPwaFiles();
   const cssVersion = contentVersion(cssVersionSeed);
   const jsVersion = contentVersion(jsVersionSeed);
@@ -564,6 +628,20 @@ async function build() {
       ...homeContext.social,
       title: 'Mapa de Fiestas Valladolid 2026 | Aldea Pucela',
       url: publicBaseUrl + '/mapa/'
+    }
+  }));
+
+  await writeFile('populares/index.html', render('fiestas-2026-popular.njk', {
+    ...homeContext,
+    title: 'Actividades populares | Fiestas Valladolid 2026',
+    meta: { description: 'Estas son las actividades más guardadas por los vecinos y vecinas.' },
+    canonicalUrl: publicBaseUrl + '/populares/',
+    social: {
+      ...homeContext.social,
+      title: 'Actividades populares | Fiestas Valladolid 2026',
+      description: 'Estas son las actividades más guardadas por los vecinos y vecinas.',
+      imageAlt: 'Actividades populares de las Fiestas Valladolid 2026',
+      url: publicBaseUrl + '/populares/'
     }
   }));
 
@@ -643,11 +721,12 @@ async function build() {
       event,
       structuredData: eventStructuredData(event),
       relatedEvents: getRelatedEvents(events, event),
+      communityPlansForEvent: communityPlanMemberships.get(event.id) || [],
       hideDrawerFilters: true
     }));
   }
 
-  const urls = ['/', '/mapa/', '/planes/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/populares/', '/planes/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

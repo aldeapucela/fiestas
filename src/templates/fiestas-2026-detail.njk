@@ -239,6 +239,10 @@
           <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
           <span>Canal de WhatsApp</span>
         </a>
+        <a class="fiestas-community-facebook" href="https://www.facebook.com/aldeapucela" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+          <span>Página en Facebook</span>
+        </a>
       </div>
     </aside>
 
@@ -265,7 +269,34 @@
       </div>
       <a class="fiestas-related-more" href="/?date=all&amp;type={{ event.type | urlencode }}">
         <span>Ver más</span>
-        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+      </a>
+    </section>
+    {% endif %}
+
+    {% if communityPlansForEvent.length %}
+    <section class="fiestas-detail-card fiestas-detail-community-plans" aria-labelledby="fiestas-community-plans-title">
+      <div class="fiestas-related-heading">
+        <h2 id="fiestas-community-plans-title">
+          <i class="fa-solid fa-people-group" aria-hidden="true"></i>
+          {% if communityPlansForEvent.length == 1 %}Parte de este plan vecinal{% else %}Parte de estos planes vecinales{% endif %}
+        </h2>
+      </div>
+      <div class="fiestas-detail-community-plans-track" aria-label="Planes vecinales que incluyen esta actividad">
+        {% for plan in communityPlansForEvent %}
+        <a class="fiestas-detail-community-plan" href="{{ plan.pageUrl }}" aria-label="Abrir el plan {{ plan.name }}, creado por {{ plan.author }}">
+          <span class="fiestas-detail-community-plan-icon" aria-hidden="true">
+            <i class="fa-solid {{ plan.iconClass }}"></i>
+          </span>
+          <span class="fiestas-detail-community-plan-copy">
+            <strong>{{ plan.name }}</strong>
+            <small>Por {{ plan.author }}</small>
+          </span>
+          <i class="fa-solid fa-chevron-right fiestas-detail-community-plan-arrow" aria-hidden="true"></i>
+        </a>
+        {% endfor %}
+      </div>
+      <a class="fiestas-related-more fiestas-detail-community-plans-more" href="/planes/">
+        <span>Ver más</span>
       </a>
     </section>
     {% endif %}

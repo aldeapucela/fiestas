@@ -20,11 +20,13 @@ import { readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
 import { createIcsFile, shareFileOrDownload } from './plan-export.js';
 import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
 import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './community-plans.js';
+import { rankPopularEvents } from './popular-page.js';
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
 const SITE_SHARE_URL = 'https://fiestas.aldeapucela.org/?mtm_campaign=share';
 const SITE_SHARE_MESSAGE = `Mira, la mejor web para seguir las fiestas y ferias de Valladolid 2026\n\n${SITE_SHARE_URL}`;
+const SAVE_COUNTS_API_URL = 'https://api.aldeapucela.org/fiestas/saves';
 const cartoLayers = {
   light: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
   dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
@@ -65,6 +67,7 @@ const state = {
   search: '',
   onlyFavorites: false,
   favorites: new Set(readFavorites()),
+  saveCounts: new Map(),
   map: null,
   tileLayer: null,
   markers: null,
@@ -85,6 +88,8 @@ const state = {
 
 const els = {
   app: document.querySelector('[data-fiestas-app]'),
+  popularPage: document.querySelector('[data-fiestas-popular-page]'),
+  popularList: document.querySelector('[data-fiestas-popular-list]'),
   agenda: document.querySelector('[data-fiestas-agenda]'),
   mapView: document.querySelector('[data-fiestas-map-view]'),
   mapCanvas: document.querySelector('[data-fiestas-map]'),
@@ -160,6 +165,21 @@ function init() {
 
   if (els.detail) {
     initDetailPage();
+    void loadSaveCounts();
+    return;
+  }
+
+  if (els.popularPage) {
+    try {
+      state.events = normalizeEvents(window.__FIESTAS_2026_EVENTS__ || []);
+      bindSiteShareControls();
+      bindEventCardInteractions(els.popularList);
+      renderPopularPage('loading');
+      void loadSaveCounts().then((result) => renderPopularPage(result.ok ? 'ready' : 'error'));
+    } catch (error) {
+      console.error(error);
+      renderPopularPage('error');
+    }
     return;
   }
 
@@ -184,12 +204,139 @@ function init() {
     renderControlLists();
     setupCommunityCtaPwa();
     render();
+    void loadSaveCounts();
     setupDateCarousel();
     setupScrollHeader();
   } catch (error) {
     console.error(error);
     els.agenda.replaceChildren(emptyState('No se pudo cargar la agenda. Recarga la página para intentarlo de nuevo.', true));
   }
+}
+
+async function loadSaveCounts() {
+  if (typeof window.fetch !== 'function') return { ok: false };
+
+  const controller = typeof AbortController === 'function' ? new AbortController() : null;
+  const timeoutId = window.setTimeout(() => controller?.abort(), 5000);
+  try {
+    const response = await window.fetch(SAVE_COUNTS_API_URL, {
+      headers: { Accept: 'application/json' },
+      signal: controller?.signal
+    });
+    if (!response.ok) return { ok: false };
+    const payload = await response.json();
+    if (payload?.ok !== true || !Array.isArray(payload.activities)) return { ok: false };
+
+    const counts = new Map();
+    payload.activities.forEach((activity) => {
+      const id = String(activity?.id || '').trim();
+      const count = Number(activity?.saveCount);
+      if (id && Number.isFinite(count) && count > 0) counts.set(id, count);
+    });
+    state.saveCounts = counts;
+    applySaveCountsToDom();
+    return { ok: true };
+  } catch (_) {
+    // Los contadores son informativos: un fallo de la API no debe bloquear la agenda.
+    return { ok: false };
+  } finally {
+    window.clearTimeout(timeoutId);
+  }
+}
+
+function getSaveCount(activityId) {
+  const count = Number(state.saveCounts.get(String(activityId || '')));
+  return Number.isFinite(count) && count > 0 ? count : 0;
+}
+
+function saveCountMarkup(activityId, label = 'compact', extraClass = '') {
+  const count = getSaveCount(activityId);
+  const classes = ['fiestas-save-count', extraClass].filter(Boolean).join(' ');
+  const text = label === 'detail' ? `${count} guardados` : String(count);
+  return `<span class="${classes}" data-fiestas-save-count data-fiestas-save-count-label="${label}" data-event-id="${escapeHtml(activityId)}" aria-hidden="true"${count > 0 ? '' : ' hidden'}>${count > 0 ? escapeHtml(text) : ''}</span>`;
+}
+
+function saveCountLabel(activityId) {
+  const count = getSaveCount(activityId);
+  return count > 0 ? ` ${count} personas han guardado esta actividad.` : '';
+}
+
+function saveButtonLabel(saved, activityId) {
+  return `${saved ? 'Quitar de guardados' : 'Guardar actividad'}${saveCountLabel(activityId)}`;
+}
+
+function updateSaveCountElements() {
+  document.querySelectorAll('[data-fiestas-save-count]').forEach((element) => {
+    const count = getSaveCount(element.dataset.eventId);
+    const label = element.dataset.fiestasSaveCountLabel === 'detail' ? 'detail' : 'compact';
+    element.textContent = count > 0 ? (label === 'detail' ? `${count} guardados` : String(count)) : '';
+    element.hidden = count <= 0;
+  });
+}
+
+function applySaveCountsToDom() {
+  document.querySelectorAll('[data-fiestas-save]').forEach((button) => {
+    const activityId = button.dataset.eventId;
+    const saved = state.favorites.has(activityId);
+    button.setAttribute('aria-label', saveButtonLabel(saved, activityId));
+    button.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>${saveCountMarkup(activityId, 'compact', 'fiestas-save-count--badge')}`;
+  });
+  updateSaveCountElements();
+  if (els.detail) updateDetailFavorite({ silent: true });
+}
+
+function renderPopularPage(status = 'ready') {
+  const container = els.popularList;
+  if (!container) return;
+
+  container.replaceChildren();
+  container.setAttribute('aria-busy', String(status === 'loading'));
+
+  if (status === 'loading') {
+    const message = popularStatus('Cargando actividades populares…');
+    const spinner = document.createElement('i');
+    spinner.className = 'fa-solid fa-spinner';
+    spinner.setAttribute('aria-hidden', 'true');
+    message.prepend(spinner);
+    container.append(message);
+    return;
+  }
+
+  if (status === 'error') {
+    const message = popularStatus('No se han podido cargar las actividades populares.', true);
+    message.append(popularBackLink());
+    container.append(message);
+    return;
+  }
+
+  const popularEvents = rankPopularEvents(state.events, state.saveCounts, 3);
+  if (!popularEvents.length) {
+    const message = popularStatus('Todavía no hay suficientes guardados para mostrar actividades populares.');
+    message.append(popularBackLink());
+    container.append(message);
+    return;
+  }
+
+  const list = document.createElement('div');
+  list.className = 'fiestas-event-list fiestas-popular-event-list';
+  popularEvents.forEach((event) => list.append(eventCard(event, { showDate: true })));
+  container.append(list);
+}
+
+function popularStatus(message, isError = false) {
+  const status = document.createElement('div');
+  status.className = `fiestas-popular-status${isError ? ' is-error' : ''}`;
+  const copy = document.createElement('p');
+  copy.textContent = message;
+  status.append(copy);
+  return status;
+}
+
+function popularBackLink() {
+  const link = document.createElement('a');
+  link.href = '/';
+  link.textContent = 'Volver a la agenda';
+  return link;
 }
 
 function bindControls() {
@@ -200,9 +347,7 @@ function bindControls() {
     const behavior = window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
     window.scrollTo({ top: 0, behavior });
   });
-  document.querySelectorAll('[data-fiestas-share-site]').forEach((button) => {
-    button.addEventListener('click', shareSite);
-  });
+  bindSiteShareControls();
 
   els.search?.addEventListener('input', (event) => {
     state.search = normalizeText(event.target.value.trim());
@@ -361,7 +506,33 @@ function bindControls() {
     render();
   });
 
-  els.agenda?.addEventListener('click', (event) => {
+  bindEventCardInteractions(els.agenda);
+
+  document.addEventListener('click', (event) => {
+    if (!event.target.closest('[data-fiestas-map-date-toggle]') && !event.target.closest('#fiestas-date-panel')) {
+      setMapDateOpen(false, { restoreFocus: false });
+    }
+    if (!event.target.closest('[data-fiestas-map-filter-toggle]') && !event.target.closest('[data-fiestas-filter-region]')) {
+      setMapFilterPanelOpen(false, { restoreFocus: false });
+    }
+    if (!event.target.closest('.fiestas-type-menu') && !event.target.closest('[data-fiestas-filter-backdrop]')) {
+      setMenuOpen('area', false);
+      setMenuOpen('type', false);
+      setMenuOpen('ticket', false);
+    }
+  });
+
+  document.addEventListener('keydown', handleOverlayKeydown);
+}
+
+function bindSiteShareControls() {
+  document.querySelectorAll('[data-fiestas-share-site]').forEach((button) => {
+    button.addEventListener('click', shareSite);
+  });
+}
+
+function bindEventCardInteractions(container) {
+  container?.addEventListener('click', (event) => {
     const communityCta = event.target.closest('[data-fiestas-community-cta]');
     if (communityCta && communityCta.dataset.ctaMode !== 'community') {
       event.preventDefault();
@@ -383,28 +554,12 @@ function bindControls() {
     toggleFavorite(saveButton.dataset.eventId);
   });
 
-  els.agenda?.addEventListener('keydown', (event) => {
+  container?.addEventListener('keydown', (event) => {
     const communityCta = event.target.closest('[data-fiestas-community-cta]');
     if (!communityCta || communityCta.dataset.ctaMode === 'community' || event.key !== ' ') return;
     event.preventDefault();
     communityCta.click();
   });
-
-  document.addEventListener('click', (event) => {
-    if (!event.target.closest('[data-fiestas-map-date-toggle]') && !event.target.closest('#fiestas-date-panel')) {
-      setMapDateOpen(false, { restoreFocus: false });
-    }
-    if (!event.target.closest('[data-fiestas-map-filter-toggle]') && !event.target.closest('[data-fiestas-filter-region]')) {
-      setMapFilterPanelOpen(false, { restoreFocus: false });
-    }
-    if (!event.target.closest('.fiestas-type-menu') && !event.target.closest('[data-fiestas-filter-backdrop]')) {
-      setMenuOpen('area', false);
-      setMenuOpen('type', false);
-      setMenuOpen('ticket', false);
-    }
-  });
-
-  document.addEventListener('keydown', handleOverlayKeydown);
 }
 
 function trackCommittedSearch() {
@@ -689,7 +844,7 @@ function setupCommunityCtaPwa() {
   syncPwaCta();
 }
 
-function eventCard(event) {
+function eventCard(event, options = {}) {
   const article = document.createElement('article');
   article.className = 'fiestas-event-card';
   article.dataset.fiestasCard = event.id;
@@ -703,11 +858,15 @@ function eventCard(event) {
   const artMarkup = event.image
     ? `<img class="fiestas-event-image" src="${escapeHtml(event.image)}" alt="" loading="lazy" decoding="async">`
     : `<i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i>`;
+  const dateMarkup = options.showDate
+    ? `<span class="fiestas-event-date">${escapeHtml(popularEventDateLabel(event))}</span>`
+    : '';
   link.href = event.urlPath;
   link.innerHTML = `
     <span class="fiestas-event-time">${timeMarkup(event)}</span>
     <span class="fiestas-event-art ${typeClass}${event.image ? ' has-image' : ''}" aria-hidden="true">${artMarkup}</span>
     <span class="fiestas-event-copy">
+      ${dateMarkup}
       <span class="fiestas-event-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
       <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-event-place-text">${escapeHtml(place)}</span></span>
     </span>
@@ -719,9 +878,9 @@ function eventCard(event) {
   save.type = 'button';
   save.dataset.fiestasSave = 'true';
   save.dataset.eventId = event.id;
-  save.setAttribute('aria-label', saved ? 'Quitar de guardados' : 'Guardar actividad');
+  save.setAttribute('aria-label', saveButtonLabel(saved, event.id));
   save.setAttribute('aria-pressed', String(saved));
-  save.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>`;
+  save.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>${saveCountMarkup(event.id, 'compact', 'fiestas-save-count--badge')}`;
 
   const moreOptions = document.createElement('button');
   moreOptions.className = 'fiestas-more-options';
@@ -734,6 +893,16 @@ function eventCard(event) {
 
   article.append(link, save, moreOptions);
   return article;
+}
+
+function popularEventDateLabel(event) {
+  const match = String(event?.date || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  if (!match) return event?.dateLabel || event?.date || 'Fecha por confirmar';
+  const [, year, month, day] = match;
+  const date = new Date(Number(year), Number(month) - 1, Number(day));
+  const weekdays = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
+  const months = ['ene.', 'feb.', 'mar.', 'abr.', 'may.', 'jun.', 'jul.', 'ago.', 'sep.', 'oct.', 'nov.', 'dic.'];
+  return `${weekdays[date.getDay()]} ${date.getDate()} ${months[date.getMonth()]}`;
 }
 
 async function renderMap(events) {
@@ -1517,7 +1686,8 @@ function toggleFavorite(id) {
   else state.favorites.delete(id);
   writeFavoriteIds([...state.favorites]);
   trackFavoriteChanged(id, saved);
-  if (els.agenda) render();
+  if (els.popularPage) renderPopularPage('ready');
+  else if (els.agenda) render();
   updateDetailFavorite();
 }
 
@@ -1824,12 +1994,16 @@ function getMapPlatform() {
 
 function updateDetailFavorite(options = {}) {
   if (!els.detail) return;
-  const saved = state.favorites.has(els.detail.dataset.eventId);
+  const activityId = els.detail.dataset.eventId;
+  const saved = state.favorites.has(activityId);
   document.querySelectorAll('[data-fiestas-detail-save], [data-fiestas-detail-action-save]').forEach((button) => {
     button.classList.toggle('is-active', saved);
     button.setAttribute('aria-pressed', String(saved));
-    button.setAttribute('aria-label', saved ? 'Quitar de guardados' : 'Guardar actividad');
-    button.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>${button === els.detailActionSave ? `<span>${saved ? 'Guardado' : 'Guardar'}</span>` : ''}`;
+    button.setAttribute('aria-label', saveButtonLabel(saved, activityId));
+    const actionLabel = button === els.detailActionSave
+      ? `<span>${getSaveCount(activityId) > 0 ? `${getSaveCount(activityId)} guardados` : (saved ? 'Guardado' : 'Guardar')}</span>`
+      : '';
+    button.innerHTML = `<i class="${saved ? 'fa-solid' : 'fa-regular'} fa-bookmark" aria-hidden="true"></i>${actionLabel}`;
   });
   if (!options.silent) showDetailFeedback(saved ? 'Actividad guardada.' : 'Actividad eliminada de guardados.');
 }
@@ -1928,13 +2102,17 @@ async function addDetailToCalendar() {
   else showDetailFeedback('Compartición cancelada.');
 }
 
-async function shareSite() {
+async function shareSite(event) {
+  const trigger = event?.currentTarget;
+  const shareUrl = trigger?.dataset.shareUrl || '';
+  const shareTitle = trigger?.dataset.shareTitle || 'Fiestas Valladolid 2026';
+  const shareText = trigger?.dataset.shareText || SITE_SHARE_MESSAGE;
+  const clipboardText = shareUrl ? `${shareText}\n\n${shareUrl}` : shareText;
   try {
     if (navigator.share) {
-      await navigator.share({
-        title: 'Fiestas Valladolid 2026',
-        text: SITE_SHARE_MESSAGE
-      });
+      const shareData = { title: shareTitle, text: shareText };
+      if (shareUrl) shareData.url = shareUrl;
+      await navigator.share(shareData);
       showSiteShareFeedback('Compartido.');
       return;
     }
@@ -1943,7 +2121,7 @@ async function shareSite() {
   }
 
   try {
-    await copyTextToClipboard(SITE_SHARE_MESSAGE);
+    await copyTextToClipboard(clipboardText);
     showSiteShareFeedback('Mensaje y enlace copiados.');
   } catch (_) {
     showSiteShareFeedback('No se pudo copiar el mensaje. Mantén pulsado para copiarlo.', true);
