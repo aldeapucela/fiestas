@@ -688,6 +688,19 @@ export function setupPlanImportPage(rawEvents = []) {
       return;
     }
 
+    const favoriteButton = event.target.closest('[data-plan-toggle-favorite]');
+    if (favoriteButton && sharedPlan) {
+      const activityId = favoriteButton.dataset.planToggleFavorite || '';
+      const ids = new Set(readFavoriteIds());
+      const isSaved = ids.has(activityId);
+      if (isSaved) ids.delete(activityId);
+      else ids.add(activityId);
+      writeFavoriteIds([...ids]);
+      trackFavoriteChanged(activityId, !isSaved);
+      renderSharedPreview();
+      return;
+    }
+
     const addButton = event.target.closest('[data-plan-import-shared-add]');
     if (!addButton || !sharedPlan || !sharedPlan.validIds.length || sharedAddedPlan) return;
     event.preventDefault();
