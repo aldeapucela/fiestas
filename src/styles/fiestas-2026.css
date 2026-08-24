@@ -3463,6 +3463,7 @@ html:not(.dark) body:has(.fiestas-app) {
 .fiestas-plan-delete-confirm[hidden],
 .fiestas-plan-import-status[hidden],
 .fiestas-plan-import-preview[hidden],
+.fiestas-plan-import-shared-preview[hidden],
 .fiestas-plan-import-confirm[hidden] {
   display: none;
 }
@@ -3556,6 +3557,14 @@ html:not(.dark) body:has(.fiestas-app) {
   background: #fbfcfd;
   padding: 1.1rem;
   color: #667085;
+}
+
+.fiestas-plan-import-shared-preview {
+  gap: 0.8rem;
+}
+
+.fiestas-plan-import-shared-preview .fiestas-community-plan-detail-actions-top {
+  padding-block: 0.7rem 0.85rem;
 }
 
 .fiestas-plan-empty p,

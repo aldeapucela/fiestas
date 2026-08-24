@@ -14,7 +14,7 @@
         <a class="fiestas-plan-logo" href="/plan/" aria-label="Volver a Mi plan">
           <img src="/assets/favicon.png" alt="" />
         </a>
-        <h1>Importar plan</h1>
+        <h1 data-plan-import-title>Importar plan</h1>
         <span class="fiestas-plan-header-share" aria-hidden="true"></span>
       </div>
     </header>
@@ -24,6 +24,10 @@
     </a>
 
     <p class="fiestas-plan-import-status" data-plan-import-status role="status" hidden></p>
+
+    <section class="fiestas-community-plan-detail fiestas-plan-import-shared-preview" data-plan-import-shared-preview hidden aria-live="polite">
+      <div data-plan-import-shared-detail></div>
+    </section>
 
     <section class="fiestas-plan-import-preview" data-plan-import-preview hidden aria-live="polite"></section>
     <div class="fiestas-plan-import-actions" data-plan-import-actions hidden>

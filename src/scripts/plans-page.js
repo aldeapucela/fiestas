@@ -31,6 +31,7 @@ import {
 
 const FESTIVAL_ID = 'valladolid-2026';
 const MAX_IMPORT_BYTES = 256 * 1024;
+const MAX_IMPORT_HASH_LENGTH = Math.ceil(MAX_IMPORT_BYTES * 4 / 3) + 1024;
 const MAX_PLAN_NAME_LENGTH = 80;
 const MAX_IMPORT_ACTIVITIES = 200;
 const IMPORT_PREVIEW_ACTIVITY_LIMIT = 3;
@@ -606,7 +607,10 @@ export function setupPlanImportPage(rawEvents = []) {
 
   const events = normalizeEvents(rawEvents);
   const eventIds = new Set(events.map((event) => event.id));
+  const title = page.querySelector('[data-plan-import-title]');
   const status = page.querySelector('[data-plan-import-status]');
+  const sharedPreview = page.querySelector('[data-plan-import-shared-preview]');
+  const sharedDetail = page.querySelector('[data-plan-import-shared-detail]');
   const preview = page.querySelector('[data-plan-import-preview]');
   const actions = page.querySelector('[data-plan-import-actions]');
   const cancelButton = page.querySelector('[data-plan-import-cancel]');
@@ -614,9 +618,23 @@ export function setupPlanImportPage(rawEvents = []) {
   const success = page.querySelector('[data-plan-import-success]');
   const viewLink = page.querySelector('[data-plan-import-view]');
   let pending = null;
+  let sharedPlan = null;
+  let sharedSelectedDay = 'all';
+  let sharedAddedPlan = null;
+
+  const renderSharedPreview = () => {
+    if (!sharedDetail || !sharedPlan) return;
+    renderImportSharedPreview(sharedDetail, sharedPlan, events, sharedSelectedDay, sharedAddedPlan);
+  };
 
   const reset = () => {
     pending = null;
+    sharedPlan = null;
+    sharedSelectedDay = 'all';
+    sharedAddedPlan = null;
+    if (title) title.textContent = 'Importar plan';
+    if (sharedPreview) sharedPreview.hidden = true;
+    sharedDetail?.replaceChildren();
     if (preview) preview.hidden = true;
     if (actions) actions.hidden = true;
     if (confirmButton) confirmButton.hidden = true;
@@ -636,25 +654,74 @@ export function setupPlanImportPage(rawEvents = []) {
       return;
     }
     pending = { ...result, source };
-    renderImportPreview(preview, result, events);
-    const importablePlans = result.plans.filter((plan) => plan.validIds.length);
-    if (actions) actions.hidden = false;
+    sharedPlan = source === 'url' && result.plans.length === 1 ? result.plans[0] : null;
+    sharedSelectedDay = 'all';
+    sharedAddedPlan = null;
+    if (sharedPlan) {
+      if (title) title.textContent = 'Vista previa';
+      if (sharedPreview) sharedPreview.hidden = false;
+      if (preview) preview.hidden = true;
+      if (actions) actions.hidden = true;
+      renderSharedPreview();
+    } else {
+      renderImportPreview(preview, result, events);
+    }
+    const importablePlans = result.plans.filter((plan) => plan.isValid && plan.validIds.length);
+    if (actions && !sharedPlan) actions.hidden = false;
     if (confirmButton) confirmButton.hidden = !importablePlans.length;
     setStatus(
       status,
-      importablePlans.length ? 'Revisa los planes antes de guardarlos.' : 'No hay actividades compatibles para importar.',
+      sharedPlan && !sharedPlan.isValid
+        ? 'Este plan no es válido: contiene identificadores de actividades que no existen en esta edición.'
+        : importablePlans.length
+          ? (sharedPlan ? 'Revisa el plan antes de añadirlo.' : 'Revisa los planes antes de guardarlos.')
+          : 'No hay actividades compatibles para importar.',
       !importablePlans.length
     );
   };
 
+  sharedDetail?.addEventListener('click', (event) => {
+    const dayButton = event.target.closest('[data-plan-day]');
+    if (dayButton && !dayButton.disabled && sharedPlan) {
+      sharedSelectedDay = dayButton.dataset.planDay || 'all';
+      renderSharedPreview();
+      return;
+    }
+
+    const addButton = event.target.closest('[data-plan-import-shared-add]');
+    if (!addButton || !sharedPlan || !sharedPlan.validIds.length || sharedAddedPlan) return;
+    event.preventDefault();
+    try {
+      const name = makeUniquePlanName(sharedPlan.name);
+      sharedAddedPlan = createPlan(name, sharedPlan.validIds, { icon: sharedPlan.icon });
+      trackPlanImported(pending?.source || 'url');
+      renderSharedPreview();
+      const missingLabel = sharedPlan.missingIds.length
+        ? ` ${sharedPlan.missingIds.length} actividad${sharedPlan.missingIds.length === 1 ? '' : 'es'} no compatible${sharedPlan.missingIds.length === 1 ? '' : 's'} no se ha añadido.`
+        : '';
+      setStatus(status, `Plan “${sharedAddedPlan.name}” añadido a Mi plan.${missingLabel}`, false);
+    } catch (_) {
+      setStatus(status, 'No se ha podido guardar este plan en este navegador.', true);
+    }
+  });
+
   const processHash = () => {
     const params = new URLSearchParams(window.location.search);
-    if (!params.has('hash')) return;
+    if (!params.has('hash')) {
+      setStatus(status, 'Abre el enlace compartido de un plan para previsualizarlo.', false);
+      return;
+    }
     const hash = params.get('hash') || '';
     if (!hash) {
       reset();
       setStatus(status, 'El enlace compartido no contiene ningún plan.', true);
       trackPlanImportError('empty_hash');
+      return;
+    }
+    if (hash.length > MAX_IMPORT_HASH_LENGTH) {
+      reset();
+      setStatus(status, 'El enlace compartido supera el límite permitido.', true);
+      trackPlanImportError('file_too_large');
       return;
     }
     try {
@@ -673,7 +740,7 @@ export function setupPlanImportPage(rawEvents = []) {
 
   confirmButton?.addEventListener('click', () => {
     if (!pending) return;
-    const importablePlans = pending.plans.filter((plan) => plan.validIds.length);
+    const importablePlans = pending.plans.filter((plan) => plan.isValid && plan.validIds.length);
     if (!importablePlans.length) return;
     const importedPlans = importablePlans.map((plan) => {
       const name = makeUniquePlanName(plan.name);
@@ -1203,11 +1270,12 @@ async function copyText(text) {
   if (!copied) throw new Error('Copy failed');
 }
 
-function validateImport(text, eventIds) {
-  if (String(text || '').length > MAX_IMPORT_BYTES) return { ok: false, message: 'El plan compartido supera el límite de 256 KiB.', errorType: 'file_too_large' };
+export function validateImport(text, eventIds) {
+  const source = String(text || '');
+  if (new TextEncoder().encode(source).byteLength > MAX_IMPORT_BYTES) return { ok: false, message: 'El plan compartido supera el límite de 256 KiB.', errorType: 'file_too_large' };
   let value;
   try {
-    value = JSON.parse(String(text || ''));
+    value = JSON.parse(source);
   } catch (_) {
     return { ok: false, message: 'El enlace compartido no contiene un plan válido.', errorType: 'invalid_json' };
   }
@@ -1229,23 +1297,84 @@ function validateImport(text, eventIds) {
     if (!name || name.length > MAX_PLAN_NAME_LENGTH) {
       return { ok: false, message: `Cada nombre debe tener entre 1 y ${MAX_PLAN_NAME_LENGTH} caracteres.`, errorType: 'invalid_name' };
     }
+    if (/[<>]/.test(name) || /[\u0000-\u001f\u007f]/.test(name)) {
+      return { ok: false, message: `El nombre “${name}” contiene caracteres no permitidos.`, errorType: 'invalid_name' };
+    }
     if (!Array.isArray(rawPlan.activityIds) || rawPlan.activityIds.length > MAX_IMPORT_ACTIVITIES) {
       return { ok: false, message: `El plan “${name}” supera el máximo de ${MAX_IMPORT_ACTIVITIES} actividades.`, errorType: 'too_many_activities' };
     }
+    const rawIcon = rawPlan.icon === undefined || rawPlan.icon === null ? '' : String(rawPlan.icon).trim().toLocaleLowerCase('en');
+    if (rawIcon && !PLAN_ICON_OPTIONS.some((option) => option.id === rawIcon)) {
+      return { ok: false, message: `El plan “${name}” usa un icono no compatible.`, errorType: 'invalid_icon' };
+    }
     const ids = [...new Set(rawPlan.activityIds.map(String).map((id) => id.trim()).filter(Boolean))];
     const validIds = ids.filter((id) => eventIds.has(id));
+    const missingIds = ids.filter((id) => !eventIds.has(id));
     plans.push({
       name,
       icon: normalizePlanIcon(rawPlan.icon),
       ids,
       validIds,
-      missingIds: ids.filter((id) => !eventIds.has(id))
+      missingIds,
+      isValid: missingIds.length === 0
     });
   }
   return {
     ok: true,
     plans
   };
+}
+
+function renderImportSharedPreview(container, plan, events, selectedDay, addedPlan = null) {
+  if (!container || !plan) return;
+  container.replaceChildren();
+
+  const validEvents = events.filter((event) => plan.validIds.includes(event.id));
+  const dayCount = new Set(validEvents.map((event) => event.date)).size;
+  const header = document.createElement('header');
+  header.className = 'fiestas-community-plan-detail-head';
+  const icon = document.createElement('span');
+  icon.className = 'fiestas-community-plan-detail-icon';
+  icon.append(iconNode(`fa-solid ${getPlanIcon(plan.icon).className}`));
+  const copy = document.createElement('div');
+  copy.className = 'fiestas-community-plan-detail-head-copy';
+  copy.append(textNode('h2', plan.name), textNode('p', 'Plan compartido'));
+  const summary = textNode('p', `${plan.validIds.length} ${plan.validIds.length === 1 ? 'actividad' : 'actividades'} · ${dayCount} ${dayCount === 1 ? 'día' : 'días'}`);
+  summary.className = 'fiestas-community-plan-detail-summary';
+  header.append(icon, copy, summary);
+  container.append(header);
+
+  const actions = document.createElement('div');
+  actions.className = 'fiestas-community-plan-detail-actions fiestas-community-plan-detail-actions-top';
+  if (addedPlan) {
+    const link = document.createElement('a');
+    link.className = 'fiestas-community-plan-add';
+    link.href = `/plan/?tab=plans&plan=${encodeURIComponent(addedPlan.id)}`;
+    link.append(iconNode('fa-solid fa-eye'), textNode('span', 'Ver plan'));
+    actions.append(link);
+  } else if (plan.isValid && plan.validIds.length) {
+    const add = document.createElement('button');
+    add.type = 'button';
+    add.className = 'fiestas-community-plan-add';
+    add.dataset.planImportSharedAdd = 'true';
+    add.append(iconNode('fa-solid fa-plus'), textNode('span', 'Añadir a mis planes'));
+    actions.append(add);
+  }
+  container.append(actions);
+
+  if (plan.missingIds.length) {
+    const warning = textNode('p', `Plan no válido: ${plan.missingIds.length} actividad${plan.missingIds.length === 1 ? '' : 'es'} no existe${plan.missingIds.length === 1 ? '' : 'n'} en esta edición y no se puede añadir.`);
+    warning.className = 'fiestas-community-plan-detail-warning';
+    container.append(warning);
+  }
+  if (!plan.validIds.length) {
+    const empty = textNode('p', 'No hay actividades compatibles con esta edición de Fiestas Valladolid 2026.');
+    empty.className = 'fiestas-community-plan-detail-warning';
+    container.append(empty);
+    return;
+  }
+
+  renderPlanTimeline(container, { id: addedPlan?.id || '__shared_preview__', activityIds: plan.validIds }, events, [], selectedDay);
 }
 
 function renderImportPreview(container, result, events) {
@@ -1274,7 +1403,9 @@ function renderImportPreview(container, result, events) {
     icon.append(iconNode(`fa-solid ${getPlanIcon(plan.icon).className}`));
     title.append(icon, textNode('h3', plan.name));
     item.append(title);
-    item.append(textNode('p', `${plan.validIds.length} actividades válidas de ${plan.ids.length}.`));
+    item.append(textNode('p', plan.isValid
+      ? `${plan.validIds.length} actividades válidas de ${plan.ids.length}.`
+      : `Plan no válido: ${plan.validIds.length} actividades válidas de ${plan.ids.length}.`));
     if (plan.missingIds.length) {
       const missing = textNode('p', `${plan.missingIds.length} actividad${plan.missingIds.length === 1 ? '' : 'es'} no encontrada${plan.missingIds.length === 1 ? '' : 's'}.`);
       missing.className = 'fiestas-plan-import-item-warning';
