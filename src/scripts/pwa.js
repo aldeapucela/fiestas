@@ -149,10 +149,13 @@ async function promptInstall(source = 'install') {
 
   let choice;
   try {
-    await promptEvent.prompt();
+    const nativePrompt = promptEvent.prompt();
+    showInstallProgress();
     choice = await promptEvent.userChoice;
+    await nativePrompt;
   } catch (_) {
     deferredInstallPrompt = null;
+    hideInstallProgress();
     installRequestSource = 'install';
     updateInstallActions();
     return false;
@@ -163,6 +166,7 @@ async function promptInstall(source = 'install') {
     trackPwaInstallAccepted(source);
     showInstallProgress();
   } else if (choice.outcome === 'dismissed') {
+    hideInstallProgress();
     setDismissed();
     trackPwaInstallCancelled(source);
     installRequestSource = 'install';
