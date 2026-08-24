@@ -8,7 +8,6 @@ import {
 } from './analytics.js';
 
 const DISMISSED_KEY = 'fiestasPucela:pwa-install-dismissed';
-const INSTALLED_KEY = 'fiestasPucela:pwa-installed';
 const IOS_HELP_SEEN_KEY = 'fiestasPucela:pwa-ios-help-seen';
 let deferredInstallPrompt = null;
 let previousFocus = null;
@@ -40,20 +39,6 @@ function setDismissed() {
   } catch (_) {}
 }
 
-function wasInstalled() {
-  try {
-    return window.localStorage.getItem(INSTALLED_KEY) === 'true';
-  } catch (_) {
-    return false;
-  }
-}
-
-function markInstalled() {
-  try {
-    window.localStorage.setItem(INSTALLED_KEY, 'true');
-  } catch (_) {}
-}
-
 function wasIosHelpSeen() {
   try {
     return window.localStorage.getItem(IOS_HELP_SEEN_KEY) === 'true';
@@ -69,7 +54,7 @@ function markIosHelpSeen() {
 }
 
 function updateInstallHint() {
-  const installed = isStandalone() || wasInstalled();
+  const installed = isStandalone();
   const installButton = document.querySelector('[data-pwa-install]');
   const iosButton = document.querySelector('[data-pwa-ios-help-open]');
   const installDot = document.querySelector('[data-pwa-install-hint]');
@@ -81,7 +66,7 @@ function updateInstallHint() {
 function updateInstallActions() {
   const installButton = document.querySelector('[data-pwa-install]');
   const iosButton = document.querySelector('[data-pwa-ios-help-open]');
-  const installed = isStandalone() || wasInstalled();
+  const installed = isStandalone();
   const dismissed = wasDismissed();
   const canInstall = Boolean(deferredInstallPrompt) && !installed;
   const canShowInlineInstall = canInstall && !dismissed;
@@ -127,7 +112,7 @@ function hideInstallProgress() {
 }
 
 function showInstallProgress() {
-  if (isStandalone() || wasInstalled()) return;
+  if (isStandalone()) return;
   const dialog = getInstallProgressDialog();
   if (!dialog) return;
   dialog.hidden = false;
@@ -206,7 +191,6 @@ export function setupPwa() {
   });
 
   window.addEventListener('appinstalled', () => {
-    markInstalled();
     deferredInstallPrompt = null;
     hideInstallProgress();
     trackPwaInstalled(installRequestSource);
