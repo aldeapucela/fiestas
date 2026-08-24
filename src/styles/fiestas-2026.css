@@ -2272,6 +2272,92 @@
     margin-top: 1.2rem;
   }
 
+  .install-progress-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 270;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+
+  .install-progress-modal[hidden] {
+    display: none;
+  }
+
+  .install-progress-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(18, 20, 23, 0.42);
+  }
+
+  .install-progress-modal-panel {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: min(100%, 22rem);
+    justify-items: center;
+    border: 1px solid #e3e6ec;
+    border-radius: 1.25rem;
+    background: #fff;
+    padding: 1.65rem 1.35rem 1.45rem;
+    text-align: center;
+    box-shadow: 0 1.5rem 4rem rgba(20, 25, 35, 0.23);
+  }
+
+  .install-progress-modal-close {
+    position: absolute;
+    top: 0.65rem;
+    right: 0.65rem;
+    display: inline-grid;
+    width: 2rem;
+    height: 2rem;
+    place-items: center;
+    border: 0;
+    border-radius: 999px;
+    background: transparent;
+    color: #667085;
+  }
+
+  .install-progress-spinner {
+    width: 2.35rem;
+    height: 2.35rem;
+    margin-bottom: 1rem;
+    border: 3px solid #dce8f8;
+    border-top-color: #2f80ed;
+    border-radius: 999px;
+    animation: fiestas-install-spin 850ms linear infinite;
+  }
+
+  .install-progress-modal-panel .fiestas-plan-kicker {
+    margin: 0;
+  }
+
+  .install-progress-modal-panel h2 {
+    margin: 0.3rem 0 0;
+    color: #1d222d;
+    font-size: 1.35rem;
+    line-height: 1.12;
+  }
+
+  .install-progress-modal-panel p:last-child {
+    max-width: 18rem;
+    margin: 0.75rem 0 0;
+    color: #667085;
+    line-height: 1.45;
+  }
+
+  @keyframes fiestas-install-spin {
+    to { transform: rotate(360deg); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .install-progress-spinner {
+      animation-duration: 2.2s;
+    }
+  }
+
   .fiestas-detail-title-block {
     display: grid;
     gap: 0.65rem;
@@ -3083,6 +3169,23 @@
   html.dark .install-app-modal-close {
     border-color: #313743;
     background: #121417;
+    color: #d4d9e2;
+  }
+
+  html.dark .install-progress-modal-panel {
+    border-color: #313743;
+    background: #1a1f28;
+  }
+
+  html.dark .install-progress-modal-panel h2 {
+    color: #f8fafc;
+  }
+
+  html.dark .install-progress-modal-panel p:last-child {
+    color: #d4d9e2;
+  }
+
+  html.dark .install-progress-modal-close {
     color: #d4d9e2;
   }
 

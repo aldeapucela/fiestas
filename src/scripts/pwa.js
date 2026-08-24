@@ -13,6 +13,9 @@ const IOS_HELP_SEEN_KEY = 'fiestasPucela:pwa-ios-help-seen';
 let deferredInstallPrompt = null;
 let previousFocus = null;
 let installRequestSource = 'install';
+let installProgressTimer = null;
+
+const INSTALL_PROGRESS_TIMEOUT = 25000;
 
 function isStandalone() {
   return window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
@@ -112,6 +115,26 @@ function getIosDialog() {
   return document.querySelector('[data-pwa-ios-help]');
 }
 
+function getInstallProgressDialog() {
+  return document.querySelector('[data-pwa-install-progress]');
+}
+
+function hideInstallProgress() {
+  const dialog = getInstallProgressDialog();
+  if (installProgressTimer) window.clearTimeout(installProgressTimer);
+  installProgressTimer = null;
+  if (dialog) dialog.hidden = true;
+}
+
+function showInstallProgress() {
+  if (isStandalone() || wasInstalled()) return;
+  const dialog = getInstallProgressDialog();
+  if (!dialog) return;
+  dialog.hidden = false;
+  if (installProgressTimer) window.clearTimeout(installProgressTimer);
+  installProgressTimer = window.setTimeout(hideInstallProgress, INSTALL_PROGRESS_TIMEOUT);
+}
+
 function openIosHelp() {
   const dialog = getIosDialog();
   if (!dialog) return;
@@ -153,6 +176,7 @@ async function promptInstall(source = 'install') {
   deferredInstallPrompt = null;
   if (choice.outcome === 'accepted') {
     trackPwaInstallAccepted(source);
+    showInstallProgress();
   } else if (choice.outcome === 'dismissed') {
     setDismissed();
     trackPwaInstallCancelled(source);
@@ -184,6 +208,7 @@ export function setupPwa() {
   window.addEventListener('appinstalled', () => {
     markInstalled();
     deferredInstallPrompt = null;
+    hideInstallProgress();
     trackPwaInstalled(installRequestSource);
     installRequestSource = 'install';
     updateInstallActions();
@@ -198,6 +223,11 @@ export function setupPwa() {
   });
 
   document.addEventListener('click', (event) => {
+    if (event.target.closest('[data-pwa-install-progress-close]')) {
+      event.preventDefault();
+      hideInstallProgress();
+      return;
+    }
     if (event.target.closest('[data-pwa-install]')) {
       event.preventDefault();
       updateInstallHint();
@@ -219,6 +249,8 @@ export function setupPwa() {
   window.addEventListener('keydown', (event) => {
     const dialog = getIosDialog();
     if (event.key === 'Escape' && dialog && !dialog.hidden) closeIosHelp();
+    const progressDialog = getInstallProgressDialog();
+    if (event.key === 'Escape' && progressDialog && !progressDialog.hidden) hideInstallProgress();
   });
 }
 
