@@ -7,7 +7,7 @@ const reportPath = 'docs/event-normalization-comparison.md';
 const execFileAsync = promisify(execFile);
 
 const textFields = ['title', 'location', 'zone', 'description', 'summary', 'type'];
-const listFields = ['performances', 'organizers', 'collaborators', 'tags'];
+const listFields = ['organizers', 'collaborators', 'tags'];
 const ticketFields = ['label', 'note'];
 
 const smallWords = new Set([
@@ -87,6 +87,18 @@ function normalizeEvent(event) {
     }
   }
 
+  if (Array.isArray(next.performances)) {
+    const normalized = normalizePerformanceList(next.performances);
+    if (JSON.stringify(normalized) !== JSON.stringify(next.performances)) {
+      changes.push({
+        field: 'performances',
+        before: next.performances.join(' | '),
+        after: normalized.join(' | ')
+      });
+      next.performances = normalized;
+    }
+  }
+
   for (const field of listFields) {
     if (!Array.isArray(next[field])) continue;
     next[field] = next[field].map((value, index) => {
@@ -111,6 +123,158 @@ function normalizeEvent(event) {
   }
 
   return { event: next, changes };
+}
+
+function normalizePerformanceList(values) {
+  return uniqueValues(values.flatMap((value) => {
+    if (typeof value !== 'string') return [];
+    return splitPerformance(normalizeText(value)).map(normalizePerformanceItem).filter(Boolean);
+  }));
+}
+
+function splitPerformance(value) {
+  const sentences = value
+    .split(/\.\s+A continuación,?/u)
+    .map(cleanPerformanceSentence)
+    .filter(Boolean);
+
+  return sentences.flatMap((sentence) => splitPerformanceSentence(sentence));
+}
+
+function splitPerformanceSentence(value) {
+  const cleaned = cleanPerformanceSentence(value);
+  if (!cleaned) return [];
+
+  const listText = extractPerformanceList(cleaned);
+  if (!listText || !isClearPerformanceList(listText)) return [cleaned];
+
+  return splitListText(listText)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function extractPerformanceList(value) {
+  const withoutOrganizer = stripKnownOrganizerSuffix(value);
+
+  const prefixed = withoutOrganizer.match(/^(?:Con DJs|Con los DJs|Con artistas|Con los artistas|Actuaciones(?: de las bandas)?|Actuaciones: Grupos?|Actuaciones:|Danzando en la calle:|Moreras Beach Fest:|Primera Concentración de Charangas)\s+(.+)$/iu)
+    || withoutOrganizer.match(/\bActuaciones de las bandas\s+(.+)$/iu);
+  return prefixed ? prefixed[1].trim() : withoutOrganizer;
+}
+
+function isClearPerformanceList(value) {
+  if (!value.includes(',')) return false;
+  if (!hasBalancedSmartQuotes(value)) return false;
+  const parts = splitListText(value);
+  if (parts.length < 2) return false;
+  return parts.every((part) => {
+    const trimmed = part.trim();
+    if (!trimmed) return false;
+    return trimmed.length <= 90 && !/^(?:con|por|para|hasta|a continuación)\b/iu.test(trimmed);
+  });
+}
+
+function splitListText(value) {
+  const commaParts = splitOutsideQuotes(value, ',');
+  if (commaParts.length < 2) return [value];
+
+  const last = commaParts.at(-1);
+  const finalAndParts = splitFinalAndOutsideQuotes(last);
+  if (finalAndParts.length > 1) {
+    commaParts.splice(commaParts.length - 1, 1, ...finalAndParts);
+  }
+
+  return commaParts;
+}
+
+function cleanPerformanceSentence(value) {
+  return value
+    .replace(/^A continuación,?\s+/iu, '')
+    .replace(/^Música en directo\s+/iu, '')
+    .replace(/^Con\s+(?:los|las)?\s*/iu, 'Con ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
+function normalizePerformanceItem(value) {
+  const normalized = stripKnownOrganizerSuffix(value)
+    .replace(/^(?:con\s+)?(?:los\s+)?DJs?\s+(?=\S)/iu, 'DJ ')
+    .replace(/\s+\.$/u, '.')
+    .replace(/\.$/u, '')
+    .trim();
+
+  if (/^(?:DJs?|Coordinadora de Peñas|Fevapeñas|Rock&Roll Club Valladolid)$/u.test(normalized)) return '';
+  return normalized;
+}
+
+function uniqueValues(values) {
+  const seen = new Set();
+  const result = [];
+  for (const value of values) {
+    const key = value.toLocaleLowerCase('es-ES');
+    if (seen.has(key)) continue;
+    if (result.some((existing) => existing.toLocaleLowerCase('es-ES').startsWith(key))) continue;
+    seen.add(key);
+    result.push(value);
+  }
+  return result;
+}
+
+function stripKnownOrganizerSuffix(value) {
+  return value
+    .replace(/(?:\.\s*|\s+)Fevapeñas$/u, '')
+    .replace(/(?:\.\s*|\s+)Rock&Roll Club Valladolid$/u, '')
+    .replace(/(?<!\bde la)(?:\.\s*|\s+)Coordinadora de Peñas$/u, '')
+    .trim();
+}
+
+function hasBalancedSmartQuotes(value) {
+  return (value.match(/“/gu) || []).length === (value.match(/”/gu) || []).length;
+}
+
+function splitOutsideQuotes(value, separator) {
+  const parts = [];
+  let current = '';
+  let quote = null;
+
+  for (const char of value) {
+    quote = nextQuoteState(char, quote);
+    if (!quote && char === separator) {
+      parts.push(current.trim());
+      current = '';
+      continue;
+    }
+    current += char;
+  }
+
+  parts.push(current.trim());
+  return parts.filter(Boolean);
+}
+
+function splitFinalAndOutsideQuotes(value) {
+  const matches = [];
+  let quote = null;
+
+  for (let index = 0; index < value.length; index += 1) {
+    const char = value[index];
+    quote = nextQuoteState(char, quote);
+    if (quote) continue;
+    if (value.slice(index, index + 3) === ' y ') matches.push(index);
+  }
+
+  if (!matches.length) return [value.trim()];
+  const index = matches.at(-1);
+  return [
+    value.slice(0, index).trim(),
+    value.slice(index + 3).trim()
+  ].filter(Boolean);
+}
+
+function nextQuoteState(char, quote) {
+  if (char === '“') return '”';
+  if (char === '”' && quote === '”') return null;
+  if (char === '"' && quote === '"') return null;
+  if (char === '"' && !quote) return '"';
+  return quote;
 }
 
 function normalizeText(value) {
@@ -226,8 +390,9 @@ function makeReport(rows, events) {
   return `${lines.join('\n')}\n`;
 }
 
-const source = process.argv.includes('--from-head')
-  ? await readHeadVersion(eventsPath)
+const sourceRef = getSourceRef();
+const source = sourceRef
+  ? await readGitVersion(sourceRef, eventsPath)
   : await fs.readFile(eventsPath, 'utf8');
 const events = JSON.parse(source);
 const normalized = [];
@@ -248,7 +413,13 @@ console.log(`Normalized ${events.length} events`);
 console.log(`Changed ${rows.length} fields`);
 console.log(`Report written to ${reportPath}`);
 
-async function readHeadVersion(path) {
-  const { stdout } = await execFileAsync('git', ['show', `HEAD:${path}`], { maxBuffer: 50 * 1024 * 1024 });
+function getSourceRef() {
+  if (process.argv.includes('--from-head')) return 'HEAD';
+  const refArg = process.argv.find((arg) => arg.startsWith('--from-ref='));
+  return refArg ? refArg.slice('--from-ref='.length) : '';
+}
+
+async function readGitVersion(ref, path) {
+  const { stdout } = await execFileAsync('git', ['show', `${ref}:${path}`], { maxBuffer: 50 * 1024 * 1024 });
   return stdout;
 }

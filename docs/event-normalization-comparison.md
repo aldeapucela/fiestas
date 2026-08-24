@@ -1,7 +1,7 @@
 # Comparativa de normalización de eventos
 
 Eventos revisados: 414
-Campos cambiados: 1372
+Campos cambiados: 1365
 
 ## Resumen por campo
 
@@ -11,10 +11,7 @@ Campos cambiados: 1372
 | description | 414 |
 | location | 30 |
 | organizers[0] | 12 |
-| performances[0] | 65 |
-| performances[1] | 8 |
-| performances[2] | 3 |
-| performances[3] | 1 |
+| performances | 70 |
 | summary | 414 |
 | title | 394 |
 | zone | 30 |
@@ -29,26 +26,25 @@ Campos cambiados: 1372
 | 2 | title | CONCENTRACIÓN DE PEÑAS DE VALLADOLID | Concentración de Peñas de Valladolid |
 | 2 | description | CONCENTRACIÓN DE PEÑAS DE VALLADOLID con sesión de DJ´s Chack & Yaiza, Rubio & Joel Marashi, Javi Mor & Morlac, Viti Larios & Meigo, Dani García & Félix Pérez, Finisher and Friends. Coordinadora de Peñas | Concentración de Peñas de Valladolid con sesión de DJs Chack & Yaiza, Rubio & Joel Marashi, Javi Mor & Morlac, Viti Larios & Meigo, Dani García & Félix Pérez, Finisher and Friends. Coordinadora de Peñas |
 | 2 | summary | CONCENTRACIÓN DE PEÑAS DE VALLADOLID con sesión de DJ´s Chack & Yaiza, Rubio & Joel Marashi, Javi Mor & Morlac, Viti Larios & Meigo, Dani García & Félix Pérez, Finisher and Friends. Coordinadora de Peñas | Concentración de Peñas de Valladolid con sesión de DJs Chack & Yaiza, Rubio & Joel Marashi, Javi Mor & Morlac, Viti Larios & Meigo, Dani García & Félix Pérez, Finisher and Friends. Coordinadora de Peñas |
-| 2 | performances[0] | DJ´s Chack & Yaiza, Rubio & Joel Marashi, Javi Mor & Morlac, Viti Larios & Meigo, Dani García & Félix Pérez, Finisher and Friends. Coordinadora de Peñas | DJs Chack & Yaiza, Rubio & Joel Marashi, Javi Mor & Morlac, Viti Larios & Meigo, Dani García & Félix Pérez, Finisher and Friends. Coordinadora de Peñas |
+| 2 | performances | DJ´s Chack & Yaiza, Rubio & Joel Marashi, Javi Mor & Morlac, Viti Larios & Meigo, Dani García & Félix Pérez, Finisher and Friends. Coordinadora de Peñas | DJ Chack & Yaiza \| Rubio & Joel Marashi \| Javi Mor & Morlac \| Viti Larios & Meigo \| Dani García & Félix Pérez \| Finisher and Friends |
 | 3 | title | CONCENTRACIÓN DE PEÑAS DE FEVAPEÑAS | Concentración de Peñas de Fevapeñas |
 | 3 | description | CONCENTRACIÓN DE PEÑAS DE FEVAPEÑAS. A continuación PASACALLES con charanga SIN COPA Fevapeñas | Concentración de Peñas de Fevapeñas. A continuación Pasacalles con charanga sin Copa Fevapeñas |
 | 3 | summary | CONCENTRACIÓN DE PEÑAS DE FEVAPEÑAS. A continuación PASACALLES con charanga SIN COPA Fevapeñas | Concentración de Peñas de Fevapeñas. A continuación Pasacalles con charanga sin Copa Fevapeñas |
-| 3 | performances[0] | con charanga SIN COPA Fevapeñas | Con charanga sin Copa Fevapeñas |
+| 3 | performances | con charanga SIN COPA Fevapeñas | Con charanga sin Copa |
 | 4 | title | TÍO TRAGALDABAS | Tío Tragaldabas |
 | 4 | description | TÍO TRAGALDABAS | Tío Tragaldabas |
 | 4 | summary | TÍO TRAGALDABAS | Tío Tragaldabas |
 | 5 | title | DESFILE DE PEÑAS CON CARROZAS | Desfile de Peñas con Carrozas |
 | 5 | description | DESFILE DE PEÑAS con carrozas musicales con DJ´s, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas | Desfile de Peñas con carrozas musicales con DJs, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas |
 | 5 | summary | DESFILE DE PEÑAS con carrozas musicales con DJ´s, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas | Desfile de Peñas con carrozas musicales con DJs, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas |
-| 5 | performances[0] | DJ´s, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas | DJs, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas |
-| 5 | performances[1] | DESFILE DE PEÑAS con carrozas musicales con DJ´s, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas | Desfile de Peñas con carrozas musicales con DJs, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas |
+| 5 | performances | DJ´s, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas \| DESFILE DE PEÑAS con carrozas musicales con DJ´s, “Duende eléctrico” y batucada Con Clave Coordinadora de Peñas | “Duende eléctrico” \| batucada Con Clave \| Desfile de Peñas con carrozas musicales con DJs |
 | 6 | title | ENTRE BOBOS ANDA EL JUEGO | Entre Bobos Anda el Juego |
 | 6 | description | ENTRE BOBOS ANDA EL JUEGO | Entre Bobos Anda el Juego |
 | 6 | summary | ENTRE BOBOS ANDA EL JUEGO | Entre Bobos Anda el Juego |
 | 7 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 7 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “LOS FOGATOS” | Gigantes y Cabezudos. Acompañan dulzaineros “Los Fogatos” |
 | 7 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “LOS FOGATOS” | Gigantes y Cabezudos. Acompañan dulzaineros “Los Fogatos” |
-| 7 | performances[0] | Acompañan dulzaineros “LOS FOGATOS” | Acompañan dulzaineros “Los Fogatos” |
+| 7 | performances | Acompañan dulzaineros “LOS FOGATOS” | Acompañan dulzaineros “Los Fogatos” |
 | 8 | title | LA HISTORIA INTERMINABLE, EL MUSICAL | La Historia Interminable, el Musical |
 | 8 | description | LA HISTORIA INTERMINABLE, EL MUSICAL | La Historia Interminable, el Musical |
 | 8 | summary | LA HISTORIA INTERMINABLE, EL MUSICAL | La Historia Interminable, el Musical |
@@ -66,7 +62,7 @@ Campos cambiados: 1372
 | 13 | title | PREGÓN DE LA FERIA Y FIESTAS DE LA VIRGEN DE SAN LORENZO 2026 | Pregón de la Feria y Fiestas de la Virgen de San Lorenzo 2026 |
 | 13 | description | PREGÓN DE LA FERIA Y FIESTAS DE LA VIRGEN DE SAN LORENZO 2026 a cargo de SILOÉ. Acompañan dulzaineros DEL VALLE. CHUPINAZO. | Pregón de la Feria y Fiestas de la Virgen de San Lorenzo 2026 a cargo de Siloé. Acompañan dulzaineros del Valle. Chupinazo. |
 | 13 | summary | PREGÓN DE LA FERIA Y FIESTAS DE LA VIRGEN DE SAN LORENZO 2026 a cargo de SILOÉ. Acompañan dulzaineros DEL VALLE. CHUPINAZO | Pregón de la Feria y Fiestas de la Virgen de San Lorenzo 2026 a cargo de Siloé. Acompañan dulzaineros del Valle. Chupinazo |
-| 13 | performances[0] | Acompañan dulzaineros DEL VALLE. CHUPINAZO | Acompañan dulzaineros del Valle. Chupinazo |
+| 13 | performances | Acompañan dulzaineros DEL VALLE. CHUPINAZO | Acompañan dulzaineros del Valle. Chupinazo |
 | 14 | title | X PUCELAROCK: JUANTXO SKALARI & LA RUDE BAND MÁS ARTISTAS INVITADOS | X Pucelarock: Juantxo Skalari & La Rude Band Más Artistas Invitados |
 | 14 | description | X PUCELAROCK: JUANTXO SKALARI & LA RUDE BAND MÁS ARTISTAS INVITADOS Otra Pucela es Posible | X Pucelarock: Juantxo Skalari & La Rude Band Más Artistas Invitados Otra Pucela es Posible |
 | 14 | summary | X PUCELAROCK: JUANTXO SKALARI & LA RUDE BAND MÁS ARTISTAS INVITADOS Otra Pucela es Posible | X Pucelarock: Juantxo Skalari & La Rude Band Más Artistas Invitados Otra Pucela es Posible |
@@ -78,14 +74,14 @@ Campos cambiados: 1372
 | 17 | title | GÉNERO DE DUDAS | Género de Dudas |
 | 17 | description | GÉNERO DE DUDAS Pablo Carbonell y Pastora Vega | Género de Dudas Pablo Carbonell y Pastora Vega |
 | 17 | summary | GÉNERO DE DUDAS Pablo Carbonell y Pastora Vega | Género de Dudas Pablo Carbonell y Pastora Vega |
-| 17 | performances[0] | GÉNERO DE DUDAS Pablo Carbonell y Pastora Vega | Género de Dudas Pablo Carbonell y Pastora Vega |
+| 17 | performances | GÉNERO DE DUDAS Pablo Carbonell y Pastora Vega | Género de Dudas Pablo Carbonell y Pastora Vega |
 | 18 | title | HASTA QUE EL DIVORCIO NOS SEPARE | Hasta que el Divorcio Nos Separe |
 | 18 | description | HASTA QUE EL DIVORCIO NOS SEPARE | Hasta que el Divorcio Nos Separe |
 | 18 | summary | HASTA QUE EL DIVORCIO NOS SEPARE | Hasta que el Divorcio Nos Separe |
 | 19 | title | MORERAS BEACH FEST “GRAND OPENING MORERAS” | Moreras Beach Fest “Grand Opening Moreras” |
 | 19 | description | MORERAS BEACH FEST “GRAND OPENING MORERAS” con los DJ´s Marcos, Pramoss, Yaiza Diex, Rober Gozalo, Meigo, Jorge Acebes y Alex Alonso Coordinadora de Peñas | Moreras Beach Fest “Grand Opening Moreras” con los DJs Marcos, Pramoss, Yaiza Diex, Rober Gozalo, Meigo, Jorge Acebes y Alex Alonso Coordinadora de Peñas |
 | 19 | summary | MORERAS BEACH FEST “GRAND OPENING MORERAS” con los DJ´s Marcos, Pramoss, Yaiza Diex, Rober Gozalo, Meigo, Jorge Acebes y Alex Alonso Coordinadora de Peñas | Moreras Beach Fest “Grand Opening Moreras” con los DJs Marcos, Pramoss, Yaiza Diex, Rober Gozalo, Meigo, Jorge Acebes y Alex Alonso Coordinadora de Peñas |
-| 19 | performances[0] | con los DJ´s Marcos, Pramoss, Yaiza Diex, Rober Gozalo, Meigo, Jorge Acebes y Alex Alonso Coordinadora de Peñas | Con los DJs Marcos, Pramoss, Yaiza Diex, Rober Gozalo, Meigo, Jorge Acebes y Alex Alonso Coordinadora de Peñas |
+| 19 | performances | con los DJ´s Marcos, Pramoss, Yaiza Diex, Rober Gozalo, Meigo, Jorge Acebes y Alex Alonso Coordinadora de Peñas | Marcos \| Pramoss \| Yaiza Diex \| Rober Gozalo \| Meigo \| Jorge Acebes \| Alex Alonso |
 | 20 | title | CRISTONGO FLOWER POWER: LAS DOÑAS, MR KITOS, LOS DAZA, MARLENA, LOS DEL LÍO Y DJ NANO | Cristongo Flower Power: Las Doñas, Mr Kitos, los Daza, Marlena, los del Lío y DJ Nano |
 | 20 | description | CRISTONGO FLOWER POWER: LAS DOÑAS, MR KITOS, LOS DAZA, MARLENA, LOS DEL LÍO Y DJ NANO | Cristongo Flower Power: Las Doñas, Mr Kitos, los Daza, Marlena, los del Lío y DJ Nano |
 | 20 | summary | CRISTONGO FLOWER POWER: LAS DOÑAS, MR KITOS, LOS DAZA, MARLENA, LOS DEL LÍO Y DJ NANO | Cristongo Flower Power: Las Doñas, Mr Kitos, los Daza, Marlena, los del Lío y DJ Nano |
@@ -113,7 +109,7 @@ Campos cambiados: 1372
 | 28 | title | EXHIBICIÓN DE PERROS DE ASISTENCIA y perros de compañía | Exhibición de Perros de Asistencia y perros de compañía |
 | 28 | description | EXHIBICIÓN DE PERROS DE ASISTENCIA y perros de compañía Organiza: JASKAL. Colabora: Coordinadora de Peñas | Exhibición de Perros de Asistencia y perros de compañía Organiza: Jaskal. Colabora: Coordinadora de Peñas |
 | 28 | summary | EXHIBICIÓN DE PERROS DE ASISTENCIA y perros de compañía | Exhibición de Perros de Asistencia y perros de compañía |
-| 28 | performances[0] | EXHIBICIÓN DE PERROS DE ASISTENCIA y perros de compañía | Exhibición de Perros de Asistencia y perros de compañía |
+| 28 | performances | EXHIBICIÓN DE PERROS DE ASISTENCIA y perros de compañía | Exhibición de Perros de Asistencia y perros de compañía |
 | 28 | organizers[0] | JASKAL | Jaskal |
 | 29 | title | HINCHABLES INFANTILES | Hinchables Infantiles |
 | 29 | description | HINCHABLES INFANTILES Peña Divinos Picarones, Fevapeñas | Hinchables Infantiles Peña Divinos Picarones, Fevapeñas |
@@ -162,7 +158,7 @@ Campos cambiados: 1372
 | 42 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 42 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “CAMPO DE MIELGAS” | Gigantes y Cabezudos. Acompañan dulzaineros “Campo de Mielgas” |
 | 42 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “CAMPO DE MIELGAS” | Gigantes y Cabezudos. Acompañan dulzaineros “Campo de Mielgas” |
-| 42 | performances[0] | Acompañan dulzaineros “CAMPO DE MIELGAS” | Acompañan dulzaineros “Campo de Mielgas” |
+| 42 | performances | Acompañan dulzaineros “CAMPO DE MIELGAS” | Acompañan dulzaineros “Campo de Mielgas” |
 | 43 | title | SILENCIO, POR FAVOR | Silencio, por Favor |
 | 43 | description | SILENCIO, POR FAVOR. JESÚS PUEBLA MIMO | Silencio, por Favor. Jesús Puebla Mimo |
 | 43 | summary | SILENCIO, POR FAVOR. JESÚS PUEBLA MIMO | Silencio, por Favor. Jesús Puebla Mimo |
@@ -192,6 +188,7 @@ Campos cambiados: 1372
 | 51 | summary | PUNTO VIOLETA INFORMATIVO | Punto Violeta Informativo |
 | 52 | description | DANZANDO EN LA CALLE: Yrason, Quimbara y Teresadance | Danzando en la Calle: Yrason, Quimbara y Teresadance |
 | 52 | summary | DANZANDO EN LA CALLE: Yrason, Quimbara y Teresadance | Danzando en la Calle: Yrason, Quimbara y Teresadance |
+| 52 | performances | Danzando en la calle: Yrason, Quimbara y Teresadance | Yrason \| Quimbara \| Teresadance |
 | 53 | title | FOLKLORE CASTELLANO | Folklore Castellano |
 | 53 | description | FOLKLORE CASTELLANO. GRUPO DE DANZAS CASTELLANOS DE OLID y GRUPO PILARICA ASOC. FOLCLÓRICA | Folklore Castellano. Grupo de Danzas Castellanos de Olid y Grupo Pilarica Asoc. Folclórica |
 | 53 | summary | FOLKLORE CASTELLANO. GRUPO DE DANZAS CASTELLANOS DE OLID y GRUPO PILARICA ASOC. FOLCLÓRICA | Folklore Castellano. Grupo de Danzas Castellanos de Olid y Grupo Pilarica Asoc. Folclórica |
@@ -216,7 +213,7 @@ Campos cambiados: 1372
 | 60 | title | FESTIVAL “MAMÁ, QUIE RO SER ARTISTA” | Festival “Mamá, Quie Ro Ser Artista” |
 | 60 | description | FESTIVAL “MAMÁ, QUIE RO SER ARTISTA”. PLAY BACK SHOW III. Presentado por LADY VENENO. A continuación, PASACALLES charanga “LOS CHIGUITOS” Coordinadora de Peñas | Festival “Mamá, Quie Ro Ser Artista”. Play Back Show III. Presentado por Lady Veneno. A continuación, Pasacalles charanga “Los Chiguitos” Coordinadora de Peñas |
 | 60 | summary | FESTIVAL “MAMÁ, QUIE RO SER ARTISTA”. PLAY BACK SHOW III. Presentado por LADY VENENO. A continuación, PASACALLES charanga “LOS CHIGUITOS” Coordinadora de Peñas | Festival “Mamá, Quie Ro Ser Artista”. Play Back Show III. Presentado por Lady Veneno. A continuación, Pasacalles charanga “Los Chiguitos” Coordinadora de Peñas |
-| 60 | performances[0] | Presentado por LADY VENENO. A continuación, PASACALLES charanga “LOS CHIGUITOS” Coordinadora de Peñas | Presentado por Lady Veneno. A continuación, Pasacalles charanga “Los Chiguitos” Coordinadora de Peñas |
+| 60 | performances | Presentado por LADY VENENO. A continuación, PASACALLES charanga “LOS CHIGUITOS” Coordinadora de Peñas | Presentado por Lady Veneno \| Pasacalles charanga “Los Chiguitos” |
 | 61 | title | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
 | 61 | description | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
 | 61 | summary | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
@@ -225,14 +222,14 @@ Campos cambiados: 1372
 | 63 | title | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA | XLIII Feria de Folklore y Gastronomía |
 | 63 | description | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero LA VERBENA DE FEVAPEÑAS IX EDICIÓN. Actuación de Disco Móvil Fórmula 1 Fevapeñas | XLIII Feria de Folklore y Gastronomía. Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero la Verbena de Fevapeñas IX Edición. Actuación de Disco Móvil Fórmula 1 Fevapeñas |
 | 63 | summary | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero LA VERBENA DE FEVAPEÑAS IX EDICIÓN. Actuación de Disco Móvil Fórmula 1 Fevapeñas | XLIII Feria de Folklore y Gastronomía. Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero la Verbena de Fevapeñas IX Edición. Actuación de Disco Móvil Fórmula 1 Fevapeñas |
-| 63 | performances[0] | Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero LA VERBENA DE FEVAPEÑAS IX EDICIÓN. Actuación de Disco Móvil Fórmula 1 Fevapeñas | Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero la Verbena de Fevapeñas IX Edición. Actuación de Disco Móvil Fórmula 1 Fevapeñas |
+| 63 | performances | Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero LA VERBENA DE FEVAPEÑAS IX EDICIÓN. Actuación de Disco Móvil Fórmula 1 Fevapeñas | Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero la Verbena de Fevapeñas IX Edición. Actuación de Disco Móvil Fórmula 1 |
 | 64 | title | PROGRAMA PREVENCIÓN ADICCIONES YOUNG ZONE | Programa Prevención Adicciones Young Zone |
 | 64 | description | PROGRAMA PREVENCIÓN ADICCIONES YOUNG ZONE Concejalía de Personas Mayores, Familia y Servicios Sociales | Programa Prevención Adicciones Young Zone Concejalía de Personas Mayores, Familia y Servicios Sociales |
 | 64 | summary | PROGRAMA PREVENCIÓN ADICCIONES YOUNG ZONE | Programa Prevención Adicciones Young Zone |
 | 65 | title | MORERAS BEACH FEST “ESPECIAL GENERACIÓN Z” | Moreras Beach Fest “Especial Generación Z” |
 | 65 | description | MORERAS BEACH FEST “ESPECIAL GENERACIÓN Z”. Con los DJ´s Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac Coordinadora de Peñas | Moreras Beach Fest “Especial Generación Z”. Con los DJs Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac Coordinadora de Peñas |
 | 65 | summary | MORERAS BEACH FEST “ESPECIAL GENERACIÓN Z”. Con los DJ´s Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac Coordinadora de Peñas | Moreras Beach Fest “Especial Generación Z”. Con los DJs Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac Coordinadora de Peñas |
-| 65 | performances[0] | Con los DJ´s Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac Coordinadora de Peñas | Con los DJs Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac Coordinadora de Peñas |
+| 65 | performances | Con los DJ´s Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac Coordinadora de Peñas | Javier Vidal \| Rubens \| Vlad \| Xeira \| Joel Marashi \| Meigo \| Catarro \| Morlac |
 | 66 | title | VI PUCELA HEAVY-ROCK FEST: INDUCTION, GRAVE NOISE, KUBIKA Y JUDAS RESURRECTION | VI Pucela Heavy-Rock Fest: Induction, Grave Noise, Kubika y Judas Resurrection |
 | 66 | description | VI PUCELA HEAVY-ROCK FEST: INDUCTION, GRAVE NOISE, KUBIKA Y JUDAS RESURRECTION Asociación Pucela HeavyRock | VI Pucela Heavy-Rock Fest: Induction, Grave Noise, Kubika y Judas Resurrection Asociación Pucela HeavyRock |
 | 66 | summary | VI PUCELA HEAVY-ROCK FEST: INDUCTION, GRAVE NOISE, KUBIKA Y JUDAS RESURRECTION Asociación Pucela HeavyRock | VI Pucela Heavy-Rock Fest: Induction, Grave Noise, Kubika y Judas Resurrection Asociación Pucela HeavyRock |
@@ -254,6 +251,7 @@ Campos cambiados: 1372
 | 72 | title | LA VERBENA DE FEVAPEÑAS IX EDICIÓN | La Verbena de Fevapeñas IX Edición |
 | 72 | description | LA VERBENA DE FEVAPEÑAS IX EDICIÓN. Actuación de Disco Móvil Fórmula 1. Fevapeñas | La Verbena de Fevapeñas IX Edición. Actuación de Disco Móvil Fórmula 1. Fevapeñas |
 | 72 | summary | LA VERBENA DE FEVAPEÑAS IX EDICIÓN. Actuación de Disco Móvil Fórmula 1. Fevapeñas | La Verbena de Fevapeñas IX Edición. Actuación de Disco Móvil Fórmula 1. Fevapeñas |
+| 72 | performances | Actuación de Disco Móvil Fórmula 1. Fevapeñas | Actuación de Disco Móvil Fórmula 1 |
 | 73 | title | LORENCITO FESTIVAL: MIMOSOS | Lorencito Festival: Mimosos |
 | 73 | description | LORENCITO FESTIVAL: MIMOSOS | Lorencito Festival: Mimosos |
 | 73 | summary | LORENCITO FESTIVAL: MIMOSOS | Lorencito Festival: Mimosos |
@@ -299,7 +297,7 @@ Campos cambiados: 1372
 | 87 | title | PASACALLES con Charanga LOS DUENDES | Pasacalles con Charanga los Duendes |
 | 87 | description | PASACALLES con Charanga LOS DUENDES Fevapeñas | Pasacalles con Charanga los Duendes Fevapeñas |
 | 87 | summary | PASACALLES con Charanga LOS DUENDES Fevapeñas | Pasacalles con Charanga los Duendes Fevapeñas |
-| 87 | performances[0] | Charanga LOS DUENDES | Charanga los Duendes |
+| 87 | performances | Charanga LOS DUENDES | Charanga los Duendes |
 | 88 | title | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA | XLIII Feria de Folklore y Gastronomía |
 | 88 | description | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. INAUGURACIÓN OFICIAL: DESFILE E IZADO DE BANDERAS | XLIII Feria de Folklore y Gastronomía. Inauguración Oficial: Desfile e Izado de Banderas |
 | 88 | summary | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. INAUGURACIÓN OFICIAL: DESFILE E IZADO DE BANDERAS | XLIII Feria de Folklore y Gastronomía. Inauguración Oficial: Desfile e Izado de Banderas |
@@ -350,7 +348,7 @@ Campos cambiados: 1372
 | 102 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 102 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “AFORIT” | Gigantes y Cabezudos. Acompañan dulzaineros “Aforit” |
 | 102 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “AFORIT” | Gigantes y Cabezudos. Acompañan dulzaineros “Aforit” |
-| 102 | performances[0] | Acompañan dulzaineros “AFORIT” | Acompañan dulzaineros “Aforit” |
+| 102 | performances | Acompañan dulzaineros “AFORIT” | Acompañan dulzaineros “Aforit” |
 | 103 | title | LA MUJER QUE PLANTA ÁRBOLES | La Mujer que Planta Árboles |
 | 103 | location | Pza. del Nuevo Mundo (Valparaíso) | Pza. Del Nuevo Mundo (Valparaíso) |
 | 103 | zone | Pza. del Nuevo Mundo (Valparaíso) | Pza. Del Nuevo Mundo (Valparaíso) |
@@ -405,10 +403,11 @@ Campos cambiados: 1372
 | 119 | title | MORERAS BEACH FEST “INFOFIESTAS X MORERAS” | Moreras Beach Fest “Infofiestas X Moreras” |
 | 119 | description | MORERAS BEACH FEST “INFOFIESTAS X MORERAS”. Con los artistas Pramoss, Molpe, Vlads, Charles, Rubens, Foron y Finisher Coordinadora de Peñas | Moreras Beach Fest “Infofiestas X Moreras”. Con los artistas Pramoss, Molpe, Vlads, Charles, Rubens, Foron y Finisher Coordinadora de Peñas |
 | 119 | summary | MORERAS BEACH FEST “INFOFIESTAS X MORERAS”. Con los artistas Pramoss, Molpe, Vlads, Charles, Rubens, Foron y Finisher Coordinadora de Peñas | Moreras Beach Fest “Infofiestas X Moreras”. Con los artistas Pramoss, Molpe, Vlads, Charles, Rubens, Foron y Finisher Coordinadora de Peñas |
+| 119 | performances | Con los artistas Pramoss, Molpe, Vlads, Charles, Rubens, Foron y Finisher Coordinadora de Peñas | Pramoss \| Molpe \| Vlads \| Charles \| Rubens \| Foron \| Finisher |
 | 120 | title | EXHIBICIÓN DE POLE DANCE | Exhibición de Pole Dance |
 | 120 | description | EXHIBICIÓN DE POLE DANCE POR IVANA LA PIANA Coordinadora de Peñas | Exhibición de Pole Dance por Ivana la Piana Coordinadora de Peñas |
 | 120 | summary | EXHIBICIÓN DE POLE DANCE POR IVANA LA PIANA Coordinadora de Peñas | Exhibición de Pole Dance por Ivana la Piana Coordinadora de Peñas |
-| 120 | performances[0] | IVANA LA PIANA | Ivana la Piana |
+| 120 | performances | IVANA LA PIANA | Ivana la Piana |
 | 121 | title | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
 | 121 | description | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
 | 121 | summary | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
@@ -429,14 +428,14 @@ Campos cambiados: 1372
 | 127 | title | MAGIA | Magia |
 | 127 | description | MAGIA. GRAN GALA DE NOCHE CON NACHO SAMENA Y ER MAGO ANTONIO. Presenta ÁNGEL SIMAL | Magia. Gran Gala de Noche con Nacho Samena y Er Mago Antonio. Presenta Ángel Simal |
 | 127 | summary | MAGIA. GRAN GALA DE NOCHE CON NACHO SAMENA Y ER MAGO ANTONIO. Presenta ÁNGEL SIMAL | Magia. Gran Gala de Noche con Nacho Samena y Er Mago Antonio. Presenta Ángel Simal |
-| 127 | performances[0] | Presenta ÁNGEL SIMAL | Presenta Ángel Simal |
+| 127 | performances | Presenta ÁNGEL SIMAL | Presenta Ángel Simal |
 | 128 | title | XXII DANZADOLID | XXII Danzadolid |
 | 128 | description | XXII DANZADOLID. Espectáculo amateur de las escuelas de danza. DANZA CLÁSICA, MODERNA Y CONTEMPORÁNEA | XXII Danzadolid. Espectáculo amateur de las escuelas de danza. Danza Clásica, Moderna y Contemporánea |
 | 128 | summary | XXII DANZADOLID. Espectáculo amateur de las escuelas de danza. DANZA CLÁSICA, MODERNA Y CONTEMPORÁNEA | XXII Danzadolid. Espectáculo amateur de las escuelas de danza. Danza Clásica, Moderna y Contemporánea |
 | 129 | title | FUEGOS ARTIFICIALES (SESIÓN 1ª) | Fuegos Artificiales (Sesión 1ª) |
 | 129 | description | FUEGOS ARTIFICIALES (SESIÓN 1ª). PIROTECNIA GIRONINA (Valencia) | Fuegos Artificiales (Sesión 1ª). Pirotecnia Gironina (Valencia) |
 | 129 | summary | FUEGOS ARTIFICIALES (SESIÓN 1ª). PIROTECNIA GIRONINA (Valencia) | Fuegos Artificiales (Sesión 1ª). Pirotecnia Gironina (Valencia) |
-| 129 | performances[0] | PIROTECNIA GIRONINA (Valencia) | Pirotecnia Gironina (Valencia) |
+| 129 | performances | PIROTECNIA GIRONINA (Valencia) | Pirotecnia Gironina (Valencia) |
 | 130 | title | OBÚS | Obús |
 | 130 | description | OBÚS | Obús |
 | 130 | summary | OBÚS | Obús |
@@ -459,7 +458,7 @@ Campos cambiados: 1372
 | 136 | title | RUMB€UROS | Rumb€uros |
 | 136 | description | RUMB€UROS Ruta 666 | Rumb€uros Ruta 666 |
 | 136 | summary | RUMB€UROS Ruta 666 | Rumb€uros Ruta 666 |
-| 136 | performances[0] | RUMB€UROS | Rumb€uros |
+| 136 | performances | RUMB€UROS | Rumb€uros |
 | 137 | title | 25 ANIVERSARIO DE PIMPINEJA: 25 AÑOS DE MÚSICA Y DIVERSIÓN | 25 Aniversario de Pimpineja: 25 Años de Música y Diversión |
 | 137 | description | 25 ANIVERSARIO DE PIMPINEJA: 25 AÑOS DE MÚSICA Y DIVERSIÓN Aquavall | 25 Aniversario de Pimpineja: 25 Años de Música y Diversión Aquavall |
 | 137 | summary | 25 ANIVERSARIO DE PIMPINEJA: 25 AÑOS DE MÚSICA Y DIVERSIÓN Aquavall | 25 Aniversario de Pimpineja: 25 Años de Música y Diversión Aquavall |
@@ -479,7 +478,7 @@ Campos cambiados: 1372
 | 141 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 141 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “LOS DEL DUERO” | Gigantes y Cabezudos. Acompañan dulzaineros “Los del Duero” |
 | 141 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “LOS DEL DUERO” | Gigantes y Cabezudos. Acompañan dulzaineros “Los del Duero” |
-| 141 | performances[0] | Acompañan dulzaineros “LOS DEL DUERO” | Acompañan dulzaineros “Los del Duero” |
+| 141 | performances | Acompañan dulzaineros “LOS DEL DUERO” | Acompañan dulzaineros “Los del Duero” |
 | 142 | title | UNA TARDE DE RISA Y MAGIA | Una Tarde de Risa y Magia |
 | 142 | description | UNA TARDE DE RISA Y MAGIA. JESÚS ROJO – CHUCHICHOU | Una Tarde de Risa y Magia. Jesús Rojo – Chuchichou |
 | 142 | summary | UNA TARDE DE RISA Y MAGIA. JESÚS ROJO – CHUCHICHOU | Una Tarde de Risa y Magia. Jesús Rojo – Chuchichou |
@@ -526,8 +525,7 @@ Campos cambiados: 1372
 | 156 | title | MORERAS BEACH FEST “THE FINISHER AND FRIENDS”, “D´MENTES ON FIRE” | Moreras Beach Fest “The Finisher And Friends”, “D´mentes On Fire” |
 | 156 | description | MORERAS BEACH FEST “THE FINISHER AND FRIENDS”, “D´MENTES ON FIRE”, música en directo con el grupo Dúo D´Mentes y “Gene ration Techno-Dance” con DJ´s Coordinadora de Peñas | Moreras Beach Fest “The Finisher And Friends”, “D´mentes On Fire”, música en directo con el grupo Dúo D´Mentes y “Gene ration Techno-Dance” con DJs Coordinadora de Peñas |
 | 156 | summary | MORERAS BEACH FEST “THE FINISHER AND FRIENDS”, “D´MENTES ON FIRE”, música en directo con el grupo Dúo D´Mentes y “Gene ration Techno-Dance” con DJ´s Coordinadora de Peñas | Moreras Beach Fest “The Finisher And Friends”, “D´mentes On Fire”, música en directo con el grupo Dúo D´Mentes y “Gene ration Techno-Dance” con DJs Coordinadora de Peñas |
-| 156 | performances[0] | DJ´s Coordinadora de Peñas | DJs Coordinadora de Peñas |
-| 156 | performances[1] | MORERAS BEACH FEST “THE FINISHER AND FRIENDS”, “D´MENTES ON FIRE”, música en directo con el grupo Dúo D´Mentes y “Gene | Moreras Beach Fest “The Finisher And Friends”, “D´mentes On Fire”, música en directo con el grupo Dúo D´Mentes y “Gene |
+| 156 | performances | DJ´s Coordinadora de Peñas \| MORERAS BEACH FEST “THE FINISHER AND FRIENDS”, “D´MENTES ON FIRE”, música en directo con el grupo Dúo D´Mentes y “Gene | Moreras Beach Fest “The Finisher And Friends”, “D´mentes On Fire”, música en directo con el grupo Dúo D´Mentes y “Gene |
 | 157 | title | ERIK URANO | Erik Urano |
 | 157 | description | ERIK URANO | Erik Urano |
 | 157 | summary | ERIK URANO | Erik Urano |
@@ -548,7 +546,7 @@ Campos cambiados: 1372
 | 163 | title | MAGIA | Magia |
 | 163 | description | MAGIA. GRAN GALA DE NOCHE hipnosis con ARYEL ALATAMAR. Presenta NANO ARRANZ | Magia. Gran Gala de Noche hipnosis con Aryel Alatamar. Presenta Nano Arranz |
 | 163 | summary | MAGIA. GRAN GALA DE NOCHE hipnosis con ARYEL ALATAMAR. Presenta NANO ARRANZ | Magia. Gran Gala de Noche hipnosis con Aryel Alatamar. Presenta Nano Arranz |
-| 163 | performances[0] | Presenta NANO ARRANZ | Presenta Nano Arranz |
+| 163 | performances | Presenta NANO ARRANZ | Presenta Nano Arranz |
 | 164 | title | RUSOWSKY | Rusowsky |
 | 164 | description | RUSOWSKY | Rusowsky |
 | 164 | summary | RUSOWSKY | Rusowsky |
@@ -558,7 +556,7 @@ Campos cambiados: 1372
 | 166 | title | FUEGOS ARTIFICIALES (SESIÓN 2.ª) | Fuegos Artificiales (Sesión 2.ª) |
 | 166 | description | FUEGOS ARTIFICIALES (SESIÓN 2.ª). PIROTECNIA CABALLER FX (Valencia) | Fuegos Artificiales (Sesión 2.ª). Pirotecnia Caballer Fx (Valencia) |
 | 166 | summary | FUEGOS ARTIFICIALES (SESIÓN 2.ª). PIROTECNIA CABALLER FX (Valencia) | Fuegos Artificiales (Sesión 2.ª). Pirotecnia Caballer Fx (Valencia) |
-| 166 | performances[0] | PIROTECNIA ZARAGOZANA (Zaragoza) | Pirotecnia Zaragozana (Zaragoza) |
+| 166 | performances | PIROTECNIA ZARAGOZANA (Zaragoza) | Pirotecnia Zaragozana (Zaragoza) |
 | 167 | title | ORQUESTA MARENGA | Orquesta Marenga |
 | 167 | description | ORQUESTA MARENGA | Orquesta Marenga |
 | 167 | summary | ORQUESTA MARENGA | Orquesta Marenga |
@@ -567,7 +565,7 @@ Campos cambiados: 1372
 | 168 | zone | Salida: Iglesia de San Lorenzo. Llegada: S.I. Catedral de Valladolid | Salida: Iglesia de San Lorenzo. Llegada: S.i. Catedral de Valladolid |
 | 168 | description | PROCESIÓN DE NTRA. SRA. DE SAN LORENZO CON LA BANDA DE CORNETAS Y TAMBORES “PUREZA” DE VALLADOLID, ASOCIACIÓN CULTURAL “ZAGALEJO” Y LA BANDA DE LA ESCUELA MUNICIPAL DE MÚSICA DE VALLADOLID ACOMPAÑANDO A LA VIRGEN | Procesión de Ntra. Sra. De San Lorenzo con la Banda de Cornetas y Tambores “Pureza” de Valladolid, Asociación Cultural “Zagalejo” y la Banda de la Escuela Municipal de Música de Valladolid Acompañando a la Virgen |
 | 168 | summary | PROCESIÓN DE NTRA. SRA. DE SAN LORENZO CON LA BANDA DE CORNETAS Y TAMBORES “PUREZA” DE VALLADOLID, ASOCIACIÓN CULTURAL “ZAGALEJO” Y LA BANDA DE LA ESCUELA MUNICIPAL DE MÚSICA DE VALLADOLID ACOMPAÑANDO A LA VIRGEN | Procesión de Ntra. Sra. De San Lorenzo con la Banda de Cornetas y Tambores “Pureza” de Valladolid, Asociación Cultural “Zagalejo” y la Banda de la Escuela Municipal de Música de Valladolid Acompañando a la Virgen |
-| 168 | performances[0] | ACOMPAÑANDO A LA VIRGEN | Acompañando a la Virgen |
+| 168 | performances | ACOMPAÑANDO A LA VIRGEN | Acompañando a la Virgen |
 | 169 | title | MISA SOLEMNE EN HONOR A NTRA | Misa Solemne en Honor a Ntra |
 | 169 | location | S.I. Catedral de Valladolid | S.i. Catedral de Valladolid |
 | 169 | zone | S.I. Catedral de Valladolid | S.i. Catedral de Valladolid |
@@ -582,7 +580,7 @@ Campos cambiados: 1372
 | 172 | title | MÚSICA EN DIRECTO GRUPO CUATRO LATAS | Música en Directo Grupo Cuatro Latas |
 | 172 | description | MÚSICA EN DIRECTO GRUPO CUATRO LATAS Peña Karaoke Rosabel | Música en Directo Grupo Cuatro Latas Peña Karaoke Rosabel |
 | 172 | summary | MÚSICA EN DIRECTO GRUPO CUATRO LATAS Peña Karaoke Rosabel | Música en Directo Grupo Cuatro Latas Peña Karaoke Rosabel |
-| 172 | performances[0] | CUATRO LATAS | Cuatro Latas |
+| 172 | performances | CUATRO LATAS | Cuatro Latas |
 | 173 | title | PARQUE INFANTIL DE HINCHABLES Y TALLERES | Parque Infantil de Hinchables y Talleres |
 | 173 | description | Horario: 12:30 a 14:30 h y 17:00 a 21:00 h. PARQUE INFANTIL DE HINCHABLES Y TALLERES | Horario: 12:30 a 14:30 h y 17:00 a 21:00 h. Parque Infantil de Hinchables y Talleres |
 | 173 | summary | Horario: 12:30 a 14:30 h y 17:00 a 21:00 h. PARQUE INFANTIL DE HINCHABLES Y TALLERES | Horario: 12:30 a 14:30 h y 17:00 a 21:00 h. Parque Infantil de Hinchables y Talleres |
@@ -605,21 +603,21 @@ Campos cambiados: 1372
 | 179 | title | CORRIDA DE TOROS | Corrida de Toros |
 | 179 | description | CORRIDA DE TOROS de Juan Pedro Domecq para EL FANDI, TOMÁS RUFO y MARCO PÉREZ | Corrida de Toros de Juan Pedro Domecq para el Fandi, Tomás Rufo y Marco Pérez |
 | 179 | summary | CORRIDA DE TOROS de Juan Pedro Domecq para EL FANDI, TOMÁS RUFO y MARCO PÉREZ | Corrida de Toros de Juan Pedro Domecq para el Fandi, Tomás Rufo y Marco Pérez |
-| 179 | performances[0] | EL FANDI, TOMÁS RUFO y MARCO PÉREZ | El Fandi, Tomás Rufo y Marco Pérez |
+| 179 | performances | EL FANDI, TOMÁS RUFO y MARCO PÉREZ | El Fandi \| Tomás Rufo \| Marco Pérez |
 | 180 | title | MAGIA INFANTIL con CARLOS ADRIANO | Magia Infantil con Carlos Adriano |
 | 180 | description | MAGIA INFANTIL con CARLOS ADRIANO | Magia Infantil con Carlos Adriano |
 | 180 | summary | MAGIA INFANTIL con CARLOS ADRIANO | Magia Infantil con Carlos Adriano |
 | 181 | title | 25 ANIVERSARIO HAPPENING PRESENTA “ÚNICO” | 25 Aniversario Happening Presenta “Único” |
 | 181 | description | 25 ANIVERSARIO HAPPENING PRESENTA “ÚNICO”. Rock para toda la familia Aquavall | 25 Aniversario Happening Presenta “Único”. Rock para toda la familia Aquavall |
 | 181 | summary | 25 ANIVERSARIO HAPPENING PRESENTA “ÚNICO”. Rock para toda la familia Aquavall | 25 Aniversario Happening Presenta “Único”. Rock para toda la familia Aquavall |
-| 181 | performances[0] | PRESENTA “ÚNICO”. Rock para toda la familia Aquavall | Presenta “Único”. Rock para toda la familia Aquavall |
+| 181 | performances | PRESENTA “ÚNICO”. Rock para toda la familia Aquavall | Presenta “Único”. Rock para toda la familia Aquavall |
 | 182 | title | CANTACLOWN | Cantaclown |
 | 182 | description | CANTACLOWN. ALICIA MARAVILLAS | Cantaclown. Alicia Maravillas |
 | 182 | summary | CANTACLOWN. ALICIA MARAVILLAS | Cantaclown. Alicia Maravillas |
 | 183 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 183 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “TIERRAS LLANAS” | Gigantes y Cabezudos. Acompañan dulzaineros “Tierras Llanas” |
 | 183 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “TIERRAS LLANAS” | Gigantes y Cabezudos. Acompañan dulzaineros “Tierras Llanas” |
-| 183 | performances[0] | Acompañan dulzaineros “TIERRAS LLANAS” | Acompañan dulzaineros “Tierras Llanas” |
+| 183 | performances | Acompañan dulzaineros “TIERRAS LLANAS” | Acompañan dulzaineros “Tierras Llanas” |
 | 184 | title | UNA TARDE DE RISA Y MAGIA | Una Tarde de Risa y Magia |
 | 184 | description | UNA TARDE DE RISA Y MAGIA. JESÚS ROJO – CHUCHICHOU | Una Tarde de Risa y Magia. Jesús Rojo – Chuchichou |
 | 184 | summary | UNA TARDE DE RISA Y MAGIA. JESÚS ROJO – CHUCHICHOU | Una Tarde de Risa y Magia. Jesús Rojo – Chuchichou |
@@ -661,14 +659,11 @@ Campos cambiados: 1372
 | 197 | title | LORENCITO FESTIVAL | Lorencito Festival |
 | 197 | description | LORENCITO FESTIVAL: FAENNA, SOFÍA GABANNA, ZAKE Y OTROS ARTISTAS URBANOS Consejo de la Juventud de Valladolid | Lorencito Festival: Faenna, Sofía Gabanna, Zake y Otros Artistas Urbanos Consejo de la Juventud de Valladolid |
 | 197 | summary | LORENCITO FESTIVAL: FAENNA, SOFÍA GABANNA, ZAKE Y OTROS ARTISTAS URBANOS Consejo de la Juventud de Valladolid | Lorencito Festival: Faenna, Sofía Gabanna, Zake y Otros Artistas Urbanos Consejo de la Juventud de Valladolid |
-| 197 | performances[0] | FAENNA | Faenna |
-| 197 | performances[1] | SOFÍA GABANNA | Sofía Gabanna |
-| 197 | performances[2] | ZAKE | Zake |
-| 197 | performances[3] | OTROS ARTISTAS URBANOS | Otros Artistas Urbanos |
+| 197 | performances | FAENNA \| SOFÍA GABANNA \| ZAKE \| OTROS ARTISTAS URBANOS | Faenna \| Sofía Gabanna \| Zake \| Otros Artistas Urbanos |
 | 198 | title | MORERAS BEACH FEST “URBAN PARADISE” | Moreras Beach Fest “Urban Paradise” |
 | 198 | description | MORERAS BEACH FEST “URBAN PARADISE”. Con los DJ´s Omar, Joel Marashi, Juan Saya, Marcos y Sandrux Coordinadora de Peñas | Moreras Beach Fest “Urban Paradise”. Con los DJs Omar, Joel Marashi, Juan Saya, Marcos y Sandrux Coordinadora de Peñas |
 | 198 | summary | MORERAS BEACH FEST “URBAN PARADISE”. Con los DJ´s Omar, Joel Marashi, Juan Saya, Marcos y Sandrux Coordinadora de Peñas | Moreras Beach Fest “Urban Paradise”. Con los DJs Omar, Joel Marashi, Juan Saya, Marcos y Sandrux Coordinadora de Peñas |
-| 198 | performances[0] | Con los DJ´s Omar, Joel Marashi, Juan Saya, Marcos y Sandrux Coordinadora de Peñas | Con los DJs Omar, Joel Marashi, Juan Saya, Marcos y Sandrux Coordinadora de Peñas |
+| 198 | performances | Con los DJ´s Omar, Joel Marashi, Juan Saya, Marcos y Sandrux Coordinadora de Peñas | Omar \| Joel Marashi \| Juan Saya \| Marcos \| Sandrux |
 | 199 | title | AGUADULCE HABANERAS | Aguadulce Habaneras |
 | 199 | description | AGUADULCE HABANERAS | Aguadulce Habaneras |
 | 199 | summary | AGUADULCE HABANERAS | Aguadulce Habaneras |
@@ -677,6 +672,7 @@ Campos cambiados: 1372
 | 201 | title | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA | XLIII Feria de Folklore y Gastronomía |
 | 201 | description | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. Actuaciones: Grupos Niva ria, Axouxere, Anaquiños y Panderet (Galicia) y Grupo “Romero y Jara” (Andalucía) | XLIII Feria de Folklore y Gastronomía. Actuaciones: Grupos Niva ria, Axouxere, Anaquiños y Panderet (Galicia) y Grupo “Romero y Jara” (Andalucía) |
 | 201 | summary | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. Actuaciones: Grupos Niva ria, Axouxere, Anaquiños y Panderet (Galicia) y Grupo “Romero y Jara” (Andalucía) | XLIII Feria de Folklore y Gastronomía. Actuaciones: Grupos Niva ria, Axouxere, Anaquiños y Panderet (Galicia) y Grupo “Romero y Jara” (Andalucía) |
+| 201 | performances | Actuaciones: Grupos Niva ria, Axouxere, Anaquiños y Panderet (Galicia) y Grupo “Romero y Jara” (Andalucía) | Niva ria \| Axouxere \| Anaquiños y Panderet (Galicia) \| Grupo “Romero y Jara” (Andalucía) |
 | 202 | title | PAHINO | Pahino |
 | 202 | location | Pza. de la Solida ridad (La Victoria - Puente Jardín)) | Pza. De la Solida ridad (La Victoria - Puente Jardín)) |
 | 202 | zone | Pza. de la Solida ridad (La Victoria - Puente Jardín)) | Pza. De la Solida ridad (La Victoria - Puente Jardín)) |
@@ -691,11 +687,11 @@ Campos cambiados: 1372
 | 205 | title | MAGIA. GRAN GALA de noche con MAGIC JOSE Y DABA Y CIELO. Presenta QUIQUE ÁLVAREZ | Magia. Gran Gala de noche con Magic Jose y Daba y Cielo. Presenta Quique Álvarez |
 | 205 | description | MAGIA. GRAN GALA de noche con MAGIC JOSE Y DABA Y CIELO. Presenta QUIQUE ÁLVAREZ | Magia. Gran Gala de noche con Magic Jose y Daba y Cielo. Presenta Quique Álvarez |
 | 205 | summary | MAGIA. GRAN GALA de noche con MAGIC JOSE Y DABA Y CIELO. Presenta QUIQUE ÁLVAREZ | Magia. Gran Gala de noche con Magic Jose y Daba y Cielo. Presenta Quique Álvarez |
-| 205 | performances[0] | Presenta QUIQUE ÁLVAREZ | Presenta Quique Álvarez |
+| 205 | performances | Presenta QUIQUE ÁLVAREZ | Presenta Quique Álvarez |
 | 206 | title | FUEGOS ARTIFICIALES (SESIÓN 3ª) | Fuegos Artificiales (Sesión 3ª) |
 | 206 | description | FUEGOS ARTIFICIALES (SESIÓN 3ª) PIROTECNIA TAMARIT (Valencia) | Fuegos Artificiales (Sesión 3ª) Pirotecnia Tamarit (Valencia) |
 | 206 | summary | FUEGOS ARTIFICIALES (SESIÓN 3ª) PIROTECNIA TAMARIT (Valencia) | Fuegos Artificiales (Sesión 3ª) Pirotecnia Tamarit (Valencia) |
-| 206 | performances[0] | PIROTECNIA TAMARIT (Valencia) | Pirotecnia Tamarit (Valencia) |
+| 206 | performances | PIROTECNIA TAMARIT (Valencia) | Pirotecnia Tamarit (Valencia) |
 | 207 | title | ORQUESTA AVALON | Orquesta Avalon |
 | 207 | location | Pza. de la Solida ridad (La Victoria - Puente Jardín) | Pza. De la Solida ridad (La Victoria - Puente Jardín) |
 | 207 | zone | Pza. de la Solida ridad (La Victoria - Puente Jardín) | Pza. De la Solida ridad (La Victoria - Puente Jardín) |
@@ -734,7 +730,7 @@ Campos cambiados: 1372
 | 217 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 217 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “MAXI LA TORRE” | Gigantes y Cabezudos. Acompañan dulzaineros “Maxi la Torre” |
 | 217 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “MAXI LA TORRE” | Gigantes y Cabezudos. Acompañan dulzaineros “Maxi la Torre” |
-| 217 | performances[0] | Acompañan dulzaineros “MAXI LA TORRE” | Acompañan dulzaineros “Maxi la Torre” |
+| 217 | performances | Acompañan dulzaineros “MAXI LA TORRE” | Acompañan dulzaineros “Maxi la Torre” |
 | 218 | title | LAS QUE TIENE QUE LIMPIAR | Las que Tiene que Limpiar |
 | 218 | description | LAS QUE TIENE QUE LIMPIAR. MARGARITO Y CÍA | Las que Tiene que Limpiar. Margarito y Cía |
 | 218 | summary | LAS QUE TIENE QUE LIMPIAR. MARGARITO Y CÍA | Las que Tiene que Limpiar. Margarito y Cía |
@@ -767,14 +763,12 @@ Campos cambiados: 1372
 | 226 | title | “EL ENCUENTRO” LOS SEXTETOS DE TCHAIKOVSKY Y BRAHMS | “El Encuentro” los Sextetos de Tchaikovsky y Brahms |
 | 226 | description | “EL ENCUENTRO” LOS SEXTETOS DE TCHAIKOVSKY Y BRAHMS Colaboran: Juventudes Musicales de Valladolid y Museo Patio Herreriano ENTRADA: 5 € en www. info.valladolid.es a partir del 25 de agosto Organiza: Concejalía de Turismo, Eventos y Marca Ciudad. Colaboran: Funda ción Municipal de Cultura y Museo Patio Herreriano | “El Encuentro” los Sextetos de Tchaikovsky y Brahms Colaboran: Juventudes Musicales de Valladolid y Museo Patio Herreriano Entrada: 5 € en www. info.valladolid.es a partir del 25 de agosto Organiza: Concejalía de Turismo, Eventos y Marca Ciudad. Colaboran: Funda ción Municipal de Cultura y Museo Patio Herreriano |
 | 226 | summary | “EL ENCUENTRO” LOS SEXTETOS DE TCHAIKOVSKY Y BRAHMS | “El Encuentro” los Sextetos de Tchaikovsky y Brahms |
-| 226 | performances[0] | “EL ENCUENTRO” LOS SEXTETOS DE TCHAIKOVSKY Y BRAHMS Colaboran: Juventudes Musicales de Valladolid y Museo Patio | “El Encuentro” los Sextetos de Tchaikovsky y Brahms Colaboran: Juventudes Musicales de Valladolid y Museo Patio |
+| 226 | performances | “EL ENCUENTRO” LOS SEXTETOS DE TCHAIKOVSKY Y BRAHMS Colaboran: Juventudes Musicales de Valladolid y Museo Patio | “El Encuentro” los Sextetos de Tchaikovsky y Brahms Colaboran: Juventudes Musicales de Valladolid y Museo Patio |
 | 226 | collaborators[0] | Juventudes Musicales de Valladolid y Museo Patio Herreriano ENTRADA: 5 € en www | Juventudes Musicales de Valladolid y Museo Patio Herreriano Entrada: 5 € en www |
 | 227 | title | XIV VERBENA REPUBLICANA | XIV Verbena Republicana |
 | 227 | description | XIV VERBENA REPUBLICANA: HULA BABY, DELAMESETA Y CAÑONEROS Ateneo Republicano | XIV Verbena Republicana: Hula Baby, Delameseta y Cañoneros Ateneo Republicano |
 | 227 | summary | XIV VERBENA REPUBLICANA: HULA BABY, DELAMESETA Y CAÑONEROS Ateneo Republicano | XIV Verbena Republicana: Hula Baby, Delameseta y Cañoneros Ateneo Republicano |
-| 227 | performances[0] | HULA BABY | Hula Baby |
-| 227 | performances[1] | DELAMESETA | Delameseta |
-| 227 | performances[2] | CAÑONEROS | Cañoneros |
+| 227 | performances | HULA BABY \| DELAMESETA \| CAÑONEROS | Hula Baby \| Delameseta \| Cañoneros |
 | 228 | title | LA HISTORIA INTERMINABLE, EL MUSICAL | La Historia Interminable, el Musical |
 | 228 | description | LA HISTORIA INTERMINABLE, EL MUSICAL | La Historia Interminable, el Musical |
 | 228 | summary | LA HISTORIA INTERMINABLE, EL MUSICAL | La Historia Interminable, el Musical |
@@ -795,12 +789,11 @@ Campos cambiados: 1372
 | 234 | title | MORERAS BEACH FEST | Moreras Beach Fest |
 | 234 | description | MORERAS BEACH FEST: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (RPF)” con los DJ´s Iker Castro y Omar. Coordinadora de Peñas | Moreras Beach Fest: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (Rpf)” con los DJs Iker Castro y Omar. Coordinadora de Peñas |
 | 234 | summary | MORERAS BEACH FEST: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (RPF)” con los DJ´s Iker Castro y Omar. Coordinadora de Peñas | Moreras Beach Fest: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (Rpf)” con los DJs Iker Castro y Omar. Coordinadora de Peñas |
-| 234 | performances[0] | con los DJ´s Iker Castro y Omar. Coordinadora de Peñas | Con los DJs Iker Castro y Omar. Coordinadora de Peñas |
-| 234 | performances[1] | MORERAS BEACH FEST: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (RPF)” con los DJ´s | Moreras Beach Fest: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (Rpf)” con los DJs |
+| 234 | performances | con los DJ´s Iker Castro y Omar. Coordinadora de Peñas \| MORERAS BEACH FEST: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (RPF)” con los DJ´s | DJ Iker Castro y Omar \| Moreras Beach Fest: “Escuela Índigo Show Fest” speaker Alberto Villa y “Reggaeton Pucela Festival (Rpf)” con los DJs |
 | 235 | title | VI FESTIVAL ROCK & ROLL CLUB VALLADOLID Homenaje Elvis Presley – 49 Aniversario | VI Festival Rock & Roll Club Valladolid Homenaje Elvis Presley – 49 Aniversario |
 | 235 | description | VI FESTIVAL ROCK & ROLL CLUB VALLADOLID Homenaje Elvis Presley – 49 Aniversario. CLAUDIO & THE ROOSTERS, DJS BLANCA & GELO (CLUB ELVIS DELEGACIÓN VALLADOLID), AL & THE SPEEDWAY RUNNERS, DJS REBEL RADIO Y LOS TORONTOS Rock&Roll Club Valladolid | VI Festival Rock & Roll Club Valladolid Homenaje Elvis Presley – 49 Aniversario. Claudio & The Roosters, DJs Blanca & Gelo (Club Elvis Delegación Valladolid), al & The Speedway Runners, DJs Rebel Radio y los Torontos Rock&Roll Club Valladolid |
 | 235 | summary | VI FESTIVAL ROCK & ROLL CLUB VALLADOLID Homenaje Elvis Presley – 49 Aniversario. CLAUDIO & THE ROOSTERS, DJS BLANCA & GELO (CLUB ELVIS DELEGACIÓN VALLADOLID), AL & THE SPEEDWAY RUNNERS, DJS REBEL RADIO Y LOS TORONTOS Rock&Roll Club Valladolid | VI Festival Rock & Roll Club Valladolid Homenaje Elvis Presley – 49 Aniversario. Claudio & The Roosters, DJs Blanca & Gelo (Club Elvis Delegación Valladolid), al & The Speedway Runners, DJs Rebel Radio y los Torontos Rock&Roll Club Valladolid |
-| 235 | performances[0] | DJS BLANCA & GELO (CLUB ELVIS DELEGACIÓN VALLADOLID), AL & THE SPEEDWAY RUNNERS, DJS REBEL RADIO Y LOS TORONTOS Rock&Roll Club Valladolid | DJs Blanca & Gelo (Club Elvis Delegación Valladolid), al & The Speedway Runners, DJs Rebel Radio y los Torontos Rock&Roll Club Valladolid |
+| 235 | performances | DJS BLANCA & GELO (CLUB ELVIS DELEGACIÓN VALLADOLID), AL & THE SPEEDWAY RUNNERS, DJS REBEL RADIO Y LOS TORONTOS Rock&Roll Club Valladolid | DJ Blanca & Gelo (Club Elvis Delegación Valladolid) \| al & The Speedway Runners \| DJ Rebel Radio \| los Torontos |
 | 236 | title | LA CEREMONIA DE LAS CRIADAS | La Ceremonia de las Criadas |
 | 236 | description | LA CEREMONIA DE LAS CRIADAS | La Ceremonia de las Criadas |
 | 236 | summary | LA CEREMONIA DE LAS CRIADAS | La Ceremonia de las Criadas |
@@ -824,7 +817,7 @@ Campos cambiados: 1372
 | 243 | title | FUEGOS ARTIFICIALES (SESIÓN 4.ª) | Fuegos Artificiales (Sesión 4.ª) |
 | 243 | description | FUEGOS ARTIFICIALES (SESIÓN 4.ª). PIROTECNIA XARAIVA (Galicia) | Fuegos Artificiales (Sesión 4.ª). Pirotecnia Xaraiva (Galicia) |
 | 243 | summary | FUEGOS ARTIFICIALES (SESIÓN 4.ª). PIROTECNIA XARAIVA (Galicia) | Fuegos Artificiales (Sesión 4.ª). Pirotecnia Xaraiva (Galicia) |
-| 243 | performances[0] | PIROTECNIA XARAIVA (Ourense) | Pirotecnia Xaraiva (Ourense) |
+| 243 | performances | PIROTECNIA XARAIVA (Ourense) | Pirotecnia Xaraiva (Ourense) |
 | 244 | title | MESTIZA | Mestiza |
 | 244 | description | MESTIZA | Mestiza |
 | 244 | summary | MESTIZA | Mestiza |
@@ -837,7 +830,7 @@ Campos cambiados: 1372
 | 247 | title | TARDEO MUSICAL CON LOS DJ´S RESIDENTES DE LA COORDINADORA DE PEÑAS | Tardeo Musical con los DJs Residentes de la Coordinadora de Peñas |
 | 247 | description | TARDEO MUSICAL CON LOS DJ´S RESIDENTES DE LA COORDINADORA DE PEÑAS. A continuación, PASACALLES por el recinto amenizado por la CHARAN GA “OHAYO”. HINCHABLE “La Barredora” Coordinadora de Peñas | Tardeo Musical con los DJs Residentes de la Coordinadora de Peñas. A continuación, Pasacalles por el recinto amenizado por la Charan Ga “Ohayo”. Hinchable “La Barredora” Coordinadora de Peñas |
 | 247 | summary | TARDEO MUSICAL CON LOS DJ´S RESIDENTES DE LA COORDINADORA DE PEÑAS. A continuación, PASACALLES por el recinto amenizado por la CHARAN GA “OHAYO”. HINCHABLE “La Barredora” Coordinadora de Peñas | Tardeo Musical con los DJs Residentes de la Coordinadora de Peñas. A continuación, Pasacalles por el recinto amenizado por la Charan Ga “Ohayo”. Hinchable “La Barredora” Coordinadora de Peñas |
-| 247 | performances[0] | CON LOS DJ´S RESIDENTES DE LA COORDINADORA DE PEÑAS. A continuación, PASACALLES por el recinto amenizado por la CHARAN GA “OHAYO”. HINCHABLE “La Barredora” Coordinadora de Peñas | Con los DJs Residentes de la Coordinadora de Peñas. A continuación, Pasacalles por el recinto amenizado por la Charan Ga “Ohayo”. Hinchable “La Barredora” Coordinadora de Peñas |
+| 247 | performances | CON LOS DJ´S RESIDENTES DE LA COORDINADORA DE PEÑAS. A continuación, PASACALLES por el recinto amenizado por la CHARAN GA “OHAYO”. HINCHABLE “La Barredora” Coordinadora de Peñas | DJ Residentes de la Coordinadora de Peñas \| Pasacalles por el recinto amenizado por la Charan Ga “Ohayo”. Hinchable “La Barredora” |
 | 248 | title | TÍA MELITONA | Tía Melitona |
 | 248 | description | TÍA MELITONA | Tía Melitona |
 | 248 | summary | TÍA MELITONA | Tía Melitona |
@@ -878,21 +871,21 @@ Campos cambiados: 1372
 | 258 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 258 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “LA ATALAYA” | Gigantes y Cabezudos. Acompañan dulzaineros “La Atalaya” |
 | 258 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “LA ATALAYA” | Gigantes y Cabezudos. Acompañan dulzaineros “La Atalaya” |
-| 258 | performances[0] | Acompañan dulzaineros “LA ATALAYA” | Acompañan dulzaineros “La Atalaya” |
+| 258 | performances | Acompañan dulzaineros “LA ATALAYA” | Acompañan dulzaineros “La Atalaya” |
 | 259 | title | LAS QUE TIENE QUE LIMPIAR | Las que Tiene que Limpiar |
 | 259 | description | LAS QUE TIENE QUE LIMPIAR. MARGARITO Y CÍA | Las que Tiene que Limpiar. Margarito y Cía |
 | 259 | summary | LAS QUE TIENE QUE LIMPIAR. MARGARITO Y CÍA | Las que Tiene que Limpiar. Margarito y Cía |
 | 260 | title | NO HAY TIEMPO QUE PERDER | No Hay Tiempo que Perder |
 | 260 | description | NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS | No Hay Tiempo que Perder, de la Compañía el Gran Rufus |
 | 260 | summary | NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS | No Hay Tiempo que Perder, de la Compañía el Gran Rufus |
-| 260 | performances[0] | COMPAÑÍA EL GRAN RUFUS | Compañía el Gran Rufus |
+| 260 | performances | COMPAÑÍA EL GRAN RUFUS | Compañía el Gran Rufus |
 | 261 | title | ROCKANDROLEANDO CON TINA Y RODRITMOS EN EL ANDAMIO | Rockandroleando con Tina y Rodritmos en el Andamio |
 | 261 | description | ROCKANDROLEANDO CON TINA Y RODRITMOS EN EL ANDAMIO. 25 ANIVERSARIO COMPAÑÍA ZOLOPOTROKO TEATRO Teatro musical infantil | Rockandroleando con Tina y Rodritmos en el Andamio. 25 Aniversario Compañía Zolopotroko Teatro Teatro musical infantil |
 | 261 | summary | ROCKANDROLEANDO CON TINA Y RODRITMOS EN EL ANDAMIO. 25 ANIVERSARIO COMPAÑÍA ZOLOPOTROKO TEATRO Teatro musical infantil | Rockandroleando con Tina y Rodritmos en el Andamio. 25 Aniversario Compañía Zolopotroko Teatro Teatro musical infantil |
 | 262 | title | CORRIDA DE TOROS | Corrida de Toros |
 | 262 | description | CORRIDA DE TOROS de Victoriano del Río para TALAVANTE, ROCA REY Y MANUEL DIOSLEGUARDE | Corrida de Toros de Victoriano del Río para Talavante, Roca Rey y Manuel Diosleguarde |
 | 262 | summary | CORRIDA DE TOROS de Victoriano del Río para TALAVANTE, ROCA REY Y MANUEL DIOSLEGUARDE | Corrida de Toros de Victoriano del Río para Talavante, Roca Rey y Manuel Diosleguarde |
-| 262 | performances[0] | TALAVANTE, ROCA REY Y MANUEL DIOSLEGUARDE | Talavante, Roca Rey y Manuel Diosleguarde |
+| 262 | performances | TALAVANTE, ROCA REY Y MANUEL DIOSLEGUARDE | Talavante \| Roca Rey \| Manuel Diosleguarde |
 | 263 | title | EL HECHICERO | El Hechicero |
 | 263 | description | EL HECHICERO. HENRIKO | El Hechicero. Henriko |
 | 263 | summary | EL HECHICERO. HENRIKO | El Hechicero. Henriko |
@@ -930,7 +923,7 @@ Campos cambiados: 1372
 | 274 | title | MORERAS BEACH FEST: “EPIC NIGHT” | Moreras Beach Fest: “Epic Night” |
 | 274 | description | MORERAS BEACH FEST: “EPIC NIGHT”. Con los DJ´s Paulo Nantes, Meigo, Chack, Isma Yuguero y Zulu Coordinadora de Peñas | Moreras Beach Fest: “Epic Night”. Con los DJs Paulo Nantes, Meigo, Chack, Isma Yuguero y Zulu Coordinadora de Peñas |
 | 274 | summary | MORERAS BEACH FEST: “EPIC NIGHT”. Con los DJ´s Paulo Nantes, Meigo, Chack, Isma Yuguero y Zulu Coordinadora de Peñas | Moreras Beach Fest: “Epic Night”. Con los DJs Paulo Nantes, Meigo, Chack, Isma Yuguero y Zulu Coordinadora de Peñas |
-| 274 | performances[0] | Con los DJ´s Paulo Nantes, Meigo, Chack, Isma Yuguero y Zulu Coordinadora de Peñas | Con los DJs Paulo Nantes, Meigo, Chack, Isma Yuguero y Zulu Coordinadora de Peñas |
+| 274 | performances | Con los DJ´s Paulo Nantes, Meigo, Chack, Isma Yuguero y Zulu Coordinadora de Peñas | Paulo Nantes \| Meigo \| Chack \| Isma Yuguero \| Zulu |
 | 275 | description | LAS VERBENAS DE LA FERIA Orquesta Fran Musical | Las Verbenas de la Feria Orquesta Fran Musical |
 | 275 | summary | LAS VERBENAS DE LA FERIA Orquesta Fran Musical | Las Verbenas de la Feria Orquesta Fran Musical |
 | 276 | title | XLII FERIA DE FOLKLORE Y GASTRONOMÍA | XLII Feria de Folklore y Gastronomía |
@@ -957,7 +950,7 @@ Campos cambiados: 1372
 | 283 | title | FUEGOS ARTIFICIALES (SESIÓN 5.ª) | Fuegos Artificiales (Sesión 5.ª) |
 | 283 | description | FUEGOS ARTIFICIALES (SESIÓN 5.ª). PIROTECNIA VULCANO (Madrid) | Fuegos Artificiales (Sesión 5.ª). Pirotecnia Vulcano (Madrid) |
 | 283 | summary | FUEGOS ARTIFICIALES (SESIÓN 5.ª). PIROTECNIA VULCANO (Madrid) | Fuegos Artificiales (Sesión 5.ª). Pirotecnia Vulcano (Madrid) |
-| 283 | performances[0] | PIROTECNIA PABLO (Asturias) | Pirotecnia Pablo (Asturias) |
+| 283 | performances | PIROTECNIA PABLO (Asturias) | Pirotecnia Pablo (Asturias) |
 | 284 | title | ORQUESTA AVALON | Orquesta Avalon |
 | 284 | description | ORQUESTA AVALON | Orquesta Avalon |
 | 284 | summary | ORQUESTA AVALON | Orquesta Avalon |
@@ -983,7 +976,7 @@ Campos cambiados: 1372
 | 291 | title | CORRIDA DE TOROS | Corrida de Toros |
 | 291 | description | CORRIDA DE TOROS de Garcigrande para MORANTE DE LA PUEBLA, EMILIO DE JUSTO y MARIO NAVAS | Corrida de Toros de Garcigrande para Morante de la Puebla, Emilio de Justo y Mario Navas |
 | 291 | summary | CORRIDA DE TOROS de Garcigrande para MORANTE DE LA PUEBLA, EMILIO DE JUSTO y MARIO NAVAS | Corrida de Toros de Garcigrande para Morante de la Puebla, Emilio de Justo y Mario Navas |
-| 291 | performances[0] | MORANTE DE LA PUEBLA, EMILIO DE JUSTO y MARIO NAVAS | Morante de la Puebla, Emilio de Justo y Mario Navas |
+| 291 | performances | MORANTE DE LA PUEBLA, EMILIO DE JUSTO y MARIO NAVAS | Morante de la Puebla \| Emilio de Justo \| Mario Navas |
 | 292 | title | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
 | 292 | description | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
 | 292 | summary | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
@@ -996,7 +989,7 @@ Campos cambiados: 1372
 | 295 | title | AMAMARLA | Amamarla |
 | 295 | description | AMAMARLA Ruta 666 | Amamarla Ruta 666 |
 | 295 | summary | AMAMARLA Ruta 666 | Amamarla Ruta 666 |
-| 295 | performances[0] | AMAMARLA | Amamarla |
+| 295 | performances | AMAMARLA | Amamarla |
 | 296 | title | DEGUSTACIÓN GASTRONÓMICA | Degustación Gastronómica |
 | 296 | description | DEGUSTACIÓN GASTRONÓMICA Organiza: Coordinadora de Peñas. Colabora: Peña Con Solera | Degustación Gastronómica Organiza: Coordinadora de Peñas. Colabora: Peña Con Solera |
 | 296 | summary | DEGUSTACIÓN GASTRONÓMICA | Degustación Gastronómica |
@@ -1008,13 +1001,13 @@ Campos cambiados: 1372
 | 298 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 298 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “AIRES DE CASTILLA” | Gigantes y Cabezudos. Acompañan dulzaineros “Aires de Castilla” |
 | 298 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “AIRES DE CASTILLA” | Gigantes y Cabezudos. Acompañan dulzaineros “Aires de Castilla” |
-| 298 | performances[0] | Acompañan dulzaineros “AIRES DE CASTILLA” | Acompañan dulzaineros “Aires de Castilla” |
+| 298 | performances | Acompañan dulzaineros “AIRES DE CASTILLA” | Acompañan dulzaineros “Aires de Castilla” |
 | 299 | title | NO HAY TIEMPO QUE PERDER | No Hay Tiempo que Perder |
 | 299 | location | Pza. de la Solidaridad (La Victoria - Puente Jardín) | Pza. De la Solidaridad (La Victoria - Puente Jardín) |
 | 299 | zone | Pza. de la Solidaridad (La Victoria - Puente Jardín) | Pza. De la Solidaridad (La Victoria - Puente Jardín) |
 | 299 | description | NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS | No Hay Tiempo que Perder, de la Compañía el Gran Rufus |
 | 299 | summary | NO HAY TIEMPO QUE PERDER, DE LA COMPAÑÍA EL GRAN RUFUS | No Hay Tiempo que Perder, de la Compañía el Gran Rufus |
-| 299 | performances[0] | COMPAÑÍA EL GRAN RUFUS | Compañía el Gran Rufus |
+| 299 | performances | COMPAÑÍA EL GRAN RUFUS | Compañía el Gran Rufus |
 | 300 | title | CABARET DE LA LUZ DE LAS DELICIAS | Cabaret de la Luz de las Delicias |
 | 300 | description | CABARET DE LA LUZ DE LAS DELICIAS | Cabaret de la Luz de las Delicias |
 | 300 | summary | CABARET DE LA LUZ DE LAS DELICIAS | Cabaret de la Luz de las Delicias |
@@ -1027,7 +1020,7 @@ Campos cambiados: 1372
 | 303 | title | PRIMERA CONCENTRACIÓN DE CHARANGAS “Ohayo”, “Gaveta” y “Cucu Band” | Primera Concentración de Charangas “Ohayo”, “Gaveta” y “Cucu Band” |
 | 303 | description | PRIMERA CONCENTRACIÓN DE CHARANGAS “Ohayo”, “Gaveta” y “Cucu Band”. Partiendo desde: Plaza del Rosarillo, Plaza Coca y Plaza Gutiérrez Semprún, confluyendo en Playa Las Moreras Coordinadora de Peñas | Primera Concentración de Charangas “Ohayo”, “Gaveta” y “Cucu Band”. Partiendo desde: Plaza del Rosarillo, Plaza Coca y Plaza Gutiérrez Semprún, confluyendo en Playa Las Moreras Coordinadora de Peñas |
 | 303 | summary | PRIMERA CONCENTRACIÓN DE CHARANGAS “Ohayo”, “Gaveta” y “Cucu Band”. Partiendo desde: Plaza del Rosarillo, Plaza Coca y Plaza Gutiérrez Semprún, confluyendo en Playa Las Moreras Coordinadora de Peñas | Primera Concentración de Charangas “Ohayo”, “Gaveta” y “Cucu Band”. Partiendo desde: Plaza del Rosarillo, Plaza Coca y Plaza Gutiérrez Semprún, confluyendo en Playa Las Moreras Coordinadora de Peñas |
-| 303 | performances[0] | PRIMERA CONCENTRACIÓN DE CHARANGAS “Ohayo”, “Gaveta” y “Cucu Band” | Primera Concentración de Charangas “Ohayo”, “Gaveta” y “Cucu Band” |
+| 303 | performances | PRIMERA CONCENTRACIÓN DE CHARANGAS “Ohayo”, “Gaveta” y “Cucu Band” | “Ohayo” \| “Gaveta” \| “Cucu Band” |
 | 304 | title | SESIÓN DE BAILE GUATEQUE Dj Chack | Sesión de Baile Guateque Dj Chack |
 | 304 | description | SESIÓN DE BAILE GUATEQUE Dj Chack Organiza: Coordinadora de Peñas. Colabora: Peña Con Solera | Sesión de Baile Guateque Dj Chack Organiza: Coordinadora de Peñas. Colabora: Peña Con Solera |
 | 304 | summary | SESIÓN DE BAILE GUATEQUE Dj Chack | Sesión de Baile Guateque Dj Chack |
@@ -1059,36 +1052,34 @@ Campos cambiados: 1372
 | 314 | title | BLACK & BLUES PRESENTA UNA NOCHE DE BLUES Y RHYTHM & BLUES: WAX & BOOGIE Y FÉLIX SLIM | Black & Blues Presenta Una Noche de Blues y Rhythm & Blues: Wax & Boogie y Félix Slim |
 | 314 | description | BLACK & BLUES PRESENTA UNA NOCHE DE BLUES Y RHYTHM & BLUES: WAX & BOOGIE Y FÉLIX SLIM | Black & Blues Presenta Una Noche de Blues y Rhythm & Blues: Wax & Boogie y Félix Slim |
 | 314 | summary | BLACK & BLUES PRESENTA UNA NOCHE DE BLUES Y RHYTHM & BLUES: WAX & BOOGIE Y FÉLIX SLIM | Black & Blues Presenta Una Noche de Blues y Rhythm & Blues: Wax & Boogie y Félix Slim |
-| 314 | performances[0] | PRESENTA UNA NOCHE DE BLUES Y RHYTHM & BLUES: WAX & BOOGIE Y FÉLIX SLIM | Presenta Una Noche de Blues y Rhythm & Blues: Wax & Boogie y Félix Slim |
+| 314 | performances | PRESENTA UNA NOCHE DE BLUES Y RHYTHM & BLUES: WAX & BOOGIE Y FÉLIX SLIM | Presenta Una Noche de Blues y Rhythm & Blues: Wax & Boogie y Félix Slim |
 | 315 | title | EL CONCIERTAZO DE FEVAPEÑAS XIII EDICIÓN | El Conciertazo de Fevapeñas XIII Edición |
 | 315 | description | EL CONCIERTAZO DE FEVAPEÑAS XIII EDICIÓN Actuaciones de las bandas AVERÍA MENTAL, HIJOS DEL TERCER ACORDE y ROCK AND ROLL CIRKUS | El Conciertazo de Fevapeñas XIII Edición Actuaciones de las bandas Avería Mental, Hijos del Tercer Acorde y Rock And Roll Cirkus |
 | 315 | summary | EL CONCIERTAZO DE FEVAPEÑAS XIII EDICIÓN Actuaciones de las bandas AVERÍA MENTAL, HIJOS DEL TERCER ACORDE y ROCK AND ROLL CIRKUS | El Conciertazo de Fevapeñas XIII Edición Actuaciones de las bandas Avería Mental, Hijos del Tercer Acorde y Rock And Roll Cirkus |
-| 315 | performances[0] | Actuaciones de las bandas AVERÍA MENTAL, HIJOS DEL TERCER ACORDE y ROCK AND ROLL CIRKUS | Actuaciones de las bandas Avería Mental, Hijos del Tercer Acorde y Rock And Roll Cirkus |
-| 315 | performances[1] | EL CONCIERTAZO DE FEVAPEÑAS XIII EDICIÓN Actuaciones de las bandas AVERÍA MENTAL, HIJOS DEL TERCER ACORDE y ROCK AND | El Conciertazo de Fevapeñas XIII Edición Actuaciones de las bandas Avería Mental, Hijos del Tercer Acorde y Rock And |
+| 315 | performances | Actuaciones de las bandas AVERÍA MENTAL, HIJOS DEL TERCER ACORDE y ROCK AND ROLL CIRKUS \| EL CONCIERTAZO DE FEVAPEÑAS XIII EDICIÓN Actuaciones de las bandas AVERÍA MENTAL, HIJOS DEL TERCER ACORDE y ROCK AND | Avería Mental \| Hijos del Tercer Acorde \| Rock And Roll Cirkus |
 | 316 | title | MORERAS BEACH FEST “GRAN DÍA DE LAS PEÑAS” | Moreras Beach Fest “Gran Día de las Peñas” |
 | 316 | description | MORERAS BEACH FEST “GRAN DÍA DE LAS PEÑAS” DJ´s y residentes de la Coordinadora de Peñas | Moreras Beach Fest “Gran Día de las Peñas” DJs y residentes de la Coordinadora de Peñas |
 | 316 | summary | MORERAS BEACH FEST “GRAN DÍA DE LAS PEÑAS” DJ´s y residentes de la Coordinadora de Peñas | Moreras Beach Fest “Gran Día de las Peñas” DJs y residentes de la Coordinadora de Peñas |
-| 316 | performances[0] | DJ´s y residentes de la Coordinadora de Peñas | DJs y residentes de la Coordinadora de Peñas |
-| 316 | performances[1] | MORERAS BEACH FEST “GRAN DÍA DE LAS PEÑAS” DJ´s y residentes de la Coordinadora de Peñas | Moreras Beach Fest “Gran Día de las Peñas” DJs y residentes de la Coordinadora de Peñas |
+| 316 | performances | DJ´s y residentes de la Coordinadora de Peñas \| MORERAS BEACH FEST “GRAN DÍA DE LAS PEÑAS” DJ´s y residentes de la Coordinadora de Peñas | DJ y residentes de la Coordinadora de Peñas \| Moreras Beach Fest “Gran Día de las Peñas” DJs y residentes de la Coordinadora de Peñas |
 | 317 | title | MORERAS BEACH FEST “VERBENEO QUE TE VEO” | Moreras Beach Fest “Verbeneo que Te Veo” |
 | 317 | description | MORERAS BEACH FEST “VERBENEO QUE TE VEO” con Chack, Dani Abril, Fer Gurpegui, Charlie DJ, música en directo Orquesta Grupo Cero, Sandrux, Lerma, Finisher and Friends y “REMEMBER NIGHT” con Miguel Alonso, Sergei Rez y Neil Coordinadora de Peñas | Moreras Beach Fest “Verbeneo que Te Veo” con Chack, Dani Abril, Fer Gurpegui, Charlie DJ, música en directo Orquesta Grupo Cero, Sandrux, Lerma, Finisher and Friends y “Remember Night” con Miguel Alonso, Sergei Rez y Neil Coordinadora de Peñas |
 | 317 | summary | MORERAS BEACH FEST “VERBENEO QUE TE VEO” con Chack, Dani Abril, Fer Gurpegui, Charlie DJ, música en directo Orquesta Grupo Cero, Sandrux, Lerma, Finisher and Friends y “REMEMBER NIGHT” con Miguel Alonso, Sergei Rez y Neil Coordinadora de Peñas | Moreras Beach Fest “Verbeneo que Te Veo” con Chack, Dani Abril, Fer Gurpegui, Charlie DJ, música en directo Orquesta Grupo Cero, Sandrux, Lerma, Finisher and Friends y “Remember Night” con Miguel Alonso, Sergei Rez y Neil Coordinadora de Peñas |
-| 317 | performances[0] | música en directo Orquesta Grupo Cero, Sandrux, Lerma, Finisher and Friends y “REMEMBER NIGHT” con Miguel Alonso, Sergei Rez y Neil Coordinadora de Peñas | música en directo Orquesta Grupo Cero, Sandrux, Lerma, Finisher and Friends y “Remember Night” con Miguel Alonso, Sergei Rez y Neil Coordinadora de Peñas |
+| 317 | performances | música en directo Orquesta Grupo Cero, Sandrux, Lerma, Finisher and Friends y “REMEMBER NIGHT” con Miguel Alonso, Sergei Rez y Neil Coordinadora de Peñas | Orquesta Grupo Cero \| Sandrux \| Lerma \| Finisher and Friends y “Remember Night” con Miguel Alonso \| Sergei Rez \| Neil |
 | 318 | title | BRAVO MALDONADO | Bravo Maldonado |
 | 318 | description | BRAVO MALDONADO | Bravo Maldonado |
 | 318 | summary | BRAVO MALDONADO | Bravo Maldonado |
-| 318 | performances[0] | BRAVO MALDONADO | Bravo Maldonado |
+| 318 | performances | BRAVO MALDONADO | Bravo Maldonado |
 | 319 | title | LORENCITO FESTIVAL: LA NEVERITA | Lorencito Festival: La Neverita |
 | 319 | description | LORENCITO FESTIVAL: LA NEVERITA | Lorencito Festival: La Neverita |
 | 319 | summary | LORENCITO FESTIVAL: LA NEVERITA | Lorencito Festival: La Neverita |
 | 320 | title | FUEGOS ARTIFICIALES (SESIÓN 6.ª) | Fuegos Artificiales (Sesión 6.ª) |
 | 320 | description | FUEGOS ARTIFICIALES (SESIÓN 6.ª). PIROTECNIA ZARAGOZANA (Zaragoza) | Fuegos Artificiales (Sesión 6.ª). Pirotecnia Zaragozana (Zaragoza) |
 | 320 | summary | FUEGOS ARTIFICIALES (SESIÓN 6.ª). PIROTECNIA ZARAGOZANA (Zaragoza) | Fuegos Artificiales (Sesión 6.ª). Pirotecnia Zaragozana (Zaragoza) |
-| 320 | performances[0] | PIROTECNIA VULCANO (Madrid) | Pirotecnia Vulcano (Madrid) |
+| 320 | performances | PIROTECNIA VULCANO (Madrid) | Pirotecnia Vulcano (Madrid) |
 | 321 | title | CAROLINA DURANTE | Carolina Durante |
 | 321 | description | CAROLINA DURANTE | Carolina Durante |
 | 321 | summary | CAROLINA DURANTE | Carolina Durante |
-| 321 | performances[0] | CAROLINA DURANTE | Carolina Durante |
+| 321 | performances | CAROLINA DURANTE | Carolina Durante |
 | 322 | title | EXHIBICIÓN Y TALLER DE JUGGER | Exhibición y Taller de Jugger |
 | 322 | description | EXHIBICIÓN Y TALLER DE JUGGER. VALLATARDE (11 a 14 años) Y VALLANOCHE (14 a 30 años). Info VallanoChe.es Colabora: Jugger Pucela | Exhibición y Taller de Jugger. Vallatarde (11 a 14 años) y Vallanoche (14 a 30 años). Info VallanoChe.es Colabora: Jugger Pucela |
 | 322 | summary | EXHIBICIÓN Y TALLER DE JUGGER. VALLATARDE (11 a 14 años) Y VALLANOCHE (14 a 30 años). Info VallanoChe.es | Exhibición y Taller de Jugger. Vallatarde (11 a 14 años) y Vallanoche (14 a 30 años). Info VallanoChe.es |
@@ -1138,7 +1129,7 @@ Campos cambiados: 1372
 | 335 | title | CORRIDA DE TOROS | Corrida de Toros |
 | 335 | description | CORRIDA DE TOROS de Victorino Martín para MANUEL ESCRIBANO, DANIEL LUQUE Y AARÓN PALACIO | Corrida de Toros de Victorino Martín para Manuel Escribano, Daniel Luque y Aarón Palacio |
 | 335 | summary | CORRIDA DE TOROS de Victorino Martín para MANUEL ESCRIBANO, DANIEL LUQUE Y AARÓN PALACIO | Corrida de Toros de Victorino Martín para Manuel Escribano, Daniel Luque y Aarón Palacio |
-| 335 | performances[0] | MANUEL ESCRIBANO, DANIEL LUQUE Y AARÓN PALACIO | Manuel Escribano, Daniel Luque y Aarón Palacio |
+| 335 | performances | MANUEL ESCRIBANO, DANIEL LUQUE Y AARÓN PALACIO | Manuel Escribano \| Daniel Luque \| Aarón Palacio |
 | 336 | title | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
 | 336 | description | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
 | 336 | summary | LO DE FERIAS: LO QUE PASA EN PUCELA SE QUEDA EN PUCELA | Lo de Ferias: Lo que Pasa en Pucela se Queda en Pucela |
@@ -1153,7 +1144,7 @@ Campos cambiados: 1372
 | 339 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 339 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “HUERTA DEL REY” | Gigantes y Cabezudos. Acompañan dulzaineros “Huerta del Rey” |
 | 339 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “HUERTA DEL REY” | Gigantes y Cabezudos. Acompañan dulzaineros “Huerta del Rey” |
-| 339 | performances[0] | Acompañan dulzaineros “HUERTA DEL REY” | Acompañan dulzaineros “Huerta del Rey” |
+| 339 | performances | Acompañan dulzaineros “HUERTA DEL REY” | Acompañan dulzaineros “Huerta del Rey” |
 | 340 | title | HINCHABLES Peña Huracán | Hinchables Peña Huracán |
 | 340 | description | HINCHABLES Peña Huracán | Hinchables Peña Huracán |
 | 340 | summary | HINCHABLES Peña Huracán | Hinchables Peña Huracán |
@@ -1203,7 +1194,7 @@ Campos cambiados: 1372
 | 355 | title | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA | XLIII Feria de Folklore y Gastronomía |
 | 355 | description | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. Actuaciones: Grupo Danzas “San Pablo” (Cantabria) y “A.C. Segoviana” (Segovia) | XLIII Feria de Folklore y Gastronomía. Actuaciones: Grupo Danzas “San Pablo” (Cantabria) y “A.c. Segoviana” (Segovia) |
 | 355 | summary | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. Actuaciones: Grupo Danzas “San Pablo” (Cantabria) y “A.C. Segoviana” (Segovia) | XLIII Feria de Folklore y Gastronomía. Actuaciones: Grupo Danzas “San Pablo” (Cantabria) y “A.c. Segoviana” (Segovia) |
-| 355 | performances[0] | Actuaciones: Grupo Danzas “San Pablo” (Cantabria) y “A.C. Segoviana” (Segovia) | Actuaciones: Grupo Danzas “San Pablo” (Cantabria) y “A.c. Segoviana” (Segovia) |
+| 355 | performances | Actuaciones: Grupo Danzas “San Pablo” (Cantabria) y “A.C. Segoviana” (Segovia) | Actuaciones: Grupo Danzas “San Pablo” (Cantabria) y “A.c. Segoviana” (Segovia) |
 | 356 | title | PROGRAMA PREVENCIÓN ADICCIONES YOUNG ZONE | Programa Prevención Adicciones Young Zone |
 | 356 | description | PROGRAMA PREVENCIÓN ADICCIONES YOUNG ZONE Concejalía de Personas Mayores, Familia y Servicios Sociales | Programa Prevención Adicciones Young Zone Concejalía de Personas Mayores, Familia y Servicios Sociales |
 | 356 | summary | PROGRAMA PREVENCIÓN ADICCIONES YOUNG ZONE | Programa Prevención Adicciones Young Zone |
@@ -1219,7 +1210,7 @@ Campos cambiados: 1372
 | 360 | title | NIGHT GLOW | Night Glow |
 | 360 | description | ACTUACIÓN DE LOS PICHAS. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey. | Actuación de los Pichas. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey. |
 | 360 | summary | ACTUACIÓN DE LOS PICHAS. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey. | Actuación de los Pichas. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey. |
-| 360 | performances[0] | ACTUACIÓN DE LOS PICHAS | Actuación de los Pichas |
+| 360 | performances | ACTUACIÓN DE LOS PICHAS | Actuación de los Pichas |
 | 361 | title | ÉRASE UNA VEZ LOS 80 | Érase Una Vez los 80 |
 | 361 | description | ÉRASE UNA VEZ LOS 80 | Érase Una Vez los 80 |
 | 361 | summary | ÉRASE UNA VEZ LOS 80 | Érase Una Vez los 80 |
@@ -1244,14 +1235,14 @@ Campos cambiados: 1372
 | 368 | title | FUEGOS ARTIFICIALES (SESIÓN 7.ª) | Fuegos Artificiales (Sesión 7.ª) |
 | 368 | description | FUEGOS ARTIFICIALES (SESIÓN 7.ª). PIROTECNIA PIBIERZO (León) | Fuegos Artificiales (Sesión 7.ª). Pirotecnia Pibierzo (León) |
 | 368 | summary | FUEGOS ARTIFICIALES (SESIÓN 7.ª). PIROTECNIA PIBIERZO (León) | Fuegos Artificiales (Sesión 7.ª). Pirotecnia Pibierzo (León) |
-| 368 | performances[0] | PIROTECNIA PENIDE (A Coruña) | Pirotecnia Penide (A Coruña) |
+| 368 | performances | PIROTECNIA PENIDE (A Coruña) | Pirotecnia Penide (A Coruña) |
 | 369 | title | FABIOLO CONNECTION | Fabiolo Connection |
 | 369 | description | FABIOLO CONNECTION | Fabiolo Connection |
 | 369 | summary | FABIOLO CONNECTION | Fabiolo Connection |
 | 370 | title | MORERAS BEACH FEST “THE GLOW EXPERIENCE” | Moreras Beach Fest “The Glow Experience” |
 | 370 | description | MORERAS BEACH FEST “THE GLOW EXPERIENCE”. Con los DJ´s Yaiza Diez, Primos, Isma González, Aroa, Juan Saya, Craza Loco, Nacho Fax y Finisher and Friends Coordinadora de Peñas | Moreras Beach Fest “The Glow Experience”. Con los DJs Yaiza Diez, Primos, Isma González, Aroa, Juan Saya, Craza Loco, Nacho Fax y Finisher and Friends Coordinadora de Peñas |
 | 370 | summary | MORERAS BEACH FEST “THE GLOW EXPERIENCE”. Con los DJ´s Yaiza Diez, Primos, Isma González, Aroa, Juan Saya, Craza Loco, Nacho Fax y Finisher and Friends Coordinadora de Peñas | Moreras Beach Fest “The Glow Experience”. Con los DJs Yaiza Diez, Primos, Isma González, Aroa, Juan Saya, Craza Loco, Nacho Fax y Finisher and Friends Coordinadora de Peñas |
-| 370 | performances[0] | Con los DJ´s Yaiza Diez, Primos, Isma González, Aroa, Juan Saya, Craza Loco, Nacho Fax y Finisher and Friends Coordinadora de Peñas | Con los DJs Yaiza Diez, Primos, Isma González, Aroa, Juan Saya, Craza Loco, Nacho Fax y Finisher and Friends Coordinadora de Peñas |
+| 370 | performances | Con los DJ´s Yaiza Diez, Primos, Isma González, Aroa, Juan Saya, Craza Loco, Nacho Fax y Finisher and Friends Coordinadora de Peñas | Yaiza Diez \| Primos \| Isma González \| Aroa \| Juan Saya \| Craza Loco \| Nacho Fax \| Finisher and Friends |
 | 371 | title | LEIRE MARTÍNEZ | Leire Martínez |
 | 371 | description | LEIRE MARTÍNEZ | Leire Martínez |
 | 371 | summary | LEIRE MARTÍNEZ | Leire Martínez |
@@ -1264,9 +1255,7 @@ Campos cambiados: 1372
 | 374 | title | FESTIVAL DE MÚSICA MEXICANA | Festival de Música Mexicana |
 | 374 | description | FESTIVAL DE MÚSICA MEXICANA. EN RECUERDO DE LA CONTROVERSIA DE VALLADOLID: 12:00 h MARIACHI MEXATLÁN. 13:00 h SON JAROCHO COMUNIDAD DE MADRID. 14:00 h FANDANGO JAROCHO | Festival de Música Mexicana. En Recuerdo de la Controversia de Valladolid: 12:00 h Mariachi Mexatlán. 13:00 h Son Jarocho Comunidad de Madrid. 14:00 h Fandango Jarocho |
 | 374 | summary | FESTIVAL DE MÚSICA MEXICANA. EN RECUERDO DE LA CONTROVERSIA DE VALLADOLID: 12:00 h MARIACHI MEXATLÁN. 13:00 h SON JAROCHO COMUNIDAD DE MADRID. 14:00 h FANDANGO JAROCHO | Festival de Música Mexicana. En Recuerdo de la Controversia de Valladolid: 12:00 h Mariachi Mexatlán. 13:00 h Son Jarocho Comunidad de Madrid. 14:00 h Fandango Jarocho |
-| 374 | performances[0] | 12:00 h MARIACHI MEXATLÁN | 12:00 h Mariachi Mexatlán |
-| 374 | performances[1] | 13:00 h SON JAROCHO COMUNIDAD DE MADRID | 13:00 h Son Jarocho Comunidad de Madrid |
-| 374 | performances[2] | 14:00 h FANDANGO JAROCHO | 14:00 h Fandango Jarocho |
+| 374 | performances | 12:00 h MARIACHI MEXATLÁN \| 13:00 h SON JAROCHO COMUNIDAD DE MADRID \| 14:00 h FANDANGO JAROCHO | 12:00 h Mariachi Mexatlán \| 13:00 h Son Jarocho Comunidad de Madrid \| 14:00 h Fandango Jarocho |
 | 375 | title | JUEGOS TRADICIONALES GIGANTES DE MADERA | Juegos Tradicionales Gigantes de Madera |
 | 375 | description | JUEGOS TRADICIONALES GIGANTES DE MADERA | Juegos Tradicionales Gigantes de Madera |
 | 375 | summary | JUEGOS TRADICIONALES GIGANTES DE MADERA | Juegos Tradicionales Gigantes de Madera |
@@ -1300,11 +1289,11 @@ Campos cambiados: 1372
 | 385 | title | GIGANTES Y CABEZUDOS | Gigantes y Cabezudos |
 | 385 | description | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “VILLAOLID” | Gigantes y Cabezudos. Acompañan dulzaineros “Villaolid” |
 | 385 | summary | GIGANTES Y CABEZUDOS. Acompañan dulzaineros “VILLAOLID” | Gigantes y Cabezudos. Acompañan dulzaineros “Villaolid” |
-| 385 | performances[0] | Acompañan dulzaineros “VILLAOLID” | Acompañan dulzaineros “Villaolid” |
+| 385 | performances | Acompañan dulzaineros “VILLAOLID” | Acompañan dulzaineros “Villaolid” |
 | 386 | title | PASACALLES XXXV ANIVERSARIO Peña Comuneros con dulzaineros LA ATALAYA | Pasacalles XXXV Aniversario Peña Comuneros con dulzaineros la Atalaya |
 | 386 | description | PASACALLES XXXV ANIVERSARIO Peña Comuneros con dulzaineros LA ATALAYA Fevapeñas | Pasacalles XXXV Aniversario Peña Comuneros con dulzaineros la Atalaya Fevapeñas |
 | 386 | summary | PASACALLES XXXV ANIVERSARIO Peña Comuneros con dulzaineros LA ATALAYA Fevapeñas | Pasacalles XXXV Aniversario Peña Comuneros con dulzaineros la Atalaya Fevapeñas |
-| 386 | performances[0] | LA ATALAYA | La Atalaya |
+| 386 | performances | LA ATALAYA | La Atalaya |
 | 387 | title | CHARANGA CUCU BAND | Charanga Cucu Band |
 | 387 | description | CHARANGA CUCU BAND Peña El Jumi | Charanga Cucu Band Peña El Jumi |
 | 387 | summary | CHARANGA CUCU BAND Peña El Jumi | Charanga Cucu Band Peña El Jumi |
@@ -1323,7 +1312,7 @@ Campos cambiados: 1372
 | 391 | title | CORRIDA DE TOROS | Corrida de Toros |
 | 391 | description | CORRIDA DE TOROS de El Capea para ANDY CARTAGENA, SERGIO GALÁN y SERGIO PÉREZ DE GREGORIO | Corrida de Toros de El Capea para Andy Cartagena, Sergio Galán y Sergio Pérez de Gregorio |
 | 391 | summary | CORRIDA DE TOROS de El Capea para ANDY CARTAGENA, SERGIO GALÁN y SERGIO PÉREZ DE GREGORIO | Corrida de Toros de El Capea para Andy Cartagena, Sergio Galán y Sergio Pérez de Gregorio |
-| 391 | performances[0] | ANDY CARTAGENA, SERGIO GALÁN y SERGIO PÉREZ DE GREGORIO | Andy Cartagena, Sergio Galán y Sergio Pérez de Gregorio |
+| 391 | performances | ANDY CARTAGENA, SERGIO GALÁN y SERGIO PÉREZ DE GREGORIO | Andy Cartagena \| Sergio Galán \| Sergio Pérez de Gregorio |
 | 392 | title | FOLKLORE CASTELLANO | Folklore Castellano |
 | 392 | description | FOLKLORE CASTELLANO. PASACALLES: Pza. Mayor con C/ Santiago, Pza. Zorrilla | Folklore Castellano. Pasacalles: Pza. Mayor con C/ Santiago, Pza. Zorrilla |
 | 392 | summary | FOLKLORE CASTELLANO. PASACALLES: Pza. Mayor con C/ Santiago, Pza. Zorrilla | Folklore Castellano. Pasacalles: Pza. Mayor con C/ Santiago, Pza. Zorrilla |
@@ -1386,6 +1375,7 @@ Campos cambiados: 1372
 | 411 | title | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA | XLIII Feria de Folklore y Gastronomía |
 | 411 | description | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. Actuaciones: Grupo Charanga “La Pacheca” (La Rioja), Grupo de Danzas “Farah Diva” (Melilla) | XLIII Feria de Folklore y Gastronomía. Actuaciones: Grupo Charanga “La Pacheca” (La Rioja), Grupo de Danzas “Farah Diva” (Melilla) |
 | 411 | summary | XLIII FERIA DE FOLKLORE Y GASTRONOMÍA. Actuaciones: Grupo Charanga “La Pacheca” (La Rioja), Grupo de Danzas “Farah Diva” (Melilla) | XLIII Feria de Folklore y Gastronomía. Actuaciones: Grupo Charanga “La Pacheca” (La Rioja), Grupo de Danzas “Farah Diva” (Melilla) |
+| 411 | performances | Actuaciones: Grupo Charanga “La Pacheca” (La Rioja), Grupo de Danzas “Farah Diva” (Melilla) | Charanga “La Pacheca” (La Rioja) \| Grupo de Danzas “Farah Diva” (Melilla) |
 | 412 | title | PURA VERDAD FLAMENCO: ENRIQUE HEREDIA, LIN CORTÉS, BELÉN LÓPEZ, KIKE MORENTE, SANDRA CARRASCO E ISRAEL FERNÁNDEZ | Pura Verdad Flamenco: Enrique Heredia, Lin Cortés, Belén López, Kike Morente, Sandra Carrasco e Israel Fernández |
 | 412 | description | PURA VERDAD FLAMENCO: ENRIQUE HEREDIA, LIN CORTÉS, BELÉN LÓPEZ, KIKE MORENTE, SANDRA CARRASCO E ISRAEL FERNÁNDEZ | Pura Verdad Flamenco: Enrique Heredia, Lin Cortés, Belén López, Kike Morente, Sandra Carrasco e Israel Fernández |
 | 412 | summary | PURA VERDAD FLAMENCO: ENRIQUE HEREDIA, LIN CORTÉS, BELÉN LÓPEZ, KIKE MORENTE, SANDRA CARRASCO E ISRAEL FERNÁNDEZ | Pura Verdad Flamenco: Enrique Heredia, Lin Cortés, Belén López, Kike Morente, Sandra Carrasco e Israel Fernández |
