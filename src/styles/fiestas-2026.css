@@ -2559,7 +2559,9 @@
   }
 
   .fiestas-detail-action span {
-    white-space: nowrap;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   .fiestas-detail-action .fa-share-nodes,
