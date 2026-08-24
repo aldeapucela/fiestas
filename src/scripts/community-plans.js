@@ -7,6 +7,7 @@ const FESTIVAL_ID = 'valladolid-2026';
 const MAX_PLAN_NAME_LENGTH = 80;
 const MAX_ACTIVITY_IDS = 200;
 const MAX_JSON_BYTES = 256 * 1024;
+const PLAN_ADD_COUNTS_API_URL = 'https://api.aldeapucela.org/fiestas/plan-adds';
 
 export function setupCommunityPlansPage(rawEvents = []) {
   const page = document.querySelector('[data-community-plans-page]');
@@ -41,7 +42,15 @@ export function setupCommunityPlansPage(rawEvents = []) {
         summary: 'Previsualización disponible en la ficha'
       }));
       renderCatalog();
-      entries = await Promise.all(entries.map((entry) => enrichEntry(entry, eventById)));
+      const [enrichedEntries, planAddCounts] = await Promise.all([
+        Promise.all(entries.map((entry) => enrichEntry(entry, eventById))),
+        loadPlanAddCounts()
+      ]);
+      entries = enrichedEntries.map((entry) => ({
+        ...entry,
+        addCount: planAddCounts?.get(entry.id) ?? null
+      }));
+      entries.sort(comparePlanAddCounts);
       renderCatalog();
     } catch (_) {
       renderCatalogError(catalog);
@@ -229,6 +238,10 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
       renderDetail(detail, entry, imported, selectedDay, events);
       setStatus('', '');
       syncAddedLinks();
+      const planAddCounts = await loadPlanAddCounts();
+      entry.addCount = planAddCounts?.get(entry.id) ?? null;
+      renderDetail(detail, entry, imported, selectedDay, events);
+      syncAddedLinks();
       if (new URLSearchParams(window.location.search).get('add') === '1') await addToMyPlans();
     } catch (_) {
       setStatus('No se ha podido cargar el archivo de este plan. Vuelve a intentarlo más tarde.', 'error');
@@ -245,6 +258,28 @@ async function enrichEntry(entry, eventById) {
   } catch (_) {
     return entry;
   }
+}
+
+async function loadPlanAddCounts() {
+  try {
+    const value = await fetchJson(PLAN_ADD_COUNTS_API_URL);
+    if (!value?.ok || !Array.isArray(value.plans)) return null;
+    const counts = new Map();
+    value.plans.forEach((plan) => {
+      const id = cleanText(plan?.id, 80);
+      const addCount = Number(plan?.addCount);
+      if (id && Number.isFinite(addCount) && addCount >= 0) counts.set(id, addCount);
+    });
+    return counts;
+  } catch (_) {
+    return null;
+  }
+}
+
+function comparePlanAddCounts(left, right) {
+  const leftCount = Number.isFinite(left.addCount) ? left.addCount : -1;
+  const rightCount = Number.isFinite(right.addCount) ? right.addCount : -1;
+  return rightCount - leftCount;
 }
 
 async function loadExportedPlan(url, eventById) {
@@ -325,21 +360,38 @@ function createPlanCard(entry) {
   body.className = 'fiestas-community-plan-card-body';
   const title = document.createElement('h2');
   title.textContent = entry.name;
+  const titleRow = document.createElement('div');
+  titleRow.className = 'fiestas-community-plan-card-title-row';
+  titleRow.append(title);
+  const topActions = document.createElement('div');
+  topActions.className = 'fiestas-community-plan-card-top-actions';
+  if (Number.isFinite(entry.addCount)) {
+    const addCount = document.createElement('span');
+    addCount.className = 'fiestas-community-plan-card-add-count';
+    addCount.setAttribute('aria-label', `${entry.addCount} ${entry.addCount === 1 ? 'persona sigue' : 'personas siguen'} este plan`);
+    addCount.title = `${entry.addCount} ${entry.addCount === 1 ? 'persona sigue' : 'personas siguen'} este plan`;
+    addCount.append(createIcon('fa-users'), document.createTextNode(String(entry.addCount)));
+    topActions.append(addCount);
+  }
   const author = document.createElement('p');
   author.className = 'fiestas-community-plan-card-author';
   author.textContent = `por ${entry.author}`;
   const meta = document.createElement('p');
   meta.className = 'fiestas-community-plan-card-meta';
   meta.textContent = entry.summary;
-  body.append(title, author, meta);
+  body.append(titleRow, author, meta);
   card.append(body);
 
-  card.append(createShareAction(entry));
+  topActions.append(createShareAction(entry));
+  card.append(topActions);
 
   const actions = document.createElement('div');
   actions.className = 'fiestas-community-plan-card-actions';
-  actions.append(createTextAction(entry.pageUrl, 'Previsualizar', 'fa-eye'));
+  const previewLink = createTextAction(entry.pageUrl, 'Previsualizar', 'fa-eye');
+  previewLink.classList.add('fiestas-community-plan-text-action-preview');
+  actions.append(previewLink);
   const addLink = createTextAction(`${entry.pageUrl}?add=1`, 'Añadir a mis planes', 'fa-plus');
+  addLink.classList.add('fiestas-community-plan-text-action-add');
   addLink.dataset.communityPlanAdd = '';
   addLink.dataset.communityPlanId = entry.id;
   const existing = findExistingCatalogPlan(entry);
@@ -362,10 +414,16 @@ function renderDetail(container, entry, imported, selectedDay, events) {
   title.id = 'community-plan-detail-title';
   title.textContent = entry.name || imported.name;
   const author = document.createElement('p');
+  author.className = 'fiestas-community-plan-detail-author';
   author.textContent = `por ${entry.author}`;
+  const headMeta = document.createElement('div');
+  headMeta.className = 'fiestas-community-plan-detail-head-meta';
+  headMeta.append(author);
+  const followerCount = createPlanFollowerCount(entry.addCount);
+  if (followerCount) headMeta.append(followerCount);
   const headCopy = document.createElement('div');
   headCopy.className = 'fiestas-community-plan-detail-head-copy';
-  headCopy.append(title, author);
+  headCopy.append(title, headMeta);
   const summary = document.createElement('p');
   summary.className = 'fiestas-community-plan-detail-summary';
   summary.textContent = formatImportedSummary(imported);
@@ -385,6 +443,18 @@ function renderDetail(container, entry, imported, selectedDay, events) {
   }
 
   renderPlanTimeline(container, { id: `community-${entry.id}`, activityIds: imported.activityIds }, events, [], selectedDay);
+}
+
+function createPlanFollowerCount(addCount) {
+  if (!Number.isFinite(addCount)) return null;
+  const followerCount = document.createElement('p');
+  followerCount.className = 'fiestas-community-plan-detail-followers';
+  followerCount.setAttribute('aria-label', `${addCount} ${addCount === 1 ? 'seguidor' : 'seguidores'}`);
+  followerCount.append(
+    createIcon('fa-users'),
+    document.createTextNode(`${addCount} ${addCount === 1 ? 'seguidor' : 'seguidores'}`)
+  );
+  return followerCount;
 }
 
 function createTextAction(href, label, iconName) {

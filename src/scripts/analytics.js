@@ -4,18 +4,20 @@ const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]', '::1']);
 const DEFAULT_TRACKER_URL = 'https://stats.aldeapucela.org/';
 const DEFAULT_SITE_ID = '29';
 const TRACKED_FAVORITES_STORAGE_KEY = 'fiestasPucela:analytics:saved-activities';
+const TRACKED_COMMUNITY_PLANS_STORAGE_KEY = 'fiestasPucela:analytics:added-community-plans';
 
 const categoryActions = {
   activity: new Set(['view_detail', 'save', 'remove_save', 'share', 'open_directions', 'open_external_link', 'open_tickets']),
   agenda: new Set(['select_date', 'select_all_dates', 'apply_filter', 'search', 'open_activity']),
   map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
   plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'add_community', 'export', 'import', 'share', 'import_error']),
-  pwa: new Set(['install_available', 'install_accepted', 'install_cancelled', 'installed', 'ios_help_opened', 'sw_registration_error'])
+  pwa: new Set(['install_clicked', 'install_accepted', 'install_cancelled', 'installed', 'ios_help_opened', 'sw_registration_error'])
 };
 
 const filterNames = new Set(['type', 'area', 'ticket']);
 let analyticsReady = false;
 const trackedFavoriteIds = new Set();
+const trackedCommunityPlanIds = new Set();
 
 export function initAnalytics() {
   if (typeof window === 'undefined' || window[INITIALIZED_KEY]) return;
@@ -110,7 +112,17 @@ export function trackPlanCreated(planType = 'manual') {
 }
 
 export function trackCommunityPlanAdded(planId) {
-  return pushEvent('plan', 'add_community', planId);
+  try {
+    const normalizedPlanId = normalizeToken(planId);
+    if (!normalizedPlanId || hasTrackedCommunityPlan(normalizedPlanId)) return false;
+
+    const tracked = pushEvent('plan', 'add_community', normalizedPlanId);
+    if (tracked) rememberTrackedCommunityPlan(normalizedPlanId);
+    return tracked;
+  } catch (_) {
+    // Analytics must never prevent the local plan from being saved.
+    return false;
+  }
 }
 
 export function trackPlanActivityAdded(activityId) {
@@ -141,8 +153,8 @@ export function trackPlanImportError(errorType = 'invalid') {
   return pushEvent('plan', 'import_error', errorType);
 }
 
-export function trackPwaInstallAvailable() {
-  return pushEvent('pwa', 'install_available', 'install');
+export function trackPwaInstallClicked(source = 'install') {
+  return pushEvent('pwa', 'install_clicked', 'install', source);
 }
 
 export function trackPwaInstallAccepted(source = 'install') {
@@ -226,6 +238,35 @@ function rememberTrackedFavorite(activityId) {
 function readTrackedFavoriteIds() {
   try {
     const value = JSON.parse(window.localStorage.getItem(TRACKED_FAVORITES_STORAGE_KEY) || '[]');
+    if (!Array.isArray(value)) return [];
+    return [...new Set(value.map(normalizeToken).filter(Boolean))];
+  } catch (_) {
+    return [];
+  }
+}
+
+function hasTrackedCommunityPlan(planId) {
+  if (trackedCommunityPlanIds.has(planId)) return true;
+  const storedIds = readTrackedCommunityPlanIds();
+  const alreadyTracked = storedIds.includes(planId);
+  if (alreadyTracked) trackedCommunityPlanIds.add(planId);
+  return alreadyTracked;
+}
+
+function rememberTrackedCommunityPlan(planId) {
+  trackedCommunityPlanIds.add(planId);
+  const storedIds = new Set(readTrackedCommunityPlanIds());
+  storedIds.add(planId);
+  try {
+    window.localStorage.setItem(TRACKED_COMMUNITY_PLANS_STORAGE_KEY, JSON.stringify([...storedIds]));
+  } catch (_) {
+    // An unavailable localStorage still deduplicates additions for this page load.
+  }
+}
+
+function readTrackedCommunityPlanIds() {
+  try {
+    const value = JSON.parse(window.localStorage.getItem(TRACKED_COMMUNITY_PLANS_STORAGE_KEY) || '[]');
     if (!Array.isArray(value)) return [];
     return [...new Set(value.map(normalizeToken).filter(Boolean))];
   } catch (_) {

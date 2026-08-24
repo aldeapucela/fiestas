@@ -6249,6 +6249,7 @@ html.dark .fiestas-community-plans-intro > p:last-child,
 html.dark .fiestas-community-plans-empty,
 html.dark .fiestas-community-plan-card-author,
 html.dark .fiestas-community-plan-card-meta,
+html.dark .fiestas-community-plan-card-add-count,
 html.dark .fiestas-community-plan-preview-summary,
 html.dark .fiestas-community-plan-dialog-head > div > p:last-child,
 html.dark .fiestas-community-plan-preview-item span,
@@ -6424,8 +6425,27 @@ html.dark .fiestas-community-plan-preview-item {
   margin: 0;
 }
 
+.fiestas-community-plan-card-title-row {
+  display: flex;
+  min-width: 0;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.fiestas-community-plan-card-top-actions {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.4rem;
+  grid-column: 3;
+  align-self: start;
+}
+
 .fiestas-community-plan-card h2 {
   display: -webkit-box;
+  min-width: 0;
+  flex: 1 1 auto;
   overflow: hidden;
   color: #1d2430;
   font-size: 0.98rem;
@@ -6450,6 +6470,28 @@ html.dark .fiestas-community-plan-preview-item {
 .fiestas-community-plan-card-meta {
   color: #73579f;
   font-weight: 750;
+}
+
+.fiestas-community-plan-card-add-count {
+  display: inline-flex;
+  min-height: 1.45rem;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.24rem;
+  border: 1px solid #e1e5ec;
+  border-radius: 9999px;
+  background: #f5f6f8;
+  color: #667085;
+  padding: 0.2rem 0.42rem;
+  font-size: 0.68rem;
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.fiestas-community-plan-card-add-count i {
+  color: inherit;
+  font-size: 0.62rem;
 }
 
 .fiestas-community-plan-card-actions {
@@ -6485,9 +6527,9 @@ html.dark .fiestas-community-plan-preview-item {
   display: inline-flex;
   width: 2.1rem;
   height: 2.1rem;
+  flex: 0 0 2.1rem;
   align-items: center;
   justify-content: center;
-  justify-self: end;
   border: 0;
   border-radius: 0;
   background: transparent;
@@ -6500,6 +6542,26 @@ html.dark .fiestas-community-plan-preview-item {
 .fiestas-community-plan-text-action i {
   color: #73579f;
   font-size: 0.65rem;
+}
+
+.fiestas-community-plan-text-action-preview {
+  border-color: #dfe4ea;
+  background: #f7f8fa;
+  color: #667085;
+}
+
+.fiestas-community-plan-text-action-preview i {
+  color: #667085;
+}
+
+.fiestas-community-plan-text-action-add {
+  border-color: #bfe5df;
+  background: #eefaf8;
+  color: #0f8f80;
+}
+
+.fiestas-community-plan-text-action-add i {
+  color: #0f8f80;
 }
 
 .fiestas-community-plan-share-action i {
@@ -6595,7 +6657,15 @@ html.dark .fiestas-community-plan-preview-item {
 .fiestas-community-plan-detail-head-copy {
   display: grid;
   min-width: 0;
-  gap: 0.15rem;
+  gap: 0.35rem;
+}
+
+.fiestas-community-plan-detail-head-meta {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 1.1rem;
+  flex-wrap: wrap;
 }
 
 .fiestas-community-plan-detail-head h2 {
@@ -6607,11 +6677,23 @@ html.dark .fiestas-community-plan-preview-item {
   line-height: 1.05;
 }
 
-.fiestas-community-plan-detail-head-copy > p {
+.fiestas-community-plan-detail-head-meta > p {
   margin: 0;
   color: #667085;
   font-size: 0.8rem;
   line-height: 1.25;
+}
+
+.fiestas-community-plan-detail-followers {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  color: #667085;
+  font-weight: 800;
+}
+
+.fiestas-community-plan-detail-followers i {
+  font-size: 0.72rem;
 }
 
 .fiestas-community-plan-detail-summary {
@@ -6755,7 +6837,7 @@ html.dark .fiestas-community-plan-detail-item-copy a {
 
 html.dark .fiestas-community-plans-intro > p:last-child,
 html.dark .fiestas-community-plan-card-author,
-html.dark .fiestas-community-plan-detail-head-copy > p,
+html.dark .fiestas-community-plan-detail-head-meta > p,
 html.dark .fiestas-community-plan-detail-item-copy span,
 html.dark .fiestas-community-plan-detail-empty,
 html.dark .fiestas-community-plans-loading p,
@@ -6765,6 +6847,12 @@ html.dark .fiestas-community-plans-empty p {
 
 html.dark .fiestas-community-plan-share-feedback {
   color: #78e2d4;
+}
+
+html.dark .fiestas-community-plan-card-add-count {
+  border-color: #3b5a57;
+  background: #1d3938;
+  color: #a2ede3;
 }
 
 html.dark .fiestas-community-plan-share-feedback.is-error {
@@ -6798,7 +6886,7 @@ html.dark .fiestas-community-plan-detail-item {
 
 @media (max-width: 520px) {
   .fiestas-community-plan-card {
-    grid-template-columns: 2.45rem minmax(0, 1fr) 2rem;
+    grid-template-columns: 2.45rem minmax(0, 1fr) auto;
     align-items: start;
   }
 
@@ -6830,8 +6918,28 @@ html.dark .fiestas-community-plan-text-action {
   color: #78e2d4;
 }
 
+html.dark .fiestas-community-plan-text-action-preview {
+  border-color: #414754;
+  background: #252b34;
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-community-plan-text-action-add {
+  border-color: #3b5a57;
+  background: #182524;
+  color: #78e2d4;
+}
+
 html.dark .fiestas-community-plan-text-action i {
   color: #c7b4e7;
+}
+
+html.dark .fiestas-community-plan-text-action-preview i {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-community-plan-text-action-add i {
+  color: #78e2d4;
 }
 
 html.dark .fiestas-community-plan-text-action:hover,

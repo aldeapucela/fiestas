@@ -48,6 +48,7 @@ Los identificadores de actividad son sus `id` numéricos y estables. Los valores
 | `map` | `select_marker` | `activityId` | Al seleccionar un marcador. |
 | `map` | `select_date` / `select_all_dates` | fecha o `all` | Al cambiar la fecha dentro del mapa. |
 | `map` | `apply_filter` | nombre y valor controlados | Al aplicar filtros desde el mapa. |
+| `plan` | `add_community` | `communityPlanId` | La primera vez que ese navegador añade cada plan vecinal; se deduplica con `localStorage`. |
 | `pwa` | `install_available` | `install` | Cuando el navegador ofrece la instalación PWA. |
 | `pwa` | `install_accepted` | `install`; valor: `agenda_cta` o `menu` | Cuando la persona acepta el diálogo de instalación desde la tarjeta intercalada o el menú lateral. |
 | `pwa` | `installed` | `install`; valor: `agenda_cta` o `menu` | Cuando el navegador confirma la instalación con `appinstalled`, conservando el origen de la solicitud. |
@@ -63,10 +64,12 @@ Los pageviews se envían mediante `trackPageView` durante la única inicializaci
 - No se envían nombres, correos, teléfonos, nombres personalizados de planes ni identificadores de usuario.
 - Sin cuentas, las métricas representan visitas/dispositivos y acciones observadas, no personas identificadas de forma exacta.
 - Los eventos `activity / save` se cuentan una sola vez por actividad y navegador mediante `fiestasPucela:analytics:saved-activities` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, no se puede garantizar la deduplicación entre sesiones.
+- Los eventos `plan / add_community` se cuentan una sola vez por plan vecinal y navegador mediante `fiestasPucela:analytics:added-community-plans` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, el evento puede volver a registrarse.
 - Para ordenar actividades por popularidad se debe usar el total de eventos `activity / save`, no `remove_save` ni el total de visitas. No se envía una IP ni un identificador de usuario propio.
+- El contador de planes vecinales representa añadidos de navegadores estimados, no personas únicas exactas.
 - Para el embudo PWA, usa `nb_visits` de `pwa / install_available`, `install_accepted`, `installed` e `ios_help_opened`; `nb_events` mide repeticiones, no personas. Los eventos de instalación aceptada, completada o cancelada incluyen el origen (`agenda_cta` o `menu`) como valor de Matomo. En iOS solo podemos medir la apertura de instrucciones, no confirmar técnicamente que se añadió a la pantalla de inicio.
 - La instancia de Matomo debe mantener activada la anonimización de IP y sus controles de privacidad deben revisarse en servidor.
 - Este repositorio no contiene mecanismo de consentimiento de cookies; si se incorpora en el futuro, la inicialización debe conectarse a él.
-- La versión actual no tiene geolocalización, botón de centrar en el usuario, panel inferior del mapa ni planes/colecciones; por eso no se generan esos eventos todavía.
+- La versión actual no tiene geolocalización, botón de centrar en el usuario ni panel inferior del mapa; por eso no se generan esos eventos todavía.
 
 Para revisar los datos, consultar en Matomo el site ID 29 y filtrar por categoría y acción según la tabla anterior.

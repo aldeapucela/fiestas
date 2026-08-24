@@ -1,6 +1,6 @@
 import {
+  trackPwaInstallClicked,
   trackPwaInstallAccepted,
-  trackPwaInstallAvailable,
   trackPwaInstallCancelled,
   trackPwaInstalled,
   trackPwaIosHelpOpened,
@@ -11,7 +11,6 @@ const DISMISSED_KEY = 'fiestasPucela:pwa-install-dismissed';
 const INSTALLED_KEY = 'fiestasPucela:pwa-installed';
 const IOS_HELP_SEEN_KEY = 'fiestasPucela:pwa-ios-help-seen';
 let deferredInstallPrompt = null;
-let installAvailableTracked = false;
 let previousFocus = null;
 let installRequestSource = 'install';
 
@@ -138,6 +137,7 @@ async function promptInstall(source = 'install') {
   const promptEvent = deferredInstallPrompt;
   installRequestSource = source;
   closeMenu();
+  trackPwaInstallClicked(source);
 
   let choice;
   try {
@@ -178,10 +178,6 @@ export function setupPwa() {
   window.addEventListener('beforeinstallprompt', (event) => {
     event.preventDefault();
     deferredInstallPrompt = event;
-    if (!installAvailableTracked) {
-      installAvailableTracked = true;
-      trackPwaInstallAvailable();
-    }
     updateInstallActions();
   });
 

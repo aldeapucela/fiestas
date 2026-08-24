@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import test from 'node:test';
 
 const TRACKED_FAVORITES_STORAGE_KEY = 'fiestasPucela:analytics:saved-activities';
+const TRACKED_COMMUNITY_PLANS_STORAGE_KEY = 'fiestasPucela:analytics:added-community-plans';
 
 function installBrowserGlobals() {
   const values = new Map();
@@ -44,12 +45,26 @@ test('tracks and deduplicates saves after Matomo replaces the initial array queu
 });
 
 test('tracks the stable id when a community plan is added', async () => {
-  installBrowserGlobals();
+  const values = installBrowserGlobals();
   const analytics = await import(`../src/scripts/analytics.js?community=${Date.now()}`);
   const sent = [];
 
   window._paq = { push: (event) => sent.push(event) };
 
   assert.equal(analytics.trackCommunityPlanAdded('indie-pero-no-solo'), true);
+  assert.equal(analytics.trackCommunityPlanAdded('indie-pero-no-solo'), false);
   assert.deepEqual(sent, [['trackEvent', 'plan', 'add_community', 'indie_pero_no_solo']]);
+  assert.deepEqual(JSON.parse(values.get(TRACKED_COMMUNITY_PLANS_STORAGE_KEY)), ['indie_pero_no_solo']);
+});
+
+test('tracks an explicit PWA install action without tracking availability', async () => {
+  installBrowserGlobals();
+  const analytics = await import(`../src/scripts/analytics.js?pwa=${Date.now()}`);
+  const sent = [];
+
+  window._paq = { push: (event) => sent.push(event) };
+
+  assert.equal(analytics.trackPwaInstallClicked('menu'), true);
+  assert.deepEqual(sent, [['trackEvent', 'pwa', 'install_clicked', 'install', 'menu']]);
+  assert.equal('trackPwaInstallAvailable' in analytics, false);
 });
