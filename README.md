@@ -101,4 +101,8 @@ La instalación, el servidor local, las pruebas, el build, la auditoría de ubic
 
 ## Licencia
 
-El contenido se publica bajo [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es). El código está disponible en [GitHub](https://github.com/aldeapucela/fiestas).
+El código fuente se publica bajo [GNU AGPL versión 3.0](https://www.gnu.org/licenses/agpl-3.0.html); consulta el archivo [LICENSE](LICENSE).
+
+El contenido se publica bajo [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.es); consulta [LICENSE-CONTENT](LICENSE-CONTENT).
+
+El código está disponible en [GitHub](https://github.com/aldeapucela/fiestas).
