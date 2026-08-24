@@ -140,7 +140,7 @@ export function setupPlansPage(rawEvents = []) {
     }
     els.shareDialog.hidden = false;
     document.body.classList.add('fiestas-plan-share-open');
-    els.shareDialogCopy?.focus();
+    els.shareDialogNative?.focus();
   };
 
   const render = () => {
