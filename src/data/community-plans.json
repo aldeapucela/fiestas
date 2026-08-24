@@ -58,6 +58,13 @@
       "author": "Clara",
       "icon": "music",
       "url": "/data/community-plans/bailes-latinos-sbk.fiestas-plan.json"
+    },
+    {
+      "id": "indie-pero-no-solo",
+      "name": "Indie, pero no solo",
+      "author": "Yustin",
+      "icon": "music",
+      "url": "/data/community-plans/indie-pero-no-solo.fiestas-plan.json"
     }
   ]
 }
