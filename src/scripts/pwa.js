@@ -13,8 +13,12 @@ let deferredInstallPrompt = null;
 let previousFocus = null;
 let installRequestSource = 'install';
 let installProgressTimer = null;
+let installProgressHideTimer = null;
+let installProgressShownAt = 0;
+let installCompleted = false;
 
 const INSTALL_PROGRESS_TIMEOUT = 25000;
+const INSTALL_PROGRESS_MIN_VISIBLE = 1200;
 
 function isStandalone() {
   return window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
@@ -107,17 +111,34 @@ function getInstallProgressDialog() {
 function hideInstallProgress() {
   const dialog = getInstallProgressDialog();
   if (installProgressTimer) window.clearTimeout(installProgressTimer);
+  if (installProgressHideTimer) window.clearTimeout(installProgressHideTimer);
   installProgressTimer = null;
+  installProgressHideTimer = null;
   if (dialog) dialog.hidden = true;
 }
 
+function scheduleInstallProgressHide() {
+  const dialog = getInstallProgressDialog();
+  if (!dialog || dialog.hidden) return;
+  const elapsed = Date.now() - installProgressShownAt;
+  const delay = Math.max(0, INSTALL_PROGRESS_MIN_VISIBLE - elapsed);
+  if (installProgressHideTimer) window.clearTimeout(installProgressHideTimer);
+  installProgressHideTimer = window.setTimeout(() => {
+    installProgressHideTimer = null;
+    hideInstallProgress();
+  }, delay);
+}
+
 function showInstallProgress() {
-  if (isStandalone()) return;
   const dialog = getInstallProgressDialog();
   if (!dialog) return;
   dialog.hidden = false;
+  installProgressShownAt = Date.now();
   if (installProgressTimer) window.clearTimeout(installProgressTimer);
+  if (installProgressHideTimer) window.clearTimeout(installProgressHideTimer);
   installProgressTimer = window.setTimeout(hideInstallProgress, INSTALL_PROGRESS_TIMEOUT);
+  installProgressHideTimer = null;
+  if (installCompleted) scheduleInstallProgressHide();
 }
 
 function openIosHelp() {
@@ -149,10 +170,8 @@ async function promptInstall(source = 'install') {
 
   let choice;
   try {
-    const nativePrompt = promptEvent.prompt();
-    showInstallProgress();
+    promptEvent.prompt();
     choice = await promptEvent.userChoice;
-    await nativePrompt;
   } catch (_) {
     deferredInstallPrompt = null;
     hideInstallProgress();
@@ -190,15 +209,17 @@ export function setupPwa() {
 
   window.addEventListener('beforeinstallprompt', (event) => {
     event.preventDefault();
+    installCompleted = false;
     deferredInstallPrompt = event;
     updateInstallActions();
   });
 
   window.addEventListener('appinstalled', () => {
     deferredInstallPrompt = null;
-    hideInstallProgress();
+    installCompleted = true;
     trackPwaInstalled(installRequestSource);
     installRequestSource = 'install';
+    scheduleInstallProgressHide();
     updateInstallActions();
   });
 
