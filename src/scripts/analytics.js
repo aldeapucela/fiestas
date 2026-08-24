@@ -9,7 +9,7 @@ const categoryActions = {
   activity: new Set(['view_detail', 'save', 'remove_save', 'share', 'open_directions', 'open_external_link', 'open_tickets']),
   agenda: new Set(['select_date', 'select_all_dates', 'apply_filter', 'search', 'open_activity']),
   map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
-  plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'export', 'import', 'share', 'import_error']),
+  plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'add_community', 'export', 'import', 'share', 'import_error']),
   pwa: new Set(['install_available', 'install_accepted', 'install_cancelled', 'installed', 'ios_help_opened', 'sw_registration_error'])
 };
 
@@ -107,6 +107,10 @@ export function trackExternalLinkOpened(linkType) {
 
 export function trackPlanCreated(planType = 'manual') {
   return pushEvent('plan', 'create', planType);
+}
+
+export function trackCommunityPlanAdded(planId) {
+  return pushEvent('plan', 'add_community', planId);
 }
 
 export function trackPlanActivityAdded(activityId) {

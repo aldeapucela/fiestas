@@ -42,3 +42,14 @@ test('tracks and deduplicates saves after Matomo replaces the initial array queu
   assert.deepEqual(sent, [['trackEvent', 'activity', 'save', '307']]);
   assert.deepEqual(JSON.parse(values.get(TRACKED_FAVORITES_STORAGE_KEY)), ['307']);
 });
+
+test('tracks the stable id when a community plan is added', async () => {
+  installBrowserGlobals();
+  const analytics = await import(`../src/scripts/analytics.js?community=${Date.now()}`);
+  const sent = [];
+
+  window._paq = { push: (event) => sent.push(event) };
+
+  assert.equal(analytics.trackCommunityPlanAdded('indie-pero-no-solo'), true);
+  assert.deepEqual(sent, [['trackEvent', 'plan', 'add_community', 'indie_pero_no_solo']]);
+});

@@ -1,5 +1,5 @@
 import { createPlan, getPlanIcon, normalizePlanIcon, readFavoriteIds, readPlans, writeFavoriteIds } from './plan-storage.js';
-import { trackFavoriteChanged, trackPlanCreated, trackPlanShared } from './analytics.js';
+import { trackCommunityPlanAdded, trackFavoriteChanged, trackPlanShared } from './analytics.js';
 import { renderPlanTimeline } from './plans-page.js';
 
 const CATALOG_SCHEMA_VERSION = 1;
@@ -78,7 +78,7 @@ export function setupCommunityPlansPage(rawEvents = []) {
           sourcePlanId: entry.id,
           icon: imported.icon || entry.icon
         });
-        trackPlanCreated('community');
+        trackCommunityPlanAdded(entry.id);
         markAddedLink(addLink, plan);
       } catch (_) {
         addLink.removeAttribute('aria-busy');
@@ -160,7 +160,7 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
         sourcePlanId: entry.id,
         icon: imported.icon || entry.icon
       });
-      trackPlanCreated('community');
+      trackCommunityPlanAdded(entry.id);
       syncAddedLinks(plan);
       setStatus(`${plan.name} ya está disponible en Mi plan.`, 'success');
     } catch (_) {
