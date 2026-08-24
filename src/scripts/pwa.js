@@ -18,7 +18,7 @@ let installProgressShownAt = 0;
 let installCompleted = false;
 
 const INSTALL_PROGRESS_TIMEOUT = 25000;
-const INSTALL_PROGRESS_MIN_VISIBLE = 1200;
+const INSTALL_PROGRESS_MIN_VISIBLE = 12000;
 
 function isStandalone() {
   return window.matchMedia?.('(display-mode: standalone)').matches || window.navigator.standalone === true;
