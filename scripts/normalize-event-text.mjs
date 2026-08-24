@@ -99,16 +99,27 @@ function normalizeEvent(event) {
     }
   }
 
+  normalizeAttributions(next, changes);
+
   for (const field of listFields) {
     if (!Array.isArray(next[field])) continue;
-    next[field] = next[field].map((value, index) => {
+    const normalizedList = uniqueValues(next[field].map((value, index) => {
       if (typeof value !== 'string') return value;
       const normalized = normalizeText(value);
       if (normalized !== value) {
         changes.push({ field: `${field}[${index}]`, before: value, after: normalized });
       }
       return normalized;
-    });
+    }).filter((value) => typeof value !== 'string' || isValidAttributionValue(value)));
+
+    if (JSON.stringify(normalizedList) !== JSON.stringify(next[field])) {
+      changes.push({
+        field,
+        before: next[field].join(' | '),
+        after: normalizedList.join(' | ')
+      });
+      next[field] = normalizedList;
+    }
   }
 
   if (next.ticket && typeof next.ticket === 'object') {
@@ -123,6 +134,220 @@ function normalizeEvent(event) {
   }
 
   return { event: next, changes };
+}
+
+function normalizeAttributions(event, changes) {
+  const beforeOrganizers = [...(Array.isArray(event.organizers) ? event.organizers : [])];
+  const beforeCollaborators = [...(Array.isArray(event.collaborators) ? event.collaborators : [])];
+  const beforePerformances = [...(Array.isArray(event.performances) ? event.performances : [])];
+
+  event.organizers = beforeOrganizers;
+  event.collaborators = beforeCollaborators;
+
+  for (const field of ['description', 'summary']) {
+    if (typeof event[field] !== 'string') continue;
+    const result = cleanAttributionsFromText(event[field]);
+    addAttributions(event.organizers, result.organizers);
+    addAttributions(event.collaborators, result.collaborators);
+    if (result.text !== event[field]) {
+      changes.push({ field, before: event[field], after: result.text });
+      event[field] = result.text;
+    }
+  }
+
+  if (Array.isArray(event.performances)) {
+    event.performances = event.performances.map((value) => {
+      if (typeof value !== 'string') return value;
+      const result = cleanAttributionsFromText(value);
+      addAttributions(event.organizers, result.organizers);
+      addAttributions(event.collaborators, result.collaborators);
+      return result.text;
+    }).filter(Boolean);
+  }
+
+  event.organizers = cleanAttributionList(event.organizers, 'organizers');
+  event.collaborators = cleanAttributionList(event.collaborators, 'collaborators');
+  event.organizers = removeCrossListedAttributions(event.organizers, event.collaborators);
+
+  removeListValuesFromText(event, 'description', [...event.organizers, ...event.collaborators], changes);
+  removeListValuesFromText(event, 'summary', [...event.organizers, ...event.collaborators], changes);
+
+  if (JSON.stringify(beforeOrganizers) !== JSON.stringify(event.organizers)) {
+    changes.push({
+      field: 'organizers',
+      before: beforeOrganizers.join(' | '),
+      after: event.organizers.join(' | ')
+    });
+  }
+
+  if (JSON.stringify(beforeCollaborators) !== JSON.stringify(event.collaborators)) {
+    changes.push({
+      field: 'collaborators',
+      before: beforeCollaborators.join(' | '),
+      after: event.collaborators.join(' | ')
+    });
+  }
+
+  if (JSON.stringify(beforePerformances) !== JSON.stringify(event.performances)) {
+    changes.push({
+      field: 'performances',
+      before: beforePerformances.join(' | '),
+      after: event.performances.join(' | ')
+    });
+  }
+}
+
+function cleanAttributionsFromText(value) {
+  let text = value;
+  const organizers = [];
+  const collaborators = [];
+  const matches = [...text.matchAll(/\b(Organiza|Organizan|Colabora|Colaboran):\s*/giu)];
+
+  for (let index = matches.length - 1; index >= 0; index -= 1) {
+    const match = matches[index];
+    const start = match.index;
+    const valueStart = start + match[0].length;
+    const nextStart = index + 1 < matches.length ? matches[index + 1].index : text.length;
+    const rawSegment = text.slice(valueStart, nextStart);
+    const segment = trimAttributionSegment(rawSegment);
+    const values = parseAttributionValues(segment);
+
+    if (/^Organiza/iu.test(match[1])) addAttributions(organizers, values);
+    if (/^Colabora/iu.test(match[1])) addAttributions(collaborators, values);
+
+    text = `${text.slice(0, start)}${text.slice(nextStart)}`;
+  }
+
+  return {
+    text: cleanAttributionText(text),
+    organizers,
+    collaborators
+  };
+}
+
+function trimAttributionSegment(value) {
+  return value
+    .replace(/\s+Entrada:.*$/iu, '')
+    .replace(/\s+\+\s*Info.*$/iu, '')
+    .replace(/\s+Info\s+.*$/iu, '')
+    .replace(/\s*[\s.]+$/u, '')
+    .trim();
+}
+
+function parseAttributionValues(value) {
+  return splitAttributionValue(value)
+    .map(cleanAttributionValue)
+    .filter(isValidAttributionValue);
+}
+
+function splitAttributionValue(value) {
+  const parts = splitOutsideQuotes(value, ',');
+  if (parts.length > 1) return parts;
+  return [value];
+}
+
+function addAttributions(target, values) {
+  for (const value of values) {
+    const cleaned = cleanAttributionValue(value);
+    if (!isValidAttributionValue(cleaned)) continue;
+    if (target.some((item) => item.toLocaleLowerCase('es-ES') === cleaned.toLocaleLowerCase('es-ES'))) continue;
+    target.push(cleaned);
+  }
+}
+
+function cleanAttributionList(values, field) {
+  return compactAttributionValues(uniqueValues(values.flatMap((value) => {
+    const cleaned = cleanAttributionValue(value);
+    if (!isValidAttributionValue(cleaned)) return [];
+
+    const nested = String(value || '').match(/^(Organiza|Organizan|Colabora|Colaboran):\s*(.+)$/iu);
+    if (nested && field === 'organizers' && /^Colabora/iu.test(nested[1])) return [];
+    if (nested && field === 'collaborators' && /^Organiza/iu.test(nested[1])) return [];
+    return nested ? parseAttributionValues(nested[1]) : [cleaned];
+  })));
+}
+
+function cleanAttributionValue(value) {
+  return normalizeText(String(value || ''))
+    .replace(/\s+Entrada:.*$/iu, '')
+    .replace(/\bCoordina dora\b/giu, 'Coordinadora')
+    .replace(/\bFun dación\b/giu, 'Fundación')
+    .replace(/\bFunda ción\b/giu, 'Fundación')
+    .replace(/\bBa loncesto\b/giu, 'Baloncesto')
+    .replace(/\bEspaño la\b/giu, 'Española')
+    .replace(/^(?:Organiza|Organizan|Colabora|Colaboran):\s*/iu, '')
+    .replace(/\s*[\s.]+$/u, '')
+    .trim();
+}
+
+function isValidAttributionValue(value) {
+  return Boolean(value)
+    && !/^(?:Organiza|Organizan|Colabora|Colaboran):?$/iu.test(value)
+    && !/^(?:Info|Entrada|A continuación)$/iu.test(value)
+    && value.length > 2;
+}
+
+function removeListValuesFromText(event, field, values, changes) {
+  if (typeof event[field] !== 'string') return;
+  const before = event[field];
+  let text = before;
+
+  const sorted = values
+    .map(cleanAttributionValue)
+    .filter(isValidAttributionValue)
+    .sort((a, b) => b.length - a.length);
+
+  for (const value of sorted) {
+    text = removeAttributionValueSuffix(text, value);
+  }
+
+  const cleaned = cleanAttributionText(text);
+  if (cleaned !== before) {
+    changes.push({ field, before, after: cleaned });
+    event[field] = cleaned;
+  }
+}
+
+function removeAttributionValueSuffix(text, value) {
+  const escaped = escapeRegExp(value);
+  return text
+    .replace(new RegExp(`(?:\\.?\\s+)${escaped}$`, 'iu'), '')
+    .replace(new RegExp(`(?:\\.?\\s+)${escaped}(?=\\s*$)`, 'iu'), '');
+}
+
+function removeCrossListedAttributions(organizers, collaborators) {
+  if (organizers.length < 2) return organizers;
+  const collaboratorKeys = collaborators.map((value) => value.toLocaleLowerCase('es-ES'));
+  const filtered = organizers.filter((value) => {
+    const key = value.toLocaleLowerCase('es-ES');
+    return !collaboratorKeys.some((collaborator) => collaborator === key || collaborator.includes(key));
+  });
+  return filtered.length ? filtered : organizers;
+}
+
+function compactAttributionValues(values) {
+  return values.filter((value, index) => {
+    const key = value.toLocaleLowerCase('es-ES');
+    return !values.some((other, otherIndex) => {
+      if (index === otherIndex) return false;
+      const otherKey = other.toLocaleLowerCase('es-ES');
+      return otherKey.length > key.length && otherKey.includes(key);
+    });
+  });
+}
+
+function cleanAttributionText(value) {
+  return value
+    .replace(/\s{2,}/g, ' ')
+    .replace(/\s+\./g, '.')
+    .replace(/\.\s*\./g, '.')
+    .replace(/\s*,\s*$/u, '')
+    .replace(/\s*[\s.]+$/u, '')
+    .trim();
+}
+
+function escapeRegExp(value) {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function normalizePerformanceList(values) {
