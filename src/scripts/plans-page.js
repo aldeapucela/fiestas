@@ -15,7 +15,7 @@ import {
   updatePlan,
   writeFavoriteIds
 } from './plan-storage.js';
-import { createIcsFile, createPlanFile, createPlanImportUrl, decodePlanImportHash, downloadFile, shareFileOrDownload } from './plan-export.js';
+import { createIcsFile, createPlanImportUrl, decodePlanImportHash, shareFileOrDownload } from './plan-export.js';
 import {
   trackActivityShared,
   trackFavoriteChanged,
@@ -90,8 +90,7 @@ export function setupPlansPage(rawEvents = []) {
     shareDialogMessage: document.querySelector('[data-plan-share-message]'),
     shareDialogFeedback: document.querySelector('[data-plan-share-feedback]'),
     shareDialogNative: document.querySelector('[data-plan-share-native]'),
-    shareDialogCopy: document.querySelector('[data-plan-share-copy]'),
-    shareDialogDownload: document.querySelector('[data-plan-share-download]')
+    shareDialogCopy: document.querySelector('[data-plan-share-copy]')
   };
 
   const showShareDialogFeedback = (message, isError = false) => {
@@ -131,7 +130,7 @@ export function setupPlansPage(rawEvents = []) {
     shareDialogReturnFocus = trigger || null;
     if (els.shareDialogName) els.shareDialogName.textContent = plan.name;
     if (els.shareDialogMessage) {
-      els.shareDialogMessage.value = createPlanImportUrl(plan, page.dataset.planImportUrl);
+      els.shareDialogMessage.value = createPlanShareMessage(plan, page.dataset.planImportUrl);
     }
     if (els.shareDialogFeedback) {
       els.shareDialogFeedback.hidden = true;
@@ -245,9 +244,6 @@ export function setupPlansPage(rawEvents = []) {
       state.selectedPlanId = '';
       state.creatingPlan = true;
       state.pendingDeletePlanId = '';
-    } else if (value === '__import__') {
-      window.location.href = '/plan/importar/';
-      return;
     } else {
       state.view = 'plan';
       state.selectedPlanId = value;
@@ -339,19 +335,19 @@ export function setupPlansPage(rawEvents = []) {
     button.addEventListener('click', closeShareDialog);
   });
   els.shareDialogCopy?.addEventListener('click', async () => {
-    const url = els.shareDialogMessage?.value || '';
-    if (!url) return;
+    const message = els.shareDialogMessage?.value || '';
+    if (!message) return;
     try {
-      await copyText(url);
+      await copyText(message);
       trackPlanExported('url');
-      showShareDialogFeedback('Enlace copiado al portapapeles.');
+      showShareDialogFeedback('Mensaje copiado al portapapeles.');
     } catch (_) {
-      showShareDialogFeedback('No se pudo copiar el enlace.', true);
+      showShareDialogFeedback('No se pudo copiar el mensaje.', true);
     }
   });
   els.shareDialogNative?.addEventListener('click', async () => {
     if (!shareDialogPlan) return;
-    const url = els.shareDialogMessage?.value || createPlanImportUrl(shareDialogPlan, page.dataset.planImportUrl);
+    const url = createPlanImportUrl(shareDialogPlan, page.dataset.planImportUrl);
     try {
       if (!navigator.share) throw new Error('Share unavailable');
       await navigator.share({
@@ -367,19 +363,13 @@ export function setupPlansPage(rawEvents = []) {
         return;
       }
       try {
-        await copyText(url);
+        await copyText(createPlanShareMessage(shareDialogPlan, page.dataset.planImportUrl));
         trackPlanExported('url');
-        showShareDialogFeedback('No se pudo abrir compartir. Enlace copiado.');
+        showShareDialogFeedback('No se pudo abrir compartir. Mensaje copiado.');
       } catch (_) {
         showShareDialogFeedback('No se pudo compartir el enlace.', true);
       }
     }
-  });
-  els.shareDialogDownload?.addEventListener('click', () => {
-    if (!shareDialogPlan) return;
-    downloadFile(createPlanFile(shareDialogPlan));
-    trackPlanExported('file');
-    showShareDialogFeedback('Plan descargado.');
   });
 
   els.createForm?.addEventListener('submit', (event) => {
@@ -550,13 +540,6 @@ export function setupPlansPage(rawEvents = []) {
       return;
     }
 
-    const exportFileButton = event.target.closest('[data-plan-export-file]');
-    if (exportFileButton) {
-      const plan = state.plans.find((item) => item.id === exportFileButton.dataset.planExportFile);
-      if (plan) await exportPlanFile(plan, els.feedback);
-      return;
-    }
-
     const shareButton = event.target.closest('[data-plan-share]');
     if (shareButton) {
       const plan = getActionPlan(shareButton.dataset.planShare, state, state.events);
@@ -623,7 +606,6 @@ export function setupPlanImportPage(rawEvents = []) {
 
   const events = normalizeEvents(rawEvents);
   const eventIds = new Set(events.map((event) => event.id));
-  const input = page.querySelector('[data-plan-import-file]');
   const status = page.querySelector('[data-plan-import-status]');
   const preview = page.querySelector('[data-plan-import-preview]');
   const actions = page.querySelector('[data-plan-import-actions]');
@@ -645,7 +627,7 @@ export function setupPlanImportPage(rawEvents = []) {
     }
   };
 
-  const processText = (text, source = 'file') => {
+  const processText = (text, source = 'url') => {
     const result = validateImport(text, eventIds);
     if (!result.ok) {
       reset();
@@ -684,27 +666,8 @@ export function setupPlanImportPage(rawEvents = []) {
     }
   };
 
-  input?.addEventListener('change', async () => {
-    const file = input.files?.[0];
-    if (!file) return;
-    if (file.size > MAX_IMPORT_BYTES) {
-      reset();
-      setStatus(status, 'El archivo supera el límite de 256 KiB.', true);
-      trackPlanImportError('file_too_large');
-      return;
-    }
-    try {
-      processText(await file.text(), 'file');
-    } catch (_) {
-      reset();
-      setStatus(status, 'No se pudo leer el archivo.', true);
-      trackPlanImportError('read_error');
-    }
-  });
-
   cancelButton?.addEventListener('click', () => {
     reset();
-    if (input) input.value = '';
     setStatus(status, 'Importación cancelada.', false);
   });
 
@@ -734,7 +697,6 @@ export function setupPlanImportPage(rawEvents = []) {
         ? '/plan/?tab=plans'
         : `/plan/?tab=plans&plan=${encodeURIComponent(importedPlans[0].id)}`;
     }
-    if (input) input.value = '';
     pending = null;
   });
 
@@ -938,10 +900,7 @@ function renderPlanList(container, plans, events, selectedPlanId, feedback) {
     );
     const exportRow = document.createElement('div');
     exportRow.className = 'fiestas-plan-card-actions-row';
-    exportRow.append(
-      actionButton('Calendario', 'fa-calendar-plus', { 'data-plan-export-calendar': plan.id }),
-      actionButton('Exportar', 'fa-share-from-square', { 'data-plan-export-file': plan.id })
-    );
+    exportRow.append(actionButton('Calendario', 'fa-calendar-plus', { 'data-plan-export-calendar': plan.id }));
     actions.append(manageRow, exportRow);
     card.append(actions);
     list.append(card);
@@ -1219,18 +1178,12 @@ async function exportCalendar(events, name, feedback, analyticsId) {
   showFeedback(feedback, result === 'shared' ? 'Calendario compartido.' : result === 'downloaded' ? 'Calendario descargado.' : 'Compartición cancelada.');
 }
 
-async function exportPlanFile(plan, feedback) {
-  const result = await shareFileOrDownload(createPlanFile(plan), {
-    title: plan.name,
-    text: 'Importa este plan de las Fiestas de Valladolid'
-  });
-  if (result === 'shared') trackPlanShared('file');
-  else if (result === 'downloaded') trackPlanExported('file');
-  showFeedback(feedback, result === 'shared' ? 'Plan compartido.' : result === 'downloaded' ? 'Archivo descargado.' : 'Compartición cancelada.');
-}
-
 function createPlanShareText(plan) {
   return `Échale un vistazo al plan «${plan.name}» para las Fiestas y Ferias de Valladolid 2026.`;
+}
+
+function createPlanShareMessage(plan, importUrl) {
+  return `${createPlanShareText(plan)}\n ${createPlanImportUrl(plan, importUrl)}`;
 }
 
 async function copyText(text) {
@@ -1251,26 +1204,26 @@ async function copyText(text) {
 }
 
 function validateImport(text, eventIds) {
-  if (String(text || '').length > MAX_IMPORT_BYTES) return { ok: false, message: 'El archivo supera el límite de 256 KiB.', errorType: 'file_too_large' };
+  if (String(text || '').length > MAX_IMPORT_BYTES) return { ok: false, message: 'El plan compartido supera el límite de 256 KiB.', errorType: 'file_too_large' };
   let value;
   try {
     value = JSON.parse(String(text || ''));
   } catch (_) {
-    return { ok: false, message: 'El archivo no contiene un JSON válido.', errorType: 'invalid_json' };
+    return { ok: false, message: 'El enlace compartido no contiene un plan válido.', errorType: 'invalid_json' };
   }
   if (!value || typeof value !== 'object' || value.schemaVersion !== 1 || value.festival !== FESTIVAL_ID) {
-    return { ok: false, message: 'El archivo no pertenece a Fiestas Valladolid 2026 o usa una versión incompatible.', errorType: 'unsupported_format' };
+    return { ok: false, message: 'El plan compartido no pertenece a Fiestas Valladolid 2026 o usa una versión incompatible.', errorType: 'unsupported_format' };
   }
   const hasPlans = Object.prototype.hasOwnProperty.call(value, 'plans');
   if (hasPlans && !Array.isArray(value.plans)) {
-    return { ok: false, message: 'La lista de planes del archivo no es válida.', errorType: 'unsupported_format' };
+    return { ok: false, message: 'La lista de planes compartidos no es válida.', errorType: 'unsupported_format' };
   }
   const rawPlans = hasPlans ? value.plans : [value];
-  if (!rawPlans.length) return { ok: false, message: 'El archivo no contiene ningún plan.', errorType: 'unsupported_format' };
+  if (!rawPlans.length) return { ok: false, message: 'El enlace compartido no contiene ningún plan.', errorType: 'unsupported_format' };
   const plans = [];
   for (const rawPlan of rawPlans) {
     if (!rawPlan || typeof rawPlan !== 'object') {
-      return { ok: false, message: 'Uno de los planes del archivo no es válido.', errorType: 'unsupported_format' };
+      return { ok: false, message: 'Uno de los planes compartidos no es válido.', errorType: 'unsupported_format' };
     }
     const name = String(rawPlan.name || '').trim();
     if (!name || name.length > MAX_PLAN_NAME_LENGTH) {
@@ -1442,7 +1395,6 @@ function renderPlanPicker(picker, pickerIcon, plans, view, selectedPlanId) {
   divider.className = 'fiestas-plan-picker-divider';
   menu.append(divider);
   appendOption({ value: '__create__', text: 'Crear un plan nuevo', icon: 'fa-plus', kind: 'action' });
-  appendOption({ value: '__import__', text: 'Importar un plan', icon: 'fa-file-arrow-up', kind: 'action' });
   menu.hidden = true;
   trigger.setAttribute('aria-expanded', 'false');
 }
