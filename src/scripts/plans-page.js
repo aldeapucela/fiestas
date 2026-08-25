@@ -169,7 +169,11 @@ export function setupPlansPage(rawEvents = []) {
     state.plans = readPlans();
     if (state.selectedPlanId && !state.plans.some((plan) => plan.id === state.selectedPlanId)) state.selectedPlanId = '';
     if (state.view === 'plan' && !state.selectedPlanId && state.plans.length && !state.creatingPlan) state.selectedPlanId = state.plans[0].id;
-    const displayedPlan = state.view === 'saved' ? savedPlan(state.events) : state.plans.find((plan) => plan.id === state.selectedPlanId);
+    const displayedPlan = state.view === 'saved'
+      ? savedPlan(state.events)
+      : state.view === 'plan'
+        ? state.plans.find((plan) => plan.id === state.selectedPlanId)
+        : null;
     if (state.selectedDay !== 'all' && displayedPlan && !eventsForPlan(displayedPlan, state.events).some((event) => event.date === state.selectedDay)) {
       state.selectedDay = 'all';
       updatePlanUrl(state);
@@ -179,7 +183,11 @@ export function setupPlansPage(rawEvents = []) {
     renderPlanIconPicker(els.editorIcons, state.editingIcon, 'edit');
     els.sections.forEach((section) => {
       const sectionName = section.dataset.planSection;
-      section.hidden = sectionName === 'saved' ? state.view !== 'saved' : sectionName === 'plan' ? state.view !== 'plan' : !state.selectedPlanId || state.view !== 'plan';
+      section.hidden = sectionName === 'saved'
+        ? state.view !== 'saved'
+        : sectionName === 'plan'
+          ? !['plans', 'plan'].includes(state.view)
+          : !state.selectedPlanId || state.view !== 'plan';
     });
     if (state.view === 'saved') {
       renderPlanDetail(els.savedContent, savedPlan(state.events), state.events, state.plans, state.selectedDay, els.feedback, { isSaved: true });
@@ -189,9 +197,9 @@ export function setupPlansPage(rawEvents = []) {
       renderPlanDetail(els.planDetail, state.plans.find((plan) => plan.id === state.selectedPlanId), state.events, state.plans, state.selectedDay, els.feedback);
     }
     if (els.planList && state.view === 'saved') els.planList.hidden = true;
-    if (els.createForm) els.createForm.hidden = state.view !== 'plan' || Boolean(state.selectedPlanId);
+    if (els.createForm) els.createForm.hidden = !['plans', 'plan'].includes(state.view) || Boolean(state.selectedPlanId);
     if (els.importLink) els.importLink.hidden = true;
-    if (els.headerShare) els.headerShare.hidden = state.view === 'plan' && !state.selectedPlanId;
+    if (els.headerShare) els.headerShare.hidden = state.view === 'plans' || (state.view === 'plan' && !state.selectedPlanId);
     const canManagePlan = state.view === 'plan' && Boolean(state.selectedPlanId) && state.plans.some((plan) => plan.id === state.selectedPlanId);
     if (els.manageMenuTrigger) els.manageMenuTrigger.hidden = !canManagePlan;
     if (!canManagePlan) closePlanManageMenu();
@@ -257,7 +265,12 @@ export function setupPlansPage(rawEvents = []) {
   };
 
   const selectPlan = (value) => {
-    if (value === '__saved__') {
+    if (value === '__plans__') {
+      state.view = 'plans';
+      state.selectedPlanId = '';
+      state.creatingPlan = false;
+      state.pendingDeletePlanId = '';
+    } else if (value === '__saved__') {
       state.view = 'saved';
       state.selectedPlanId = '';
       state.creatingPlan = false;
@@ -350,7 +363,11 @@ export function setupPlansPage(rawEvents = []) {
   });
 
   els.headerShare?.addEventListener('click', async () => {
-    const plan = state.view === 'saved' ? savedPlan(state.events) : state.plans.find((item) => item.id === state.selectedPlanId);
+    const plan = state.view === 'saved'
+      ? savedPlan(state.events)
+      : state.view === 'plan'
+        ? state.plans.find((item) => item.id === state.selectedPlanId)
+        : null;
     if (plan) openShareDialog(plan, els.headerShare);
   });
 
@@ -1597,7 +1614,9 @@ function eventsForPlan(plan, events) {
 
 function getPlanView() {
   const params = new URLSearchParams(window.location.search);
-  return params.get('view') === 'plans' || params.get('tab') === 'plans' || params.get('plan') ? 'plan' : 'saved';
+  if (params.get('plan')) return 'plan';
+  if (params.get('view') === 'saved') return 'saved';
+  return 'plans';
 }
 
 function renderPlanPicker(picker, pickerIcon, plans, view, selectedPlanId) {
@@ -1607,10 +1626,10 @@ function renderPlanPicker(picker, pickerIcon, plans, view, selectedPlanId) {
   const menu = picker.querySelector('[data-plan-picker-menu]');
   if (!trigger || !label || !menu) return;
 
-  const selectedValue = view === 'saved' ? '__saved__' : selectedPlanId || '__create__';
+  const selectedValue = view === 'saved' ? '__saved__' : view === 'plans' ? '__plans__' : selectedPlanId || '__create__';
   const selectedPlan = plans.find((plan) => plan.id === selectedPlanId);
-  const selectedLabel = view === 'saved' ? 'Guardados' : selectedPlan?.name || 'Crear un plan nuevo';
-  const selectedIcon = getPlanIcon(view === 'saved' ? 'stars' : selectedPlan?.icon);
+  const selectedLabel = view === 'saved' ? 'Guardados' : view === 'plans' ? 'Mis planes' : selectedPlan?.name || 'Crear un plan nuevo';
+  const selectedIcon = getPlanIcon(view === 'saved' ? 'stars' : view === 'plans' ? 'layers' : selectedPlan?.icon);
   label.textContent = selectedLabel;
   trigger.setAttribute('aria-label', `Seleccionar plan: ${selectedLabel}`);
   if (pickerIcon) pickerIcon.className = `fa-solid ${selectedIcon.className}`;
@@ -1628,17 +1647,15 @@ function renderPlanPicker(picker, pickerIcon, plans, view, selectedPlanId) {
     menu.append(option);
   };
 
+  const plansLabel = textNode('p', 'Mis planes');
+  plansLabel.className = 'fiestas-plan-picker-group-label';
+  menu.append(plansLabel);
   appendOption({ value: '__saved__', text: 'Guardados', icon: getPlanIcon('stars').className });
-  if (plans.length) {
-    const plansLabel = textNode('p', 'Mis planes');
-    plansLabel.className = 'fiestas-plan-picker-group-label';
-    menu.append(plansLabel);
-    plans.forEach((plan) => appendOption({
-      value: plan.id,
-      text: plan.name,
-      icon: getPlanIcon(plan.icon).className
-    }));
-  }
+  plans.forEach((plan) => appendOption({
+    value: plan.id,
+    text: plan.name,
+    icon: getPlanIcon(plan.icon).className
+  }));
   const divider = document.createElement('div');
   divider.className = 'fiestas-plan-picker-divider';
   menu.append(divider);
@@ -1799,7 +1816,8 @@ function updatePlanUrl(state) {
   params.delete('plan');
   params.delete('date');
   if (state.view === 'plan') params.set('tab', 'plans');
-  else params.set('view', 'saved');
+  else if (state.view === 'saved') params.set('view', 'saved');
+  else params.set('view', 'plans');
   if (state.selectedPlanId) params.set('plan', state.selectedPlanId);
   if (state.selectedDay) params.set('date', state.selectedDay);
   const query = params.toString();
