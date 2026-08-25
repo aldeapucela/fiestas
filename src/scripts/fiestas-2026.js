@@ -957,10 +957,6 @@ async function renderMap(events) {
     if (state.preferredMapCenter) {
       state.map.setView(state.preferredMapCenter.latLng, state.preferredMapCenter.zoom);
       state.preferredMapCenter = null;
-    } else if (state.userLocation && state.locationStatus === 'granted') {
-      state.map.setView([state.userLocation.lat, state.userLocation.lng], userLocationZoom);
-    } else {
-      state.map.setView(valladolidCenter, 14);
     }
   });
 }
@@ -1278,7 +1274,9 @@ function haversineMeters(a, b) {
 
 function requestLocationOnce() {
   if (state.hasRequestedLocation || state.locationStatus === 'pending' || state.locationStatus === 'granted') return;
-  requestLocation({ centerOnSuccess: true });
+  // Ask for permission on map entry to calculate distances, but only an
+  // explicit click on the locate control may move the map to the user.
+  requestLocation({ centerOnSuccess: false });
 }
 
 function requestLocation(options = {}) {

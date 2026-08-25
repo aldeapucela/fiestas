@@ -514,6 +514,55 @@
         "query": "Plaza de la Universidad, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:37.841Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho + bebida",
+            "items": [
+              "Chapatina de rabas con alioli",
+              "Chapatina de rabas con alioli y salsa brava",
+              "Chapatina de cecina de León con tomate triturado",
+              "Chapatina de chorizo criollo con salsa chimichurri",
+              "Chapatina de atún con pimientos"
+            ]
+          },
+          {
+            "title": "Raciones",
+            "items": [
+              "Rabas con alioli",
+              "Careta de cerdo",
+              "Cecina de León",
+              "Jalapeños con queso cheddar (6 uds.)"
+            ]
+          },
+          {
+            "title": "Postre",
+            "items": [
+              "Tarta de Toblerone"
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "items": [
+              "Vino tinto, Verdejo y rosado",
+              "Frizzante",
+              "Vermut de barril",
+              "Caña de cerveza y Radler",
+              "Cerveza sin alcohol (lata)",
+              "Lorencito",
+              "Mosto",
+              "Agua",
+              "Refresco"
+            ]
+          }
+        ],
+        "highlights": [
+          "Arroz con bogavante",
+          "Cachopo de jamón o cecina",
+          "Chuletón a la piedra",
+          "Bacalao a la gallega"
+        ]
       }
     },
     {
