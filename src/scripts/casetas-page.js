@@ -349,6 +349,8 @@ function casetaRow(caseta) {
       [caseta.coordinates.lat, caseta.coordinates.lng]
     ))
     : '';
+  const searchMatch = getSearchMatch(caseta);
+  if (searchMatch) article.dataset.searchMatch = searchMatch.text;
   article.innerHTML = `
     <a class="fiestas-map-result-link" href="${href}">
       <span class="fiestas-map-result-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
@@ -357,6 +359,7 @@ function casetaRow(caseta) {
           <span class="fiestas-map-result-title">${escapeHtml(caseta.name)}</span>
           <span class="fiestas-map-result-type">${escapeHtml(caseta.zone)}</span>
         </span>
+        ${searchMatch ? `<span class="fiestas-map-result-search-match"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i><span>${escapeHtml(searchMatch.text)}</span></span>` : ''}
         <span class="fiestas-map-result-meta"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(caseta.location)}</span>
         ${placement || distance ? `<span class="fiestas-map-result-time-line">${placement ? `<span class="fiestas-map-result-date">${escapeHtml(placement)}</span>` : ''}${distance ? `<span class="fiestas-map-result-distance"><i class="fa-solid fa-person-walking" aria-hidden="true"></i>${escapeHtml(distance)}</span>` : ''}</span>` : ''}
       </span>
@@ -364,6 +367,19 @@ function casetaRow(caseta) {
     <a class="fiestas-map-result-focus" href="${href}" aria-label="Ver ficha de ${escapeAttribute(caseta.name)}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
   `;
   return article;
+}
+
+function getSearchMatch(caseta) {
+  const query = normalizeText(state.searchQuery).trim();
+  if (!query) return null;
+
+  const menuMatches = (caseta.details?.menuSections || []).flatMap((section) => [
+    ...(section.items || []).map((item) => ({ text: item }))
+  ]);
+  const highlightMatches = (caseta.details?.highlights || []).map((highlight) => ({ text: highlight }));
+
+  return [...menuMatches, ...highlightMatches]
+    .find((candidate) => candidate.text && normalizeText(candidate.text).includes(query)) || null;
 }
 
 function renderLocationStatus(isFocused) {

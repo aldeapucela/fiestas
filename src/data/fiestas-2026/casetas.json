@@ -23,7 +23,7 @@
     },
     {
       "id": "z1-03",
-      "name": "Wabi-Sabi-Taberna Japonesa",
+      "name": "Taberna Japonesa Wabi-Sabi",
       "zone": "Zona 1",
       "location": "Plaza Martí y Monsó",
       "placement": "En la propia plaza",
@@ -41,7 +41,7 @@
     },
     {
       "id": "z1-05",
-      "name": "Restaurante La Criolla",
+      "name": "La Criolla",
       "zone": "Zona 1",
       "location": "Calle Calixto Fernández de la Torre",
       "placement": "En su terraza",
@@ -60,26 +60,7 @@
     },
     {
       "id": "z1-06",
-      "name": "Taberna del Herrero",
-      "zone": "Zona 1",
-      "location": "Calle Calixto Fernández de la Torre",
-      "placement": "En su terraza",
-      "addressQuery": "Calle Calixto Fernández de la Torre, Valladolid, España",
-      "coordinates": {
-        "lat": 41.651833,
-        "lng": -4.7298001,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 60418538,
-        "displayName": "Calle Calixto Fernández de la Torre, Plaza Mayor, Valladolid, Castilla y León, 47001, España",
-        "query": "Calle Calixto Fernandez de la Torre, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:24.776Z"
-      }
-    },
-    {
-      "id": "z1-07",
-      "name": "Ama Concep Tavern",
+      "name": "La Taberna del Herrero",
       "zone": "Zona 1",
       "location": "Calle Calixto Fernández de la Torre",
       "placement": "En su terraza",
@@ -100,27 +81,18 @@
       "id": "z1-08",
       "name": "La Vermutería",
       "zone": "Zona 1",
-      "location": "Entre la calle Campanas y la calle Correos",
+      "location": "Calle Campanas",
       "placement": "En su terraza",
-      "addressQuery": "Calle Campanas y Calle Correos, Valladolid, España",
+      "addressQuery": "Calle Campanas, Valladolid, España",
       "coordinates": null
     },
     {
       "id": "z1-09",
       "name": "Bar El Corcho",
       "zone": "Zona 1",
-      "location": "Entre la calle Campanas y la calle Correos",
+      "location": "Correos",
       "placement": "En la puerta",
-      "addressQuery": "Calle Campanas y Calle Correos, Valladolid, España",
-      "coordinates": null
-    },
-    {
-      "id": "z1-10",
-      "name": "La Fonda Freiduría",
-      "zone": "Zona 1",
-      "location": "Entre la calle Campanas y la calle Correos",
-      "placement": "En la puerta",
-      "addressQuery": "Calle Campanas y Calle Correos, Valladolid, España",
+      "addressQuery": "Calle Correos, Valladolid, España",
       "coordinates": null
     },
     {
@@ -162,25 +134,6 @@
       }
     },
     {
-      "id": "z1-13",
-      "name": "El Peso",
-      "zone": "Zona 1",
-      "location": "Calle del Peso",
-      "placement": "En su terraza",
-      "addressQuery": "Calle del Peso, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6524869,
-        "lng": -4.729363,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 33820439,
-        "displayName": "Calle del Peso, Plaza Mayor, Valladolid, Castilla y León, 47001, España",
-        "query": "Calle del Peso, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:30.984Z"
-      }
-    },
-    {
       "id": "z2-01",
       "name": "Ángela",
       "zone": "Zona 2",
@@ -201,7 +154,7 @@
     },
     {
       "id": "z2-02",
-      "name": "DITALY",
+      "name": "Ditaly",
       "zone": "Zona 2",
       "location": "Lateral de San Benito",
       "placement": "En el lateral",
@@ -239,7 +192,7 @@
     },
     {
       "id": "z2-04",
-      "name": "Five Napoly Pizza",
+      "name": "Five Napoli Pizza",
       "zone": "Zona 2",
       "location": "Lateral de San Benito",
       "placement": "En el lateral",
@@ -258,7 +211,7 @@
     },
     {
       "id": "z2-05",
-      "name": "La Loca Burguer",
+      "name": "La Loca Burger",
       "zone": "Zona 2",
       "location": "San Benito",
       "placement": "En San Benito",
@@ -385,7 +338,7 @@
     },
     {
       "id": "z2-10",
-      "name": "Restaurante Le Bistro",
+      "name": "Restaurante Le Bistró",
       "zone": "Zona 2",
       "location": "Plaza de Fuente Dorada",
       "placement": "En la plaza",
@@ -442,7 +395,7 @@
     },
     {
       "id": "z2-13",
-      "name": "Bar Argolla",
+      "name": "La Argolla",
       "zone": "Zona 2",
       "location": "Calle Ferrari",
       "placement": "En la calle",
@@ -496,6 +449,24 @@
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:35.820Z"
       }
+    },
+    {
+      "id": "z2-16",
+      "name": "El Secreto",
+      "zone": "Zona 2",
+      "location": "Lateral de San Benito",
+      "placement": "En el lateral",
+      "addressQuery": "Lateral de San Benito, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z2-17",
+      "name": "Patrón",
+      "zone": "Zona 2",
+      "location": "Lateral de San Benito",
+      "placement": "En el lateral",
+      "addressQuery": "Lateral de San Benito, Valladolid, España",
+      "coordinates": null
     },
     {
       "id": "z3-01",
@@ -566,27 +537,8 @@
       }
     },
     {
-      "id": "z3-02",
-      "name": "Tapería Castellana",
-      "zone": "Zona 3",
-      "location": "Plaza de la Universidad",
-      "placement": "En la plaza",
-      "addressQuery": "Plaza de la Universidad, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6528225,
-        "lng": -4.7223575,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 61281999,
-        "displayName": "Plaza de la Universidad, La Antigua - Santa Cruz, Valladolid, Castilla y León, 47002, España",
-        "query": "Plaza de la Universidad, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:37.841Z"
-      }
-    },
-    {
       "id": "z3-03",
-      "name": "Bar El Capote de Mario",
+      "name": "El Capote de Mario",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
       "placement": "En la plaza",
@@ -605,26 +557,7 @@
     },
     {
       "id": "z3-04",
-      "name": "Bar La Biblioteca",
-      "zone": "Zona 3",
-      "location": "Plaza de la Universidad",
-      "placement": "En la plaza",
-      "addressQuery": "Plaza de la Universidad, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6528225,
-        "lng": -4.7223575,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 61281999,
-        "displayName": "Plaza de la Universidad, La Antigua - Santa Cruz, Valladolid, Castilla y León, 47002, España",
-        "query": "Plaza de la Universidad, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:37.841Z"
-      }
-    },
-    {
-      "id": "z3-05",
-      "name": "Mesón Don Enrique",
+      "name": "La Biblioteca",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
       "placement": "En la plaza",
@@ -643,7 +576,7 @@
     },
     {
       "id": "z3-07",
-      "name": "DELTOYA",
+      "name": "Deltoya",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
       "placement": "En la plaza",
@@ -699,21 +632,30 @@
       }
     },
     {
-      "id": "z3-11",
-      "name": "Taberna Originario",
+      "id": "z3-13",
+      "name": "10Y10",
       "zone": "Zona 3",
-      "location": "Calle Cardenal Cos",
-      "placement": "En la calle",
-      "addressQuery": "Calle Cardenal Cos, Valladolid, España",
+      "location": "Plaza de la Universidad",
+      "placement": "En la plaza",
+      "addressQuery": "Plaza de la Universidad, Valladolid, España",
       "coordinates": null
     },
     {
-      "id": "z3-12",
-      "name": "Kanama",
+      "id": "z3-14",
+      "name": "Café Bar La Antigua",
       "zone": "Zona 3",
-      "location": "Calle Cardenal Cos",
-      "placement": "En la calle",
-      "addressQuery": "Calle Cardenal Cos, Valladolid, España",
+      "location": "Plaza de la Universidad",
+      "placement": "En la plaza",
+      "addressQuery": "Plaza de la Universidad, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z3-15",
+      "name": "El Escudo de Paraíso",
+      "zone": "Zona 3",
+      "location": "Plaza de la Universidad",
+      "placement": "En la plaza",
+      "addressQuery": "Plaza de la Universidad, Valladolid, España",
       "coordinates": null
     },
     {
@@ -742,44 +684,6 @@
         "query": "Calle Solanilla, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:42.894Z"
-      }
-    },
-    {
-      "id": "z4-03",
-      "name": "Taberna Sixtina",
-      "zone": "Zona 4",
-      "location": "Calle Solanilla",
-      "placement": "En la calle",
-      "addressQuery": "Calle Solanilla, Valladolid, España",
-      "coordinates": {
-        "lat": 41.333467,
-        "lng": -5.0836855,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 721954652,
-        "displayName": "Calle Solanilla, Nava del Rey, Valladolid, Castilla y León, 47500, España",
-        "query": "Calle Solanilla, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:42.894Z"
-      }
-    },
-    {
-      "id": "z4-04",
-      "name": "La Mafia Se Sienta A la Mesa",
-      "zone": "Zona 4",
-      "location": "Lateral de la Catedral / Plaza Portugalete",
-      "placement": "En el lateral de la Catedral",
-      "addressQuery": "Plaza de Portugalete, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6532668,
-        "lng": -4.7239288,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 726522770,
-        "displayName": "Plaza de Portugalete, La Antigua - Santa Cruz, Valladolid, Castilla y León, 47003, España",
-        "query": "Plaza de Portugalete, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:44.282Z"
       }
     },
     {
@@ -859,42 +763,58 @@
       }
     },
     {
-      "id": "z5-01",
-      "name": "La Divina Comedia",
-      "zone": "Zona 5",
-      "location": "Acera de Recoletos",
-      "placement": "En la acera",
-      "addressQuery": "Acera de Recoletos, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
-      }
+      "id": "z4-09",
+      "name": "Café con Ron",
+      "zone": "Zona 4",
+      "location": "Calle Cadenas de San Gregorio",
+      "placement": "En la calle",
+      "addressQuery": "Calle Cadenas de San Gregorio, Valladolid, España",
+      "coordinates": null
     },
     {
-      "id": "z5-02",
-      "name": "Papillón",
-      "zone": "Zona 5",
-      "location": "Acera de Recoletos",
-      "placement": "En la acera",
-      "addressQuery": "Acera de Recoletos, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
-      }
+      "id": "z4-10",
+      "name": "Don Bacalao",
+      "zone": "Zona 4",
+      "location": "Calle Solanilla",
+      "placement": "En la calle",
+      "addressQuery": "Calle Solanilla, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z4-11",
+      "name": "El Barco",
+      "zone": "Zona 4",
+      "location": "Plaza del Salvador",
+      "placement": "En la plaza",
+      "addressQuery": "Plaza del Salvador, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z4-12",
+      "name": "Grilled Chef",
+      "zone": "Zona 4",
+      "location": "Matías Sangrador",
+      "placement": "En su fachada",
+      "addressQuery": "Calle Matías Sangrador, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z4-13",
+      "name": "La Familia se Sienta en la Mesa",
+      "zone": "Zona 4",
+      "location": "Lateral de la Catedral / Plaza Portugalete",
+      "placement": "En el lateral de la Catedral",
+      "addressQuery": "Plaza de Portugalete, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z4-14",
+      "name": "The Macanudo",
+      "zone": "Zona 4",
+      "location": "Matías Sangrador",
+      "placement": "En la terraza del local",
+      "addressQuery": "Calle Matías Sangrador, Valladolid, España",
+      "coordinates": null
     },
     {
       "id": "z5-03",
@@ -936,7 +856,7 @@
     },
     {
       "id": "z5-05",
-      "name": "La Darsena de La Victoria",
+      "name": "La Dársena de la Victoria",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
       "placement": "En la acera",
@@ -992,25 +912,6 @@
       }
     },
     {
-      "id": "z5-08",
-      "name": "Gastrobar Sabores",
-      "zone": "Zona 5",
-      "location": "Acera de Recoletos",
-      "placement": "En la acera",
-      "addressQuery": "Acera de Recoletos, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
-      }
-    },
-    {
       "id": "z5-09",
       "name": "Groove",
       "zone": "Zona 5",
@@ -1031,7 +932,7 @@
     },
     {
       "id": "z5-10",
-      "name": "Chester British Tavern",
+      "name": "Chester",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
       "placement": "En la acera",
@@ -1050,7 +951,7 @@
     },
     {
       "id": "z5-11",
-      "name": "Manantial",
+      "name": "Bar El Manantial",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
       "placement": "En la acera",
@@ -1069,7 +970,7 @@
     },
     {
       "id": "z5-12",
-      "name": "El cuarto",
+      "name": "El Cuarto",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
       "placement": "En la acera",
@@ -1108,63 +1009,15 @@
     {
       "id": "z5-14",
       "name": "Palosanto",
-      "zone": "Zona 5",
-      "location": "Acera de Recoletos",
-      "placement": "En la acera",
-      "addressQuery": "Acera de Recoletos, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
-      }
-    },
-    {
-      "id": "z5-15",
-      "name": "Kokomo Candilejas",
-      "zone": "Zona 5",
-      "location": "Acera de Recoletos",
-      "placement": "En la acera",
-      "addressQuery": "Acera de Recoletos, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
-      }
-    },
-    {
-      "id": "z5-16",
-      "name": "El Valle",
-      "zone": "Zona 5",
-      "location": "Acera de Recoletos",
-      "placement": "En la acera",
-      "addressQuery": "Acera de Recoletos, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
-      }
+      "zone": "Zona 6",
+      "location": "Paseo Zorrilla frente a la Plaza de Toros",
+      "placement": "Frente a la Plaza de Toros",
+      "addressQuery": "Paseo Zorrilla frente a la Plaza de Toros, Valladolid, España",
+      "coordinates": null
     },
     {
       "id": "z5-17",
-      "name": "Talavera Restaurante",
+      "name": "Restaurante Talavera",
       "zone": "Zona 5",
       "location": "Calle Rastro",
       "placement": "En la calle",
@@ -1201,27 +1054,8 @@
       }
     },
     {
-      "id": "z5-19",
-      "name": "The Crown",
-      "zone": "Zona 5",
-      "location": "Calle María de Molina",
-      "placement": "En la calle",
-      "addressQuery": "Calle María de Molina, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6496567,
-        "lng": -4.7304819,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 33755553,
-        "displayName": "Calle María de Molina, Plaza Mayor, Valladolid, Castilla y León, 47001, España",
-        "query": "Calle Maria de Molina, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:48.758Z"
-      }
-    },
-    {
       "id": "z5-20",
-      "name": "Bar La Pera",
+      "name": "La Pera",
       "zone": "Zona 5",
       "location": "Plaza de Santa Ana",
       "placement": "En la plaza",
@@ -1240,7 +1074,7 @@
     },
     {
       "id": "z5-21",
-      "name": "Rioluz Gastronomía",
+      "name": "Rioluz",
       "zone": "Zona 5",
       "location": "Plaza de Santa Ana",
       "placement": "En la plaza",
@@ -1259,7 +1093,7 @@
     },
     {
       "id": "z5-22",
-      "name": "Cafetín",
+      "name": "Cafetín de las Francesas",
       "zone": "Zona 5",
       "location": "Plaza de Santa Ana",
       "placement": "En la plaza",
@@ -1275,6 +1109,69 @@
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:50.186Z"
       }
+    },
+    {
+      "id": "z5-23",
+      "name": "Aquarium-Sabores",
+      "zone": "Zona 5",
+      "location": "Acera de Recoletos",
+      "placement": "En la acera",
+      "addressQuery": "Acera de Recoletos, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z5-24",
+      "name": "El Angelillo",
+      "zone": "Zona 5",
+      "location": "Calle María de Molina",
+      "placement": "En la calle",
+      "addressQuery": "Calle María de Molina, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z5-25",
+      "name": "La Corona de la Santina",
+      "zone": "Zona 5",
+      "location": "Plaza de Santa Ana",
+      "placement": "En la plaza",
+      "addressQuery": "Plaza de Santa Ana, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z5-26",
+      "name": "Restaurante Beher",
+      "zone": "Zona 5",
+      "location": "Acera de Recoletos",
+      "placement": "En la acera",
+      "addressQuery": "Acera de Recoletos, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z5-27",
+      "name": "River Valley",
+      "zone": "Zona 5",
+      "location": "Acera de Recoletos",
+      "placement": "En la acera",
+      "addressQuery": "Acera de Recoletos, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z5-28",
+      "name": "Salavente",
+      "zone": "Zona 5",
+      "location": "Calle María de Molina",
+      "placement": "En la calle",
+      "addressQuery": "Calle María de Molina, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z5-29",
+      "name": "Selvático",
+      "zone": "Zona 5",
+      "location": "Acera de Recoletos",
+      "placement": "En la acera",
+      "addressQuery": "Acera de Recoletos, Valladolid, España",
+      "coordinates": null
     },
     {
       "id": "z6-01",
@@ -1296,27 +1193,8 @@
       }
     },
     {
-      "id": "z6-02",
-      "name": "La Teta y La Luna",
-      "zone": "Zona 6",
-      "location": "Paseo Zorrilla frente a la Plaza de Toros",
-      "placement": "Frente a la Plaza de Toros",
-      "addressQuery": "Paseo de Zorrilla 88, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6404571,
-        "lng": -4.738422,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 12800274908,
-        "displayName": "88, Paseo de Zorrilla, Plaza de Toros, Valladolid, Castilla y León, 47006, España",
-        "query": "Paseo de Zorrilla 88, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T15:39:52.000Z"
-      }
-    },
-    {
       "id": "z6-03",
-      "name": "Andiamo",
+      "name": "Andiamo di la",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
       "placement": "Frente a la Plaza de Toros",
@@ -1335,7 +1213,7 @@
     },
     {
       "id": "z6-04",
-      "name": "La Castellana",
+      "name": "Café-Bar La Castellana",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
       "placement": "Frente a la Plaza de Toros",
@@ -1372,25 +1250,6 @@
       }
     },
     {
-      "id": "z6-06",
-      "name": "Orly",
-      "zone": "Zona 6",
-      "location": "Paseo Zorrilla frente a la Plaza de Toros",
-      "placement": "Frente a la Plaza de Toros",
-      "addressQuery": "Paseo de Zorrilla 88, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6404571,
-        "lng": -4.738422,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 12800274908,
-        "displayName": "88, Paseo de Zorrilla, Plaza de Toros, Valladolid, Castilla y León, 47006, España",
-        "query": "Paseo de Zorrilla 88, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T15:39:52.000Z"
-      }
-    },
-    {
       "id": "z6-07",
       "name": "Turuleca",
       "zone": "Zona 6",
@@ -1410,27 +1269,8 @@
       }
     },
     {
-      "id": "z6-08",
-      "name": "Pigmalion",
-      "zone": "Zona 6",
-      "location": "Paseo Zorrilla frente a la Plaza de Toros",
-      "placement": "Frente a la Plaza de Toros",
-      "addressQuery": "Paseo de Zorrilla 88, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6404571,
-        "lng": -4.738422,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 12800274908,
-        "displayName": "88, Paseo de Zorrilla, Plaza de Toros, Valladolid, Castilla y León, 47006, España",
-        "query": "Paseo de Zorrilla 88, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T15:39:52.000Z"
-      }
-    },
-    {
       "id": "z6-09",
-      "name": "Moka",
+      "name": "Cafetería Moka",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
       "placement": "Frente a la Plaza de Toros",
@@ -1448,46 +1288,26 @@
       }
     },
     {
-      "id": "z7-01",
-      "name": "Chico Loco",
-      "zone": "Zona 7",
-      "location": "Plaza Santa Cruz",
-      "placement": "En la plaza",
-      "addressQuery": "Plaza de Santa Cruz, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6513314,
-        "lng": -4.7201978,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "relation",
-        "osmId": 10750492,
-        "displayName": "Plaza del Colegio de Santa Cruz, La Antigua - Santa Cruz, Valladolid, Castilla y León, 47001, España",
-        "query": "Plaza de Santa Cruz, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:54.745Z"
-      }
+      "id": "z6-10",
+      "name": "Bar Acapulco",
+      "zone": "Zona 6",
+      "location": "Paseo Zorrilla frente a la Plaza de Toros",
+      "placement": "Frente a la Plaza de Toros",
+      "addressQuery": "Paseo Zorrilla frente a la Plaza de Toros, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z6-11",
+      "name": "Bundi",
+      "zone": "Zona 6",
+      "location": "Paseo Zorrilla frente a la Plaza de Toros",
+      "placement": "Frente a la Plaza de Toros",
+      "addressQuery": "Paseo Zorrilla frente a la Plaza de Toros, Valladolid, España",
+      "coordinates": null
     },
     {
       "id": "z7-02",
-      "name": "Bar el Faro",
-      "zone": "Zona 7",
-      "location": "Plaza Santa Cruz",
-      "placement": "En la plaza",
-      "addressQuery": "Plaza de Santa Cruz, Valladolid, España",
-      "coordinates": {
-        "lat": 41.6513314,
-        "lng": -4.7201978,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "relation",
-        "osmId": 10750492,
-        "displayName": "Plaza del Colegio de Santa Cruz, La Antigua - Santa Cruz, Valladolid, Castilla y León, 47001, España",
-        "query": "Plaza de Santa Cruz, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:54.745Z"
-      }
-    },
-    {
-      "id": "z7-03",
-      "name": "Rosa Chacel",
+      "name": "Bar El Faro",
       "zone": "Zona 7",
       "location": "Plaza Santa Cruz",
       "placement": "En la plaza",
@@ -1524,6 +1344,24 @@
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:54.745Z"
       }
+    },
+    {
+      "id": "z7-05",
+      "name": "Bar Manducca",
+      "zone": "Zona 7",
+      "location": "Plaza Santa Cruz",
+      "placement": "En la plaza",
+      "addressQuery": "Plaza de Santa Cruz, Valladolid, España",
+      "coordinates": null
+    },
+    {
+      "id": "z7-06",
+      "name": "Ocho Apellidos Castellanos",
+      "zone": "Zona 7",
+      "location": "Plaza Santa Cruz",
+      "placement": "En la plaza",
+      "addressQuery": "Plaza de Santa Cruz, Valladolid, España",
+      "coordinates": null
     }
   ]
 }
