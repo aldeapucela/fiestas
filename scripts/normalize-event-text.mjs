@@ -42,18 +42,194 @@ const smallWords = new Set([
   'y'
 ]);
 
+const lowercaseWords = new Set([
+  ...smallWords,
+  'actividad',
+  'actividades',
+  'adolescentes',
+  'aficionados',
+  'adelante',
+  'amateur',
+  'anda',
+  'aniversario',
+  'árboles',
+  'años',
+  'artistas',
+  'asistencia',
+  'banda',
+  'baile',
+  'bailes',
+  'bandera',
+  'banderas',
+  'bandas',
+  'batucada',
+  'cabezudos',
+  'calle',
+  'campeonato',
+  'cargo',
+  'carrozas',
+  'casa',
+  'castellano',
+  'charanga',
+  'clásicas',
+  'clásicos',
+  'club',
+  'compañía',
+  'concentración',
+  'concierto',
+  'concurso',
+  'correcto',
+  'cortes',
+  'cortés',
+  'cuentacuentos',
+  'cuento',
+  'danza',
+  'danzas',
+  'desde',
+  'degustación',
+  'desfile',
+  'divorcio',
+  'dulce',
+  'dudas',
+  'encuentro',
+  'entrada',
+  'escuelas',
+  'espectáculo',
+  'exhibición',
+  'exposición',
+  'familia',
+  'feria',
+  'ferroviaria',
+  'ferias',
+  'festival',
+  'fiestas',
+  'folklore',
+  'gastronómica',
+  'gastronomía',
+  'gigantes',
+  'gratuita',
+  'globos',
+  'grande',
+  'grupo',
+  'hinchables',
+  'historia',
+  'infantil',
+  'infantiles',
+  'intergeneracional',
+  'interminable',
+  'invitados',
+  'irme',
+  'juego',
+  'juegos',
+  'jóvenes',
+  'línea',
+  'madera',
+  'malos',
+  'más',
+  'masterclass',
+  'mosaico',
+  'mujer',
+  'motos',
+  'musical',
+  'musicales',
+  'mundial',
+  'niños',
+  'noche',
+  'nos',
+  'padres',
+  'pasa',
+  'pañuelo',
+  'parque',
+  'peña',
+  'peñas',
+  'perros',
+  'percusión',
+  'pedales',
+  'planta',
+  'popular',
+  'populares',
+  'oficial',
+  'presenta',
+  'prevención',
+  'programa',
+  'puzzles',
+  'queda',
+  'quiero',
+  'record',
+  'relámpago',
+  'retirada',
+  'residentes',
+  'sala',
+  'salón',
+  'separe',
+  'sesión',
+  'sistema',
+  'súper',
+  'tambores',
+  'taller',
+  'talleres',
+  'tardeo',
+  'te',
+  'tradicionales',
+  'torneo',
+  'verano',
+  'verbena',
+  'verbenas',
+  'violeta'
+]);
+
 const preserveUpper = new Set([
   '3D',
+  'ASVAFER',
   'CDO',
+  'CVA',
   'DJ',
   'DJS',
   'FMD',
+  'LAVA',
   'MVP',
   'ONCE',
   'RFEA',
   'SBK',
   'UEMC'
 ]);
+
+const preservePhrases = [
+  'AEPuzz',
+  'Aldertone Skate board',
+  'Auditorio Feria',
+  'Bailes Latinos',
+  'Campo Grande',
+  'Casa Revilla',
+  'CDO',
+  'Club de Ajedrez Promesas de Valladolid',
+  'Club Elvis Delegación Valladolid',
+  'Coordinadora de Peñas',
+  'Espacios Jóvenes de Valladolid',
+  'Feria de Valladolid',
+  'Finisher and Friends',
+  'Fundación Municipal de Cultura',
+  'Fundación Municipal de Cultura y Museo Patio Herreriano',
+  'Huerta del Rey',
+  'Jugger Pucela',
+  'Museo Patio Herreriano',
+  'Otra Pucela es Posible',
+  'Peña Bodega Paco',
+  'Peña Con Solera',
+  'Peña Divinos Picarones',
+  'Peña Motera Bodega Paco',
+  'Peña Pucelana Velardes',
+  'Plaza Mayor',
+  'Plaza Zorrilla',
+  'Rock&Roll Club Valladolid',
+  'Sala Borja',
+  'San Lorenzo',
+  'Teatro Calderón',
+  'Teatro Carrión',
+  'Teatro Cervantes',
+  'Teatro Zorrilla',
+  'Virgen de San Lorenzo'
+];
 
 const exactTokenMap = new Map([
   ['DJ´S', 'DJs'],
@@ -72,7 +248,7 @@ const exactTokenMap = new Map([
   ['C/', 'C/']
 ]);
 
-const titleSeparators = new Set([':', '.', '!', '?', '¿', '¡', '/', '+', '&', '-']);
+const titleSeparators = new Set(['.', '!', '?', '¿', '¡']);
 
 function normalizeEvent(event) {
   const changes = [];
@@ -503,7 +679,16 @@ function nextQuoteState(char, quote) {
 }
 
 function normalizeText(value) {
-  return value
+  const protectedValues = [];
+  const withProtectedValues = preservePhrases.reduce((text, phrase) => {
+    return text.replace(new RegExp(escapeRegExp(phrase), 'giu'), (match) => {
+      const placeholder = `@@${protectedValues.length}@@`;
+      protectedValues.push(phrase);
+      return placeholder;
+    });
+  }, value);
+
+  const normalized = withProtectedValues
     .replace(/\bDJ[´']S\b/gi, 'DJs')
     .replace(/\s+/g, ' ')
     .trim()
@@ -511,6 +696,10 @@ function normalizeText(value) {
     .map((token, index, tokens) => normalizeToken(token, shouldCapitalize(index, tokens)))
     .join('')
     .replace(/\s+([,.;:!?])/g, '$1');
+
+  return protectedValues.reduce((text, preserved, index) => {
+    return text.replace(`@@${index}@@`, preserved);
+  }, normalized);
 }
 
 function shouldCapitalize(index, tokens) {
@@ -537,14 +726,19 @@ function normalizeToken(token, capitalize) {
   const [, prefix, core, suffix] = match;
   const tokenCapitalize = capitalize || /[“"‘'¿¡(]$/u.test(prefix);
   if (!core) return token;
+  if (isRomanNumeral(core.toLocaleUpperCase('es-ES'))) {
+    return `${prefix}${core.toLocaleUpperCase('es-ES')}${suffix}`;
+  }
   if (!isAllCapsCore(core)) {
     const lower = core.toLocaleLowerCase('es-ES');
     if (core === lower && tokenCapitalize && smallWords.has(lower)) {
       return `${prefix}${capitalizeWord(lower)}${suffix}`;
     }
+    if (!tokenCapitalize && lowercaseWords.has(lower)) {
+      return `${prefix}${lower}${suffix}`;
+    }
     return token;
   }
-  if (isRomanNumeral(core)) return token;
 
   const normalizedCore = normalizeCore(core, tokenCapitalize);
   return `${prefix}${normalizedCore}${suffix}`;
@@ -555,6 +749,7 @@ function normalizeCore(core, capitalize) {
   if (preserveUpper.has(upper)) return upper === 'DJS' ? 'DJs' : upper;
 
   const lower = core.toLocaleLowerCase('es-ES');
+  if (!capitalize && lowercaseWords.has(lower)) return lower;
   if (smallWords.has(lower)) return capitalize ? capitalizeWord(lower) : lower;
 
   return capitalizeWord(lower);
@@ -624,7 +819,7 @@ const normalized = [];
 const rows = [];
 
 for (const event of events) {
-  const result = normalizeEvent(event);
+  const result = normalizeEventUntilStable(event);
   normalized.push(result.event);
   for (const change of result.changes) {
     rows.push({ id: event.id, ...change });
@@ -637,6 +832,20 @@ await fs.writeFile(reportPath, makeReport(rows, events));
 console.log(`Normalized ${events.length} events`);
 console.log(`Changed ${rows.length} fields`);
 console.log(`Report written to ${reportPath}`);
+
+function normalizeEventUntilStable(event) {
+  let current = structuredClone(event);
+  const changes = [];
+
+  for (let pass = 0; pass < 5; pass += 1) {
+    const result = normalizeEvent(current);
+    if (!result.changes.length) break;
+    changes.push(...result.changes);
+    current = result.event;
+  }
+
+  return { event: current, changes };
+}
 
 function getSourceRef() {
   if (process.argv.includes('--from-head')) return 'HEAD';
