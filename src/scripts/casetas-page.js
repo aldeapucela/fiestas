@@ -21,7 +21,7 @@ const ZONE_LABELS = {
   'Zona 3': 'Plaza de la Universidad',
   'Zona 4': 'Catedral y Portugalete',
   'Zona 5': 'Acera de Recoletos',
-  'Zona 6': 'Paseo Zorrilla',
+  'Zona 6': 'Paseo Zorrilla · Plaza de Toros',
   'Zona 7': 'Plaza de Santa Cruz'
 };
 
