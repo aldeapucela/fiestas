@@ -156,8 +156,9 @@ async function createLocalEvent(remote, id, currentEvents) {
   const summary = cleanText(remote.summary || remote.title);
   const genericTime = isGenericRemoteTime(remote);
   const isOvernight = !genericTime && timePart(remote.endsAt) === '00:00';
+  const isMultiDay = remote.startsAt.slice(0, 10) !== remote.endsAt.slice(0, 10);
   const sourceStartTime = genericTime ? null : timePart(remote.startsAt);
-  const sourceEndTime = genericTime || isOvernight ? null : timePart(remote.endsAt);
+  const sourceEndTime = genericTime || isOvernight || isMultiDay ? null : timePart(remote.endsAt);
   const performances = performancesFor(remote.id);
   const description = Number(remote.id) === 2183
     ? `${summary} El evento se celebra del 9 al 13 de septiembre de 2026.`
@@ -335,6 +336,7 @@ function locationFor(remote) {
     2159: 'A Tomar Por Culo Club, Paseo de Marcelino Martín “El Catarro”',
     2136: 'La Pera Limonera, Playa de las Moreras',
     2183: 'Feria de Valladolid',
+    2194: 'Feria de Valladolid',
     1689: 'Casa de Zorrilla, Calle Fray Luis de Granada, 1',
     1690: 'Casa de Zorrilla, Calle Fray Luis de Granada, 1',
     2181: 'Orbital Club, Plaza de la Rinconada',
@@ -360,7 +362,8 @@ async function resolveCoordinates(remote, location, currentEvents) {
     1691: { lat: 41.6563987, lng: -4.7235721, source: 'OpenStreetMap Nominatim' },
     1692: { lat: 41.6563987, lng: -4.7235721, source: 'OpenStreetMap Nominatim' },
     2136: { lat: 41.6573, lng: -4.733252, source: 'Inferidas por proximidad a eventos de Playa de las Moreras' },
-    2183: { lat: 41.656398, lng: -4.738248, source: 'Inferidas por proximidad a eventos de Feria de Valladolid' }
+    2183: { lat: 41.656398, lng: -4.738248, source: 'Inferidas por proximidad a eventos de Feria de Valladolid' },
+    2194: { lat: 41.656398, lng: -4.738248, source: 'Inferidas por proximidad a eventos de Feria de Valladolid' }
   };
   if (known[id]) return known[id];
 
@@ -442,6 +445,7 @@ function typeFor(remoteId, remote = {}) {
     2159: 'Música',
     2136: 'Música',
     2183: 'Otros',
+    2194: 'Música',
     1689: 'Teatro',
     1690: 'Teatro',
     2181: 'Música',
@@ -473,6 +477,7 @@ function zoneFor(remoteId, location = '') {
     2159: 'Moreras',
     2136: 'Moreras',
     2183: 'Auditorio Feria',
+    2194: 'Auditorio Feria',
     1689: 'Zona Centro',
     1690: 'Zona Centro',
     2181: 'Zona Centro',

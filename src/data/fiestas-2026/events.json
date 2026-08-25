@@ -9869,8 +9869,8 @@
     "title": "Pijama para Seis",
     "location": "Teatro Zorrilla",
     "zone": "Teatro Zorrilla",
-    "description": "Pijama para Seis",
-    "summary": "Pijama para Seis",
+    "description": "Pijama para Seis\n\nInformación ampliada: La obra de teatro Pijama para seis, escrita por Marc Camoletti, llega al Teatro Zorilla el próximo 11 de septiembre a las 18:00 horas. Esta producción promete una experiencia escénica de alta calidad para los amantes del género.",
+    "summary": "La obra de teatro Pijama para seis, escrita por Marc Camoletti, llega al Teatro Zorilla el próximo 11 de septiembre a las 18:00 horas. Esta producción promete una experiencia escénica de alta calidad para los amantes del género.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -10406,8 +10406,8 @@
     "title": "Educando a Rita",
     "location": "Sala Borja",
     "zone": "Sala Borja",
-    "description": "Educando a Rita",
-    "summary": "Educando a Rita",
+    "description": "Educando a Rita\n\nInformación ampliada: La obra de teatro Educando a Rita llega para cautivar al público el próximo 11 de septiembre a las 20:00 horas. Esta producción cuenta con la interpretación de Elvira Abad y Josema Santa Olalla, bajo la dirección de Verónica de la Vega y una versión de Julio Bravo.",
+    "summary": "La obra de teatro Educando a Rita llega para cautivar al público el próximo 11 de septiembre a las 20:00 horas. Esta producción cuenta con la interpretación de Elvira Abad y Josema Santa Olalla, bajo la dirección de Verónica de la Vega y una versión de Julio Bravo.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -10438,8 +10438,8 @@
     "title": "Lola la Faraona",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "Lola la Faraona",
-    "summary": "Lola la Faraona",
+    "description": "Lola la Faraona\n\nInformación ampliada: El Teatro Cervantes presenta ‘Lola, la Faraona’, un vibrante musical que llega a Valladolid el próximo 11 de septiembre a las 20:00 horas. Esta producción se propone como un homenaje profundo y emocionante a la vida de la icónica artista española.",
+    "summary": "El Teatro Cervantes presenta ‘Lola, la Faraona’, un vibrante musical que llega a Valladolid el próximo 11 de septiembre a las 20:00 horas. Esta producción se propone como un homenaje profundo y emocionante a la vida de la icónica artista española.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -14536,6 +14536,77 @@
       "lat": 41.6563987,
       "lng": -4.7235721,
       "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 441,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Actuaciones Musicales Feria de Valladolid",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
+    "location": "Feria de Valladolid",
+    "zone": "Auditorio Feria",
+    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
+    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
+    "performances": [],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.656398,
+      "lng": -4.738248,
+      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 442,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Sofía Gabanna (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/77db39a03497be519632cf026dd142ef56043dcf_2_781x1024.jpeg",
+    "location": "Las Moreras",
+    "zone": "Moreras",
+    "description": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en Las Moreras, un espacio emblemático de la ciudad de Valladolid.",
+    "summary": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en Las Moreras, un espacio emblemático de la ciudad de Valladolid.",
+    "performances": [],
+    "organizers": [
+      "Ayuntamiento de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.656469,
+      "lng": -4.7325665,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 43308194,
+      "query": "Las Moreras, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-25T19:53:52.431Z"
     },
     "type": "Música",
     "ticket": {
