@@ -480,6 +480,7 @@
     "startTime": "21:00",
     "endTime": null,
     "title": "Carmen Sánxez",
+    "image": "/assets/events/carmen-sanxez-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Carmen Sánxez",
@@ -650,6 +651,7 @@
     "startTime": "22:00",
     "endTime": "02:00",
     "title": "Cristongo Flower Power: las Doñas, Mr Kitos, los Daza, Marlena, los del Lío y DJ Nano",
+    "image": "/assets/events/cristongo-flower-power-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Cristongo Flower Power: las Doñas, Mr Kitos, los Daza, Marlena, los del Lío y DJ Nano",
@@ -2313,6 +2315,7 @@
     "startTime": "22:00",
     "endTime": null,
     "title": "Sandra Promis",
+    "image": "/assets/events/sandra-promis-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Sandra Promis. Ganadora Demo Express Juventud",
@@ -2335,8 +2338,7 @@
     },
     "tags": [
       "Música"
-    ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/d521ef61a402ab7a46d82022325f3f80b24a4c45_2_884x1024.jpeg"
+    ]
   },
   {
     "id": 71,
@@ -2498,7 +2500,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/d521ef61a402ab7a46d82022325f3f80b24a4c45_2_884x1024.jpeg"
+    "image": "/assets/events/judeline-plaza-mayor-2026.jpg"
   },
   {
     "id": 76,
@@ -3710,6 +3712,7 @@
     "startTime": "20:00",
     "endTime": null,
     "title": "Cianóticas Perdidas",
+    "image": "/assets/events/cianoticas-perdidas-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Cianóticas Perdidas. Ganadoras del Onda Rock 2025",
@@ -4134,7 +4137,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c04eb0c2dc2693de132c843c2f99005e798d4741_2_896x1024.jpeg"
+    "image": "/assets/events/burning-plaza-mayor-2026.jpg"
   },
   {
     "id": 126,
@@ -4296,7 +4299,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c04eb0c2dc2693de132c843c2f99005e798d4741_2_896x1024.jpeg"
+    "image": "/assets/events/obus-plaza-mayor-2026.jpg"
   },
   {
     "id": 131,
@@ -5181,7 +5184,8 @@
     },
     "tags": [
       "Música"
-    ]
+    ],
+    "image": "/assets/events/erik-urano-plaza-mayor-2026.jpg"
   },
   {
     "id": 158,
@@ -5404,7 +5408,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1de8aa62f716bd930cdd81f579cae1c9d1caec38_2_910x1024.jpeg"
+    "image": "/assets/events/rusowsky-plaza-mayor-2026.jpg"
   },
   {
     "id": 165,
@@ -6667,6 +6671,7 @@
     "startTime": "21:00",
     "endTime": null,
     "title": "Todas las Estrellas",
+    "image": "/assets/events/todas-las-estrellas-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Todas las Estrellas",
@@ -6721,7 +6726,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/91199e669e184d3ab33791616f0f312a19f6593f_2_905x1024.jpeg"
+    "image": "/assets/events/carlos-baute-plaza-mayor-2026.jpg"
   },
   {
     "id": 205,
@@ -7642,6 +7647,7 @@
     "startTime": "20:00",
     "endTime": null,
     "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Paco Devotion",
@@ -7939,6 +7945,7 @@
     "startTime": "21:30",
     "endTime": null,
     "title": "Bego Martín",
+    "image": "/assets/events/bego-martin-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Bego Martín",
@@ -8026,7 +8033,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4c0b168afe4574308f17f3288d3222e82505cd22_2_914x1024.jpeg"
+    "image": "/assets/events/mestiza-plaza-mayor-2026.jpg"
   },
   {
     "id": 245,
@@ -9178,6 +9185,7 @@
     "startTime": "21:00",
     "endTime": null,
     "title": "Maref",
+    "image": "/assets/events/maref-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Maref",
@@ -9241,6 +9249,7 @@
     "startTime": "22:00",
     "endTime": null,
     "title": "Ronnie Wood And His Band e Imelda May",
+    "image": "/assets/events/ronnie-wood-imelda-may-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Ronnie Wood And His Band e Imelda May",
@@ -10443,6 +10452,7 @@
     "startTime": "22:00",
     "endTime": null,
     "title": "Bravo Maldonado",
+    "image": "/assets/events/bravo-maldonado-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Bravo Maldonado",
@@ -10565,7 +10575,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/abe02f7e906628acf7d90c7f67c278ce92a3799a_2_914x1024.jpeg"
+    "image": "/assets/events/carolina-durante-plaza-mayor-2026.jpg"
   },
   {
     "id": 322,
@@ -11904,7 +11914,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/dbfa06c092882c382e1b303f7b4491eebb39757f_2_905x1024.jpeg"
+    "image": "/assets/events/ana-guerra-plaza-mayor-2026.jpg"
   },
   {
     "id": 363,
@@ -12206,7 +12216,7 @@
     "tags": [
       "Música"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/dbfa06c092882c382e1b303f7b4491eebb39757f_2_905x1024.jpeg"
+    "image": "/assets/events/leire-martinez-plaza-mayor-2026.jpg"
   },
   {
     "id": 372,
@@ -13257,6 +13267,7 @@
     "startTime": "19:30",
     "endTime": null,
     "title": "El Pérrez",
+    "image": "/assets/events/el-perrez-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "El Pérrez",
@@ -13516,6 +13527,7 @@
     "startTime": "21:00",
     "endTime": null,
     "title": "Pura Verdad Flamenco: Enrique Heredia, Lin cortés, Belén López, Kike Morente, Sandra Carrasco e Israel Fernández",
+    "image": "/assets/events/pura-verdad-flamenco-plaza-mayor-2026.jpg",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
     "description": "Pura Verdad Flamenco: Enrique Heredia, Lin cortés, Belén López, Kike Morente, Sandra Carrasco e Israel Fernández",
