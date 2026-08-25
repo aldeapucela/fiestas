@@ -35,6 +35,8 @@ const MAX_IMPORT_HASH_LENGTH = Math.ceil(MAX_IMPORT_BYTES * 4 / 3) + 1024;
 const MAX_PLAN_NAME_LENGTH = 80;
 const MAX_IMPORT_ACTIVITIES = 200;
 const IMPORT_PREVIEW_ACTIVITY_LIMIT = 3;
+const COMMUNITY_PLANS_CATALOG_URL = '/data/planes.json';
+let communityPlansCatalogPromise = null;
 let selectorInitialized = false;
 
 export function setupPlansPage(rawEvents = []) {
@@ -56,6 +58,8 @@ export function setupPlansPage(rawEvents = []) {
   };
   let shareDialogPlan = null;
   let shareDialogReturnFocus = null;
+  let shareDialogUrl = '';
+  let shareDialogResolution = 0;
   let deleteDialogReturnFocus = null;
 
   if (state.view === 'plan' && !state.selectedPlanId) state.selectedPlanId = state.plans[0]?.id || '';
@@ -106,6 +110,11 @@ export function setupPlansPage(rawEvents = []) {
     els.shareDialog.hidden = true;
     document.body.classList.remove('fiestas-plan-share-open');
     shareDialogPlan = null;
+    shareDialogUrl = '';
+    shareDialogResolution += 1;
+    [els.shareDialogCopy, els.shareDialogNative].forEach((button) => {
+      if (button) button.disabled = false;
+    });
     const returnFocus = shareDialogReturnFocus;
     shareDialogReturnFocus = null;
     returnFocus?.focus();
@@ -125,22 +134,35 @@ export function setupPlansPage(rawEvents = []) {
     els.manageMenu.querySelector('[role="menuitem"]')?.focus();
   };
 
-  const openShareDialog = (plan, trigger) => {
+  const openShareDialog = async (plan, trigger) => {
     if (!plan || !els.shareDialog) return;
+    const resolution = ++shareDialogResolution;
     shareDialogPlan = plan;
+    shareDialogUrl = '';
     shareDialogReturnFocus = trigger || null;
     if (els.shareDialogName) els.shareDialogName.textContent = plan.name;
     if (els.shareDialogMessage) {
-      els.shareDialogMessage.value = createPlanShareMessage(plan, page.dataset.planImportUrl);
+      els.shareDialogMessage.value = 'Preparando el enlace…';
     }
     if (els.shareDialogFeedback) {
       els.shareDialogFeedback.hidden = true;
       els.shareDialogFeedback.classList.remove('is-error');
       els.shareDialogFeedback.textContent = '';
     }
+    [els.shareDialogCopy, els.shareDialogNative].forEach((button) => {
+      if (button) button.disabled = true;
+    });
     els.shareDialog.hidden = false;
     document.body.classList.add('fiestas-plan-share-open');
     els.shareDialogNative?.focus();
+
+    const url = await resolvePlanShareUrl(plan, page.dataset.planImportUrl);
+    if (resolution !== shareDialogResolution || shareDialogPlan !== plan) return;
+    shareDialogUrl = url;
+    if (els.shareDialogMessage) els.shareDialogMessage.value = createPlanShareMessage(plan, url);
+    [els.shareDialogCopy, els.shareDialogNative].forEach((button) => {
+      if (button) button.disabled = false;
+    });
   };
 
   const render = () => {
@@ -348,7 +370,7 @@ export function setupPlansPage(rawEvents = []) {
   });
   els.shareDialogNative?.addEventListener('click', async () => {
     if (!shareDialogPlan) return;
-    const url = createPlanImportUrl(shareDialogPlan, page.dataset.planImportUrl);
+    const url = shareDialogUrl || await resolvePlanShareUrl(shareDialogPlan, page.dataset.planImportUrl);
     try {
       if (!navigator.share) throw new Error('Share unavailable');
       await navigator.share({
@@ -364,7 +386,7 @@ export function setupPlansPage(rawEvents = []) {
         return;
       }
       try {
-        await copyText(createPlanShareMessage(shareDialogPlan, page.dataset.planImportUrl));
+        await copyText(createPlanShareMessage(shareDialogPlan, url));
         trackPlanExported('url');
         showShareDialogFeedback('No se pudo abrir compartir. Mensaje copiado.');
       } catch (_) {
@@ -1262,8 +1284,73 @@ function createPlanShareText(plan) {
   return `Échale un vistazo al plan «${plan.name}» para las Fiestas y Ferias de Valladolid 2026.`;
 }
 
-function createPlanShareMessage(plan, importUrl) {
-  return `${createPlanShareText(plan)}\n ${createPlanImportUrl(plan, importUrl)}`;
+function createPlanShareMessage(plan, shareUrl) {
+  return `${createPlanShareText(plan)}\n ${shareUrl}`;
+}
+
+async function resolvePlanShareUrl(plan, importUrl) {
+  const fallbackUrl = createPlanImportUrl(plan, importUrl);
+  const sourcePlanId = String(plan?.sourcePlanId || '').trim();
+  if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(sourcePlanId)) return fallbackUrl;
+
+  try {
+    const sourcePlan = await loadCommunityPlanForSharing(sourcePlanId);
+    if (!sourcePlan || !plansMatchSource(plan, sourcePlan)) return fallbackUrl;
+    return createCommunityPlanUrl(sourcePlanId, importUrl);
+  } catch (_) {
+    return fallbackUrl;
+  }
+}
+
+async function loadCommunityPlanForSharing(sourcePlanId) {
+  if (!communityPlansCatalogPromise) {
+    communityPlansCatalogPromise = fetchJsonForSharing(COMMUNITY_PLANS_CATALOG_URL);
+  }
+  const catalog = await communityPlansCatalogPromise;
+  if (!catalog || catalog.schemaVersion !== 1 || catalog.festival !== FESTIVAL_ID || !Array.isArray(catalog.plans)) {
+    throw new Error('Invalid community plans catalog');
+  }
+  const entry = catalog.plans.find((item) => item?.id === sourcePlanId);
+  if (!entry?.url) throw new Error('Community plan not found');
+  const sourceUrl = new URL(entry.url, new URL(COMMUNITY_PLANS_CATALOG_URL, window.location.href));
+  if (sourceUrl.origin !== window.location.origin) throw new Error('Invalid community plan origin');
+  const payload = await fetchJsonForSharing(sourceUrl.href);
+  const sourcePlan = payload?.plans?.[0];
+  if (payload?.schemaVersion !== 1 || payload?.festival !== FESTIVAL_ID || !sourcePlan) {
+    throw new Error('Invalid community plan export');
+  }
+  return sourcePlan;
+}
+
+async function fetchJsonForSharing(url) {
+  const response = await fetch(new URL(url, window.location.href), {
+    headers: { Accept: 'application/json' },
+    cache: 'no-store'
+  });
+  if (!response.ok) throw new Error(`Community plan request failed with ${response.status}`);
+  const text = await response.text();
+  if (new TextEncoder().encode(text).byteLength > MAX_IMPORT_BYTES) throw new Error('Community plan is too large');
+  return JSON.parse(text);
+}
+
+export function plansMatchSource(plan, sourcePlan) {
+  if (!plan || !sourcePlan) return false;
+  return String(plan.name || '').trim() === String(sourcePlan.name || '').trim()
+    && normalizePlanIcon(plan.icon) === normalizePlanIcon(sourcePlan.icon)
+    && sameActivityIds(plan.activityIds, sourcePlan.activityIds);
+}
+
+function sameActivityIds(left, right) {
+  const normalizeIds = (value) => [...new Set((Array.isArray(value) ? value : []).map(String).map((id) => id.trim()).filter(Boolean))].sort();
+  return JSON.stringify(normalizeIds(left)) === JSON.stringify(normalizeIds(right));
+}
+
+export function createCommunityPlanUrl(sourcePlanId, importUrl) {
+  const currentUrl = globalThis.location?.href || 'http://localhost/';
+  const base = new URL(importUrl || currentUrl, currentUrl);
+  const url = new URL(`/planes/${sourcePlanId}/`, base.origin);
+  url.searchParams.set('mtm_campaign', 'share');
+  return url.toString();
 }
 
 async function copyText(text) {

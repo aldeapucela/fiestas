@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { validateImport } from './plans-page.js';
+import { createCommunityPlanUrl, plansMatchSource, validateImport } from './plans-page.js';
 
 const eventIds = new Set(['1', '7']);
 
@@ -57,4 +57,24 @@ test('plan import rejects names that look like markup or contain control charact
 
   assert.equal(result.ok, false);
   assert.equal(result.errorType, 'invalid_name');
+});
+
+test('community plans use the friendly URL only when their content is unchanged', () => {
+  const source = {
+    name: 'Cielo y estrellas',
+    icon: 'stars',
+    activityIds: ['1', '7', '134']
+  };
+
+  assert.equal(plansMatchSource({ ...source, sourcePlanId: 'cielo-y-estrellas' }, source), true);
+  assert.equal(plansMatchSource({ ...source, name: 'Mi plan' }, source), false);
+  assert.equal(plansMatchSource({ ...source, activityIds: ['1', '7'] }, source), false);
+  assert.equal(plansMatchSource({ ...source, icon: 'music' }, source), false);
+});
+
+test('friendly community URLs include the share campaign', () => {
+  assert.equal(
+    createCommunityPlanUrl('cielo-y-estrellas', 'https://fiestas.aldeapucela.org/plan/importar/'),
+    'https://fiestas.aldeapucela.org/planes/cielo-y-estrellas/?mtm_campaign=share'
+  );
 });
