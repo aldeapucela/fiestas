@@ -27,6 +27,8 @@ function updateMoreHint(pwaAvailable = false) {
 
 export function setupMenuDrawer() {
   const drawer = document.querySelector('[data-menu-drawer]');
+  const addEventOpenButton = document.querySelector('[data-add-event-open]');
+  const addEventModal = document.querySelector('[data-add-event-modal]');
   if (!drawer) return;
 
   const syncState = (isOpen) => {
@@ -49,6 +51,19 @@ export function setupMenuDrawer() {
     document.body.style.overflow = '';
     syncState(false);
   };
+  const openAddEventModal = (trigger = addEventOpenButton) => {
+    if (!addEventModal) return;
+    close();
+    addEventModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    addEventModal.dataset.returnFocus = trigger?.getAttribute('data-add-event-open') || '';
+  };
+  const closeAddEventModal = () => {
+    if (!addEventModal) return;
+    addEventModal.hidden = true;
+    document.body.style.overflow = '';
+    addEventOpenButton?.focus({ preventScroll: true });
+  };
   const toggle = () => (drawer.hidden ? open() : close());
 
   updateMoreHint();
@@ -67,11 +82,22 @@ export function setupMenuDrawer() {
       close();
       return;
     }
+    if (event.target.closest('[data-add-event-open]')) {
+      event.preventDefault();
+      openAddEventModal(event.target.closest('[data-add-event-open]'));
+      return;
+    }
+    if (event.target.closest('[data-add-event-close]')) {
+      event.preventDefault();
+      closeAddEventModal();
+      return;
+    }
     // Al navegar desde un enlace del drawer, ciérralo.
     if (event.target.closest('[data-menu-drawer] a[href]')) close();
   });
 
   window.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !drawer.hidden) close();
+    if (event.key === 'Escape' && addEventModal && !addEventModal.hidden) closeAddEventModal();
   });
 }

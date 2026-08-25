@@ -19,6 +19,10 @@
         <i class="menu-drawer-link-icon fa-solid fa-ranking-star" aria-hidden="true"></i>
         <span>Populares</span>
       </a>
+      <button class="menu-drawer-link" type="button" data-add-event-open>
+        <i class="menu-drawer-link-icon fa-solid fa-calendar-plus" aria-hidden="true"></i>
+        <span>Enviar actividad</span>
+      </button>
       <p class="menu-drawer-section-title">Comunidad</p>
       <a class="menu-drawer-link" href="https://aldeapucela.org" target="_blank" rel="noopener noreferrer">
         <img class="menu-drawer-link-logo" src="/assets/favicon.png" alt="" />
@@ -62,6 +66,28 @@
       <i class="menu-drawer-link-icon fa-regular fa-moon" aria-hidden="true"></i>
       <span data-theme-toggle-label>Modo oscuro</span>
     </button>
+  </aside>
+</div>
+
+<div class="add-event-modal" data-add-event-modal hidden>
+  <button class="add-event-modal-backdrop" type="button" data-add-event-close aria-label="Cerrar diálogo"></button>
+  <aside class="add-event-modal-panel" role="dialog" aria-modal="true" aria-labelledby="add-event-title">
+    <div class="add-event-modal-head">
+      <span class="add-event-modal-mark" aria-hidden="true">
+        <i class="fa-solid fa-calendar-plus"></i>
+      </span>
+      <p class="add-event-modal-title" id="add-event-title">Añade un evento</p>
+    </div>
+    <p class="add-event-modal-copy">Para publicarlo:</p>
+    <ol class="add-event-steps">
+      <li><span class="add-event-step-number">1</span><span>Entra al chat de eventos.</span></li>
+      <li><span class="add-event-step-number">2</span><span>Interactúa para poder enviar imágenes.</span></li>
+      <li><span class="add-event-step-number">3</span><span>Envía el cartel junto con los datos de la actividad.</span></li>
+      <li><span class="add-event-step-number">4</span><span>Lo revisaremos antes de publicarlo.</span></li>
+    </ol>
+    <a class="add-event-modal-cta" href="https://t.me/AldeaPucela/244/10712" target="_blank" rel="noopener noreferrer">
+      Entendido, ir al grupo de chat
+    </a>
   </aside>
 </div>
 
