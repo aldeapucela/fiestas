@@ -93,6 +93,25 @@ src/data/fiestas-2026/events.json
 
 Cada actividad tiene un ID numérico estable. El build genera su slug, su URL, sus metadatos sociales y, cuando hay coordenadas, sus enlaces de mapa. Los planes públicos se definen en <code>src/data/community-plans.json</code> y sus archivos se guardan en <code>src/data/community-plans/</code>.
 
+## Importación incremental desde Eventos
+
+El script <code>scripts/import-eventos-ferias.mjs</code> consulta <code>https://eventos.aldeapucela.org/site-data.json</code> y procesa únicamente actividades que empiezan entre el 4 y el 13 de septiembre de 2026 en Valladolid. Detecta coincidencias con el catálogo local, enriquece las fichas y añade solo las actividades nuevas; también incorpora carteles remotos cuando faltan y geocodifica los lugares con Nominatim.
+
+La ejecución por defecto es una simulación y deja el informe en <code>.cache/fiestas/reports/</code>:
+
+~~~bash
+npm run events:import:ferias
+~~~
+
+Para aplicar los cambios:
+
+~~~bash
+npm run events:import:ferias -- --apply
+npm run build
+~~~
+
+Las ubicaciones que no se pueden resolver de forma segura no se importan automáticamente: quedan anotadas como <code>unresolved</code> en el informe para revisión manual. El script es incremental e idempotente, por lo que repetirlo no duplica actividades ya importadas.
+
 ## Desarrollo local
 
 La instalación, el servidor local, las pruebas, el build, la auditoría de ubicaciones y las opciones de configuración están documentados en:

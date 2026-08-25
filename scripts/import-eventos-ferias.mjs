@@ -21,11 +21,13 @@ const report = {
   sourceUrl,
   generatedAt: new Date().toISOString(),
   dateWindow: ['2026-09-04', '2026-09-13'],
-  totals: { sourceInWindow: 0, sourceOutsideValladolid: 0, enriched: 0, imagesAdded: 0, added: 0 },
+  totals: { sourceInWindow: 0, sourceOutsideValladolid: 0, enriched: 0, imagesAdded: 0, added: 0, skipped: 0, unresolved: 0 },
   excluded: [{ id: 2148, reason: 'Ubicación ambigua en Las Moreras; no se fuerza el cruce.' }],
   enriched: [],
   imagesAdded: [],
-  added: []
+  added: [],
+  skipped: [],
+  unresolved: []
 };
 
 const windowEvents = source.events.filter((event) => isInDateWindow(event.startsAt));
@@ -85,20 +87,44 @@ for (const [remoteIdText, localIds] of Object.entries(imageRemoteToLocal)) {
   }
 }
 
-const newRemoteIds = [2191, 1999, 1784, 1688, 2159, 2136, 2183, 1689, 1690, 2181, 1691, 2088, 1692];
+const excludedRemoteIds = new Set([2148]);
+const knownMatchedRemoteIds = new Set(Object.keys(matchedRemoteToLocal).map(Number));
+const candidateEvents = windowEvents.filter((remote) => {
+  const remoteId = Number(remote.id);
+  return isValladolid(remote) && !knownMatchedRemoteIds.has(remoteId) && !excludedRemoteIds.has(remoteId);
+});
 let nextId = Math.max(...events.map((event) => Number(event.id))) + 1;
-for (const remoteId of newRemoteIds) {
-  const remote = sourceEvents.get(remoteId);
-  if (!remote) throw new Error(`No se encuentra el nuevo evento remoto ${remoteId}.`);
-  if (!isInDateWindow(remote.startsAt) || !isValladolid(remote)) {
-    throw new Error(`El evento ${remoteId} no pasa el filtro de fechas y ciudad.`);
+for (const remote of candidateEvents) {
+  const remoteId = Number(remote.id);
+  const existing = findExistingLocal(remote, events);
+  if (existing) {
+    const changed = enrichExistingEvent(existing, remote);
+    if (changed) {
+      report.totals.enriched += 1;
+      report.enriched.push({ localId: existing.id, remoteId, title: existing.title });
+    }
+    addImageIfMissing(existing, remote, report);
+    report.totals.skipped += 1;
+    report.skipped.push({ remoteId, localId: existing.id, reason: 'Coincidencia por fecha, hora, título y lugar.' });
+    continue;
   }
-  const existing = events.find((event) => event.date === remote.startsAt.slice(0, 10) && normalizeText(event.title) === normalizeText(remote.title));
-  if (existing) continue;
+  const location = locationFor(remote);
+  if (!isConcreteLocation(location)) {
+    report.totals.unresolved += 1;
+    report.unresolved.push({ remoteId, title: remote.title, reason: 'La fuente no proporciona un lugar concreto.', location });
+    continue;
+  }
   if (localById.has(nextId)) {
     throw new Error(`El ID nuevo ${nextId} ya está ocupado.`);
   }
-  const local = await createLocalEvent(remote, nextId, events);
+  let local;
+  try {
+    local = await createLocalEvent(remote, nextId, events);
+  } catch (error) {
+    report.totals.unresolved += 1;
+    report.unresolved.push({ remoteId, title: remote.title, reason: error.message, location });
+    continue;
+  }
   nextId += 1;
   events.push(local);
   localById.set(local.id, local);
@@ -126,10 +152,10 @@ async function createLocalEvent(remote, id, currentEvents) {
   const date = remote.startsAt.slice(0, 10);
   const location = locationFor(remote);
   const coordinates = await resolveCoordinates(remote, location, currentEvents);
-  const type = typeFor(remote.id);
+  const type = typeFor(remote.id, remote);
   const summary = cleanText(remote.summary || remote.title);
-  const genericTime = [1999, 2181, 2088, 2183].includes(Number(remote.id));
-  const isOvernight = Number(remote.id) === 2191;
+  const genericTime = isGenericRemoteTime(remote);
+  const isOvernight = !genericTime && timePart(remote.endsAt) === '00:00';
   const sourceStartTime = genericTime ? null : timePart(remote.startsAt);
   const sourceEndTime = genericTime || isOvernight ? null : timePart(remote.endsAt);
   const performances = performancesFor(remote.id);
@@ -146,7 +172,7 @@ async function createLocalEvent(remote, id, currentEvents) {
     title: cleanText(remote.title),
     image: remote.image || null,
     location,
-    zone: zoneFor(remote.id),
+    zone: zoneFor(remote.id, location),
     description,
     summary,
     performances,
@@ -249,6 +275,56 @@ function enrichExistingEvent(local, remote) {
   return changed;
 }
 
+function addImageIfMissing(local, remote, currentReport) {
+  if (local.image || !remote.image) return false;
+  local.image = remote.image;
+  currentReport.totals.imagesAdded += 1;
+  currentReport.imagesAdded.push({ localId: local.id, remoteId: Number(remote.id), image: remote.image });
+  return true;
+}
+
+function findExistingLocal(remote, currentEvents) {
+  const date = remote.startsAt.slice(0, 10);
+  const remoteTime = isGenericRemoteTime(remote) ? null : timePart(remote.startsAt);
+  const candidates = currentEvents.filter((event) => event.date === date && event.startTime === remoteTime);
+  const remoteTitle = simplifyTitle(remote.title);
+  const exactTitle = candidates.filter((event) => simplifyTitle(event.title) === remoteTitle);
+  if (exactTitle.length === 1) return exactTitle[0];
+  if (exactTitle.length > 1) {
+    const located = exactTitle.find((event) => locationMatches(event, remote));
+    if (located) return located;
+  }
+
+  return candidates.find((event) => {
+    const titleScore = tokenOverlap(simplifyTitle(event.title), remoteTitle);
+    return titleScore >= 0.8 && locationMatches(event, remote);
+  }) || null;
+}
+
+function locationMatches(local, remote) {
+  const localLocation = simplifyTitle([local.location, local.zone].filter(Boolean).join(' '));
+  const remoteLocation = simplifyTitle([remote.venue, remote.address, remote.location].filter(Boolean).join(' '));
+  return tokenOverlap(localLocation, remoteLocation) >= 0.3
+    || localLocation.includes(remoteLocation)
+    || remoteLocation.includes(localLocation);
+}
+
+function tokenOverlap(left, right) {
+  const leftTokens = new Set(left.split(' ').filter((token) => token.length > 3));
+  const rightTokens = new Set(right.split(' ').filter((token) => token.length > 3));
+  if (!leftTokens.size || !rightTokens.size) return 0;
+  const matches = [...leftTokens].filter((token) => rightTokens.has(token)).length;
+  return matches / Math.min(leftTokens.size, rightTokens.size);
+}
+
+function simplifyTitle(value = '') {
+  return normalizeText(value)
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+}
+
 function locationFor(remote) {
   const id = Number(remote.id);
   const overrides = {
@@ -267,6 +343,11 @@ function locationFor(remote) {
     1692: 'Casa de Zorrilla, Calle Fray Luis de Granada, 1'
   };
   return overrides[id] || cleanText([remote.venue, remote.address].filter(Boolean).join(', ') || remote.location);
+}
+
+function isConcreteLocation(location) {
+  const normalized = simplifyTitle(location);
+  return Boolean(normalized) && normalized !== 'valladolid' && normalized !== 'valladolid espana';
 }
 
 async function resolveCoordinates(remote, location, currentEvents) {
@@ -352,8 +433,8 @@ async function searchNominatim(query) {
   };
 }
 
-function typeFor(remoteId) {
-  return {
+function typeFor(remoteId, remote = {}) {
+  const knownType = {
     2191: 'Música',
     1999: 'Otros',
     1784: 'Música',
@@ -368,10 +449,23 @@ function typeFor(remoteId) {
     2088: 'Música',
     1692: 'Música'
   }[Number(remoteId)];
+  if (knownType) return knownType;
+  const category = simplifyTitle(remote.categoryLabel || remote.category || '');
+  if (category.includes('musica')) return 'Música';
+  if (category.includes('teatro')) return 'Teatro';
+  if (category.includes('danza')) return 'Danza';
+  if (category.includes('infantil') || category.includes('familia')) return 'Infantil y familiar';
+  if (category.includes('humor') || category.includes('monologo')) return 'Humor y monólogos';
+  if (category.includes('deporte')) return 'Deporte';
+  if (category.includes('gastronomia')) return 'Gastronomía';
+  if (category.includes('exposicion')) return 'Exposición';
+  if (category.includes('relig')) return 'Religioso';
+  if (category.includes('toros')) return 'Toros';
+  return 'Otros';
 }
 
-function zoneFor(remoteId) {
-  return {
+function zoneFor(remoteId, location = '') {
+  const knownZone = {
     2191: 'Zona Centro',
     1999: 'Zona Sur',
     1784: 'Zona Sur',
@@ -386,6 +480,12 @@ function zoneFor(remoteId) {
     2088: 'Zona Centro',
     1692: 'Zona Centro'
   }[Number(remoteId)];
+  if (knownZone) return knownZone;
+  const normalized = simplifyTitle(location);
+  if (normalized.includes('moreras')) return 'Moreras';
+  if (normalized.includes('feria de valladolid') || normalized.includes('auditorio feria') || normalized.includes('pabellon feria')) return 'Auditorio Feria';
+  if (normalized.includes('vallsur') || normalized.includes('covaresa')) return 'Zona Sur';
+  return 'Zona Centro';
 }
 
 function performancesFor(remoteId) {
@@ -433,6 +533,13 @@ function isValladolid(event) {
 function timePart(value) {
   const match = String(value || '').match(/T(\d{2}:\d{2})/);
   return match ? match[1] : null;
+}
+
+function isGenericRemoteTime(remote) {
+  const startsDate = String(remote.startsAt || '').slice(0, 10);
+  const endsDate = String(remote.endsAt || '').slice(0, 10);
+  return timePart(remote.startsAt) === '00:00'
+    && (['00:00', '01:00', null].includes(timePart(remote.endsAt)) || startsDate !== endsDate);
 }
 
 function dateLabel(date) {
