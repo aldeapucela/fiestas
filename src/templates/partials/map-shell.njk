@@ -1,0 +1,84 @@
+{% set isCasetas = casetasMode | default(false) %}
+<section class="fiestas-map-view{% if isCasetas %} fiestas-casetas-map-view{% endif %}" data-fiestas-map-view{% if not isCasetas %} hidden{% endif %}>
+  <header class="fiestas-map-header" aria-label="Cabecera del mapa">
+    <a class="fiestas-map-brand" href="{% if isCasetas %}/casetas/{% else %}/{% endif %}" aria-label="{% if isCasetas %}Recargar Casetas{% else %}Volver a la agenda de Fiestas 2026{% endif %}">
+      <img src="/assets/favicon.png" alt="" aria-hidden="true" />
+      {% if isCasetas %}
+      <span class="fiestas-map-brand-copy">
+        <strong>Casetas</strong>
+        <small>Feria de día</small>
+      </span>
+      {% else %}
+      <span>Mapa</span>
+      {% endif %}
+    </a>
+    {% if isCasetas %}
+    <button
+      class="fiestas-map-share-button"
+      type="button"
+      data-fiestas-share-site
+      data-share-title="Casetas, feria de día | Fiestas Valladolid 2026"
+      data-share-text="Descubre las casetas de la feria de día de Valladolid 2026"
+      data-share-url="https://fiestas.aldeapucela.org/casetas/"
+      aria-label="Compartir Casetas, feria de día"
+      title="Compartir Casetas, feria de día"
+    >
+      <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+    </button>
+    {% else %}
+    <button class="fiestas-map-date-toggle" type="button" data-fiestas-map-date-toggle aria-expanded="false" aria-controls="fiestas-date-panel">
+      <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+      <span data-fiestas-map-date-label>Todos</span>
+      <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+    </button>
+    {% endif %}
+  </header>
+  {% if isCasetas %}
+  <p class="fiestas-share-feedback fiestas-map-share-feedback" data-fiestas-share-feedback role="status" aria-live="polite" hidden></p>
+  {% endif %}
+  {% if not isCasetas %}
+  <button class="fiestas-map-filter-toggle" type="button" data-fiestas-map-filter-toggle aria-expanded="false" aria-controls="fiestas-filter-region">
+    <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+    <span>Filtros</span>
+    <span class="fiestas-map-filter-count" data-fiestas-map-filter-count hidden aria-label="Filtros activos">0</span>
+  </button>
+  {% endif %}
+  <div class="fiestas-map-canvas" data-fiestas-map></div>
+  <div class="fiestas-map-topbar" aria-label="Controles del mapa">
+    <button class="fiestas-map-control fiestas-map-control--icon" type="button" data-fiestas-map-locate aria-label="Centrar en mi ubicación" title="Centrar en mi ubicación">
+      <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
+    </button>
+  </div>
+  <div class="fiestas-map-empty" data-fiestas-map-empty hidden></div>
+  <section class="fiestas-map-sheet is-collapsed" data-fiestas-map-sheet aria-label="{% if isCasetas %}Casetas del mapa{% else %}Actividades del mapa{% endif %}">
+    <button class="fiestas-map-sheet-handle" type="button" data-fiestas-map-sheet-toggle aria-expanded="false">
+      <span aria-hidden="true"></span>
+      <strong data-fiestas-map-sheet-title>{% if isCasetas %}Casetas en Valladolid{% else %}Actividades del día{% endif %}</strong>
+      <small data-fiestas-map-sheet-count>0 {% if isCasetas %}casetas{% else %}actividades{% endif %}</small>
+    </button>
+    {% if isCasetas %}
+    <div class="fiestas-casetas-search-shell" data-fiestas-casetas-search>
+      <button class="fiestas-casetas-search-toggle" type="button" data-fiestas-casetas-search-toggle aria-expanded="false" aria-controls="fiestas-casetas-search-panel" aria-label="Buscar caseta" title="Buscar caseta">
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      </button>
+      <div class="fiestas-casetas-search" id="fiestas-casetas-search-panel" data-fiestas-casetas-search-panel hidden>
+        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+        <input type="search" data-fiestas-casetas-search-input placeholder="Buscar caseta" autocomplete="off" spellcheck="false" aria-label="Buscar caseta" />
+        <button type="button" data-fiestas-casetas-search-clear aria-label="Borrar búsqueda" hidden>
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+    {% endif %}
+    <button class="fiestas-map-location-note" type="button" data-fiestas-location-note aria-label="Clic para compartir ubicación" hidden>
+      <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
+      <span>Clic para compartir ubicación</span>
+    </button>
+    <div class="fiestas-map-sheet-preview" data-fiestas-map-sheet-preview></div>
+    <div class="fiestas-map-sheet-list" data-fiestas-map-sheet-list></div>
+  </section>
+  <button class="fiestas-map-sheet-tab" type="button" data-fiestas-map-sheet-open hidden>
+    <i class="fa-solid fa-list" aria-hidden="true"></i>
+    <span data-fiestas-map-sheet-tab-label>{% if isCasetas %}Ver casetas{% else %}Ver actividades{% endif %}</span>
+  </button>
+</section>

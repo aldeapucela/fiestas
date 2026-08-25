@@ -1382,6 +1382,27 @@
     text-decoration: none;
   }
 
+  .fiestas-map-brand-copy {
+    display: grid;
+    min-width: 0;
+    gap: 0.18rem;
+  }
+
+  .fiestas-map-brand-copy strong {
+    overflow: hidden;
+    font-size: 1.35rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .fiestas-map-brand-copy small {
+    color: #667085;
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    line-height: 1;
+  }
+
   .fiestas-map-brand img {
     width: 2.75rem;
     height: 2.75rem;
@@ -1411,6 +1432,41 @@
 
   .fiestas-map-date-toggle {
     max-width: 10rem;
+  }
+
+  .fiestas-map-share-button {
+    display: inline-flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 9999px;
+    background: transparent;
+    color: #0f766e;
+    cursor: pointer;
+    font-size: 1.05rem;
+  }
+
+  .fiestas-map-share-button:hover,
+  .fiestas-map-share-button:focus-visible {
+    color: #0f9f8d;
+    outline: 3px solid rgba(15, 159, 141, 0.18);
+    outline-offset: 2px;
+  }
+
+  .fiestas-map-share-feedback {
+    position: absolute;
+    top: calc(100% + 0.45rem);
+    right: 1rem;
+    z-index: 50;
+    max-width: min(18rem, calc(100vw - 2rem));
+    border: 1px solid rgba(15, 159, 141, 0.22);
+    border-radius: 0.7rem;
+    background: #fff;
+    box-shadow: 0 0.6rem 1.3rem rgba(15, 23, 42, 0.16);
+    padding: 0.55rem 0.7rem;
   }
 
   .fiestas-map-date-toggle span {
@@ -2628,6 +2684,10 @@
     -webkit-text-stroke: 0;
   }
 
+  .fiestas-caseta-detail .fiestas-detail-map-marker-icon {
+    color: var(--fiestas-type-color, #0f9f8d);
+  }
+
   .fiestas-detail-map-marker-label {
     margin-top: 0.12rem;
     color: #0f8f80;
@@ -2670,6 +2730,22 @@
 
   .fiestas-detail-map-error[hidden] {
     display: none;
+  }
+
+  .fiestas-detail-map-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    margin: 0;
+    border-top: 1px solid #e7eaf0;
+    color: #667085;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.78rem;
+  }
+
+  .fiestas-detail-map-note i {
+    color: #73579f;
   }
 
   .fiestas-detail-map-actions {
@@ -3239,6 +3315,11 @@
     border-color: #313743;
   }
 
+  html.dark .fiestas-detail-map-note {
+    border-color: #313743;
+    color: #bdc4cf;
+  }
+
   html.dark .fiestas-detail-map-empty,
   html.dark .fiestas-detail-map-error {
     background:
@@ -3478,6 +3559,22 @@
   html.dark .fiestas-map-brand,
   html.dark .fiestas-map-filter-header h2 {
     color: #f7f8fa;
+  }
+
+  html.dark .fiestas-map-brand-copy small {
+    color: #b9c1ce;
+  }
+
+  html.dark .fiestas-map-share-button {
+    border-color: transparent;
+    background: transparent;
+    color: #7be0d1;
+  }
+
+  html.dark .fiestas-map-share-feedback {
+    border-color: #313743;
+    background: #202631;
+    color: #7be0d1;
   }
 
   html.dark .fiestas-map-filter-kicker,
@@ -4443,6 +4540,422 @@ html.dark .fiestas-event-option {
     border-radius: 1.2rem;
     padding-bottom: 1.1rem;
   }
+}
+
+.fiestas-casetas-app .fiestas-map-topbar {
+  top: calc(max(0.55rem, env(safe-area-inset-top)) + 5.8rem);
+}
+
+.fiestas-casetas-app .fiestas-map-sheet.is-expanded {
+  height: min(58dvh, 30rem);
+  max-height: min(58dvh, 30rem);
+}
+
+.fiestas-casetas-app .fiestas-map-sheet {
+  grid-template-rows: auto auto auto auto minmax(0, 1fr);
+}
+
+.fiestas-casetas-app .fiestas-map-sheet.is-expanded .fiestas-map-sheet-list {
+  max-height: none;
+}
+
+.fiestas-casetas-app .fiestas-map-sheet-handle strong,
+.fiestas-casetas-app .fiestas-map-sheet-handle small {
+  padding-right: 3.5rem;
+}
+
+.fiestas-casetas-search-shell {
+  position: static;
+  margin: 0;
+}
+
+.fiestas-casetas-search-toggle {
+  display: inline-grid;
+  position: absolute;
+  top: 2.15rem;
+  right: 1rem;
+  z-index: 3;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: 9999px;
+  background: transparent;
+  color: #667085;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.fiestas-casetas-search-toggle:hover,
+.fiestas-casetas-search-toggle:focus-visible {
+  border-color: #b8c5d2;
+  background: #f8fafc;
+  color: #0f766e;
+  box-shadow: 0 0.35rem 0.8rem rgba(15, 23, 42, 0.1);
+  outline: 3px solid rgba(15, 159, 141, 0.18);
+  outline-offset: 2px;
+}
+
+.fiestas-casetas-search-toggle.is-active {
+  border-color: rgba(15, 159, 141, 0.42);
+  background: rgba(15, 159, 141, 0.09);
+  color: #0f766e;
+}
+
+.fiestas-casetas-search {
+  display: flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 0 1rem 0.65rem;
+  border: 1px solid #dfe5ec;
+  border-radius: 0.8rem;
+  background: #f8fafc;
+  color: #667085;
+  padding: 0 0.75rem;
+}
+
+.fiestas-casetas-search > i {
+  color: #0f9f8d;
+  font-size: 0.88rem;
+}
+
+.fiestas-casetas-search input {
+  min-width: 0;
+  flex: 1 1 auto;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #1f2937;
+  font: inherit;
+  font-size: 0.88rem;
+}
+
+.fiestas-casetas-search input::placeholder {
+  color: #98a2b3;
+}
+
+.fiestas-casetas-search button {
+  display: grid;
+  width: 1.7rem;
+  height: 1.7rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 0;
+  border-radius: 9999px;
+  background: transparent;
+  color: #667085;
+  cursor: pointer;
+}
+
+.fiestas-casetas-search button:hover,
+.fiestas-casetas-search button:focus-visible {
+  background: rgba(15, 159, 141, 0.12);
+  color: #0f766e;
+  outline: 2px solid rgba(15, 159, 141, 0.2);
+  outline-offset: 1px;
+}
+
+.fiestas-casetas-search[hidden],
+.fiestas-casetas-search button[hidden] {
+  display: none;
+}
+
+.fiestas-casetas-app .fiestas-map-sheet.is-collapsed .fiestas-casetas-search {
+  display: none;
+}
+
+.fiestas-casetas-app .fiestas-caseta-zone-marker button {
+  width: 2.75rem;
+  height: 2.75rem;
+  background: var(--fiestas-type-color, #0f9f8d);
+  font-size: 1rem;
+}
+
+.fiestas-casetas-app .fiestas-caseta-zone-marker.is-selected button {
+  width: 3.1rem;
+  height: 3.1rem;
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 26%, transparent), 0 0.45rem 1.1rem rgba(15, 23, 42, 0.28);
+}
+
+.fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-time-line {
+  color: var(--fiestas-type-color, #0f9f8d);
+}
+
+.fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-date {
+  color: var(--fiestas-type-color, #0f9f8d);
+  font-weight: 850;
+}
+
+.fiestas-casetas-app .fiestas-map-cluster-reset {
+  min-height: 2.35rem;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #667085;
+  padding: 0;
+  font-weight: 800;
+}
+
+.fiestas-casetas-app .fiestas-map-cluster-reset:hover,
+.fiestas-casetas-app .fiestas-map-cluster-reset:focus-visible {
+  background: transparent;
+  color: #344054;
+  outline: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.fiestas-casetas-empty {
+  margin: 0.6rem 0 0;
+}
+
+html.dark .fiestas-casetas-search {
+  border-color: #313743;
+  background: #1a1f28;
+  color: #c4ccd8;
+}
+
+html.dark .fiestas-casetas-search-toggle {
+  border-color: transparent;
+  background: transparent;
+  color: #c4ccd8;
+  box-shadow: none;
+}
+
+html.dark .fiestas-casetas-search-toggle.is-active {
+  border-color: rgba(113, 216, 203, 0.42);
+  background: rgba(23, 184, 164, 0.14);
+  color: #9ae8dd;
+}
+
+html.dark .fiestas-casetas-search input {
+  color: #f8fafc;
+}
+
+.fiestas-caseta-detail-main {
+  min-height: 100vh;
+  background: #fff;
+  padding: 0.85rem 1rem calc(env(safe-area-inset-bottom) + 7rem);
+}
+
+.fiestas-caseta-detail {
+  max-width: 46rem;
+}
+
+.fiestas-caseta-hero {
+  display: grid;
+  gap: 0.7rem;
+  border-radius: 1.25rem;
+  background:
+    linear-gradient(135deg, color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 16%, #fff), rgba(255, 255, 255, 0.92)),
+    #fff;
+  padding: clamp(1.4rem, 5vw, 2.35rem);
+}
+
+.fiestas-caseta-badge {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.45rem;
+  border-radius: 9999px;
+  background: var(--fiestas-type-color, #0f9f8d);
+  color: #fff;
+  padding: 0.35rem 0.65rem;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.fiestas-caseta-lead {
+  margin: 0;
+  color: #667085;
+  font-size: 1rem;
+}
+
+.fiestas-caseta-facts h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.fiestas-caseta-facts h2 i {
+  color: var(--fiestas-type-color, #0f9f8d);
+}
+
+.fiestas-caseta-location-pending {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0.9rem 0 0;
+  color: #667085;
+  font-size: 0.88rem;
+}
+
+.fiestas-caseta-location-pending i {
+  color: var(--fiestas-type-color, #0f9f8d);
+}
+
+.fiestas-caseta-menu {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.fiestas-caseta-type-muted {
+  background: #f2f4f7;
+  color: #667085;
+}
+
+.fiestas-caseta-related-icon {
+  display: grid;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--fiestas-type-color, #0f9f8d);
+  color: #fff;
+  font-size: 0.88rem;
+}
+
+.fiestas-caseta-menu-section {
+  border-top: 1px solid #e7eaf0;
+  padding-top: 0.8rem;
+}
+
+.fiestas-caseta-menu-section h3,
+.fiestas-caseta-highlights h3 {
+  margin: 0;
+  color: #1d222d;
+  font-size: 0.95rem;
+  font-weight: 900;
+}
+
+.fiestas-caseta-menu-section ul {
+  display: grid;
+  gap: 0.2rem;
+  margin: 0.45rem 0 0;
+  padding-left: 1.15rem;
+}
+
+.fiestas-caseta-menu-section li {
+  padding-left: 0.15rem;
+}
+
+.fiestas-caseta-highlights {
+  border-top: 1px solid #e7eaf0;
+  padding-top: 0.8rem;
+}
+
+.fiestas-caseta-highlights p {
+  margin: 0.45rem 0 0;
+}
+
+.fiestas-caseta-placeholder {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  border: 1px solid color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 24%, #dfe5ec);
+  border-radius: 1.1rem;
+  background: color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 7%, #fff);
+  padding: 1.1rem;
+}
+
+.fiestas-caseta-placeholder > i {
+  display: grid;
+  width: 2.8rem;
+  height: 2.8rem;
+  place-items: center;
+  border-radius: 0.85rem;
+  background: var(--fiestas-type-color, #0f9f8d);
+  color: #fff;
+  font-size: 1.1rem;
+}
+
+.fiestas-caseta-placeholder h2,
+.fiestas-caseta-placeholder p {
+  margin: 0;
+}
+
+.fiestas-caseta-placeholder h2 {
+  color: #1d2430;
+  font-size: 1.05rem;
+}
+
+.fiestas-caseta-placeholder p:last-child {
+  margin-top: 0.4rem;
+  color: #667085;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.fiestas-caseta-placeholder-link {
+  color: #0f766e;
+  font-weight: 850;
+  text-underline-offset: 0.16rem;
+}
+
+.fiestas-caseta-placeholder-link:hover,
+.fiestas-caseta-placeholder-link:focus-visible {
+  color: #087569;
+}
+
+.fiestas-caseta-back-link {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 0.45rem;
+  color: #0f766e;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.fiestas-caseta-back-link:hover,
+.fiestas-caseta-back-link:focus-visible {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+html.dark .fiestas-caseta-detail-main {
+  background: #121417;
+}
+
+html.dark .fiestas-caseta-hero {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 25%, #1a1f28), #1a1f28);
+}
+
+html.dark .fiestas-caseta-lead,
+html.dark .fiestas-caseta-location-pending,
+html.dark .fiestas-caseta-placeholder p:last-child {
+  color: #c4ccd8;
+}
+
+html.dark .fiestas-caseta-placeholder {
+  border-color: color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 38%, #313743);
+  background: color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 15%, #1a1f28);
+}
+
+html.dark .fiestas-caseta-menu-section,
+html.dark .fiestas-caseta-highlights {
+  border-color: #313743;
+}
+
+html.dark .fiestas-caseta-menu-section h3,
+html.dark .fiestas-caseta-highlights h3 {
+  color: #f8fafc;
+}
+
+html.dark .fiestas-caseta-type-muted {
+  background: #2b303a;
+  color: #c4ccd8;
+}
+
+html.dark .fiestas-caseta-placeholder h2 {
+  color: #f8fafc;
+}
+
+html.dark .fiestas-caseta-placeholder-link {
+  color: #71d8cb;
 }
 
 .fiestas-plan-more {

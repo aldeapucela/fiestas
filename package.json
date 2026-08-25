@@ -11,6 +11,7 @@
     "clean": "node -e \"import('node:fs/promises').then(fs=>fs.rm('dist',{recursive:true,force:true}))\"",
     "images:link": "node scripts/link-event-images.mjs --write",
     "locations:audit": "node scripts/enrich-event-locations.mjs --dry-run",
+    "casetas:locations": "node scripts/enrich-caseta-locations.mjs",
     "social:plan": "node scripts/generate-community-plan-social.mjs",
     "screenshots": "node scripts/capture-readme-screenshots.mjs"
   },

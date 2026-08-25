@@ -1,0 +1,265 @@
+{% extends "layout.njk" %}
+
+{% block bodyClass %}fiestas-page page-caseta-detail fiestas-detail-page{% endblock %}
+{% block footerClass %} site-footer--fiestas{% endblock %}
+
+{% block extraHead %}
+{% if caseta.coordinates %}
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+{% endif %}
+{% endblock %}
+
+{% block body %}
+<main
+  class="fiestas-app fiestas-detail-app fiestas-caseta-detail-app"
+  data-fiestas-detail
+  data-caseta-detail="true"
+  data-event-id="{{ caseta.id }}"
+  data-event-title="{{ caseta.name }}"
+  data-event-location="{{ caseta.location }}"
+  data-event-description="Caseta de feria de día en Valladolid"
+  data-event-summary="Caseta de feria de día en Valladolid"
+  data-event-url="{{ caseta.canonicalUrl }}"
+  data-share-title="{{ caseta.name }} | Casetas de Valladolid 2026"
+  data-share-text="Descubre {{ caseta.name }}, una caseta de la feria de día de Valladolid 2026"
+  data-share-url="{{ caseta.canonicalUrl }}"
+  {% if caseta.coordinates %}
+  data-event-lat="{{ caseta.coordinates.lat }}"
+  data-event-lng="{{ caseta.coordinates.lng }}"
+  {% endif %}
+  style="--fiestas-type-color: {{ caseta.color }};"
+>
+  <article class="fiestas-detail fiestas-caseta-detail" data-caseta-id="{{ caseta.id }}">
+    <header class="fiestas-detail-top">
+      <a class="fiestas-detail-top-button" href="/casetas/" aria-label="Volver al mapa de casetas">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      </a>
+      <p>Detalle de caseta</p>
+      <div class="fiestas-detail-top-actions">
+        <button class="fiestas-detail-top-button" type="button" data-fiestas-share aria-label="Compartir caseta">
+          <i class="fiestas-detail-share-icon fa-solid fa-share-nodes" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <section class="fiestas-detail-title-block" aria-labelledby="caseta-title">
+      <h1 class="fiestas-detail-title" id="caseta-title">{{ caseta.name }}</h1>
+      <div class="fiestas-detail-tags" aria-label="Clasificación de la caseta">
+        <span class="fiestas-detail-type">
+          <i class="fa-solid fa-store" aria-hidden="true"></i>
+          {{ caseta.zone }}
+        </span>
+        <span class="fiestas-detail-type fiestas-caseta-type-muted">
+          <i class="fa-solid fa-sun" aria-hidden="true"></i>
+          Feria de día
+        </span>
+      </div>
+    </section>
+
+    <section class="fiestas-detail-card fiestas-detail-facts" aria-label="Datos principales">
+      <div class="fiestas-detail-fact">
+        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+        <span>{{ caseta.location }}</span>
+      </div>
+      {% if caseta.placement %}
+      <div class="fiestas-detail-fact">
+        <i class="fa-solid fa-store" aria-hidden="true"></i>
+        <span>{{ caseta.placement }}</span>
+      </div>
+      {% endif %}
+    </section>
+
+    <section class="fiestas-detail-map-card" aria-labelledby="caseta-map-title">
+      <h2 id="caseta-map-title" class="sr-only">Ubicación</h2>
+      {% if caseta.coordinates %}
+      <div
+        class="fiestas-detail-map"
+        data-fiestas-detail-map
+        data-lat="{{ caseta.coordinates.lat }}"
+        data-lng="{{ caseta.coordinates.lng }}"
+        data-title="{{ caseta.location }}"
+      ></div>
+      <div class="fiestas-detail-map-error" data-fiestas-detail-map-error hidden role="status"></div>
+      {% else %}
+      <div class="fiestas-detail-map-empty">
+        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+        <p>Ubicación en mapa no disponible.</p>
+        <span>{{ caseta.location }}</span>
+      </div>
+      {% endif %}
+      {% if caseta.coordinates and caseta.coordinates.source == 'zone-fallback' %}
+      <p class="fiestas-detail-map-note">
+        <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+        Ubicación aproximada de la zona
+      </p>
+      {% endif %}
+      <div class="fiestas-detail-map-actions">
+        <a class="fiestas-detail-map-action" href="{{ caseta.mapUrl }}">
+          <i class="fa-regular fa-map" aria-hidden="true"></i>
+          <span>Ver en el mapa</span>
+        </a>
+        {% if caseta.coordinates %}
+        <a
+          class="fiestas-detail-map-action"
+          href="https://www.google.com/maps/dir/?api=1&amp;destination={{ caseta.coordinates.lat }},{{ caseta.coordinates.lng }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-fiestas-directions
+          data-lat="{{ caseta.coordinates.lat }}"
+          data-lng="{{ caseta.coordinates.lng }}"
+          data-title="{{ caseta.location }}"
+        >
+          <i class="fiestas-detail-directions-icon fa-solid fa-route" aria-hidden="true"></i>
+          <span>Cómo llegar</span>
+        </a>
+        {% else %}
+        <span class="fiestas-detail-map-action fiestas-detail-map-action-disabled">
+          <i class="fiestas-detail-directions-icon fa-solid fa-route" aria-hidden="true"></i>
+          <span>Cómo llegar</span>
+        </span>
+        {% endif %}
+      </div>
+    </section>
+
+    {% if caseta.details %}
+    <section class="fiestas-caseta-menu fiestas-detail-card" aria-labelledby="caseta-menu-title">
+      <h2 id="caseta-menu-title"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Carta</h2>
+      {% for section in caseta.details.menuSections %}
+      <div class="fiestas-caseta-menu-section">
+        <h3>{{ section.title }}</h3>
+        <ul>
+          {% for item in section.items %}
+          <li>{{ item }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+      {% endfor %}
+      {% if caseta.details.highlights %}
+      <div class="fiestas-caseta-highlights" aria-labelledby="caseta-specialties-title">
+        <h3 id="caseta-specialties-title">Especialidades</h3>
+        {% for highlight in caseta.details.highlights %}
+        <p>{{ highlight }}</p>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </section>
+    {% else %}
+    <section class="fiestas-caseta-placeholder" aria-labelledby="caseta-placeholder-title">
+      <i class="fa-solid fa-store" aria-hidden="true"></i>
+      <div>
+        <p class="fiestas-plan-kicker">PRÓXIMAMENTE</p>
+        <h2 id="caseta-placeholder-title">Ficha de caseta</h2>
+        <p>
+          Estamos preparando más información sobre este establecimiento y su propuesta para las fiestas.
+          Si tienes información sobre sus pinchos o tapas,
+          <a class="fiestas-caseta-placeholder-link" href="https://t.me/aldeapucela/59137" target="_blank" rel="noopener noreferrer">cuéntanoslo en el chat de fiestas</a>.
+        </p>
+      </div>
+    </section>
+    {% endif %}
+
+    <aside class="fiestas-community-card" aria-labelledby="fiestas-community-title">
+      <div class="fiestas-community-heading">
+        <img class="fiestas-community-logo" src="/assets/favicon.png" alt="" />
+        <div>
+          <p class="fiestas-community-kicker">ALDEA PUCELA</p>
+          <h2 id="fiestas-community-title">Las fiestas también se viven en comunidad</h2>
+        </div>
+      </div>
+      <p class="fiestas-community-copy">Descubre más planes de Valladolid, comparte tus favoritos y sigue los avisos de la feria de día.</p>
+      <a class="fiestas-community-primary" href="https://aldeapucela.org/boletin/" target="_blank" rel="noopener noreferrer">
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+        <span>Recibir el boletín semanal</span>
+      </a>
+      <div class="fiestas-community-secondary">
+        <a class="fiestas-community-telegram" href="https://t.me/aldeapucela/59137" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-telegram" aria-hidden="true"></i>
+          <span>Unirme al chat de fiestas</span>
+        </a>
+        <a class="fiestas-community-whatsapp" href="https://aldeapucela.org/whatsapp" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
+          <span>Canal de WhatsApp</span>
+        </a>
+        <a class="fiestas-community-facebook" href="https://www.facebook.com/aldeapucela" target="_blank" rel="noopener noreferrer">
+          <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+          <span>Página en Facebook</span>
+        </a>
+      </div>
+    </aside>
+
+    {% if relatedCasetas.length %}
+    <section class="fiestas-detail-card fiestas-related-card fiestas-caseta-related-card" aria-labelledby="fiestas-related-title">
+      <div class="fiestas-related-heading">
+        <h2 id="fiestas-related-title">
+          <i class="fa-solid fa-store" aria-hidden="true"></i>
+          Otras casetas en esta zona
+        </h2>
+        <span>{{ caseta.zone }}</span>
+      </div>
+      <div class="fiestas-related-list">
+        {% for related in relatedCasetas %}
+        <a class="fiestas-related-item" href="{{ related.urlPath }}">
+          <span class="fiestas-caseta-related-icon" style="--fiestas-type-color: {{ related.color }};" aria-hidden="true">
+            <i class="fa-solid fa-store"></i>
+          </span>
+          <span class="fiestas-related-copy">
+            <strong>{{ related.name }}</strong>
+            <span>{{ related.location }}{% if related.placement %} · {{ related.placement }}{% endif %}</span>
+          </span>
+          <i class="fa-solid fa-chevron-right fiestas-related-arrow" aria-hidden="true"></i>
+        </a>
+        {% endfor %}
+      </div>
+    </section>
+    {% endif %}
+
+    <div class="fiestas-detail-feedback" data-fiestas-detail-feedback aria-live="polite" hidden></div>
+
+    <a class="fiestas-caseta-back-link" href="/casetas/">
+      <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+      <span>Volver a todas las casetas</span>
+    </a>
+  </article>
+</main>
+
+<nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+  <a class="fiestas-bottom-link" href="/">
+    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+    <span>Agenda</span>
+  </a>
+  <a class="fiestas-bottom-link" href="{{ caseta.mapUrl }}">
+    <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.35" />
+    </svg>
+    <span>Mapa</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/plan/">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span>Mi plan</span>
+  </a>
+  <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
+    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+    <span>Más</span>
+    <span class="fiestas-hint-dot" data-menu-hint-dot hidden aria-hidden="true"></span>
+  </button>
+</nav>
+
+{% include "partials/menu-drawer.njk" %}
+{% include "partials/subscribe-modal.njk" %}
+{% endblock %}
+
+{% block extraScripts %}
+{% if caseta.coordinates %}
+<script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20NQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+  crossorigin=""
+></script>
+{% endif %}
+{% endblock %}

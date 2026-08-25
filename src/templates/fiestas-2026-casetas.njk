@@ -1,0 +1,53 @@
+{% extends "layout.njk" %}
+
+{% block bodyClass %}fiestas-page fiestas-casetas-page{% endblock %}
+
+{% block extraHead %}
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+  crossorigin=""
+/>
+{% endblock %}
+
+{% block footerClass %} site-footer--fiestas{% endblock %}
+
+{% block body %}
+<main class="fiestas-app fiestas-casetas-app" data-fiestas-app data-fiestas-casetas-page data-community-plans-href="/planes/">
+  <script>
+    window.__FIESTAS_2026_CASETAS__ = {{ fiestasCasetasJson | safe }};
+  </script>
+  <section class="fiestas-screen">
+    {% set casetasMode = true %}
+    {% include "partials/map-shell.njk" %}
+  </section>
+</main>
+
+<nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+  <a class="fiestas-bottom-link" href="/">
+    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+    <span>Agenda</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/mapa/">
+    <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.35" />
+    </svg>
+    <span>Mapa</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/plan/">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span>Mi plan</span>
+  </a>
+  <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
+    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+    <span>Más</span>
+    <span class="fiestas-hint-dot" data-menu-hint-dot hidden aria-hidden="true"></span>
+  </button>
+</nav>
+
+{% include "partials/menu-drawer.njk" %}
+{% include "partials/plan-selector.njk" %}
+{% include "partials/subscribe-modal.njk" %}
+{% endblock %}

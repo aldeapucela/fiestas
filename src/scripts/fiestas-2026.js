@@ -88,6 +88,7 @@ const state = {
 
 const els = {
   app: document.querySelector('[data-fiestas-app]'),
+  casetasPage: document.querySelector('[data-fiestas-casetas-page]'),
   popularPage: document.querySelector('[data-fiestas-popular-page]'),
   popularList: document.querySelector('[data-fiestas-popular-list]'),
   agenda: document.querySelector('[data-fiestas-agenda]'),
@@ -163,9 +164,17 @@ function init() {
   setupSubscribe();
   setupPlanSelector();
 
+  if (els.casetasPage) {
+    bindSiteShareControls();
+    void import('./casetas-page.js')
+      .then(({ initCasetasPage }) => initCasetasPage())
+      .catch((error) => console.error('No se pudo cargar el mapa de casetas.', error));
+    return;
+  }
+
   if (els.detail) {
     initDetailPage();
-    void loadSaveCounts();
+    if (els.detail.dataset.casetaDetail !== 'true') void loadSaveCounts();
     return;
   }
 
@@ -1911,11 +1920,16 @@ function ensureFilterBackdrop() {
 }
 
 function initDetailPage() {
-  trackActivityViewed(els.detail.dataset.eventId);
-  updateDetailFavorite({ silent: true });
+  const isCasetaDetail = els.detail?.dataset.casetaDetail === 'true';
+  if (!isCasetaDetail) {
+    trackActivityViewed(els.detail.dataset.eventId);
+    updateDetailFavorite({ silent: true });
+  }
   initDetailDirections();
-  els.detailSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
-  els.detailActionSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
+  if (!isCasetaDetail) {
+    els.detailSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
+    els.detailActionSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
+  }
   els.detailShare?.addEventListener('click', shareDetail);
   els.detailActionShare?.addEventListener('click', shareDetail);
   els.detailActionCalendar?.addEventListener('click', addDetailToCalendar);
@@ -2027,8 +2041,8 @@ async function shareDetail() {
   try {
     if (navigator.share) {
       await navigator.share({ title, text, url });
-      trackActivityShared(els.detail.dataset.eventId);
-      showDetailFeedback('Actividad compartida.');
+      if (els.detail.dataset.casetaDetail !== 'true') trackActivityShared(els.detail.dataset.eventId);
+      showDetailFeedback(els.detail.dataset.casetaDetail === 'true' ? 'Caseta compartida.' : 'Actividad compartida.');
       return;
     }
   } catch (error) {
@@ -2038,7 +2052,7 @@ async function shareDetail() {
   try {
     if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
     await navigator.clipboard.writeText(url);
-    trackActivityShared(els.detail.dataset.eventId);
+    if (els.detail.dataset.casetaDetail !== 'true') trackActivityShared(els.detail.dataset.eventId);
     showDetailFeedback('Enlace copiado.');
   } catch (_) {
     if (els.detailShareFallback) els.detailShareFallback.hidden = false;
@@ -2063,7 +2077,7 @@ async function copyShareFallback() {
       els.detailShareInput.select();
       if (!document.execCommand('copy')) throw new Error('Copy failed');
     }
-    trackActivityShared(els.detail.dataset.eventId);
+    if (els.detail.dataset.casetaDetail !== 'true') trackActivityShared(els.detail.dataset.eventId);
     showDetailFeedback('Enlace copiado.');
   } catch (_) {
     showDetailFeedback('No se pudo copiar el enlace.');
@@ -2188,11 +2202,12 @@ async function initDetailMap() {
       dragging: !isTouchDevice
     }).setView([lat, lng], 16);
     const title = els.detailMap.dataset.title || 'Actividad';
+    const markerIconClass = els.detail?.dataset.casetaDetail === 'true' ? 'fa-store' : 'fa-location-dot';
     const markerIcon = leaflet.divIcon({
       className: 'fiestas-detail-map-marker',
       iconSize: [0, 0],
       iconAnchor: [0, 0],
-      html: `<span class="fiestas-detail-map-marker-content"><i class="fiestas-detail-map-marker-icon fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-detail-map-marker-label">${escapeHtml(title)}</span></span>`
+      html: `<span class="fiestas-detail-map-marker-content"><i class="fiestas-detail-map-marker-icon fa-solid ${markerIconClass}" aria-hidden="true"></i><span class="fiestas-detail-map-marker-label">${escapeHtml(title)}</span></span>`
     });
     let tileLayer = createCartoLayer(leaflet).addTo(map);
     document.addEventListener('aldeapucela:themechange', () => {

@@ -21,6 +21,13 @@ const communityPlanIcons = new Set([
   'fireworks', 'parade', 'family', 'children', 'sports', 'religious', 'camera', 'art',
   'culture', 'map', 'calendar', 'heart', 'layers'
 ]);
+const casetaPalette = [
+  '#0f9f8d', '#73579f', '#d48625', '#1976a8', '#ba3d3d', '#087e8c',
+  '#b94f72', '#4f7cac', '#d06b37', '#657a3b', '#9b5de5', '#a44a3f'
+];
+const casetaMenuCollator = new Intl.Collator('es', { sensitivity: 'base', numeric: true });
+const casetaCityCenter = { lat: 41.6523, lng: -4.7245 };
+const casetaCityRadiusKm = 12;
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
@@ -35,6 +42,28 @@ function parseBooleanEnv(value) {
 
 function slugify(value = '') {
   return String(value).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'evento';
+}
+
+function casetaColor(id = '') {
+  return casetaPalette[stableHash(id) % casetaPalette.length];
+}
+
+function normalizeCasetaDetails(details) {
+  if (!details || typeof details !== 'object') return null;
+  return {
+    ...details,
+    menuSections: Array.isArray(details.menuSections)
+      ? details.menuSections.map((section) => ({
+        ...section,
+        items: Array.isArray(section.items)
+          ? section.items
+            .map((item) => String(item || '').trim())
+            .filter(Boolean)
+            .sort((left, right) => casetaMenuCollator.compare(left, right))
+          : []
+      }))
+      : []
+  };
 }
 
 function fiestas2026Icon(type = '') {
@@ -95,7 +124,7 @@ async function compileCss(cssVersionSeed) {
 async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'fiestas-2026.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js'];
+  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'fiestas-2026.js', 'casetas-page.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js'];
   for (const file of files) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
@@ -278,6 +307,17 @@ async function copyCommunityPlanFiles(assetVersionSeed) {
   }
 }
 
+async function copyCasetasData(casetas, assetVersionSeed) {
+  const content = JSON.stringify({
+    schemaVersion: 1,
+    festival: 'valladolid-2026',
+    updatedAt: '2026-08-25',
+    casetas
+  }, null, 2) + '\n';
+  await writeFile('data/casetas.json', content);
+  assetVersionSeed.push(['data/casetas.json', createHash('sha256').update(content).digest('hex')]);
+}
+
 async function copyAssetDir(sourceDir, currentDir, assetVersionSeed) {
   const entries = await fs.readdir(currentDir, { withFileTypes: true });
   for (const entry of entries) {
@@ -360,6 +400,116 @@ async function loadEvents() {
 
 function hasCoordinates(coordinates) {
   return coordinates && Number.isFinite(coordinates.lat) && Number.isFinite(coordinates.lng);
+}
+
+async function loadCasetas() {
+  const sourcePath = path.join(root, 'src', 'data', 'fiestas-2026', 'casetas.json');
+  const raw = await fs.readFile(sourcePath, 'utf8');
+  const source = JSON.parse(raw);
+  if (source?.schemaVersion !== 1 || source?.festival !== 'valladolid-2026' || !Array.isArray(source?.casetas)) {
+    throw new Error('The casetas catalog must use schemaVersion 1 and festival valladolid-2026.');
+  }
+
+  const ids = new Set();
+  const normalized = source.casetas.map((caseta, index) => {
+    if (!caseta || typeof caseta !== 'object') throw new Error(`Caseta ${index + 1} must be an object.`);
+    const id = String(caseta.id || '').trim();
+    const name = String(caseta.name || '').trim();
+    const zone = String(caseta.zone || '').trim();
+    const location = String(caseta.location || '').trim();
+    const addressQuery = String(caseta.addressQuery || location).trim();
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) throw new Error(`Caseta ${index + 1} has an invalid stable id.`);
+    if (ids.has(id)) throw new Error(`Caseta id "${id}" is duplicated.`);
+    if (!name || !zone || !location || !addressQuery) throw new Error(`Caseta "${id}" is missing name, zone, location or addressQuery.`);
+    ids.add(id);
+    const slug = slugify(name);
+    const coordinates = hasCoordinates(caseta.coordinates)
+      ? normalizeCasetaCoordinates(caseta.coordinates)
+      : null;
+    return {
+      id,
+      name,
+      slug,
+      zone,
+      location,
+      placement: String(caseta.placement || '').trim(),
+      addressQuery,
+      coordinates,
+      details: normalizeCasetaDetails(caseta.details),
+      color: casetaColor(id),
+      urlPath: `/c/${id}/${slug}/`,
+      canonicalUrl: publicBaseUrl + `/c/${id}/${slug}/`,
+      mapUrl: `/casetas/?caseta=${encodeURIComponent(id)}`
+    };
+  });
+  const zoneFallbacks = buildCasetaZoneFallbacks(normalized);
+  return normalized.map((caseta) => ({
+    ...caseta,
+    coordinates: isNearCasetaCity(caseta.coordinates)
+      ? caseta.coordinates
+      : createCasetaZoneFallback(caseta.zone, zoneFallbacks.get(caseta.zone) || casetaCityCenter)
+  }));
+}
+
+function buildCasetaZoneFallbacks(casetas) {
+  const grouped = new Map();
+  for (const caseta of casetas) {
+    if (!isNearCasetaCity(caseta.coordinates)) continue;
+    if (!grouped.has(caseta.zone)) grouped.set(caseta.zone, []);
+    grouped.get(caseta.zone).push(caseta.coordinates);
+  }
+  return new Map([...new Set(casetas.map((caseta) => caseta.zone))].map((zone) => {
+    const coordinates = grouped.get(zone) || [];
+    return [zone, coordinates.length ? {
+      lat: median(coordinates.map((item) => item.lat)),
+      lng: median(coordinates.map((item) => item.lng))
+    } : casetaCityCenter];
+  }));
+}
+
+function createCasetaZoneFallback(zone, coordinates) {
+  return {
+    lat: coordinates.lat,
+    lng: coordinates.lng,
+    source: 'zone-fallback',
+    displayName: `${zone}, Valladolid, España`,
+    query: `${zone}, Valladolid, España`
+  };
+}
+
+function isNearCasetaCity(coordinates) {
+  return hasCoordinates(coordinates) && distanceInKilometres(casetaCityCenter, coordinates) <= casetaCityRadiusKm;
+}
+
+function distanceInKilometres(from, to) {
+  const earthRadius = 6371;
+  const latDelta = (to.lat - from.lat) * Math.PI / 180;
+  const lngDelta = (to.lng - from.lng) * Math.PI / 180;
+  const fromLatitude = from.lat * Math.PI / 180;
+  const toLatitude = to.lat * Math.PI / 180;
+  const a = Math.sin(latDelta / 2) ** 2
+    + Math.cos(fromLatitude) * Math.cos(toLatitude) * Math.sin(lngDelta / 2) ** 2;
+  return earthRadius * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function median(values) {
+  const sorted = [...values].sort((left, right) => left - right);
+  const middle = Math.floor(sorted.length / 2);
+  return sorted.length % 2 ? sorted[middle] : (sorted[middle - 1] + sorted[middle]) / 2;
+}
+
+function normalizeCasetaCoordinates(coordinates) {
+  return Object.fromEntries(Object.entries({
+    lat: Number(coordinates.lat),
+    lng: Number(coordinates.lng),
+    source: coordinates.source,
+    osmType: coordinates.osmType,
+    osmId: coordinates.osmId,
+    displayName: coordinates.displayName,
+    query: coordinates.query,
+    accuracy: coordinates.accuracy,
+    geocodedAt: coordinates.geocodedAt
+  }).filter(([, value]) => value !== undefined && value !== null && value !== ''));
 }
 
 function normalizeCoordinates(coordinates) {
@@ -592,6 +742,8 @@ async function build() {
   await copyStaticAssets(assetVersionSeed);
   const communityPlans = await copyCommunityPlansData(assetVersionSeed);
   await copyCommunityPlanFiles(assetVersionSeed);
+  const casetas = await loadCasetas();
+  await copyCasetasData(casetas, assetVersionSeed);
   const communityPlanMemberships = await loadCommunityPlanMemberships(communityPlans);
   const pwaFiles = await loadPwaFiles();
   const cssVersion = contentVersion(cssVersionSeed);
@@ -611,6 +763,7 @@ async function build() {
   const events = await loadEvents();
   const summary = buildSummary(events);
   const socialImage = publicBaseUrl + '/assets/social/fiestas-valladolid-2026.jpg';
+  const casetasSocialImage = publicBaseUrl + '/assets/social/casetas-feria-de-dia.png';
 
   const homeContext = {
     ...pageContext(versions),
@@ -641,6 +794,26 @@ async function build() {
       title: 'Mapa de Fiestas Valladolid 2026 | Aldea Pucela',
       url: publicBaseUrl + '/mapa/'
     }
+  }));
+
+  await writeFile('casetas/index.html', render('fiestas-2026-casetas.njk', {
+    ...pageContext(versions),
+    title: 'Casetas de Valladolid 2026 | Aldea Pucela',
+    meta: { description: 'Mapa de las casetas de las Fiestas de Valladolid 2026, con ubicaciones por zonas.' },
+    canonicalUrl: publicBaseUrl + '/casetas/',
+    social: {
+      ...homeContext.social,
+      title: 'Casetas de Valladolid 2026 | Aldea Pucela',
+      description: 'Mapa de las casetas de las Fiestas de Valladolid 2026, con ubicaciones por zonas.',
+      image: casetasSocialImage,
+      imageAlt: 'Casetas feria de día | Fiestas Valladolid 2026',
+      imageWidth: 1731,
+      imageHeight: 909,
+      imageType: 'image/png',
+      url: publicBaseUrl + '/casetas/'
+    },
+    fiestasCasetasJson: JSON.stringify(casetas),
+    fiestasCasetasZones: [...new Set(casetas.map((caseta) => caseta.zone))]
   }));
 
   await writeFile('populares/index.html', render('fiestas-2026-popular.njk', {
@@ -722,6 +895,29 @@ async function build() {
     }));
   }
 
+  for (const caseta of casetas) {
+    await writeFile(`c/${caseta.id}/${caseta.slug}/index.html`, render('fiestas-2026-caseta-detail.njk', {
+      ...pageContext(versions),
+      title: `${caseta.name} | Casetas de Valladolid 2026`,
+      meta: { description: `${caseta.name}, caseta de las Fiestas de Valladolid 2026 en ${caseta.location}.` },
+      canonicalUrl: publicBaseUrl + caseta.urlPath,
+      social: {
+        ...homeContext.social,
+        type: 'article',
+        title: `${caseta.name} | Casetas de Valladolid 2026`,
+        description: `${caseta.name}, caseta de las Fiestas de Valladolid 2026 en ${caseta.location}.`,
+        image: casetasSocialImage,
+        imageAlt: 'Casetas feria de día | Fiestas Valladolid 2026',
+        imageWidth: 1731,
+        imageHeight: 909,
+        imageType: 'image/png',
+        url: publicBaseUrl + caseta.urlPath
+      },
+      caseta,
+      relatedCasetas: casetas.filter((related) => related.zone === caseta.zone && related.id !== caseta.id)
+    }));
+  }
+
   for (const event of events) {
     await writeFile('e/' + event.id + '/' + event.slug + '/index.html', render('fiestas-2026-detail.njk', {
       ...pageContext(versions),
@@ -745,7 +941,7 @@ async function build() {
     }));
   }
 
-  const urls = ['/', '/mapa/', '/populares/', '/planes/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/planes/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.map((caseta) => caseta.urlPath), ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
