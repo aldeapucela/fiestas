@@ -376,6 +376,43 @@
     ]
   },
   {
+    "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
+    "location": "Calle Bao junto a Plaza del Rosarillo",
+    "zone": "Plaza del Rosarillo",
+    "organizers": [
+      "inClan Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.654981,
+      "lng": -4.724086,
+      "source": "Inferidas desde evento existente en Plaza del Rosarillo"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ],
+    "id": 428,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "22:00",
+    "title": "Tardeos de ferias: set house remember",
+    "description": "Tardeo de ferias al aire libre en Calle Bao junto a Plaza del Rosarillo. Set house remember con DJ Y4gger y DJ Chusky.",
+    "summary": "Set house remember al aire libre con DJ Y4gger y DJ Chusky.",
+    "performances": [
+      "DJ Y4gger",
+      "DJ Chusky"
+    ]
+  },
+  {
     "id": 11,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
@@ -5324,6 +5361,43 @@
       "Música",
       "Peñas",
       "Danza"
+    ]
+  },
+  {
+    "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
+    "location": "Calle Bao junto a Plaza del Rosarillo",
+    "zone": "Plaza del Rosarillo",
+    "organizers": [
+      "inClan Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.654981,
+      "lng": -4.724086,
+      "source": "Inferidas desde evento existente en Plaza del Rosarillo"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ],
+    "id": 429,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "20:00",
+    "endTime": "22:00",
+    "title": "Tardeos de ferias: set remember 90’s",
+    "description": "Tardeo de ferias al aire libre en Calle Bao junto a Plaza del Rosarillo. Set remember 90’s con DJ Never y DJ Neke.",
+    "summary": "Set remember 90’s al aire libre con DJ Never y DJ Neke.",
+    "performances": [
+      "DJ Never",
+      "DJ Neke"
     ]
   },
   {
@@ -10468,6 +10542,43 @@
     },
     "tags": [
       "Música"
+    ]
+  },
+  {
+    "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
+    "location": "Calle Bao junto a Plaza del Rosarillo",
+    "zone": "Plaza del Rosarillo",
+    "organizers": [
+      "inClan Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.654981,
+      "lng": -4.724086,
+      "source": "Inferidas desde evento existente en Plaza del Rosarillo"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ],
+    "id": 430,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "20:00",
+    "endTime": "22:00",
+    "title": "Tardeos de ferias: remember dance 2000’s",
+    "description": "Tardeo de ferias al aire libre en Calle Bao junto a Plaza del Rosarillo. Remember dance 2000’s con DJ Julio y Lario DJ.",
+    "summary": "Remember dance 2000’s al aire libre con DJ Julio y Lario DJ.",
+    "performances": [
+      "DJ Julio",
+      "Lario DJ"
     ]
   },
   {
