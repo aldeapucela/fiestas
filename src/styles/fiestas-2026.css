@@ -3232,6 +3232,11 @@
     -webkit-text-stroke: 0.04rem rgba(18, 20, 23, 0.96);
   }
 
+  html.dark .fiestas-map-marker button,
+  html.dark .fiestas-map-cluster button {
+    border-color: #121417;
+  }
+
   html.dark .fiestas-save-count {
     color: #aab3c1;
   }
