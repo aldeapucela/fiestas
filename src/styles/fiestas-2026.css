@@ -1178,7 +1178,7 @@
     left: 0;
     z-index: 200;
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     border-top: 1px solid #e3e6ec;
     background: #fff;
     padding: 0.35rem max(0.75rem, env(safe-area-inset-left)) max(0.5rem, env(safe-area-inset-bottom)) max(0.75rem, env(safe-area-inset-right));
@@ -1205,6 +1205,15 @@
 
   .fiestas-bottom-link i {
     font-size: 1.35rem;
+  }
+
+  .fiestas-bottom-link > i {
+    display: inline-flex;
+    width: 1.45rem;
+    height: 1.45rem;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
   }
 
   .fiestas-hint-dot {

@@ -76,7 +76,7 @@ export function initCasetasPage() {
   bindControls();
   bindSheetGestures();
   renderSheet(getVisibleCasetas());
-  requestLocationOnce();
+  requestLocation({ centerOnSuccess: false });
   void initializeMap();
 }
 
@@ -343,6 +343,12 @@ function casetaRow(caseta) {
   article.style.setProperty('--fiestas-type-color', caseta.color);
   const href = `/c/${encodeURIComponent(caseta.id)}/${encodeURIComponent(caseta.slug)}/`;
   const placement = caseta.placement || '';
+  const distance = state.userLocation && caseta.coordinates
+    ? formatDistance(distanceInKilometres(
+      [state.userLocation.lat, state.userLocation.lng],
+      [caseta.coordinates.lat, caseta.coordinates.lng]
+    ))
+    : '';
   article.innerHTML = `
     <a class="fiestas-map-result-link" href="${href}">
       <span class="fiestas-map-result-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
@@ -352,7 +358,7 @@ function casetaRow(caseta) {
           <span class="fiestas-map-result-type">${escapeHtml(caseta.zone)}</span>
         </span>
         <span class="fiestas-map-result-meta"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(caseta.location)}</span>
-        ${placement ? `<span class="fiestas-map-result-time-line"><span class="fiestas-map-result-date">${escapeHtml(placement)}</span></span>` : ''}
+        ${placement || distance ? `<span class="fiestas-map-result-time-line">${placement ? `<span class="fiestas-map-result-date">${escapeHtml(placement)}</span>` : ''}${distance ? `<span class="fiestas-map-result-distance"><i class="fa-solid fa-person-walking" aria-hidden="true"></i>${escapeHtml(distance)}</span>` : ''}</span>` : ''}
       </span>
     </a>
     <a class="fiestas-map-result-focus" href="${href}" aria-label="Ver ficha de ${escapeAttribute(caseta.name)}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
@@ -380,11 +386,6 @@ function syncSearchUi() {
   if (els.searchClear) els.searchClear.hidden = !state.searchQuery;
 }
 
-function requestLocationOnce() {
-  if (state.hasRequestedLocation || state.locationStatus === 'pending' || state.locationStatus === 'granted') return;
-  requestLocation({ centerOnSuccess: true });
-}
-
 function requestLocation(options = {}) {
   if (!navigator.geolocation) {
     state.locationStatus = 'unavailable';
@@ -405,7 +406,7 @@ function requestLocation(options = {}) {
     if (options.centerOnSuccess) state.preferredMapCenter = { latLng: [state.userLocation.lat, state.userLocation.lng], zoom: USER_ZOOM };
     if (state.map) {
       renderUserMarker(window.L);
-      applyPreferredCenter();
+      if (options.centerOnSuccess) applyPreferredCenter();
     }
     renderSheet(getVisibleCasetas());
   }, (error) => {
@@ -441,8 +442,6 @@ function applyPreferredCenter() {
   if (state.preferredMapCenter) {
     state.map.setView(state.preferredMapCenter.latLng, state.preferredMapCenter.zoom);
     state.preferredMapCenter = null;
-  } else if (state.userLocation && state.locationStatus === 'granted') {
-    state.map.setView([state.userLocation.lat, state.userLocation.lng], USER_ZOOM);
   } else {
     const coordinates = state.zones
       .filter((zone) => hasCoordinates(zone.coordinates))
@@ -592,6 +591,11 @@ function distanceInKilometres([fromLat, fromLng], [toLat, toLng]) {
   const a = Math.sin(latDelta / 2) ** 2
     + Math.cos(fromLatitude) * Math.cos(toLatitude) * Math.sin(lngDelta / 2) ** 2;
   return earthRadius * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+}
+
+function formatDistance(distanceKm) {
+  if (distanceKm < 1) return `${Math.max(1, Math.round(distanceKm * 1000))} m`;
+  return `${new Intl.NumberFormat('es', { maximumFractionDigits: 1 }).format(distanceKm)} km`;
 }
 
 function median(values) {

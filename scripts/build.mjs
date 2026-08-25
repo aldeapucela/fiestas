@@ -798,12 +798,12 @@ async function build() {
 
   await writeFile('casetas/index.html', render('fiestas-2026-casetas.njk', {
     ...pageContext(versions),
-    title: 'Casetas de Valladolid 2026 | Aldea Pucela',
+    title: 'Casetas Feria de Día - Fiestas Valladolid 2026',
     meta: { description: 'Mapa de las casetas de las Fiestas de Valladolid 2026, con ubicaciones por zonas.' },
     canonicalUrl: publicBaseUrl + '/casetas/',
     social: {
       ...homeContext.social,
-      title: 'Casetas de Valladolid 2026 | Aldea Pucela',
+      title: 'Casetas Feria de Día - Fiestas Valladolid 2026',
       description: 'Mapa de las casetas de las Fiestas de Valladolid 2026, con ubicaciones por zonas.',
       image: casetasSocialImage,
       imageAlt: 'Casetas feria de día | Fiestas Valladolid 2026',

@@ -137,11 +137,11 @@
     @apply absolute -left-2 top-2 bottom-2 w-1 rounded-full bg-brand-500;
   }
 
-  .menu-drawer-link-featured {
-    @apply min-h-14 bg-brand-50/70 font-semibold text-brand-700 hover:bg-brand-100/80 hover:text-brand-800;
+  .menu-drawer-link-internal {
+    @apply font-semibold text-brand-700 hover:bg-transparent hover:text-brand-800;
   }
 
-  .menu-drawer-link-featured .menu-drawer-link-icon {
+  .menu-drawer-link-internal .menu-drawer-link-icon {
     @apply text-brand-600;
   }
 
@@ -1830,11 +1830,11 @@ html.dark .site-footer-copy a {
     @apply bg-brand-900/40 text-brand-100;
   }
 
-  html.dark .menu-drawer-link-featured {
-    @apply bg-[#30283c] text-[#d8c8ed] hover:bg-[#3a2f4b] hover:text-white;
+  html.dark .menu-drawer-link-internal {
+    @apply bg-transparent text-[#d8c8ed] hover:bg-transparent hover:text-white;
   }
 
-  html.dark .menu-drawer-link-featured .menu-drawer-link-icon {
+  html.dark .menu-drawer-link-internal .menu-drawer-link-icon {
     color: #c8b3e5;
   }
 
