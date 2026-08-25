@@ -1465,19 +1465,6 @@
     outline-offset: 2px;
   }
 
-  .fiestas-map-share-feedback {
-    position: absolute;
-    top: calc(100% + 0.45rem);
-    right: 1rem;
-    z-index: 50;
-    max-width: min(18rem, calc(100vw - 2rem));
-    border: 1px solid rgba(15, 159, 141, 0.22);
-    border-radius: 0.7rem;
-    background: #fff;
-    box-shadow: 0 0.6rem 1.3rem rgba(15, 23, 42, 0.16);
-    padding: 0.55rem 0.7rem;
-  }
-
   .fiestas-map-date-toggle span {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3582,12 +3569,6 @@
   html.dark .fiestas-map-share-button {
     border-color: transparent;
     background: transparent;
-    color: #7be0d1;
-  }
-
-  html.dark .fiestas-map-share-feedback {
-    border-color: #313743;
-    background: #202631;
     color: #7be0d1;
   }
 

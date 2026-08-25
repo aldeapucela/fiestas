@@ -2134,7 +2134,7 @@ async function shareSite(event) {
 
   try {
     await copyTextToClipboard(clipboardText);
-    showSiteShareFeedback('Mensaje y enlace copiados.');
+    showSiteShareFeedback('Enlace copiado.');
   } catch (_) {
     showSiteShareFeedback('No se pudo copiar el mensaje. Mantén pulsado para copiarlo.', true);
   }
