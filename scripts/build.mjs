@@ -52,6 +52,18 @@ function socialCategorySlug(type = '') {
   return slug === 'humor-y-monologos' ? 'teatro' : slug;
 }
 
+async function communityPlanSocial(communityPlan) {
+  const relativePath = `/assets/social/plans/${communityPlan.id}.png`;
+  await fs.access(path.join(root, 'src', relativePath));
+  return {
+    image: publicBaseUrl + relativePath,
+    imageAlt: `${communityPlan.name}, creado por ${communityPlan.author}`,
+    imageWidth: 1200,
+    imageHeight: 630,
+    imageType: 'image/png'
+  };
+}
+
 async function writeFile(relPath, content) {
   const filePath = path.join(dist, relPath);
   await fs.mkdir(path.dirname(filePath), { recursive: true });
@@ -685,6 +697,7 @@ async function build() {
     const planPath = `/planes/${communityPlan.id}/`;
     const planTitle = `${communityPlan.name} | Planes vecinales | Fiestas Valladolid 2026`;
     const planDescription = `${communityPlan.name}, creado por ${communityPlan.author}, para disfrutar las Fiestas de Valladolid 2026.`;
+    const planSocial = await communityPlanSocial(communityPlan);
     await writeFile(`planes/${communityPlan.id}/index.html`, render('fiestas-2026-community-plan.njk', {
       ...homeContext,
       title: planTitle,
@@ -694,6 +707,7 @@ async function build() {
         ...homeContext.social,
         title: planTitle,
         description: planDescription,
+        ...planSocial,
         url: publicBaseUrl + planPath
       },
       communityPlan: {
