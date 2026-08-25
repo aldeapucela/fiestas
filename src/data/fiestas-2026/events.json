@@ -13608,5 +13608,110 @@
     "tags": [
       "Peñas"
     ]
+  },
+  {
+    "id": 415,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Siesta Club en La Pera Limonera",
+    "image": "/assets/events/siesta-club-pera-limonera-2026.jpg",
+    "location": "La Pera Limonera, Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "Siesta Club en La Pera Limonera desde las 18:00 h. House y disco house, 100% vinilo, con Chejo, Element, Escalante y Omar Cantt.",
+    "summary": "Siesta Club en La Pera Limonera desde las 18:00 h. House y disco house, 100% vinilo.",
+    "performances": [
+      "Chejo",
+      "Element",
+      "Escalante",
+      "Omar Cantt"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6573,
+      "lng": -4.733252,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre con acreditación",
+      "url": "https://entradium.com/events/siesta?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAad8msk-sZTVGVDjxiboffqdyW70ltuiQtQAdR9qGdpH8mqBDEZJHYGBP5_-WQ_aem_ZeJEle7L2TsO8g3wvlOFNQ",
+      "note": "Acreditación gratuita disponible en Entradium."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 416,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "17:00",
+    "endTime": null,
+    "title": "Siesta Club en Segundo Acto",
+    "image": "/assets/events/siesta-club-segundo-acto-2026.jpg",
+    "location": "Segundo Acto, C. María de Molina, 7, bajo",
+    "zone": "Segundo Acto",
+    "description": "Siesta Club en Segundo Acto desde las 17:00 h. House y disco house, 100% vinilo, con Chejo, Element, Escalante y Omar Cantt.",
+    "summary": "Siesta Club en Segundo Acto desde las 17:00 h. House y disco house, 100% vinilo.",
+    "performances": [
+      "Chejo",
+      "Element",
+      "Escalante",
+      "Omar Cantt"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.649285,
+      "lng": -4.73024,
+      "source": "Manual/address from public listing"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre con acreditación",
+      "url": "https://entradium.com/events/siesta-en-segundo-acto?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAcGRvZgJleHRuA2FlbQIxMQBzcnRjBmFwcF9pZA85MzY2MTk3NDMzOTI0NTkAAaf8yUkahhT7RxhtGNdJxAFhidD-9vTFNAIjnDa73hvVT-b5RSAs6ixFhXjucg_aem_kRlrgxNbJ43gx9jUBppaFQ",
+      "note": "Acreditación gratuita disponible en Entradium."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 417,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Siesta Club en Plaza Poniente (La Boutique)",
+    "location": "Plaza Poniente (La Boutique)",
+    "zone": "Plaza Poniente",
+    "description": "Siesta Club en Plaza Poniente (La Boutique) desde las 18:00 h. House y disco house, 100% vinilo.",
+    "summary": "Siesta Club en Plaza Poniente (La Boutique) desde las 18:00 h. House y disco house, 100% vinilo.",
+    "performances": [],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.653157,
+      "lng": -4.731282,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": ""
+    },
+    "tags": [
+      "Música"
+    ]
   }
 ]
