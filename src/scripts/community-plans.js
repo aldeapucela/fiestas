@@ -91,7 +91,7 @@ export function setupCommunityPlansPage(rawEvents = []) {
       } catch (_) {
         addLink.removeAttribute('aria-busy');
         addLink.removeAttribute('data-community-plan-busy');
-        setActionText(addLink, 'Guardar este plan', 'fa-plus');
+        setActionText(addLink, 'Guardar', 'fa-plus');
         showLinkFeedback(addLink, 'No se ha podido cargar este plan. Puedes intentarlo de nuevo desde su ficha.');
       }
       return;
@@ -394,7 +394,7 @@ function createPlanCard(entry) {
   const previewLink = createTextAction(entry.pageUrl, 'Previsualizar', 'fa-eye');
   previewLink.classList.add('fiestas-community-plan-text-action-preview');
   actions.append(previewLink);
-  const addLink = createTextAction(`${entry.pageUrl}?add=1`, 'Guardar este plan', 'fa-plus');
+  const addLink = createTextAction(`${entry.pageUrl}?add=1`, 'Guardar', 'fa-plus');
   addLink.classList.add('fiestas-community-plan-text-action-add');
   addLink.dataset.communityPlanAdd = '';
   addLink.dataset.communityPlanId = entry.id;
