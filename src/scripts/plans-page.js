@@ -1045,11 +1045,13 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
   const summaryLabel = activeDay === 'all'
     ? `${summaryCount} ${summaryCount === 1 ? 'actividad guardada' : 'actividades guardadas'}`
     : `${summaryCount} ${summaryCount === 1 ? 'actividad' : 'actividades'}`;
-  summary.append(
-    textNode('span', summaryLabel),
-    textNode('span', ' · '),
-    textNode('strong', formatPlanLongDate(activeDay))
-  );
+  summary.append(textNode('span', summaryLabel));
+  if (activeDay !== 'all') {
+    summary.append(
+      textNode('span', ' · '),
+      textNode('strong', formatPlanLongDate(activeDay))
+    );
+  }
   copy.append(summary);
   const illustration = document.createElement('img');
   illustration.className = 'fiestas-plan-illustration';

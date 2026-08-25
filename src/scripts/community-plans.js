@@ -1,4 +1,4 @@
-import { createPlan, getPlanIcon, normalizePlanIcon, readFavoriteIds, readPlans, writeFavoriteIds } from './plan-storage.js';
+import { createPlan, normalizePlanIcon, readFavoriteIds, readPlans, writeFavoriteIds } from './plan-storage.js';
 import { trackCommunityPlanAdded, trackFavoriteChanged, trackPlanShared } from './analytics.js';
 import { renderPlanTimeline } from './plans-page.js';
 
@@ -39,9 +39,8 @@ export function setupCommunityPlansPage(rawEvents = []) {
       entries = normalizeCatalog(value).map((entry) => ({
         ...entry,
         pageUrl: `/planes/${entry.id}/`,
-        summary: 'Previsualización disponible en la ficha'
+        socialImageUrl: `/assets/social/plans/${entry.id}.png`
       }));
-      renderCatalog();
       const [enrichedEntries, planAddCounts] = await Promise.all([
         Promise.all(entries.map((entry) => enrichEntry(entry, eventById))),
         loadPlanAddCounts()
@@ -63,7 +62,7 @@ export function setupCommunityPlansPage(rawEvents = []) {
       const entry = entries.find((item) => item.id === shareButton.dataset.communityPlanId);
       if (!entry) return;
       event.preventDefault();
-      await shareCommunityPlan(entry, shareButton.closest('.fiestas-community-plan-card'));
+      await shareCommunityPlan(entry);
       return;
     }
 
@@ -92,7 +91,7 @@ export function setupCommunityPlansPage(rawEvents = []) {
       } catch (_) {
         addLink.removeAttribute('aria-busy');
         addLink.removeAttribute('data-community-plan-busy');
-        setActionText(addLink, 'Añadir a mis planes', 'fa-plus');
+        setActionText(addLink, 'Añadir', 'fa-plus');
         showLinkFeedback(addLink, 'No se ha podido cargar este plan. Puedes intentarlo de nuevo desde su ficha.');
       }
       return;
@@ -218,7 +217,7 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
   });
 
   shareButton?.addEventListener('click', async () => {
-    await shareCommunityPlan(entry, page.querySelector('.fiestas-community-plan-detail'));
+    await shareCommunityPlan(entry);
   });
 
   window.addEventListener('popstate', () => {
@@ -254,7 +253,7 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
 async function enrichEntry(entry, eventById) {
   try {
     const imported = await loadExportedPlan(entry.url, eventById);
-    return { ...entry, icon: imported.icon || entry.icon, summary: formatImportedSummary(imported) };
+    return { ...entry, icon: imported.icon || entry.icon, summary: formatImportedCardSummary(imported) };
   } catch (_) {
     return entry;
   }
@@ -349,20 +348,23 @@ function createPlanCard(entry) {
   card.dataset.communityPlanPreview = entry.pageUrl;
   card.tabIndex = 0;
   card.setAttribute('role', 'group');
-  card.setAttribute('aria-label', `Abrir la previsualización de ${entry.name}`);
+  card.setAttribute('aria-label', `Abrir el plan ${entry.name}`);
 
-  const icon = document.createElement('span');
-  icon.className = 'fiestas-community-plan-card-icon';
-  icon.append(createIcon(getPlanIcon(entry.icon).className));
-  card.append(icon);
+  const media = document.createElement('div');
+  media.className = 'fiestas-community-plan-card-media';
+  const imageLink = document.createElement('a');
+  imageLink.className = 'fiestas-community-plan-card-image-link';
+  imageLink.href = entry.pageUrl;
+  imageLink.setAttribute('aria-label', `Ver ${entry.name}`);
+  const image = document.createElement('img');
+  image.className = 'fiestas-community-plan-card-image';
+  image.src = entry.socialImageUrl;
+  image.alt = `${entry.name}, creado por ${entry.author}`;
+  image.loading = 'lazy';
+  image.decoding = 'async';
+  imageLink.append(image);
+  media.append(imageLink);
 
-  const body = document.createElement('div');
-  body.className = 'fiestas-community-plan-card-body';
-  const title = document.createElement('h2');
-  title.textContent = entry.name;
-  const titleRow = document.createElement('div');
-  titleRow.className = 'fiestas-community-plan-card-title-row';
-  titleRow.append(title);
   const topActions = document.createElement('div');
   topActions.className = 'fiestas-community-plan-card-top-actions';
   if (Number.isFinite(entry.addCount)) {
@@ -371,33 +373,36 @@ function createPlanCard(entry) {
     addCount.setAttribute('aria-label', `${entry.addCount} ${entry.addCount === 1 ? 'persona sigue' : 'personas siguen'} este plan`);
     addCount.title = `${entry.addCount} ${entry.addCount === 1 ? 'persona sigue' : 'personas siguen'} este plan`;
     addCount.append(createIcon('fa-users'), document.createTextNode(String(entry.addCount)));
-    topActions.append(addCount);
+    media.append(addCount);
   }
-  const author = document.createElement('p');
-  author.className = 'fiestas-community-plan-card-author';
-  author.textContent = `por ${entry.author}`;
+  topActions.append(createShareAction(entry));
+  media.append(topActions);
+  card.append(media);
+
+  const body = document.createElement('div');
+  body.className = 'fiestas-community-plan-card-body';
   const meta = document.createElement('p');
   meta.className = 'fiestas-community-plan-card-meta';
   meta.textContent = entry.summary;
-  body.append(titleRow, author, meta);
-  card.append(body);
+  body.append(meta);
 
-  topActions.append(createShareAction(entry));
-  card.append(topActions);
-
+  const footer = document.createElement('div');
+  footer.className = 'fiestas-community-plan-card-footer';
+  footer.append(body);
   const actions = document.createElement('div');
   actions.className = 'fiestas-community-plan-card-actions';
   const previewLink = createTextAction(entry.pageUrl, 'Previsualizar', 'fa-eye');
   previewLink.classList.add('fiestas-community-plan-text-action-preview');
   actions.append(previewLink);
-  const addLink = createTextAction(`${entry.pageUrl}?add=1`, 'Añadir a mis planes', 'fa-plus');
+  const addLink = createTextAction(`${entry.pageUrl}?add=1`, 'Añadir', 'fa-plus');
   addLink.classList.add('fiestas-community-plan-text-action-add');
   addLink.dataset.communityPlanAdd = '';
   addLink.dataset.communityPlanId = entry.id;
+  actions.append(addLink);
+  footer.append(actions);
+  card.append(footer);
   const existing = findExistingCatalogPlan(entry);
   if (existing) markAddedLink(addLink, existing);
-  actions.append(addLink);
-  card.append(actions);
   return card;
 }
 
@@ -405,30 +410,7 @@ function renderDetail(container, entry, imported, selectedDay, events) {
   if (!container) return;
   container.replaceChildren();
 
-  const header = document.createElement('header');
-  header.className = 'fiestas-community-plan-detail-head';
-  const icon = document.createElement('span');
-  icon.className = 'fiestas-community-plan-detail-icon';
-  icon.append(createIcon(getPlanIcon(entry.icon || imported.icon).className));
-  const title = document.createElement('h2');
-  title.id = 'community-plan-detail-title';
-  title.textContent = entry.name || imported.name;
-  const author = document.createElement('p');
-  author.className = 'fiestas-community-plan-detail-author';
-  author.textContent = `por ${entry.author}`;
-  const headMeta = document.createElement('div');
-  headMeta.className = 'fiestas-community-plan-detail-head-meta';
-  headMeta.append(author);
-  const followerCount = createPlanFollowerCount(entry.addCount);
-  if (followerCount) headMeta.append(followerCount);
-  const headCopy = document.createElement('div');
-  headCopy.className = 'fiestas-community-plan-detail-head-copy';
-  headCopy.append(title, headMeta);
-  const summary = document.createElement('p');
-  summary.className = 'fiestas-community-plan-detail-summary';
-  summary.textContent = formatImportedSummary(imported);
-  header.append(icon, headCopy, summary);
-  container.append(header);
+  container.append(createCommunityPlanDetailHero(entry, imported));
 
   const topActions = document.createElement('div');
   topActions.className = 'fiestas-community-plan-detail-actions fiestas-community-plan-detail-actions-top';
@@ -445,14 +427,54 @@ function renderDetail(container, entry, imported, selectedDay, events) {
   renderPlanTimeline(container, { id: `community-${entry.id}`, activityIds: imported.activityIds }, events, [], selectedDay);
 }
 
-function createPlanFollowerCount(addCount) {
+function createCommunityPlanDetailHero(entry, imported) {
+  const block = document.createElement('div');
+  block.className = 'fiestas-community-plan-detail-hero-block';
+
+  const hero = document.createElement('header');
+  hero.className = 'fiestas-community-plan-detail-hero';
+  hero.setAttribute('aria-labelledby', 'community-plan-detail-title');
+
+  const image = document.createElement('img');
+  image.className = 'fiestas-community-plan-detail-hero-image';
+  image.src = `/assets/social/plans/${encodeURIComponent(entry.id)}.png`;
+  image.alt = `${entry.name || imported.name}, creado por ${entry.author}`;
+  image.loading = 'eager';
+  image.decoding = 'async';
+  hero.append(image);
+
+  const title = document.createElement('h2');
+  title.id = 'community-plan-detail-title';
+  title.className = 'sr-only';
+  title.textContent = entry.name || imported.name;
+  hero.append(title);
+
+  const stats = document.createElement('div');
+  stats.className = 'fiestas-community-plan-detail-hero-stats';
+  const summary = document.createElement('span');
+  summary.className = 'fiestas-community-plan-detail-hero-summary';
+  summary.textContent = formatImportedSummary(imported);
+  stats.append(summary);
+
+  const followerCount = createPlanFollowerCount(entry.addCount, true);
+  if (followerCount) {
+    followerCount.classList.add('fiestas-community-plan-detail-hero-followers');
+    stats.append(followerCount);
+  }
+
+  hero.append(stats);
+  block.append(hero);
+  return block;
+}
+
+function createPlanFollowerCount(addCount, compact = false) {
   if (!Number.isFinite(addCount)) return null;
   const followerCount = document.createElement('p');
   followerCount.className = 'fiestas-community-plan-detail-followers';
   followerCount.setAttribute('aria-label', `${addCount} ${addCount === 1 ? 'seguidor' : 'seguidores'}`);
   followerCount.append(
     createIcon('fa-users'),
-    document.createTextNode(`${addCount} ${addCount === 1 ? 'seguidor' : 'seguidores'}`)
+    document.createTextNode(compact ? String(addCount) : `${addCount} ${addCount === 1 ? 'seguidor' : 'seguidores'}`)
   );
   return followerCount;
 }
@@ -486,7 +508,7 @@ function createDetailAddLink() {
   return link;
 }
 
-async function shareCommunityPlan(entry, feedbackContainer) {
+async function shareCommunityPlan(entry) {
   const url = new URL(entry.pageUrl, window.location.href).href;
   const title = entry.name || 'Plan vecinal';
   const message = `Mira el plan "${title}" para estas fiestas y ferias:\n\n${url}`;
@@ -494,7 +516,6 @@ async function shareCommunityPlan(entry, feedbackContainer) {
     if (navigator.share) {
       await navigator.share({ title, text: message });
       trackPlanShared('community');
-      showCommunityShareFeedback(feedbackContainer, 'Plan compartido.');
       return;
     }
   } catch (error) {
@@ -505,20 +526,27 @@ async function shareCommunityPlan(entry, feedbackContainer) {
     if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
     await navigator.clipboard.writeText(message);
     trackPlanShared('community');
-    showCommunityShareFeedback(feedbackContainer, 'Enlace copiado.');
+    showCommunityShareFeedback('Enlace copiado.');
   } catch (_) {
-    showCommunityShareFeedback(feedbackContainer, 'No se pudo compartir el enlace.', true);
+    showCommunityShareFeedback('No se pudo compartir el enlace.', true);
   }
 }
 
-function showCommunityShareFeedback(container, message, isError = false) {
-  if (!container) return;
+let communityShareFeedbackTimer;
+
+function showCommunityShareFeedback(message, isError = false) {
+  document.querySelector('.fiestas-community-share-toast')?.remove();
+  window.clearTimeout(communityShareFeedbackTimer);
   const feedback = document.createElement('p');
-  feedback.className = `fiestas-community-plan-share-feedback${isError ? ' is-error' : ''}`;
+  feedback.className = `fiestas-community-share-toast${isError ? ' is-error' : ''}`;
+  feedback.setAttribute('role', isError ? 'alert' : 'status');
   feedback.textContent = message;
-  container.querySelector('.fiestas-community-plan-share-feedback')?.remove();
-  container.append(feedback);
-  window.setTimeout(() => feedback.remove(), 3000);
+  document.body.append(feedback);
+  window.requestAnimationFrame(() => feedback.classList.add('is-visible'));
+  communityShareFeedbackTimer = window.setTimeout(() => {
+    feedback.classList.remove('is-visible');
+    window.setTimeout(() => feedback.remove(), 180);
+  }, 3000);
 }
 
 function setActionText(link, label, iconName) {
@@ -532,7 +560,8 @@ function markAddedLink(link, plan) {
   link.removeAttribute('data-community-plan-busy');
   link.removeAttribute('aria-disabled');
   if (plan?.id) link.href = `/plan/?tab=plans&plan=${encodeURIComponent(plan.id)}`;
-  setActionText(link, 'Ver plan', 'fa-eye');
+  link.closest('.fiestas-community-plan-card')?.querySelector('.fiestas-community-plan-text-action-preview')?.remove();
+  setActionText(link, 'Ver', 'fa-eye');
 }
 
 function findExistingCatalogPlan(entry) {
@@ -604,6 +633,10 @@ function formatImportedSummary(imported) {
   const count = `${imported.activityIds.length} ${imported.activityIds.length === 1 ? 'actividad' : 'actividades'}`;
   const dates = [...new Set(imported.events.map((event) => event.dateLabel || event.date))];
   return dates.length ? `${count} · ${dates.length} ${dates.length === 1 ? 'día' : 'días'}` : count;
+}
+
+function formatImportedCardSummary(imported) {
+  return `${imported.activityIds.length} ${imported.activityIds.length === 1 ? 'actividad' : 'actividades'}`;
 }
 
 function normalizeEvents(rawEvents) {
