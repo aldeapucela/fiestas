@@ -1081,7 +1081,7 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
   const bottomActions = document.createElement('div');
   bottomActions.className = 'fiestas-plan-bottom-actions';
   bottomActions.append(
-    actionButton('Compartir mi plan', 'fa-arrow-up-from-bracket', { className: 'fiestas-plan-share-button', 'data-plan-share': plan.id }),
+    actionButton(options.isSaved ? 'Compartir mis guardados' : 'Compartir mi plan', 'fa-arrow-up-from-bracket', { className: 'fiestas-plan-share-button', 'data-plan-share': plan.id }),
     actionButton('Añadir al calendario', 'fa-calendar-plus', { className: 'fiestas-plan-calendar-button', 'data-plan-export-calendar': plan.id })
   );
   container.append(bottomActions);
