@@ -47,6 +47,30 @@
       </div>
     </header>
 
+    {% if caseta.image %}
+    <figure class="fiestas-detail-hero">
+      <button
+        class="fiestas-detail-hero-button"
+        type="button"
+        data-fiestas-detail-image
+        data-image-src="{{ caseta.image }}"
+        data-image-alt="{{ caseta.imageAlt or caseta.name }}"
+        aria-label="Ver foto de {{ caseta.name }} completa"
+      >
+        <img src="{{ caseta.image }}" alt="{{ caseta.imageAlt or caseta.name }}" loading="eager" />
+      </button>
+    </figure>
+    <div class="detail-lightbox" data-fiestas-detail-lightbox role="dialog" aria-modal="true" aria-label="Imagen de {{ caseta.name }}" hidden>
+      <button class="detail-lightbox-backdrop" type="button" data-fiestas-detail-lightbox-close aria-label="Cerrar imagen"></button>
+      <div class="detail-lightbox-panel">
+        <button class="detail-lightbox-close" type="button" data-fiestas-detail-lightbox-close aria-label="Cerrar imagen">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+        <img class="detail-lightbox-image" data-fiestas-detail-lightbox-image src="{{ caseta.image }}" alt="{{ caseta.imageAlt or caseta.name }}" />
+      </div>
+    </div>
+    {% endif %}
+
     <section class="fiestas-detail-title-block" aria-labelledby="caseta-title">
       <h1 class="fiestas-detail-title" id="caseta-title">{{ caseta.name }}</h1>
       <div class="fiestas-detail-tags" aria-label="Clasificación de la caseta">

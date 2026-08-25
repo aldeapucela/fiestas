@@ -433,6 +433,8 @@ async function loadCasetas() {
       zone,
       location,
       placement: String(caseta.placement || '').trim(),
+      image: String(caseta.image || '').trim(),
+      imageAlt: String(caseta.imageAlt || '').trim(),
       addressQuery,
       coordinates,
       details: normalizeCasetaDetails(caseta.details),
@@ -896,6 +898,9 @@ async function build() {
   }
 
   for (const caseta of casetas) {
+    const casetaSocialImage = caseta.image
+      ? publicBaseUrl + caseta.image
+      : casetasSocialImage;
     await writeFile(`c/${caseta.id}/${caseta.slug}/index.html`, render('fiestas-2026-caseta-detail.njk', {
       ...pageContext(versions),
       title: `${caseta.name} | Casetas de Valladolid 2026`,
@@ -906,11 +911,11 @@ async function build() {
         type: 'article',
         title: `${caseta.name} | Casetas de Valladolid 2026`,
         description: `${caseta.name}, caseta de las Fiestas de Valladolid 2026 en ${caseta.location}.`,
-        image: casetasSocialImage,
-        imageAlt: 'Casetas feria de día | Fiestas Valladolid 2026',
-        imageWidth: 1731,
-        imageHeight: 909,
-        imageType: 'image/png',
+        image: casetaSocialImage,
+        imageAlt: caseta.imageAlt || 'Casetas feria de día | Fiestas Valladolid 2026',
+        imageWidth: caseta.image ? 1280 : 1731,
+        imageHeight: caseta.image ? 964 : 909,
+        imageType: caseta.image ? 'image/jpeg' : 'image/png',
         url: publicBaseUrl + caseta.urlPath
       },
       caseta,
