@@ -342,6 +342,40 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e44723f2db3b2797fa257a0cc06524493cc5e83c_2_1024x1024.jpeg"
   },
   {
+    "id": 420,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
+    "zone": "Plaza Poniente",
+    "description": "Actuación de Paco Devotion en Plaza Poniente, con La Boutique y Enboga.",
+    "summary": "Paco Devotion en Plaza Poniente, con La Boutique y Enboga.",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.653157,
+      "lng": -4.731282,
+      "source": "Inferidas desde evento existente en Plaza Poniente"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
     "id": 11,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
@@ -705,6 +739,44 @@
       "Música"
     ],
     "image": "https://www.valladolid.es/es/ayuntamiento/notas-prensa/consejo-local-juventud-presenta-programacion-lorencito-fest.ficheros/1201123-20260710%20presenta%20programaci%C3%B3n%20Lorencito%20Fest%20cartel.jpg/g%2C1201123-20260710%20presenta%20programaci%C3%B3n%20Lorencito%20Fest%20cartel.jpg"
+  },
+  {
+    "id": 418,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "23:00",
+    "endTime": "08:00",
+    "title": "ADN con Skryption en MÕSS Club Valladolid",
+    "location": "MÕSS Club, Av. Ramón Pradera, 47009 Valladolid",
+    "zone": "Pabellón Feria de Valladolid",
+    "description": "ADN aterriza en MÕSS Club para una noche de techno con Skryption, Alex Vigo e Iban Zero.",
+    "summary": "Noche de techno en MÕSS Club con Skryption, Alex Vigo e Iban Zero.",
+    "performances": [
+      "Skryption",
+      "Alex Vigo",
+      "Iban Zero"
+    ],
+    "organizers": [
+      "To Music Entertainment"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.655639,
+      "lng": -4.739802,
+      "source": "Inferidas por proximidad al Pabellón Feria de Valladolid"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": true,
+      "status": "required",
+      "label": "Entrada desde 15 €",
+      "url": "https://site.fourvenues.com/es/to-music-entertainment/events/adn-w-skryption--mss-club-valladolid-04-09-2026-P249",
+      "note": "Venta de entradas por tramos en Fourvenues."
+    },
+    "tags": [
+      "Música"
+    ],
+    "image": "/assets/events/adn-skryption-moss-club-2026.jpg"
   },
   {
     "id": 22,
@@ -1245,6 +1317,40 @@
     "tags": [
       "Música",
       "Peñas"
+    ]
+  },
+  {
+    "id": 421,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "La Catedral (Los Ilustres / Jero / Melêl)",
+    "zone": "S.i. Catedral de Valladolid",
+    "description": "Actuación de Paco Devotion en La Catedral, con Los Ilustres, Jero y Melêl.",
+    "summary": "Paco Devotion en La Catedral, con Los Ilustres, Jero y Melêl.",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6536,
+      "lng": -4.7238,
+      "source": "Manual desde ubicación Catedral de Valladolid"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
     ]
   },
   {
@@ -3030,6 +3136,40 @@
     ]
   },
   {
+    "id": 422,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "17:00",
+    "endTime": "20:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "San Benito (Madame X / La Santa)",
+    "zone": "Zona Centro",
+    "description": "Actuación de Paco Devotion en San Benito, con Madame X y La Santa.",
+    "summary": "Paco Devotion en San Benito, con Madame X y La Santa.",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6539,
+      "lng": -4.7296,
+      "source": "Manual desde ubicación San Benito"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
     "id": 92,
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
@@ -4496,6 +4636,40 @@
     },
     "tags": [
       "Peñas",
+      "Música"
+    ]
+  },
+  {
+    "id": 423,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "C/ Matías Sangrador (Macanudo / Griller’ Chef)",
+    "zone": "Zona Centro",
+    "description": "Actuación de Paco Devotion en la calle Matías Sangrador, con Macanudo y Griller’ Chef.",
+    "summary": "Paco Devotion en la calle Matías Sangrador, con Macanudo y Griller’ Chef.",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.654,
+      "lng": -4.7288,
+      "source": "Manual desde dirección del cartel"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
       "Música"
     ]
   },
@@ -6289,6 +6463,40 @@
     "image": "https://foro.aldeapucela.org/uploads/default/original/2X/9/92d0e9db9cf75b0556461d62fa87b728320064c2.jpeg"
   },
   {
+    "id": 424,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "19:30",
+    "endTime": "22:30",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "C/ Francisco Zarandona, 10 (La Lupe / American Dream)",
+    "zone": "Zona Centro",
+    "description": "Actuación de Paco Devotion en la calle Francisco Zarandona 10, con La Lupe y American Dream.",
+    "summary": "Paco Devotion en la calle Francisco Zarandona 10, con La Lupe y American Dream.",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6528,
+      "lng": -4.7247,
+      "source": "Manual desde dirección del cartel"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
     "id": 192,
     "date": "2026-09-08",
     "dateLabel": "Martes 8 de septiembre",
@@ -7640,13 +7848,15 @@
     "date": "2026-09-09",
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "20:00",
-    "endTime": null,
+    "endTime": "21:30",
     "title": "Paco Devotion",
     "location": "Plaza Mayor",
     "zone": "Plaza Mayor",
-    "description": "Paco Devotion",
-    "summary": "Paco Devotion",
-    "performances": [],
+    "description": "Actuación de Paco Devotion en Plaza Mayor.",
+    "summary": "Paco Devotion en Plaza Mayor.",
+    "performances": [
+      "Paco Devotion"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -7658,13 +7868,14 @@
     "ticket": {
       "required": false,
       "status": "not_required",
-      "label": "Sin entrada indicada",
+      "label": "Gratis",
       "url": null,
-      "note": "No consta venta de entradas en el programa para este evento."
+      "note": "El cartel no indica venta de entradas."
     },
     "tags": [
       "Música"
-    ]
+    ],
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
   },
   {
     "id": 234,
@@ -9012,6 +9223,40 @@
     ]
   },
   {
+    "id": 426,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "C/ Arribas, 18 (Bizarro)",
+    "zone": "Zona Centro",
+    "description": "Actuación de Paco Devotion en la calle Arribas 18, con Bizarro.",
+    "summary": "Paco Devotion en la calle Arribas 18, con Bizarro.",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6532,
+      "lng": -4.7246,
+      "source": "Manual desde dirección del cartel"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
     "id": 275,
     "date": "2026-09-10",
     "dateLabel": "Jueves 10 de septiembre",
@@ -10192,6 +10437,40 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/94bd5bbb953237b81f2c307a6ad091449d96abde_2_819x1024.jpeg"
   },
   {
+    "id": 427,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "C/ Cebadería, 7 (Vándalo)",
+    "zone": "Zona Centro",
+    "description": "Actuación de Paco Devotion en la calle Cebadería 7, con Vándalo.",
+    "summary": "Paco Devotion en la calle Cebadería 7, con Vándalo.",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6518,
+      "lng": -4.7281,
+      "source": "Manual desde dirección del cartel"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
     "id": 311,
     "date": "2026-09-11",
     "dateLabel": "Viernes 11 de septiembre",
@@ -10566,6 +10845,46 @@
       "Música"
     ],
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/abe02f7e906628acf7d90c7f67c278ce92a3799a_2_914x1024.jpeg"
+  },
+  {
+    "id": 419,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "01:00",
+    "endTime": "08:00",
+    "title": "Asscenssion Rave fiestas San Lorenzo 2026",
+    "location": "MÕSS Club, Av. Ramón Pradera, 47009 Valladolid",
+    "zone": "Pabellón Feria de Valladolid",
+    "description": "Asscenssion Rave fiestas San Lorenzo 2026 en MÕSS Club, con Vlace b2b KSN, Adrián Oblanca, MBPM, Ganso b2b Mor8 y Alexxgonzi b2b Savana Bass.",
+    "summary": "Asscenssion Rave fiestas San Lorenzo 2026 en MÕSS Club, de 01:00 a 08:00.",
+    "performances": [
+      "Vlace b2b KSN",
+      "Adrián Oblanca",
+      "MBPM",
+      "Ganso b2b Mor8",
+      "Alexxgonzi b2b Savana Bass"
+    ],
+    "organizers": [
+      "Asscenssion Rave"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.655639,
+      "lng": -4.739802,
+      "source": "Inferidas por proximidad al Pabellón Feria de Valladolid"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": true,
+      "status": "required",
+      "label": "Entradas Fourvenues",
+      "url": "https://site.fourvenues.com/es/asscenssion-rave/events/asscenssion-fiestas-san-lorenzo-2026-11-09-2026-XVLB",
+      "note": "Entrada necesaria. Acceso +18."
+    },
+    "tags": [
+      "Música"
+    ],
+    "image": "/assets/events/asscenssion-rave-san-lorenzo-2026.jpg"
   },
   {
     "id": 322,
