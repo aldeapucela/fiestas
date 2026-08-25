@@ -158,7 +158,14 @@
         <h3>{{ section.title }}</h3>
         <ul>
           {% for item in section.items %}
-          <li>{{ item }}</li>
+          <li>
+            <span>{{ item.name }}</span>
+            {% if item.dietary == 'vegetarian' %}
+            <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegetarian">Vegetariano</span>
+            {% elif item.dietary == 'vegan' %}
+            <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegan">Vegano</span>
+            {% endif %}
+          </li>
           {% endfor %}
         </ul>
       </div>

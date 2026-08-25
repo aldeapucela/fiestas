@@ -374,7 +374,7 @@ function getSearchMatch(caseta) {
   if (!query) return null;
 
   const menuMatches = (caseta.details?.menuSections || []).flatMap((section) => [
-    ...(section.items || []).map((item) => ({ text: item }))
+    ...(section.items || []).map((item) => ({ text: typeof item === 'string' ? item : item?.name }))
   ]);
   const highlightMatches = (caseta.details?.highlights || []).map((highlight) => ({ text: highlight }));
 

@@ -4859,7 +4859,31 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 }
 
 .fiestas-caseta-menu-section li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.45rem;
   padding-left: 0.15rem;
+}
+
+.fiestas-caseta-dietary-pill {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.12rem 0.45rem;
+  font-size: 0.68rem;
+  font-weight: 850;
+  line-height: 1.25;
+}
+
+.fiestas-caseta-dietary-pill--vegetarian {
+  background: #e6f5ec;
+  color: #237a4b;
+}
+
+.fiestas-caseta-dietary-pill--vegan {
+  background: #d9f2e6;
+  color: #126b42;
 }
 
 .fiestas-caseta-highlights {
@@ -4964,6 +4988,16 @@ html.dark .fiestas-caseta-highlights {
 html.dark .fiestas-caseta-menu-section h3,
 html.dark .fiestas-caseta-highlights h3 {
   color: #f8fafc;
+}
+
+html.dark .fiestas-caseta-dietary-pill--vegetarian {
+  background: #214333;
+  color: #a5e5bc;
+}
+
+html.dark .fiestas-caseta-dietary-pill--vegan {
+  background: #1d4b36;
+  color: #a8ebc2;
 }
 
 html.dark .fiestas-caseta-type-muted {

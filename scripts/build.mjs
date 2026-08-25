@@ -26,6 +26,7 @@ const casetaPalette = [
   '#b94f72', '#4f7cac', '#d06b37', '#657a3b', '#9b5de5', '#a44a3f'
 ];
 const casetaMenuCollator = new Intl.Collator('es', { sensitivity: 'base', numeric: true });
+const casetaDietaryLabels = new Set(['vegetarian', 'vegan']);
 const casetaCityCenter = { lat: 41.6523, lng: -4.7245 };
 const casetaCityRadiusKm = 12;
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
@@ -57,13 +58,24 @@ function normalizeCasetaDetails(details) {
         ...section,
         items: Array.isArray(section.items)
           ? section.items
-            .map((item) => String(item || '').trim())
+            .map(normalizeCasetaMenuItem)
             .filter(Boolean)
-            .sort((left, right) => casetaMenuCollator.compare(left, right))
+            .sort((left, right) => casetaMenuCollator.compare(left.name, right.name))
           : []
       }))
       : []
   };
+}
+
+function normalizeCasetaMenuItem(item) {
+  const isObject = item && typeof item === 'object' && !Array.isArray(item);
+  const name = String(isObject ? item.name || '' : item || '').trim();
+  if (!name) return null;
+  const dietary = String(isObject ? item.dietary || '' : '').trim().toLowerCase();
+  if (dietary && !casetaDietaryLabels.has(dietary)) {
+    throw new Error(`El plato "${name}" tiene una clasificación dietética no válida.`);
+  }
+  return dietary ? { name, dietary } : { name };
 }
 
 function fiestas2026Icon(type = '') {

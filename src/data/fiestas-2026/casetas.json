@@ -280,7 +280,10 @@
               "Chorizo a la sidra",
               "Chorizo con sidra",
               "Croquetas caseras",
-              "Patatas bravas",
+              {
+                "name": "Patatas bravas",
+                "dietary": "vegetarian"
+              },
               "Pollo crujiente",
               "Rabas"
             ]
@@ -288,7 +291,10 @@
           {
             "title": "Postres",
             "items": [
-              "Vasitos de cupcake"
+              {
+                "name": "Vasitos de cupcake",
+                "dietary": "vegetarian"
+              }
             ]
           }
         ],
@@ -504,13 +510,19 @@
               "Rabas con alioli",
               "Careta de cerdo",
               "Cecina de León",
-              "Jalapeños con queso cheddar (6 uds.)"
+              {
+                "name": "Jalapeños con queso cheddar (6 uds.)",
+                "dietary": "vegetarian"
+              }
             ]
           },
           {
             "title": "Postre",
             "items": [
-              "Tarta de Toblerone"
+              {
+                "name": "Tarta de Toblerone",
+                "dietary": "vegetarian"
+              }
             ]
           },
           {
