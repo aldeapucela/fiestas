@@ -1061,6 +1061,21 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
   hero.append(copy, illustration);
   container.append(hero);
 
+  if (options.isSaved && !planEvents.length) {
+    const empty = document.createElement('section');
+    empty.className = 'fiestas-plan-empty fiestas-plan-saved-empty';
+    empty.append(
+      textNode('p', 'Añade actividades desde la agenda o desde una actividad.'),
+      textNode('p', 'O explora los planes vecinales.')
+    );
+    const communityLink = linkNode('Explorar los planes vecinales', '/planes/');
+    communityLink.className = 'fiestas-plan-action fiestas-plan-action-primary fiestas-plan-empty-cta';
+    communityLink.insertBefore(iconNode('fa-solid fa-people-group'), communityLink.firstChild);
+    empty.append(communityLink);
+    container.append(empty);
+    return;
+  }
+
   renderPlanTimeline(container, plan, events, plans, selectedDay, options);
 
   const bottomActions = document.createElement('div');

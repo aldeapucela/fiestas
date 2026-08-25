@@ -3891,6 +3891,23 @@ html:not(.dark) body:has(.fiestas-app) {
   font-weight: 850;
 }
 
+.fiestas-plan-saved-empty {
+  gap: 0.45rem;
+  margin-top: 0.35rem;
+  padding: 1.15rem;
+}
+
+.fiestas-plan-empty-cta {
+  margin-top: 0.35rem;
+  text-decoration: none;
+}
+
+.fiestas-plan-empty-cta.fiestas-plan-action-primary,
+.fiestas-plan-empty-cta.fiestas-plan-action-primary:hover,
+.fiestas-plan-empty-cta.fiestas-plan-action-primary:focus-visible {
+  color: #fff;
+}
+
 .fiestas-plan-events,
 .fiestas-plan-list {
   display: grid;
