@@ -65,6 +65,13 @@
       "author": "Yustin",
       "icon": "music",
       "url": "/data/community-plans/indie-pero-no-solo.fiestas-plan.json"
+    },
+    {
+      "id": "musica-electronica",
+      "name": "Música electrónica",
+      "author": "José Luis",
+      "icon": "music",
+      "url": "/data/community-plans/musica-electronica.fiestas-plan.json"
     }
   ]
 }

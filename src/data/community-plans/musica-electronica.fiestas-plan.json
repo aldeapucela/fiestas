@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "festival": "valladolid-2026",
+  "exportedAt": "2026-08-25T00:00:00Z",
+  "plans": [
+    {
+      "name": "Música electrónica",
+      "icon": "music",
+      "activityIds": [
+        "20",
+        "21",
+        "57",
+        "156",
+        "234",
+        "233",
+        "242",
+        "244",
+        "415",
+        "416",
+        "317",
+        "337",
+        "417",
+        "367"
+      ]
+    }
+  ]
+}
