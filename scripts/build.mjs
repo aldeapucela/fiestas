@@ -689,6 +689,11 @@ async function build() {
       ...homeContext.social,
       title: 'Planes vecinales | Fiestas Valladolid 2026',
       description: 'Descubre colecciones de actividades creadas por vecinos para las Fiestas de Valladolid 2026.',
+      image: publicBaseUrl + '/assets/social/planes.png',
+      imageAlt: 'Los mejores planes para las Fiestas de Valladolid 2026',
+      imageWidth: 1200,
+      imageHeight: 630,
+      imageType: 'image/png',
       url: publicBaseUrl + '/planes/'
     }
   }));
