@@ -74,7 +74,7 @@ export function setupCommunityPlansPage(rawEvents = []) {
       event.preventDefault();
       addLink.dataset.communityPlanBusy = 'true';
       addLink.setAttribute('aria-busy', 'true');
-      setActionText(addLink, 'Añadiendo…', 'fa-spinner');
+      setActionText(addLink, 'Guardando…', 'fa-spinner');
       try {
         const imported = await loadExportedPlan(entry.url, eventById);
         const existing = findExistingCommunityPlan(entry, imported);
@@ -91,7 +91,7 @@ export function setupCommunityPlansPage(rawEvents = []) {
       } catch (_) {
         addLink.removeAttribute('aria-busy');
         addLink.removeAttribute('data-community-plan-busy');
-        setActionText(addLink, 'Añadir', 'fa-plus');
+        setActionText(addLink, 'Guardar este plan', 'fa-plus');
         showLinkFeedback(addLink, 'No se ha podido cargar este plan. Puedes intentarlo de nuevo desde su ficha.');
       }
       return;
@@ -155,13 +155,13 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
     const existing = findExistingCommunityPlan(entry, imported);
     if (existing) {
       syncAddedLinks(existing);
-      setStatus(`${existing.name} ya está disponible en Mi plan.`, 'success');
+      setStatus('Este plan ya está guardado en Mi plan.', 'success');
       return;
     }
     links.forEach((link) => {
       link.dataset.communityPlanBusy = 'true';
       link.setAttribute('aria-busy', 'true');
-      setActionText(link, 'Añadiendo…', 'fa-spinner');
+      setActionText(link, 'Guardando…', 'fa-spinner');
     });
     try {
       const plan = createPlan(entry.name || imported.name, imported.activityIds, {
@@ -170,12 +170,12 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
       });
       trackCommunityPlanAdded(entry.id);
       syncAddedLinks(plan);
-      setStatus(`${plan.name} ya está disponible en Mi plan.`, 'success');
+      setStatus('Este plan ya está guardado en Mi plan.', 'success');
     } catch (_) {
       links.forEach((link) => {
         link.removeAttribute('aria-busy');
         link.removeAttribute('data-community-plan-busy');
-        setActionText(link, 'Añadir a mis planes', 'fa-plus');
+        setActionText(link, 'Guardar este plan', 'fa-plus');
       });
       setStatus('No se ha podido guardar este plan en este navegador.', 'error');
     }
@@ -394,7 +394,7 @@ function createPlanCard(entry) {
   const previewLink = createTextAction(entry.pageUrl, 'Previsualizar', 'fa-eye');
   previewLink.classList.add('fiestas-community-plan-text-action-preview');
   actions.append(previewLink);
-  const addLink = createTextAction(`${entry.pageUrl}?add=1`, 'Añadir', 'fa-plus');
+  const addLink = createTextAction(`${entry.pageUrl}?add=1`, 'Guardar este plan', 'fa-plus');
   addLink.classList.add('fiestas-community-plan-text-action-add');
   addLink.dataset.communityPlanAdd = '';
   addLink.dataset.communityPlanId = entry.id;
@@ -420,7 +420,7 @@ function renderDetail(container, entry, imported, selectedDay, events) {
   if (imported.missingIds.length) {
     const warning = document.createElement('p');
     warning.className = 'fiestas-community-plan-detail-warning';
-    warning.textContent = `${imported.missingIds.length} actividad${imported.missingIds.length === 1 ? '' : 'es'} no está disponible en esta edición y no se añadirá.`;
+    warning.textContent = `${imported.missingIds.length} actividad${imported.missingIds.length === 1 ? '' : 'es'} no está disponible en esta edición y no se guardará.`;
     container.append(warning);
   }
 
@@ -504,7 +504,7 @@ function createDetailAddLink() {
   link.className = 'fiestas-community-plan-add';
   link.dataset.communityPlanAdd = '';
   link.href = `${window.location.pathname}?add=1`;
-  link.append(createIcon('fa-plus'), document.createTextNode('Añadir a mis planes'));
+  link.append(createIcon('fa-plus'), document.createTextNode('Guardar este plan'));
   return link;
 }
 
