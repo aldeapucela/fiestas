@@ -166,12 +166,14 @@ function bindControls() {
       const value = event.currentTarget.value;
       if (event.currentTarget.checked) state.dietaryFilters.add(value);
       else state.dietaryFilters.delete(value);
+      syncUrlState();
       renderMapMarkers();
       renderSheet(getVisibleCasetas());
     });
   });
   els.filterClear?.addEventListener('click', () => {
     state.dietaryFilters.clear();
+    syncUrlState();
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
   });
@@ -239,6 +241,14 @@ function readUrlState() {
   if (!state.selectedZone && selectedCaseta) {
     state.selectedZone = state.casetas.find((caseta) => caseta.id === selectedCaseta)?.zone || null;
   }
+  const dietaryValues = [
+    ...params.getAll('dietary').flatMap((value) => value.split(',')),
+    ...params.getAll('diet')
+  ];
+  dietaryValues
+    .map((value) => value.trim().toLowerCase())
+    .filter((value) => value === 'vegetarian' || value === 'vegan')
+    .forEach((value) => state.dietaryFilters.add(value));
 }
 
 function syncUrlState() {
@@ -248,6 +258,11 @@ function syncUrlState() {
     url.searchParams.delete('zone');
     url.searchParams.delete('caseta');
   }
+  url.searchParams.delete('dietary');
+  url.searchParams.delete('diet');
+  [...state.dietaryFilters]
+    .sort()
+    .forEach((dietary) => url.searchParams.append('dietary', dietary));
   window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
 }
 
