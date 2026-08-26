@@ -20,7 +20,8 @@ const APP_SHELL = [
   '/assets/js/menu-drawer.__JS_VERSION__.js',
   '/assets/js/pwa.__JS_VERSION__.js',
   '/assets/js/subscribe.__JS_VERSION__.js',
-  '/assets/js/theme.__JS_VERSION__.js'
+  '/assets/js/theme.__JS_VERSION__.js',
+  '/assets/js/visit-tracker.__JS_VERSION__.js'
 ];
 
 self.addEventListener('install', (event) => {
