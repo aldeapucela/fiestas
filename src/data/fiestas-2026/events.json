@@ -14421,8 +14421,8 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
     "location": "Feria de Valladolid",
     "zone": "Auditorio Feria",
-    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
-    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
     "performances": [],
     "organizers": [
       "El Gran Viaje. Partida y Regreso"
@@ -15442,40 +15442,6 @@
     ]
   },
   {
-    "id": 466,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine. El evento se celebra del 9 al 13 de septiembre de 2026.",
-    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine.",
-    "performances": [],
-    "organizers": [
-      "El Gran Viaje. Partida y Regreso"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
     "id": 467,
     "date": "2026-09-11",
     "dateLabel": "Viernes 11 de septiembre",
@@ -15551,6 +15517,142 @@
     },
     "tags": [
       "Teatro"
+    ]
+  },
+  {
+    "id": 469,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "12:00",
+    "endTime": "21:00",
+    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
+    "location": "Feria de Valladolid",
+    "zone": "Auditorio Feria",
+    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "performances": [],
+    "organizers": [
+      "El Gran Viaje. Partida y Regreso"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.656398,
+      "lng": -4.738248,
+      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": true,
+      "status": "paid",
+      "label": "10 € adultos · 5 € niños",
+      "url": null,
+      "note": "Entrada de pago."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 470,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "12:00",
+    "endTime": "21:00",
+    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
+    "location": "Feria de Valladolid",
+    "zone": "Auditorio Feria",
+    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "performances": [],
+    "organizers": [
+      "El Gran Viaje. Partida y Regreso"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.656398,
+      "lng": -4.738248,
+      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": true,
+      "status": "paid",
+      "label": "10 € adultos · 5 € niños",
+      "url": null,
+      "note": "Entrada de pago."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 471,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "12:00",
+    "endTime": "21:00",
+    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
+    "location": "Feria de Valladolid",
+    "zone": "Auditorio Feria",
+    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "performances": [],
+    "organizers": [
+      "El Gran Viaje. Partida y Regreso"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.656398,
+      "lng": -4.738248,
+      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": true,
+      "status": "paid",
+      "label": "10 € adultos · 5 € niños",
+      "url": null,
+      "note": "Entrada de pago."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 472,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "12:00",
+    "endTime": "21:00",
+    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
+    "location": "Feria de Valladolid",
+    "zone": "Auditorio Feria",
+    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026, todos los días de 12:00 a 21:00. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "performances": [],
+    "organizers": [
+      "El Gran Viaje. Partida y Regreso"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.656398,
+      "lng": -4.738248,
+      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": true,
+      "status": "paid",
+      "label": "10 € adultos · 5 € niños",
+      "url": null,
+      "note": "Entrada de pago."
+    },
+    "tags": [
+      "Otros"
     ]
   }
 ]
