@@ -951,6 +951,11 @@
     font-weight: 800;
   }
 
+  .fiestas-chatbot-input-wrap {
+    position: relative;
+    min-width: 0;
+  }
+
   .fiestas-chatbot-question {
     width: 100%;
     min-width: 0;
@@ -962,7 +967,7 @@
     border-radius: 1rem;
     background: #fbfcfe;
     color: #1d222d;
-    padding: 0.85rem 0.95rem;
+    padding: 0.85rem 0.95rem 2.6rem;
     font: inherit;
     line-height: 1.5;
     outline: none;
@@ -971,6 +976,34 @@
   .fiestas-chatbot-question:focus {
     border-color: #66517d;
     box-shadow: 0 0 0 3px rgba(102, 81, 125, 0.12);
+  }
+
+  .fiestas-chatbot-voice {
+    position: absolute;
+    right: 0.65rem;
+    bottom: 0.65rem;
+    display: inline-flex;
+    width: 2rem;
+    height: 2rem;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 9999px;
+    background: transparent;
+    color: #a1a8b2;
+    font-size: 0.92rem;
+  }
+
+  .fiestas-chatbot-voice:hover,
+  .fiestas-chatbot-voice:focus-visible {
+    background: rgba(102, 81, 125, 0.08);
+    color: #7f8793;
+    outline: none;
+  }
+
+  .fiestas-chatbot-voice.is-listening {
+    background: rgba(15, 159, 141, 0.1);
+    color: #0f9f8d;
   }
 
   .fiestas-chatbot-submit {
@@ -2453,6 +2486,21 @@ html.dark .site-footer-copy a {
     border-color: var(--border-light);
     background: var(--bg-card-hover);
     color: var(--text-main);
+  }
+
+  html.dark .fiestas-chatbot-voice {
+    color: #9ba5b3;
+  }
+
+  html.dark .fiestas-chatbot-voice:hover,
+  html.dark .fiestas-chatbot-voice:focus-visible {
+    background: rgba(211, 204, 221, 0.1);
+    color: #b5bdc8;
+  }
+
+  html.dark .fiestas-chatbot-voice.is-listening {
+    background: rgba(15, 159, 141, 0.12);
+    color: #53c6b7;
   }
 
   html.dark .detail-topbar-inner,

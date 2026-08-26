@@ -8,7 +8,15 @@ if (root && openButton) {
   const form = root.querySelector('[data-fiestas-chatbot-form]');
   const questionInput = root.querySelector('[data-fiestas-chatbot-question]');
   const closeButton = root.querySelector('[data-fiestas-chatbot-close]');
+  const voiceButton = root.querySelector('[data-fiestas-chatbot-voice]');
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
   let returnFocus = null;
+  let recognition = null;
+  let isListening = false;
+  let voiceBaseText = '';
+  let voiceFinalText = '';
+  let voiceInterimText = '';
+  let voiceSilenceTimer = null;
 
   const buildPrompt = (question) => `Responde a la consulta del usuario: "${question}"
 
@@ -57,6 +65,7 @@ Formato obligatorio:
   };
 
   const close = () => {
+    if (isListening) recognition?.stop();
     setOpenState(false);
     const trigger = returnFocus || openButton;
     returnFocus = null;
@@ -68,6 +77,88 @@ Formato obligatorio:
     setOpenState(true);
     questionInput?.focus({ preventScroll: true });
   };
+
+  const normalizeVoiceText = (...parts) => parts
+    .flat()
+    .map((part) => String(part || '').trim())
+    .filter(Boolean)
+    .join(' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+
+  const updateVoiceValue = () => {
+    if (!questionInput) return;
+    questionInput.value = normalizeVoiceText(voiceBaseText, voiceFinalText, voiceInterimText).slice(0, MAX_QUESTION_LENGTH);
+  };
+
+  const clearVoiceSilenceTimer = () => {
+    if (voiceSilenceTimer) window.clearTimeout(voiceSilenceTimer);
+    voiceSilenceTimer = null;
+  };
+
+  const setListeningState = (listening) => {
+    isListening = listening;
+    voiceButton?.classList.toggle('is-listening', listening);
+    voiceButton?.setAttribute('aria-pressed', String(listening));
+    voiceButton?.setAttribute('aria-label', listening ? 'Detener dictado' : 'Dictar pregunta');
+    if (voiceButton) voiceButton.title = listening ? 'Detener dictado' : 'Dictar pregunta';
+  };
+
+  if (voiceButton && SpeechRecognition && questionInput) {
+    recognition = new SpeechRecognition();
+    recognition.lang = 'es-ES';
+    recognition.continuous = false;
+    recognition.interimResults = true;
+    recognition.maxAlternatives = 1;
+    voiceButton.hidden = false;
+
+    recognition.addEventListener('start', () => setListeningState(true));
+    recognition.addEventListener('result', (event) => {
+      let finalResult = '';
+      let interimResult = '';
+      for (let index = event.resultIndex; index < event.results.length; index += 1) {
+        const transcript = event.results[index][0]?.transcript || '';
+        if (event.results[index].isFinal) finalResult = normalizeVoiceText(finalResult, transcript);
+        else interimResult = normalizeVoiceText(interimResult, transcript);
+      }
+      if (finalResult) voiceFinalText = normalizeVoiceText(voiceFinalText, finalResult);
+      voiceInterimText = interimResult;
+      updateVoiceValue();
+      clearVoiceSilenceTimer();
+      voiceSilenceTimer = window.setTimeout(() => recognition?.stop(), 1400);
+    });
+    recognition.addEventListener('end', () => {
+      clearVoiceSilenceTimer();
+      voiceInterimText = '';
+      updateVoiceValue();
+      voiceBaseText = questionInput.value.trim();
+      voiceFinalText = '';
+      setListeningState(false);
+    });
+    recognition.addEventListener('error', () => {
+      clearVoiceSilenceTimer();
+      voiceInterimText = '';
+      updateVoiceValue();
+      voiceBaseText = questionInput.value.trim();
+      voiceFinalText = '';
+      setListeningState(false);
+    });
+
+    voiceButton.addEventListener('click', () => {
+      if (isListening) {
+        recognition.stop();
+        return;
+      }
+      voiceBaseText = questionInput.value.trim();
+      voiceFinalText = '';
+      voiceInterimText = '';
+      try {
+        recognition.start();
+      } catch {
+        setListeningState(false);
+      }
+    });
+  }
 
   openButton.addEventListener('click', () => {
     if (root.hidden) open();

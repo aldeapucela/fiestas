@@ -129,16 +129,29 @@
         <p class="sr-only" id="fiestas-chatbot-description">Pregunta por actividades y planes vecinales de las Fiestas Valladolid 2026.</p>
         <div class="fiestas-chatbot-form-view" data-fiestas-chatbot-form-view>
           <form class="fiestas-chatbot-form" data-fiestas-chatbot-form>
-            <textarea
-              id="fiestas-chatbot-question"
-              class="fiestas-chatbot-question"
-              data-fiestas-chatbot-question
-              aria-labelledby="fiestas-chatbot-title"
-              rows="4"
-              maxlength="500"
-              placeholder="¿Qué plan me recomiendas si voy con niños y quiero actividades gratuitas?"
-              required
-            ></textarea>
+            <div class="fiestas-chatbot-input-wrap">
+              <textarea
+                id="fiestas-chatbot-question"
+                class="fiestas-chatbot-question"
+                data-fiestas-chatbot-question
+                aria-labelledby="fiestas-chatbot-title"
+                rows="4"
+                maxlength="500"
+                placeholder="¿Qué plan me recomiendas si voy con niños y quiero actividades gratuitas?"
+                required
+              ></textarea>
+              <button
+                class="fiestas-chatbot-voice"
+                type="button"
+                data-fiestas-chatbot-voice
+                aria-label="Dictar pregunta"
+                title="Dictar pregunta"
+                aria-pressed="false"
+                hidden
+              >
+                <i class="fa-solid fa-microphone" aria-hidden="true"></i>
+              </button>
+            </div>
             <button class="fiestas-chatbot-submit" type="submit">
               <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
               <span>Enviar pregunta</span>
