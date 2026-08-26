@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "exportedAt": "2026-08-26T16:00:00.000Z",
+  "exportedAt": "2026-08-26T17:26:11.000Z",
   "plans": [
     {
       "name": "De tardeo en tardeo",
       "icon": "cocktail",
-      "activityIds": ["443", "48", "117", "444", "247", "445", "337"]
+      "activityIds": ["443", "48", "117", "444", "247", "415", "416", "445", "337", "417"]
     }
   ]
 }
