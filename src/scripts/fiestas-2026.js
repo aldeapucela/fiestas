@@ -21,6 +21,7 @@ import { createCalendarLinks, createIcsFile } from './plan-export.js';
 import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
 import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './community-plans.js';
 import { rankPopularEvents } from './popular-page.js';
+import { getWeatherAtTime, getWeatherCondition, getWeatherLabel, loadWeatherForecast } from './weather.js';
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
@@ -116,6 +117,7 @@ const els = {
   dateStrip: document.querySelector('[data-fiestas-dates]'),
   datePrevious: document.querySelector('[data-fiestas-date-prev]'),
   dateNext: document.querySelector('[data-fiestas-date-next]'),
+  weatherAttribution: document.querySelector('[data-weather-attribution]'),
   typeList: document.querySelector('[data-fiestas-types]'),
   typeToggle: document.querySelector('[data-fiestas-types-toggle]'),
   typeLabel: document.querySelector('[data-fiestas-types-label]'),
@@ -158,6 +160,9 @@ const els = {
   detailShareCopy: document.querySelector('[data-fiestas-copy-share]'),
   detailShareInput: document.querySelector('[data-fiestas-share-url-input]'),
   detailMap: document.querySelector('[data-fiestas-detail-map]'),
+  detailWeather: document.querySelector('[data-fiestas-detail-weather]'),
+  detailWeatherIcon: document.querySelector('[data-fiestas-detail-weather-icon]'),
+  detailWeatherCopy: document.querySelector('[data-fiestas-detail-weather-copy]'),
   detailImage: document.querySelector('[data-fiestas-detail-image]'),
   detailLightbox: document.querySelector('[data-fiestas-detail-lightbox]'),
   detailLightboxImage: document.querySelector('[data-fiestas-detail-lightbox-image]')
@@ -220,6 +225,7 @@ function init() {
     renderControlLists();
     setupCommunityCtaPwa();
     render();
+    void loadWeather();
     void loadSaveCounts();
     setupDateCarousel();
     setupScrollHeader();
@@ -227,6 +233,44 @@ function init() {
     console.error(error);
     els.agenda.replaceChildren(emptyState('No se pudo cargar la agenda. Recarga la página para intentarlo de nuevo.', true));
   }
+}
+
+async function loadWeather() {
+  try {
+    const weatherByDate = await loadWeatherForecast();
+    let rendered = 0;
+    els.dateStrip?.querySelectorAll('[data-date]:not([data-date="all"])').forEach((button) => {
+      const day = weatherByDate[button.dataset.date];
+      const icon = button.querySelector('[data-weather-icon]');
+      const temperature = button.querySelector('[data-weather-temperature]');
+      if (!icon || !day) return;
+
+      const condition = getWeatherCondition(day.weatherCode);
+      const weatherLabel = getWeatherLabel(day);
+      if (!condition || !weatherLabel) return;
+
+      icon.className = `fiestas-date-weather fa-solid ${condition.icon}`;
+      icon.hidden = false;
+      if (temperature && Number.isFinite(day.max)) {
+        temperature.textContent = `${Math.round(day.max)}°`;
+        temperature.hidden = false;
+      }
+      button.title = weatherLabel;
+      button.setAttribute('aria-label', `${getDateButtonLabel(button)}. ${weatherLabel}`);
+      rendered += 1;
+    });
+    if (rendered && els.weatherAttribution) els.weatherAttribution.hidden = false;
+  } catch (error) {
+    console.warn('No se pudo cargar la previsión meteorológica.', error);
+  }
+}
+
+function getDateButtonLabel(button) {
+  return [...button.children]
+    .filter((child) => !child.matches('[data-weather-icon], [data-weather-temperature]'))
+    .map((child) => child.textContent.trim())
+    .filter(Boolean)
+    .join(' ');
 }
 
 async function loadSaveCounts() {
@@ -671,7 +715,27 @@ function setupDateCarousel() {
   if ('ResizeObserver' in window) {
     new ResizeObserver(update).observe(els.dateStrip);
   }
-  requestAnimationFrame(update);
+  requestAnimationFrame(() => {
+    update();
+    scrollSelectedDateIntoView();
+  });
+}
+
+function scrollSelectedDateIntoView() {
+  if (!els.dateStrip || !state.selectedDate || state.selectedDate === 'all') return;
+  const selectedCard = [...els.dateStrip.querySelectorAll('[data-date]')]
+    .find((card) => card.dataset.date === state.selectedDate);
+  if (!selectedCard) return;
+
+  const stripRect = els.dateStrip.getBoundingClientRect();
+  const cardRect = selectedCard.getBoundingClientRect();
+  const maxScrollLeft = Math.max(0, els.dateStrip.scrollWidth - els.dateStrip.clientWidth);
+  const centeredLeft = els.dateStrip.scrollLeft
+    + (cardRect.left - stripRect.left)
+    - (stripRect.width - cardRect.width) / 2;
+  const target = Math.max(0, Math.min(maxScrollLeft, centeredLeft));
+  if (Math.abs(target - els.dateStrip.scrollLeft) <= 2) return;
+  els.dateStrip.scrollTo({ left: target, behavior: 'auto' });
 }
 
 function scrollDateCarousel(direction) {
@@ -1942,10 +2006,32 @@ function initDetailPage() {
   els.detailShareCopy?.addEventListener('click', copyShareFallback);
   els.detailBack?.addEventListener('click', goBackToAgenda);
   initDetailLightbox();
+  if (!isCasetaDetail) void loadDetailWeather();
   document.querySelectorAll('[data-fiestas-analytics-action]').forEach((link) => {
     link.addEventListener('click', () => trackDetailExternalAction(link.dataset.fiestasAnalyticsAction));
   });
   if (els.detailMap) initDetailMap();
+}
+
+async function loadDetailWeather() {
+  if (!els.detail || !els.detailWeather || !els.detailWeatherIcon || !els.detailWeatherCopy) return;
+
+  const date = els.detail.dataset.eventDate;
+  const startTime = els.detail.dataset.eventStartTime;
+  if (!date || !startTime) return;
+
+  try {
+    const forecast = await loadWeatherForecast();
+    const hour = getWeatherAtTime(forecast[date], startTime);
+    const condition = getWeatherCondition(hour?.weatherCode);
+    if (!hour || !condition) return;
+
+    els.detailWeatherIcon.className = `fa-solid ${condition.icon}`;
+    els.detailWeatherCopy.textContent = `${Math.round(hour.temperature)} °C · ${condition.label}`;
+    els.detailWeather.hidden = false;
+  } catch (error) {
+    console.warn('No se pudo cargar la previsión meteorológica de la actividad.', error);
+  }
 }
 
 function initDetailLightbox() {

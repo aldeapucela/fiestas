@@ -136,7 +136,7 @@ async function compileCss(cssVersionSeed) {
 async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'fiestas-2026.js', 'casetas-page.js', 'casetas-favorites.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js', 'chatbot.js', 'visit-tracker.js'];
+  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'weather.js', 'fiestas-2026.js', 'casetas-page.js', 'casetas-favorites.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js', 'chatbot.js', 'visit-tracker.js'];
   for (const file of files) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);

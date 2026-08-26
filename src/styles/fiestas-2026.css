@@ -447,6 +447,117 @@
     line-height: 0.9;
   }
 
+  .fiestas-date-card .fiestas-date-weather {
+    position: absolute;
+    top: 0.35rem;
+    right: 0.45rem;
+    display: grid;
+    width: 2.15rem;
+    height: 2.15rem;
+    place-items: center;
+    color: #8a9098;
+    font-size: 1.95rem;
+    opacity: 0.1;
+    pointer-events: none;
+    transform: rotate(-8deg);
+  }
+
+  .fiestas-date-weather[hidden] {
+    display: none;
+  }
+
+  .fiestas-date-card.is-active .fiestas-date-weather {
+    opacity: 0.14;
+  }
+
+  .fiestas-date-card .fiestas-date-temperature {
+    position: absolute;
+    right: 0.55rem;
+    bottom: 0.55rem;
+    color: #8a9098;
+    font-size: 0.82rem;
+    font-weight: 900;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    opacity: 0.24;
+    pointer-events: none;
+  }
+
+  .fiestas-date-temperature[hidden] {
+    display: none;
+  }
+
+  .fiestas-date-card.is-active .fiestas-date-temperature {
+    opacity: 0.32;
+  }
+
+  .fiestas-date-card[data-date]:not([data-date='all']) {
+    grid-template-columns: minmax(2.15rem, max-content) max-content;
+    grid-template-rows: min-content 1fr min-content;
+    column-gap: 0.6rem;
+    min-width: clamp(5.35rem, 25vw, 8.9rem);
+    justify-content: center;
+    place-items: stretch;
+    text-align: center;
+  }
+
+  .fiestas-date-card[data-date]:not([data-date='all']) > span:first-child {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: end;
+    justify-self: end;
+  }
+
+  .fiestas-date-card[data-date]:not([data-date='all']) > strong {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    justify-self: end;
+  }
+
+  .fiestas-date-card[data-date]:not([data-date='all']) > small {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
+    justify-self: end;
+  }
+
+  .fiestas-date-card[data-date]:not([data-date='all']) > .fiestas-date-weather {
+    position: static;
+    grid-column: 2;
+    grid-row: 1;
+    justify-self: start;
+    align-self: end;
+    width: 0.85rem;
+    height: 0.8rem;
+    font-size: 0.78rem;
+    line-height: 1;
+    transform: none;
+  }
+
+  .fiestas-date-card[data-date]:not([data-date='all']) > .fiestas-date-temperature {
+    position: static;
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: start;
+    align-self: end;
+  }
+
+  .fiestas-weather-attribution {
+    margin: 0.55rem auto 0;
+    color: #77808d;
+    font-size: 0.68rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  .fiestas-weather-attribution a {
+    color: #66517d;
+    font-weight: 750;
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+  }
+
   .fiestas-date-card.is-active {
     border-color: #0f9f8d;
     color: #0f9f8d;
@@ -456,11 +567,13 @@
   .fiestas-date-card.is-active::after {
     content: '';
     position: absolute;
+    left: 50%;
     bottom: -0.45rem;
     width: 38%;
     height: 0.45rem;
     border-radius: 9999px;
     background: #0f9f8d;
+    transform: translateX(-50%);
   }
 
   .fiestas-search-panel {
@@ -2542,6 +2655,31 @@
     font-size: 1.18rem;
   }
 
+  .fiestas-detail-weather-fact i {
+    color: #8a9098;
+  }
+
+  .fiestas-detail-weather-content {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 0.12rem;
+  }
+
+  .fiestas-detail-weather-label {
+    color: rgba(138, 144, 152, 0.52);
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .fiestas-detail-weather-copy {
+    color: #667085;
+    line-height: 1.25;
+  }
+
   .fiestas-detail .fa-solid {
     -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 1.35px currentColor;
@@ -3356,6 +3494,33 @@
     color: #71d8cb;
   }
 
+  html.dark .fiestas-date-weather {
+    color: #a3a8b0;
+    opacity: 0.16;
+    filter: drop-shadow(0 0 0.22rem rgba(163, 168, 176, 0.06));
+  }
+
+  html.dark .fiestas-date-card.is-active .fiestas-date-weather {
+    opacity: 0.22;
+  }
+
+  html.dark .fiestas-date-temperature {
+    color: #a3a8b0;
+    opacity: 0.24;
+  }
+
+  html.dark .fiestas-date-card.is-active .fiestas-date-temperature {
+    opacity: 0.32;
+  }
+
+  html.dark .fiestas-weather-attribution {
+    color: #aeb7c5;
+  }
+
+  html.dark .fiestas-weather-attribution a {
+    color: #c8b3e5;
+  }
+
   html.dark .fiestas-search input,
   html.dark .fiestas-event-place,
   html.dark .fiestas-plan-card small,
@@ -3369,6 +3534,18 @@
   html.dark .fiestas-detail-map-actions,
   html.dark .fiestas-detail-map-action + .fiestas-detail-map-action {
     border-color: #313743;
+  }
+
+  html.dark .fiestas-detail-weather-fact i {
+    color: #a3a8b0;
+  }
+
+  html.dark .fiestas-detail-weather-label {
+    color: rgba(163, 168, 176, 0.55);
+  }
+
+  html.dark .fiestas-detail-weather-copy {
+    color: #bdc4cf;
   }
 
   html.dark .fiestas-detail-map-note {
@@ -3737,6 +3914,25 @@
     .fiestas-date-card strong {
       font-size: clamp(1.8rem, 8vw, 2.8rem);
       line-height: 0.86;
+    }
+
+    .fiestas-date-card .fiestas-date-weather {
+      top: 0.24rem;
+      right: 0.3rem;
+      width: 1.45rem;
+      height: 1.45rem;
+      font-size: 1.3rem;
+    }
+
+    .fiestas-date-card .fiestas-date-temperature {
+      right: 0.4rem;
+      bottom: 0.4rem;
+      font-size: 0.7rem;
+    }
+
+    .fiestas-weather-attribution {
+      margin-top: 0.4rem;
+      font-size: 0.62rem;
     }
 
     .fiestas-date-card.is-active::after {

@@ -104,6 +104,14 @@
         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
         <span>{{ event.location or event.zone or event.neighborhood or 'Lugar por confirmar' }}</span>
       </div>
+      <div class="fiestas-detail-fact fiestas-detail-weather-fact" data-fiestas-detail-weather hidden>
+        <i data-fiestas-detail-weather-icon aria-hidden="true"></i>
+        <div class="fiestas-detail-weather-content">
+          <span class="fiestas-detail-weather-label">Previsión</span>
+          <span class="fiestas-detail-weather-copy" data-fiestas-detail-weather-copy></span>
+        </div>
+      </div>
+      {% if event.ticketKind == 'paid' %}
       <div class="fiestas-detail-fact">
         <i class="fa-solid fa-ticket" aria-hidden="true"></i>
         <span>
@@ -117,6 +125,7 @@
           {% endif %}
         </span>
       </div>
+      {% endif %}
     </section>
 
     <section class="fiestas-detail-map-card" aria-labelledby="event-map-title">
