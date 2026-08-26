@@ -14415,14 +14415,14 @@
     "id": 434,
     "date": "2026-09-09",
     "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
+    "startTime": "12:00",
+    "endTime": "21:00",
+    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
     "location": "Feria de Valladolid",
     "zone": "Auditorio Feria",
-    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine. El evento se celebra del 9 al 13 de septiembre de 2026.",
-    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine.",
+    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
+    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Este recorrido ambientado invita a los asistentes a viajar a la Tierra Media y celebrar el legado de la saga de fantasía más importante de la historia del cine.",
     "performances": [],
     "organizers": [
       "El Gran Viaje. Partida y Regreso"
@@ -14435,11 +14435,11 @@
     },
     "type": "Otros",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "10 € adultos · 5 € niños",
       "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
+      "note": "Entrada de pago."
     },
     "tags": [
       "Otros"
