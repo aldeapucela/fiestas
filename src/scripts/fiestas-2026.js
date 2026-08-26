@@ -27,9 +27,10 @@ const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'
 const SITE_SHARE_URL = 'https://fiestas.aldeapucela.org/?mtm_campaign=share';
 const SITE_SHARE_MESSAGE = `Mira, la mejor web para seguir las fiestas y ferias de Valladolid 2026\n\n${SITE_SHARE_URL}`;
 const SAVE_COUNTS_API_URL = 'https://api.aldeapucela.org/fiestas/saves';
+const CARTO_BASEMAPS_API_KEY = 'cb1_27ug_1_19138f635d4f03358d12cb43';
 const cartoLayers = {
-  light: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-  dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+  light: `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=${CARTO_BASEMAPS_API_KEY}`,
+  dark: `https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=${CARTO_BASEMAPS_API_KEY}`
 };
 const valladolidCenter = [41.6523, -4.7245];
 const userLocationZoom = 14;

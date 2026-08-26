@@ -2,9 +2,10 @@ const CENTER = [41.6523, -4.7245];
 const DEFAULT_ZOOM = 15;
 const USER_ZOOM = 14;
 const MAX_CITY_COORDINATE_DISTANCE_KM = 12;
+const CARTO_BASEMAPS_API_KEY = 'cb1_27ug_1_19138f635d4f03358d12cb43';
 const CARTO_LAYERS = {
-  light: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
-  dark: 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png'
+  light: `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=${CARTO_BASEMAPS_API_KEY}`,
+  dark: `https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=${CARTO_BASEMAPS_API_KEY}`
 };
 const ZONE_COLORS = {
   'Zona 1': '#0f9f8d',
