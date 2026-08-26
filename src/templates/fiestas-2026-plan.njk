@@ -150,6 +150,23 @@
 {% include "partials/menu-drawer.njk" %}
 {% include "partials/subscribe-modal.njk" %}
 
+<div class="fiestas-plan-calendar-dialog" data-plan-calendar-dialog hidden>
+  <button class="fiestas-plan-calendar-dialog-backdrop" type="button" data-plan-calendar-close aria-label="Cerrar diálogo"></button>
+  <section class="fiestas-plan-calendar-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="plan-calendar-dialog-title" aria-describedby="plan-calendar-dialog-copy">
+    <header class="fiestas-plan-calendar-dialog-head">
+      <h2 id="plan-calendar-dialog-title">Añadir al calendario</h2>
+      <button class="fiestas-plan-calendar-dialog-close" type="button" data-plan-calendar-close aria-label="Cerrar diálogo">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </header>
+    <p id="plan-calendar-dialog-copy">Se descargará un archivo de calendario para abrirlo en tu móvil con tu aplicación favorita.</p>
+    <button class="fiestas-plan-action fiestas-plan-action-primary fiestas-plan-calendar-dialog-download" type="button" data-plan-calendar-download>
+      <i class="fa-solid fa-calendar-days" aria-hidden="true"></i>
+      <span>Descargar archivo</span>
+    </button>
+  </section>
+</div>
+
 <div class="fiestas-plan-share-dialog" data-plan-share-dialog hidden>
   <button class="fiestas-plan-share-dialog-backdrop" type="button" data-plan-share-close aria-label="Cerrar diálogo"></button>
   <section class="fiestas-plan-share-dialog-panel" role="dialog" aria-modal="true" aria-labelledby="plan-share-dialog-title">

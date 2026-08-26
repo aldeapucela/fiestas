@@ -113,13 +113,15 @@ export async function shareFileOrDownload(file, options = {}) {
     text: options.text || '',
     files: [file]
   };
-  try {
-    if (navigator.share && navigator.canShare?.({ files: [file] })) {
-      await navigator.share(payload);
-      return 'shared';
+  if (!options.forceDownload) {
+    try {
+      if (navigator.share && navigator.canShare?.({ files: [file] })) {
+        await navigator.share(payload);
+        return 'shared';
+      }
+    } catch (error) {
+      if (error?.name === 'AbortError') return 'cancelled';
     }
-  } catch (error) {
-    if (error?.name === 'AbortError') return 'cancelled';
   }
   downloadFile(file);
   return 'downloaded';
