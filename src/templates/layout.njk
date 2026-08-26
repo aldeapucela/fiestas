@@ -88,9 +88,70 @@
     >
       <i class="fa-solid fa-arrow-up" aria-hidden="true"></i>
     </button>
+    <button
+      class="fiestas-chatbot-launcher"
+      type="button"
+      data-fiestas-chatbot-open
+      aria-controls="fiestas-chatbot-dialog"
+      aria-haspopup="dialog"
+      aria-label="Preguntar sobre las fiestas"
+      title="Preguntar sobre las fiestas"
+    >
+      <span class="fiestas-chatbot-glyph" aria-hidden="true">
+        <i class="fa-solid fa-robot"></i>
+        <i class="fa-solid fa-comment-dots fiestas-chatbot-glyph-bubble"></i>
+      </span>
+    </button>
+    <div class="fiestas-chatbot-dialog" id="fiestas-chatbot-dialog" data-fiestas-chatbot-dialog hidden>
+      <section
+        class="fiestas-chatbot-panel"
+        role="dialog"
+        aria-labelledby="fiestas-chatbot-title"
+        aria-describedby="fiestas-chatbot-description"
+      >
+        <header class="fiestas-chatbot-header">
+          <div class="fiestas-chatbot-heading">
+            <span class="fiestas-chatbot-mark" aria-hidden="true">
+              <span class="fiestas-chatbot-glyph">
+                <i class="fa-solid fa-robot"></i>
+                <i class="fa-solid fa-comment-dots fiestas-chatbot-glyph-bubble"></i>
+              </span>
+            </span>
+            <div>
+              <p class="fiestas-plan-kicker">ASISTENTE VIRTUAL</p>
+              <h2 id="fiestas-chatbot-title">Preguntas sobre las fiestas</h2>
+            </div>
+          </div>
+          <button class="fiestas-chatbot-close" type="button" data-fiestas-chatbot-close aria-label="Cerrar asistente">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+        </header>
+        <p class="sr-only" id="fiestas-chatbot-description">Pregunta por actividades y planes vecinales de las Fiestas Valladolid 2026.</p>
+        <div class="fiestas-chatbot-form-view" data-fiestas-chatbot-form-view>
+          <form class="fiestas-chatbot-form" data-fiestas-chatbot-form>
+            <textarea
+              id="fiestas-chatbot-question"
+              class="fiestas-chatbot-question"
+              data-fiestas-chatbot-question
+              aria-labelledby="fiestas-chatbot-title"
+              rows="4"
+              maxlength="500"
+              placeholder="¿Qué plan me recomiendas si voy con niños y quiero actividades gratuitas?"
+              required
+            ></textarea>
+            <button class="fiestas-chatbot-submit" type="submit">
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+              <span>Enviar pregunta</span>
+            </button>
+            <p class="fiestas-chatbot-scope">Se enviará tu consulta a ChatGPT. Verifica la información: puede contener inexactitudes.</p>
+          </form>
+        </div>
+      </section>
+    </div>
     <script type="module" src="/assets/js/{{ pageJs }}?v={{ jsVersion }}" defer></script>
     {% block extraScripts %}{% endblock %}
     <script type="module" src="/assets/js/scroll-top.{{ jsVersion }}.js" defer></script>
     <script type="module" src="/assets/js/pwa.{{ jsVersion }}.js" defer></script>
+    <script type="module" src="/assets/js/chatbot.{{ jsVersion }}.js" defer></script>
   </body>
 </html>

@@ -729,6 +729,295 @@
     visibility: hidden;
   }
 
+  .fiestas-chatbot-launcher {
+    position: fixed;
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: calc(9rem + env(safe-area-inset-bottom));
+    z-index: 40;
+    display: inline-flex;
+    width: 2.75rem;
+    height: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e1e5eb;
+    border-radius: 9999px;
+    background: #fff;
+    color: #87929e;
+    box-shadow: 0 0.35rem 0.85rem rgba(44, 54, 65, 0.13);
+    transition: transform 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+  }
+
+  body.fiestas-map-page .fiestas-chatbot-launcher,
+  body.fiestas-map-page .fiestas-chatbot-dialog,
+  body.fiestas-casetas-page .fiestas-chatbot-launcher,
+  body.fiestas-casetas-page .fiestas-chatbot-dialog,
+  body.page-caseta-detail .fiestas-chatbot-launcher,
+  body.page-caseta-detail .fiestas-chatbot-dialog {
+    display: none !important;
+  }
+
+  .fiestas-chatbot-launcher:hover,
+  .fiestas-chatbot-launcher:focus-visible {
+    background: #fbfcfd;
+    border-color: #d7dee6;
+    box-shadow: 0 0.45rem 1rem rgba(44, 54, 65, 0.17);
+    transform: translateY(-2px);
+  }
+
+  .fiestas-chatbot-glyph {
+    position: relative;
+    display: inline-flex;
+    width: 1.85rem;
+    height: 1.85rem;
+    align-items: center;
+    justify-content: center;
+    color: inherit;
+    line-height: 1;
+  }
+
+  .fiestas-chatbot-glyph > .fa-robot {
+    font-size: 1.45rem;
+  }
+
+  .fiestas-chatbot-glyph-bubble {
+    position: absolute;
+    top: -0.08rem;
+    right: -0.08rem;
+    font-size: 0.56rem;
+    text-shadow: 0 0 0.12rem rgba(48, 62, 79, 0.35);
+  }
+
+  .fiestas-chatbot-launcher .fiestas-chatbot-glyph {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .fiestas-chatbot-launcher .fiestas-chatbot-glyph > .fa-robot {
+    font-size: 1.3rem;
+  }
+
+  .fiestas-chatbot-launcher .fiestas-chatbot-glyph-bubble {
+    top: 0.02rem;
+    right: 0.02rem;
+    font-size: 0.5rem;
+  }
+
+  .fiestas-chatbot-dialog {
+    position: fixed;
+    right: max(1rem, env(safe-area-inset-right));
+    bottom: calc(13.25rem + env(safe-area-inset-bottom));
+    z-index: 45;
+    width: min(calc(100vw - 2rem), 23rem);
+    box-sizing: border-box;
+    transform-origin: bottom right;
+    animation: fiestas-chatbot-in 160ms ease both;
+  }
+
+  .fiestas-chatbot-dialog[hidden] {
+    display: none !important;
+  }
+
+  @keyframes fiestas-chatbot-in {
+    from {
+      opacity: 0;
+      transform: translateY(0.5rem) scale(0.96);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  .fiestas-chatbot-panel {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    max-height: min(75vh, 32rem);
+    overflow: hidden;
+    border: 1px solid #e3e6ec;
+    border-radius: 1.4rem;
+    background: #fff;
+    box-shadow: 0 1.5rem 4rem rgba(20, 25, 35, 0.28);
+  }
+
+  .fiestas-chatbot-header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1rem 0;
+  }
+
+  .fiestas-chatbot-heading {
+    display: flex;
+    width: 100%;
+    min-width: 0;
+    align-items: center;
+    gap: 0.6rem;
+    padding-right: 3rem;
+  }
+
+  .fiestas-chatbot-heading > div {
+    min-width: 0;
+  }
+
+  .fiestas-chatbot-mark {
+    display: inline-flex;
+    width: 3rem;
+    height: 3rem;
+    flex: 0 0 auto;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: #fff;
+    color: #87929e;
+    padding: 0.1rem;
+  }
+
+  .fiestas-chatbot-mark .fiestas-chatbot-glyph {
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+
+  .fiestas-chatbot-mark .fiestas-chatbot-glyph > .fa-robot {
+    font-size: 1.5rem;
+  }
+
+  .fiestas-chatbot-mark .fiestas-chatbot-glyph-bubble {
+    font-size: 0.58rem;
+  }
+
+  .fiestas-chatbot-header h2 {
+    margin: 0.25rem 0 0;
+    color: #1d222d;
+    font-size: 1.05rem;
+    line-height: 1.1;
+    white-space: nowrap;
+  }
+
+  .fiestas-chatbot-close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: inline-flex;
+    width: 2.35rem;
+    height: 2.35rem;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e3e6ec;
+    border-radius: 9999px;
+    background: #fff;
+    color: #667085;
+  }
+
+  .fiestas-chatbot-form-view {
+    min-height: 0;
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: auto;
+    padding: 0.85rem 1rem 1rem;
+  }
+
+  .fiestas-chatbot-form-view[hidden] {
+    display: none;
+  }
+
+  .fiestas-chatbot-scope {
+    margin: 0;
+    color: #667085;
+    font-size: 0.74rem;
+    font-weight: 500;
+    line-height: 1.5;
+  }
+
+  .fiestas-chatbot-form {
+    display: grid;
+    min-width: 0;
+    gap: 0.65rem;
+    margin-top: 0.35rem;
+  }
+
+  .fiestas-chatbot-label {
+    color: #252b37;
+    font-size: 0.86rem;
+    font-weight: 800;
+  }
+
+  .fiestas-chatbot-question {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: 6.25rem;
+    resize: vertical;
+    border: 1px solid #dfe3ea;
+    border-radius: 1rem;
+    background: #fbfcfe;
+    color: #1d222d;
+    padding: 0.85rem 0.95rem;
+    font: inherit;
+    line-height: 1.5;
+    outline: none;
+  }
+
+  .fiestas-chatbot-question:focus {
+    border-color: #66517d;
+    box-shadow: 0 0 0 3px rgba(102, 81, 125, 0.12);
+  }
+
+  .fiestas-chatbot-submit {
+    display: inline-flex;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    min-height: 3rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.55rem;
+    margin-top: 0.1rem;
+    border: 0;
+    border-radius: 0.9rem;
+    background: #0f9f8d;
+    color: #fff;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+    font-weight: 800;
+  }
+
+  .fiestas-chatbot-submit:hover,
+  .fiestas-chatbot-submit:focus-visible {
+    background: #087e70;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .fiestas-chatbot-dialog { animation: none; }
+  }
+
+  @media (max-width: 480px) {
+    .fiestas-chatbot-dialog {
+      right: max(0.5rem, env(safe-area-inset-right));
+      left: max(0.5rem, env(safe-area-inset-left));
+      bottom: calc(11.75rem + env(safe-area-inset-bottom));
+      width: auto;
+    }
+
+    .fiestas-chatbot-panel {
+      max-height: calc(100dvh - 12.75rem - env(safe-area-inset-bottom));
+    }
+
+    .fiestas-chatbot-header h2 {
+      font-size: 0.95rem;
+    }
+  }
+
   .share-site-btn {
     @apply fixed right-5 z-[35] inline-flex h-12 w-12 items-center justify-center rounded-full border border-line bg-white text-slate-700 shadow-md transition hover:text-brand-700;
     bottom: 5.25rem;
@@ -2121,6 +2410,46 @@ html.dark .site-footer-copy a {
 
   html.dark .scroll-top-btn,
   html.dark .share-site-btn {
+    border-color: var(--border-light);
+    background: var(--bg-card-hover);
+    color: var(--text-main);
+  }
+
+  html.dark .fiestas-chatbot-launcher {
+    border-color: #292e36;
+    background: #20242a;
+    color: #a6a19a;
+    box-shadow: 0 0.45rem 1rem rgba(0, 0, 0, 0.28);
+  }
+
+  html.dark .fiestas-chatbot-launcher:hover,
+  html.dark .fiestas-chatbot-launcher:focus-visible {
+    border-color: #31353d;
+    background: #262b31;
+    box-shadow: 0 0.55rem 1.1rem rgba(0, 0, 0, 0.34);
+  }
+
+  html.dark .fiestas-chatbot-panel {
+    border-color: var(--border-light);
+    background: var(--bg-card);
+  }
+
+  html.dark .fiestas-chatbot-mark {
+    background: #262b31;
+    color: #a6a19a;
+  }
+
+  html.dark .fiestas-chatbot-header h2,
+  html.dark .fiestas-chatbot-label {
+    color: var(--text-header);
+  }
+
+  html.dark .fiestas-chatbot-scope {
+    color: var(--text-muted);
+  }
+
+  html.dark .fiestas-chatbot-close,
+  html.dark .fiestas-chatbot-question {
     border-color: var(--border-light);
     background: var(--bg-card-hover);
     color: var(--text-main);
