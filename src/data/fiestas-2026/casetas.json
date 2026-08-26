@@ -1152,10 +1152,10 @@
     {
       "id": "z5-26",
       "name": "Restaurante Beher",
-      "zone": "Zona 5",
-      "location": "Acera de Recoletos",
-      "placement": "En la acera",
-      "addressQuery": "Acera de Recoletos, Valladolid, España",
+      "zone": "Zona 3",
+      "location": "Plaza de la Universidad",
+      "placement": "En la plaza",
+      "addressQuery": "Plaza de la Universidad, Valladolid, España",
       "coordinates": null
     },
     {
