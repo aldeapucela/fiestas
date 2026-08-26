@@ -1156,7 +1156,43 @@
       "location": "Calle María de Molina",
       "placement": "En la calle",
       "addressQuery": "Calle María de Molina, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho feria (pinchos + bebida 4€)",
+            "items": [
+              "Croqueta de pato Pekín con mayonesa Hoisin (Gluten, lácteos)",
+              "Croqueta de Mango y Kimchi con mayonesa de kimchi (Gluten, lácteos, pescado)",
+              "Montado de albóndigas con salsa Tikka Masala (Gluten, lácteos, mostaza)",
+              "Plato guiso del día (Consultar alérgenos)"
+            ]
+          },
+          {
+            "title": "Pincho + bebida (5€)",
+            "items": [
+              "Mini Burguer de vacuno con queso, cebolla crujiente y nuestra salsa Emmy (Gluten, lácteos)"
+            ]
+          },
+          {
+            "title": "Raciones para compartir",
+            "items": [
+              "Gyozas de cerdo con salsa de mango picante y mayonesa Japonesa (6 unidades - 11€) (Gluten, mostaza)",
+              "Torreznos de Soria con guacamole (9€) (Gluten)",
+              "Langostinos panko con salsa teriyaki (6 unidades - 12€) (Gluten, marisco, soja)"
+            ]
+          },
+          {
+            "title": "Postre",
+            "items": [
+              "Coulant de chocolate y chantilly de vainilla (5€) (Lácteos)"
+            ]
+          }
+        ],
+        "highlights": [
+          "CONSULTAR OPCIONES SIN GLUTEN"
+        ]
+      }
     },
     {
       "id": "z5-29",
