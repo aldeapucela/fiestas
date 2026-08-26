@@ -1,7 +1,12 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import { createCommunityPlanUrl, plansMatchSource, validateImport } from './plans-page.js';
+import {
+  createCommunityPlanUrl,
+  mergeCommunityPlanUpdates,
+  plansMatchSource,
+  validateImport
+} from './plans-page.js';
 
 const eventIds = new Set(['1', '7']);
 
@@ -77,4 +82,51 @@ test('friendly community URLs include the share campaign', () => {
     createCommunityPlanUrl('cielo-y-estrellas', 'https://fiestas.aldeapucela.org/plan/importar/'),
     'https://fiestas.aldeapucela.org/planes/cielo-y-estrellas/?mtm_campaign=share'
   );
+});
+
+test('updates an untouched community plan while preserving its local identity and timestamps', () => {
+  const plan = {
+    id: 'local-plan',
+    sourcePlanId: 'cielo-y-estrellas',
+    name: 'Cielo y estrellas',
+    icon: 'stars',
+    activityIds: ['1'],
+    createdAt: '2026-08-20T10:00:00.000Z',
+    updatedAt: '2026-08-20T10:00:00.000Z'
+  };
+  const result = mergeCommunityPlanUpdates([plan], new Map([
+    ['cielo-y-estrellas', {
+      name: 'Cielo y estrellas',
+      icon: 'stars',
+      activityIds: ['1', '7']
+    }]
+  ]));
+
+  assert.equal(result.changed, true);
+  assert.deepEqual(result.plans[0].activityIds, ['1', '7']);
+  assert.equal(result.plans[0].id, plan.id);
+  assert.equal(result.plans[0].createdAt, plan.createdAt);
+  assert.equal(result.plans[0].updatedAt, plan.updatedAt);
+});
+
+test('does not update a community plan after a local modification', () => {
+  const plan = {
+    id: 'local-plan',
+    sourcePlanId: 'cielo-y-estrellas',
+    name: 'Mi selección',
+    icon: 'stars',
+    activityIds: ['1'],
+    createdAt: '2026-08-20T10:00:00.000Z',
+    updatedAt: '2026-08-20T10:01:00.000Z'
+  };
+  const result = mergeCommunityPlanUpdates([plan], new Map([
+    ['cielo-y-estrellas', {
+      name: 'Cielo y estrellas',
+      icon: 'stars',
+      activityIds: ['1', '7']
+    }]
+  ]));
+
+  assert.equal(result.changed, false);
+  assert.deepEqual(result.plans, [plan]);
 });

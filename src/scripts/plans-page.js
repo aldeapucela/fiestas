@@ -3,6 +3,7 @@ import {
   DEFAULT_PLAN_ICON,
   deletePlan,
   getPlanIcon,
+  isUnmodifiedCommunityPlan,
   makeUniquePlanName,
   normalizePlanIcon,
   PLAN_ICON_OPTIONS,
@@ -13,7 +14,8 @@ import {
   setPlanActivity,
   subscribeToPlans,
   updatePlan,
-  writeFavoriteIds
+  writeFavoriteIds,
+  writePlans
 } from './plan-storage.js';
 import { createIcsFile, createPlanImportUrl, decodePlanImportHash, shareFileOrDownload } from './plan-export.js';
 import {
@@ -37,6 +39,7 @@ const MAX_IMPORT_ACTIVITIES = 200;
 const IMPORT_PREVIEW_ACTIVITY_LIMIT = 3;
 const COMMUNITY_PLANS_CATALOG_URL = '/data/planes.json';
 let communityPlansCatalogPromise = null;
+let communityPlansSyncPromise = null;
 let selectorInitialized = false;
 
 export function setupPlansPage(rawEvents = []) {
@@ -671,6 +674,7 @@ export function setupPlansPage(rawEvents = []) {
   });
   subscribeToPlans(() => render());
   render();
+  void synchronizeUnmodifiedCommunityPlans(new Set(state.events.map((event) => event.id)));
 }
 
 export function setupPlanImportPage(rawEvents = []) {
@@ -883,6 +887,9 @@ export function setupPlanSelector() {
     render();
     selector.hidden = false;
     selector.querySelector('[data-plan-selector-close]')?.focus();
+    void synchronizeUnmodifiedCommunityPlans().then(() => {
+      if (!selector.hidden && activityId === nextActivityId) render();
+    });
   };
   const render = () => {
     const list = selector.querySelector('[data-plan-selector-list]');
@@ -1374,6 +1381,74 @@ async function loadCommunityPlanForSharing(sourcePlanId) {
     throw new Error('Invalid community plan export');
   }
   return sourcePlan;
+}
+
+export async function synchronizeUnmodifiedCommunityPlans(eventIds = null) {
+  if (communityPlansSyncPromise) return communityPlansSyncPromise;
+
+  const knownEventIds = eventIds instanceof Set ? eventIds : null;
+  communityPlansSyncPromise = (async () => {
+    const candidates = readPlans().filter(isUnmodifiedCommunityPlan);
+    if (!candidates.length) return false;
+
+    const sourceIds = [...new Set(candidates.map((plan) => plan.sourcePlanId))];
+    const sourceEntries = await Promise.all(sourceIds.map(async (sourcePlanId) => {
+      try {
+        const sourcePlan = await loadCommunityPlanForSharing(sourcePlanId);
+        return [sourcePlanId, normalizeCommunitySourcePlan(sourcePlan, knownEventIds)];
+      } catch (_) {
+        return [sourcePlanId, null];
+      }
+    }));
+    const sourcePlans = new Map(sourceEntries.filter(([, sourcePlan]) => sourcePlan));
+
+    // Read again after the network requests so a change made in another tab or
+    // control while loading cannot be overwritten by the synchronization.
+    const result = mergeCommunityPlanUpdates(readPlans(), sourcePlans);
+    if (result.changed) writePlans(result.plans);
+    return result.changed;
+  })().catch(() => false);
+
+  return communityPlansSyncPromise;
+}
+
+export function mergeCommunityPlanUpdates(plans, sourcePlans) {
+  const sources = sourcePlans instanceof Map ? sourcePlans : new Map();
+  let changed = false;
+  const nextPlans = (Array.isArray(plans) ? plans : []).map((plan) => {
+    if (!isUnmodifiedCommunityPlan(plan)) return plan;
+    const sourcePlan = sources.get(plan.sourcePlanId);
+    if (!sourcePlan || plansMatchSource(plan, sourcePlan)) return plan;
+    changed = true;
+    return {
+      ...plan,
+      name: sourcePlan.name,
+      icon: sourcePlan.icon,
+      activityIds: [...sourcePlan.activityIds]
+    };
+  });
+
+  return { plans: nextPlans, changed };
+}
+
+function normalizeCommunitySourcePlan(sourcePlan, eventIds = null) {
+  if (!sourcePlan || typeof sourcePlan !== 'object') return null;
+  const name = String(sourcePlan.name || '').trim();
+  if (!name || name.length > MAX_PLAN_NAME_LENGTH || /[<>]/.test(name) || /[\u0000-\u001f\u007f]/.test(name)) return null;
+  if (!Array.isArray(sourcePlan.activityIds) || sourcePlan.activityIds.length > MAX_IMPORT_ACTIVITIES) return null;
+
+  const rawIcon = sourcePlan.icon === undefined || sourcePlan.icon === null
+    ? ''
+    : String(sourcePlan.icon).trim().toLocaleLowerCase('en');
+  if (rawIcon && !PLAN_ICON_OPTIONS.some((option) => option.id === rawIcon)) return null;
+
+  const activityIds = [...new Set(sourcePlan.activityIds.map(String).map((id) => id.trim()).filter(Boolean))];
+  if (eventIds && activityIds.some((id) => !eventIds.has(id))) return null;
+  return {
+    name,
+    icon: normalizePlanIcon(rawIcon),
+    activityIds
+  };
 }
 
 async function fetchJsonForSharing(url) {

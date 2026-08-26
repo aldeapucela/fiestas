@@ -123,6 +123,11 @@ export function normalizePlanIcon(value) {
   return PLAN_ICON_OPTIONS.some((option) => option.id === icon) ? icon : DEFAULT_PLAN_ICON;
 }
 
+export function isUnmodifiedCommunityPlan(plan) {
+  return Boolean(String(plan?.sourcePlanId || '').trim())
+    && String(plan?.createdAt || '') === String(plan?.updatedAt || '');
+}
+
 export function getPlanIcon(value) {
   const iconId = normalizePlanIcon(value);
   return PLAN_ICON_OPTIONS.find((option) => option.id === iconId) || PLAN_ICON_OPTIONS.at(-1);
