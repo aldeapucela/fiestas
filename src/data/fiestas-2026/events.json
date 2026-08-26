@@ -1850,15 +1850,15 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "Danzando en la calle: Yrason, Quimbara y Teresadance",
+    "title": "Danzando en la calle: Yrason, Quimbara y Teresardance",
     "location": "Plaza Fuente Dorada",
     "zone": "Fuente Dorada",
-    "description": "Danzando en la calle: Yrason, Quimbara y Teresadance",
-    "summary": "Danzando en la calle: Yrason, Quimbara y Teresadance",
+    "description": "Danzando en la calle: Yrason, Quimbara y Teresardance",
+    "summary": "Danzando en la calle: Yrason, Quimbara y Teresardance",
     "performances": [
       "Yrason",
       "Quimbara",
-      "Teresadance"
+      "Teresardance"
     ],
     "organizers": [],
     "collaborators": [],
@@ -1877,7 +1877,8 @@
     },
     "tags": [
       "Danza"
-    ]
+    ],
+    "image": "/assets/events/danzando-en-la-calle-teresardance-2026.jpg"
   },
   {
     "id": 53,

@@ -318,7 +318,7 @@ Evento donde podrás demos trarnos tus habilidades de baile.  Personas de 14 a 3
 
 **20:00 h** *Plaza Fuente Dorada* **DANZANDO EN LA CALLE:** Yrason, Quimbara y  
 
-Teresadance![][image4]   
+Teresardance![][image4]
 **20:00 a 02:00 h** *Museo Patio  Herreriano. Patio de los Reyes* **ARDE´26. QUINTA EDICIÓN:**  
 
 **CHUS \+ CEBALLOS,  ÓSCAR DE RIVERA, EDU  SABANAH Y ARTE VISUAL  HÉCTOR DE LA PUENTE** *Organiza: Concejalía de  Turismo, Eventos y Marca  Ciudad. Colaboran: Fun dación Municipal de Cultura  y Museo Patio Herreriano* 

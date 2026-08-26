@@ -227,9 +227,9 @@ Campos cambiados: 1629
 | 51 | summary | PUNTO VIOLETA INFORMATIVO | Punto violeta Informativo |
 | 51 | description | Punto violeta Informativo Concejalía de Personas Mayores, familia y Servicios Sociales | Punto violeta Informativo |
 | 51 | organizers | Concejalía de Personas Mayores, Familia y Servicios Sociales | Concejalía de Personas Mayores, familia y Servicios Sociales |
-| 52 | description | DANZANDO EN LA CALLE: Yrason, Quimbara y Teresadance | Danzando en la calle: Yrason, Quimbara y Teresadance |
-| 52 | summary | DANZANDO EN LA CALLE: Yrason, Quimbara y Teresadance | Danzando en la calle: Yrason, Quimbara y Teresadance |
-| 52 | performances | Danzando en la calle: Yrason, Quimbara y Teresadance | Yrason \| Quimbara \| Teresadance |
+| 52 | description | DANZANDO EN LA CALLE: Yrason, Quimbara y Teresardance | Danzando en la calle: Yrason, Quimbara y Teresardance |
+| 52 | summary | DANZANDO EN LA CALLE: Yrason, Quimbara y Teresardance | Danzando en la calle: Yrason, Quimbara y Teresardance |
+| 52 | performances | Danzando en la calle: Yrason, Quimbara y Teresardance | Yrason \| Quimbara \| Teresardance |
 | 53 | title | FOLKLORE CASTELLANO | Folklore castellano |
 | 53 | description | FOLKLORE CASTELLANO. GRUPO DE DANZAS CASTELLANOS DE OLID y GRUPO PILARICA ASOC. FOLCLÓRICA | Folklore castellano. Grupo de danzas Castellanos de Olid y grupo Pilarica Asoc. Folclórica |
 | 53 | summary | FOLKLORE CASTELLANO. GRUPO DE DANZAS CASTELLANOS DE OLID y GRUPO PILARICA ASOC. FOLCLÓRICA | Folklore castellano. Grupo de danzas Castellanos de Olid y grupo Pilarica Asoc. Folclórica |
