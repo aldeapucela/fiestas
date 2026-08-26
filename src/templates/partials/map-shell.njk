@@ -45,10 +45,51 @@
   {% endif %}
   <div class="fiestas-map-canvas" data-fiestas-map></div>
   <div class="fiestas-map-topbar" aria-label="Controles del mapa">
+    {% if isCasetas %}
+    <button class="fiestas-map-filter-toggle fiestas-casetas-filter-toggle" type="button" data-fiestas-casetas-filter-toggle aria-expanded="false" aria-controls="fiestas-casetas-filter-panel">
+      <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+      <span>Filtros</span>
+      <span class="fiestas-map-filter-count" data-fiestas-casetas-filter-count hidden aria-label="Filtros activos">0</span>
+    </button>
+    {% endif %}
     <button class="fiestas-map-control fiestas-map-control--icon" type="button" data-fiestas-map-locate aria-label="Centrar en mi ubicación" title="Centrar en mi ubicación">
       <i class="fa-solid fa-location-crosshairs" aria-hidden="true"></i>
     </button>
   </div>
+  {% if isCasetas %}
+  <section class="fiestas-casetas-filter-panel" id="fiestas-casetas-filter-panel" data-fiestas-casetas-filter-panel aria-labelledby="fiestas-casetas-filter-title" hidden>
+    <div class="fiestas-map-filter-header">
+      <div>
+        <span class="fiestas-map-filter-kicker">Explora las casetas</span>
+        <h2 id="fiestas-casetas-filter-title">Filtros</h2>
+      </div>
+      <button class="fiestas-map-filter-close" type="button" data-fiestas-casetas-filter-close aria-label="Cerrar filtros">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+    </div>
+    <fieldset class="fiestas-casetas-filter-options">
+      <legend class="sr-only">Filtrar por tipo de plato</legend>
+      <label class="fiestas-casetas-filter-option">
+        <input type="checkbox" value="vegetarian" data-fiestas-casetas-dietary-filter />
+        <span class="fiestas-casetas-filter-option-copy">
+          <strong><i class="fa-solid fa-leaf" aria-hidden="true"></i> Vegetarianos</strong>
+          <small>Casetas con platos vegetarianos</small>
+        </span>
+      </label>
+      <label class="fiestas-casetas-filter-option">
+        <input type="checkbox" value="vegan" data-fiestas-casetas-dietary-filter />
+        <span class="fiestas-casetas-filter-option-copy">
+          <strong><i class="fa-solid fa-seedling" aria-hidden="true"></i> Veganos</strong>
+          <small>Casetas con platos veganos</small>
+        </span>
+      </label>
+    </fieldset>
+    <button class="fiestas-casetas-filter-clear" type="button" data-fiestas-casetas-filter-clear hidden>
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      <span>Limpiar filtros</span>
+    </button>
+  </section>
+  {% endif %}
   <div class="fiestas-map-empty" data-fiestas-map-empty hidden></div>
   <section class="fiestas-map-sheet is-collapsed" data-fiestas-map-sheet aria-label="{% if isCasetas %}Casetas del mapa{% else %}Actividades del mapa{% endif %}">
     <button class="fiestas-map-sheet-handle" type="button" data-fiestas-map-sheet-toggle aria-expanded="false">

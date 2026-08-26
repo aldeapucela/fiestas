@@ -34,6 +34,9 @@ const state = {
   selectedZone: null,
   searchQuery: '',
   searchOpen: false,
+  dietaryFilters: new Set(),
+  filterPanelOpen: false,
+  filterReturnFocus: null,
   sheetState: 'collapsed',
   map: null,
   tileLayer: null,
@@ -62,6 +65,12 @@ export function initCasetasPage() {
   els.mapSheetTitle = document.querySelector('[data-fiestas-map-sheet-title]');
   els.mapSheetCount = document.querySelector('[data-fiestas-map-sheet-count]');
   els.mapSheetTabLabel = document.querySelector('[data-fiestas-map-sheet-tab-label]');
+  els.filterToggle = document.querySelector('[data-fiestas-casetas-filter-toggle]');
+  els.filterPanel = document.querySelector('[data-fiestas-casetas-filter-panel]');
+  els.filterClose = document.querySelector('[data-fiestas-casetas-filter-close]');
+  els.filterInputs = [...document.querySelectorAll('[data-fiestas-casetas-dietary-filter]')];
+  els.filterCount = document.querySelector('[data-fiestas-casetas-filter-count]');
+  els.filterClear = document.querySelector('[data-fiestas-casetas-filter-clear]');
   els.searchToggle = document.querySelector('[data-fiestas-casetas-search-toggle]');
   els.searchPanel = document.querySelector('[data-fiestas-casetas-search-panel]');
   els.searchInput = document.querySelector('[data-fiestas-casetas-search-input]');
@@ -102,6 +111,7 @@ function normalizeCasetas(entries) {
         location,
         placement,
         details,
+        dietary: getDietaryLabels(details),
         searchText: normalizeText([
           name,
           location,
@@ -149,6 +159,22 @@ function buildZones(casetas) {
 function bindControls() {
   els.mapLocate?.addEventListener('click', () => requestLocation({ centerOnSuccess: true, force: true }));
   els.locationNote?.addEventListener('click', () => requestLocation({ centerOnSuccess: true, force: true }));
+  els.filterToggle?.addEventListener('click', () => setFilterPanelOpen(!state.filterPanelOpen));
+  els.filterClose?.addEventListener('click', () => setFilterPanelOpen(false));
+  els.filterInputs.forEach((input) => {
+    input.addEventListener('change', (event) => {
+      const value = event.currentTarget.value;
+      if (event.currentTarget.checked) state.dietaryFilters.add(value);
+      else state.dietaryFilters.delete(value);
+      renderMapMarkers();
+      renderSheet(getVisibleCasetas());
+    });
+  });
+  els.filterClear?.addEventListener('click', () => {
+    state.dietaryFilters.clear();
+    renderMapMarkers();
+    renderSheet(getVisibleCasetas());
+  });
   els.searchToggle?.addEventListener('click', () => {
     state.searchOpen = !state.searchOpen;
     if (state.searchOpen && state.sheetState !== 'expanded') {
@@ -184,8 +210,20 @@ function bindControls() {
     state.sheetState = 'collapsed';
     renderSheet(getVisibleCasetas());
   });
+  document.addEventListener('click', (event) => {
+    if (state.filterPanelOpen
+      && !event.target.closest('[data-fiestas-casetas-filter-toggle]')
+      && !event.target.closest('[data-fiestas-casetas-filter-panel]')) {
+      setFilterPanelOpen(false, { restoreFocus: false });
+    }
+  });
   document.addEventListener('keydown', (event) => {
-    if (event.key !== 'Escape' || !state.selectedZone) return;
+    if (event.key !== 'Escape') return;
+    if (state.filterPanelOpen) {
+      setFilterPanelOpen(false);
+      return;
+    }
+    if (!state.selectedZone) return;
     state.selectedZone = null;
     syncUrlState();
     renderMapMarkers();
@@ -218,8 +256,18 @@ function getVisibleCasetas() {
     ? state.zones.find((zone) => zone.zone === state.selectedZone)?.items || state.casetas
     : state.casetas;
   const query = normalizeText(state.searchQuery);
-  if (!query) return source;
-  return source.filter((caseta) => caseta.searchText.includes(query));
+  return source.filter((caseta) => {
+    const matchesQuery = !query || caseta.searchText.includes(query);
+    const matchesDietary = !state.dietaryFilters.size
+      || [...state.dietaryFilters].some((dietary) => caseta.dietary.includes(dietary));
+    return matchesQuery && matchesDietary;
+  });
+}
+
+function getDietaryLabels(details) {
+  return [...new Set((details?.menuSections || []).flatMap((section) => (section?.items || [])
+    .map((item) => typeof item === 'object' ? item?.dietary : '')
+    .filter((dietary) => dietary === 'vegetarian' || dietary === 'vegan')))];
 }
 
 function collectTextValues(value) {
@@ -251,9 +299,16 @@ async function initializeMap() {
 function renderMapMarkers() {
   if (!state.map || !state.markers || !window.L) return;
   state.markers.clearLayers();
-  const zonesWithCoordinates = state.zones.filter((zone) => hasCoordinates(zone.coordinates));
+  const zonesWithCoordinates = state.zones.map((zone) => ({
+    ...zone,
+    items: state.dietaryFilters.size
+      ? zone.items.filter((caseta) => [...state.dietaryFilters].some((dietary) => caseta.dietary.includes(dietary)))
+      : zone.items
+  })).filter((zone) => hasCoordinates(zone.coordinates) && zone.items.length);
   if (!zonesWithCoordinates.length) {
-    showMapEmpty('Las zonas todavía no tienen una ubicación exacta en el mapa.');
+    showMapEmpty(state.dietaryFilters.size
+      ? 'No hay casetas con esos filtros.'
+      : 'Las zonas todavía no tienen una ubicación exacta en el mapa.');
     return;
   }
   els.mapEmpty.hidden = true;
@@ -303,6 +358,7 @@ function renderSheet(items, options = {}) {
   if (els.mapSheetCount) els.mapSheetCount.textContent = countText;
   if (els.mapSheetTabLabel) els.mapSheetTabLabel.textContent = `Ver ${countText}`;
   syncSearchUi();
+  syncFilterUi();
   renderLocationStatus(isFocused);
   els.mapSheetPreview?.replaceChildren();
   els.mapSheetList?.replaceChildren();
@@ -312,6 +368,8 @@ function renderSheet(items, options = {}) {
     empty.className = 'fiestas-empty fiestas-casetas-empty';
     empty.innerHTML = state.searchQuery
       ? `<p>No se han encontrado casetas para «${escapeHtml(state.searchQuery)}».</p>`
+      : state.dietaryFilters.size
+        ? '<p>No hay casetas con esos filtros.</p>'
       : '<p>No hay casetas disponibles.</p>';
     els.mapSheetPreview?.append(empty);
     return;
@@ -400,6 +458,42 @@ function syncSearchUi() {
   els.searchToggle.classList.toggle('is-active', state.searchOpen);
   els.searchPanel.hidden = !state.searchOpen;
   if (els.searchClear) els.searchClear.hidden = !state.searchQuery;
+}
+
+function setFilterPanelOpen(open, options = {}) {
+  const nextOpen = Boolean(open);
+  if (nextOpen && !state.filterPanelOpen) state.filterReturnFocus = document.activeElement;
+  state.filterPanelOpen = nextOpen;
+  syncFilterUi();
+  if (nextOpen) {
+    els.filterInputs[0]?.focus();
+  } else if (options.restoreFocus !== false) {
+    const returnFocus = state.filterReturnFocus;
+    state.filterReturnFocus = null;
+    if (returnFocus && typeof returnFocus.focus === 'function') returnFocus.focus();
+    else els.filterToggle?.focus();
+  }
+}
+
+function syncFilterUi() {
+  if (!els.filterToggle || !els.filterPanel) return;
+  const activeFilterCount = state.dietaryFilters.size;
+  els.filterToggle.classList.toggle('is-active', activeFilterCount > 0);
+  els.filterToggle.setAttribute('aria-expanded', String(state.filterPanelOpen));
+  els.filterToggle.setAttribute('aria-label', activeFilterCount
+    ? `Abrir filtros. ${activeFilterCount} activos`
+    : 'Abrir filtros');
+  if (els.filterCount) {
+    els.filterCount.hidden = activeFilterCount === 0;
+    els.filterCount.textContent = String(activeFilterCount);
+  }
+  els.filterPanel.hidden = !state.filterPanelOpen;
+  els.filterPanel.setAttribute('aria-hidden', String(!state.filterPanelOpen));
+  els.filterPanel.toggleAttribute('aria-modal', state.filterPanelOpen);
+  els.filterInputs.forEach((input) => {
+    input.checked = state.dietaryFilters.has(input.value);
+  });
+  if (els.filterClear) els.filterClear.hidden = activeFilterCount === 0;
 }
 
 function requestLocation(options = {}) {
