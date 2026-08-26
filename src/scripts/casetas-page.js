@@ -31,7 +31,9 @@ let initialized = false;
 const state = {
   casetas: [],
   zones: [],
+  mapGroups: [],
   selectedZone: null,
+  selectedLocation: null,
   searchQuery: '',
   searchOpen: false,
   dietaryFilters: new Set(),
@@ -80,6 +82,7 @@ export function initCasetasPage() {
 
   state.casetas = normalizeCasetas(window.__FIESTAS_2026_CASETAS__ || []);
   state.zones = buildZones(state.casetas);
+  state.mapGroups = buildMapGroups(state.zones);
   readUrlState();
   els.app?.classList.add('is-map-mode');
   bindControls();
@@ -101,7 +104,8 @@ function normalizeCasetas(entries) {
       const details = entry.details && typeof entry.details === 'object' ? entry.details : null;
       const coordinates = hasCoordinates(entry.coordinates) ? {
         lat: Number(entry.coordinates.lat),
-        lng: Number(entry.coordinates.lng)
+        lng: Number(entry.coordinates.lng),
+        source: String(entry.coordinates.source || '')
       } : null;
       return {
         id,
@@ -136,24 +140,38 @@ function buildZones(casetas) {
   return [...grouped.entries()]
     .sort(([a], [b]) => a.localeCompare(b, 'es', { numeric: true }))
     .map(([zone, items]) => {
-      const positioned = items.filter((item) => hasCoordinates(item.coordinates));
-      const cityPositioned = positioned.filter((item) => isNearValladolid(item.coordinates));
-      const trusted = cityPositioned.length ? cityPositioned : positioned;
-      const coordinates = trusted.length ? {
-        // Nominatim can resolve a generic street name to another municipality
-        // in Valladolid province. Prefer city results and use a median to keep
-        // any remaining bad result from moving the whole zone.
-        lat: median(trusted.map((item) => item.coordinates.lat)),
-        lng: median(trusted.map((item) => item.coordinates.lng))
-      } : null;
       return {
         zone,
         number: zone.match(/\d+/)?.[0] || '',
         items,
-        coordinates,
+        coordinates: representativeCoordinates(items),
         color: zoneColor(zone)
       };
     });
+}
+
+function buildMapGroups(zones) {
+  return zones.flatMap((zone) => {
+    const grouped = new Map();
+    zone.items.forEach((caseta) => {
+      const key = normalizeText(caseta.location);
+      if (!grouped.has(key)) grouped.set(key, []);
+      grouped.get(key).push(caseta);
+    });
+    return [...grouped.entries()].map(([key, items]) => ({
+      id: `${zone.zone}-${key}`,
+      zone: zone.zone,
+      number: zone.number,
+      location: items[0].location,
+      items,
+      // Use the location's city coordinates whenever possible. If the
+      // geocoder could not resolve that location reliably, keep the group
+      // visible by falling back to the zone's representative point.
+      coordinates: representativeCoordinates(items) || zone.coordinates,
+      color: zone.color
+    }));
+  }).sort((a, b) => a.zone.localeCompare(b.zone, 'es', { numeric: true })
+    || a.location.localeCompare(b.location, 'es', { sensitivity: 'base' }));
 }
 
 function bindControls() {
@@ -226,7 +244,8 @@ function bindControls() {
       return;
     }
     if (!state.selectedZone) return;
-    state.selectedZone = null;
+    if (state.selectedLocation) state.selectedLocation = null;
+    else state.selectedZone = null;
     syncUrlState();
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
@@ -236,10 +255,15 @@ function bindControls() {
 function readUrlState() {
   const params = new URLSearchParams(window.location.search);
   const zone = params.get('zone');
+  const location = params.get('location');
   const selectedCaseta = params.get('caseta');
   if (zone && state.zones.some((item) => item.zone === zone)) state.selectedZone = zone;
   if (!state.selectedZone && selectedCaseta) {
     state.selectedZone = state.casetas.find((caseta) => caseta.id === selectedCaseta)?.zone || null;
+  }
+  const selectedZone = state.zones.find((item) => item.zone === state.selectedZone);
+  if (selectedZone && location && selectedZone.items.some((caseta) => caseta.location === location)) {
+    state.selectedLocation = location;
   }
   const dietaryValues = [
     ...params.getAll('dietary').flatMap((value) => value.split(',')),
@@ -253,10 +277,15 @@ function readUrlState() {
 
 function syncUrlState() {
   const url = new URL(window.location.href);
-  if (state.selectedZone) url.searchParams.set('zone', state.selectedZone);
+  if (state.selectedZone) {
+    url.searchParams.set('zone', state.selectedZone);
+    if (state.selectedLocation) url.searchParams.set('location', state.selectedLocation);
+    else url.searchParams.delete('location');
+  }
   else {
     url.searchParams.delete('zone');
     url.searchParams.delete('caseta');
+    url.searchParams.delete('location');
   }
   url.searchParams.delete('dietary');
   url.searchParams.delete('diet');
@@ -267,8 +296,13 @@ function syncUrlState() {
 }
 
 function getVisibleCasetas() {
-  const source = state.selectedZone
-    ? state.zones.find((zone) => zone.zone === state.selectedZone)?.items || state.casetas
+  const selectedZone = state.selectedZone
+    ? state.zones.find((zone) => zone.zone === state.selectedZone)
+    : null;
+  const source = selectedZone
+    ? state.selectedLocation
+      ? selectedZone.items.filter((caseta) => caseta.location === state.selectedLocation)
+      : selectedZone.items
     : state.casetas;
   const query = normalizeText(state.searchQuery);
   return source.filter((caseta) => {
@@ -314,39 +348,41 @@ async function initializeMap() {
 function renderMapMarkers() {
   if (!state.map || !state.markers || !window.L) return;
   state.markers.clearLayers();
-  const zonesWithCoordinates = state.zones.map((zone) => ({
-    ...zone,
+  const groupsWithCoordinates = state.mapGroups.map((group) => ({
+    ...group,
     items: state.dietaryFilters.size
-      ? zone.items.filter((caseta) => [...state.dietaryFilters].some((dietary) => caseta.dietary.includes(dietary)))
-      : zone.items
-  })).filter((zone) => hasCoordinates(zone.coordinates) && zone.items.length);
-  if (!zonesWithCoordinates.length) {
+      ? group.items.filter((caseta) => [...state.dietaryFilters].some((dietary) => caseta.dietary.includes(dietary)))
+      : group.items
+  })).filter((group) => hasCoordinates(group.coordinates) && group.items.length);
+  if (!groupsWithCoordinates.length) {
     showMapEmpty(state.dietaryFilters.size
       ? 'No hay casetas con esos filtros.'
       : 'Las zonas todavía no tienen una ubicación exacta en el mapa.');
     return;
   }
   els.mapEmpty.hidden = true;
-  zonesWithCoordinates.forEach((zone) => {
-    const reference = zoneLabel(zone.zone);
-    const marker = window.L.marker([zone.coordinates.lat, zone.coordinates.lng], {
-      title: `${zone.zone} - ${reference}. ${zone.items.length} ${zone.items.length === 1 ? 'caseta' : 'casetas'}`,
-      alt: `${zone.zone} - ${reference}. ${zone.items.length} ${zone.items.length === 1 ? 'caseta' : 'casetas'}`,
+  groupsWithCoordinates.forEach((group) => {
+    const markerLabel = `${group.zone} - ${group.location}`;
+    const groupCount = `${group.items.length} ${group.items.length === 1 ? 'caseta' : 'casetas'}`;
+    const marker = window.L.marker([group.coordinates.lat, group.coordinates.lng], {
+      title: `${markerLabel}. ${groupCount}`,
+      alt: `${markerLabel}. ${groupCount}`,
       keyboard: false,
       icon: window.L.divIcon({
-        className: `fiestas-map-marker fiestas-caseta-zone-marker${state.selectedZone === zone.zone ? ' is-selected' : ''}`,
-        html: `<button type="button" style="--fiestas-type-color:${escapeAttribute(zone.color)}" aria-label="Ver ${escapeAttribute(zone.zone)} - ${escapeAttribute(reference)} con ${zone.items.length} casetas"><span>Z${escapeHtml(zone.number)}</span></button>`,
+        className: `fiestas-map-marker fiestas-caseta-zone-marker${state.selectedZone === group.zone && state.selectedLocation === group.location ? ' is-selected' : ''}`,
+        html: `<button type="button" style="--fiestas-type-color:${escapeAttribute(group.color)}" aria-label="Ver ${escapeAttribute(markerLabel)} con ${groupCount}"><span>Z${escapeHtml(group.number)}</span></button>`,
         iconSize: [44, 44],
         iconAnchor: [22, 22]
       })
     });
-    marker.on('click', () => selectZone(zone.zone));
+    marker.on('click', () => selectMapGroup(group));
     marker.addTo(state.markers);
   });
 }
 
-function selectZone(zone) {
-  state.selectedZone = zone;
+function selectMapGroup(group) {
+  state.selectedZone = group.zone;
+  state.selectedLocation = group.location;
   state.sheetState = 'expanded';
   syncUrlState();
   renderMapMarkers();
@@ -359,7 +395,7 @@ function renderSheet(items, options = {}) {
   const sorted = [...items].sort(compareCasetas);
   const isFocused = Boolean(state.selectedZone);
   const zoneTitle = state.selectedZone
-    ? `Casetas de la ${state.selectedZone.toLowerCase()} - ${zoneLabel(state.selectedZone)}`
+    ? `Casetas de la ${state.selectedZone.toLowerCase()}${state.selectedLocation ? ` - ${state.selectedLocation}` : ''}`
     : 'Casetas en Valladolid';
   const count = sorted.length;
   const countText = `${count} ${count === 1 ? 'caseta' : 'casetas'}`;
@@ -568,9 +604,9 @@ function applyPreferredCenter() {
     state.map.setView(state.preferredMapCenter.latLng, state.preferredMapCenter.zoom);
     state.preferredMapCenter = null;
   } else {
-    const coordinates = state.zones
-      .filter((zone) => hasCoordinates(zone.coordinates))
-      .map((zone) => [zone.coordinates.lat, zone.coordinates.lng]);
+    const coordinates = state.mapGroups
+      .filter((group) => hasCoordinates(group.coordinates))
+      .map((group) => [group.coordinates.lat, group.coordinates.lng]);
     if (coordinates.length > 1) {
       state.map.fitBounds(coordinates, {
         paddingTopLeft: [24, 92],
@@ -696,11 +732,24 @@ function zoneLabel(zone) {
 }
 
 function compareCasetas(a, b) {
-  return a.zone.localeCompare(b.zone, 'es', { numeric: true }) || a.name.localeCompare(b.name, 'es', { sensitivity: 'base' });
+  return a.zone.localeCompare(b.zone, 'es', { numeric: true })
+    || a.location.localeCompare(b.location, 'es', { sensitivity: 'base' })
+    || a.name.localeCompare(b.name, 'es', { sensitivity: 'base' });
 }
 
 function hasCoordinates(coordinates) {
   return coordinates && Number.isFinite(coordinates.lat) && Number.isFinite(coordinates.lng);
+}
+
+function representativeCoordinates(items) {
+  const positioned = items.filter((item) => hasCoordinates(item.coordinates)
+    && item.coordinates.source !== 'zone-fallback');
+  const cityPositioned = positioned.filter((item) => isNearValladolid(item.coordinates));
+  if (!cityPositioned.length) return null;
+  return {
+    lat: median(cityPositioned.map((item) => item.coordinates.lat)),
+    lng: median(cityPositioned.map((item) => item.coordinates.lng))
+  };
 }
 
 function isNearValladolid(coordinates) {

@@ -137,76 +137,68 @@
       "id": "z2-01",
       "name": "Ángela",
       "zone": "Zona 2",
-      "location": "Lateral de San Benito",
+      "location": "San Benito",
       "placement": "En el lateral",
       "addressQuery": "San Benito, Valladolid, España",
       "coordinates": {
-        "lat": 41.2660142,
-        "lng": -4.6622524,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 1242594223,
-        "displayName": "San Benito, Aguasal, Valladolid, Castilla y León, 47418, España",
-        "query": "San Benito, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:32.823Z"
+        "lat": 41.6540596,
+        "lng": -4.7291846,
+        "source": "Google Maps",
+        "displayName": "C. San Benito, Valladolid, España",
+        "query": "Plaza San Benito, Valladolid, España",
+        "accuracy": 0.8,
+        "geocodedAt": "2026-08-26"
       }
     },
     {
       "id": "z2-02",
       "name": "Ditaly",
       "zone": "Zona 2",
-      "location": "Lateral de San Benito",
+      "location": "San Benito",
       "placement": "En el lateral",
       "addressQuery": "San Benito, Valladolid, España",
       "coordinates": {
-        "lat": 41.2660142,
-        "lng": -4.6622524,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 1242594223,
-        "displayName": "San Benito, Aguasal, Valladolid, Castilla y León, 47418, España",
-        "query": "San Benito, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:32.823Z"
+        "lat": 41.6540596,
+        "lng": -4.7291846,
+        "source": "Google Maps",
+        "displayName": "C. San Benito, Valladolid, España",
+        "query": "Plaza San Benito, Valladolid, España",
+        "accuracy": 0.8,
+        "geocodedAt": "2026-08-26"
       }
     },
     {
       "id": "z2-03",
       "name": "La Cartuja",
       "zone": "Zona 2",
-      "location": "Lateral de San Benito",
+      "location": "San Benito",
       "placement": "En el lateral",
       "addressQuery": "San Benito, Valladolid, España",
       "coordinates": {
-        "lat": 41.2660142,
-        "lng": -4.6622524,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 1242594223,
-        "displayName": "San Benito, Aguasal, Valladolid, Castilla y León, 47418, España",
-        "query": "San Benito, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:32.823Z"
+        "lat": 41.6540596,
+        "lng": -4.7291846,
+        "source": "Google Maps",
+        "displayName": "C. San Benito, Valladolid, España",
+        "query": "Plaza San Benito, Valladolid, España",
+        "accuracy": 0.8,
+        "geocodedAt": "2026-08-26"
       }
     },
     {
       "id": "z2-04",
       "name": "Five Napoli Pizza",
       "zone": "Zona 2",
-      "location": "Lateral de San Benito",
+      "location": "San Benito",
       "placement": "En el lateral",
       "addressQuery": "San Benito, Valladolid, España",
       "coordinates": {
-        "lat": 41.2660142,
-        "lng": -4.6622524,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 1242594223,
-        "displayName": "San Benito, Aguasal, Valladolid, Castilla y León, 47418, España",
-        "query": "San Benito, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:32.823Z"
+        "lat": 41.6540596,
+        "lng": -4.7291846,
+        "source": "Google Maps",
+        "displayName": "C. San Benito, Valladolid, España",
+        "query": "Plaza San Benito, Valladolid, España",
+        "accuracy": 0.8,
+        "geocodedAt": "2026-08-26"
       }
     },
     {
@@ -217,15 +209,13 @@
       "placement": "En San Benito",
       "addressQuery": "San Benito, Valladolid, España",
       "coordinates": {
-        "lat": 41.2660142,
-        "lng": -4.6622524,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 1242594223,
-        "displayName": "San Benito, Aguasal, Valladolid, Castilla y León, 47418, España",
-        "query": "San Benito, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:32.823Z"
+        "lat": 41.6540596,
+        "lng": -4.7291846,
+        "source": "Google Maps",
+        "displayName": "C. San Benito, Valladolid, España",
+        "query": "Plaza San Benito, Valladolid, España",
+        "accuracy": 0.8,
+        "geocodedAt": "2026-08-26"
       }
     },
     {
@@ -236,22 +226,20 @@
       "placement": "En San Benito",
       "addressQuery": "San Benito, Valladolid, España",
       "coordinates": {
-        "lat": 41.2660142,
-        "lng": -4.6622524,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 1242594223,
-        "displayName": "San Benito, Aguasal, Valladolid, Castilla y León, 47418, España",
-        "query": "San Benito, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:32.823Z"
+        "lat": 41.6540596,
+        "lng": -4.7291846,
+        "source": "Google Maps",
+        "displayName": "C. San Benito, Valladolid, España",
+        "query": "Plaza San Benito, Valladolid, España",
+        "accuracy": 0.8,
+        "geocodedAt": "2026-08-26"
       }
     },
     {
       "id": "z2-07",
       "name": "Madame X",
       "zone": "Zona 2",
-      "location": "Iglesia de San Benito",
+      "location": "San Benito",
       "placement": "En San Benito",
       "addressQuery": "Iglesia de San Benito, Valladolid, España",
       "coordinates": {
@@ -312,15 +300,13 @@
       "placement": "En San Benito",
       "addressQuery": "San Benito, Valladolid, España",
       "coordinates": {
-        "lat": 41.2660142,
-        "lng": -4.6622524,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 1242594223,
-        "displayName": "San Benito, Aguasal, Valladolid, Castilla y León, 47418, España",
-        "query": "San Benito, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:32.823Z"
+        "lat": 41.6540596,
+        "lng": -4.7291846,
+        "source": "Google Maps",
+        "displayName": "C. San Benito, Valladolid, España",
+        "query": "Plaza San Benito, Valladolid, España",
+        "accuracy": 0.8,
+        "geocodedAt": "2026-08-26"
       }
     },
     {
@@ -331,15 +317,13 @@
       "placement": "En San Benito",
       "addressQuery": "San Benito, Valladolid, España",
       "coordinates": {
-        "lat": 41.2660142,
-        "lng": -4.6622524,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 1242594223,
-        "displayName": "San Benito, Aguasal, Valladolid, Castilla y León, 47418, España",
-        "query": "San Benito, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:32.823Z"
+        "lat": 41.6540596,
+        "lng": -4.7291846,
+        "source": "Google Maps",
+        "displayName": "C. San Benito, Valladolid, España",
+        "query": "Plaza San Benito, Valladolid, España",
+        "accuracy": 0.8,
+        "geocodedAt": "2026-08-26"
       }
     },
     {
@@ -460,18 +444,18 @@
       "id": "z2-16",
       "name": "El Secreto",
       "zone": "Zona 2",
-      "location": "Lateral de San Benito",
+      "location": "San Benito",
       "placement": "En el lateral",
-      "addressQuery": "Lateral de San Benito, Valladolid, España",
+      "addressQuery": "San Benito, Valladolid, España",
       "coordinates": null
     },
     {
       "id": "z2-17",
       "name": "Patrón",
       "zone": "Zona 2",
-      "location": "Lateral de San Benito",
+      "location": "San Benito",
       "placement": "En el lateral",
-      "addressQuery": "Lateral de San Benito, Valladolid, España",
+      "addressQuery": "San Benito, Valladolid, España",
       "coordinates": null
     },
     {
@@ -1035,15 +1019,13 @@
       "placement": "En la calle",
       "addressQuery": "Calle Rastro, Valladolid, España",
       "coordinates": {
-        "lat": 41.6094597,
-        "lng": -4.6813505,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 64738941,
-        "displayName": "Calle Rastro, La Cistérniga, Valladolid, Castilla y León, 47193, España",
-        "query": "Calle Rastro, Valladolid, Espana",
+        "lat": 41.6481637,
+        "lng": -4.726438,
+        "source": "Google Maps",
+        "displayName": "Calle Rastro, Valladolid, España",
+        "query": "Calle Rastro, Valladolid, España",
         "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:47.396Z"
+        "geocodedAt": "2026-08-26"
       }
     },
     {
