@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "updatedAt": "2026-08-26T00:00:00Z",
+  "updatedAt": "2026-08-26T16:00:00.000Z",
   "plans": [
     {
       "id": "cielo-y-estrellas",
@@ -79,6 +79,13 @@
       "author": "Aldea Pucela",
       "icon": "sports",
       "url": "/data/community-plans/en-fiestas-con-el-deporte.fiestas-plan.json"
+    },
+    {
+      "id": "de-tardeo-en-tardeo",
+      "name": "De tardeo en tardeo",
+      "author": "Aldea Pucela",
+      "icon": "cocktail",
+      "url": "/data/community-plans/de-tardeo-en-tardeo.fiestas-plan.json"
     }
   ]
 }
