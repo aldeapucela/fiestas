@@ -368,6 +368,8 @@ async function resolveCoordinates(remote, location, currentEvents) {
   if (known[id]) return known[id];
 
   const queryById = {
+    2198: 'Calle del Bao, Valladolid, España',
+    2203: 'Sala Borja, Valladolid, España',
     2191: 'Calle Espíritu Santo, 9, Valladolid, España',
     1999: 'Centro Comercial Vallsur, Paseo de Zorrilla, 328, Valladolid, España',
     1784: 'Centro Cultural Miguel Delibes, Avenida del Real Valladolid, 2, Valladolid, España',
