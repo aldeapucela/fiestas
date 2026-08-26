@@ -35,6 +35,8 @@ Los identificadores de actividad son sus `id` numéricos y estables. Los valores
 | `activity` | `view_detail` | `activityId` | Al cargar una ficha. |
 | `activity` | `save` | `activityId` | La primera vez que ese navegador guarda un favorito; se deduplica con `localStorage`. |
 | `activity` | `remove_save` | `activityId` | Al eliminar un favorito; no afecta al ranking de guardados. |
+| `caseta` | `save` | `casetaId` normalizado (`z1_05`) | La primera vez que ese navegador guarda una caseta; se deduplica de forma independiente. |
+| `caseta` | `remove_save` | `casetaId` normalizado (`z1_05`) | Al eliminar una caseta de favoritas. |
 | `activity` | `share` | `activityId` | Después de compartir o copiar correctamente. |
 | `activity` | `open_directions` | `activityId` | Al abrir Cómo llegar. |
 | `activity` | `open_tickets` | `activityId` | Al abrir el enlace de entradas. |
@@ -64,6 +66,7 @@ Los pageviews se envían mediante `trackPageView` durante la única inicializaci
 - No se envían nombres, correos, teléfonos, nombres personalizados de planes ni identificadores de usuario.
 - Sin cuentas, las métricas representan visitas/dispositivos y acciones observadas, no personas identificadas de forma exacta.
 - Los eventos `activity / save` se cuentan una sola vez por actividad y navegador mediante `fiestasPucela:analytics:saved-activities` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, no se puede garantizar la deduplicación entre sesiones.
+- Los eventos `caseta / save` se cuentan una sola vez por caseta y navegador mediante `fiestasPucela:analytics:saved-casetas` en `localStorage`. El ID local `z1-05` se envía a Matomo como el token `z1_05`; el endpoint lo devuelve de nuevo como `z1-05`. Las retiradas (`caseta / remove_save`) se registran aparte y no se restan del contador acumulado.
 - Los eventos `plan / add_community` se cuentan una sola vez por plan vecinal y navegador mediante `fiestasPucela:analytics:added-community-plans` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, el evento puede volver a registrarse.
 - Para ordenar actividades por popularidad se debe usar el total de eventos `activity / save`, no `remove_save` ni el total de visitas. No se envía una IP ni un identificador de usuario propio.
 - El contador de planes vecinales representa añadidos de navegadores estimados, no personas únicas exactas.
@@ -73,3 +76,24 @@ Los pageviews se envían mediante `trackPageView` durante la única inicializaci
 - La versión actual no tiene geolocalización, botón de centrar en el usuario ni panel inferior del mapa; por eso no se generan esos eventos todavía.
 
 Para revisar los datos, consultar en Matomo el site ID 29 y filtrar por categoría y acción según la tabla anterior.
+
+## Endpoint público de casetas
+
+El recuento acumulado de guardados de casetas se consulta mediante `GET https://api.aldeapucela.org/fiestas/caseta-saves`. Acepta opcionalmente `from` y `to` con formato `YYYY-MM-DD`, usando el mismo rango por defecto y validación en `Europe/Madrid` que el endpoint de actividades.
+
+La respuesta contiene únicamente casetas con al menos un `save`:
+
+```json
+{
+  "ok": true,
+  "siteId": 29,
+  "event": { "category": "caseta", "action": "save" },
+  "from": "2026-01-01",
+  "to": "2026-08-26",
+  "casetas": [{ "id": "z1-05", "saveCount": 3 }],
+  "totalSaves": 3,
+  "generatedAt": "2026-08-26T00:00:00.000Z"
+}
+```
+
+El endpoint cuenta señales acumuladas de guardado, no favoritas actuales exactas: la aplicación no identifica de forma persistente a cada navegador y las retiradas no se descuentan. Nginx publica el webhook de n8n con CORS, limitación de lectura y caché de 15 minutos; Matomo permanece únicamente en el servidor.

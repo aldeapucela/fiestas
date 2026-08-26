@@ -1,4 +1,5 @@
 import { readCasetaFavoriteIds, setCasetaFavorite, subscribeToCasetaFavorites } from './casetas-favorites.js';
+import { trackCasetaFavoriteChanged } from './analytics.js';
 
 const CENTER = [41.6523, -4.7245];
 const DEFAULT_ZOOM = 15;
@@ -525,6 +526,7 @@ function casetaRow(caseta) {
     event.stopPropagation();
     const nextSaved = !state.casetaFavorites.has(caseta.id);
     state.casetaFavorites = new Set(setCasetaFavorite(caseta.id, nextSaved));
+    trackCasetaFavoriteChanged(caseta.id, nextSaved);
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
   });

@@ -4,10 +4,12 @@ const LOCAL_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]', '::1']);
 const DEFAULT_TRACKER_URL = 'https://stats.aldeapucela.org/';
 const DEFAULT_SITE_ID = '29';
 const TRACKED_FAVORITES_STORAGE_KEY = 'fiestasPucela:analytics:saved-activities';
+const TRACKED_CASETA_FAVORITES_STORAGE_KEY = 'fiestasPucela:analytics:saved-casetas';
 const TRACKED_COMMUNITY_PLANS_STORAGE_KEY = 'fiestasPucela:analytics:added-community-plans';
 
 const categoryActions = {
   activity: new Set(['view_detail', 'save', 'remove_save', 'share', 'open_directions', 'open_external_link', 'open_tickets']),
+  caseta: new Set(['save', 'remove_save']),
   agenda: new Set(['select_date', 'select_all_dates', 'apply_filter', 'search', 'open_activity']),
   map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
   plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'add_community', 'export', 'import', 'share', 'import_error']),
@@ -17,6 +19,7 @@ const categoryActions = {
 const filterNames = new Set(['type', 'area', 'ticket']);
 let analyticsReady = false;
 const trackedFavoriteIds = new Set();
+const trackedCasetaFavoriteIds = new Set();
 const trackedCommunityPlanIds = new Set();
 
 export function initAnalytics() {
@@ -63,6 +66,20 @@ export function trackFavoriteChanged(activityId, saved) {
     return tracked;
   } catch (_) {
     // Analytics must never prevent the local favorite from being saved.
+    return false;
+  }
+}
+
+export function trackCasetaFavoriteChanged(casetaId, saved) {
+  try {
+    const normalizedCasetaId = normalizeCasetaId(casetaId);
+    if (!normalizedCasetaId || (saved && hasTrackedCasetaFavorite(normalizedCasetaId))) return false;
+
+    const tracked = pushEvent('caseta', saved ? 'save' : 'remove_save', normalizedCasetaId);
+    if (saved && tracked) rememberTrackedCasetaFavorite(normalizedCasetaId);
+    return tracked;
+  } catch (_) {
+    // Analytics must never prevent the local caseta favorite from being saved.
     return false;
   }
 }
@@ -235,11 +252,40 @@ function rememberTrackedFavorite(activityId) {
   }
 }
 
+function hasTrackedCasetaFavorite(casetaId) {
+  if (trackedCasetaFavoriteIds.has(casetaId)) return true;
+  const storedIds = readTrackedCasetaFavoriteIds();
+  const alreadyTracked = storedIds.includes(casetaId);
+  if (alreadyTracked) trackedCasetaFavoriteIds.add(casetaId);
+  return alreadyTracked;
+}
+
+function rememberTrackedCasetaFavorite(casetaId) {
+  trackedCasetaFavoriteIds.add(casetaId);
+  const storedIds = new Set(readTrackedCasetaFavoriteIds());
+  storedIds.add(casetaId);
+  try {
+    window.localStorage.setItem(TRACKED_CASETA_FAVORITES_STORAGE_KEY, JSON.stringify([...storedIds]));
+  } catch (_) {
+    // An unavailable localStorage still deduplicates saves for this page load.
+  }
+}
+
 function readTrackedFavoriteIds() {
   try {
     const value = JSON.parse(window.localStorage.getItem(TRACKED_FAVORITES_STORAGE_KEY) || '[]');
     if (!Array.isArray(value)) return [];
     return [...new Set(value.map(normalizeToken).filter(Boolean))];
+  } catch (_) {
+    return [];
+  }
+}
+
+function readTrackedCasetaFavoriteIds() {
+  try {
+    const value = JSON.parse(window.localStorage.getItem(TRACKED_CASETA_FAVORITES_STORAGE_KEY) || '[]');
+    if (!Array.isArray(value)) return [];
+    return [...new Set(value.map(normalizeCasetaId).filter(Boolean))];
   } catch (_) {
     return [];
   }
@@ -282,6 +328,11 @@ function normalizeToken(value) {
     .replace(/[^a-z0-9]+/g, '_')
     .replace(/^_+|_+$/g, '')
     .slice(0, 120);
+}
+
+function normalizeCasetaId(value) {
+  const normalized = String(value || '').trim().toLowerCase();
+  return /^z[1-7]-[0-9]+$/.test(normalized) ? normalized : '';
 }
 
 function hasPushQueue(value) {

@@ -1,3 +1,5 @@
+import { trackCasetaFavoriteChanged } from './analytics.js';
+
 export const CASETAS_FAVORITES_STORAGE_KEY = 'fiestasPucela:casetas-favorites';
 
 const casetasFavoritesChangedEvent = 'fiestas:casetas-favorites-changed';
@@ -57,6 +59,7 @@ export function initCasetaDetailFavorite() {
   toggle.addEventListener('click', () => {
     const saved = !readCasetaFavoriteIds().includes(casetaId);
     const ids = setCasetaFavorite(casetaId, saved);
+    trackCasetaFavoriteChanged(casetaId, saved);
     render(ids);
     if (feedback) {
       feedback.textContent = saved ? 'Caseta guardada en favoritas.' : 'Caseta eliminada de favoritas.';

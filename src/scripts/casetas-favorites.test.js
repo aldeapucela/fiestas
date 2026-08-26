@@ -23,6 +23,15 @@ function installStorage(initialValue = null) {
     }
   };
 
+  globalThis.document = {
+    createElement: () => ({
+      dataset: {},
+      addEventListener: () => {}
+    }),
+    head: { append: () => {} },
+    querySelector: () => null
+  };
+
   return { values, listeners };
 }
 
