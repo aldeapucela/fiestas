@@ -1732,7 +1732,7 @@ function timeRange(event) {
 }
 
 function timeMarkup(event) {
-  if (!event.startTime) return '<span>Hora por confirmar</span>';
+  if (!event.startTime) return '<span class="fiestas-event-time-pending">Hora por confirmar</span>';
   if (!event.endTime) return `<span>${escapeHtml(event.startTime)}</span>`;
   return `<span>${escapeHtml(event.startTime)}</span><span>${escapeHtml(event.endTime)}</span>`;
 }

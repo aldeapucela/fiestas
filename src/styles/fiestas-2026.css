@@ -908,6 +908,14 @@
     white-space: nowrap;
   }
 
+  .fiestas-event-time .fiestas-event-time-pending {
+    max-width: 100%;
+    font-size: 0.82em;
+    line-height: 1.12;
+    overflow-wrap: normal;
+    white-space: normal;
+  }
+
   .fiestas-event-art {
     display: inline-flex;
     width: 4.2rem;
