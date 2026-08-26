@@ -32,8 +32,18 @@ const casetaCityRadiusKm = 12;
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
-env.addFilter('dump', (value) => JSON.stringify(value));
+env.addFilter('dump', (value) => jsonForScript(value));
 env.addFilter('slugify', (value) => slugify(value));
+
+// Este JSON se incrusta dentro de etiquetas <script>: un `</script>` en los datos
+// cerraría la etiqueta antes de tiempo. Escapamos `<` y los separadores de línea
+// que JSON admite pero JavaScript no.
+function jsonForScript(value) {
+  return JSON.stringify(value)
+    .replaceAll('<', '\\u003c')
+    .replaceAll('\u2028', '\\u2028')
+    .replaceAll('\u2029', '\\u2029');
+}
 
 function parseBooleanEnv(value) {
   if (value === 'true') return true;
@@ -791,7 +801,7 @@ async function build() {
       imageWidth: 1200, imageHeight: 630, imageType: 'image/jpeg', url: publicBaseUrl + '/'
     },
     fiestasEvents: events,
-    fiestasEventsJson: JSON.stringify(events),
+    fiestasEventsJson: jsonForScript(events),
     fiestasDates: summary.dates,
     fiestasTypes: summary.types,
     fiestasAreas: summary.areas,
@@ -827,7 +837,7 @@ async function build() {
       imageType: 'image/png',
       url: publicBaseUrl + '/casetas/'
     },
-    fiestasCasetasJson: JSON.stringify(casetas),
+    fiestasCasetasJson: jsonForScript(casetas),
     fiestasCasetasZones: [...new Set(casetas.map((caseta) => caseta.zone))]
   }));
 
