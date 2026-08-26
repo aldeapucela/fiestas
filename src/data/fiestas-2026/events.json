@@ -14735,5 +14735,632 @@
     "tags": [
       "Música"
     ]
+  },
+  {
+    "id": 425,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "19:00",
+    "endTime": "00:00",
+    "title": "XXVII Super Cross nocturno Ciudad de Valladolid",
+    "location": "Circuito de Super Cross de Parquesol",
+    "zone": "Parquesol",
+    "description": "XXVII Super Cross nocturno Ciudad de Valladolid. De 19:00 a 00:00 h.",
+    "summary": "XXVII Super Cross nocturno Ciudad de Valladolid. De 19:00 a 00:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Moto club Vallisoletano"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.641021,
+      "lng": -4.755955,
+      "source": "Inferred from nearby Calle Padre Llanos, Parquesol via OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 446,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "10:00",
+    "endTime": "13:00",
+    "title": "IV Trofeo de Calistenia Virgen de San Lorenzo",
+    "location": "Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "IV Trofeo de Calistenia Virgen de San Lorenzo. De 10:00 a 13:00 h.",
+    "summary": "IV Trofeo de Calistenia Virgen de San Lorenzo. De 10:00 a 13:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Sons of Bars"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6573,
+      "lng": -4.733252,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 447,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "11:00",
+    "endTime": "13:00",
+    "title": "LXVI Trofeo Virgen del Carmen memorial Ángel Conejo",
+    "location": "Salida desde plaza del Carmen",
+    "zone": "Delicias",
+    "description": "LXVI Trofeo Virgen del Carmen memorial Ángel Conejo. De 11:00 a 13:00 h. Salida desde plaza del Carmen.",
+    "summary": "LXVI Trofeo Virgen del Carmen memorial Ángel Conejo. De 11:00 a 13:00 h. Salida desde plaza del Carmen.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Velo club Delicias"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.637714,
+      "lng": -4.722001,
+      "source": "OpenStreetMap Nominatim for plaza de la Virgen del Carmen"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 448,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "11:00",
+    "endTime": "14:00",
+    "title": "Virgen San Lorenzo RC Fest 2026: Exhibición",
+    "location": "I.D. Terradillos",
+    "zone": "I.D. Terradillos",
+    "description": "Virgen San Lorenzo RC Fest 2026: Exhibición. De 11:00 a 14:00 h.",
+    "summary": "Virgen San Lorenzo RC Fest 2026: Exhibición. De 11:00 a 14:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Automodelismo Valladolid Racing (Atv)"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.66133,
+      "lng": -4.679155,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 449,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "13:00",
+    "endTime": null,
+    "title": "Trofeo Ciudad de Valladolid de Balonmano femenino",
+    "location": "Polideportivo Huerta del Rey",
+    "zone": "Polideportivo Huerta del Rey",
+    "description": "Trofeo Ciudad de Valladolid de Balonmano femenino. 13:00 h.",
+    "summary": "Trofeo Ciudad de Valladolid de Balonmano femenino. 13:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Balonmano Aula"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.647381,
+      "lng": -4.738117,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 450,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "10:30",
+    "endTime": null,
+    "title": "Tirada de Feria y Fiestas de San Lorenzo 2026",
+    "location": "Campo de Tiro Municipal El Rebollar",
+    "zone": "Campo de Tiro Municipal El Rebollar",
+    "description": "Tirada de Feria y Fiestas de San Lorenzo 2026. A partir de las 10:30 h.",
+    "summary": "Tirada de Feria y Fiestas de San Lorenzo 2026. A partir de las 10:30 h.",
+    "performances": [],
+    "organizers": [
+      "Federación de Tiro Olímpico de Castilla y León"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.630539,
+      "lng": -4.901088,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 451,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "11:00",
+    "endTime": null,
+    "title": "XXXVI Trofeo femenino Francisco Casquero",
+    "location": "Campo de fútbol La Ribera",
+    "zone": "Campo de fútbol La Ribera",
+    "description": "XXXVI Trofeo femenino Francisco Casquero. 11:00 h.",
+    "summary": "XXXVI Trofeo femenino Francisco Casquero. 11:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Juventud Rondilla"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.665955,
+      "lng": -4.717676,
+      "source": "Inferred from C.M. La Ribera 2 address, Calle Cardenal Torquemada 63, via OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 452,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "16:00",
+    "endTime": "21:00",
+    "title": "XXXI Torneo de Ajedrez Virgen de San Lorenzo",
+    "location": "Sede Club Ajedrez Promesas",
+    "zone": "Sede Club Ajedrez Promesas",
+    "description": "XXXI Torneo de Ajedrez Virgen de San Lorenzo. De 16:00 a 21:00 h.",
+    "summary": "XXXI Torneo de Ajedrez Virgen de San Lorenzo. De 16:00 a 21:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club de Ajedrez Promesas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.642994,
+      "lng": -4.734601,
+      "source": "Official club address, Calle Gabilondo 5, geocoded with OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 453,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "17:30",
+    "endTime": null,
+    "title": "Exhibición natación artística Ferias y Fiestas Virgen de San Lorenzo",
+    "location": "Piscina Huerta del Rey",
+    "zone": "Polideportivo Huerta del Rey",
+    "description": "Exhibición natación artística Ferias y Fiestas Virgen de San Lorenzo. 17:30 h.",
+    "summary": "Exhibición natación artística Ferias y Fiestas Virgen de San Lorenzo. 17:30 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Fabio Nelli"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.647381,
+      "lng": -4.738117,
+      "source": "Inferred from Polideportivo Huerta del Rey via OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 454,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Exhibición Ultimate Frisbee",
+    "location": "Centro Deportivo Militar San Isidro",
+    "zone": "Centro Deportivo Militar San Isidro",
+    "description": "Exhibición Ultimate Frisbee.",
+    "summary": "Exhibición Ultimate Frisbee.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Sociocultural Militar San Isidro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.643763,
+      "lng": -4.705559,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 455,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "09:00",
+    "endTime": "13:00",
+    "title": "Regata Nacional Virgen de San Lorenzo",
+    "location": "Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "Regata Nacional Virgen de San Lorenzo. De 09:00 a 13:00 h.",
+    "summary": "Regata Nacional Virgen de San Lorenzo. De 09:00 a 13:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Cisne"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6573,
+      "lng": -4.733252,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 456,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "09:00",
+    "endTime": "21:00",
+    "title": "Torneo Ciudad de Valladolid - Memorial Félix Ubierna",
+    "location": "Pabellón Pilar Fernández Valderrama",
+    "zone": "Pabellón Pilar Fernández Valderrama",
+    "description": "Torneo Ciudad de Valladolid - Memorial Félix Ubierna. De 09:00 a 21:00 h.",
+    "summary": "Torneo Ciudad de Valladolid - Memorial Félix Ubierna. De 09:00 a 21:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Valladolid club Voleibol"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.617661,
+      "lng": -4.75014,
+      "source": "Official address, Calle Boedo 7, geocoded with OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 457,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "09:00",
+    "endTime": "21:00",
+    "title": "XXXIV Torneo Internacional de Esgrima Virgen de San Lorenzo",
+    "location": "Polideportivo Barrio de las Delicias",
+    "zone": "Polideportivo Barrio de las Delicias",
+    "description": "XXXIV Torneo Internacional de Esgrima Virgen de San Lorenzo. De 09:00 a 21:00 h.",
+    "summary": "XXXIV Torneo Internacional de Esgrima Virgen de San Lorenzo. De 09:00 a 21:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Valladolid club Esgrima"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.630569,
+      "lng": -4.726249,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 458,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "10:00",
+    "endTime": null,
+    "title": "Torneo de béisbol Sub-15 Virgen de San Lorenzo",
+    "location": "Soto de la Medinilla y Puente Duero",
+    "zone": "Soto de la Medinilla y Puente Duero",
+    "description": "Torneo de béisbol Sub-15 Virgen de San Lorenzo. A partir de las 10:00 h. En Soto de la Medinilla y Puente Duero.",
+    "summary": "Torneo de béisbol Sub-15 Virgen de San Lorenzo. A partir de las 10:00 h. En Soto de la Medinilla y Puente Duero.",
+    "performances": [],
+    "organizers": [
+      "Federación de Béisbol y Softbol de Castilla y León"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.673051,
+      "lng": -4.707499,
+      "source": "OpenStreetMap Nominatim for Soto de la Medinilla"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 459,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "10:00",
+    "endTime": "14:00",
+    "title": "Trofeo Ciudad de Valladolid de Recorridos de Caza en línea",
+    "location": "Centro Las Contiendas",
+    "zone": "Centro Las Contiendas",
+    "description": "Trofeo Ciudad de Valladolid de Recorridos de Caza en línea. De 10:00 a 14:00 h.",
+    "summary": "Trofeo Ciudad de Valladolid de Recorridos de Caza en línea. De 10:00 a 14:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Valladolid Arqueros tradicionales"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.652228,
+      "lng": -4.755112,
+      "source": "Inferred from Parque Forestal de Las Contiendas via OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 460,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "10:00",
+    "endTime": null,
+    "title": "I Torneo Baloncesto Veteranos de Valladolid",
+    "location": "Polideportivo Lalo García",
+    "zone": "Polideportivo Lalo García",
+    "description": "I Torneo Baloncesto Veteranos de Valladolid. Polideportivo Lalo García.",
+    "summary": "I Torneo Baloncesto Veteranos de Valladolid. Polideportivo Lalo García.",
+    "performances": [],
+    "organizers": [
+      "Club Valladolid Huerta del Rey"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.63537,
+      "lng": -4.766208,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 461,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "10:00",
+    "endTime": "14:30",
+    "title": "Torneo Squash Virgen de San Lorenzo",
+    "location": "I.U. Fuente la Mora",
+    "zone": "I.U. Fuente la Mora",
+    "description": "Torneo Squash Virgen de San Lorenzo. Horarios: de 10:00 a 14:30 h y de 16:00 a 19:00 h.",
+    "summary": "Torneo Squash Virgen de San Lorenzo. Horarios: de 10:00 a 14:30 h y de 16:00 a 19:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo P. Squash Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65742,
+      "lng": -4.67748,
+      "source": "Mapcarta/OpenStreetMap for Complejo Deportivo Fuente de la Mora"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 462,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "JR.NBA League!",
+    "location": "Feria de Muestras",
+    "zone": "Feria de Muestras",
+    "description": "JR.NBA League! Feria de Muestras.",
+    "summary": "JR.NBA League! Feria de Muestras.",
+    "performances": [],
+    "organizers": [
+      "Federación de Baloncesto Castilla y León"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.655639,
+      "lng": -4.739802,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 463,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "09:00",
+    "endTime": "19:00",
+    "title": "XXXV Campeonato Nacional de Petanca Virgen de San Lorenzo del CDP Valladolid",
+    "location": "Parque Patricia",
+    "zone": "Parque Patricia",
+    "description": "XXXV Campeonato Nacional de Petanca Virgen de San Lorenzo del CDP Valladolid. De 09:00 a 14:30 h y de 16:00 a 19:00 h.",
+    "summary": "XXXV Campeonato Nacional de Petanca Virgen de San Lorenzo del CDP Valladolid. De 09:00 a 14:30 h y de 16:00 a 19:00 h.",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Petanca Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.646011,
+      "lng": -4.706566,
+      "source": "OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
   }
 ]
