@@ -1932,7 +1932,7 @@
   .fiestas-map-result {
     position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) 2.65rem;
+    grid-template-columns: minmax(0, 1fr) auto;
     align-items: center;
     gap: 0.4rem;
     border: 0;
@@ -2100,6 +2100,43 @@
     color: #0f9f8d;
     font-size: 1.15rem;
     text-decoration: none;
+  }
+
+  .fiestas-map-result-actions {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    gap: 0.1rem;
+  }
+
+  .fiestas-map-result-favorite {
+    display: grid;
+    width: 2.2rem;
+    height: 2.75rem;
+    place-items: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #98a2b3;
+    cursor: pointer;
+    font-size: 1.05rem;
+  }
+
+  .fiestas-map-result-favorite.is-active {
+    color: var(--fiestas-type-color, #0f9f8d);
+  }
+
+  .fiestas-map-result-favorite:hover,
+  .fiestas-map-result-favorite:focus-visible {
+    background: rgba(15, 159, 141, 0.1);
+    color: #0f766e;
+    outline: 3px solid rgba(15, 159, 141, 0.18);
+    outline-offset: 1px;
+  }
+
+  .fiestas-map-result-favorite.is-active:hover,
+  .fiestas-map-result-favorite.is-active:focus-visible {
+    color: var(--fiestas-type-color, #0f9f8d);
   }
 
   .fiestas-map-sheet-tab {
@@ -4605,6 +4642,7 @@ html.dark .fiestas-event-option {
 
 .fiestas-casetas-filter-option {
   display: flex;
+  width: 100%;
   min-height: 3.4rem;
   align-items: center;
   gap: 0.7rem;
@@ -4613,19 +4651,21 @@ html.dark .fiestas-event-option {
   background: #fff;
   color: #202532;
   cursor: pointer;
+  font: inherit;
   padding: 0.7rem 0.75rem;
+  text-align: left;
+  transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
 
-.fiestas-casetas-filter-option:has(input:checked) {
+.fiestas-casetas-filter-option--toggle.is-active {
   border-color: rgba(15, 159, 141, 0.55);
   background: rgba(15, 159, 141, 0.08);
+  box-shadow: 0 0 0 2px rgba(15, 159, 141, 0.08);
 }
 
-.fiestas-casetas-filter-option input {
-  width: 1.1rem;
-  height: 1.1rem;
-  flex: 0 0 auto;
-  accent-color: #0f9f8d;
+.fiestas-casetas-filter-option--toggle:focus-visible {
+  outline: 3px solid rgba(15, 159, 141, 0.35);
+  outline-offset: 2px;
 }
 
 .fiestas-casetas-filter-option-copy {
@@ -4641,6 +4681,11 @@ html.dark .fiestas-event-option {
 }
 
 .fiestas-casetas-filter-option-copy strong i {
+  color: #667085;
+  transition: color 160ms ease;
+}
+
+.fiestas-casetas-filter-option.is-active .fiestas-casetas-filter-option-copy strong i {
   color: #0f9f8d;
 }
 
@@ -4650,18 +4695,22 @@ html.dark .fiestas-event-option {
 }
 
 .fiestas-casetas-filter-clear {
-  display: inline-flex;
+  display: flex;
+  width: 100%;
   align-items: center;
+  justify-content: center;
   gap: 0.35rem;
-  margin: 0.7rem 0 0;
+  margin: 0.8rem 0 0;
   border: 0;
+  border-top: 1px solid #edf0f4;
   background: transparent;
   color: #667085;
   cursor: pointer;
   font: inherit;
   font-size: 0.82rem;
   font-weight: 800;
-  padding: 0.2rem 0;
+  padding: 0.8rem 0.4rem 0.1rem;
+  text-align: center;
 }
 
 .fiestas-casetas-filter-clear:hover,
@@ -4827,12 +4876,43 @@ html.dark .fiestas-event-option {
   line-height: 1.3;
 }
 
-.fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search-match i {
+  .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search-match i {
   flex: 0 0 auto;
   margin-top: 0.12rem;
   color: #0f9f8d;
-  font-size: 0.72rem;
-}
+    font-size: 0.72rem;
+  }
+
+  .fiestas-caseta-favorite-button {
+    color: #98a2b3;
+    cursor: pointer;
+  }
+
+  .fiestas-caseta-favorite-button.is-active {
+    color: var(--fiestas-type-color, #0f9f8d);
+  }
+
+  .fiestas-caseta-favorite-button:hover,
+  .fiestas-caseta-favorite-button:focus-visible {
+    color: #0f766e;
+    outline: 3px solid rgba(15, 159, 141, 0.18);
+    outline-offset: 1px;
+  }
+
+  .fiestas-caseta-favorite-button.is-active:hover,
+  .fiestas-caseta-favorite-button.is-active:focus-visible {
+    color: var(--fiestas-type-color, #0f9f8d);
+  }
+
+  html.dark .fiestas-map-result-favorite,
+  html.dark .fiestas-caseta-favorite-button {
+    color: #8f98a8;
+  }
+
+  html.dark .fiestas-map-result-favorite.is-active,
+  html.dark .fiestas-caseta-favorite-button.is-active {
+    color: var(--fiestas-type-color, #71d8cb);
+  }
 
 .fiestas-casetas-app .fiestas-map-cluster-reset {
   min-height: 2.35rem;
@@ -4870,14 +4950,23 @@ html.dark .fiestas-casetas-filter-option {
   color: #f5f3ee;
 }
 
-html.dark .fiestas-casetas-filter-option:has(input:checked) {
+html.dark .fiestas-casetas-filter-option--toggle.is-active {
   border-color: rgba(113, 216, 203, 0.58);
   background: rgba(23, 184, 164, 0.14);
 }
 
+html.dark .fiestas-casetas-filter-option-copy strong i,
 html.dark .fiestas-casetas-filter-option-copy small,
 html.dark .fiestas-casetas-filter-clear {
   color: #b9c1ce;
+}
+
+html.dark .fiestas-casetas-filter-clear {
+  border-top-color: #313743;
+}
+
+html.dark .fiestas-casetas-filter-option.is-active .fiestas-casetas-filter-option-copy strong i {
+  color: #71d8cb;
 }
 
 html.dark .fiestas-casetas-filter-clear:hover,

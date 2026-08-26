@@ -1,3 +1,5 @@
+import { readCasetaFavoriteIds, setCasetaFavorite, subscribeToCasetaFavorites } from './casetas-favorites.js';
+
 const CENTER = [41.6523, -4.7245];
 const DEFAULT_ZOOM = 15;
 const USER_ZOOM = 14;
@@ -38,6 +40,8 @@ const state = {
   searchQuery: '',
   searchOpen: false,
   dietaryFilters: new Set(),
+  onlyFavorites: false,
+  casetaFavorites: new Set(),
   filterPanelOpen: false,
   filterReturnFocus: null,
   sheetState: 'collapsed',
@@ -72,6 +76,7 @@ export function initCasetasPage() {
   els.filterPanel = document.querySelector('[data-fiestas-casetas-filter-panel]');
   els.filterClose = document.querySelector('[data-fiestas-casetas-filter-close]');
   els.filterInputs = [...document.querySelectorAll('[data-fiestas-casetas-dietary-filter]')];
+  els.filterFavorite = document.querySelector('[data-fiestas-casetas-favorites-filter]');
   els.filterCount = document.querySelector('[data-fiestas-casetas-filter-count]');
   els.filterClear = document.querySelector('[data-fiestas-casetas-filter-clear]');
   els.searchToggle = document.querySelector('[data-fiestas-casetas-search-toggle]');
@@ -84,10 +89,16 @@ export function initCasetasPage() {
   state.casetas = normalizeCasetas(window.__FIESTAS_2026_CASETAS__ || []);
   state.zones = buildZones(state.casetas);
   state.mapGroups = buildMapGroups(state.zones);
+  state.casetaFavorites = new Set(readCasetaFavoriteIds());
   readUrlState();
   els.app?.classList.add('is-map-mode');
   bindControls();
   bindSheetGestures();
+  subscribeToCasetaFavorites((ids) => {
+    state.casetaFavorites = new Set(ids);
+    renderMapMarkers();
+    renderSheet(getVisibleCasetas());
+  });
   renderSheet(getVisibleCasetas());
   requestLocation({ centerOnSuccess: false });
   void initializeMap();
@@ -181,17 +192,24 @@ function bindControls() {
   els.filterToggle?.addEventListener('click', () => setFilterPanelOpen(!state.filterPanelOpen));
   els.filterClose?.addEventListener('click', () => setFilterPanelOpen(false));
   els.filterInputs.forEach((input) => {
-    input.addEventListener('change', (event) => {
+    input.addEventListener('click', (event) => {
       const value = event.currentTarget.value;
-      if (event.currentTarget.checked) state.dietaryFilters.add(value);
-      else state.dietaryFilters.delete(value);
+      if (state.dietaryFilters.has(value)) state.dietaryFilters.delete(value);
+      else state.dietaryFilters.add(value);
       syncUrlState();
       renderMapMarkers();
       renderSheet(getVisibleCasetas());
     });
   });
+  els.filterFavorite?.addEventListener('click', () => {
+    state.onlyFavorites = !state.onlyFavorites;
+    syncUrlState();
+    renderMapMarkers();
+    renderSheet(getVisibleCasetas());
+  });
   els.filterClear?.addEventListener('click', () => {
     state.dietaryFilters.clear();
+    state.onlyFavorites = false;
     syncUrlState();
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
@@ -274,6 +292,7 @@ function readUrlState() {
     .map((value) => value.trim().toLowerCase())
     .filter((value) => value === 'vegetarian' || value === 'vegan')
     .forEach((value) => state.dietaryFilters.add(value));
+  state.onlyFavorites = ['1', 'true'].includes(String(params.get('favorites') || '').toLowerCase());
 }
 
 function syncUrlState() {
@@ -290,6 +309,8 @@ function syncUrlState() {
   }
   url.searchParams.delete('dietary');
   url.searchParams.delete('diet');
+  if (state.onlyFavorites) url.searchParams.set('favorites', '1');
+  else url.searchParams.delete('favorites');
   [...state.dietaryFilters]
     .sort()
     .forEach((dietary) => url.searchParams.append('dietary', dietary));
@@ -308,10 +329,15 @@ function getVisibleCasetas() {
   const query = normalizeText(state.searchQuery);
   return source.filter((caseta) => {
     const matchesQuery = !query || caseta.searchText.includes(query);
-    const matchesDietary = !state.dietaryFilters.size
-      || [...state.dietaryFilters].some((dietary) => caseta.dietary.includes(dietary));
-    return matchesQuery && matchesDietary;
+    return matchesQuery && matchesCasetaFilters(caseta);
   });
+}
+
+function matchesCasetaFilters(caseta) {
+  const matchesDietary = !state.dietaryFilters.size
+    || [...state.dietaryFilters].some((dietary) => caseta.dietary.includes(dietary));
+  const matchesFavorite = !state.onlyFavorites || state.casetaFavorites.has(caseta.id);
+  return matchesDietary && matchesFavorite;
 }
 
 function getDietaryLabels(details) {
@@ -351,14 +377,17 @@ function renderMapMarkers() {
   state.markers.clearLayers();
   const groupsWithCoordinates = state.mapGroups.map((group) => ({
     ...group,
-    items: state.dietaryFilters.size
-      ? group.items.filter((caseta) => [...state.dietaryFilters].some((dietary) => caseta.dietary.includes(dietary)))
-      : group.items
+    items: group.items.filter(matchesCasetaFilters)
   })).filter((group) => hasCoordinates(group.coordinates) && group.items.length);
   if (!groupsWithCoordinates.length) {
-    showMapEmpty(state.dietaryFilters.size
-      ? 'No hay casetas con esos filtros.'
-      : 'Las zonas todavía no tienen una ubicación exacta en el mapa.');
+    const emptyMessage = state.onlyFavorites && !state.casetaFavorites.size
+      ? 'Todavía no has guardado ninguna caseta como favorita.'
+      : state.onlyFavorites
+        ? 'No hay casetas favoritas con esos filtros.'
+        : state.dietaryFilters.size
+          ? 'No hay casetas con esos filtros.'
+          : 'Las zonas todavía no tienen una ubicación exacta en el mapa.';
+    showMapEmpty(emptyMessage);
     return;
   }
   els.mapEmpty.hidden = true;
@@ -420,9 +449,13 @@ function renderSheet(items, options = {}) {
     empty.className = 'fiestas-empty fiestas-casetas-empty';
     empty.innerHTML = state.searchQuery
       ? `<p>No se han encontrado casetas para «${escapeHtml(state.searchQuery)}».</p>`
+      : state.onlyFavorites && !state.casetaFavorites.size
+        ? '<p>Todavía no has guardado ninguna caseta como favorita.</p>'
+        : state.onlyFavorites
+          ? '<p>No hay casetas favoritas con estos filtros.</p>'
       : state.dietaryFilters.size
         ? '<p>No hay casetas con esos filtros.</p>'
-      : '<p>No hay casetas disponibles.</p>';
+        : '<p>No hay casetas disponibles.</p>';
     els.mapSheetPreview?.append(empty);
     return;
   }
@@ -453,6 +486,7 @@ function casetaRow(caseta) {
   article.style.setProperty('--fiestas-type-color', caseta.color);
   const href = `/c/${encodeURIComponent(caseta.id)}/${encodeURIComponent(caseta.slug)}/`;
   const placement = caseta.placement || '';
+  const saved = state.casetaFavorites.has(caseta.id);
   const distance = state.userLocation && caseta.coordinates
     ? formatDistance(distanceInKilometres(
       [state.userLocation.lat, state.userLocation.lng],
@@ -474,8 +508,26 @@ function casetaRow(caseta) {
         ${placement || distance ? `<span class="fiestas-map-result-time-line">${placement ? `<span class="fiestas-map-result-date">${escapeHtml(placement)}</span>` : ''}${distance ? `<span class="fiestas-map-result-distance"><i class="fa-solid fa-person-walking" aria-hidden="true"></i>${escapeHtml(distance)}</span>` : ''}</span>` : ''}
       </span>
     </a>
-    <a class="fiestas-map-result-focus" href="${href}" aria-label="Ver ficha de ${escapeAttribute(caseta.name)}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+    <span class="fiestas-map-result-actions">
+      <button
+        class="fiestas-map-result-favorite${saved ? ' is-active' : ''}"
+        type="button"
+        data-fiestas-caseta-favorite-toggle
+        data-caseta-id="${escapeAttribute(caseta.id)}"
+        aria-label="${saved ? 'Quitar' : 'Añadir'} ${escapeAttribute(caseta.name)} ${saved ? 'de' : 'a'} favoritas"
+        aria-pressed="${String(saved)}"
+      ><i class="${saved ? 'fa-solid' : 'fa-regular'} fa-star" aria-hidden="true"></i></button>
+      <a class="fiestas-map-result-focus" href="${href}" aria-label="Ver ficha de ${escapeAttribute(caseta.name)}"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
+    </span>
   `;
+  article.querySelector('[data-fiestas-caseta-favorite-toggle]')?.addEventListener('click', (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    const nextSaved = !state.casetaFavorites.has(caseta.id);
+    state.casetaFavorites = new Set(setCasetaFavorite(caseta.id, nextSaved));
+    renderMapMarkers();
+    renderSheet(getVisibleCasetas());
+  });
   return article;
 }
 
@@ -518,7 +570,7 @@ function setFilterPanelOpen(open, options = {}) {
   state.filterPanelOpen = nextOpen;
   syncFilterUi();
   if (nextOpen) {
-    els.filterInputs[0]?.focus();
+    (els.filterFavorite || els.filterInputs[0])?.focus();
   } else if (options.restoreFocus !== false) {
     const returnFocus = state.filterReturnFocus;
     state.filterReturnFocus = null;
@@ -529,7 +581,7 @@ function setFilterPanelOpen(open, options = {}) {
 
 function syncFilterUi() {
   if (!els.filterToggle || !els.filterPanel) return;
-  const activeFilterCount = state.dietaryFilters.size;
+  const activeFilterCount = state.dietaryFilters.size + (state.onlyFavorites ? 1 : 0);
   els.filterToggle.classList.toggle('is-active', activeFilterCount > 0);
   els.filterToggle.setAttribute('aria-expanded', String(state.filterPanelOpen));
   els.filterToggle.setAttribute('aria-label', activeFilterCount
@@ -543,8 +595,23 @@ function syncFilterUi() {
   els.filterPanel.setAttribute('aria-hidden', String(!state.filterPanelOpen));
   els.filterPanel.toggleAttribute('aria-modal', state.filterPanelOpen);
   els.filterInputs.forEach((input) => {
-    input.checked = state.dietaryFilters.has(input.value);
+    const active = state.dietaryFilters.has(input.value);
+    input.classList.toggle('is-active', active);
+    input.setAttribute('aria-pressed', String(active));
+    const label = input.value === 'vegan' ? 'veganas' : 'vegetarianas';
+    input.setAttribute('aria-label', active
+      ? 'Mostrar todas las casetas'
+      : `Mostrar solo casetas ${label}`);
   });
+  if (els.filterFavorite) {
+    els.filterFavorite.classList.toggle('is-active', state.onlyFavorites);
+    els.filterFavorite.setAttribute('aria-pressed', String(state.onlyFavorites));
+    els.filterFavorite.setAttribute('aria-label', state.onlyFavorites
+      ? 'Mostrar todas las casetas'
+      : 'Mostrar solo favoritas');
+    const favoriteIcon = els.filterFavorite.querySelector('[data-fiestas-casetas-favorites-icon]');
+    if (favoriteIcon) favoriteIcon.className = state.onlyFavorites ? 'fa-solid fa-star' : 'fa-regular fa-star';
+  }
   if (els.filterClear) els.filterClear.hidden = activeFilterCount === 0;
 }
 

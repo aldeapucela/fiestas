@@ -41,6 +41,9 @@
       </a>
       <p>Detalle de caseta</p>
       <div class="fiestas-detail-top-actions">
+        <button class="fiestas-detail-top-button fiestas-caseta-favorite-button" type="button" data-fiestas-caseta-favorite-toggle data-caseta-id="{{ caseta.id }}" aria-label="Añadir {{ caseta.name }} a favoritas" aria-pressed="false">
+          <i class="fa-regular fa-star" aria-hidden="true"></i>
+        </button>
         <button class="fiestas-detail-top-button" type="button" data-fiestas-share aria-label="Compartir caseta">
           <i class="fiestas-detail-share-icon fa-solid fa-share-nodes" aria-hidden="true"></i>
         </button>
@@ -294,6 +297,7 @@
 {% endblock %}
 
 {% block extraScripts %}
+<script type="module" src="/assets/js/casetas-favorites.{{ jsVersion }}.js" defer></script>
 {% if caseta.coordinates %}
 <script
   src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

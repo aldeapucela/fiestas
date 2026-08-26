@@ -68,21 +68,25 @@
       </button>
     </div>
     <fieldset class="fiestas-casetas-filter-options">
-      <legend class="sr-only">Filtrar por tipo de plato</legend>
-      <label class="fiestas-casetas-filter-option">
-        <input type="checkbox" value="vegetarian" data-fiestas-casetas-dietary-filter />
+      <legend class="sr-only">Filtrar casetas</legend>
+      <button class="fiestas-casetas-filter-option fiestas-casetas-filter-option--toggle" type="button" data-fiestas-casetas-favorites-filter aria-pressed="false" aria-label="Mostrar solo favoritas">
         <span class="fiestas-casetas-filter-option-copy">
-          <strong><i class="fa-solid fa-leaf" aria-hidden="true"></i> Vegetarianos</strong>
+          <strong><i class="fa-regular fa-star" data-fiestas-casetas-favorites-icon aria-hidden="true"></i> Solo favoritas</strong>
+          <small>Casetas que has guardado</small>
+        </span>
+      </button>
+      <button class="fiestas-casetas-filter-option fiestas-casetas-filter-option--toggle" type="button" value="vegetarian" data-fiestas-casetas-dietary-filter aria-pressed="false" aria-label="Mostrar solo casetas vegetarianas">
+        <span class="fiestas-casetas-filter-option-copy">
+          <strong><i class="fa-solid fa-leaf" data-fiestas-casetas-dietary-icon aria-hidden="true"></i> Vegetarianos</strong>
           <small>Casetas con platos vegetarianos</small>
         </span>
-      </label>
-      <label class="fiestas-casetas-filter-option">
-        <input type="checkbox" value="vegan" data-fiestas-casetas-dietary-filter />
+      </button>
+      <button class="fiestas-casetas-filter-option fiestas-casetas-filter-option--toggle" type="button" value="vegan" data-fiestas-casetas-dietary-filter aria-pressed="false" aria-label="Mostrar solo casetas veganas">
         <span class="fiestas-casetas-filter-option-copy">
-          <strong><i class="fa-solid fa-seedling" aria-hidden="true"></i> Veganos</strong>
+          <strong><i class="fa-solid fa-seedling" data-fiestas-casetas-dietary-icon aria-hidden="true"></i> Veganos</strong>
           <small>Casetas con platos veganos</small>
         </span>
-      </label>
+      </button>
     </fieldset>
     <button class="fiestas-casetas-filter-clear" type="button" data-fiestas-casetas-filter-clear hidden>
       <i class="fa-solid fa-xmark" aria-hidden="true"></i>
