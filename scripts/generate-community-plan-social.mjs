@@ -12,6 +12,7 @@ function parseArgs(argv) {
     planId: null,
     maxPosters: 6,
     posterIds: null,
+    backgroundPath: null,
   };
 
   for (let index = 0; index < argv.length; index += 1) {
@@ -19,6 +20,7 @@ function parseArgs(argv) {
     if (argument === '--plan') options.planId = argv[++index];
     if (argument === '--max-posters') options.maxPosters = Number(argv[++index]);
     if (argument === '--poster-ids') options.posterIds = argv[++index].split(',').map((id) => id.trim()).filter(Boolean);
+    if (argument === '--background') options.backgroundPath = argv[++index];
   }
 
   if (!options.planId) {
@@ -109,6 +111,21 @@ function buildSvg({ plan }) {
 </svg>`;
 }
 
+function buildIllustratedOverlaySvg({ plan }) {
+  const titleLines = wrapTitle(plan.name, 12);
+  const titleMarkup = titleLines.map((line, index) => (
+    `<tspan x="107" dy="${index === 0 ? 0 : 58}">${escapeXml(line)}</tspan>`
+  )).join('');
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <text x="133" y="86" font-family="DejaVu Sans, Arial, sans-serif" font-size="23" font-weight="700" letter-spacing="0.5" fill="#b9eee8">FIESTAS VALLADOLID 2026</text>
+  <rect x="70" y="195" width="9" height="194" rx="4" fill="#4cd5c7" />
+  <text x="107" y="251" font-family="DejaVu Sans, Arial, sans-serif" font-size="56" font-weight="700" fill="#ffffff">${titleMarkup}</text>
+  <text x="107" y="450" font-family="DejaVu Sans, Arial, sans-serif" font-size="28" fill="#b9eee8">por ${escapeXml(plan.author || 'Aldea Pucela')}</text>
+</svg>`;
+}
+
 async function readJson(relativePath) {
   return JSON.parse(await readFile(path.join(root, relativePath), 'utf8'));
 }
@@ -122,8 +139,9 @@ async function main() {
 
   const planFile = await readJson(catalogEntry.url.replace(/^\//, 'src/'));
   const plan = { ...catalogEntry, ...planFile.plans[0] };
-  const posters = selectPosterEvents(events, plan, options);
-  if (!posters.length) throw new Error(`El plan ${options.planId} no tiene actividades con cartel local`);
+  const backgroundPath = options.backgroundPath ? path.resolve(options.backgroundPath) : null;
+  const posters = backgroundPath ? [] : selectPosterEvents(events, plan, options);
+  if (!backgroundPath && !posters.length) throw new Error(`El plan ${options.planId} no tiene actividades con cartel local`);
 
   const temporaryDirectory = await mkdtemp(path.join(os.tmpdir(), 'fiestas-social-plan-'));
   const svgPath = path.join(temporaryDirectory, `${options.planId}.svg`);
@@ -144,11 +162,26 @@ async function main() {
       ]);
       return resizedPath;
     }));
-    const svg = buildSvg({ plan });
+    const svg = backgroundPath ? buildIllustratedOverlaySvg({ plan }) : buildSvg({ plan });
     await writeFile(svgPath, svg, 'utf8');
 
     const basePath = path.join(temporaryDirectory, 'base.png');
-    await execFileAsync('magick', [svgPath, '-strip', '-define', 'png:color-type=6', basePath]);
+    if (backgroundPath) {
+      const overlayPath = path.join(temporaryDirectory, 'overlay.png');
+      await execFileAsync('magick', [backgroundPath, '-thumbnail', '1200x630^', '-gravity', 'center', '-extent', '1200x630', basePath]);
+      await execFileAsync('magick', [
+        '-background',
+        'none',
+        svgPath,
+        '-strip',
+        '-define',
+        'png:color-type=6',
+        overlayPath,
+      ]);
+      await execFileAsync('magick', [basePath, overlayPath, '-composite', basePath]);
+    } else {
+      await execFileAsync('magick', [svgPath, '-strip', '-define', 'png:color-type=6', basePath]);
+    }
 
     const logoPath = path.join(temporaryDirectory, 'logo.png');
     await execFileAsync('magick', [
@@ -206,7 +239,9 @@ async function main() {
   }
 
   console.log(`Generada ${outputPath}`);
-  console.log(`Carteles: ${posters.map((event) => `${event.id} (${event.title})`).join(', ')}`);
+  console.log(backgroundPath
+    ? `Ilustración de fondo: ${backgroundPath}`
+    : `Carteles: ${posters.map((event) => `${event.id} (${event.title})`).join(', ')}`);
 }
 
 main().catch((error) => {

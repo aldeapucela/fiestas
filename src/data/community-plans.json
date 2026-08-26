@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "updatedAt": "2026-08-22T00:00:00Z",
+  "updatedAt": "2026-08-26T00:00:00Z",
   "plans": [
     {
       "id": "cielo-y-estrellas",
@@ -72,6 +72,13 @@
       "author": "José Luis",
       "icon": "music",
       "url": "/data/community-plans/musica-electronica.fiestas-plan.json"
+    },
+    {
+      "id": "en-fiestas-con-el-deporte",
+      "name": "En fiestas con el deporte",
+      "author": "Aldea Pucela",
+      "icon": "sports",
+      "url": "/data/community-plans/en-fiestas-con-el-deporte.fiestas-plan.json"
     }
   ]
 }
