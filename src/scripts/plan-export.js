@@ -78,6 +78,35 @@ export function createIcsFile(events, name = 'fiestas-valladolid-2026') {
   return makeFile(`${slugify(name)}.ics`, createIcs(events, name), 'text/calendar;charset=utf-8');
 }
 
+export function createCalendarLinks(event, pageUrl = '') {
+  const range = eventCalendarDateRange(event);
+  if (!range) return { google: '', outlook: '' };
+
+  const title = String(event?.title || 'Actividad');
+  const location = event?.location || event?.zone || event?.neighborhood || '';
+  const details = [event?.description || event?.summary || '', pageUrl || event?.canonicalUrl || event?.urlPath || '']
+    .filter(Boolean)
+    .join('\n\n');
+
+  const google = new URL('https://calendar.google.com/calendar/render');
+  google.searchParams.set('action', 'TEMPLATE');
+  google.searchParams.set('text', title);
+  google.searchParams.set('dates', `${formatUtc(range.start)}/${formatUtc(range.end)}`);
+  if (details) google.searchParams.set('details', details);
+  if (location) google.searchParams.set('location', location);
+
+  const outlook = new URL('https://outlook.live.com/calendar/deeplink/compose');
+  outlook.searchParams.set('path', '/calendar/action/compose');
+  outlook.searchParams.set('rru', 'addevent');
+  outlook.searchParams.set('subject', title);
+  if (details) outlook.searchParams.set('body', details);
+  if (location) outlook.searchParams.set('location', location);
+  outlook.searchParams.set('startdt', range.start.toISOString());
+  outlook.searchParams.set('enddt', range.end.toISOString());
+
+  return { google: google.toString(), outlook: outlook.toString() };
+}
+
 export async function shareFileOrDownload(file, options = {}) {
   const payload = {
     title: options.title || file.name,
@@ -129,6 +158,57 @@ function formatLocalDateTime(date, time) {
   const [year, month, day] = String(date).split('-');
   const [hour = '00', minute = '00'] = String(time || '00:00').split(':');
   return `${year}${month}${day}T${hour.padStart(2, '0')}${minute.padStart(2, '0')}00`;
+}
+
+function eventCalendarDateRange(event) {
+  const start = zonedDateTimeToDate(event?.date, event?.startTime);
+  if (!start) return null;
+
+  const end = event?.endTime
+    ? zonedDateTimeToDate(eventEndDate(event.date, event.startTime, event.endTime), event.endTime)
+    : new Date(start.getTime() + 60 * 60 * 1000);
+  return { start, end: end || new Date(start.getTime() + 60 * 60 * 1000) };
+}
+
+function zonedDateTimeToDate(date, time) {
+  const dateMatch = String(date || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  const timeMatch = String(time || '00:00').match(/^(\d{2}):(\d{2})$/);
+  if (!dateMatch || !timeMatch) return null;
+
+  const year = Number(dateMatch[1]);
+  const month = Number(dateMatch[2]);
+  const day = Number(dateMatch[3]);
+  const hour = Number(timeMatch[1]);
+  const minute = Number(timeMatch[2]);
+  if (month < 1 || month > 12 || day < 1 || day > 31 || hour > 23 || minute > 59) return null;
+
+  const localAsUtc = Date.UTC(year, month - 1, day, hour, minute);
+  if (!Number.isFinite(localAsUtc)) return null;
+
+  let result = new Date(localAsUtc);
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    const parts = new Intl.DateTimeFormat('en-US', {
+      timeZone: TIME_ZONE,
+      year: 'numeric',
+      month: '2-digit',
+      day: '2-digit',
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hourCycle: 'h23'
+    }).formatToParts(result);
+    const values = Object.fromEntries(parts.filter((part) => part.type !== 'literal').map((part) => [part.type, part.value]));
+    const displayedAsUtc = Date.UTC(
+      Number(values.year),
+      Number(values.month) - 1,
+      Number(values.day),
+      Number(values.hour),
+      Number(values.minute),
+      Number(values.second)
+    );
+    result = new Date(result.getTime() - (displayedAsUtc - localAsUtc));
+  }
+  return result;
 }
 
 function eventEndDate(date, startTime, endTime) {

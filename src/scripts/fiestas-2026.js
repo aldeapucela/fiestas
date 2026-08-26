@@ -17,7 +17,7 @@ import {
   trackTicketsOpened
 } from './analytics.js';
 import { readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
-import { createIcsFile, shareFileOrDownload } from './plan-export.js';
+import { createCalendarLinks, createIcsFile } from './plan-export.js';
 import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
 import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './community-plans.js';
 import { rankPopularEvents } from './popular-page.js';
@@ -144,6 +144,12 @@ const els = {
   detailActionSave: document.querySelector('[data-fiestas-detail-action-save]'),
   detailActionShare: document.querySelector('[data-fiestas-detail-action-share]'),
   detailActionCalendar: document.querySelector('[data-fiestas-detail-action-calendar]'),
+  detailCalendarModal: document.querySelector('[data-fiestas-detail-calendar-modal]'),
+  detailCalendarClose: [...document.querySelectorAll('[data-fiestas-detail-calendar-close]')],
+  detailCalendarIcs: document.querySelector('[data-fiestas-detail-calendar-ics]'),
+  detailCalendarGoogle: document.querySelector('[data-fiestas-detail-calendar-google]'),
+  detailCalendarApple: document.querySelector('[data-fiestas-detail-calendar-apple]'),
+  detailCalendarOutlook: document.querySelector('[data-fiestas-detail-calendar-outlook]'),
   detailShare: document.querySelector('[data-fiestas-share]'),
   detailBack: document.querySelector('[data-fiestas-back]'),
   detailFeedback: document.querySelector('[data-fiestas-detail-feedback]'),
@@ -1930,7 +1936,8 @@ function initDetailPage() {
   }
   els.detailShare?.addEventListener('click', shareDetail);
   els.detailActionShare?.addEventListener('click', shareDetail);
-  els.detailActionCalendar?.addEventListener('click', addDetailToCalendar);
+  initDetailCalendarModal();
+  els.detailActionCalendar?.addEventListener('click', openDetailCalendarModal);
   els.detailShareCopy?.addEventListener('click', copyShareFallback);
   els.detailBack?.addEventListener('click', goBackToAgenda);
   initDetailLightbox();
@@ -2082,8 +2089,11 @@ async function copyShareFallback() {
   }
 }
 
-async function addDetailToCalendar() {
-  if (!els.detail) return;
+let detailCalendarObjectUrl = '';
+let detailCalendarReturnFocus = null;
+
+function getDetailCalendarEvent() {
+  if (!els.detail) return null;
   const data = els.detail.dataset;
   const event = {
     id: data.eventId,
@@ -2100,18 +2110,63 @@ async function addDetailToCalendar() {
   if (data.eventLat && data.eventLng) {
     event.coordinates = { lat: Number(data.eventLat), lng: Number(data.eventLng) };
   }
-  if (!event.id || !event.date || !event.title) {
+  return event;
+}
+
+function initDetailCalendarModal() {
+  if (!els.detailCalendarModal) return;
+  els.detailCalendarClose.forEach((button) => button.addEventListener('click', closeDetailCalendarModal));
+  [els.detailCalendarIcs, els.detailCalendarGoogle, els.detailCalendarApple, els.detailCalendarOutlook]
+    .filter(Boolean)
+    .forEach((link) => link.addEventListener('click', () => {
+      const event = getDetailCalendarEvent();
+      if (event?.id) trackPlanCalendarExported(event.id);
+    }));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !els.detailCalendarModal.hidden) closeDetailCalendarModal();
+  });
+}
+
+function openDetailCalendarModal() {
+  const event = getDetailCalendarEvent();
+  if (!event?.id || !event.date || !event.title) {
     showDetailFeedback('No se pudo preparar el evento para el calendario.');
     return;
   }
+  if (!els.detailCalendarModal || !els.detailCalendarIcs || !els.detailCalendarGoogle || !els.detailCalendarApple || !els.detailCalendarOutlook) {
+    showDetailFeedback('No se pudo abrir las opciones del calendario.');
+    return;
+  }
 
-  const result = await shareFileOrDownload(createIcsFile([event], event.title), {
-    title: event.title,
-    text: 'Añade esta actividad al calendario de Fiestas Valladolid 2026'
-  });
-  if (result !== 'cancelled') trackPlanCalendarExported(event.id);
-  if (result === 'shared' || result === 'downloaded') showDetailFeedback(result === 'shared' ? 'Actividad compartida para añadirla al calendario.' : 'Calendario descargado.');
-  else showDetailFeedback('Compartición cancelada.');
+  revokeDetailCalendarObjectUrl();
+  const file = createIcsFile([event], event.title);
+  detailCalendarObjectUrl = URL.createObjectURL(file);
+  const links = createCalendarLinks(event, window.location.href);
+  els.detailCalendarIcs.href = detailCalendarObjectUrl;
+  els.detailCalendarIcs.download = file.name;
+  els.detailCalendarApple.href = detailCalendarObjectUrl;
+  els.detailCalendarApple.download = file.name;
+  els.detailCalendarGoogle.href = links.google || '#';
+  els.detailCalendarOutlook.href = links.outlook || '#';
+  detailCalendarReturnFocus = document.activeElement;
+  els.detailCalendarModal.hidden = false;
+  document.body.style.overflow = 'hidden';
+  els.detailCalendarClose[els.detailCalendarClose.length - 1]?.focus();
+}
+
+function closeDetailCalendarModal() {
+  if (!els.detailCalendarModal || els.detailCalendarModal.hidden) return;
+  els.detailCalendarModal.hidden = true;
+  document.body.style.overflow = '';
+  revokeDetailCalendarObjectUrl();
+  if (detailCalendarReturnFocus?.focus) detailCalendarReturnFocus.focus();
+  detailCalendarReturnFocus = null;
+}
+
+function revokeDetailCalendarObjectUrl() {
+  if (!detailCalendarObjectUrl) return;
+  URL.revokeObjectURL(detailCalendarObjectUrl);
+  detailCalendarObjectUrl = '';
 }
 
 async function shareSite(event) {
