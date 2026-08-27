@@ -12,6 +12,13 @@
 
 {% block footerClass %} site-footer--fiestas{% endblock %}
 
+{% block footerExtra %}
+<p class="fiestas-weather-attribution" data-weather-attribution hidden>
+  Datos meteorológicos:
+  <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a>
+</p>
+{% endblock %}
+
 {% block body %}
 <main class="fiestas-app" data-fiestas-app data-community-plans-href="/planes/">
   <div class="fiestas-scroll-header" data-fiestas-scroll-header aria-hidden="true" inert>
@@ -71,6 +78,8 @@
           <span>{{ day.weekday }}</span>
           <strong>{{ day.dayNumber }}</strong>
           <small>{{ day.monthLabel }}</small>
+          <span class="fiestas-date-weather" data-weather-icon hidden aria-hidden="true"></span>
+          <span class="fiestas-date-temperature" data-weather-temperature hidden aria-hidden="true"></span>
         </button>
         {% endfor %}
         </nav>

@@ -102,6 +102,14 @@
         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
         <span>{{ event.location or event.zone or event.neighborhood or 'Lugar por confirmar' }}</span>
       </div>
+      <div class="fiestas-detail-fact fiestas-detail-weather-fact" data-fiestas-detail-weather hidden>
+        <i data-fiestas-detail-weather-icon aria-hidden="true"></i>
+        <div class="fiestas-detail-weather-content">
+          <span class="fiestas-detail-weather-label">Previsión</span>
+          <span class="fiestas-detail-weather-copy" data-fiestas-detail-weather-copy></span>
+        </div>
+      </div>
+      {% if event.ticketKind == 'paid' %}
       <div class="fiestas-detail-fact">
         <i class="fa-solid fa-ticket" aria-hidden="true"></i>
         <span>
@@ -115,6 +123,7 @@
           {% endif %}
         </span>
       </div>
+      {% endif %}
     </section>
 
     <section class="fiestas-detail-map-card" aria-labelledby="event-map-title">
@@ -138,23 +147,20 @@
       <div class="fiestas-detail-map-actions">
         <a class="fiestas-detail-map-action" href="{{ event.mapUrl }}">
           <i class="fa-regular fa-map" aria-hidden="true"></i>
-          <span>Ver en el mapa</span>
+          <span>Ver en mapa</span>
         </a>
-        {% if event.directionsUrl %}
-        <a
+        {% if event.coordinates and event.directionsUrl %}
+        <button
           class="fiestas-detail-map-action"
-          href="{{ event.directionsUrl }}"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-fiestas-directions
+          type="button"
+          data-fiestas-directions-toggle
           data-fiestas-analytics-action="directions"
-          data-lat="{{ event.coordinates.lat }}"
-          data-lng="{{ event.coordinates.lng }}"
-          data-title="{{ event.location or event.title }}"
+          aria-controls="event-directions-options-{{ event.id }}"
+          aria-expanded="false"
         >
           <i class="fiestas-detail-directions-icon fa-solid fa-route" aria-hidden="true"></i>
           <span>Cómo llegar</span>
-        </a>
+        </button>
         {% elif event.osmUrl %}
         <a class="fiestas-detail-map-action" href="{{ event.osmUrl }}" target="_blank" rel="noopener noreferrer" data-fiestas-analytics-action="location">
           <i class="fiestas-detail-directions-icon fa-solid fa-location-arrow" aria-hidden="true"></i>
@@ -164,9 +170,127 @@
         <span class="fiestas-detail-map-action fiestas-detail-map-action-disabled">
           <i class="fiestas-detail-directions-icon fa-solid fa-route" aria-hidden="true"></i>
           <span>Cómo llegar</span>
-        </span>
+          </span>
         {% endif %}
       </div>
+      {% if event.coordinates and event.directionsUrl %}
+      <section
+        class="fiestas-detail-directions-options"
+        id="event-directions-options-{{ event.id }}"
+        data-fiestas-directions-options
+        aria-labelledby="event-directions-options-title-{{ event.id }}"
+        hidden
+      >
+        <h3 id="event-directions-options-title-{{ event.id }}" class="sr-only">Opciones para llegar</h3>
+        <div class="fiestas-detail-directions-grid">
+          <a
+            class="fiestas-detail-directions-option"
+            href="https://vallabus.com/#/rutas?origen=fiestasaldea"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-fiestas-vallabus-route
+            data-destination-name="{{ event.location or event.title }}"
+            data-destination-lat="{{ event.coordinates.lat }}"
+            data-destination-lon="{{ event.coordinates.lng }}"
+            data-arrival-date="{{ event.date }}"
+            data-arrival-time="{{ event.startTime }}"
+          >
+            <i class="fa-solid fa-bus" aria-hidden="true"></i>
+            <span>Bus</span>
+          </a>
+          <a
+            class="fiestas-detail-directions-option"
+            href="https://vallabus.com/#/rutas?origen=fiestasaldea"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-fiestas-vallabus-route
+            data-destination-name="{{ event.location or event.title }}"
+            data-destination-lat="{{ event.coordinates.lat }}"
+            data-destination-lon="{{ event.coordinates.lng }}"
+            data-arrival-date="{{ event.date }}"
+            data-arrival-time="{{ event.startTime }}"
+            data-fiestas-vallabus-mode="bike"
+          >
+            <i class="fa-solid fa-bicycle" aria-hidden="true"></i>
+            <span>Bici/BIKI</span>
+          </a>
+          <a
+            class="fiestas-detail-directions-option"
+            href="{{ event.directionsUrl }}"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-fiestas-map-app
+            data-fiestas-analytics-action="directions-app"
+            data-lat="{{ event.coordinates.lat }}"
+            data-lng="{{ event.coordinates.lng }}"
+            data-title="{{ event.location or event.title }}"
+          >
+            <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+            <span>Tu App</span>
+          </a>
+        </div>
+      </section>
+      {% endif %}
+      {% if event.nearbyStops.length %}
+      <section class="fiestas-detail-transit" data-fiestas-transit aria-labelledby="event-transit-title-{{ event.id }}">
+        <script type="application/json" data-fiestas-transit-stops>{{ event.nearbyStops | dumpForScript | safe }}</script>
+        <div class="fiestas-detail-transit-row">
+          <h3 id="event-transit-title-{{ event.id }}" class="sr-only">Líneas de autobús cercanas</h3>
+          <span class="fiestas-detail-transit-icon" aria-hidden="true"><i class="fa-solid fa-bus"></i></span>
+          <button
+            class="fiestas-detail-transit-scroll"
+            type="button"
+            data-fiestas-transit-scroll="prev"
+            aria-label="Ver líneas anteriores"
+            aria-controls="event-transit-lines-{{ event.id }}"
+            hidden
+          >
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+          </button>
+          <div id="event-transit-lines-{{ event.id }}" class="fiestas-detail-transit-lines" data-fiestas-transit-lines role="group" aria-label="Líneas de autobús cercanas" tabindex="0">
+            {% for line in event.nearbyLines %}
+            <button
+              class="fiestas-detail-transit-line"
+              type="button"
+              data-fiestas-transit-line="{{ line }}"
+              aria-controls="event-transit-stops-{{ event.id }}"
+              aria-expanded="false"
+            >{{ line }}</button>
+            {% endfor %}
+          </div>
+          <button
+            class="fiestas-detail-transit-scroll"
+            type="button"
+            data-fiestas-transit-scroll="next"
+            aria-label="Ver más líneas"
+            aria-controls="event-transit-lines-{{ event.id }}"
+            hidden
+          >
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+          </button>
+        </div>
+        <div class="fiestas-detail-transit-details" id="event-transit-stops-{{ event.id }}" data-fiestas-transit-details hidden>
+          <p class="fiestas-detail-transit-summary" data-fiestas-transit-summary></p>
+          <ul class="fiestas-detail-transit-stop-list" data-fiestas-transit-stop-list></ul>
+          <a
+            class="fiestas-detail-transit-planner"
+            href="https://vallabus.com/#/rutas?origen=fiestasaldea"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-fiestas-transit-planner
+            data-fiestas-vallabus-route
+            data-destination-name="{{ event.location or event.title }}"
+            data-destination-lat="{{ event.coordinates.lat }}"
+            data-destination-lon="{{ event.coordinates.lng }}"
+            data-arrival-date="{{ event.date }}"
+            data-arrival-time="{{ event.startTime }}"
+          >
+            <i class="fa-solid fa-route" aria-hidden="true"></i>
+            <span>Planificar ruta en VallaBus</span>
+          </a>
+        </div>
+      </section>
+      {% endif %}
     </section>
 
     <section class="fiestas-detail-card fiestas-detail-copy" aria-labelledby="event-description-title">

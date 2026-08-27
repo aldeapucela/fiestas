@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "updatedAt": "2026-08-25",
+  "updatedAt": "2026-08-27",
   "casetas": [
     {
       "id": "z1-01",
@@ -103,15 +103,10 @@
       "placement": "En la propia calle y en su terraza",
       "addressQuery": "Calle Pasión, Valladolid, España",
       "coordinates": {
-        "lat": 41.5326847,
-        "lng": -5.0364159,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 451700892,
-        "displayName": "Calle Pasión, Villavieja del Cerro, Tordesillas, Valladolid, Castilla y León, 47114, España",
-        "query": "Calle Pasion, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:29.740Z"
+        "lat": 41.6514572,
+        "lng": -4.7295196,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Calle Pasión, Valladolid, España"
       }
     },
     {
@@ -122,15 +117,10 @@
       "placement": "En su terraza",
       "addressQuery": "Calle Pasión, Valladolid, España",
       "coordinates": {
-        "lat": 41.5326847,
-        "lng": -5.0364159,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 451700892,
-        "displayName": "Calle Pasión, Villavieja del Cerro, Tordesillas, Valladolid, Castilla y León, 47114, España",
-        "query": "Calle Pasion, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:29.740Z"
+        "lat": 41.651374,
+        "lng": -4.7298978,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Calle Pasión, Valladolid, España"
       }
     },
     {
@@ -671,15 +661,10 @@
       "placement": "En la calle",
       "addressQuery": "Calle Solanilla, Valladolid, España",
       "coordinates": {
-        "lat": 41.333467,
-        "lng": -5.0836855,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 721954652,
-        "displayName": "Calle Solanilla, Nava del Rey, Valladolid, Castilla y León, 47500, España",
-        "query": "Calle Solanilla, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:42.894Z"
+        "lat": 41.6542543,
+        "lng": -4.7231393,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Calle Solanilla, Valladolid, España"
       }
     },
     {
@@ -820,15 +805,10 @@
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
       "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
+        "lat": 41.6473474,
+        "lng": -4.7288673,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
       }
     },
     {
@@ -839,15 +819,10 @@
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
       "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
+        "lat": 41.647163,
+        "lng": -4.7287721,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
       }
     },
     {
@@ -858,15 +833,10 @@
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
       "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
+        "lat": 41.6469104,
+        "lng": -4.7286111,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
       }
     },
     {
@@ -915,15 +885,10 @@
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
       "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
+        "lat": 41.6467261,
+        "lng": -4.7284904,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
       }
     },
     {
@@ -934,15 +899,10 @@
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
       "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
+        "lat": 41.6465216,
+        "lng": -4.7283724,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
       }
     },
     {
@@ -953,15 +913,10 @@
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
       "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
+        "lat": 41.6460545,
+        "lng": -4.7281232,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
       }
     },
     {
@@ -972,15 +927,10 @@
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
       "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
+        "lat": 41.645844,
+        "lng": -4.7280159,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
       }
     },
     {
@@ -991,15 +941,10 @@
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
       "coordinates": {
-        "lat": 41.6463418,
-        "lng": -4.7280458,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 297294852,
-        "displayName": "Acera de Recoletos, Campo Grande, Valladolid, Castilla y León, 47004, España",
-        "query": "Acera de Recoletos, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:46.036Z"
+        "lat": 41.6454391,
+        "lng": -4.7277986,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
       }
     },
     {
@@ -1009,7 +954,12 @@
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
       "placement": "Frente a la Plaza de Toros",
       "addressQuery": "Paseo Zorrilla frente a la Plaza de Toros, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6400908,
+        "lng": -4.7383034,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Paseo Zorrilla, Valladolid, España"
+      }
     },
     {
       "id": "z5-17",
@@ -1019,13 +969,10 @@
       "placement": "En la calle",
       "addressQuery": "Calle Rastro, Valladolid, España",
       "coordinates": {
-        "lat": 41.6481637,
-        "lng": -4.726438,
-        "source": "Google Maps",
-        "displayName": "Calle Rastro, Valladolid, España",
-        "query": "Calle Rastro, Valladolid, España",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-26"
+        "lat": 41.6482391,
+        "lng": -4.726724,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Calle Rastro, Valladolid, España"
       }
     },
     {
@@ -1036,15 +983,10 @@
       "placement": "En la calle",
       "addressQuery": "Calle María de Molina, Valladolid, España",
       "coordinates": {
-        "lat": 41.6496567,
-        "lng": -4.7304819,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 33755553,
-        "displayName": "Calle María de Molina, Plaza Mayor, Valladolid, Castilla y León, 47001, España",
-        "query": "Calle Maria de Molina, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:48.757Z"
+        "lat": 41.6493801,
+        "lng": -4.7302649,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Calle María de Molina, Valladolid, España"
       }
     },
     {
@@ -1055,15 +997,10 @@
       "placement": "En la plaza",
       "addressQuery": "Plaza de Santa Ana, Valladolid, España",
       "coordinates": {
-        "lat": 41.651094,
-        "lng": -4.7308979,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "relation",
-        "osmId": 8141808,
-        "displayName": "Plaza de Santa Ana, Plaza Mayor, Valladolid, Castilla y León, España",
-        "query": "Plaza de Santa Ana, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:50.186Z"
+        "lat": 41.6511553,
+        "lng": -4.7308022,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Plaza de Santa Ana, Valladolid, España"
       }
     },
     {
@@ -1074,15 +1011,10 @@
       "placement": "En la plaza",
       "addressQuery": "Plaza de Santa Ana, Valladolid, España",
       "coordinates": {
-        "lat": 41.651094,
-        "lng": -4.7308979,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "relation",
-        "osmId": 8141808,
-        "displayName": "Plaza de Santa Ana, Plaza Mayor, Valladolid, Castilla y León, España",
-        "query": "Plaza de Santa Ana, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:50.186Z"
+        "lat": 41.6510847,
+        "lng": -4.7310121,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Plaza de Santa Ana, Valladolid, España"
       }
     },
     {
@@ -1093,15 +1025,10 @@
       "placement": "En la plaza",
       "addressQuery": "Plaza de Santa Ana, Valladolid, España",
       "coordinates": {
-        "lat": 41.651094,
-        "lng": -4.7308979,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "relation",
-        "osmId": 8141808,
-        "displayName": "Plaza de Santa Ana, Plaza Mayor, Valladolid, Castilla y León, España",
-        "query": "Plaza de Santa Ana, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:50.186Z"
+        "lat": 41.6509975,
+        "lng": -4.7309316,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Plaza de Santa Ana, Valladolid, España"
       }
     },
     {
@@ -1111,7 +1038,12 @@
       "location": "Acera de Recoletos",
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.646229,
+        "lng": -4.7282115,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
+      }
     },
     {
       "id": "z5-24",
@@ -1120,7 +1052,12 @@
       "location": "Calle María de Molina",
       "placement": "En la calle",
       "addressQuery": "Calle María de Molina, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6493501,
+        "lng": -4.7301394,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Calle María de Molina, Valladolid, España"
+      }
     },
     {
       "id": "z5-25",
@@ -1129,7 +1066,12 @@
       "location": "Plaza de Santa Ana",
       "placement": "En la plaza",
       "addressQuery": "Plaza de Santa Ana, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6510177,
+        "lng": -4.7307888,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Plaza de Santa Ana, Valladolid, España"
+      }
     },
     {
       "id": "z5-26",
@@ -1147,7 +1089,12 @@
       "location": "Acera de Recoletos",
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6456636,
+        "lng": -4.7279166,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
+      }
     },
     {
       "id": "z5-28",
@@ -1156,7 +1103,12 @@
       "location": "Calle María de Molina",
       "placement": "En la calle",
       "addressQuery": "Calle María de Molina, Valladolid, España",
-      "coordinates": null,
+      "coordinates": {
+        "lat": 41.6492383,
+        "lng": -4.7301226,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Calle María de Molina, Valladolid, España"
+      },
       "details": {
         "menuSections": [
           {
@@ -1185,7 +1137,10 @@
           {
             "title": "Postre",
             "items": [
-              "Coulant de chocolate y chantilly de vainilla (5€) (Lácteos)"
+              {
+                "name": "Coulant de chocolate y chantilly de vainilla (5€) (Lácteos)",
+                "dietary": "vegetarian"
+              }
             ]
           }
         ],
@@ -1201,7 +1156,12 @@
       "location": "Acera de Recoletos",
       "placement": "En la acera",
       "addressQuery": "Acera de Recoletos, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6455494,
+        "lng": -4.7278576,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Acera de Recoletos, Valladolid, España"
+      }
     },
     {
       "id": "z6-01",
@@ -1211,15 +1171,10 @@
       "placement": "Desde su propia terraza",
       "addressQuery": "Avenida Medina del Campo, Valladolid, España",
       "coordinates": {
-        "lat": 41.3147098,
-        "lng": -4.9108211,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 46886907,
-        "displayName": "Avenida de la Estación, Polígono Francisco Lobato, Medina del Campo, Valladolid, Castilla y León, 47400, España",
-        "query": "Avenida Medina del Campo, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T13:32:51.666Z"
+        "lat": 41.6333992,
+        "lng": -4.7469325,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Avenida Medina del Campo, Valladolid, España"
       }
     },
     {
@@ -1230,15 +1185,10 @@
       "placement": "Frente a la Plaza de Toros",
       "addressQuery": "Paseo de Zorrilla 88, Valladolid, España",
       "coordinates": {
-        "lat": 41.6404571,
-        "lng": -4.738422,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 12800274908,
-        "displayName": "88, Paseo de Zorrilla, Plaza de Toros, Valladolid, Castilla y León, 47006, España",
-        "query": "Paseo de Zorrilla 88, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T15:39:52.000Z"
+        "lat": 41.6399785,
+        "lng": -4.7383464,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Paseo de Zorrilla, Valladolid, España"
       }
     },
     {
@@ -1249,15 +1199,10 @@
       "placement": "Frente a la Plaza de Toros",
       "addressQuery": "Paseo de Zorrilla 88, Valladolid, España",
       "coordinates": {
-        "lat": 41.6404571,
-        "lng": -4.738422,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 12800274908,
-        "displayName": "88, Paseo de Zorrilla, Plaza de Toros, Valladolid, Castilla y León, 47006, España",
-        "query": "Paseo de Zorrilla 88, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T15:39:52.000Z"
+        "lat": 41.6398683,
+        "lng": -4.7383919,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Paseo de Zorrilla, Valladolid, España"
       }
     },
     {
@@ -1268,15 +1213,10 @@
       "placement": "Frente a la Plaza de Toros",
       "addressQuery": "Paseo de Zorrilla 88, Valladolid, España",
       "coordinates": {
-        "lat": 41.6404571,
-        "lng": -4.738422,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 12800274908,
-        "displayName": "88, Paseo de Zorrilla, Plaza de Toros, Valladolid, Castilla y León, 47006, España",
-        "query": "Paseo de Zorrilla 88, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T15:39:52.000Z"
+        "lat": 41.639754,
+        "lng": -4.7384241,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Paseo de Zorrilla, Valladolid, España"
       }
     },
     {
@@ -1287,15 +1227,10 @@
       "placement": "Frente a la Plaza de Toros",
       "addressQuery": "Paseo de Zorrilla 88, Valladolid, España",
       "coordinates": {
-        "lat": 41.6404571,
-        "lng": -4.738422,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 12800274908,
-        "displayName": "88, Paseo de Zorrilla, Plaza de Toros, Valladolid, Castilla y León, 47006, España",
-        "query": "Paseo de Zorrilla 88, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T15:39:52.000Z"
+        "lat": 41.640201,
+        "lng": -4.7382552,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Paseo de Zorrilla, Valladolid, España"
       }
     },
     {
@@ -1306,15 +1241,10 @@
       "placement": "Frente a la Plaza de Toros",
       "addressQuery": "Paseo de Zorrilla 88, Valladolid, España",
       "coordinates": {
-        "lat": 41.6404571,
-        "lng": -4.738422,
-        "source": "OpenStreetMap Nominatim",
-        "osmType": "node",
-        "osmId": 12800274908,
-        "displayName": "88, Paseo de Zorrilla, Plaza de Toros, Valladolid, Castilla y León, 47006, España",
-        "query": "Paseo de Zorrilla 88, Valladolid, Espana",
-        "accuracy": 1,
-        "geocodedAt": "2026-08-25T15:39:52.000Z"
+        "lat": 41.6437818,
+        "lng": -4.7350602,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Paseo de Zorrilla, Valladolid, España"
       }
     },
     {
@@ -1324,7 +1254,12 @@
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
       "placement": "Frente a la Plaza de Toros",
       "addressQuery": "Paseo Zorrilla frente a la Plaza de Toros, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6395255,
+        "lng": -4.7385287,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Paseo de Zorrilla, Valladolid, España"
+      }
     },
     {
       "id": "z6-11",
@@ -1333,7 +1268,12 @@
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
       "placement": "Frente a la Plaza de Toros",
       "addressQuery": "Paseo Zorrilla frente a la Plaza de Toros, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6396358,
+        "lng": -4.7384671,
+        "source": "Mapa oficial Visit Valladolid 2026",
+        "displayName": "Paseo de Zorrilla, Valladolid, España"
+      }
     },
     {
       "id": "z7-02",
