@@ -40,6 +40,13 @@ const userLocationZoom = 14;
 const nearbyRadiusMeters = 2000;
 const COMMUNITY_PLANS_INSERT_AFTER = 15;
 let leafletPromise = null;
+let detailMapPromise = null;
+let detailMapInstance = null;
+let detailEventMarker = null;
+let detailTransitMarkers = null;
+let detailTransitStops = [];
+let detailTransitSelectedLine = '';
+let detailTransitOrigin = null;
 let initialDate = null;
 let filterBackdrop = null;
 let filterScrollY = 0;
@@ -162,6 +169,7 @@ const els = {
   detailShareCopy: document.querySelector('[data-fiestas-copy-share]'),
   detailShareInput: document.querySelector('[data-fiestas-share-url-input]'),
   detailMap: document.querySelector('[data-fiestas-detail-map]'),
+  detailTransit: document.querySelector('[data-fiestas-transit]'),
   detailWeather: document.querySelector('[data-fiestas-detail-weather]'),
   detailWeatherIcon: document.querySelector('[data-fiestas-detail-weather-icon]'),
   detailWeatherCopy: document.querySelector('[data-fiestas-detail-weather-copy]'),
@@ -2014,10 +2022,11 @@ function initDetailPage() {
   els.detailBack?.addEventListener('click', goBackToAgenda);
   initDetailLightbox();
   if (!isCasetaDetail) void loadDetailWeather();
+  initDetailTransit();
   document.querySelectorAll('[data-fiestas-analytics-action]').forEach((link) => {
     link.addEventListener('click', () => trackDetailExternalAction(link.dataset.fiestasAnalyticsAction));
   });
-  if (els.detailMap) initDetailMap();
+  if (els.detailMap) detailMapPromise = initDetailMap();
 }
 
 async function loadDetailWeather() {
@@ -2073,28 +2082,102 @@ function trackDetailExternalAction(action) {
 }
 
 function initDetailDirections() {
-  const link = document.querySelector('[data-fiestas-directions]');
-  if (!link) return;
+  const toggle = document.querySelector('[data-fiestas-directions-toggle]');
+  const options = document.querySelector('[data-fiestas-directions-options]');
+  if (toggle && options) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      options.hidden = expanded;
+    });
+  }
 
-  const lat = Number(link.dataset.lat);
-  const lng = Number(link.dataset.lng);
+  document.querySelectorAll('[data-fiestas-vallabus-route]').forEach((link) => initDetailVallaBusRoute(link));
+
+  const mapLink = document.querySelector('[data-fiestas-map-app]');
+  if (!mapLink) return;
+
+  const lat = Number(mapLink.dataset.lat);
+  const lng = Number(mapLink.dataset.lng);
   if (!Number.isFinite(lat) || !Number.isFinite(lng)) return;
 
-  const title = link.dataset.title || 'Actividad';
+  const title = mapLink.dataset.title || 'Actividad';
   const platform = getMapPlatform();
   if (platform === 'android') {
     const label = encodeURIComponent(title);
-    link.href = `geo:0,0?q=${lat},${lng}(${label})`;
-    link.removeAttribute('target');
-    link.removeAttribute('rel');
+    mapLink.href = `geo:0,0?q=${lat},${lng}(${label})`;
+    mapLink.removeAttribute('target');
+    mapLink.removeAttribute('rel');
     return;
   }
 
   if (platform === 'ios') {
-    link.href = `http://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
-    link.removeAttribute('target');
-    link.removeAttribute('rel');
+    mapLink.href = `http://maps.apple.com/?daddr=${lat},${lng}&dirflg=d`;
+    mapLink.removeAttribute('target');
+    mapLink.removeAttribute('rel');
   }
+}
+
+function initDetailVallaBusRoute(link) {
+  link.addEventListener('click', (event) => {
+    event.preventDefault();
+    if (link.dataset.fiestasTransitLoading === 'true') return;
+
+    const destination = {
+      name: link.dataset.destinationName || '',
+      lat: Number(link.dataset.destinationLat),
+      lon: Number(link.dataset.destinationLon),
+      date: link.dataset.arrivalDate || '',
+      time: link.dataset.arrivalTime || ''
+    };
+    if (!destination.name || !Number.isFinite(destination.lat) || !Number.isFinite(destination.lon)) return;
+
+    const plannerWindow = window.open('about:blank', '_blank');
+    if (!plannerWindow) return;
+    try {
+      plannerWindow.opener = null;
+    } catch (error) {
+      // Some browsers expose the new window as a read-only proxy.
+    }
+
+    const openPlanner = (origin = null) => {
+      const plannerUrl = vallabusRouteUrl(destination, origin);
+      link.href = plannerUrl;
+      if (!plannerWindow.closed) plannerWindow.location.href = plannerUrl;
+    };
+
+    if (detailTransitOrigin) {
+      openPlanner(detailTransitOrigin);
+      return;
+    }
+
+    if (!navigator.geolocation) {
+      openPlanner();
+      return;
+    }
+    link.dataset.fiestasTransitLoading = 'true';
+    link.setAttribute('aria-busy', 'true');
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const lat = Number(position.coords.latitude);
+        const lon = Number(position.coords.longitude);
+        link.removeAttribute('aria-busy');
+        delete link.dataset.fiestasTransitLoading;
+        if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+          openPlanner();
+          return;
+        }
+        detailTransitOrigin = { name: 'Tu ubicación', lat, lon };
+        openPlanner(detailTransitOrigin);
+      },
+      () => {
+        link.removeAttribute('aria-busy');
+        delete link.dataset.fiestasTransitLoading;
+        openPlanner();
+      },
+      { maximumAge: 300000, timeout: 10000 }
+    );
+  });
 }
 
 function getMapPlatform() {
@@ -2348,6 +2431,7 @@ async function initDetailMap() {
       scrollWheelZoom: false,
       dragging: !isTouchDevice
     }).setView([lat, lng], 16);
+    detailMapInstance = map;
     const title = els.detailMap.dataset.title || 'Actividad';
     const markerIconClass = els.detail?.dataset.casetaDetail === 'true' ? 'fa-store' : 'fa-location-dot';
     const markerIcon = leaflet.divIcon({
@@ -2361,13 +2445,185 @@ async function initDetailMap() {
       map.removeLayer(tileLayer);
       tileLayer = createCartoLayer(leaflet).addTo(map);
     });
-    leaflet.marker([lat, lng], { icon: markerIcon, title }).addTo(map).bindPopup(escapeHtml(title));
+    detailEventMarker = leaflet.marker([lat, lng], { icon: markerIcon, title }).addTo(map).bindPopup(escapeHtml(title));
     trackMapOpened();
     window.requestAnimationFrame(() => map.invalidateSize());
+    return map;
   } catch (error) {
     console.error(error);
     showDetailMapError(document.querySelector('[data-fiestas-detail-map-error]'), 'No se pudo mostrar el mapa. La ubicación textual sigue disponible.');
+    return null;
   }
+}
+
+function initDetailTransit() {
+  if (!els.detailTransit) return;
+  const dataElement = els.detailTransit.querySelector('[data-fiestas-transit-stops]');
+  const details = els.detailTransit.querySelector('[data-fiestas-transit-details]');
+  const summary = els.detailTransit.querySelector('[data-fiestas-transit-summary]');
+  const stopList = els.detailTransit.querySelector('[data-fiestas-transit-stop-list]');
+  const lineButtons = [...els.detailTransit.querySelectorAll('[data-fiestas-transit-line]')];
+  const lineScroller = els.detailTransit.querySelector('[data-fiestas-transit-lines]');
+  const scrollButtons = [...els.detailTransit.querySelectorAll('[data-fiestas-transit-scroll]')];
+  if (!dataElement || !details || !summary || !stopList || !lineScroller || !lineButtons.length) return;
+
+  try {
+    detailTransitStops = JSON.parse(dataElement.textContent || '[]')
+      .filter((stop) => stop && stop.name && Number.isFinite(Number(stop.lat)) && Number.isFinite(Number(stop.lng)))
+      .map((stop) => ({
+        ...stop,
+        lat: Number(stop.lat),
+        lng: Number(stop.lng),
+        distanceMeters: Number(stop.distanceMeters) || 0,
+        lines: Array.isArray(stop.lines) ? stop.lines.map(String) : []
+      }));
+  } catch (error) {
+    console.warn('No se pudieron cargar las paradas cercanas.', error);
+    detailTransitStops = [];
+  }
+
+  if (!detailTransitStops.length) {
+    els.detailTransit.hidden = true;
+    return;
+  }
+
+  const updateTransitScrollControls = () => {
+    const maxScrollLeft = Math.max(0, lineScroller.scrollWidth - lineScroller.clientWidth);
+    const hasOverflow = maxScrollLeft > 2;
+    scrollButtons.forEach((button) => {
+      const isPrevious = button.dataset.fiestasTransitScroll === 'prev';
+      const atEdge = isPrevious ? lineScroller.scrollLeft <= 2 : lineScroller.scrollLeft >= maxScrollLeft - 2;
+      button.hidden = !hasOverflow;
+      button.disabled = !hasOverflow || atEdge;
+      button.setAttribute('aria-disabled', String(button.disabled));
+    });
+  };
+
+  lineScroller.addEventListener('scroll', updateTransitScrollControls, { passive: true });
+  window.addEventListener('resize', updateTransitScrollControls, { passive: true });
+  scrollButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const direction = button.dataset.fiestasTransitScroll === 'prev' ? -1 : 1;
+      lineScroller.scrollBy({ left: direction * Math.max(140, lineScroller.clientWidth * 0.75), behavior: 'smooth' });
+    });
+  });
+  window.requestAnimationFrame(updateTransitScrollControls);
+
+  const renderStops = () => {
+    const selectedStops = detailTransitSelectedLine
+      ? detailTransitStops.filter((stop) => stop.lines.includes(detailTransitSelectedLine))
+      : [];
+    summary.textContent = `${selectedStops.length} ${selectedStops.length === 1 ? 'parada cercana' : 'paradas cercanas'} para la línea ${detailTransitSelectedLine}`;
+    stopList.innerHTML = selectedStops.map((stop) => `
+        <a class="fiestas-detail-transit-stop" href="${vallabusStopScheduleUrl(stop.number, els.detail?.dataset.eventDate)}" target="_blank" rel="noopener noreferrer" aria-label="Ver horarios de ${escapeHtml(stop.name)} en VallaBus">
+        <span class="fiestas-detail-transit-stop-copy">
+          <strong>${escapeHtml(stop.name)}</strong>
+          <span>${formatTransitDistance(stop.distanceMeters)} · Líneas ${escapeHtml(stop.lines.join(', '))}</span>
+        </span>
+        <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+      </a>
+    `).join('');
+  };
+
+  const clearTransitSelection = () => {
+    detailTransitSelectedLine = '';
+    lineButtons.forEach((button) => {
+      button.classList.remove('is-active');
+      button.setAttribute('aria-expanded', 'false');
+    });
+    details.hidden = true;
+    clearDetailTransitMarkers();
+  };
+
+  lineButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+      const line = button.dataset.fiestasTransitLine || '';
+      if (!line || detailTransitSelectedLine === line) {
+        clearTransitSelection();
+        return;
+      }
+      detailTransitSelectedLine = line;
+      lineButtons.forEach((item) => {
+        const active = item === button;
+        item.classList.toggle('is-active', active);
+        item.setAttribute('aria-expanded', String(active));
+      });
+      details.hidden = false;
+      renderStops();
+      const selectedStops = detailTransitStops.filter((stop) => stop.lines.includes(line));
+      void updateDetailTransitMarkers(selectedStops);
+    });
+  });
+}
+
+function formatTransitDistance(distanceMeters) {
+  const distance = Number(distanceMeters);
+  if (!Number.isFinite(distance)) return 'Distancia no disponible';
+  if (distance < 1000) return `${Math.round(distance)} m`;
+  return `${(distance / 1000).toFixed(1).replace('.', ',')} km`;
+}
+
+function vallabusStopScheduleUrl(stopNumber, date = '') {
+  const url = `https://vallabus.com/#/horarios/${encodeURIComponent(stopNumber)}`;
+  const dateParam = date ? `date=${encodeURIComponent(date)}&` : '';
+  return `${url}?${dateParam}origen=fiestasaldea`;
+}
+
+function vallabusRouteUrl(destination, origin = null) {
+  const params = [];
+  const addParam = (name, value) => {
+    if (value !== undefined && value !== null && value !== '') params.push(`${name}=${encodeURIComponent(value)}`);
+  };
+
+  if (origin && Number.isFinite(Number(origin.lat)) && Number.isFinite(Number(origin.lon))) {
+    addParam('originName', origin.name || 'Tu ubicación');
+    addParam('originLat', Number(origin.lat));
+    addParam('originLon', Number(origin.lon));
+  }
+  addParam('destinationName', destination.name);
+  addParam('destinationLat', Number(destination.lat));
+  addParam('destinationLon', Number(destination.lon));
+  if (destination.date && destination.time) {
+    addParam('arrivalDate', destination.date);
+    addParam('arrivalTime', destination.time);
+  }
+  addParam('origen', 'fiestasaldea');
+  return `https://vallabus.com/#/rutas?${params.join('&')}`;
+}
+
+async function updateDetailTransitMarkers(stops) {
+  const map = detailMapInstance || (detailMapPromise ? await detailMapPromise : null);
+  const leaflet = window.L;
+  if (!map || !leaflet || !els.detailMap) return;
+
+  if (!detailTransitMarkers) detailTransitMarkers = leaflet.layerGroup().addTo(map);
+  detailTransitMarkers.clearLayers();
+
+  const stopMarkers = stops.map((stop) => leaflet.marker([stop.lat, stop.lng], {
+    icon: leaflet.divIcon({
+      className: 'fiestas-detail-map-stop-marker',
+      iconSize: [0, 0],
+      iconAnchor: [0, 0],
+      html: `<span class="fiestas-detail-map-stop-marker-content"><i class="fa-solid fa-signs-post" aria-hidden="true"></i><span>${escapeHtml(formatTransitDistance(stop.distanceMeters))}</span></span>`
+    }),
+    title: stop.name
+  }).bindPopup(`<strong>${escapeHtml(stop.name)}</strong><br>${escapeHtml(formatTransitDistance(stop.distanceMeters))} · Líneas ${escapeHtml(stop.lines.join(', '))}`));
+  stopMarkers.forEach((marker) => marker.addTo(detailTransitMarkers));
+
+  const eventLat = Number(els.detailMap.dataset.lat);
+  const eventLng = Number(els.detailMap.dataset.lng);
+  const points = [[eventLat, eventLng], ...stops.map((stop) => [stop.lat, stop.lng])];
+  if (points.length > 1) {
+    map.fitBounds(leaflet.latLngBounds(points), { padding: [28, 28], maxZoom: 15, animate: true });
+  }
+}
+
+function clearDetailTransitMarkers() {
+  if (!detailTransitMarkers || !detailMapInstance) return;
+  detailTransitMarkers.clearLayers();
+  const lat = Number(els.detailMap?.dataset.lat);
+  const lng = Number(els.detailMap?.dataset.lng);
+  if (Number.isFinite(lat) && Number.isFinite(lng)) detailMapInstance.setView([lat, lng], 16, { animate: true });
 }
 
 function showDetailMapError(error, message) {

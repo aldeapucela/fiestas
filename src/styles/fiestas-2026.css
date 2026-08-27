@@ -2962,6 +2962,22 @@
     text-decoration: none;
   }
 
+  button.fiestas-detail-map-action {
+    border: 0;
+    background: transparent;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+
+  .fiestas-detail-map-action:focus-visible {
+    position: relative;
+    z-index: 1;
+    outline: 3px solid rgba(15, 159, 141, 0.35);
+    outline-offset: -3px;
+  }
+
   .fiestas-detail-map-action + .fiestas-detail-map-action {
     border-left: 1px solid #e7eaf0;
   }
@@ -2969,6 +2985,365 @@
   .fiestas-detail-map-action-disabled,
   .fiestas-bottom-link-disabled {
     color: #98a2b3;
+  }
+
+  .fiestas-detail-directions-options {
+    border-top: 1px solid #e7eaf0;
+    background: rgba(15, 159, 141, 0.035);
+    padding: 0.65rem;
+  }
+
+  .fiestas-detail-directions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.45rem;
+  }
+
+  .fiestas-detail-directions-option {
+    display: flex;
+    min-width: 0;
+    min-height: 3.8rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    flex-direction: column;
+    border: 0;
+    background: transparent;
+    color: #0f8f80;
+    padding: 0.45rem 0.25rem;
+    text-align: center;
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 650;
+    line-height: 1.15;
+  }
+
+  .fiestas-detail .fiestas-detail-directions-option i {
+    color: #0f8f80;
+    font-size: 1.1rem;
+    -webkit-text-fill-color: currentColor;
+    -webkit-text-stroke: 0;
+  }
+
+  .fiestas-detail-directions-option span {
+    overflow-wrap: anywhere;
+  }
+
+  .fiestas-detail-directions-option:hover,
+  .fiestas-detail-directions-option:focus-visible {
+    background: rgba(15, 159, 141, 0.08);
+    color: #087569;
+  }
+
+  .fiestas-detail-directions-option:focus-visible {
+    outline: 3px solid rgba(15, 159, 141, 0.3);
+    outline-offset: 2px;
+  }
+
+  .fiestas-detail-transit {
+    border-top: 1px solid #e7eaf0;
+    background: linear-gradient(135deg, rgba(15, 159, 141, 0.055), rgba(115, 87, 159, 0.055));
+    padding: 0.8rem 0.85rem 0.9rem;
+  }
+
+  .fiestas-detail-transit-row {
+    display: flex;
+    align-items: center;
+    gap: 0.42rem;
+    min-width: 0;
+  }
+
+  .fiestas-detail-transit-icon {
+    display: grid;
+    flex: 0 0 auto;
+    width: 2.1rem;
+    height: 2.1rem;
+    place-items: center;
+    border-radius: 9999px;
+    background: rgba(15, 159, 141, 0.12);
+    color: #0f8f80;
+    font-size: 0.9rem;
+  }
+
+  .fiestas-detail .fiestas-detail-transit-icon i {
+    -webkit-text-fill-color: currentColor;
+    -webkit-text-stroke: 0;
+  }
+
+  .fiestas-detail-transit-lines {
+    display: flex;
+    flex: 1 1 auto;
+    gap: 0.42rem;
+    min-width: 0;
+    overflow-x: auto;
+    padding: 0.15rem 0.08rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-inline: contain;
+    scroll-behavior: smooth;
+    touch-action: pan-x;
+  }
+
+  .fiestas-detail-transit-lines::-webkit-scrollbar {
+    display: none;
+  }
+
+  .fiestas-detail-transit-scroll {
+    display: grid;
+    flex: 0 0 auto;
+    width: 2.1rem;
+    height: 2.1rem;
+    place-items: center;
+    border: 0;
+    border-radius: 9999px;
+    background: rgba(102, 112, 133, 0.1);
+    color: #667085;
+    cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease, opacity 160ms ease;
+  }
+
+  .fiestas-detail-transit-scroll:hover,
+  .fiestas-detail-transit-scroll:focus-visible {
+    background: rgba(15, 159, 141, 0.14);
+    color: #0f8f80;
+  }
+
+  .fiestas-detail-transit-scroll:focus-visible {
+    outline: 3px solid rgba(15, 159, 141, 0.35);
+    outline-offset: 2px;
+  }
+
+  .fiestas-detail-transit-scroll:disabled {
+    cursor: default;
+    opacity: 0.28;
+  }
+
+  .fiestas-detail-transit-scroll[hidden] {
+    display: none;
+  }
+
+  .fiestas-detail .fiestas-detail-transit-scroll i {
+    -webkit-text-fill-color: currentColor;
+    -webkit-text-stroke: 0;
+  }
+
+  .fiestas-detail-transit-line {
+    min-width: 2.1rem;
+    min-height: 2.1rem;
+    border: 2px solid transparent;
+    border-radius: 9999px;
+    background: var(--fiestas-bus-line-color, #5ebd5a);
+    box-shadow: 0 0.12rem 0.28rem rgba(26, 33, 45, 0.14);
+    color: var(--fiestas-bus-line-text, #fff);
+    padding: 0.18rem 0.55rem;
+    font: inherit;
+    font-size: 0.8rem;
+    font-weight: 850;
+    line-height: 1;
+    flex: 0 0 auto;
+    cursor: pointer;
+    filter: saturate(0.46);
+    transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease, filter 160ms ease;
+  }
+
+  .fiestas-detail-transit-line:hover,
+  .fiestas-detail-transit-line:focus-visible,
+  .fiestas-detail-transit-line.is-active {
+    border-color: #1d222d;
+    box-shadow: 0 0.2rem 0.42rem rgba(26, 33, 45, 0.22);
+    filter: saturate(0.6);
+    transform: translateY(-1px);
+  }
+
+  .fiestas-detail-transit-line:focus-visible {
+    outline: 3px solid rgba(15, 159, 141, 0.35);
+    outline-offset: 2px;
+  }
+
+  /* Paleta sincronizada con VallaBus: css/11-line-colors.css. */
+  .fiestas-detail-transit-line[data-fiestas-transit-line="1"] { --fiestas-bus-line-color: #5ebd5a; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="2"] { --fiestas-bus-line-color: #f2c435; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="3"] { --fiestas-bus-line-color: #ee4ba4; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="4"] { --fiestas-bus-line-color: #aa541a; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="5"] { --fiestas-bus-line-color: #2fb7b7; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="6"] { --fiestas-bus-line-color: #f29cc2; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="7"] { --fiestas-bus-line-color: #7a2b37; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="8"] { --fiestas-bus-line-color: #ea5d00; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="9"] { --fiestas-bus-line-color: #009ee6; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="10"] { --fiestas-bus-line-color: #a01a4a; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="13"] { --fiestas-bus-line-color: #0051a1; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="14"] { --fiestas-bus-line-color: #887cb9; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="16"] { --fiestas-bus-line-color: #84cef5; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="17"] { --fiestas-bus-line-color: #c2d403; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="18"] { --fiestas-bus-line-color: #b9b8b8; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="19"] { --fiestas-bus-line-color: #eaa874; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="23"] { --fiestas-bus-line-color: #fcc600; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="24"] { --fiestas-bus-line-color: #11459f; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="26"] { --fiestas-bus-line-color: #80d0f7; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="C0"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="C1"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="C2"] { --fiestas-bus-line-color: #555553; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="H"] { --fiestas-bus-line-color: #e5232e; --fiestas-bus-line-text: #000; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line^="M"] { --fiestas-bus-line-color: #532fa2; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line^="P"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="PSC1"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="PSC2"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="PSC3"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="R"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line^="R"] { --fiestas-bus-line-color: #532fa2; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line^="B"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="SL"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="SC"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="CC"],
+  .fiestas-detail-transit-line[data-fiestas-transit-line="Buho"] { --fiestas-bus-line-color: #000; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="LP"] { --fiestas-bus-line-color: #2fb7b7; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="LC"] { --fiestas-bus-line-color: #5ebd5a; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="LD"] { --fiestas-bus-line-color: #ee4ba4; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line^="F"] { --fiestas-bus-line-color: #006d38; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="L01"] { --fiestas-bus-line-color: #23b4ca; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="L02"] { --fiestas-bus-line-color: #40af64; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="Roja"] { --fiestas-bus-line-color: #eb4f4f; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="Azul"] { --fiestas-bus-line-color: #156de7; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="Verde"] { --fiestas-bus-line-color: #40bd48; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="RioSh"] { --fiestas-bus-line-color: #e20613; --fiestas-bus-line-text: #fff; }
+  .fiestas-detail-transit-line[data-fiestas-transit-line="Aerop"] { --fiestas-bus-line-color: #006680; --fiestas-bus-line-text: #fff; }
+
+  .fiestas-detail-transit-details {
+    margin-top: 0.75rem;
+    border-top: 1px solid rgba(115, 87, 159, 0.18);
+    padding-top: 0.7rem;
+  }
+
+  .fiestas-detail-transit-details[hidden] {
+    display: none;
+  }
+
+  .fiestas-detail-transit-summary {
+    margin: 0 0 0.45rem;
+    color: #596273;
+    font-size: 0.78rem;
+    font-weight: 750;
+  }
+
+  .fiestas-detail-transit-stop-list {
+    display: grid;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .fiestas-detail-transit-stop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.65rem;
+    min-width: 0;
+    border-radius: 0.7rem;
+    background: rgba(255, 255, 255, 0.74);
+    padding: 0.48rem 0.55rem 0.48rem 0.65rem;
+    color: #374151;
+    text-decoration: none;
+    transition: background-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+  }
+
+  .fiestas-detail-transit-stop:hover,
+  .fiestas-detail-transit-stop:focus-visible {
+    background: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 0.2rem 0.42rem rgba(26, 33, 45, 0.12);
+    transform: translateY(-1px);
+  }
+
+  .fiestas-detail-transit-stop:focus-visible {
+    outline: 3px solid rgba(15, 159, 141, 0.35);
+    outline-offset: 2px;
+  }
+
+  .fiestas-detail-transit-stop-copy {
+    display: grid;
+    min-width: 0;
+    gap: 0.08rem;
+  }
+
+  .fiestas-detail-transit-stop-copy strong,
+  .fiestas-detail-transit-stop-copy span {
+    overflow-wrap: anywhere;
+  }
+
+  .fiestas-detail-transit-stop-copy strong {
+    color: #374151;
+    font-size: 0.82rem;
+  }
+
+  .fiestas-detail-transit-stop-copy span {
+    color: #7a8494;
+    font-size: 0.72rem;
+  }
+
+  .fiestas-detail-transit-stop > i {
+    display: grid;
+    flex: 0 0 auto;
+    width: 1.8rem;
+    height: 1.8rem;
+    place-items: center;
+    border-radius: 9999px;
+    color: #73579f;
+  }
+
+  .fiestas-detail-transit-planner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+    margin-top: 0.55rem;
+    color: #0f8f80;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-decoration: none;
+  }
+
+  .fiestas-detail-transit-planner:hover,
+  .fiestas-detail-transit-planner:focus-visible {
+    color: #087569;
+    text-decoration: underline;
+  }
+
+  .fiestas-detail-map-stop-marker {
+    border: 0;
+    background: transparent;
+  }
+
+  .fiestas-detail-map-stop-marker-content {
+    display: grid;
+    justify-items: center;
+    transform: translate(-50%, -50%);
+    color: #0f9f8d;
+    filter: drop-shadow(0 0.12rem 0.12rem rgba(28, 34, 45, 0.28));
+  }
+
+  .fiestas-detail-map-stop-marker-content i {
+    display: grid;
+    width: 1.9rem;
+    height: 1.9rem;
+    place-items: center;
+    border: 2px solid #fff;
+    border-radius: 9999px;
+    background: #0f9f8d;
+    color: #fff;
+    font-size: 0.88rem;
+    -webkit-text-fill-color: currentColor;
+    -webkit-text-stroke: 0;
+  }
+
+  .fiestas-detail-map-stop-marker-content span {
+    margin-top: 0.12rem;
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.94);
+    color: #087569;
+    padding: 0.1rem 0.3rem;
+    font-size: 0.58rem;
+    font-weight: 800;
+    white-space: nowrap;
+    -webkit-text-stroke: 0;
   }
 
   .fiestas-detail-feedback {
@@ -3566,6 +3941,85 @@
   html.dark .fiestas-detail-map-note {
     border-color: #313743;
     color: #bdc4cf;
+  }
+
+  html.dark .fiestas-detail-transit {
+    border-color: #313743;
+    background: linear-gradient(135deg, rgba(23, 184, 164, 0.1), rgba(115, 87, 159, 0.14));
+  }
+
+  html.dark .fiestas-detail-directions-options {
+    border-color: #313743;
+    background: rgba(23, 184, 164, 0.06);
+  }
+
+  html.dark .fiestas-detail-directions-option {
+    background: transparent;
+    color: #5dd4c4;
+  }
+
+  html.dark .fiestas-detail-directions-option i {
+    color: #5dd4c4;
+  }
+
+  html.dark .fiestas-detail-directions-option:hover,
+  html.dark .fiestas-detail-directions-option:focus-visible {
+    background: rgba(93, 212, 196, 0.14);
+    color: #8ce5da;
+  }
+
+  html.dark .fiestas-detail-transit-summary {
+    color: #bdc4cf;
+  }
+
+  html.dark .fiestas-detail-transit-icon,
+  html.dark .fiestas-detail-transit-scroll,
+  html.dark .fiestas-detail-transit-planner {
+    color: #5dd4c4;
+  }
+
+  html.dark .fiestas-detail-transit-scroll {
+    background: rgba(189, 196, 207, 0.12);
+  }
+
+  html.dark .fiestas-detail-transit-scroll:hover,
+  html.dark .fiestas-detail-transit-scroll:focus-visible {
+    background: rgba(93, 212, 196, 0.16);
+  }
+
+  html.dark .fiestas-detail-transit-line:hover,
+  html.dark .fiestas-detail-transit-line:focus-visible,
+  html.dark .fiestas-detail-transit-line.is-active {
+    border-color: #f8fafc;
+  }
+
+  html.dark .fiestas-detail-transit-details {
+    border-color: rgba(200, 179, 229, 0.24);
+  }
+
+  html.dark .fiestas-detail-transit-stop {
+    background: rgba(18, 20, 23, 0.72);
+  }
+
+  html.dark .fiestas-detail-transit-stop-copy strong {
+    color: #f5f3ee;
+  }
+
+  html.dark .fiestas-detail-transit-stop-copy span {
+    color: #aeb7c5;
+  }
+
+  html.dark .fiestas-detail-transit-stop {
+    color: #f5f3ee;
+  }
+
+  html.dark .fiestas-detail-transit-stop:hover,
+  html.dark .fiestas-detail-transit-stop:focus-visible {
+    background: rgba(37, 43, 55, 0.94);
+  }
+
+  html.dark .fiestas-detail-transit-stop > i {
+    color: #c8b3e5;
   }
 
   html.dark .fiestas-detail-map-empty,

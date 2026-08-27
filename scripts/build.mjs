@@ -30,6 +30,12 @@ const casetaMenuCollator = new Intl.Collator('es', { sensitivity: 'base', numeri
 const casetaDietaryLabels = new Set(['vegetarian', 'vegan']);
 const casetaCityCenter = { lat: 41.6523, lng: -4.7245 };
 const casetaCityRadiusKm = 12;
+const vallabusStopsUrl = process.env.FIESTAS_VALLABUS_STOPS_URL || 'https://gtfs.vallabus.com/paradas/';
+const vallabusStopsTimeoutMs = 8000;
+const vallabusNearbyRadiusMeters = 500;
+const vallabusNearbyFallbackRadiusMeters = 1000;
+const vallabusNearbyStopLimit = 3;
+const transitLineCollator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
@@ -350,7 +356,89 @@ async function copyAssetDir(sourceDir, currentDir, assetVersionSeed) {
   }
 }
 
-async function loadEvents() {
+async function loadVallabusStops() {
+  if (typeof fetch !== 'function') {
+    console.warn('No se pudo cargar VallaBus: fetch no está disponible en Node.');
+    return [];
+  }
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), vallabusStopsTimeoutMs);
+  try {
+    const response = await fetch(vallabusStopsUrl, {
+      headers: { accept: 'application/json' },
+      signal: controller.signal
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const payload = await response.json();
+    const stops = normalizeVallabusStops(payload);
+    if (!stops.length) throw new Error('la respuesta no contiene paradas válidas');
+    console.log(`Loaded ${stops.length} VallaBus stops.`);
+    return stops;
+  } catch (error) {
+    console.warn(`No se pudieron cargar las paradas de VallaBus: ${error.message}. Se generarán las fichas sin transporte local.`);
+    return [];
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function normalizeVallabusStops(payload) {
+  if (!Array.isArray(payload)) return [];
+  const unique = new Map();
+  for (const entry of payload) {
+    const number = String(entry?.parada?.numero || '').trim();
+    const name = String(entry?.parada?.nombre || '').trim();
+    const lat = Number(entry?.ubicacion?.y);
+    const lng = Number(entry?.ubicacion?.x);
+    const lines = Array.isArray(entry?.lineas?.ordinarias)
+      ? [...new Set(entry.lineas.ordinarias.map((line) => String(line).trim()).filter(Boolean))]
+        .sort((left, right) => transitLineCollator.compare(left, right))
+      : [];
+    if (!number || !name || !Number.isFinite(lat) || !Number.isFinite(lng) || !lines.length) continue;
+    if (!unique.has(number)) unique.set(number, { number, name, lat, lng, lines });
+  }
+  return [...unique.values()];
+}
+
+function nearbyVallabusStops(coordinates, stops) {
+  if (!hasCoordinates(coordinates) || !stops.length) return [];
+  const ranked = stops
+    .map((stop) => ({
+      ...stop,
+      distanceMeters: Math.round(distanceInMetres(coordinates, { lat: stop.lat, lng: stop.lng }))
+    }))
+    .sort((left, right) => left.distanceMeters - right.distanceMeters || transitLineCollator.compare(left.name, right.name));
+  const withinRadius = ranked.filter((stop) => stop.distanceMeters <= vallabusNearbyRadiusMeters);
+  const selected = (withinRadius.length ? withinRadius : ranked.filter((stop) => stop.distanceMeters <= vallabusNearbyFallbackRadiusMeters))
+    .slice(0, vallabusNearbyStopLimit);
+  return selected.map(({ number, name, lat, lng, lines, distanceMeters }) => ({
+    number,
+    name,
+    lat,
+    lng,
+    lines,
+    distanceMeters
+  }));
+}
+
+function distanceInMetres(left, right) {
+  const earthRadius = 6371000;
+  const toRadians = Math.PI / 180;
+  const latitudeDelta = (right.lat - left.lat) * toRadians;
+  const longitudeDelta = (right.lng - left.lng) * toRadians;
+  const latitude1 = left.lat * toRadians;
+  const latitude2 = right.lat * toRadians;
+  const haversine = Math.sin(latitudeDelta / 2) ** 2
+    + Math.cos(latitude1) * Math.cos(latitude2) * Math.sin(longitudeDelta / 2) ** 2;
+  return 2 * earthRadius * Math.asin(Math.sqrt(haversine));
+}
+
+function nearbyVallabusLines(stops) {
+  return [...new Set(stops.flatMap((stop) => stop.lines))].sort((left, right) => transitLineCollator.compare(left, right));
+}
+
+async function loadEvents(vallabusStops = []) {
   const raw = await fs.readFile(path.join(root, 'src', 'data', 'fiestas-2026', 'events.json'), 'utf8');
   const sourceEvents = JSON.parse(raw);
   const ids = sourceEvents.map((event) => event.id);
@@ -367,6 +455,10 @@ async function loadEvents() {
           note: String(event.ticket.note || '')
         }
       : null;
+    const coordinates = hasCoordinates(event.coordinates)
+      ? normalizeCoordinates(event.coordinates)
+      : null;
+    const nearbyStops = nearbyVallabusStops(coordinates, vallabusStops);
     return {
     id: String(event.id || ''),
     date: String(event.date || ''),
@@ -385,9 +477,9 @@ async function loadEvents() {
     performances: Array.isArray(event.performances) ? event.performances.map(String) : [],
     organizers: Array.isArray(event.organizers) ? event.organizers.map(String) : [],
     collaborators: Array.isArray(event.collaborators) ? event.collaborators.map(String) : [],
-    coordinates: hasCoordinates(event.coordinates)
-      ? normalizeCoordinates(event.coordinates)
-      : null,
+    coordinates,
+    nearbyStops,
+    nearbyLines: nearbyVallabusLines(nearbyStops),
     ticket,
     ticketKind: ticketKind(ticket)
     };
@@ -416,7 +508,7 @@ function hasCoordinates(coordinates) {
   return coordinates && Number.isFinite(coordinates.lat) && Number.isFinite(coordinates.lng);
 }
 
-async function loadCasetas() {
+async function loadCasetas(vallabusStops = []) {
   const sourcePath = path.join(root, 'src', 'data', 'fiestas-2026', 'casetas.json');
   const raw = await fs.readFile(sourcePath, 'utf8');
   const source = JSON.parse(raw);
@@ -464,7 +556,14 @@ async function loadCasetas() {
     coordinates: isNearCasetaCity(caseta.coordinates)
       ? caseta.coordinates
       : createCasetaZoneFallback(caseta.zone, zoneFallbacks.get(caseta.zone) || casetaCityCenter)
-  }));
+  })).map((caseta) => {
+    const nearbyStops = nearbyVallabusStops(caseta.coordinates, vallabusStops);
+    return {
+      ...caseta,
+      nearbyStops,
+      nearbyLines: nearbyVallabusLines(nearbyStops)
+    };
+  });
 }
 
 function buildCasetaZoneFallbacks(casetas) {
@@ -758,7 +857,8 @@ async function build() {
   await copyStaticAssets(assetVersionSeed);
   const communityPlans = await copyCommunityPlansData(assetVersionSeed);
   await copyCommunityPlanFiles(assetVersionSeed);
-  const casetas = await loadCasetas();
+  const vallabusStops = await loadVallabusStops();
+  const casetas = await loadCasetas(vallabusStops);
   await copyCasetasData(casetas, assetVersionSeed);
   const communityPlanMemberships = await loadCommunityPlanMemberships(communityPlans);
   const pwaFiles = await loadPwaFiles();
@@ -776,7 +876,7 @@ async function build() {
   ]);
   await writePwaFiles(pwaFiles, { appVersion, cssVersion, jsVersion });
   const versions = { assetVersion, cssVersion, jsVersion };
-  const events = await loadEvents();
+  const events = await loadEvents(vallabusStops);
   const summary = buildSummary(events);
   const socialImage = publicBaseUrl + '/assets/social/fiestas-valladolid-2026.jpg';
   const casetasSocialImage = publicBaseUrl + '/assets/social/casetas-feria-de-dia.png';
