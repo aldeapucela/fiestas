@@ -2015,6 +2015,7 @@ function initDetailPage() {
     trackActivityViewed(els.detail.dataset.eventId);
     updateDetailFavorite({ silent: true });
   }
+  moveDetailMapAfterActions();
   initDetailDirections();
   if (!isCasetaDetail) {
     els.detailSave?.addEventListener('click', () => toggleFavorite(els.detail.dataset.eventId));
@@ -2033,6 +2034,13 @@ function initDetailPage() {
     link.addEventListener('click', () => trackDetailExternalAction(link.dataset.fiestasAnalyticsAction));
   });
   if (els.detailMap) detailMapPromise = initDetailMap();
+}
+
+function moveDetailMapAfterActions() {
+  const mapCard = document.querySelector('.fiestas-detail-map-card');
+  const actions = document.querySelector('.fiestas-detail-actions');
+  if (!mapCard || !actions || actions.nextElementSibling === mapCard) return;
+  actions.after(mapCard);
 }
 
 async function loadDetailWeather() {
