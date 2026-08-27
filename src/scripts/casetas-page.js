@@ -1,8 +1,8 @@
 import { readCasetaFavoriteIds, setCasetaFavorite, subscribeToCasetaFavorites } from './casetas-favorites.js';
 import { trackCasetaFavoriteChanged } from './analytics.js';
 
-const CENTER = [41.6523, -4.7245];
-const DEFAULT_ZOOM = 15;
+const CENTER = [41.645726, -4.732919];
+const DEFAULT_ZOOM = 14;
 const USER_ZOOM = 14;
 const MAX_CITY_COORDINATE_DISTANCE_KM = 12;
 const CARTO_BASEMAPS_API_KEY = 'cb1_27ug_1_19138f635d4f03358d12cb43';
@@ -10,6 +10,8 @@ const CARTO_LAYERS = {
   light: `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=${CARTO_BASEMAPS_API_KEY}`,
   dark: `https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=${CARTO_BASEMAPS_API_KEY}`
 };
+const LEAFLET_SCRIPT_URL = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+const LEAFLET_SCRIPT_INTEGRITY = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
 const ZONE_COLORS = {
   'Zona 1': '#0f9f8d',
   'Zona 2': '#73579f',
@@ -165,6 +167,17 @@ function buildZones(casetas) {
 
 function buildMapGroups(zones) {
   return zones.flatMap((zone) => {
+    if (zone.zone === 'Zona 1') {
+      return [{
+        id: `${zone.zone}-all`,
+        zone: zone.zone,
+        number: zone.number,
+        location: null,
+        items: zone.items,
+        coordinates: zone.coordinates,
+        color: zone.color
+      }];
+    }
     const grouped = new Map();
     zone.items.forEach((caseta) => {
       const key = normalizeText(caseta.location);
@@ -184,7 +197,7 @@ function buildMapGroups(zones) {
       color: zone.color
     }));
   }).sort((a, b) => a.zone.localeCompare(b.zone, 'es', { numeric: true })
-    || a.location.localeCompare(b.location, 'es', { sensitivity: 'base' }));
+    || (a.location || '').localeCompare(b.location || '', 'es', { sensitivity: 'base' }));
 }
 
 function bindControls() {
@@ -393,14 +406,15 @@ function renderMapMarkers() {
   }
   els.mapEmpty.hidden = true;
   groupsWithCoordinates.forEach((group) => {
-    const markerLabel = `${group.zone} - ${group.location}`;
+    const markerLabel = group.location ? `${group.zone} - ${group.location}` : group.zone;
     const groupCount = `${group.items.length} ${group.items.length === 1 ? 'caseta' : 'casetas'}`;
     const marker = window.L.marker([group.coordinates.lat, group.coordinates.lng], {
       title: `${markerLabel}. ${groupCount}`,
       alt: `${markerLabel}. ${groupCount}`,
       keyboard: false,
+      zIndexOffset: group.location ? 0 : 1000,
       icon: window.L.divIcon({
-        className: `fiestas-map-marker fiestas-caseta-zone-marker${state.selectedZone === group.zone && state.selectedLocation === group.location ? ' is-selected' : ''}`,
+        className: `fiestas-map-marker fiestas-caseta-zone-marker${state.selectedZone === group.zone && (!group.location || state.selectedLocation === group.location) ? ' is-selected' : ''}`,
         html: `<button type="button" style="--fiestas-type-color:${escapeAttribute(group.color)}" aria-label="Ver ${escapeAttribute(markerLabel)} con ${groupCount}"><span>Z${escapeHtml(group.number)}</span></button>`,
         iconSize: [44, 44],
         iconAnchor: [22, 22]
@@ -413,7 +427,7 @@ function renderMapMarkers() {
 
 function selectMapGroup(group) {
   state.selectedZone = group.zone;
-  state.selectedLocation = group.location;
+  state.selectedLocation = group.location || null;
   state.sheetState = 'expanded';
   syncUrlState();
   renderMapMarkers();
@@ -468,6 +482,7 @@ function renderSheet(items, options = {}) {
     reset.innerHTML = '<i class="fa-solid fa-arrow-left" aria-hidden="true"></i><span>Ver todas las zonas</span>';
     reset.addEventListener('click', () => {
       state.selectedZone = null;
+      state.selectedLocation = null;
       state.sheetState = 'collapsed';
       syncUrlState();
       renderMapMarkers();
@@ -673,20 +688,7 @@ function applyPreferredCenter() {
   if (state.preferredMapCenter) {
     state.map.setView(state.preferredMapCenter.latLng, state.preferredMapCenter.zoom);
     state.preferredMapCenter = null;
-  } else {
-    const coordinates = state.mapGroups
-      .filter((group) => hasCoordinates(group.coordinates))
-      .map((group) => [group.coordinates.lat, group.coordinates.lng]);
-    if (coordinates.length > 1) {
-      state.map.fitBounds(coordinates, {
-        paddingTopLeft: [24, 92],
-        paddingBottomRight: [24, 124],
-        maxZoom: DEFAULT_ZOOM
-      });
-    } else {
-      state.map.setView(CENTER, DEFAULT_ZOOM);
-    }
-  }
+  } else state.map.setView(CENTER, DEFAULT_ZOOM);
 }
 
 function bindSheetGestures() {
@@ -783,7 +785,8 @@ function ensureLeaflet() {
       return;
     }
     const script = document.createElement('script');
-    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.src = LEAFLET_SCRIPT_URL;
+    script.integrity = LEAFLET_SCRIPT_INTEGRITY;
     script.crossOrigin = '';
     script.dataset.fiestasLeafletLoader = 'true';
     script.addEventListener('load', () => resolve(window.L || null), { once: true });
