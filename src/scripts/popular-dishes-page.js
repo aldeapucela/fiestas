@@ -1,6 +1,36 @@
 const CASETA_DISH_LIKES_API_URL = 'https://api.aldeapucela.org/fiestas/caseta-dish-likes';
 const REQUEST_TIMEOUT = 5000;
 const popularDishCollator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
+const MIN_VISIBLE_POPULAR_DISHES = 5;
+
+export function getPopularDishThreshold(totalLikes) {
+  const total = Number(totalLikes);
+  if (!Number.isFinite(total) || total < 50) return 1;
+  if (total < 250) return 2;
+  if (total < 500) return 5;
+  return Math.max(5, Math.ceil(total * 0.02));
+}
+
+export function filterPopularDishes(dishes = [], totalLikes = null) {
+  const rankedDishes = Array.isArray(dishes) ? dishes : [];
+  const total = Number(totalLikes);
+  const resolvedTotal = Number.isFinite(total) && total >= 0
+    ? total
+    : rankedDishes.reduce((sum, dish) => sum + Math.max(0, Number(dish?.likeCount) || 0), 0);
+  const threshold = getPopularDishThreshold(resolvedTotal);
+  const filtered = rankedDishes.filter((dish) => dish.likeCount >= threshold);
+
+  if (filtered.length >= MIN_VISIBLE_POPULAR_DISHES || rankedDishes.length <= MIN_VISIBLE_POPULAR_DISHES) {
+    return { dishes: filtered, threshold, totalLikes: resolvedTotal, usedFallback: false };
+  }
+
+  return {
+    dishes: rankedDishes.slice(0, MIN_VISIBLE_POPULAR_DISHES),
+    threshold,
+    totalLikes: resolvedTotal,
+    usedFallback: true
+  };
+}
 
 export function rankPopularDishes(casetas = [], dishes = []) {
   const dishIndex = buildDishIndex(casetas);
@@ -30,12 +60,13 @@ export function initPopularDishesPage() {
       renderStatus(list, 'No se han podido cargar los pinchos populares.', { error: true, backHref: '/casetas/' });
       return;
     }
-    const dishes = rankPopularDishes(casetas, result.dishes);
-    if (!dishes.length) {
+    const rankedDishes = rankPopularDishes(casetas, result.dishes);
+    const popular = filterPopularDishes(rankedDishes, result.totalLikes);
+    if (!popular.dishes.length) {
       renderStatus(list, 'Todavía no hay pinchos con me gusta.', { backHref: '/casetas/' });
       return;
     }
-    renderDishList(list, dishes);
+    renderDishList(list, popular.dishes);
   });
 }
 
@@ -51,7 +82,7 @@ async function loadPopularDishes() {
     if (!response.ok) return { ok: false };
     const payload = await response.json();
     if (payload?.ok !== true || !Array.isArray(payload.dishes)) return { ok: false };
-    return { ok: true, dishes: payload.dishes };
+    return { ok: true, dishes: payload.dishes, totalLikes: payload.totalLikes };
   } catch (_) {
     return { ok: false };
   } finally {
