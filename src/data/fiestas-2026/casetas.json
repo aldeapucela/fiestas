@@ -1185,7 +1185,10 @@
           {
             "title": "Postre",
             "items": [
-              "Coulant de chocolate y chantilly de vainilla (5€) (Lácteos)"
+              {
+                "name": "Coulant de chocolate y chantilly de vainilla (5€) (Lácteos)",
+                "dietary": "vegetarian"
+              }
             ]
           }
         ],
