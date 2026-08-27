@@ -974,42 +974,42 @@
       "details": {
         "menuSections": [
           {
-            "title": "PINCHO DE FERIA + BEBIDA 3,90€",
+            "title": "Pincho de feria + bebida 3,90€",
             "votable": true,
             "items": [
-              { "id": "pincho-bocatin-panceta", "name": "BOCATÍN DE PANCETA" },
-              { "id": "pincho-bocatin-calamares", "name": "BOCATÍN DE CALAMARES" },
-              { "id": "pincho-bocatin-pollo-asado-alioli", "name": "BOCATÍN DE POLLO ASADO ALIOLI" },
-              { "id": "pincho-bocatin-kebab", "name": "BOCATÍN DE KEBAB" },
-              { "id": "pincho-criollo", "name": "CRIOLLO" },
-              { "id": "pincho-guijuelito-trufado", "name": "GUIJUELITO TRUFADO" },
-              { "id": "pincho-perrito-brutal", "name": "PERRITO BRUTAL" },
-              { "id": "pincho-bocatin-chistorra", "name": "BOCATÍN DE CHISTORRA" },
-              { "id": "pincho-bocatin-morcilla-cigales-queso-cabra-higos", "name": "BOCATÍN DE MORCILLA DE CIGALES, QUESO DE CABRA E HIGOS" }
+              { "id": "pincho-bocatin-panceta", "name": "Bocatín de panceta" },
+              { "id": "pincho-bocatin-calamares", "name": "Bocatín de calamares" },
+              { "id": "pincho-bocatin-pollo-asado-alioli", "name": "Bocatín de pollo asado alioli" },
+              { "id": "pincho-bocatin-kebab", "name": "Bocatín de kebab" },
+              { "id": "pincho-criollo", "name": "Criollo" },
+              { "id": "pincho-guijuelito-trufado", "name": "Guijuelito trufado" },
+              { "id": "pincho-perrito-brutal", "name": "Perrito brutal" },
+              { "id": "pincho-bocatin-chistorra", "name": "Bocatín de chistorra" },
+              { "id": "pincho-bocatin-morcilla-cigales-queso-cabra-higos", "name": "Bocatín de morcilla de Cigales, queso de cabra e higos" }
             ]
           },
           {
-            "title": "HAMBURGUESAS + BEBIDA 6,50€",
+            "title": "Hamburguesas + bebida 6,50€",
             "votable": true,
             "items": [
-              { "id": "hamburguesa-pollo-crunch", "name": "HAMBURGUESA DE POLLO CRUNCH" },
-              { "id": "hamburguesa-ternera-queso-bacon-cebolla", "name": "HAMBURGUESA DE TERNERA CON QUESO, BACON Y CEBOLLA" }
+              { "id": "hamburguesa-pollo-crunch", "name": "Hamburguesa de pollo crunch" },
+              { "id": "hamburguesa-ternera-queso-bacon-cebolla", "name": "Hamburguesa de ternera con queso, bacon y cebolla" }
             ]
           },
           {
-            "title": "RACIONES",
+            "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "racion-calamares", "name": "CALAMARES 10,00€" },
-              { "id": "racion-patatas-braviolis", "name": "PATATAS BRAVIOLIS 6,00€" },
-              { "id": "racion-fingers", "name": "FINGERS 9,00€" }
+              { "id": "racion-calamares", "name": "Calamares 10,00€" },
+              { "id": "racion-patatas-braviolis", "name": "Patatas braviolis 6,00€" },
+              { "id": "racion-fingers", "name": "Fingers 9,00€" }
             ]
           },
           {
-            "title": "POSTRE",
+            "title": "Postre",
             "votable": true,
             "items": [
-              { "id": "postre-tarta-hojaldre-nata-crema", "name": "TARTA DE HOJALDRE, NATA Y CREMA 3,00€" }
+              { "id": "postre-tarta-hojaldre-nata-crema", "name": "Tarta de hojaldre, nata y crema 3,00€" }
             ]
           }
         ]
