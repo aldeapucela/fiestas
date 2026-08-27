@@ -57,9 +57,12 @@
         } catch (_) {}
       }());
     </script>
+    {# Font Awesome va ahora en un subset self-hosted dentro del CSS principal (npm run icons). #}
     <link rel="stylesheet" href="/assets/css/{{ pageCss }}" />
-    {# Se mantiene remoto para aprovechar la caché compartida con eventos.aldeapucela.org. #}
-    <link rel="stylesheet" href="https://eventos.aldeapucela.org/assets/fontawesome/css/all.min.css" />
+    {% if eventsDataUrl %}<link rel="preload" href="{{ eventsDataUrl }}" as="fetch" crossorigin data-fiestas-events />{% endif %}
+    {% for moduleHref in modulePreloads %}<link rel="modulepreload" href="{{ moduleHref }}" />
+    {% endfor %}<link rel="dns-prefetch" href="https://api.aldeapucela.org" />
+    <link rel="dns-prefetch" href="https://stats.aldeapucela.org" />
   </head>
   <body class="{% block bodyClass %}{% endblock %}">
     {% block header %}{% endblock %}

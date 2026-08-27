@@ -3,6 +3,15 @@ import { normalizePlanIcon } from './plan-storage.js';
 const TIME_ZONE = 'Europe/Madrid';
 const FESTIVAL_ID = 'valladolid-2026';
 
+// El JSON de eventos del cliente ya no incluye canonicalUrl: se reconstruye la
+// URL absoluta desde urlPath (los .ics necesitan URLs completas).
+function eventAbsoluteUrl(event) {
+  const url = event?.canonicalUrl || event?.urlPath || '';
+  if (!url || /^https?:\/\//i.test(url)) return url;
+  const origin = typeof window !== 'undefined' && window.location ? window.location.origin : 'https://fiestas.aldeapucela.org';
+  return origin + url;
+}
+
 export function createIcs(events = [], calendarName = 'Fiestas Valladolid 2026') {
   const lines = [
     'BEGIN:VCALENDAR',
@@ -28,7 +37,7 @@ export function createIcs(events = [], calendarName = 'Fiestas Valladolid 2026')
     if (location) lines.push(`LOCATION:${escapeIcs(location)}`);
     const description = event.description || event.summary;
     if (description) lines.push(`DESCRIPTION:${escapeIcs(description)}`);
-    const url = event.canonicalUrl || event.urlPath;
+    const url = eventAbsoluteUrl(event);
     if (url) lines.push(`URL:${escapeIcs(url)}`);
     if (Number.isFinite(Number(event.coordinates?.lat)) && Number.isFinite(Number(event.coordinates?.lng))) {
       lines.push(`GEO:${Number(event.coordinates.lat)};${Number(event.coordinates.lng)}`);
@@ -84,7 +93,7 @@ export function createCalendarLinks(event, pageUrl = '') {
 
   const title = String(event?.title || 'Actividad');
   const location = event?.location || event?.zone || event?.neighborhood || '';
-  const details = [event?.description || event?.summary || '', pageUrl || event?.canonicalUrl || event?.urlPath || '']
+  const details = [event?.description || event?.summary || '', pageUrl || eventAbsoluteUrl(event)]
     .filter(Boolean)
     .join('\n\n');
 

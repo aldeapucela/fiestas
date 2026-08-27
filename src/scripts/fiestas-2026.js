@@ -21,6 +21,7 @@ import { createCalendarLinks, createIcsFile } from './plan-export.js';
 import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
 import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './community-plans.js';
 import { rankPopularEvents } from './popular-page.js';
+import { loadEvents } from './events-data.js';
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
@@ -163,9 +164,9 @@ const els = {
   detailLightboxImage: document.querySelector('[data-fiestas-detail-lightbox-image]')
 };
 
-init();
+void init();
 
-function init() {
+async function init() {
   initTheme();
   setupMenuDrawer();
   setupSubscribe();
@@ -187,7 +188,7 @@ function init() {
 
   if (els.popularPage) {
     try {
-      state.events = normalizeEvents(window.__FIESTAS_2026_EVENTS__ || []);
+      state.events = normalizeEvents(await loadEvents());
       bindSiteShareControls();
       bindEventCardInteractions(els.popularList);
       renderPopularPage('loading');
@@ -200,15 +201,19 @@ function init() {
   }
 
   if (!els.agenda) {
-    setupCommunityPlansPage(window.__FIESTAS_2026_EVENTS__ || []);
-    setupCommunityPlanDetailPage(window.__FIESTAS_2026_EVENTS__ || []);
-    setupPlansPage(window.__FIESTAS_2026_EVENTS__ || []);
-    setupPlanImportPage(window.__FIESTAS_2026_EVENTS__ || []);
+    const events = await loadEvents().catch((error) => {
+      console.error(error);
+      return [];
+    });
+    setupCommunityPlansPage(events);
+    setupCommunityPlanDetailPage(events);
+    setupPlansPage(events);
+    setupPlanImportPage(events);
     return;
   }
 
   try {
-    state.events = normalizeEvents(window.__FIESTAS_2026_EVENTS__ || []);
+    state.events = normalizeEvents(await loadEvents());
     state.dates = getDates(state.events);
     state.types = getTypes(state.events);
     state.areas = getAreas(state.events);
@@ -225,6 +230,7 @@ function init() {
     setupScrollHeader();
   } catch (error) {
     console.error(error);
+    els.agenda.classList.remove('is-loading');
     els.agenda.replaceChildren(emptyState('No se pudo cargar la agenda. Recarga la página para intentarlo de nuevo.', true));
   }
 }
@@ -764,6 +770,7 @@ function renderShellState(filtered) {
 }
 
 function renderAgenda(events) {
+  els.agenda.classList.remove('is-loading');
   els.agenda.replaceChildren();
 
   if (!state.events.length) {
@@ -860,6 +867,13 @@ function setupCommunityCtaPwa() {
   syncPwaCta();
 }
 
+// Las tarjetas muestran la imagen a 67px: para los carteles locales existe una
+// miniatura WebP de 160px generada en el build; los externos se sirven tal cual.
+function eventThumbUrl(image) {
+  const match = /^\/assets\/events\/([^/]+)\.(?:jpe?g|png)$/i.exec(image || '');
+  return match ? `/assets/events/thumbs/${match[1]}.webp` : image;
+}
+
 function eventCard(event, options = {}) {
   const article = document.createElement('article');
   article.className = 'fiestas-event-card';
@@ -872,7 +886,7 @@ function eventCard(event, options = {}) {
   link.className = 'fiestas-event-link';
   const typeClass = typeColorClass(event.type);
   const artMarkup = event.image
-    ? `<img class="fiestas-event-image" src="${escapeHtml(event.image)}" alt="" loading="lazy" decoding="async">`
+    ? `<img class="fiestas-event-image" src="${escapeHtml(eventThumbUrl(event.image))}" alt="" width="160" height="160" loading="lazy" decoding="async">`
     : `<i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i>`;
   const dateMarkup = options.showDate
     ? `<span class="fiestas-event-date">${escapeHtml(popularEventDateLabel(event))}</span>`
@@ -1774,6 +1788,7 @@ function ticketKindLabel(kind) {
 function ensureLeaflet() {
   if (window.L) return Promise.resolve(window.L);
   if (leafletPromise) return leafletPromise;
+  ensureLeafletCss();
   leafletPromise = new Promise((resolve) => {
     const existing = document.querySelector('script[data-fiestas-leaflet-loader]');
     if (existing) {
@@ -1790,6 +1805,19 @@ function ensureLeaflet() {
     document.head.append(script);
   });
   return leafletPromise;
+}
+
+// El CSS de Leaflet ya no va en el <head> (bloqueaba el primer render): se
+// inyecta junto al JS la primera vez que hace falta el mapa. Se lanza antes que
+// el script (15 KB vs 147 KB) para que llegue cargado cuando el mapa se pinte.
+function ensureLeafletCss() {
+  if (document.querySelector('link[href*="leaflet"]')) return;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+  link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+  link.crossOrigin = '';
+  document.head.append(link);
 }
 
 function hasCoordinates(coordinates) {

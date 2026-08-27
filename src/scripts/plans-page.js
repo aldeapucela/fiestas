@@ -1112,7 +1112,7 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
   copy.append(summary);
   const illustration = document.createElement('img');
   illustration.className = 'fiestas-plan-illustration';
-  illustration.src = '/assets/plan-confetti.png';
+  illustration.src = '/assets/plan-confetti.webp';
   illustration.alt = '';
   illustration.setAttribute('aria-hidden', 'true');
   hero.append(copy, illustration);

@@ -6,6 +6,9 @@ import nunjucks from 'nunjucks';
 import postcss from 'postcss';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
+import { transform as esbuildTransform } from 'esbuild';
+import sharp from 'sharp';
+import { readManifest, scanUsedIcons } from './build-icons.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -120,49 +123,45 @@ function contentVersion(seed) {
 }
 
 async function compileCss(cssVersionSeed) {
-  const cssDir = path.join(dist, 'assets', 'css');
-  await fs.mkdir(cssDir, { recursive: true });
   const input = path.join(root, 'src', 'styles', 'fiestas-2026.css');
+  const icons = await fs.readFile(path.join(root, 'src', 'styles', 'fontawesome-subset.css'), 'utf8');
   const base = await fs.readFile(path.join(root, 'src', 'styles', 'base.css'), 'utf8');
   const page = await fs.readFile(input, 'utf8');
   const result = await postcss([
     tailwindcss({ config: path.join(root, 'tailwind.config.js') }),
     autoprefixer()
-  ]).process(base + '\n' + page, { from: input, to: path.join(cssDir, 'fiestas-2026.css') });
-  await fs.writeFile(path.join(cssDir, 'fiestas-2026.css'), result.css);
-  cssVersionSeed.push(['assets/css/fiestas-2026.css', result.css]);
+  ]).process(icons + '\n' + base + '\n' + page, { from: input, to: path.join(dist, 'assets', 'css', 'fiestas-2026.css') });
+  const { code } = await esbuildTransform(result.css, { loader: 'css', minify: true, charset: 'utf8' });
+  cssVersionSeed.push(['assets/css/fiestas-2026.css', code]);
+  return code;
 }
 
 async function copyJs(jsVersionSeed) {
-  const jsDir = path.join(dist, 'assets', 'js');
-  await fs.mkdir(jsDir, { recursive: true });
-  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'fiestas-2026.js', 'casetas-page.js', 'casetas-favorites.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js', 'chatbot.js', 'visit-tracker.js'];
-  for (const file of files) {
-    const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
-    await fs.writeFile(path.join(jsDir, file), content);
-    jsVersionSeed.push(['assets/js/' + file, content]);
-  }
-  return files;
-}
-
-async function writeVersionedJs(files, jsVersion) {
+  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'fiestas-2026.js', 'casetas-page.js', 'casetas-favorites.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js', 'chatbot.js', 'visit-tracker.js', 'events-data.js'];
   const contents = new Map();
   for (const file of files) {
-    const filePath = path.join(dist, 'assets', 'js', file);
-    contents.set(file, await fs.readFile(filePath, 'utf8'));
+    const source = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
+    const { code } = await esbuildTransform(source, { loader: 'js', minify: true, charset: 'utf8' });
+    contents.set(file, code);
+    jsVersionSeed.push(['assets/js/' + file, code]);
   }
-  for (const file of files) {
-    const content = contents.get(file);
+  return contents;
+}
+
+async function writeVersionedJs(contents, jsVersion) {
+  const jsDir = path.join(dist, 'assets', 'js');
+  await fs.mkdir(jsDir, { recursive: true });
+  for (const [file, content] of contents) {
     const versioned = content.replace(/(['"])\.\/([A-Za-z0-9_-]+)\.js\1/g, '$1./$2.' + jsVersion + '.js$1');
     const versionedFile = file.replace(/\.js$/, '.' + jsVersion + '.js');
-    await fs.writeFile(path.join(dist, 'assets', 'js', versionedFile), versioned);
+    await fs.writeFile(path.join(jsDir, versionedFile), versioned);
   }
 }
 
-async function writeVersionedCss(cssVersion) {
-  const source = path.join(dist, 'assets', 'css', 'fiestas-2026.css');
-  const target = path.join(dist, 'assets', 'css', 'fiestas-2026.' + cssVersion + '.css');
-  await fs.copyFile(source, target);
+async function writeVersionedCss(cssVersion, css) {
+  const cssDir = path.join(dist, 'assets', 'css');
+  await fs.mkdir(cssDir, { recursive: true });
+  await fs.writeFile(path.join(cssDir, 'fiestas-2026.' + cssVersion + '.css'), css);
 }
 
 async function loadPwaFiles() {
@@ -173,13 +172,23 @@ async function loadPwaFiles() {
   };
 }
 
-async function writePwaFiles({ serviceWorker, offlinePage }, { appVersion, cssVersion, jsVersion }) {
+async function writePwaFiles({ serviceWorker, offlinePage }, { appVersion, cssVersion, jsVersion, eventsDataUrl }) {
   const renderedServiceWorker = serviceWorker
     .replaceAll('__APP_VERSION__', appVersion)
     .replaceAll('__CSS_VERSION__', cssVersion)
-    .replaceAll('__JS_VERSION__', jsVersion);
+    .replaceAll('__JS_VERSION__', jsVersion)
+    .replaceAll('__EVENTS_DATA_URL__', eventsDataUrl);
   await writeFile('sw.js', renderedServiceWorker);
   await writeFile('offline.html', offlinePage);
+}
+
+async function assertIconSubsetIsFresh() {
+  const manifest = await readManifest();
+  const available = new Set([...manifest.icons, ...manifest.skipped]);
+  const missing = (await scanUsedIcons()).filter((name) => !available.has(name));
+  if (missing.length) {
+    throw new Error('Iconos sin glifo en el subset de Font Awesome: ' + missing.join(', ') + '. Ejecuta `npm run icons` y revisa el resultado.');
+  }
 }
 
 async function copyStaticAssets(assetVersionSeed) {
@@ -339,13 +348,78 @@ async function copyAssetDir(sourceDir, currentDir, assetVersionSeed) {
       continue;
     }
     if (!entry.isFile()) continue;
-    const relPath = path.relative(sourceDir, sourcePath);
-    const targetPath = path.join(dist, 'assets', relPath);
+    const relPath = path.relative(sourceDir, sourcePath).split(path.sep).join('/');
     const content = await fs.readFile(sourcePath);
-    await fs.mkdir(path.dirname(targetPath), { recursive: true });
-    await fs.writeFile(targetPath, content);
-    assetVersionSeed.push(['assets/' + relPath, createHash('sha256').update(content).digest('hex')]);
+    for (const output of await processAssetImage(relPath, content)) {
+      const targetPath = path.join(dist, 'assets', output.rel);
+      await fs.mkdir(path.dirname(targetPath), { recursive: true });
+      await fs.writeFile(targetPath, output.content);
+      assetVersionSeed.push(['assets/' + output.rel, createHash('sha256').update(output.content).digest('hex')]);
+    }
   }
+}
+
+const imageCacheDir = path.join(root, 'node_modules', '.cache', 'fiestas-images');
+
+// Optimiza imágenes en el build: recomprime las pesadas manteniendo nombre y formato,
+// y genera derivados (miniaturas de eventos, hero/confetti en WebP, favicon 64px).
+async function processAssetImage(relPath, content) {
+  const ext = path.extname(relPath).toLowerCase();
+  if (!['.png', '.jpg', '.jpeg'].includes(ext)) return [{ rel: relPath, content }];
+
+  const cacheKey = createHash('sha256').update(relPath).update('\0').update(content).digest('hex').slice(0, 24);
+  const cached = await readImageCache(cacheKey);
+  if (cached) return cached;
+
+  const outputs = [];
+  let main = content;
+  if (content.length > 150_000) {
+    try {
+      const image = sharp(content).rotate();
+      const candidate = ext === '.png'
+        ? await image.png({ palette: true, quality: 90, compressionLevel: 9 }).toBuffer()
+        : await image.resize({ width: 1920, height: 1920, fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 80, mozjpeg: true }).toBuffer();
+      if (candidate.length < main.length) main = candidate;
+    } catch (_) {
+      // Formato no soportado por sharp: se publica el original tal cual.
+    }
+  }
+  outputs.push({ rel: relPath, content: main });
+
+  if (relPath.startsWith('events/')) {
+    const thumb = await sharp(content).rotate().resize(160, 160, { fit: 'cover' }).webp({ quality: 70 }).toBuffer();
+    outputs.push({ rel: 'events/thumbs/' + path.basename(relPath, ext) + '.webp', content: thumb });
+  }
+  if (relPath === 'hero-fireworks.png') {
+    outputs.push({ rel: 'hero-fireworks.webp', content: await sharp(content).resize({ width: 320 }).webp({ quality: 80 }).toBuffer() });
+  }
+  if (relPath === 'plan-confetti.png') {
+    outputs.push({ rel: 'plan-confetti.webp', content: await sharp(content).resize({ width: 192 }).webp({ quality: 80 }).toBuffer() });
+  }
+  if (relPath === 'favicon.png') {
+    outputs.push({ rel: 'favicon-64.png', content: await sharp(content).resize(64, 64).png().toBuffer() });
+  }
+
+  await writeImageCache(cacheKey, outputs);
+  return outputs;
+}
+
+async function readImageCache(cacheKey) {
+  try {
+    const meta = JSON.parse(await fs.readFile(path.join(imageCacheDir, cacheKey + '.json'), 'utf8'));
+    return Promise.all(meta.map(async (rel, index) => ({
+      rel,
+      content: await fs.readFile(path.join(imageCacheDir, cacheKey + '.' + index))
+    })));
+  } catch (_) {
+    return null;
+  }
+}
+
+async function writeImageCache(cacheKey, outputs) {
+  await fs.mkdir(imageCacheDir, { recursive: true });
+  await Promise.all(outputs.map((output, index) => fs.writeFile(path.join(imageCacheDir, cacheKey + '.' + index), output.content)));
+  await fs.writeFile(path.join(imageCacheDir, cacheKey + '.json'), JSON.stringify(outputs.map((output) => output.rel)));
 }
 
 async function loadEvents() {
@@ -412,6 +486,29 @@ async function loadEvents() {
 
 function hasCoordinates(coordinates) {
   return coordinates && Number.isFinite(coordinates.lat) && Number.isFinite(coordinates.lng);
+}
+
+// Versión reducida de cada evento para el JSON que consume el navegador: sin los
+// campos que solo usan las plantillas (share/social/canonical) y con coordenadas
+// y entrada limitadas a lo que leen los scripts del cliente.
+function clientEvent(event) {
+  const {
+    shareText, osmUrl, directionsUrl, canonicalUrl, mapUrl, ticketDetail,
+    socialImagePath, socialImageAlt, socialImageWidth, socialImageHeight,
+    ...rest
+  } = event;
+  return {
+    ...rest,
+    coordinates: event.coordinates ? { lat: event.coordinates.lat, lng: event.coordinates.lng } : null,
+    ticket: event.ticket
+      ? {
+          required: event.ticket.required,
+          label: event.ticket.label,
+          url: event.ticket.url,
+          note: event.ticket.note
+        }
+      : null
+  };
 }
 
 async function loadCasetas() {
@@ -731,6 +828,10 @@ function pageContext({ assetVersion, cssVersion, jsVersion }) {
     activeNav: 'fiestas-2026',
     pageCss: 'fiestas-2026.' + cssVersion + '.css',
     pageJs: 'fiestas-2026.' + jsVersion + '.js',
+    // modulepreload de los imports estáticos de fiestas-2026.js: sin esto el
+    // navegador los descubre en cascada, módulo a módulo.
+    modulePreloads: ['menu-drawer', 'subscribe', 'theme', 'analytics', 'plan-storage', 'plan-export', 'plans-page', 'community-plans', 'popular-page', 'events-data']
+      .map((name) => '/assets/js/' + name + '.' + jsVersion + '.js'),
     communityPlansUrl: '/data/planes.json',
     assetVersion,
     cssVersion,
@@ -747,12 +848,13 @@ function render(template, context) {
 }
 
 async function build() {
+  await assertIconSubsetIsFresh();
   await fs.rm(dist, { recursive: true, force: true });
   const cssVersionSeed = [];
   const jsVersionSeed = [];
   const assetVersionSeed = [];
-  await compileCss(cssVersionSeed);
-  const jsFiles = await copyJs(jsVersionSeed);
+  const css = await compileCss(cssVersionSeed);
+  const jsContents = await copyJs(jsVersionSeed);
   await copyStaticAssets(assetVersionSeed);
   const communityPlans = await copyCommunityPlansData(assetVersionSeed);
   await copyCommunityPlanFiles(assetVersionSeed);
@@ -760,10 +862,16 @@ async function build() {
   await copyCasetasData(casetas, assetVersionSeed);
   const communityPlanMemberships = await loadCommunityPlanMemberships(communityPlans);
   const pwaFiles = await loadPwaFiles();
+  const events = await loadEvents();
+  const clientEventsJson = JSON.stringify(events.map(clientEvent));
+  const eventsDataVersion = contentVersion([['assets/data/events.json', clientEventsJson]]);
+  const eventsDataUrl = '/assets/data/events.' + eventsDataVersion + '.json';
+  await writeFile('assets/data/events.' + eventsDataVersion + '.json', clientEventsJson);
+  assetVersionSeed.push(['assets/data/events.json', clientEventsJson]);
   const cssVersion = contentVersion(cssVersionSeed);
   const jsVersion = contentVersion(jsVersionSeed);
-  await writeVersionedCss(cssVersion);
-  await writeVersionedJs(jsFiles, jsVersion);
+  await writeVersionedCss(cssVersion, css);
+  await writeVersionedJs(jsContents, jsVersion);
   const assetVersion = contentVersion([...cssVersionSeed, ...jsVersionSeed, ...assetVersionSeed]);
   const appVersion = contentVersion([
     ...cssVersionSeed,
@@ -772,9 +880,8 @@ async function build() {
     ['pwa/sw.js', pwaFiles.serviceWorker],
     ['pwa/offline.html', pwaFiles.offlinePage]
   ]);
-  await writePwaFiles(pwaFiles, { appVersion, cssVersion, jsVersion });
+  await writePwaFiles(pwaFiles, { appVersion, cssVersion, jsVersion, eventsDataUrl });
   const versions = { assetVersion, cssVersion, jsVersion };
-  const events = await loadEvents();
   const summary = buildSummary(events);
   const socialImage = publicBaseUrl + '/assets/social/fiestas-valladolid-2026.jpg';
   const casetasSocialImage = publicBaseUrl + '/assets/social/casetas-feria-de-dia.png';
@@ -790,8 +897,7 @@ async function build() {
       image: socialImage, imageAlt: 'Fiestas de Valladolid 2026 | Aldea Pucela',
       imageWidth: 1200, imageHeight: 630, imageType: 'image/jpeg', url: publicBaseUrl + '/'
     },
-    fiestasEvents: events,
-    fiestasEventsJson: JSON.stringify(events),
+    eventsDataUrl,
     fiestasDates: summary.dates,
     fiestasTypes: summary.types,
     fiestasAreas: summary.areas,

@@ -348,6 +348,12 @@
     order: 4;
   }
 
+  /* Mientras la agenda se renderiza en cliente, reserva alto para que el
+     contenido inferior no entre al viewport y luego salte (CLS). */
+  .fiestas-agenda.is-loading {
+    min-height: 120vh;
+  }
+
   .fiestas-plan-card {
     order: 5;
   }

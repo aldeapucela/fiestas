@@ -775,6 +775,7 @@ function updateMapTheme(leaflet) {
 function ensureLeaflet() {
   if (window.L) return Promise.resolve(window.L);
   if (leafletPromise) return leafletPromise;
+  ensureLeafletCss();
   leafletPromise = new Promise((resolve) => {
     const existing = document.querySelector('script[data-fiestas-leaflet-loader]');
     if (existing) {
@@ -791,6 +792,17 @@ function ensureLeaflet() {
     document.head.append(script);
   });
   return leafletPromise;
+}
+
+// El CSS de Leaflet se inyecta bajo demanda junto al JS (ya no bloquea el render).
+function ensureLeafletCss() {
+  if (document.querySelector('link[href*="leaflet"]')) return;
+  const link = document.createElement('link');
+  link.rel = 'stylesheet';
+  link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+  link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+  link.crossOrigin = '';
+  document.head.append(link);
 }
 
 function zoneColor(zone) {
