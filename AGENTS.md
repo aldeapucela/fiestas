@@ -38,12 +38,16 @@ The end-to-end suite never reaches the network. External hosts (`unpkg.com`,
 test. Leaflet is served from `node_modules/leaflet`, byte-identical to the copy
 on unpkg, so the pinned SRI hashes are verified for real.
 
-If Playwright has no browser build for your system (for example macOS 13), use
-the browser you already have:
+If Playwright has no browser build for your system (for example macOS 13), point
+it at a browser you already have. Set it once per clone, so the hooks pick it up
+too without exporting anything:
 
 ~~~bash
-PLAYWRIGHT_CHANNEL=chrome npm run test:e2e
+git config fiestas.playwrightChannel chrome
 ~~~
+
+`PLAYWRIGHT_CHANNEL=chrome npm run test:e2e` works too, for a one-off run. Skip
+both if `npx playwright install chromium` works on your system.
 
 The hooks are local, so they only protect the machine that installed them. The
 deploy workflow runs `npm test` before building, which is the one check that

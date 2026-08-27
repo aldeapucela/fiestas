@@ -1,11 +1,27 @@
+import { execSync } from 'node:child_process';
 import { defineConfig, devices } from '@playwright/test';
 
 const port = Number(process.env.PORT || 8002);
 const baseURL = `http://127.0.0.1:${port}/`;
 
 // Playwright no publica su Chromium para algunos sistemas (por ejemplo macOS 13).
-// Ahí se puede usar el navegador ya instalado: PLAYWRIGHT_CHANNEL=chrome npm run test:e2e
-const channel = process.env.PLAYWRIGHT_CHANNEL || undefined;
+// Ahí se usa un navegador ya instalado. Se puede fijar por clon, una sola vez:
+//   git config fiestas.playwrightChannel chrome
+// o puntualmente con PLAYWRIGHT_CHANNEL=chrome. Fijarlo en git config es lo que
+// hace que los hooks funcionen sin acordarse de exportar nada.
+function resolveChannel() {
+  if (process.env.PLAYWRIGHT_CHANNEL) return process.env.PLAYWRIGHT_CHANNEL;
+  try {
+    const value = execSync('git config --get fiestas.playwrightChannel', {
+      stdio: ['ignore', 'pipe', 'ignore']
+    }).toString().trim();
+    return value || undefined;
+  } catch {
+    return undefined;
+  }
+}
+
+const channel = resolveChannel();
 
 export default defineConfig({
   testDir: 'tests/e2e',
