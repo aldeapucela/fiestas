@@ -2132,7 +2132,9 @@ function initDetailVallaBusRoute(link) {
     };
     if (!destination.name || !Number.isFinite(destination.lat) || !Number.isFinite(destination.lon)) return;
 
-    const plannerWindow = window.open('about:blank', '_blank');
+    const fallbackUrl = vallabusRouteUrl(destination);
+    link.href = fallbackUrl;
+    const plannerWindow = window.open(fallbackUrl, '_blank');
     if (!plannerWindow) return;
     try {
       plannerWindow.opener = null;
@@ -2152,7 +2154,6 @@ function initDetailVallaBusRoute(link) {
     }
 
     if (!navigator.geolocation) {
-      openPlanner();
       return;
     }
     link.dataset.fiestasTransitLoading = 'true';
@@ -2164,7 +2165,6 @@ function initDetailVallaBusRoute(link) {
         link.removeAttribute('aria-busy');
         delete link.dataset.fiestasTransitLoading;
         if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
-          openPlanner();
           return;
         }
         detailTransitOrigin = { name: 'Tu ubicación', lat, lon };
@@ -2173,7 +2173,6 @@ function initDetailVallaBusRoute(link) {
       () => {
         link.removeAttribute('aria-busy');
         delete link.dataset.fiestasTransitLoading;
-        openPlanner();
       },
       { maximumAge: 300000, timeout: 10000 }
     );
