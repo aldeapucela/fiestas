@@ -501,6 +501,11 @@
     text-align: center;
   }
 
+  .fiestas-date-card[data-date]:not([data-date='all']):not(.has-weather) {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+
   .fiestas-date-card[data-date]:not([data-date='all']) > span:first-child {
     grid-column: 1;
     grid-row: 1;
@@ -520,6 +525,12 @@
     grid-row: 3;
     align-self: end;
     justify-self: end;
+  }
+
+  .fiestas-date-card[data-date]:not([data-date='all']):not(.has-weather) > span:first-child,
+  .fiestas-date-card[data-date]:not([data-date='all']):not(.has-weather) > strong,
+  .fiestas-date-card[data-date]:not([data-date='all']):not(.has-weather) > small {
+    justify-self: center;
   }
 
   .fiestas-date-card[data-date]:not([data-date='all']) > .fiestas-date-weather {
@@ -2643,6 +2654,10 @@
     color: #111827;
     font-size: 0.94rem;
     line-height: 1.35;
+  }
+
+  .fiestas-detail-fact[hidden] {
+    display: none;
   }
 
   .fiestas-detail-fact + .fiestas-detail-fact {

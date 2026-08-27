@@ -240,9 +240,12 @@ async function loadWeather() {
     const weatherByDate = await loadWeatherForecast();
     let rendered = 0;
     els.dateStrip?.querySelectorAll('[data-date]:not([data-date="all"])').forEach((button) => {
+      button.classList.remove('has-weather');
       const day = weatherByDate[button.dataset.date];
       const icon = button.querySelector('[data-weather-icon]');
       const temperature = button.querySelector('[data-weather-temperature]');
+      if (icon) icon.hidden = true;
+      if (temperature) temperature.hidden = true;
       if (!icon || !day) return;
 
       const condition = getWeatherCondition(day.weatherCode);
@@ -255,6 +258,7 @@ async function loadWeather() {
         temperature.textContent = `${Math.round(day.max)}°`;
         temperature.hidden = false;
       }
+      button.classList.add('has-weather');
       button.title = weatherLabel;
       button.setAttribute('aria-label', `${getDateButtonLabel(button)}. ${weatherLabel}`);
       rendered += 1;
