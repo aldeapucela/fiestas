@@ -14229,45 +14229,6 @@
     ]
   },
   {
-    "id": 429,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Survival Zombie: Los Caminantes (Juego Vivo)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/9ed15d4ac31e40bd5c6f3db84cb5825e81ca58c3_2_728x1024.jpeg",
-    "location": "Centro Comercial Vallsur, Paseo de Zorrilla, 328",
-    "zone": "Zona Sur",
-    "description": "La experiencia de juego vivo Survival Zombie: Los Caminantes se llevará a cabo el próximo 5 de septiembre de 2026 en las instalaciones del Centro Comercial Vallsur. Este evento promete sumergir a los participantes en un escenario de supervivencia extremo durante seis horas de actividad continua.",
-    "summary": "La experiencia de juego vivo Survival Zombie: Los Caminantes se llevará a cabo el próximo 5 de septiembre de 2026 en las instalaciones del Centro Comercial Vallsur. Este evento promete sumergir a los participantes en un escenario de supervivencia extremo durante seis horas de actividad continua.",
-    "performances": [],
-    "organizers": [
-      "Codan / WRG (World Real Games)"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6228819,
-      "lng": -4.7488684,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 11810541442,
-      "query": "Centro Comercial Vallsur, Paseo de Zorrilla, 328, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-25T19:23:58.636Z"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
     "id": 430,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
