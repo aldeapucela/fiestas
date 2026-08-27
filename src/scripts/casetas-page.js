@@ -10,6 +10,8 @@ const CARTO_LAYERS = {
   light: `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=${CARTO_BASEMAPS_API_KEY}`,
   dark: `https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png?key=${CARTO_BASEMAPS_API_KEY}`
 };
+const LEAFLET_SCRIPT_URL = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+const LEAFLET_SCRIPT_INTEGRITY = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
 const ZONE_COLORS = {
   'Zona 1': '#0f9f8d',
   'Zona 2': '#73579f',
@@ -783,7 +785,8 @@ function ensureLeaflet() {
       return;
     }
     const script = document.createElement('script');
-    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.src = LEAFLET_SCRIPT_URL;
+    script.integrity = LEAFLET_SCRIPT_INTEGRITY;
     script.crossOrigin = '';
     script.dataset.fiestasLeafletLoader = 'true';
     script.addEventListener('load', () => resolve(window.L || null), { once: true });

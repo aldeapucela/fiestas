@@ -6,6 +6,7 @@ import nunjucks from 'nunjucks';
 import postcss from 'postcss';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
+import { jsonForScript } from './json-for-script.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -32,6 +33,7 @@ const casetaCityRadiusKm = 12;
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
+env.addFilter('dumpForScript', (value) => jsonForScript(value));
 env.addFilter('dump', (value) => JSON.stringify(value));
 env.addFilter('slugify', (value) => slugify(value));
 
@@ -791,7 +793,7 @@ async function build() {
       imageWidth: 1200, imageHeight: 630, imageType: 'image/jpeg', url: publicBaseUrl + '/'
     },
     fiestasEvents: events,
-    fiestasEventsJson: JSON.stringify(events),
+    fiestasEventsJson: jsonForScript(events),
     fiestasDates: summary.dates,
     fiestasTypes: summary.types,
     fiestasAreas: summary.areas,
@@ -827,7 +829,7 @@ async function build() {
       imageType: 'image/png',
       url: publicBaseUrl + '/casetas/'
     },
-    fiestasCasetasJson: JSON.stringify(casetas),
+    fiestasCasetasJson: jsonForScript(casetas),
     fiestasCasetasZones: [...new Set(casetas.map((caseta) => caseta.zone))]
   }));
 
