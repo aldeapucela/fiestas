@@ -5495,7 +5495,8 @@ html.dark .fiestas-event-option {
   background: transparent;
   color: #1f2937;
   font: inherit;
-  font-size: 0.88rem;
+  /* iOS Safari zooms the page when focusing text inputs below 16px. */
+  font-size: 16px;
 }
 
 .fiestas-casetas-search input::placeholder {
