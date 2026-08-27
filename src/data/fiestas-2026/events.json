@@ -15688,5 +15688,44 @@
     "tags": [
       "Otros"
     ]
+  },
+  {
+    "id": 474,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "Survival Zombie: Los Caminantes",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1c0e8cdb041e6180023ee5b028cf12444c1b70cd_2_728x1024.jpeg",
+    "location": "Centro Comercial Vallsur",
+    "zone": "Zona Sur",
+    "description": "La experiencia de supervivencia Survival Zombie presenta su próximo evento titulado Los Caminantes. La cita tendrá lugar el próximo sábado 5 de septiembre a las 22:00 horas en las instalaciones del Centro Comercial Vallsur en Valladolid.",
+    "summary": "La experiencia de supervivencia Survival Zombie presenta su próximo evento titulado Los Caminantes. La cita tendrá lugar el próximo sábado 5 de septiembre a las 22:00 horas en las instalaciones del Centro Comercial Vallsur en Valladolid.",
+    "performances": [],
+    "organizers": [
+      "Codan / WRG"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6235348,
+      "lng": -4.7501067,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 26947357,
+      "query": "Centro Comercial Vallsur, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-27T12:02:51.669Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
   }
 ]
