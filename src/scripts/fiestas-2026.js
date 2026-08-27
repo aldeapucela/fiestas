@@ -38,6 +38,10 @@ const LEAFLET_SCRIPT_INTEGRITY = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvT
 const valladolidCenter = [41.6523, -4.7245];
 const userLocationZoom = 14;
 const nearbyRadiusMeters = 2000;
+const DETAIL_TRANSIT_LOCATION_CACHE_KEY = 'fiestasPucela:detail-transit-location';
+const DETAIL_TRANSIT_LOCATION_CACHE_TTL = 15 * 60 * 1000;
+const DETAIL_TRANSIT_LOCATION_WAIT = 2000;
+const DETAIL_TRANSIT_LOCATION_TIMEOUT = 15000;
 const COMMUNITY_PLANS_INSERT_AFTER = 15;
 let leafletPromise = null;
 let detailMapPromise = null;
@@ -47,6 +51,8 @@ let detailTransitMarkers = null;
 let detailTransitStops = [];
 let detailTransitSelectedLine = '';
 let detailTransitOrigin = null;
+let detailTransitLocationPromise = null;
+let detailTransitLocationBlocked = false;
 let initialDate = null;
 let filterBackdrop = null;
 let filterScrollY = 0;
@@ -2089,6 +2095,7 @@ function initDetailDirections() {
       const expanded = toggle.getAttribute('aria-expanded') === 'true';
       toggle.setAttribute('aria-expanded', String(!expanded));
       options.hidden = expanded;
+      if (!expanded) void requestDetailTransitLocation();
     });
   }
 
@@ -2119,7 +2126,7 @@ function initDetailDirections() {
 }
 
 function initDetailVallaBusRoute(link) {
-  link.addEventListener('click', (event) => {
+  link.addEventListener('click', async (event) => {
     event.preventDefault();
     if (link.dataset.fiestasTransitLoading === 'true') return;
 
@@ -2128,7 +2135,8 @@ function initDetailVallaBusRoute(link) {
       lat: Number(link.dataset.destinationLat),
       lon: Number(link.dataset.destinationLon),
       date: link.dataset.arrivalDate || '',
-      time: link.dataset.arrivalTime || ''
+      time: link.dataset.arrivalTime || '',
+      mode: link.dataset.fiestasVallabusMode || ''
     };
     if (!destination.name || !Number.isFinite(destination.lat) || !Number.isFinite(destination.lon)) return;
 
@@ -2153,29 +2161,116 @@ function initDetailVallaBusRoute(link) {
       return;
     }
 
-    if (!navigator.geolocation) {
-      return;
-    }
     link.dataset.fiestasTransitLoading = 'true';
     link.setAttribute('aria-busy', 'true');
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
+    try {
+      const origin = await waitForDetailTransitOrigin(requestDetailTransitLocation(), DETAIL_TRANSIT_LOCATION_WAIT);
+      openPlanner(origin);
+    } finally {
+      link.removeAttribute('aria-busy');
+      delete link.dataset.fiestasTransitLoading;
+    }
+  });
+}
+
+function readCachedDetailTransitOrigin() {
+  try {
+    const cached = JSON.parse(window.sessionStorage.getItem(DETAIL_TRANSIT_LOCATION_CACHE_KEY) || 'null');
+    const timestamp = Number(cached?.timestamp);
+    const lat = Number(cached?.lat);
+    const lon = Number(cached?.lon);
+    if (!Number.isFinite(timestamp) || Date.now() - timestamp > DETAIL_TRANSIT_LOCATION_CACHE_TTL) {
+      window.sessionStorage.removeItem(DETAIL_TRANSIT_LOCATION_CACHE_KEY);
+      return null;
+    }
+    if (!Number.isFinite(lat) || !Number.isFinite(lon)) return null;
+    return { name: 'Tu ubicación', lat, lon };
+  } catch (error) {
+    return null;
+  }
+}
+
+function cacheDetailTransitOrigin(origin) {
+  try {
+    window.sessionStorage.setItem(DETAIL_TRANSIT_LOCATION_CACHE_KEY, JSON.stringify({
+      timestamp: Date.now(),
+      lat: origin.lat,
+      lon: origin.lon
+    }));
+  } catch (error) {
+    // La caché es opcional y puede no estar disponible en navegación privada.
+  }
+}
+
+function requestDetailTransitLocation() {
+  if (detailTransitOrigin) return Promise.resolve(detailTransitOrigin);
+  if (detailTransitLocationBlocked) return Promise.resolve(null);
+
+  const cachedOrigin = readCachedDetailTransitOrigin();
+  if (cachedOrigin) {
+    detailTransitOrigin = cachedOrigin;
+    return Promise.resolve(detailTransitOrigin);
+  }
+
+  if (detailTransitLocationPromise) return detailTransitLocationPromise;
+  if (!navigator.geolocation) {
+    detailTransitLocationBlocked = true;
+    return Promise.resolve(null);
+  }
+
+  detailTransitLocationPromise = (async () => {
+    let permissionState = null;
+    if (navigator.permissions?.query) {
+      try {
+        const permission = await navigator.permissions.query({ name: 'geolocation' });
+        permissionState = permission.state;
+      } catch (error) {
+        // Algunos navegadores no exponen Permissions API para geolocalización.
+      }
+    }
+    if (permissionState === 'denied') {
+      detailTransitLocationBlocked = true;
+      return null;
+    }
+
+    return new Promise((resolve) => {
+      navigator.geolocation.getCurrentPosition((position) => {
         const lat = Number(position.coords.latitude);
         const lon = Number(position.coords.longitude);
-        link.removeAttribute('aria-busy');
-        delete link.dataset.fiestasTransitLoading;
         if (!Number.isFinite(lat) || !Number.isFinite(lon)) {
+          resolve(null);
           return;
         }
         detailTransitOrigin = { name: 'Tu ubicación', lat, lon };
-        openPlanner(detailTransitOrigin);
-      },
-      () => {
-        link.removeAttribute('aria-busy');
-        delete link.dataset.fiestasTransitLoading;
-      },
-      { maximumAge: 300000, timeout: 10000 }
-    );
+        cacheDetailTransitOrigin(detailTransitOrigin);
+        resolve(detailTransitOrigin);
+      }, (error) => {
+        if (error?.code === 1) detailTransitLocationBlocked = true;
+        resolve(null);
+      }, {
+        enableHighAccuracy: false,
+        maximumAge: DETAIL_TRANSIT_LOCATION_CACHE_TTL,
+        timeout: DETAIL_TRANSIT_LOCATION_TIMEOUT
+      });
+    });
+  })().finally(() => {
+    detailTransitLocationPromise = null;
+  });
+
+  return detailTransitLocationPromise;
+}
+
+function waitForDetailTransitOrigin(locationPromise, timeoutMs) {
+  return new Promise((resolve) => {
+    let settled = false;
+    const finish = (origin) => {
+      if (settled) return;
+      settled = true;
+      window.clearTimeout(timeoutId);
+      resolve(origin || null);
+    };
+    const timeoutId = window.setTimeout(() => finish(null), timeoutMs);
+    locationPromise.then(finish, () => finish(null));
   });
 }
 
@@ -2586,6 +2681,7 @@ function vallabusRouteUrl(destination, origin = null) {
     addParam('arrivalDate', destination.date);
     addParam('arrivalTime', destination.time);
   }
+  addParam('mode', destination.mode);
   addParam('origen', 'fiestasaldea');
   return `https://vallabus.com/#/rutas?${params.join('&')}`;
 }

@@ -3029,6 +3029,30 @@
     overflow-wrap: anywhere;
   }
 
+  .fiestas-detail-directions-option[aria-busy="true"] {
+    cursor: wait;
+    opacity: 0.72;
+    pointer-events: none;
+  }
+
+  .fiestas-detail-directions-option[aria-busy="true"] > i {
+    display: none;
+  }
+
+  .fiestas-detail-directions-option[aria-busy="true"]::before {
+    width: 1.1rem;
+    height: 1.1rem;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+    border-radius: 9999px;
+    content: '';
+    animation: fiestas-detail-location-spin 700ms linear infinite;
+  }
+
+  @keyframes fiestas-detail-location-spin {
+    to { transform: rotate(360deg); }
+  }
+
   .fiestas-detail-directions-option:hover,
   .fiestas-detail-directions-option:focus-visible {
     background: rgba(15, 159, 141, 0.08);
