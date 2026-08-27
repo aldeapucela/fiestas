@@ -970,6 +970,49 @@
         "lng": -4.7383034,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Paseo Zorrilla, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "PINCHO DE FERIA + BEBIDA 3,90€",
+            "votable": true,
+            "items": [
+              { "id": "pincho-bocatin-panceta", "name": "BOCATÍN DE PANCETA" },
+              { "id": "pincho-bocatin-calamares", "name": "BOCATÍN DE CALAMARES" },
+              { "id": "pincho-bocatin-pollo-asado-alioli", "name": "BOCATÍN DE POLLO ASADO ALIOLI" },
+              { "id": "pincho-bocatin-kebab", "name": "BOCATÍN DE KEBAB" },
+              { "id": "pincho-criollo", "name": "CRIOLLO" },
+              { "id": "pincho-guijuelito-trufado", "name": "GUIJUELITO TRUFADO" },
+              { "id": "pincho-perrito-brutal", "name": "PERRITO BRUTAL" },
+              { "id": "pincho-bocatin-chistorra", "name": "BOCATÍN DE CHISTORRA" },
+              { "id": "pincho-bocatin-morcilla-cigales-queso-cabra-higos", "name": "BOCATÍN DE MORCILLA DE CIGALES, QUESO DE CABRA E HIGOS" }
+            ]
+          },
+          {
+            "title": "HAMBURGUESAS + BEBIDA 6,50€",
+            "votable": true,
+            "items": [
+              { "id": "hamburguesa-pollo-crunch", "name": "HAMBURGUESA DE POLLO CRUNCH" },
+              { "id": "hamburguesa-ternera-queso-bacon-cebolla", "name": "HAMBURGUESA DE TERNERA CON QUESO, BACON Y CEBOLLA" }
+            ]
+          },
+          {
+            "title": "RACIONES",
+            "votable": true,
+            "items": [
+              { "id": "racion-calamares", "name": "CALAMARES 10,00€" },
+              { "id": "racion-patatas-braviolis", "name": "PATATAS BRAVIOLIS 6,00€" },
+              { "id": "racion-fingers", "name": "FINGERS 9,00€" }
+            ]
+          },
+          {
+            "title": "POSTRE",
+            "votable": true,
+            "items": [
+              { "id": "postre-tarta-hojaldre-nata-crema", "name": "TARTA DE HOJALDRE, NATA Y CREMA 3,00€" }
+            ]
+          }
+        ]
       }
     },
     {
