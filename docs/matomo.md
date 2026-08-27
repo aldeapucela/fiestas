@@ -37,6 +37,8 @@ Los identificadores de actividad son sus `id` numéricos y estables. Los valores
 | `activity` | `remove_save` | `activityId` | Al eliminar un favorito; no afecta al ranking de guardados. |
 | `caseta` | `save` | `casetaId` normalizado (`z1_05`) | La primera vez que ese navegador guarda una caseta; se deduplica de forma independiente. |
 | `caseta` | `remove_save` | `casetaId` normalizado (`z1_05`) | Al eliminar una caseta de favoritas. |
+| `caseta_dish` | `like` | `casetaId_dishId` normalizado (`z2_07_pincho_brocheta_pollo`) | La primera vez que ese navegador recomienda un plato; se deduplica de forma independiente. |
+| `caseta_dish` | `remove_like` | `casetaId_dishId` normalizado (`z2_07_pincho_brocheta_pollo`) | Retirada de una recomendación local; se registra para análisis futuro, pero no se resta del contador público. |
 | `activity` | `share` | `activityId` | Después de compartir o copiar correctamente. |
 | `activity` | `open_directions` | `activityId` | Al abrir Cómo llegar. |
 | `activity` | `open_tickets` | `activityId` | Al abrir el enlace de entradas. |
@@ -67,6 +69,8 @@ Los pageviews se envían mediante `trackPageView` durante la única inicializaci
 - Sin cuentas, las métricas representan visitas/dispositivos y acciones observadas, no personas identificadas de forma exacta.
 - Los eventos `activity / save` se cuentan una sola vez por actividad y navegador mediante `fiestasPucela:analytics:saved-activities` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, no se puede garantizar la deduplicación entre sesiones.
 - Los eventos `caseta / save` se cuentan una sola vez por caseta y navegador mediante `fiestasPucela:analytics:saved-casetas` en `localStorage`. El ID local `z1-05` se envía a Matomo como el token `z1_05`; el endpoint lo devuelve de nuevo como `z1-05`. Las retiradas (`caseta / remove_save`) se registran aparte y no se restan del contador acumulado.
+- Los eventos `caseta_dish / like` se cuentan una sola vez por plato y navegador mediante `fiestasPucela:analytics:liked-caseta-dishes` en `localStorage`. La interfaz permite retirar y volver a poner la reacción; cada retirada genera `caseta_dish / remove_like`, pero el endpoint público solo agrega `like`. El estado de la reacción se conserva aparte en `fiestasPucela:liked-caseta-dishes`. La clave local `z2-07/pincho-brocheta-pollo` se envía a Matomo como `z2_07_pincho_brocheta_pollo`.
+- Los IDs de plato son estables y no dependen del texto visible. Cambiar el nombre, precio, sección o clasificación dietética conserva el histórico; un plato realmente nuevo debe recibir otro ID. Si se elimina del catálogo, el histórico sigue en Matomo pero deja de mostrarse en la web.
 - Los eventos `plan / add_community` se cuentan una sola vez por plan vecinal y navegador mediante `fiestasPucela:analytics:added-community-plans` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, el evento puede volver a registrarse.
 - Para ordenar actividades por popularidad se debe usar el total de eventos `activity / save`, no `remove_save` ni el total de visitas. No se envía una IP ni un identificador de usuario propio.
 - El contador de planes vecinales representa añadidos de navegadores estimados, no personas únicas exactas.
@@ -97,3 +101,26 @@ La respuesta contiene únicamente casetas con al menos un `save`:
 ```
 
 El endpoint cuenta señales acumuladas de guardado, no favoritas actuales exactas: la aplicación no identifica de forma persistente a cada navegador y las retiradas no se descuentan. Nginx publica el webhook de n8n con CORS, limitación de lectura y caché de 15 minutos; Matomo permanece únicamente en el servidor.
+
+## Endpoint público de recomendaciones de platos
+
+Las recomendaciones de platos se consultan mediante `GET https://api.aldeapucela.org/fiestas/caseta-dish-likes`. Acepta opcionalmente `from` y `to` con formato `YYYY-MM-DD`, usando la validación en `Europe/Madrid` de los demás endpoints.
+
+La respuesta contiene los platos con al menos una recomendación:
+
+```json
+{
+  "ok": true,
+  "siteId": 29,
+  "event": { "category": "caseta_dish", "action": "like" },
+  "from": "2026-01-01",
+  "to": "2026-08-27",
+  "dishes": [
+    { "casetaId": "z2-07", "dishId": "pincho-brocheta-pollo", "likeCount": 4 }
+  ],
+  "totalLikes": 4,
+  "generatedAt": "2026-08-27T00:00:00.000Z"
+}
+```
+
+El workflow de n8n recibe el webhook en `tasks.nukeador.com/webhook/fiestas/caseta-dish-likes`. La ruta pública se publica en `/etc/nginx/sites-enabled/api.aldeapucela.org` del servidor `root@nukeador.com`, con el mismo proxy, CORS, rate limit, caché de 15 minutos, `X-Cache-Status` y respuestas stale que `caseta-saves`. El contador es acumulado y no representa personas exactas identificadas.

@@ -272,11 +272,29 @@
         <ul>
           {% for item in section.items %}
           <li>
-            <span>{{ item.name }}</span>
-            {% if item.dietary == 'vegetarian' %}
-            <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegetarian">Vegetariano</span>
-            {% elif item.dietary == 'vegan' %}
-            <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegan">Vegano</span>
+            <div class="fiestas-caseta-menu-item-main">
+              <span class="fiestas-caseta-menu-item-name">{{ item.name }}</span>
+              {% if item.dietary == 'vegetarian' %}
+              <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegetarian">Vegetariano</span>
+              {% elif item.dietary == 'vegan' %}
+              <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegan">Vegano</span>
+              {% endif %}
+            </div>
+            {% if section.votable and item.id %}
+            <button
+              class="fiestas-caseta-dish-like"
+              type="button"
+              data-fiestas-caseta-dish-like
+              data-caseta-id="{{ caseta.id }}"
+              data-dish-id="{{ item.id }}"
+              data-dish-name="{{ item.name }}"
+              aria-pressed="false"
+              aria-label="Me gusta {{ item.name }}"
+              title="Me gusta {{ item.name }}"
+            >
+              <i class="fa-regular fa-thumbs-up" data-fiestas-caseta-dish-like-icon aria-hidden="true"></i>
+              <span data-fiestas-caseta-dish-like-count hidden></span>
+            </button>
             {% endif %}
           </li>
           {% endfor %}
@@ -408,6 +426,7 @@
 
 {% block extraScripts %}
 <script type="module" src="/assets/js/casetas-favorites.{{ jsVersion }}.js" defer></script>
+<script type="module" src="/assets/js/caseta-dish-likes.{{ jsVersion }}.js" defer></script>
 {% if caseta.coordinates %}
 <script
   src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

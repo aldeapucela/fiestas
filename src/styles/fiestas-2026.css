@@ -5794,10 +5794,56 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 
 .fiestas-caseta-menu-section li {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 0.45rem;
   padding-left: 0.15rem;
+}
+
+.fiestas-caseta-menu-item-main {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: baseline;
+  gap: 0.45rem;
+}
+
+.fiestas-caseta-menu-item-name {
+  min-width: 0;
+  flex: 0 1 auto;
+}
+
+.fiestas-caseta-dish-like {
+  display: inline-flex;
+  min-width: 2.4rem;
+  min-height: 2.2rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #98a2b3;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 0.2rem 0.35rem;
+}
+
+.fiestas-caseta-dish-like:hover,
+.fiestas-caseta-dish-like:focus-visible {
+  background: color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 10%, transparent);
+  color: var(--fiestas-type-color, #0f9f8d);
+}
+
+.fiestas-caseta-dish-like.is-active {
+  color: var(--fiestas-type-color, #0f9f8d);
+}
+
+.fiestas-caseta-dish-like-count {
+  min-width: 1ch;
+  text-align: center;
 }
 
 .fiestas-caseta-dietary-pill {
@@ -5932,6 +5978,21 @@ html.dark .fiestas-caseta-dietary-pill--vegetarian {
 html.dark .fiestas-caseta-dietary-pill--vegan {
   background: #1d4b36;
   color: #a8ebc2;
+}
+
+html.dark .fiestas-caseta-dish-like {
+  color: #9aa6b7;
+}
+
+html.dark .fiestas-caseta-dish-like:hover,
+html.dark .fiestas-caseta-dish-like:focus-visible {
+  background: color-mix(in srgb, var(--fiestas-type-color, #17b8a4) 16%, transparent);
+  color: #7be0d1;
+}
+
+html.dark .fiestas-caseta-dish-like.is-active,
+html.dark .fiestas-caseta-dish-like:disabled {
+  color: var(--fiestas-type-color, #7be0d1);
 }
 
 html.dark .fiestas-caseta-type-muted {
@@ -7186,6 +7247,34 @@ html.dark .fiestas-popular-status.is-error {
   color: #f0aaa2;
 }
 
+html.dark .fiestas-popular-dish-card {
+  border-color: #313743;
+  background: #1a1f28;
+  box-shadow: none;
+}
+
+html.dark .fiestas-popular-dish-link:hover,
+html.dark .fiestas-popular-dish-link:focus-visible {
+  background: #202631;
+}
+
+html.dark .fiestas-popular-dish-icon {
+  background: #263b3c;
+  background: color-mix(in srgb, var(--fiestas-dish-color, #71d8cb) 20%, #1a1f28);
+}
+
+html.dark .fiestas-popular-dish-title-line strong {
+  color: #f5f3ee;
+}
+
+html.dark .fiestas-popular-dish-location {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-popular-dish-likes {
+  color: #71d8cb;
+}
+
 @media (min-width: 720px) {
   .fiestas-plan-share-dialog {
     align-items: center;
@@ -7305,6 +7394,114 @@ html.dark .fiestas-popular-status.is-error {
   border-style: solid;
   background: #fff7f5;
   color: #8f2d24;
+}
+
+.fiestas-popular-dishes-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.fiestas-popular-dish-card {
+  border: 1px solid #e3e6ec;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.25rem 0.8rem rgba(36, 43, 55, 0.06);
+  overflow: hidden;
+}
+
+.fiestas-popular-dish-link {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr) max-content 0.75rem;
+  gap: 0.8rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.fiestas-popular-dish-link:hover,
+.fiestas-popular-dish-link:focus-visible {
+  background: #fbfcfd;
+}
+
+.fiestas-popular-dish-link:focus-visible {
+  outline: 3px solid rgba(15, 159, 141, 0.4);
+  outline-offset: -3px;
+}
+
+.fiestas-popular-dish-icon {
+  display: inline-flex;
+  width: 3.1rem;
+  height: 3.1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e8f7f4;
+  background: color-mix(in srgb, var(--fiestas-dish-color, #0f9f8d) 14%, white);
+  color: var(--fiestas-dish-color, #0f9f8d);
+  font-size: 1.3rem;
+}
+
+.fiestas-popular-dish-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.23rem;
+}
+
+.fiestas-popular-dish-title-line {
+  display: flex;
+  min-width: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.fiestas-popular-dish-title-line strong {
+  min-width: 0;
+  color: #202532;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.fiestas-popular-dish-caseta,
+.fiestas-popular-dish-location {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.35rem;
+  overflow: hidden;
+  color: #667085;
+  font-size: 0.82rem;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fiestas-popular-dish-caseta {
+  color: var(--fiestas-dish-color, #0f9f8d);
+  font-weight: 800;
+}
+
+.fiestas-popular-dish-caseta i,
+.fiestas-popular-dish-location i {
+  flex: 0 0 auto;
+}
+
+.fiestas-popular-dish-likes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #0f8f80;
+  font-size: 0.88rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.fiestas-popular-dish-arrow {
+  color: #0f9f8d;
+  font-size: 0.95rem;
 }
 
 @keyframes fiestas-popular-spin {

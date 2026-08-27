@@ -243,33 +243,38 @@
         "menuSections": [
           {
             "title": "Pinchos con bebida",
+            "votable": true,
             "items": [
-              "Bocata de rabas con alioli",
-              "Brocheta de pollo",
-              "Brocheta de langostinos",
-              "Chorizo a la sidra",
-              "Jamón con tomate",
-              "Solomillo al roquefort"
+              { "id": "pincho-bocata-rabas-alioli", "name": "Bocata de rabas con alioli" },
+              { "id": "pincho-brocheta-pollo", "name": "Brocheta de pollo" },
+              { "id": "pincho-brocheta-langostinos", "name": "Brocheta de langostinos" },
+              { "id": "pincho-chorizo-sidra", "name": "Chorizo a la sidra" },
+              { "id": "pincho-jamon-tomate", "name": "Jamón con tomate" },
+              { "id": "pincho-solomillo-roquefort", "name": "Solomillo al roquefort" }
             ]
           },
           {
             "title": "Raciones",
+            "votable": true,
             "items": [
-              "Chorizo a la sidra",
-              "Chorizo con sidra",
-              "Croquetas caseras",
+              { "id": "racion-chorizo-a-la-sidra", "name": "Chorizo a la sidra" },
+              { "id": "racion-chorizo-con-sidra", "name": "Chorizo con sidra" },
+              { "id": "racion-croquetas-caseras", "name": "Croquetas caseras" },
               {
+                "id": "racion-patatas-bravas",
                 "name": "Patatas bravas",
                 "dietary": "vegetarian"
               },
-              "Pollo crujiente",
-              "Rabas"
+              { "id": "racion-pollo-crujiente", "name": "Pollo crujiente" },
+              { "id": "racion-rabas", "name": "Rabas" }
             ]
           },
           {
             "title": "Postres",
+            "votable": true,
             "items": [
               {
+                "id": "postre-vasitos-cupcake",
                 "name": "Vasitos de cupcake",
                 "dietary": "vegetarian"
               }
@@ -470,21 +475,24 @@
         "menuSections": [
           {
             "title": "Pincho + bebida",
+            "votable": true,
             "items": [
-              "Chapatina de rabas con alioli",
-              "Chapatina de rabas con alioli y salsa brava",
-              "Chapatina de cecina de León con tomate triturado",
-              "Chapatina de chorizo criollo con salsa chimichurri",
-              "Chapatina de atún con pimientos"
+              { "id": "pincho-chapatina-rabas-alioli", "name": "Chapatina de rabas con alioli" },
+              { "id": "pincho-chapatina-rabas-salsa-brava", "name": "Chapatina de rabas con alioli y salsa brava" },
+              { "id": "pincho-chapatina-cecina-tomate", "name": "Chapatina de cecina de León con tomate triturado" },
+              { "id": "pincho-chapatina-chorizo-chimichurri", "name": "Chapatina de chorizo criollo con salsa chimichurri" },
+              { "id": "pincho-chapatina-atun-pimientos", "name": "Chapatina de atún con pimientos" }
             ]
           },
           {
             "title": "Raciones",
+            "votable": true,
             "items": [
-              "Rabas con alioli",
-              "Careta de cerdo",
-              "Cecina de León",
+              { "id": "racion-rabas-alioli", "name": "Rabas con alioli" },
+              { "id": "racion-careta-cerdo", "name": "Careta de cerdo" },
+              { "id": "racion-cecina-leon", "name": "Cecina de León" },
               {
+                "id": "racion-jalapenos-cheddar",
                 "name": "Jalapeños con queso cheddar (6 uds.)",
                 "dietary": "vegetarian"
               }
@@ -492,8 +500,10 @@
           },
           {
             "title": "Postre",
+            "votable": true,
             "items": [
               {
+                "id": "postre-tarta-toblerone",
                 "name": "Tarta de Toblerone",
                 "dietary": "vegetarian"
               }
@@ -501,6 +511,7 @@
           },
           {
             "title": "Bebidas",
+            "votable": false,
             "items": [
               "Vino tinto, Verdejo y rosado",
               "Frizzante",
@@ -1113,31 +1124,36 @@
         "menuSections": [
           {
             "title": "Pincho feria (pinchos + bebida 4€)",
+            "votable": true,
             "items": [
-              "Croqueta de pato Pekín con mayonesa Hoisin (Gluten, lácteos)",
-              "Croqueta de Mango y Kimchi con mayonesa de kimchi (Gluten, lácteos, pescado)",
-              "Montado de albóndigas con salsa Tikka Masala (Gluten, lácteos, mostaza)",
-              "Plato guiso del día (Consultar alérgenos)"
+              { "id": "pincho-croqueta-pato-pekin", "name": "Croqueta de pato Pekín con mayonesa Hoisin (Gluten, lácteos)" },
+              { "id": "pincho-croqueta-mango-kimchi", "name": "Croqueta de Mango y Kimchi con mayonesa de kimchi (Gluten, lácteos, pescado)" },
+              { "id": "pincho-montado-albondigas-tikka", "name": "Montado de albóndigas con salsa Tikka Masala (Gluten, lácteos, mostaza)" },
+              { "id": "pincho-guiso-dia", "name": "Plato guiso del día (Consultar alérgenos)" }
             ]
           },
           {
             "title": "Pincho + bebida (5€)",
+            "votable": true,
             "items": [
-              "Mini Burguer de vacuno con queso, cebolla crujiente y nuestra salsa Emmy (Gluten, lácteos)"
+              { "id": "pincho-mini-burguer-vacuno", "name": "Mini Burguer de vacuno con queso, cebolla crujiente y nuestra salsa Emmy (Gluten, lácteos)" }
             ]
           },
           {
             "title": "Raciones para compartir",
+            "votable": true,
             "items": [
-              "Gyozas de cerdo con salsa de mango picante y mayonesa Japonesa (6 unidades - 11€) (Gluten, mostaza)",
-              "Torreznos de Soria con guacamole (9€) (Gluten)",
-              "Langostinos panko con salsa teriyaki (6 unidades - 12€) (Gluten, marisco, soja)"
+              { "id": "racion-gyozas-cerdo-mango", "name": "Gyozas de cerdo con salsa de mango picante y mayonesa Japonesa (6 unidades - 11€) (Gluten, mostaza)" },
+              { "id": "racion-torreznos-soria", "name": "Torreznos de Soria con guacamole (9€) (Gluten)" },
+              { "id": "racion-langostinos-panko", "name": "Langostinos panko con salsa teriyaki (6 unidades - 12€) (Gluten, marisco, soja)" }
             ]
           },
           {
             "title": "Postre",
+            "votable": true,
             "items": [
               {
+                "id": "postre-coulant-chocolate",
                 "name": "Coulant de chocolate y chantilly de vainilla (5€) (Lácteos)",
                 "dietary": "vegetarian"
               }

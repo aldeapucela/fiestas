@@ -108,6 +108,7 @@ const els = {
   casetasPage: document.querySelector('[data-fiestas-casetas-page]'),
   popularPage: document.querySelector('[data-fiestas-popular-page]'),
   popularList: document.querySelector('[data-fiestas-popular-list]'),
+  popularDishesPage: document.querySelector('[data-fiestas-popular-dishes-page]'),
   agenda: document.querySelector('[data-fiestas-agenda]'),
   mapView: document.querySelector('[data-fiestas-map-view]'),
   mapCanvas: document.querySelector('[data-fiestas-map]'),
@@ -197,6 +198,14 @@ function init() {
     void import('./casetas-page.js')
       .then(({ initCasetasPage }) => initCasetasPage())
       .catch((error) => console.error('No se pudo cargar el mapa de casetas.', error));
+    return;
+  }
+
+  if (els.popularDishesPage) {
+    bindSiteShareControls();
+    void import('./popular-dishes-page.js')
+      .then(({ initPopularDishesPage }) => initPopularDishesPage())
+      .catch((error) => console.error('No se pudo cargar la página de pinchos populares.', error));
     return;
   }
 

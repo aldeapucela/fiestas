@@ -61,29 +61,53 @@ function normalizeCasetaDetails(details) {
   if (!details || typeof details !== 'object') return null;
   return {
     ...details,
-    menuSections: Array.isArray(details.menuSections)
-      ? details.menuSections.map((section) => ({
-        ...section,
-        items: Array.isArray(section.items)
-          ? section.items
-            .map(normalizeCasetaMenuItem)
-            .filter(Boolean)
-            .sort((left, right) => casetaMenuCollator.compare(left.name, right.name))
-          : []
-      }))
-      : []
+    menuSections: normalizeCasetaMenuSections(details.menuSections)
   };
 }
 
-function normalizeCasetaMenuItem(item) {
+function normalizeCasetaMenuSections(sections) {
+  if (!Array.isArray(sections)) return [];
+  const ids = new Set();
+  return sections.map((section) => {
+    const isObject = section && typeof section === 'object' && !Array.isArray(section);
+    const votable = isObject && section.votable === true;
+    const items = Array.isArray(section?.items)
+      ? section.items
+        .map((item) => normalizeCasetaMenuItem(item, votable))
+        .filter(Boolean)
+        .map((item) => {
+          if (item.id && ids.has(item.id)) throw new Error(`El ID de plato de caseta "${item.id}" está duplicado.`);
+          if (item.id) ids.add(item.id);
+          return item;
+        })
+        .sort((left, right) => casetaMenuCollator.compare(left.name, right.name))
+      : [];
+    return {
+      ...(isObject ? section : {}),
+      votable,
+      items
+    };
+  });
+}
+
+function normalizeCasetaMenuItem(item, votable = false) {
   const isObject = item && typeof item === 'object' && !Array.isArray(item);
+  const id = String(isObject ? item.id || '' : '').trim().toLowerCase();
   const name = String(isObject ? item.name || '' : item || '').trim();
   if (!name) return null;
+  if (votable && !id) throw new Error(`El plato de caseta "${name}" necesita un ID estable.`);
+  if (id && !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id)) {
+    throw new Error(`El plato de caseta "${name}" tiene un ID inválido.`);
+  }
   const dietary = String(isObject ? item.dietary || '' : '').trim().toLowerCase();
   if (dietary && !casetaDietaryLabels.has(dietary)) {
     throw new Error(`El plato "${name}" tiene una clasificación dietética no válida.`);
   }
-  return dietary ? { name, dietary } : { name };
+  return {
+    ...(id ? { id } : {}),
+    name,
+    ...(dietary ? { dietary } : {})
+  };
 }
 
 function fiestas2026Icon(type = '') {
@@ -102,14 +126,14 @@ function socialCategorySlug(type = '') {
 }
 
 async function communityPlanSocial(communityPlan) {
-  const relativePath = `/assets/social/plans/${communityPlan.id}.png`;
+  const relativePath = `/assets/social/plans/${communityPlan.id}.jpg`;
   await fs.access(path.join(root, 'src', relativePath));
   return {
     image: publicBaseUrl + relativePath,
     imageAlt: `${communityPlan.name}, creado por ${communityPlan.author}`,
     imageWidth: 1200,
     imageHeight: 630,
-    imageType: 'image/png'
+    imageType: 'image/jpeg'
   };
 }
 
@@ -144,7 +168,7 @@ async function compileCss(cssVersionSeed) {
 async function copyJs(jsVersionSeed) {
   const jsDir = path.join(dist, 'assets', 'js');
   await fs.mkdir(jsDir, { recursive: true });
-  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'weather.js', 'fiestas-2026.js', 'casetas-page.js', 'casetas-favorites.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js', 'chatbot.js', 'visit-tracker.js'];
+  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'popular-dishes-page.js', 'weather.js', 'fiestas-2026.js', 'casetas-page.js', 'casetas-favorites.js', 'caseta-dish-likes.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js', 'chatbot.js', 'visit-tracker.js'];
   for (const file of files) {
     const content = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
     await fs.writeFile(path.join(jsDir, file), content);
@@ -879,7 +903,8 @@ async function build() {
   const events = await loadEvents(vallabusStops);
   const summary = buildSummary(events);
   const socialImage = publicBaseUrl + '/assets/social/fiestas-valladolid-2026.jpg';
-  const casetasSocialImage = publicBaseUrl + '/assets/social/casetas-feria-de-dia.png';
+  const casetasSocialImage = publicBaseUrl + '/assets/social/casetas-feria-de-dia.jpg';
+  const popularDishesSocialImage = publicBaseUrl + '/assets/social/pinchos-populares.jpg';
 
   const homeContext = {
     ...pageContext(versions),
@@ -926,7 +951,7 @@ async function build() {
       imageAlt: 'Casetas feria de día | Fiestas Valladolid 2026',
       imageWidth: 1731,
       imageHeight: 909,
-      imageType: 'image/png',
+      imageType: 'image/jpeg',
       url: publicBaseUrl + '/casetas/'
     },
     fiestasCasetasJson: jsonForScript(casetas),
@@ -945,6 +970,25 @@ async function build() {
       imageAlt: 'Actividades populares de las Fiestas Valladolid 2026',
       url: publicBaseUrl + '/populares/'
     }
+  }));
+
+  await writeFile('pinchos-populares/index.html', render('fiestas-2026-popular-dishes.njk', {
+    ...pageContext(versions),
+    title: 'Pinchos populares | Fiestas Valladolid 2026',
+    meta: { description: 'Descubre los pinchos más gustados de las casetas de las Fiestas de Valladolid 2026.' },
+    canonicalUrl: publicBaseUrl + '/pinchos-populares/',
+    social: {
+      ...homeContext.social,
+      title: 'Pinchos populares | Fiestas Valladolid 2026',
+      description: 'Descubre los pinchos más gustados de las casetas de las Fiestas de Valladolid 2026.',
+      image: popularDishesSocialImage,
+      imageAlt: 'Pinchos populares de las casetas de las Fiestas Valladolid 2026',
+      imageWidth: 1731,
+      imageHeight: 909,
+      imageType: 'image/jpeg',
+      url: publicBaseUrl + '/pinchos-populares/'
+    },
+    fiestasCasetasJson: jsonForScript(casetas)
   }));
 
   await writeFile('plan/index.html', render('fiestas-2026-plan.njk', {
@@ -979,11 +1023,11 @@ async function build() {
       ...homeContext.social,
       title: 'Planes vecinales | Fiestas Valladolid 2026',
       description: 'Descubre colecciones de actividades creadas por vecinos para las Fiestas de Valladolid 2026.',
-      image: publicBaseUrl + '/assets/social/planes.png',
+      image: publicBaseUrl + '/assets/social/planes.jpg',
       imageAlt: 'Los mejores planes para las Fiestas de Valladolid 2026',
       imageWidth: 1200,
       imageHeight: 630,
-      imageType: 'image/png',
+      imageType: 'image/jpeg',
       url: publicBaseUrl + '/planes/'
     }
   }));
@@ -1061,7 +1105,7 @@ async function build() {
     }));
   }
 
-  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/planes/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.map((caseta) => caseta.urlPath), ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.map((caseta) => caseta.urlPath), ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

@@ -1,0 +1,78 @@
+{% extends "layout.njk" %}
+
+{% block bodyClass %}fiestas-page fiestas-popular-dishes-page{% endblock %}
+{% block footerClass %} site-footer--fiestas{% endblock %}
+
+{% block body %}
+<main class="fiestas-app fiestas-plan-app fiestas-popular-app fiestas-popular-dishes-app" data-fiestas-app data-fiestas-popular-dishes-page data-community-plans-href="/planes/">
+  <script>
+    window.__FIESTAS_2026_CASETAS__ = {{ fiestasCasetasJson | safe }};
+  </script>
+  <section class="fiestas-plan-screen fiestas-popular-screen">
+    <header class="fiestas-plan-page-head">
+      <div class="fiestas-plan-topbar">
+        <a class="fiestas-plan-logo" href="/casetas/" aria-label="Volver a Casetas">
+          <img src="/assets/favicon.png" alt="" />
+        </a>
+        <h1 id="fiestas-popular-dishes-title">Pinchos populares</h1>
+        <button
+          class="fiestas-plan-header-share"
+          type="button"
+          data-fiestas-share-site
+          data-share-title="Pinchos populares | Fiestas Valladolid 2026"
+          data-share-text="Descubre los pinchos más gustados de las casetas de Valladolid"
+          data-share-url="https://fiestas.aldeapucela.org/pinchos-populares/"
+          aria-label="Compartir pinchos populares"
+          title="Compartir pinchos populares"
+        >
+          <i class="fa-solid fa-share-nodes" aria-hidden="true"></i>
+        </button>
+      </div>
+    </header>
+
+    <section class="fiestas-popular-intro" aria-labelledby="fiestas-popular-dishes-title">
+      <p>Los pinchos y tapas más valorados de estas fiestas y ferias.</p>
+      <p class="fiestas-share-feedback" data-fiestas-share-feedback role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section class="fiestas-popular-list fiestas-popular-dishes-list" data-fiestas-popular-dishes-list aria-label="Pinchos populares" aria-live="polite" aria-busy="true">
+      <div class="fiestas-popular-status">
+        <i class="fa-solid fa-spinner" aria-hidden="true"></i>
+        <span>Cargando pinchos populares…</span>
+      </div>
+    </section>
+  </section>
+</main>
+
+<nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+  <a class="fiestas-bottom-link" href="/">
+    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+    <span>Agenda</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/mapa/">
+    <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.35" />
+    </svg>
+    <span>Mapa</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/plan/">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span>Mi plan</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/casetas/">
+    <i class="fa-solid fa-store" aria-hidden="true"></i>
+    <span>Casetas</span>
+  </a>
+  <button class="fiestas-bottom-link is-active" type="button" data-menu-open aria-label="Abrir más opciones">
+    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+    <span>Más</span>
+    <span class="fiestas-hint-dot" data-menu-hint-dot hidden aria-hidden="true"></span>
+  </button>
+</nav>
+
+{% include "partials/event-options.njk" %}
+{% include "partials/plan-selector.njk" %}
+{% include "partials/menu-drawer.njk" %}
+{% include "partials/subscribe-modal.njk" %}
+{% endblock %}

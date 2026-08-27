@@ -39,7 +39,7 @@ export function setupCommunityPlansPage(rawEvents = []) {
       entries = normalizeCatalog(value).map((entry) => ({
         ...entry,
         pageUrl: `/planes/${entry.id}/`,
-        socialImageUrl: `/assets/social/plans/${entry.id}.png`
+        socialImageUrl: `/assets/social/plans/${entry.id}.jpg`
       }));
       const [enrichedEntries, planAddCounts] = await Promise.all([
         Promise.all(entries.map((entry) => enrichEntry(entry, eventById))),
@@ -437,7 +437,7 @@ function createCommunityPlanDetailHero(entry, imported) {
 
   const image = document.createElement('img');
   image.className = 'fiestas-community-plan-detail-hero-image';
-  image.src = `/assets/social/plans/${encodeURIComponent(entry.id)}.png`;
+  image.src = `/assets/social/plans/${encodeURIComponent(entry.id)}.jpg`;
   image.alt = `${entry.name || imported.name}, creado por ${entry.author}`;
   image.loading = 'eager';
   image.decoding = 'async';

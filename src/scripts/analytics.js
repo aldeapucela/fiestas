@@ -5,11 +5,13 @@ const DEFAULT_TRACKER_URL = 'https://stats.aldeapucela.org/';
 const DEFAULT_SITE_ID = '29';
 const TRACKED_FAVORITES_STORAGE_KEY = 'fiestasPucela:analytics:saved-activities';
 const TRACKED_CASETA_FAVORITES_STORAGE_KEY = 'fiestasPucela:analytics:saved-casetas';
+const TRACKED_CASETA_DISH_LIKES_STORAGE_KEY = 'fiestasPucela:analytics:liked-caseta-dishes';
 const TRACKED_COMMUNITY_PLANS_STORAGE_KEY = 'fiestasPucela:analytics:added-community-plans';
 
 const categoryActions = {
   activity: new Set(['view_detail', 'save', 'remove_save', 'share', 'open_directions', 'open_external_link', 'open_tickets']),
   caseta: new Set(['save', 'remove_save']),
+  caseta_dish: new Set(['like', 'remove_like']),
   agenda: new Set(['select_date', 'select_all_dates', 'apply_filter', 'search', 'open_activity']),
   map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
   plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'add_community', 'export', 'import', 'share', 'import_error']),
@@ -20,6 +22,7 @@ const filterNames = new Set(['type', 'area', 'ticket']);
 let analyticsReady = false;
 const trackedFavoriteIds = new Set();
 const trackedCasetaFavoriteIds = new Set();
+const trackedCasetaDishLikeIds = new Set();
 const trackedCommunityPlanIds = new Set();
 
 export function initAnalytics() {
@@ -80,6 +83,31 @@ export function trackCasetaFavoriteChanged(casetaId, saved) {
     return tracked;
   } catch (_) {
     // Analytics must never prevent the local caseta favorite from being saved.
+    return false;
+  }
+}
+
+export function trackCasetaDishLiked(casetaId, dishId) {
+  try {
+    const eventName = normalizeCasetaDishEventName(casetaId, dishId);
+    if (!eventName || hasTrackedCasetaDishLike(eventName)) return false;
+
+    const tracked = pushEvent('caseta_dish', 'like', eventName);
+    if (tracked) rememberTrackedCasetaDishLike(eventName);
+    return tracked;
+  } catch (_) {
+    // Analytics must never prevent the local dish reaction from being saved.
+    return false;
+  }
+}
+
+export function trackCasetaDishUnliked(casetaId, dishId) {
+  try {
+    const eventName = normalizeCasetaDishEventName(casetaId, dishId);
+    if (!eventName) return false;
+    return pushEvent('caseta_dish', 'remove_like', eventName);
+  } catch (_) {
+    // Analytics must never prevent the local dish reaction from being removed.
     return false;
   }
 }
@@ -271,6 +299,25 @@ function rememberTrackedCasetaFavorite(casetaId) {
   }
 }
 
+function hasTrackedCasetaDishLike(eventName) {
+  if (trackedCasetaDishLikeIds.has(eventName)) return true;
+  const storedIds = readTrackedCasetaDishLikes();
+  const alreadyTracked = storedIds.includes(eventName);
+  if (alreadyTracked) trackedCasetaDishLikeIds.add(eventName);
+  return alreadyTracked;
+}
+
+function rememberTrackedCasetaDishLike(eventName) {
+  trackedCasetaDishLikeIds.add(eventName);
+  const storedIds = new Set(readTrackedCasetaDishLikes());
+  storedIds.add(eventName);
+  try {
+    window.localStorage.setItem(TRACKED_CASETA_DISH_LIKES_STORAGE_KEY, JSON.stringify([...storedIds]));
+  } catch (_) {
+    // An unavailable localStorage still deduplicates likes for this page load.
+  }
+}
+
 function readTrackedFavoriteIds() {
   try {
     const value = JSON.parse(window.localStorage.getItem(TRACKED_FAVORITES_STORAGE_KEY) || '[]');
@@ -286,6 +333,16 @@ function readTrackedCasetaFavoriteIds() {
     const value = JSON.parse(window.localStorage.getItem(TRACKED_CASETA_FAVORITES_STORAGE_KEY) || '[]');
     if (!Array.isArray(value)) return [];
     return [...new Set(value.map(normalizeCasetaId).filter(Boolean))];
+  } catch (_) {
+    return [];
+  }
+}
+
+function readTrackedCasetaDishLikes() {
+  try {
+    const value = JSON.parse(window.localStorage.getItem(TRACKED_CASETA_DISH_LIKES_STORAGE_KEY) || '[]');
+    if (!Array.isArray(value)) return [];
+    return [...new Set(value.map((id) => String(id || '').trim()).filter(isCasetaDishEventName))];
   } catch (_) {
     return [];
   }
@@ -333,6 +390,18 @@ function normalizeToken(value) {
 function normalizeCasetaId(value) {
   const normalized = String(value || '').trim().toLowerCase();
   return /^z[1-7]-[0-9]+$/.test(normalized) ? normalized : '';
+}
+
+function normalizeCasetaDishEventName(casetaId, dishId) {
+  const normalizedCasetaId = normalizeCasetaId(casetaId);
+  const normalizedDishId = String(dishId || '').trim().toLowerCase();
+  if (!normalizedCasetaId || !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(normalizedDishId)) return '';
+  const eventName = normalizeToken(`${normalizedCasetaId}_${normalizedDishId}`);
+  return isCasetaDishEventName(eventName) ? eventName : '';
+}
+
+function isCasetaDishEventName(value) {
+  return /^z[1-7]_[0-9]+_[a-z0-9]+(?:_[a-z0-9]+)*$/.test(String(value || ''));
 }
 
 function hasPushQueue(value) {
