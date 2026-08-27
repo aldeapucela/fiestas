@@ -246,14 +246,18 @@ function bindControls() {
     renderSheet(getVisibleCasetas());
   });
   els.searchToggle?.addEventListener('click', () => {
-    state.searchOpen = !state.searchOpen;
-    if (state.searchOpen && state.sheetState !== 'expanded') {
-      state.sheetState = 'expanded';
+    const opening = !state.searchOpen;
+    state.searchOpen = opening;
+    if (opening) {
+      // Search is a city-wide action. Leave any zone explored on the map
+      // before rendering results so a search cannot be scoped accidentally.
+      resetMapSelection({ render: false });
+      if (state.sheetState !== 'expanded') state.sheetState = 'expanded';
       renderSheet(getVisibleCasetas());
     } else {
       syncSearchUi();
     }
-    if (state.searchOpen) els.searchInput?.focus();
+    if (opening) els.searchInput?.focus();
   });
   els.searchInput?.addEventListener('input', (event) => {
     state.searchQuery = event.currentTarget.value.trim();
@@ -403,6 +407,10 @@ async function initializeMap() {
     return;
   }
   state.map = leaflet.map(els.mapCanvas, { maxZoom: 19, scrollWheelZoom: true }).setView(CENTER, DEFAULT_ZOOM);
+  state.map.on('click', (event) => {
+    if (event.originalEvent?.target?.closest?.('.fiestas-caseta-zone-marker')) return;
+    resetMapSelection({ collapse: true });
+  });
   state.tileLayer = createCartoLayer(leaflet).addTo(state.map);
   state.markers = leaflet.layerGroup().addTo(state.map);
   document.addEventListener('aldeapucela:themechange', () => updateMapTheme(leaflet));
@@ -460,10 +468,22 @@ function renderMapMarkers() {
 function selectMapGroup(group) {
   state.selectedZone = group.zone;
   state.selectedLocation = group.location || null;
+  state.searchOpen = false;
   state.sheetState = 'expanded';
   syncUrlState();
   renderMapMarkers();
   renderSheet(getVisibleCasetas(), { scrollToTop: true });
+}
+
+function resetMapSelection({ collapse = false, render = true } = {}) {
+  if (!state.selectedZone && !state.selectedLocation) return false;
+  state.selectedZone = null;
+  state.selectedLocation = null;
+  if (collapse) state.sheetState = 'collapsed';
+  syncUrlState();
+  renderMapMarkers();
+  if (render) renderSheet(getVisibleCasetas());
+  return true;
 }
 
 function renderSheet(items, options = {}) {
