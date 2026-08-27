@@ -35,3 +35,27 @@ test('the Pages workflow keeps OIDC permission only in deploy', async () => {
   assert.doesNotMatch(build, /id-token:/);
   assert.match(deploy, /permissions:\n      pages: write\n      id-token: write/);
 });
+
+test('every pinned Leaflet integrity in templates matches the published file', async () => {
+  const expected = {
+    'leaflet.js': 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=',
+    'leaflet.css': 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY='
+  };
+  const templates = await fs.readdir(new URL('src/templates/', root));
+  const checked = [];
+
+  for (const name of templates.filter((file) => file.endsWith('.njk'))) {
+    const source = await read(`src/templates/${name}`);
+    // Cada etiqueta que trae Leaflet desde unpkg con su integrity.
+    const tags = source.match(/<(?:script|link)[^>]*unpkg\.com\/leaflet[^>]*>/g) || [];
+    for (const tag of tags) {
+      const file = tag.includes('leaflet.css') ? 'leaflet.css' : 'leaflet.js';
+      const integrity = tag.match(/integrity="([^"]+)"/)?.[1];
+      assert.equal(integrity, expected[file], `${name} pins the wrong hash for ${file}`);
+      checked.push(`${name}:${file}`);
+    }
+  }
+
+  // Si nadie carga Leaflet desde plantillas, este test dejaría de proteger nada.
+  assert.ok(checked.length > 0, 'no Leaflet tags found in templates');
+});
