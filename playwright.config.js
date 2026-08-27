@@ -14,7 +14,11 @@ export default defineConfig({
   // Sin reintentos a propósito: un test inestable tiene que verse, no taparse.
   retries: 0,
   workers: process.env.CI ? 2 : undefined,
-  timeout: 30_000,
+  // Presupuesto por test. No es una medida de rendimiento: está para cortar
+  // cuelgues. Los casos que cargan la portada entera (473 tarjetas) y luego
+  // navegan rondan los 35s en una máquina ocupada, así que 30s se quedaban
+  // cortos y el test moría al cerrar el contexto.
+  timeout: 90_000,
   expect: { timeout: 10_000 },
   reporter: process.env.CI
     ? [['list'], ['html', { open: 'never' }]]
