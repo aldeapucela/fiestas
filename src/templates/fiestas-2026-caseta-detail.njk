@@ -3,14 +3,11 @@
 {% block bodyClass %}fiestas-page page-caseta-detail fiestas-detail-page{% endblock %}
 {% block footerClass %} site-footer--fiestas{% endblock %}
 
+{# Leaflet (CSS y JS) se carga bajo demanda desde ensureLeaflet() en initDetailMap(). #}
 {% block extraHead %}
 {% if caseta.coordinates %}
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin=""
-/>
+<link rel="preconnect" href="https://unpkg.com" crossorigin />
+<link rel="preconnect" href="https://a.basemaps.cartocdn.com" />
 {% endif %}
 {% endblock %}
 
@@ -69,7 +66,8 @@
         <button class="detail-lightbox-close" type="button" data-fiestas-detail-lightbox-close aria-label="Cerrar imagen">
           <i class="fa-solid fa-xmark" aria-hidden="true"></i>
         </button>
-        <img class="detail-lightbox-image" data-fiestas-detail-lightbox-image src="{{ caseta.image }}" alt="{{ caseta.imageAlt or caseta.name }}" />
+        {# Sin src inicial: openLightbox() lo asigna desde data-image-src al abrir. #}
+        <img class="detail-lightbox-image" data-fiestas-detail-lightbox-image alt="{{ caseta.imageAlt or caseta.name }}" />
       </div>
     </div>
     {% endif %}
@@ -199,7 +197,7 @@
 
     <aside class="fiestas-community-card" aria-labelledby="fiestas-community-title">
       <div class="fiestas-community-heading">
-        <img class="fiestas-community-logo" src="/assets/favicon-64.png" alt="" />
+        <img class="fiestas-community-logo" src="/assets/favicon-128.png" alt="" />
         <div>
           <p class="fiestas-community-kicker">ALDEA PUCELA</p>
           <h2 id="fiestas-community-title">Las fiestas también se viven en comunidad</h2>
@@ -298,11 +296,4 @@
 
 {% block extraScripts %}
 <script type="module" src="/assets/js/casetas-favorites.{{ jsVersion }}.js" defer></script>
-{% if caseta.coordinates %}
-<script
-  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-  integrity="sha256-20NQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-  crossorigin=""
-></script>
-{% endif %}
 {% endblock %}

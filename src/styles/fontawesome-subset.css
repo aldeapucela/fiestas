@@ -1,7 +1,7 @@
 /* Generado por scripts/build-icons.mjs - no editar a mano. */
-@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:swap;src:url("/assets/fontawesome/fa-solid-900.woff2") format("woff2")}
-@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fontawesome/fa-regular-400.woff2") format("woff2")}
-@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fontawesome/fa-brands-400.woff2") format("woff2")}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url("/assets/fontawesome/fa-solid-900.woff2") format("woff2")}
+@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url("/assets/fontawesome/fa-regular-400.woff2") format("woff2")}
+@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url("/assets/fontawesome/fa-brands-400.woff2") format("woff2")}
 .fa,.fa-solid,.fa-regular,.fa-brands{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}
 .fa,.fa-solid{font-family:"Font Awesome 6 Free";font-weight:900}
 .fa-regular{font-family:"Font Awesome 6 Free";font-weight:400}
@@ -80,6 +80,7 @@
 .fa-sliders::before{content:"\f1de"}
 .fa-spinner::before{content:"\f110"}
 .fa-square-plus::before{content:"\f0fe"}
+.fa-square-rss::before{content:"\f143"}
 .fa-star::before{content:"\f005"}
 .fa-store::before{content:"\f54e"}
 .fa-sun::before{content:"\f185"}
@@ -87,6 +88,7 @@
 .fa-telegram::before{content:"\f2c6"}
 .fa-ticket::before{content:"\f145"}
 .fa-trash::before{content:"\f1f8"}
+.fa-trash-can::before{content:"\f2ed"}
 .fa-triangle-exclamation::before{content:"\f071"}
 .fa-users::before{content:"\f0c0"}
 .fa-utensils::before{content:"\f2e7"}

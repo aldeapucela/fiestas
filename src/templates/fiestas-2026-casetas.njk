@@ -3,6 +3,10 @@
 {% block bodyClass %}fiestas-page fiestas-casetas-page{% endblock %}
 
 {# El CSS de Leaflet se inyecta bajo demanda desde ensureLeaflet() de casetas-page.js. #}
+{% block extraHead %}
+<link rel="modulepreload" href="/assets/js/casetas-page.{{ jsVersion }}.js" />
+<link rel="modulepreload" href="/assets/js/casetas-favorites.{{ jsVersion }}.js" />
+{% endblock %}
 
 {% block footerClass %} site-footer--fiestas{% endblock %}
 

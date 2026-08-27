@@ -1290,7 +1290,8 @@ function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {
 
 function eventSavedCard(event) {
   const card = eventPlanCard(event);
-  const remove = actionButton('Quitar', 'fa-bookmark-slash', { 'data-plan-remove-saved': event.id });
+  // El icono anterior (bookmark con barra) es solo de FA Pro y nunca llegó a renderizar.
+  const remove = actionButton('Quitar', 'fa-trash-can', { 'data-plan-remove-saved': event.id });
   card.querySelector('.fiestas-plan-event-actions')?.append(remove);
   return card;
 }

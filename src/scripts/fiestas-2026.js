@@ -201,10 +201,17 @@ async function init() {
   }
 
   if (!els.agenda) {
-    const events = await loadEvents().catch((error) => {
+    let events;
+    try {
+      events = await loadEvents();
+    } catch (error) {
+      // Sin catálogo estas páginas validarían todo como inexistente o
+      // guardarían planes vacíos: mejor un error explícito que datos rotos.
       console.error(error);
-      return [];
-    });
+      const container = document.querySelector('main') || document.body;
+      container.prepend(emptyState('No se pudieron cargar las actividades. Recarga la página para intentarlo de nuevo.'));
+      return;
+    }
     setupCommunityPlansPage(events);
     setupCommunityPlanDetailPage(events);
     setupPlansPage(events);
@@ -231,7 +238,9 @@ async function init() {
   } catch (error) {
     console.error(error);
     els.agenda.classList.remove('is-loading');
-    els.agenda.replaceChildren(emptyState('No se pudo cargar la agenda. Recarga la página para intentarlo de nuevo.', true));
+    // Sin botón "Limpiar filtros": si falló la carga, bindControls() no llegó a
+    // ejecutarse y el botón no haría nada.
+    els.agenda.replaceChildren(emptyState('No se pudo cargar la agenda. Recarga la página para intentarlo de nuevo.'));
   }
 }
 
@@ -867,8 +876,8 @@ function setupCommunityCtaPwa() {
   syncPwaCta();
 }
 
-// Las tarjetas muestran la imagen a 67px: para los carteles locales existe una
-// miniatura WebP de 160px generada en el build; los externos se sirven tal cual.
+// Las tarjetas muestran la imagen a 67-84px: para los carteles locales existe una
+// miniatura WebP de 256px generada en el build; los externos se sirven tal cual.
 function eventThumbUrl(image) {
   const match = /^\/assets\/events\/([^/]+)\.(?:jpe?g|png)$/i.exec(image || '');
   return match ? `/assets/events/thumbs/${match[1]}.webp` : image;
@@ -886,7 +895,7 @@ function eventCard(event, options = {}) {
   link.className = 'fiestas-event-link';
   const typeClass = typeColorClass(event.type);
   const artMarkup = event.image
-    ? `<img class="fiestas-event-image" src="${escapeHtml(eventThumbUrl(event.image))}" alt="" width="160" height="160" loading="lazy" decoding="async">`
+    ? `<img class="fiestas-event-image" src="${escapeHtml(eventThumbUrl(event.image))}" alt="" width="256" height="256" loading="lazy" decoding="async">`
     : `<i class="fa-solid ${escapeHtml(event.icon || iconForType(event.type))}"></i>`;
   const dateMarkup = options.showDate
     ? `<span class="fiestas-event-date">${escapeHtml(popularEventDateLabel(event))}</span>`
@@ -1798,6 +1807,7 @@ function ensureLeaflet() {
     }
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
     script.crossOrigin = '';
     script.dataset.fiestasLeafletLoader = 'true';
     script.addEventListener('load', () => resolve(window.L || null), { once: true });

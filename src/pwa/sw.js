@@ -29,10 +29,11 @@ const APP_SHELL = [
 ];
 
 self.addEventListener('install', (event) => {
+  // Sin catch: si falla el precache es mejor que el install falle y el
+  // navegador reintente, que activarse con la caché a medias (offline roto).
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => cache.addAll(APP_SHELL))
-      .catch(() => undefined)
       .then(() => self.skipWaiting())
   );
 });

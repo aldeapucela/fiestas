@@ -785,6 +785,7 @@ function ensureLeaflet() {
     }
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
     script.crossOrigin = '';
     script.dataset.fiestasLeafletLoader = 'true';
     script.addEventListener('load', () => resolve(window.L || null), { once: true });

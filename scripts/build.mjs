@@ -184,10 +184,10 @@ async function writePwaFiles({ serviceWorker, offlinePage }, { appVersion, cssVe
 
 async function assertIconSubsetIsFresh() {
   const manifest = await readManifest();
-  const available = new Set([...manifest.icons, ...manifest.skipped]);
+  const available = new Set(manifest.icons);
   const missing = (await scanUsedIcons()).filter((name) => !available.has(name));
   if (missing.length) {
-    throw new Error('Iconos sin glifo en el subset de Font Awesome: ' + missing.join(', ') + '. Ejecuta `npm run icons` y revisa el resultado.');
+    throw new Error('Iconos sin glifo en el subset de Font Awesome: ' + missing.join(', ') + '. Ejecuta `npm run icons`; si siguen faltando es que no existen en FA Free: usa otro icono.');
   }
 }
 
@@ -360,14 +360,17 @@ async function copyAssetDir(sourceDir, currentDir, assetVersionSeed) {
 }
 
 const imageCacheDir = path.join(root, 'node_modules', '.cache', 'fiestas-images');
+// Súbelo al cambiar cualquier parámetro de sharp o las reglas de derivados:
+// la caché se indexa también por esta versión para no servir salidas obsoletas.
+const imagePipelineVersion = '3';
 
 // Optimiza imágenes en el build: recomprime las pesadas manteniendo nombre y formato,
-// y genera derivados (miniaturas de eventos, hero/confetti en WebP, favicon 64px).
+// y genera derivados (miniaturas de eventos, hero/confetti en WebP, favicon 128px).
 async function processAssetImage(relPath, content) {
   const ext = path.extname(relPath).toLowerCase();
   if (!['.png', '.jpg', '.jpeg'].includes(ext)) return [{ rel: relPath, content }];
 
-  const cacheKey = createHash('sha256').update(relPath).update('\0').update(content).digest('hex').slice(0, 24);
+  const cacheKey = createHash('sha256').update(imagePipelineVersion).update('\0').update(relPath).update('\0').update(content).digest('hex').slice(0, 24);
   const cached = await readImageCache(cacheKey);
   if (cached) return cached;
 
@@ -387,8 +390,13 @@ async function processAssetImage(relPath, content) {
   outputs.push({ rel: relPath, content: main });
 
   if (relPath.startsWith('events/')) {
-    const thumb = await sharp(content).rotate().resize(160, 160, { fit: 'cover' }).webp({ quality: 70 }).toBuffer();
-    outputs.push({ rel: 'events/thumbs/' + path.basename(relPath, ext) + '.webp', content: thumb });
+    const base = path.basename(relPath).replace(/\.(?:png|jpe?g)$/i, '');
+    // 256px cubre la tarjeta de 84px CSS a DPR 3.
+    const thumb = await sharp(content).rotate().resize(256, 256, { fit: 'cover' }).webp({ quality: 70 }).toBuffer();
+    outputs.push({ rel: 'events/thumbs/' + base + '.webp', content: thumb });
+    // Hero de la ficha de detalle (el original queda para lightbox y og:image).
+    const hero = await sharp(content).rotate().resize({ width: 800, withoutEnlargement: true }).webp({ quality: 75 }).toBuffer();
+    outputs.push({ rel: 'events/hero/' + base + '.webp', content: hero });
   }
   if (relPath === 'hero-fireworks.png') {
     outputs.push({ rel: 'hero-fireworks.webp', content: await sharp(content).resize({ width: 320 }).webp({ quality: 80 }).toBuffer() });
@@ -397,7 +405,8 @@ async function processAssetImage(relPath, content) {
     outputs.push({ rel: 'plan-confetti.webp', content: await sharp(content).resize({ width: 192 }).webp({ quality: 80 }).toBuffer() });
   }
   if (relPath === 'favicon.png') {
-    outputs.push({ rel: 'favicon-64.png', content: await sharp(content).resize(64, 64).png().toBuffer() });
+    // 128px: el uso más grande como logo es ~51px CSS → nítido hasta DPR 2.5.
+    outputs.push({ rel: 'favicon-128.png', content: await sharp(content).resize(128, 128).png().toBuffer() });
   }
 
   await writeImageCache(cacheKey, outputs);
@@ -407,7 +416,7 @@ async function processAssetImage(relPath, content) {
 async function readImageCache(cacheKey) {
   try {
     const meta = JSON.parse(await fs.readFile(path.join(imageCacheDir, cacheKey + '.json'), 'utf8'));
-    return Promise.all(meta.map(async (rel, index) => ({
+    return await Promise.all(meta.map(async (rel, index) => ({
       rel,
       content: await fs.readFile(path.join(imageCacheDir, cacheKey + '.' + index))
     })));
@@ -468,6 +477,7 @@ async function loadEvents() {
     .map((event) => ({
       ...event,
       slug: slugify(event.title),
+      detailImage: detailImageUrl(event.image),
       icon: fiestas2026Icon(event.type),
       socialImagePath: '/assets/social/categories/' + socialCategorySlug(event.type) + '.jpg',
       socialImageAlt: 'Icono morado de la categoría ' + event.type + ' sobre fondo blanco',
@@ -488,12 +498,19 @@ function hasCoordinates(coordinates) {
   return coordinates && Number.isFinite(coordinates.lat) && Number.isFinite(coordinates.lng);
 }
 
+// El hero de la ficha de detalle usa un derivado WebP de 800px para los
+// carteles locales (generado en processAssetImage); los externos van tal cual.
+function detailImageUrl(image = '') {
+  const match = /^\/assets\/events\/([^/]+)\.(?:png|jpe?g)$/i.exec(image);
+  return match ? '/assets/events/hero/' + match[1] + '.webp' : image;
+}
+
 // Versión reducida de cada evento para el JSON que consume el navegador: sin los
 // campos que solo usan las plantillas (share/social/canonical) y con coordenadas
 // y entrada limitadas a lo que leen los scripts del cliente.
 function clientEvent(event) {
   const {
-    shareText, osmUrl, directionsUrl, canonicalUrl, mapUrl, ticketDetail,
+    shareText, osmUrl, directionsUrl, canonicalUrl, mapUrl, ticketDetail, detailImage,
     socialImagePath, socialImageAlt, socialImageWidth, socialImageHeight,
     ...rest
   } = event;

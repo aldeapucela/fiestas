@@ -21,7 +21,9 @@ const scanTargets = [
 const scanExcludes = new Set([cssPath]);
 const nonIconSuffixes = new Set([
   'solid', 'regular', 'brands', 'fw', 'spin', 'pulse', 'beat', 'fade', 'flip', 'shake', 'bounce',
-  'lg', 'xs', 'sm', 'xl', '1x', '2x', '3x', '2xl', 'ul', 'li', 'stack', 'inverse', 'border'
+  'lg', 'xs', 'sm', 'xl', '1x', '2x', '3x', '2xl', 'ul', 'li', 'stack', 'inverse', 'border',
+  // Nombres de los ficheros de fuente (fa-solid-900.woff2, etc.), no iconos.
+  'solid-900', 'regular-400', 'brands-400'
 ]);
 
 async function walk(target) {
@@ -74,9 +76,10 @@ async function generate() {
 
   const css = [
     '/* Generado por scripts/build-icons.mjs - no editar a mano. */',
-    '@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:swap;src:url("/assets/fontawesome/fa-solid-900.woff2") format("woff2")}',
-    '@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fontawesome/fa-regular-400.woff2") format("woff2")}',
-    '@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:swap;src:url("/assets/fontawesome/fa-brands-400.woff2") format("woff2")}',
+    // font-display:block como el all.min.css original: un icono sin fuente debe ser invisible, nunca "tofu".
+    '@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url("/assets/fontawesome/fa-solid-900.woff2") format("woff2")}',
+    '@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url("/assets/fontawesome/fa-regular-400.woff2") format("woff2")}',
+    '@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url("/assets/fontawesome/fa-brands-400.woff2") format("woff2")}',
     '.fa,.fa-solid,.fa-regular,.fa-brands{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}',
     '.fa,.fa-solid{font-family:"Font Awesome 6 Free";font-weight:900}',
     '.fa-regular{font-family:"Font Awesome 6 Free";font-weight:400}',

@@ -3,6 +3,12 @@
 {% block bodyClass %}fiestas-page{% if mapPage %} fiestas-map-page{% endif %}{% endblock %}
 
 {# El CSS de Leaflet se inyecta bajo demanda desde ensureLeaflet() al abrir el mapa. #}
+{% block extraHead %}
+{% if mapPage %}
+<link rel="preconnect" href="https://unpkg.com" crossorigin />
+<link rel="preconnect" href="https://a.basemaps.cartocdn.com" />
+{% endif %}
+{% endblock %}
 
 {% block footerClass %} site-footer--fiestas{% endblock %}
 
@@ -10,7 +16,7 @@
 <main class="fiestas-app" data-fiestas-app data-community-plans-href="/planes/">
   <div class="fiestas-scroll-header" data-fiestas-scroll-header aria-hidden="true" inert>
     <button class="fiestas-scroll-brand" type="button" data-fiestas-scroll-top aria-label="Volver arriba" title="Volver arriba">
-      <img src="/assets/favicon-64.png" alt="" aria-hidden="true" />
+      <img src="/assets/favicon-128.png" alt="" aria-hidden="true" />
     </button>
     <span class="fiestas-scroll-day" data-fiestas-scroll-day aria-live="polite">Agenda de fiestas</span>
     <div class="fiestas-scroll-actions">
@@ -27,7 +33,7 @@
       <img class="fiestas-hero-fireworks" src="/assets/hero-fireworks.webp" alt="" aria-hidden="true" width="320" height="213" fetchpriority="high" />
       <div class="fiestas-hero-top">
         <a class="fiestas-brand" href="/" aria-label="Portada de Fiestas 2026">
-          <img src="/assets/favicon-64.png" alt="" />
+          <img src="/assets/favicon-128.png" alt="" />
           <span id="fiestas-title" class="fiestas-title">Fiestas 2026</span>
         </a>
         <div class="fiestas-hero-actions">
