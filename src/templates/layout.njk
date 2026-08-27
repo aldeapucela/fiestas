@@ -18,7 +18,7 @@
     <link rel="alternate" type="text/calendar" title="Aldea Pucela Eventos Calendario" href="https://eventos.aldeapucela.org/calendar.ics" />
     {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}" />{% endif %}
     {% if robotsMeta %}<meta name="robots" content="{{ robotsMeta }}" />{% endif %}
-    {% if structuredData %}<script type="application/ld+json">{{ structuredData | dump | safe }}</script>{% endif %}
+    {% if structuredData %}<script type="application/ld+json">{{ structuredData | dumpForScript | safe }}</script>{% endif %}
     {% if social %}
     <meta property="og:type" content="{{ social.type or 'website' }}" />
     <meta property="og:site_name" content="Aldea Pucela" />
@@ -43,7 +43,7 @@
     {% endif %}
     {% block extraHead %}{% endblock %}
     <script>
-      window.__FIESTAS_ANALYTICS_CONFIG__ = {{ analyticsConfig | dump | safe }};
+      window.__FIESTAS_ANALYTICS_CONFIG__ = {{ analyticsConfig | dumpForScript | safe }};
     </script>
     <script>
       (function () {
