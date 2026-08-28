@@ -1519,15 +1519,15 @@
             "title": "Pincho de feria + bebida 4,00€",
             "votable": true,
             "items": [
-              { "id": "pincho-arroz-cada-dia-uno-zamorana", "name": "Arroz cada dia uno a la zamorana" },
-              { "id": "pincho-paella-negro-especial-casa", "name": "Paella negro especial de la casa" },
-              { "id": "pincho-patatas-rejo", "name": "Patatas con rejo" },
-              { "id": "pincho-primo-pulpo", "name": "El primo del pulpo" },
-              { "id": "pincho-adobo-castellano", "name": "Pincho en adobo castellano" },
-              { "id": "pincho-lacon-pimientos", "name": "Lacón con pimientos" },
-              { "id": "pincho-perrito-caliente", "name": "Perrito caliente" },
-              { "id": "pincho-bocata-panceta", "name": "Bocata de panceta" },
-              { "id": "pincho-callos-garbanzos", "name": "Callos con garbanzos" }
+              { "id": "pincho-arroz-cada-dia-uno-zamorana", "name": "Arroz cada dia uno a la zamorana", "glutenFree": true },
+              { "id": "pincho-paella-negro-especial-casa", "name": "Paella negro especial de la casa", "glutenFree": true },
+              { "id": "pincho-patatas-rejo", "name": "Patatas con rejo", "glutenFree": true },
+              { "id": "pincho-primo-pulpo", "name": "El primo del pulpo", "glutenFree": true },
+              { "id": "pincho-adobo-castellano", "name": "Pincho en adobo castellano", "glutenFree": true },
+              { "id": "pincho-lacon-pimientos", "name": "Lacón con pimientos", "glutenFree": true },
+              { "id": "pincho-perrito-caliente", "name": "Perrito caliente", "glutenFree": true },
+              { "id": "pincho-bocata-panceta", "name": "Bocata de panceta", "glutenFree": true },
+              { "id": "pincho-callos-garbanzos", "name": "Callos con garbanzos", "glutenFree": true }
             ]
           },
           {
