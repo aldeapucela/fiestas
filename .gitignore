@@ -6,3 +6,8 @@ dist/
 .codex/plans/
 .codex/cache/
 .codex/reports/
+
+# Playwright
+/test-results/
+/playwright-report/
+/blob-report/

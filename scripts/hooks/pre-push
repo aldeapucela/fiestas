@@ -1,0 +1,25 @@
+#!/bin/sh
+# Suite de navegador antes de publicar la rama. Reconstruye dist/ porque
+# Playwright sirve lo que haya en disco, no lo que haya en src/.
+# Para saltarlo puntualmente: git push --no-verify, o SKIP_E2E=1 git push
+set -e
+
+if [ -n "$SKIP_E2E" ]; then
+  echo "pre-push: e2e omitido (SKIP_E2E)"
+  exit 0
+fi
+
+if [ ! -d node_modules/@playwright/test ]; then
+  echo "pre-push: falta @playwright/test. Ejecuta 'npm ci' o usa SKIP_E2E=1 git push" >&2
+  exit 1
+fi
+
+if ! output=$(npm run build --silent 2>&1); then
+  printf '%s\n' "$output" >&2
+  echo "pre-push: el build ha fallado" >&2
+  exit 1
+fi
+
+# La suite tarda un par de minutos: aquí sí conviene ver el avance.
+echo "pre-push: tests end-to-end"
+npm run test:e2e --silent
