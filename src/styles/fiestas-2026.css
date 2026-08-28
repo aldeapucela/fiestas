@@ -5332,7 +5332,7 @@ html.dark .fiestas-event-option {
 .fiestas-casetas-filter-option {
   display: flex;
   width: 100%;
-  min-height: 3.4rem;
+  min-height: 2.75rem;
   align-items: center;
   gap: 0.7rem;
   border: 1px solid #e3e6ec;
@@ -5341,7 +5341,7 @@ html.dark .fiestas-event-option {
   color: #202532;
   cursor: pointer;
   font: inherit;
-  padding: 0.7rem 0.75rem;
+  padding: 0.55rem 0.75rem;
   text-align: left;
   transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
@@ -5374,13 +5374,12 @@ html.dark .fiestas-event-option {
   transition: color 160ms ease;
 }
 
-.fiestas-casetas-filter-option.is-active .fiestas-casetas-filter-option-copy strong i {
-  color: #0f9f8d;
+.fiestas-casetas-filter-icon--gluten-free {
+  color: #98a2b3;
 }
 
-.fiestas-casetas-filter-option-copy small {
-  color: #667085;
-  font-size: 0.76rem;
+.fiestas-casetas-filter-option.is-active .fiestas-casetas-filter-option-copy strong i {
+  color: #0f9f8d;
 }
 
 .fiestas-casetas-filter-clear {
