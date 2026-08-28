@@ -1037,6 +1037,19 @@ async function build() {
     }
   }));
 
+  await writeFile('colaboradores/index.html', render('fiestas-2026-collaborators.njk', {
+    ...pageContext(versions),
+    title: 'Colaboradores | Fiestas Valladolid 2026',
+    meta: { description: 'Entidades y personas que ayudan a difundir las Fiestas Valladolid 2026 de Aldea Pucela.' },
+    canonicalUrl: publicBaseUrl + '/colaboradores/',
+    social: {
+      ...homeContext.social,
+      title: 'Colaboradores | Fiestas Valladolid 2026',
+      description: 'Entidades y personas que ayudan a difundir las Fiestas Valladolid 2026 de Aldea Pucela.',
+      url: publicBaseUrl + '/colaboradores/'
+    }
+  }));
+
   for (const communityPlan of communityPlans) {
     const planPath = `/planes/${communityPlan.id}/`;
     const planTitle = `${communityPlan.name} | Planes vecinales | Fiestas Valladolid 2026`;
@@ -1110,7 +1123,7 @@ async function build() {
     }));
   }
 
-  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.map((caseta) => caseta.urlPath), ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', '/colaboradores/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.map((caseta) => caseta.urlPath), ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
