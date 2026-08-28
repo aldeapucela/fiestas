@@ -5832,22 +5832,108 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 
 .fiestas-caseta-menu-section li {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 0.45rem;
   padding-left: 0.15rem;
 }
 
+.fiestas-caseta-menu-item-disclosure {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
 .fiestas-caseta-menu-item-main {
   display: flex;
+  width: 100%;
   min-width: 0;
   flex: 1 1 auto;
   align-items: baseline;
   gap: 0.45rem;
 }
 
+.fiestas-caseta-menu-item-disclosure > summary {
+  cursor: pointer;
+  list-style: none;
+  border-radius: 0.35rem;
+  padding: 0.16rem 0.2rem;
+  margin: -0.16rem -0.2rem;
+}
+
+.fiestas-caseta-menu-item-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.fiestas-caseta-menu-item-disclosure > summary::before {
+  flex: 0 0 auto;
+  color: #98a2b3;
+  content: '›';
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: -0.05rem 0.05rem 0 -0.05rem;
+  opacity: 0.75;
+  transition: transform 120ms ease;
+}
+
+.fiestas-caseta-menu-item-disclosure[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.fiestas-caseta-menu-item-disclosure > summary:focus-visible {
+  outline: 2px solid var(--fiestas-type-color, #0f9f8d);
+  outline-offset: 2px;
+}
+
 .fiestas-caseta-menu-item-name {
   min-width: 0;
   flex: 0 1 auto;
+}
+
+.fiestas-caseta-menu-item-meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0.1rem 0 0.25rem;
+  padding: 0 0.2rem 0 1rem;
+}
+
+.fiestas-caseta-menu-item-disclosure:not([open]) > .fiestas-caseta-menu-item-meta {
+  display: none;
+}
+
+.fiestas-caseta-menu-item-description {
+  min-width: 0;
+  flex: 1 1 auto;
+  margin: 0;
+  color: #667085;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.fiestas-caseta-menu-item-price {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  border: 1px solid #d0d5dd;
+  border-radius: 9999px;
+  background: #f2f4f7;
+  color: #475467;
+  font-size: 0.7rem;
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 0.2rem 0.48rem;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (min-width: 700px) {
+  .fiestas-caseta-menu-item--has-meta:hover .fiestas-caseta-menu-item-meta,
+  .fiestas-caseta-menu-item--has-meta:focus-within .fiestas-caseta-menu-item-meta {
+    display: flex;
+  }
+
+  .fiestas-caseta-menu-item--has-meta:not(:hover):not(:focus-within) .fiestas-caseta-menu-item-disclosure:not([open]) > .fiestas-caseta-menu-item-meta {
+    display: none;
+  }
 }
 
 .fiestas-caseta-dish-like {
@@ -6029,6 +6115,16 @@ html.dark .fiestas-caseta-highlights {
 html.dark .fiestas-caseta-menu-section h3,
 html.dark .fiestas-caseta-highlights h3 {
   color: #f8fafc;
+}
+
+html.dark .fiestas-caseta-menu-item-description {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-caseta-menu-item-price {
+  border-color: #4a5563;
+  background: #2a303a;
+  color: #d0d5dd;
 }
 
 html.dark .fiestas-caseta-dietary-pill--vegetarian {
