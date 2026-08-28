@@ -5374,12 +5374,24 @@ html.dark .fiestas-event-option {
   transition: color 160ms ease;
 }
 
+.fiestas-casetas-filter-icon {
+  flex: 0 0 auto;
+}
+
 .fiestas-casetas-filter-icon--gluten-free {
-  color: #98a2b3;
+  width: 1.15rem;
+  height: 1.15rem;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.62);
+  transition: filter 160ms ease;
 }
 
 .fiestas-casetas-filter-option.is-active .fiestas-casetas-filter-option-copy strong i {
   color: #0f9f8d;
+}
+
+.fiestas-casetas-filter-option.is-active .fiestas-casetas-filter-icon--gluten-free {
+  filter: grayscale(1) sepia(1) saturate(4) hue-rotate(122deg) brightness(0.78);
 }
 
 .fiestas-casetas-filter-clear {
