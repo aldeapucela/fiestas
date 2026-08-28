@@ -1,0 +1,14 @@
+#!/bin/sh
+# Tests unitarios antes de cada commit: tardan ~1s, así que no estorban.
+# La suite de navegador va en pre-push, que es más lenta y hace falta menos.
+# Para saltarlo puntualmente: git commit --no-verify
+
+if output=$(npm test --silent 2>&1); then
+  echo "pre-commit: tests unitarios OK"
+  exit 0
+fi
+
+# Solo se imprime el detalle cuando hay algo que leer.
+printf '%s\n' "$output" >&2
+echo "pre-commit: los tests unitarios han fallado" >&2
+exit 1

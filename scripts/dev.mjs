@@ -57,7 +57,7 @@ const server = http.createServer(async (req, res) => {
   try {
     const data = await fs.readFile(filePath);
     const ext = path.extname(filePath);
-    const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
+    const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.xml': 'application/xml; charset=utf-8', '.txt': 'text/plain; charset=utf-8' };
     res.writeHead(200, {
       'Cache-Control': 'no-store, no-cache, must-revalidate',
       'Content-Type': types[ext] || 'application/octet-stream',

@@ -1,8 +1,9 @@
 import { readCasetaFavoriteIds, setCasetaFavorite, subscribeToCasetaFavorites } from './casetas-favorites.js';
+import { readCasetaDishLikeIds, subscribeToCasetaDishLikes } from './caseta-dish-likes.js';
 import { trackCasetaFavoriteChanged } from './analytics.js';
 
 const CENTER = [41.645726, -4.732919];
-const DEFAULT_ZOOM = 14;
+const DEFAULT_ZOOM = 13;
 const USER_ZOOM = 14;
 const MAX_CITY_COORDINATE_DISTANCE_KM = 12;
 const CARTO_BASEMAPS_API_KEY = 'cb1_27ug_1_19138f635d4f03358d12cb43';
@@ -19,7 +20,8 @@ const ZONE_COLORS = {
   'Zona 4': '#1976a8',
   'Zona 5': '#ba3d3d',
   'Zona 6': '#087e8c',
-  'Zona 7': '#b94f72'
+  'Zona 7': '#b94f72',
+  'Zona Ferias': '#a85a2a'
 };
 const ZONE_LABELS = {
   'Zona 1': 'Plaza Mayor',
@@ -28,7 +30,8 @@ const ZONE_LABELS = {
   'Zona 4': 'Catedral y Portugalete',
   'Zona 5': 'Acera de Recoletos',
   'Zona 6': 'Paseo Zorrilla · Plaza de Toros',
-  'Zona 7': 'Plaza de Santa Cruz'
+  'Zona 7': 'Plaza de Santa Cruz',
+  'Zona Ferias': 'Recinto ferial José Luis Bellido'
 };
 
 let leafletPromise = null;
@@ -44,7 +47,9 @@ const state = {
   searchOpen: false,
   dietaryFilters: new Set(),
   onlyFavorites: false,
+  onlyLikedDishes: false,
   casetaFavorites: new Set(),
+  likedCasetaDishIds: new Set(),
   filterPanelOpen: false,
   filterReturnFocus: null,
   sheetState: 'collapsed',
@@ -80,6 +85,7 @@ export function initCasetasPage() {
   els.filterClose = document.querySelector('[data-fiestas-casetas-filter-close]');
   els.filterInputs = [...document.querySelectorAll('[data-fiestas-casetas-dietary-filter]')];
   els.filterFavorite = document.querySelector('[data-fiestas-casetas-favorites-filter]');
+  els.filterLikedDishes = document.querySelector('[data-fiestas-casetas-liked-dishes-filter]');
   els.filterCount = document.querySelector('[data-fiestas-casetas-filter-count]');
   els.filterClear = document.querySelector('[data-fiestas-casetas-filter-clear]');
   els.searchToggle = document.querySelector('[data-fiestas-casetas-search-toggle]');
@@ -93,12 +99,18 @@ export function initCasetasPage() {
   state.zones = buildZones(state.casetas);
   state.mapGroups = buildMapGroups(state.zones);
   state.casetaFavorites = new Set(readCasetaFavoriteIds());
+  state.likedCasetaDishIds = new Set(readCasetaDishLikeIds());
   readUrlState();
   els.app?.classList.add('is-map-mode');
   bindControls();
   bindSheetGestures();
   subscribeToCasetaFavorites((ids) => {
     state.casetaFavorites = new Set(ids);
+    renderMapMarkers();
+    renderSheet(getVisibleCasetas());
+  });
+  subscribeToCasetaDishLikes((ids) => {
+    state.likedCasetaDishIds = new Set(ids);
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
   });
@@ -125,7 +137,8 @@ function normalizeCasetas(entries) {
       return {
         id,
         name,
-        slug: String(entry.slug || slugify(name)),
+        slug: String(entry.publicSlug || entry.slug || slugify(name)),
+        publicSlug: String(entry.publicSlug || entry.slug || slugify(name)),
         zone,
         location,
         placement,
@@ -221,22 +234,33 @@ function bindControls() {
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
   });
+  els.filterLikedDishes?.addEventListener('click', () => {
+    state.onlyLikedDishes = !state.onlyLikedDishes;
+    syncUrlState();
+    renderMapMarkers();
+    renderSheet(getVisibleCasetas());
+  });
   els.filterClear?.addEventListener('click', () => {
     state.dietaryFilters.clear();
     state.onlyFavorites = false;
+    state.onlyLikedDishes = false;
     syncUrlState();
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
   });
   els.searchToggle?.addEventListener('click', () => {
-    state.searchOpen = !state.searchOpen;
-    if (state.searchOpen && state.sheetState !== 'expanded') {
-      state.sheetState = 'expanded';
+    const opening = !state.searchOpen;
+    state.searchOpen = opening;
+    if (opening) {
+      // Search is a city-wide action. Leave any zone explored on the map
+      // before rendering results so a search cannot be scoped accidentally.
+      resetMapSelection({ render: false });
+      if (state.sheetState !== 'expanded') state.sheetState = 'expanded';
       renderSheet(getVisibleCasetas());
     } else {
       syncSearchUi();
     }
-    if (state.searchOpen) els.searchInput?.focus();
+    if (opening) els.searchInput?.focus();
   });
   els.searchInput?.addEventListener('input', (event) => {
     state.searchQuery = event.currentTarget.value.trim();
@@ -304,9 +328,10 @@ function readUrlState() {
   ];
   dietaryValues
     .map((value) => value.trim().toLowerCase())
-    .filter((value) => value === 'vegetarian' || value === 'vegan')
+    .filter((value) => value === 'vegetarian' || value === 'vegan' || value === 'gluten-free')
     .forEach((value) => state.dietaryFilters.add(value));
   state.onlyFavorites = ['1', 'true'].includes(String(params.get('favorites') || '').toLowerCase());
+  state.onlyLikedDishes = ['1', 'true'].includes(String(params.get('liked') || '').toLowerCase());
 }
 
 function syncUrlState() {
@@ -325,6 +350,8 @@ function syncUrlState() {
   url.searchParams.delete('diet');
   if (state.onlyFavorites) url.searchParams.set('favorites', '1');
   else url.searchParams.delete('favorites');
+  if (state.onlyLikedDishes) url.searchParams.set('liked', '1');
+  else url.searchParams.delete('liked');
   [...state.dietaryFilters]
     .sort()
     .forEach((dietary) => url.searchParams.append('dietary', dietary));
@@ -351,13 +378,27 @@ function matchesCasetaFilters(caseta) {
   const matchesDietary = !state.dietaryFilters.size
     || [...state.dietaryFilters].some((dietary) => caseta.dietary.includes(dietary));
   const matchesFavorite = !state.onlyFavorites || state.casetaFavorites.has(caseta.id);
-  return matchesDietary && matchesFavorite;
+  const matchesLikedDish = !state.onlyLikedDishes || casetaHasLikedDish(caseta, state.likedCasetaDishIds);
+  return matchesDietary && matchesFavorite && matchesLikedDish;
+}
+
+export function casetaHasLikedDish(caseta, likedDishIds = new Set()) {
+  return (caseta.details?.menuSections || []).some((section) => (section?.items || []).some((item) => {
+    const dishId = typeof item === 'object' ? item?.id : '';
+    return section?.votable && dishId && likedDishIds.has(`${caseta.id}/${dishId}`);
+  }));
 }
 
 function getDietaryLabels(details) {
   return [...new Set((details?.menuSections || []).flatMap((section) => (section?.items || [])
-    .map((item) => typeof item === 'object' ? item?.dietary : '')
-    .filter((dietary) => dietary === 'vegetarian' || dietary === 'vegan')))];
+    .flatMap((item) => {
+      if (!item || typeof item !== 'object') return [];
+      return [
+        item.dietary === 'vegetarian' || item.dietary === 'vegan' ? item.dietary : '',
+        item.glutenFree === true ? 'gluten-free' : ''
+      ];
+    })
+    .filter(Boolean)))];
 }
 
 function collectTextValues(value) {
@@ -375,6 +416,10 @@ async function initializeMap() {
     return;
   }
   state.map = leaflet.map(els.mapCanvas, { maxZoom: 19, scrollWheelZoom: true }).setView(CENTER, DEFAULT_ZOOM);
+  state.map.on('click', (event) => {
+    if (event.originalEvent?.target?.closest?.('.fiestas-caseta-zone-marker')) return;
+    resetMapSelection({ collapse: true });
+  });
   state.tileLayer = createCartoLayer(leaflet).addTo(state.map);
   state.markers = leaflet.layerGroup().addTo(state.map);
   document.addEventListener('aldeapucela:themechange', () => updateMapTheme(leaflet));
@@ -398,6 +443,10 @@ function renderMapMarkers() {
       ? 'Todavía no has guardado ninguna caseta como favorita.'
       : state.onlyFavorites
         ? 'No hay casetas favoritas con esos filtros.'
+        : state.onlyLikedDishes && !state.likedCasetaDishIds.size
+          ? 'Todavía no has dado me gusta a ningún pincho.'
+          : state.onlyLikedDishes
+            ? 'No hay casetas con pinchos que te gusten y esos filtros.'
         : state.dietaryFilters.size
           ? 'No hay casetas con esos filtros.'
           : 'Las zonas todavía no tienen una ubicación exacta en el mapa.';
@@ -408,6 +457,7 @@ function renderMapMarkers() {
   groupsWithCoordinates.forEach((group) => {
     const markerLabel = group.location ? `${group.zone} - ${group.location}` : group.zone;
     const groupCount = `${group.items.length} ${group.items.length === 1 ? 'caseta' : 'casetas'}`;
+    const markerCode = group.number ? `Z${group.number}` : 'ZF';
     const marker = window.L.marker([group.coordinates.lat, group.coordinates.lng], {
       title: `${markerLabel}. ${groupCount}`,
       alt: `${markerLabel}. ${groupCount}`,
@@ -415,7 +465,7 @@ function renderMapMarkers() {
       zIndexOffset: group.location ? 0 : 1000,
       icon: window.L.divIcon({
         className: `fiestas-map-marker fiestas-caseta-zone-marker${state.selectedZone === group.zone && (!group.location || state.selectedLocation === group.location) ? ' is-selected' : ''}`,
-        html: `<button type="button" style="--fiestas-type-color:${escapeAttribute(group.color)}" aria-label="Ver ${escapeAttribute(markerLabel)} con ${groupCount}"><span>Z${escapeHtml(group.number)}</span></button>`,
+        html: `<button type="button" style="--fiestas-type-color:${escapeAttribute(group.color)}" aria-label="Ver ${escapeAttribute(markerLabel)} con ${groupCount}"><span>${escapeHtml(markerCode)}</span></button>`,
         iconSize: [44, 44],
         iconAnchor: [22, 22]
       })
@@ -428,10 +478,22 @@ function renderMapMarkers() {
 function selectMapGroup(group) {
   state.selectedZone = group.zone;
   state.selectedLocation = group.location || null;
+  state.searchOpen = false;
   state.sheetState = 'expanded';
   syncUrlState();
   renderMapMarkers();
   renderSheet(getVisibleCasetas(), { scrollToTop: true });
+}
+
+function resetMapSelection({ collapse = false, render = true } = {}) {
+  if (!state.selectedZone && !state.selectedLocation) return false;
+  state.selectedZone = null;
+  state.selectedLocation = null;
+  if (collapse) state.sheetState = 'collapsed';
+  syncUrlState();
+  renderMapMarkers();
+  if (render) renderSheet(getVisibleCasetas());
+  return true;
 }
 
 function renderSheet(items, options = {}) {
@@ -468,6 +530,10 @@ function renderSheet(items, options = {}) {
         ? '<p>Todavía no has guardado ninguna caseta como favorita.</p>'
         : state.onlyFavorites
           ? '<p>No hay casetas favoritas con estos filtros.</p>'
+          : state.onlyLikedDishes && !state.likedCasetaDishIds.size
+            ? '<p>Todavía no has dado me gusta a ningún pincho.</p>'
+            : state.onlyLikedDishes
+              ? '<p>No hay casetas con pinchos que te gusten y estos filtros.</p>'
       : state.dietaryFilters.size
         ? '<p>No hay casetas con esos filtros.</p>'
         : '<p>No hay casetas disponibles.</p>';
@@ -500,7 +566,7 @@ function casetaRow(caseta) {
   article.className = 'fiestas-map-result fiestas-caseta-result';
   article.dataset.mapResultId = caseta.id;
   article.style.setProperty('--fiestas-type-color', caseta.color);
-  const href = `/c/${encodeURIComponent(caseta.id)}/${encodeURIComponent(caseta.slug)}/`;
+  const href = `/c/${encodeURIComponent(caseta.publicSlug || caseta.slug)}/`;
   const placement = caseta.placement || '';
   const saved = state.casetaFavorites.has(caseta.id);
   const distance = state.userLocation && caseta.coordinates
@@ -598,7 +664,9 @@ function setFilterPanelOpen(open, options = {}) {
 
 function syncFilterUi() {
   if (!els.filterToggle || !els.filterPanel) return;
-  const activeFilterCount = state.dietaryFilters.size + (state.onlyFavorites ? 1 : 0);
+  const activeFilterCount = state.dietaryFilters.size
+    + (state.onlyFavorites ? 1 : 0)
+    + (state.onlyLikedDishes ? 1 : 0);
   els.filterToggle.classList.toggle('is-active', activeFilterCount > 0);
   els.filterToggle.setAttribute('aria-expanded', String(state.filterPanelOpen));
   els.filterToggle.setAttribute('aria-label', activeFilterCount
@@ -615,7 +683,11 @@ function syncFilterUi() {
     const active = state.dietaryFilters.has(input.value);
     input.classList.toggle('is-active', active);
     input.setAttribute('aria-pressed', String(active));
-    const label = input.value === 'vegan' ? 'veganas' : 'vegetarianas';
+    const label = {
+      vegetarian: 'vegetarianas',
+      vegan: 'veganas',
+      'gluten-free': 'sin gluten'
+    }[input.value] || input.value;
     input.setAttribute('aria-label', active
       ? 'Mostrar todas las casetas'
       : `Mostrar solo casetas ${label}`);
@@ -628,6 +700,15 @@ function syncFilterUi() {
       : 'Mostrar solo favoritas');
     const favoriteIcon = els.filterFavorite.querySelector('[data-fiestas-casetas-favorites-icon]');
     if (favoriteIcon) favoriteIcon.className = state.onlyFavorites ? 'fa-solid fa-star' : 'fa-regular fa-star';
+  }
+  if (els.filterLikedDishes) {
+    els.filterLikedDishes.classList.toggle('is-active', state.onlyLikedDishes);
+    els.filterLikedDishes.setAttribute('aria-pressed', String(state.onlyLikedDishes));
+    els.filterLikedDishes.setAttribute('aria-label', state.onlyLikedDishes
+      ? 'Mostrar todas las casetas'
+      : 'Mostrar solo casetas con pinchos que te gustan');
+    const likedIcon = els.filterLikedDishes.querySelector('[data-fiestas-casetas-liked-dishes-icon]');
+    if (likedIcon) likedIcon.className = state.onlyLikedDishes ? 'fa-solid fa-thumbs-up' : 'fa-regular fa-thumbs-up';
   }
   if (els.filterClear) els.filterClear.hidden = activeFilterCount === 0;
 }

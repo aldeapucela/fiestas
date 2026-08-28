@@ -21,8 +21,9 @@ const report = {
   sourceUrl,
   generatedAt: new Date().toISOString(),
   dateWindow: ['2026-09-04', '2026-09-13'],
-  totals: { sourceInWindow: 0, sourceOutsideValladolid: 0, enriched: 0, imagesAdded: 0, added: 0, skipped: 0, unresolved: 0 },
+  totals: { sourceInWindow: 0, sourceOutsideValladolid: 0, sourceUnavailable: 0, enriched: 0, imagesAdded: 0, added: 0, skipped: 0, unresolved: 0 },
   excluded: [{ id: 2148, reason: 'Ubicación ambigua en Las Moreras; no se fuerza el cruce.' }],
+  sourceUnavailable: [],
   enriched: [],
   imagesAdded: [],
   added: [],
@@ -60,7 +61,11 @@ const imageRemoteToLocal = {
 for (const [remoteIdText, localIds] of Object.entries(matchedRemoteToLocal)) {
   const remoteId = Number(remoteIdText);
   const remote = sourceEvents.get(remoteId);
-  if (!remote) throw new Error(`No se encuentra el evento remoto ${remoteId}.`);
+  if (!remote) {
+    report.totals.sourceUnavailable += 1;
+    report.sourceUnavailable.push({ remoteId, reason: 'El evento ya no está publicado en la fuente remota.' });
+    continue;
+  }
   for (const localId of localIds) {
     const local = localById.get(localId);
     if (!local) throw new Error(`El evento local ${localId} no existe.`);
@@ -75,7 +80,11 @@ for (const [remoteIdText, localIds] of Object.entries(matchedRemoteToLocal)) {
 for (const [remoteIdText, localIds] of Object.entries(imageRemoteToLocal)) {
   const remoteId = Number(remoteIdText);
   const remote = sourceEvents.get(remoteId);
-  if (!remote) throw new Error(`No se encuentra el cartel remoto ${remoteId}.`);
+  if (!remote) {
+    report.totals.sourceUnavailable += 1;
+    report.sourceUnavailable.push({ remoteId, reason: 'El evento ya no está publicado en la fuente remota.' });
+    continue;
+  }
   for (const localId of localIds) {
     const local = localById.get(localId);
     if (!local) throw new Error(`El evento local ${localId} no existe.`);
@@ -88,48 +97,75 @@ for (const [remoteIdText, localIds] of Object.entries(imageRemoteToLocal)) {
 }
 
 const excludedRemoteIds = new Set([2148]);
+const duplicateRemoteToLocal = new Map([[1999, 474]]);
 const knownMatchedRemoteIds = new Set(Object.keys(matchedRemoteToLocal).map(Number));
 const candidateEvents = windowEvents.filter((remote) => {
   const remoteId = Number(remote.id);
-  return isValladolid(remote) && !knownMatchedRemoteIds.has(remoteId) && !excludedRemoteIds.has(remoteId);
+  return isValladolid(remote)
+    && !knownMatchedRemoteIds.has(remoteId)
+    && !duplicateRemoteToLocal.has(remoteId)
+    && !excludedRemoteIds.has(remoteId);
 });
 let nextId = Math.max(...events.map((event) => Number(event.id))) + 1;
+for (const [remoteId, localId] of duplicateRemoteToLocal) {
+  const remote = sourceEvents.get(remoteId);
+  if (!remote || !isInDateWindow(remote.startsAt)) continue;
+  report.totals.skipped += 1;
+  report.skipped.push({
+    remoteId,
+    localId,
+    date: remote.startsAt.slice(0, 10),
+    reason: 'Registro remoto duplicado de un evento ya importado con horario actualizado.'
+  });
+}
 for (const remote of candidateEvents) {
   const remoteId = Number(remote.id);
-  const existing = findExistingLocal(remote, events);
-  if (existing) {
+  const occurrenceDates = occurrenceDatesFor(remote);
+  const pendingDates = [];
+  for (const date of occurrenceDates) {
+    const existing = findExistingLocal(remote, events, date);
+    if (!existing) {
+      pendingDates.push(date);
+      continue;
+    }
     const changed = enrichExistingEvent(existing, remote);
     if (changed) {
       report.totals.enriched += 1;
-      report.enriched.push({ localId: existing.id, remoteId, title: existing.title });
+      report.enriched.push({ localId: existing.id, remoteId, date, title: existing.title });
     }
     addImageIfMissing(existing, remote, report);
     report.totals.skipped += 1;
-    report.skipped.push({ remoteId, localId: existing.id, reason: 'Coincidencia por fecha, hora, título y lugar.' });
-    continue;
+    report.skipped.push({ remoteId, localId: existing.id, date, reason: 'Coincidencia por fecha, hora, título y lugar.' });
   }
+  if (!pendingDates.length) continue;
+
   const location = locationFor(remote);
   if (!isConcreteLocation(location)) {
     report.totals.unresolved += 1;
     report.unresolved.push({ remoteId, title: remote.title, reason: 'La fuente no proporciona un lugar concreto.', location });
     continue;
   }
-  if (localById.has(nextId)) {
-    throw new Error(`El ID nuevo ${nextId} ya está ocupado.`);
-  }
-  let local;
+
+  let coordinates;
   try {
-    local = await createLocalEvent(remote, nextId, events);
+    coordinates = await resolveCoordinates(remote, location, events);
   } catch (error) {
     report.totals.unresolved += 1;
     report.unresolved.push({ remoteId, title: remote.title, reason: error.message, location });
     continue;
   }
-  nextId += 1;
-  events.push(local);
-  localById.set(local.id, local);
-  report.totals.added += 1;
-  report.added.push({ localId: local.id, remoteId, title: local.title });
+
+  for (const date of pendingDates) {
+    if (localById.has(nextId)) {
+      throw new Error(`El ID nuevo ${nextId} ya está ocupado.`);
+    }
+    const local = await createLocalEvent(remote, nextId, events, date, coordinates);
+    nextId += 1;
+    events.push(local);
+    localById.set(local.id, local);
+    report.totals.added += 1;
+    report.added.push({ localId: local.id, remoteId, date, title: local.title });
+  }
 }
 
 if (args.apply) {
@@ -148,17 +184,19 @@ console.log(JSON.stringify({
   totals: report.totals
 }, null, 2));
 
-async function createLocalEvent(remote, id, currentEvents) {
-  const date = remote.startsAt.slice(0, 10);
+async function createLocalEvent(remote, id, currentEvents, dateOverride = null, coordinatesOverride = null) {
+  const date = dateOverride || remote.startsAt.slice(0, 10);
   const location = locationFor(remote);
-  const coordinates = await resolveCoordinates(remote, location, currentEvents);
+  const coordinates = coordinatesOverride || await resolveCoordinates(remote, location, currentEvents);
   const type = typeFor(remote.id, remote);
   const summary = cleanText(remote.summary || remote.title);
   const genericTime = isGenericRemoteTime(remote);
-  const isOvernight = !genericTime && timePart(remote.endsAt) === '00:00';
-  const isMultiDay = remote.startsAt.slice(0, 10) !== remote.endsAt.slice(0, 10);
+  const isMultiDay = isDailySeries(remote);
+  const isOvernight = !genericTime && !isMultiDay && remote.startsAt.slice(0, 10) !== remote.endsAt.slice(0, 10);
   const sourceStartTime = genericTime ? null : timePart(remote.startsAt);
-  const sourceEndTime = genericTime || isOvernight || isMultiDay ? null : timePart(remote.endsAt);
+  const sourceEndTime = genericTime || isOvernight || isStartOnlySeries(remote)
+    ? null
+    : timePart(remote.endsAt);
   const performances = performancesFor(remote.id);
   const description = Number(remote.id) === 2183
     ? `${summary} El evento se celebra del 9 al 13 de septiembre de 2026.`
@@ -184,6 +222,36 @@ async function createLocalEvent(remote, id, currentEvents) {
     ticket: ticketFor(remote),
     tags: [type]
   };
+}
+
+function occurrenceDatesFor(remote) {
+  const startDate = String(remote.startsAt || '').slice(0, 10);
+  if (!isDailySeries(remote)) return [startDate];
+  const endDate = String(remote.endsAt || '').slice(0, 10);
+  const lastDate = endDate > '2026-09-13' ? '2026-09-13' : endDate;
+  const cursor = new Date(`${startDate}T00:00:00Z`);
+  const last = new Date(`${lastDate}T00:00:00Z`);
+  const dates = [];
+  while (cursor <= last) {
+    dates.push(cursor.toISOString().slice(0, 10));
+    cursor.setUTCDate(cursor.getUTCDate() + 1);
+  }
+  return dates;
+}
+
+function isDailySeries(remote) {
+  const startDate = String(remote.startsAt || '').slice(0, 10);
+  const endDate = String(remote.endsAt || '').slice(0, 10);
+  if (!startDate || startDate === endDate) return false;
+  const duration = Date.parse(remote.endsAt) - Date.parse(remote.startsAt);
+  return !Number.isFinite(duration) || duration >= 24 * 60 * 60 * 1000;
+}
+
+function isStartOnlySeries(remote) {
+  return Number(remote.id) === 2218
+    && isDailySeries(remote)
+    && timePart(remote.startsAt) === '23:59'
+    && timePart(remote.endsAt) === '23:59';
 }
 
 function buildMatchedRemoteToLocal(currentEvents) {
@@ -269,7 +337,7 @@ function enrichExistingEvent(local, remote) {
     local.description = `${base}\n\nInformación ampliada: ${remoteSummary}`;
     changed = true;
   }
-  if (!containsText(local.summary, remoteSummary)) {
+  if (!local.summary || local.summary === local.title) {
     local.summary = remoteSummary;
     changed = true;
   }
@@ -284,10 +352,13 @@ function addImageIfMissing(local, remote, currentReport) {
   return true;
 }
 
-function findExistingLocal(remote, currentEvents) {
-  const date = remote.startsAt.slice(0, 10);
+function findExistingLocal(remote, currentEvents, dateOverride = null) {
+  const date = dateOverride || remote.startsAt.slice(0, 10);
   const remoteTime = isGenericRemoteTime(remote) ? null : timePart(remote.startsAt);
-  const candidates = currentEvents.filter((event) => event.date === date && event.startTime === remoteTime);
+  const candidates = currentEvents.filter((event) => event.date === date && (
+    event.startTime === remoteTime
+    || (remoteTime === null && isDailySeries(remote))
+  ));
   const remoteTitle = simplifyTitle(remote.title);
   const exactTitle = candidates.filter((event) => simplifyTitle(event.title) === remoteTitle);
   if (exactTitle.length === 1) return exactTitle[0];
@@ -329,6 +400,7 @@ function simplifyTitle(value = '') {
 function locationFor(remote) {
   const id = Number(remote.id);
   const overrides = {
+    2218: 'Calle Ebanistería, 2 (Zona Cantarranas)',
     2191: 'Fantasy Discc Pub, Calle Espíritu Santo, 9',
     1999: 'Centro Comercial Vallsur, Paseo de Zorrilla, 328',
     1784: 'Sala Sinfónica Jesús López Cobos, Centro Cultural Miguel Delibes',
@@ -355,6 +427,12 @@ function isConcreteLocation(location) {
 async function resolveCoordinates(remote, location, currentEvents) {
   const id = Number(remote.id);
   const known = {
+    2218: {
+      lat: 41.6530093,
+      lng: -4.7251996,
+      source: 'Google Maps (consulta manual)',
+      query: 'Calle Ebanistería, 2, 47002 Valladolid, España'
+    },
     1784: { lat: 41.6441725, lng: -4.7559683, source: 'OpenStreetMap Nominatim' },
     1688: { lat: 41.6563987, lng: -4.7235721, source: 'OpenStreetMap Nominatim' },
     1689: { lat: 41.6563987, lng: -4.7235721, source: 'OpenStreetMap Nominatim' },
@@ -402,7 +480,10 @@ async function resolveCoordinates(remote, location, currentEvents) {
     };
   }
 
-  const inferred = currentEvents.find((event) => normalizeText(event.location).includes(normalizeText(remote.venue || '')) && hasCoordinates(event.coordinates));
+  const venue = normalizeText(remote.venue || '');
+  const inferred = venue
+    ? currentEvents.find((event) => normalizeText(event.location).includes(venue) && hasCoordinates(event.coordinates))
+    : null;
   if (inferred) {
     return {
       ...inferred.coordinates,

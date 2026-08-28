@@ -3,6 +3,7 @@ import test from 'node:test';
 
 const TRACKED_FAVORITES_STORAGE_KEY = 'fiestasPucela:analytics:saved-activities';
 const TRACKED_CASETA_FAVORITES_STORAGE_KEY = 'fiestasPucela:analytics:saved-casetas';
+const TRACKED_CASETA_DISH_LIKES_STORAGE_KEY = 'fiestasPucela:analytics:liked-caseta-dishes';
 const TRACKED_COMMUNITY_PLANS_STORAGE_KEY = 'fiestasPucela:analytics:added-community-plans';
 
 function installBrowserGlobals() {
@@ -84,6 +85,23 @@ test('tracks caseta removals and rejects invalid caseta IDs', async () => {
   assert.deepEqual(sent, [['trackEvent', 'caseta', 'remove_save', 'z2_07']]);
 });
 
+test('tracks QR opens and image downloads with the stable caseta id', async () => {
+  installBrowserGlobals();
+  const analytics = await import(`../src/scripts/analytics.js?caseta-qr=${Date.now()}`);
+  const sent = [];
+
+  window._paq = { push: (event) => sent.push(event) };
+
+  assert.equal(analytics.trackCasetaQrOpened('Z2-07'), true);
+  assert.equal(analytics.trackCasetaQrDownloaded('z2-07'), true);
+  assert.equal(analytics.trackCasetaQrOpened('event-307'), false);
+  assert.equal(analytics.trackCasetaQrDownloaded(''), false);
+  assert.deepEqual(sent, [
+    ['trackEvent', 'caseta', 'open_qr', 'z2_07'],
+    ['trackEvent', 'caseta', 'download_qr', 'z2_07']
+  ]);
+});
+
 test('does not send caseta favorite events when analytics is disabled or DNT is enabled', async () => {
   installBrowserGlobals();
   window.__FIESTAS_ANALYTICS_CONFIG__ = { enabled: false };
@@ -96,6 +114,47 @@ test('does not send caseta favorite events when analytics is disabled or DNT is 
   const dnt = await import(`../src/scripts/analytics.js?caseta-dnt=${Date.now()}`);
   window._paq = { push: () => { throw new Error('DNT analytics should not push'); } };
   assert.equal(dnt.trackCasetaFavoriteChanged('z1-01', true), false);
+});
+
+test('tracks and deduplicates one like per caseta dish with a stable technical name', async () => {
+  const values = installBrowserGlobals();
+  const analytics = await import(`../src/scripts/analytics.js?dish=${Date.now()}`);
+  const sent = [];
+
+  window._paq = { push: (event) => sent.push(event) };
+
+  assert.equal(analytics.trackCasetaDishLiked('Z2-07', 'pincho-brocheta-pollo'), true);
+  assert.equal(analytics.trackCasetaDishLiked('z2-07', 'pincho-brocheta-pollo'), false);
+  assert.equal(analytics.trackCasetaDishUnliked('z2-07', 'pincho-brocheta-pollo'), true);
+  assert.equal(analytics.trackCasetaDishLiked('z2-07', 'pincho-brocheta-pollo-renamed'), true);
+  assert.deepEqual(sent, [
+    ['trackEvent', 'caseta_dish', 'like', 'z2_07_pincho_brocheta_pollo'],
+    ['trackEvent', 'caseta_dish', 'remove_like', 'z2_07_pincho_brocheta_pollo'],
+    ['trackEvent', 'caseta_dish', 'like', 'z2_07_pincho_brocheta_pollo_renamed']
+  ]);
+  assert.deepEqual(JSON.parse(values.get(TRACKED_CASETA_DISH_LIKES_STORAGE_KEY)), [
+    'z2_07_pincho_brocheta_pollo',
+    'z2_07_pincho_brocheta_pollo_renamed'
+  ]);
+  assert.equal(values.has(TRACKED_CASETA_FAVORITES_STORAGE_KEY), false);
+});
+
+test('rejects invalid caseta dish identifiers and tolerates disabled analytics', async () => {
+  const values = installBrowserGlobals();
+  const analytics = await import(`../src/scripts/analytics.js?dish-invalid=${Date.now()}`);
+  const sent = [];
+
+  window._paq = { push: (event) => sent.push(event) };
+  assert.equal(analytics.trackCasetaDishLiked('z8-01', 'pincho-rabas'), false);
+  assert.equal(analytics.trackCasetaDishLiked('z2-07', 'Pincho con espacios'), false);
+  assert.deepEqual(sent, []);
+  assert.equal(values.has(TRACKED_CASETA_DISH_LIKES_STORAGE_KEY), false);
+
+  installBrowserGlobals();
+  window.__FIESTAS_ANALYTICS_CONFIG__ = { enabled: false };
+  const disabled = await import(`../src/scripts/analytics.js?dish-disabled=${Date.now()}`);
+  window._paq = { push: () => { throw new Error('disabled analytics should not push'); } };
+  assert.equal(disabled.trackCasetaDishLiked('z2-07', 'pincho-rabas'), false);
 });
 
 test('tracks an explicit PWA install action without tracking availability', async () => {

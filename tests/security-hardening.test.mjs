@@ -35,3 +35,13 @@ test('the Pages workflow keeps OIDC permission only in deploy', async () => {
   assert.doesNotMatch(build, /id-token:/);
   assert.match(deploy, /permissions:\n      pages: write\n      id-token: write/);
 });
+
+test('templates do not reintroduce blocking Leaflet tags', async () => {
+  const templates = await fs.readdir(new URL('src/templates/', root));
+
+  for (const name of templates.filter((file) => file.endsWith('.njk'))) {
+    const source = await read(`src/templates/${name}`);
+    assert.doesNotMatch(source, /<(?:script|link)[^>]*unpkg\.com\/leaflet[^>]*>/,
+      `${name} should load Leaflet through the demand loader instead of blocking the page`);
+  }
+});

@@ -1,0 +1,82 @@
+{% extends "layout.njk" %}
+
+{% block bodyClass %}fiestas-page fiestas-collaborators-page{% endblock %}
+{% block footerClass %} site-footer--fiestas{% endblock %}
+
+{% block body %}
+<main class="fiestas-app fiestas-plan-app fiestas-collaborators-app" data-fiesta-collaborators-page>
+  <section class="fiestas-plan-screen fiestas-collaborators-screen">
+    <header class="fiestas-plan-page-head fiestas-collaborators-page-head">
+      <div class="fiestas-plan-topbar">
+        <a class="fiestas-plan-logo" href="/" aria-label="Volver a la agenda">
+          <img src="/assets/favicon.png" alt="" />
+        </a>
+        <h1>Colaboradores</h1>
+        <span class="fiestas-plan-header-share" aria-hidden="true"></span>
+      </div>
+      <a class="fiestas-plan-import-back" href="/">
+        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <span>Volver a la agenda</span>
+      </a>
+    </header>
+
+    <section class="fiestas-collaborators-intro" aria-labelledby="fiestas-collaborators-title">
+      <h2 id="fiestas-collaborators-title">Entidades y proyectos que nos apoyan</h2>
+      <p>
+        Aldea Pucela no recibe ninguna contraprestación económica ni de ningún tipo de las personas o entidades que aparecen aquí.
+        Esta página existe para agradecer la promoción del proyecto en sus redes.
+      </p>
+    </section>
+
+    <section class="fiestas-collaborators-directory">
+      <div class="fiestas-collaborators-grid">
+        <a
+          class="fiestas-collaborator-card"
+          href="https://www.instagram.com/watiosydecibelios/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Visitar el perfil de Watios y Decibelios en Instagram"
+        >
+          <span class="fiestas-collaborator-logo-wrap">
+            <img class="fiestas-collaborator-logo" src="/assets/collaborators/watiosydecibelios.jpg" alt="Logotipo de Watios y Decibelios" />
+          </span>
+          <span class="fiestas-collaborator-copy">
+            <strong>Watios y Decibelios</strong>
+            <small>@watiosydecibelios</small>
+          </span>
+        </a>
+      </div>
+    </section>
+  </section>
+</main>
+
+<nav class="fiestas-bottom-nav" aria-label="Navegación de fiestas">
+  <a class="fiestas-bottom-link" href="/">
+    <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+    <span>Agenda</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/mapa/">
+    <svg class="fiestas-bottom-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+      <circle cx="12" cy="10" r="2.35" />
+    </svg>
+    <span>Mapa</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/plan/">
+    <i class="fa-regular fa-heart" aria-hidden="true"></i>
+    <span>Mi plan</span>
+  </a>
+  <a class="fiestas-bottom-link" href="/casetas/">
+    <i class="fa-solid fa-store" aria-hidden="true"></i>
+    <span>Casetas</span>
+  </a>
+  <button class="fiestas-bottom-link" type="button" data-menu-open aria-label="Abrir más opciones">
+    <i class="fa-solid fa-ellipsis" aria-hidden="true"></i>
+    <span>Más</span>
+    <span class="fiestas-hint-dot" data-menu-hint-dot hidden aria-hidden="true"></span>
+  </button>
+</nav>
+
+{% include "partials/menu-drawer.njk" %}
+{% include "partials/subscribe-modal.njk" %}
+{% endblock %}

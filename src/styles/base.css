@@ -1367,11 +1367,20 @@
   }
 
   .detail-lightbox-panel {
-    @apply relative z-10 w-full max-w-5xl;
+    @apply relative z-10 flex w-full max-w-5xl flex-col items-center gap-3;
   }
 
   .detail-lightbox-image {
-    @apply max-h-[85vh] w-full rounded-2xl object-contain shadow-2xl;
+    @apply max-h-[calc(85vh-3.5rem)] w-full rounded-2xl object-contain shadow-2xl;
+  }
+
+  .detail-lightbox-download {
+    @apply inline-flex min-h-11 items-center justify-center gap-2 rounded-lg border border-brand-500 bg-white px-4 font-bold text-brand-700 shadow-sm;
+  }
+
+  .detail-lightbox-download:hover,
+  .detail-lightbox-download:focus-visible {
+    @apply bg-brand-50;
   }
 
   body.detail-lightbox-open {
@@ -1861,7 +1870,7 @@ html.dark .site-footer-copy a {
     }
 
     .detail-lightbox-image {
-      @apply max-h-[100vh] rounded-none;
+      @apply max-h-[calc(100vh-5rem)] rounded-none;
     }
 
     .detail-brand-mobile {

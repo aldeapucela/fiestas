@@ -37,6 +37,10 @@ Los identificadores de actividad son sus `id` numéricos y estables. Los valores
 | `activity` | `remove_save` | `activityId` | Al eliminar un favorito; no afecta al ranking de guardados. |
 | `caseta` | `save` | `casetaId` normalizado (`z1_05`) | La primera vez que ese navegador guarda una caseta; se deduplica de forma independiente. |
 | `caseta` | `remove_save` | `casetaId` normalizado (`z1_05`) | Al eliminar una caseta de favoritas. |
+| `caseta` | `open_qr` | `casetaId` normalizado (`z1_05`) | Al abrir el cartel QR desde la ficha de una caseta. |
+| `caseta` | `download_qr` | `casetaId` normalizado (`z1_05`) | Al pulsar cualquiera de los botones que descargan el cartel QR como imagen. |
+| `caseta_dish` | `like` | `casetaId_dishId` normalizado (`z2_07_pincho_brocheta_pollo`) | La primera vez que ese navegador recomienda un plato; se deduplica de forma independiente. |
+| `caseta_dish` | `remove_like` | `casetaId_dishId` normalizado (`z2_07_pincho_brocheta_pollo`) | Retirada de una recomendación local; se registra para análisis futuro, pero no se resta del contador público. |
 | `activity` | `share` | `activityId` | Después de compartir o copiar correctamente. |
 | `activity` | `open_directions` | `activityId` | Al abrir Cómo llegar. |
 | `activity` | `open_tickets` | `activityId` | Al abrir el enlace de entradas. |
@@ -67,9 +71,12 @@ Los pageviews se envían mediante `trackPageView` durante la única inicializaci
 - Sin cuentas, las métricas representan visitas/dispositivos y acciones observadas, no personas identificadas de forma exacta.
 - Los eventos `activity / save` se cuentan una sola vez por actividad y navegador mediante `fiestasPucela:analytics:saved-activities` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, no se puede garantizar la deduplicación entre sesiones.
 - Los eventos `caseta / save` se cuentan una sola vez por caseta y navegador mediante `fiestasPucela:analytics:saved-casetas` en `localStorage`. El ID local `z1-05` se envía a Matomo como el token `z1_05`; el endpoint lo devuelve de nuevo como `z1-05`. Las retiradas (`caseta / remove_save`) se registran aparte y no se restan del contador acumulado.
+- Los eventos `caseta / open_qr` y `caseta / download_qr` usan el mismo ID técnico normalizado (`z1-05` local se envía como `z1_05`). Se registran por interacción; no se deduplican porque representan aperturas y descargas, no una señal acumulable de favorito. `download_qr` cubre el botón del lightbox y el botón de la página QR individual.
+- Los eventos `caseta_dish / like` se cuentan una sola vez por plato y navegador mediante `fiestasPucela:analytics:liked-caseta-dishes` en `localStorage`. La interfaz permite retirar y volver a poner la reacción; cada retirada genera `caseta_dish / remove_like`, pero el endpoint público solo agrega `like`. El estado de la reacción se conserva aparte en `fiestasPucela:liked-caseta-dishes`. La clave local `z2-07/pincho-brocheta-pollo` se envía a Matomo como `z2_07_pincho_brocheta_pollo`.
+- Los IDs de plato son estables y no dependen del texto visible. Cambiar el nombre, precio, sección o clasificación dietética conserva el histórico; un plato realmente nuevo debe recibir otro ID. Si se elimina del catálogo, el histórico sigue en Matomo pero deja de mostrarse en la web.
 - Los eventos `plan / add_community` se cuentan una sola vez por plan vecinal y navegador mediante `fiestasPucela:analytics:added-community-plans` en `localStorage`. Si la persona borra los datos del sitio, usa otro navegador/dispositivo o tiene bloqueado `localStorage`, el evento puede volver a registrarse.
-- Para ordenar actividades por popularidad se debe usar el total de eventos `activity / save`, no `remove_save` ni el total de visitas. No se envía una IP ni un identificador de usuario propio.
-- El contador de planes vecinales representa añadidos de navegadores estimados, no personas únicas exactas.
+- Para los contadores públicos de guardados y recomendaciones se usa `nb_uniq_visitors` del periodo anual 2026, no `nb_events`, `nb_visits` ni la suma de únicos diarios. Así cada visitante identificado por Matomo cuenta una vez por actividad, plan, caseta o plato durante todo el año. No se envía una IP ni un identificador de usuario propio.
+- Los totales públicos de actividades populares, planes vecinales, favoritas de casetas y pinchos populares son la suma de visitantes únicos por elemento. Una misma persona puede contar una vez en varios elementos distintos.
 - Para el embudo PWA, usa `nb_visits` de `pwa / install_available`, `install_accepted`, `installed` e `ios_help_opened`; `nb_events` mide repeticiones, no personas. Los eventos de instalación aceptada, completada o cancelada incluyen el origen (`agenda_cta` o `menu`) como valor de Matomo. En iOS solo podemos medir la apertura de instrucciones, no confirmar técnicamente que se añadió a la pantalla de inicio.
 - La instancia de Matomo debe mantener activada la anonimización de IP y sus controles de privacidad deben revisarse en servidor.
 - Este repositorio no contiene mecanismo de consentimiento de cookies; si se incorpora en el futuro, la inicialización debe conectarse a él.
@@ -79,7 +86,7 @@ Para revisar los datos, consultar en Matomo el site ID 29 y filtrar por categor�
 
 ## Endpoint público de casetas
 
-El recuento acumulado de guardados de casetas se consulta mediante `GET https://api.aldeapucela.org/fiestas/caseta-saves`. Acepta opcionalmente `from` y `to` con formato `YYYY-MM-DD`, usando el mismo rango por defecto y validación en `Europe/Madrid` que el endpoint de actividades.
+El recuento de visitantes únicos de guardados de casetas se consulta mediante `GET https://api.aldeapucela.org/fiestas/caseta-saves`. El endpoint representa el periodo anual completo de Fiestas 2026 y no acepta rangos personalizados mediante `from` o `to`.
 
 La respuesta contiene únicamente casetas con al menos un `save`:
 
@@ -88,12 +95,51 @@ La respuesta contiene únicamente casetas con al menos un `save`:
   "ok": true,
   "siteId": 29,
   "event": { "category": "caseta", "action": "save" },
+  "period": "year",
+  "year": 2026,
   "from": "2026-01-01",
-  "to": "2026-08-26",
+  "to": "2026-12-31",
   "casetas": [{ "id": "z1-05", "saveCount": 3 }],
   "totalSaves": 3,
+  "metric": "unique_visitors_year",
   "generatedAt": "2026-08-26T00:00:00.000Z"
 }
 ```
 
-El endpoint cuenta señales acumuladas de guardado, no favoritas actuales exactas: la aplicación no identifica de forma persistente a cada navegador y las retiradas no se descuentan. Nginx publica el webhook de n8n con CORS, limitación de lectura y caché de 15 minutos; Matomo permanece únicamente en el servidor.
+El endpoint cuenta visitantes únicos de guardado, no favoritas actuales exactas: la aplicación no identifica de forma persistente a cada navegador y las retiradas no se descuentan. Un borrado de cookies o un navegador/dispositivo diferente puede generar otra identidad en Matomo. Nginx publica el webhook de n8n con CORS, limitación de lectura y caché de 15 minutos; Matomo permanece únicamente en el servidor.
+
+## Endpoint público de recomendaciones de platos
+
+Las recomendaciones de platos se consultan mediante `GET https://api.aldeapucela.org/fiestas/caseta-dish-likes`. El endpoint representa el periodo anual completo de Fiestas 2026 y no acepta rangos personalizados mediante `from` o `to`.
+
+La respuesta contiene los platos con al menos una recomendación:
+
+```json
+{
+  "ok": true,
+  "siteId": 29,
+  "event": { "category": "caseta_dish", "action": "like" },
+  "period": "year",
+  "year": 2026,
+  "from": "2026-01-01",
+  "to": "2026-12-31",
+  "dishes": [
+    { "casetaId": "z2-07", "dishId": "pincho-brocheta-pollo", "likeCount": 4 }
+  ],
+  "totalLikes": 4,
+  "metric": "unique_visitors_year",
+  "generatedAt": "2026-08-27T00:00:00.000Z"
+}
+```
+
+El workflow de n8n recibe el webhook en `tasks.nukeador.com/webhook/fiestas/caseta-dish-likes`. La ruta pública se publica en `/etc/nginx/sites-enabled/api.aldeapucela.org` del servidor `root@nukeador.com`, con el mismo proxy, CORS, rate limit, caché de 15 minutos, `X-Cache-Status` y respuestas stale que `caseta-saves`. El contador es de visitantes únicos por plato durante 2026; las retiradas no se restan.
+
+## Métrica anual y reprocesado
+
+La instancia mantiene activado `General.enable_processing_unique_visitors_year = 1` para poder consultar visitantes únicos anuales de los informes generales. Sin embargo, Matomo 5.13 no expone `nb_uniq_visitors` por nombre de evento para `Events.getName` cuando el periodo es `year` o `range`; tampoco sirve sumar los únicos diarios porque una misma persona puede contarse otra vez cada día.
+
+Para resolverlo sin introducir otra base de datos, el servidor instala el plugin local `ops/matomo/FiestasUniqueVisitors`. Su método de solo lectura `FiestasUniqueVisitors.getEventUniqueCounts` hace una única agregación sobre `log_link_visit_action`, agrupando por nombre de evento y calculando `COUNT(DISTINCT idvisitor)` para el intervalo completo de 2026. Usa las tablas nativas de Matomo, no almacena resultados propios y respeta el control de acceso del site solicitado. El intervalo se calcula en `Europe/Madrid` y se convierte a UTC antes de consultar `server_time`.
+
+Los seis workflows públicos consultan ese método con `period=year` y `date=2026`, y conservan `nb_uniq_visitors` como `metric: unique_visitors_year`. `rawEventCount` y `totalEvents` son datos diagnósticos; el ranking y los contadores visibles usan exclusivamente visitantes únicos por elemento. Si el plugin o Matomo no responden, el workflow devuelve `502 matomo_unavailable` sin degradar silenciosamente a una suma diaria.
+
+La instancia mantiene desactivado el procesamiento de únicos para rangos personalizados (`enable_processing_unique_visitors_range = 0`). Los endpoints públicos devuelven `400 unsupported_date_range` si reciben `from` o `to`, porque el contrato público representa exclusivamente el año completo 2026.

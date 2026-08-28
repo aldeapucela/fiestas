@@ -5,6 +5,8 @@ import {
   trackActivityOpened,
   trackActivityShared,
   trackActivityViewed,
+  trackCasetaQrDownloaded,
+  trackCasetaQrOpened,
   trackDateSelected,
   trackDirectionsOpened,
   trackExternalLinkOpened,
@@ -109,6 +111,7 @@ const els = {
   casetasPage: document.querySelector('[data-fiestas-casetas-page]'),
   popularPage: document.querySelector('[data-fiestas-popular-page]'),
   popularList: document.querySelector('[data-fiestas-popular-list]'),
+  popularDishesPage: document.querySelector('[data-fiestas-popular-dishes-page]'),
   agenda: document.querySelector('[data-fiestas-agenda]'),
   mapView: document.querySelector('[data-fiestas-map-view]'),
   mapCanvas: document.querySelector('[data-fiestas-map]'),
@@ -182,7 +185,10 @@ const els = {
   detailWeatherCopy: document.querySelector('[data-fiestas-detail-weather-copy]'),
   detailImage: document.querySelector('[data-fiestas-detail-image]'),
   detailLightbox: document.querySelector('[data-fiestas-detail-lightbox]'),
-  detailLightboxImage: document.querySelector('[data-fiestas-detail-lightbox-image]')
+  detailLightboxImage: document.querySelector('[data-fiestas-detail-lightbox-image]'),
+  detailQr: document.querySelector('[data-fiestas-caseta-qr]'),
+  detailQrLightbox: document.querySelector('[data-fiestas-caseta-qr-lightbox]'),
+  detailQrLightboxImage: document.querySelector('[data-fiestas-caseta-qr-lightbox-image]')
 };
 
 void init();
@@ -192,12 +198,21 @@ async function init() {
   setupMenuDrawer();
   setupSubscribe();
   setupPlanSelector();
+  bindCasetaQrDownloadTracking();
 
   if (els.casetasPage) {
     bindSiteShareControls();
     void import('./casetas-page.js')
       .then(({ initCasetasPage }) => initCasetasPage())
       .catch((error) => console.error('No se pudo cargar el mapa de casetas.', error));
+    return;
+  }
+
+  if (els.popularDishesPage) {
+    bindSiteShareControls();
+    void import('./popular-dishes-page.js')
+      .then(({ initPopularDishesPage }) => initPopularDishesPage())
+      .catch((error) => console.error('No se pudo cargar la página de pinchos populares.', error));
     return;
   }
 
@@ -2065,6 +2080,7 @@ function initDetailPage() {
   els.detailShareCopy?.addEventListener('click', copyShareFallback);
   els.detailBack?.addEventListener('click', goBackToAgenda);
   initDetailLightbox();
+  initCasetaQrLightbox();
   if (!isCasetaDetail) void loadDetailWeather();
   initDetailTransit();
   document.querySelectorAll('[data-fiestas-analytics-action]').forEach((link) => {
@@ -2122,6 +2138,39 @@ function initDetailLightbox() {
   closeButtons.forEach((button) => button.addEventListener('click', closeLightbox));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !els.detailLightbox.hidden) closeLightbox();
+  });
+}
+
+function initCasetaQrLightbox() {
+  if (!els.detailQr || !els.detailQrLightbox || !els.detailQrLightboxImage) return;
+
+  const closeButtons = els.detailQrLightbox.querySelectorAll('[data-fiestas-caseta-qr-lightbox-close]');
+  const openLightbox = () => {
+    els.detailQrLightboxImage.src = els.detailQr.dataset.imageSrc || els.detailQrLightboxImage.src;
+    els.detailQrLightboxImage.alt = els.detailQr.dataset.imageAlt || '';
+    els.detailQrLightbox.hidden = false;
+    document.body.classList.add('detail-lightbox-open');
+    trackCasetaQrOpened(els.detailQr.dataset.casetaId || els.detail?.dataset.eventId);
+    closeButtons[closeButtons.length - 1]?.focus();
+  };
+  const closeLightbox = () => {
+    els.detailQrLightbox.hidden = true;
+    document.body.classList.remove('detail-lightbox-open');
+    els.detailQr.focus();
+  };
+
+  els.detailQr.addEventListener('click', openLightbox);
+  closeButtons.forEach((button) => button.addEventListener('click', closeLightbox));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !els.detailQrLightbox.hidden) closeLightbox();
+  });
+}
+
+function bindCasetaQrDownloadTracking() {
+  document.querySelectorAll('[data-fiestas-caseta-qr-download]').forEach((link) => {
+    link.addEventListener('click', () => {
+      trackCasetaQrDownloaded(link.dataset.casetaId || els.detail?.dataset.eventId);
+    });
   });
 }
 

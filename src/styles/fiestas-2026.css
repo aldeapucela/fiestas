@@ -5338,7 +5338,7 @@ html.dark .fiestas-event-option {
 .fiestas-casetas-filter-option {
   display: flex;
   width: 100%;
-  min-height: 3.4rem;
+  min-height: 2.75rem;
   align-items: center;
   gap: 0.7rem;
   border: 1px solid #e3e6ec;
@@ -5347,7 +5347,7 @@ html.dark .fiestas-event-option {
   color: #202532;
   cursor: pointer;
   font: inherit;
-  padding: 0.7rem 0.75rem;
+  padding: 0.55rem 0.75rem;
   text-align: left;
   transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
 }
@@ -5376,17 +5376,28 @@ html.dark .fiestas-event-option {
 }
 
 .fiestas-casetas-filter-option-copy strong i {
-  color: #667085;
+  color: #98a2b3;
   transition: color 160ms ease;
+}
+
+.fiestas-casetas-filter-icon {
+  flex: 0 0 auto;
+}
+
+.fiestas-casetas-filter-icon--gluten-free {
+  width: 1.15rem;
+  height: 1.15rem;
+  object-fit: contain;
+  filter: grayscale(1) opacity(0.62);
+  transition: filter 160ms ease;
 }
 
 .fiestas-casetas-filter-option.is-active .fiestas-casetas-filter-option-copy strong i {
   color: #0f9f8d;
 }
 
-.fiestas-casetas-filter-option-copy small {
-  color: #667085;
-  font-size: 0.76rem;
+.fiestas-casetas-filter-option.is-active .fiestas-casetas-filter-icon--gluten-free {
+  filter: grayscale(1) sepia(1) saturate(4) hue-rotate(122deg) brightness(0.78);
 }
 
 .fiestas-casetas-filter-clear {
@@ -5501,7 +5512,8 @@ html.dark .fiestas-event-option {
   background: transparent;
   color: #1f2937;
   font: inherit;
-  font-size: 0.88rem;
+  /* iOS Safari zooms the page when focusing text inputs below 16px. */
+  font-size: 16px;
 }
 
 .fiestas-casetas-search input::placeholder {
@@ -5761,6 +5773,43 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
   gap: 0.9rem;
 }
 
+.fiestas-caseta-menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.fiestas-caseta-menu-heading h2 {
+  min-width: 0;
+  margin: 0;
+}
+
+.fiestas-caseta-qr-button {
+  display: inline-flex;
+  min-height: 2.2rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 1px solid #cfe4e1;
+  border-radius: 0.55rem;
+  background: transparent;
+  color: #0f766e;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 850;
+  padding: 0.28rem 0.55rem;
+}
+
+.fiestas-caseta-qr-button:hover,
+.fiestas-caseta-qr-button:focus-visible {
+  border-color: #0f9f8d;
+  background: #eef9f7;
+  color: #087569;
+}
+
 .fiestas-caseta-type-muted {
   background: #f2f4f7;
   color: #667085;
@@ -5800,30 +5849,220 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 
 .fiestas-caseta-menu-section li {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
+  align-items: center;
   gap: 0.45rem;
   padding-left: 0.15rem;
 }
 
+.fiestas-caseta-menu-item-disclosure {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.fiestas-caseta-menu-item-main {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.fiestas-caseta-menu-item-disclosure > summary {
+  cursor: pointer;
+  list-style: none;
+  border-radius: 0.35rem;
+  padding: 0.16rem 0.2rem;
+  margin: -0.16rem -0.2rem;
+}
+
+.fiestas-caseta-menu-item-disclosure > summary::-webkit-details-marker {
+  display: none;
+}
+
+.fiestas-caseta-menu-item-disclosure > summary::before {
+  flex: 0 0 auto;
+  color: #98a2b3;
+  content: '›';
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1;
+  margin: -0.05rem 0.05rem 0 -0.05rem;
+  opacity: 0.75;
+  transition: transform 120ms ease;
+}
+
+.fiestas-caseta-menu-item-disclosure[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+.fiestas-caseta-menu-item-disclosure > summary:focus-visible {
+  outline: 2px solid var(--fiestas-type-color, #0f9f8d);
+  outline-offset: 2px;
+}
+
+.fiestas-caseta-menu-item-name {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.fiestas-caseta-dietary-pills {
+  display: flex;
+  min-width: max-content;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.fiestas-caseta-menu-item-meta {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0.1rem 0 0.25rem;
+  padding: 0 0.2rem 0 1rem;
+}
+
+.fiestas-caseta-menu-item-disclosure:not([open]) > .fiestas-caseta-menu-item-meta {
+  display: none;
+}
+
+.fiestas-caseta-menu-item-description {
+  min-width: 0;
+  flex: 1 1 auto;
+  margin: 0;
+  color: #667085;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.fiestas-caseta-menu-item-price {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  border: 1px solid #d0d5dd;
+  border-radius: 9999px;
+  background: #f2f4f7;
+  color: #475467;
+  font-size: 0.7rem;
+  font-weight: 900;
+  line-height: 1.2;
+  padding: 0.2rem 0.48rem;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (min-width: 700px) {
+  .fiestas-caseta-menu-item--has-meta:hover .fiestas-caseta-menu-item-meta,
+  .fiestas-caseta-menu-item--has-meta:focus-within .fiestas-caseta-menu-item-meta {
+    display: flex;
+  }
+
+  .fiestas-caseta-menu-item--has-meta:not(:hover):not(:focus-within) .fiestas-caseta-menu-item-disclosure:not([open]) > .fiestas-caseta-menu-item-meta {
+    display: none;
+  }
+}
+
+.fiestas-caseta-dish-like {
+  display: inline-flex;
+  min-width: 2.4rem;
+  min-height: 2.2rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: #98a2b3;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 0.2rem 0.35rem;
+}
+
+.fiestas-caseta-dish-like:hover,
+.fiestas-caseta-dish-like:focus-visible {
+  background: color-mix(in srgb, var(--fiestas-type-color, #0f9f8d) 10%, transparent);
+  color: var(--fiestas-type-color, #0f9f8d);
+}
+
+.fiestas-caseta-dish-like.is-active {
+  color: var(--fiestas-type-color, #0f9f8d);
+}
+
+.fiestas-caseta-dish-like-count {
+  min-width: 1ch;
+  text-align: center;
+}
+
 .fiestas-caseta-dietary-pill {
   display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
   align-items: center;
+  justify-content: center;
   border-radius: 9999px;
-  padding: 0.12rem 0.45rem;
-  font-size: 0.68rem;
+  padding: 0;
+  font-size: 0.76rem;
   font-weight: 850;
   line-height: 1.25;
+  white-space: nowrap;
+}
+
+.fiestas-caseta-dietary-icon-image,
+.fiestas-caseta-dietary-legend-image {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+
+.fiestas-caseta-dietary-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 0.85rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #667085;
+  font-size: 0.74rem;
+  line-height: 1.3;
+}
+
+.fiestas-caseta-dietary-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.fiestas-caseta-dietary-legend-icon {
+  font-size: 0.78rem;
+}
+
+.fiestas-caseta-dietary-legend-icon--vegetarian,
+.fiestas-caseta-dietary-pill--vegetarian {
+  color: #237a4b;
+}
+
+.fiestas-caseta-dietary-legend-icon--vegan,
+.fiestas-caseta-dietary-pill--vegan {
+  color: #126b42;
+}
+
+.fiestas-caseta-dietary-legend-icon--gluten-free,
+.fiestas-caseta-dietary-pill--gluten-free {
+  color: #925d14;
 }
 
 .fiestas-caseta-dietary-pill--vegetarian {
   background: #e6f5ec;
-  color: #237a4b;
 }
 
 .fiestas-caseta-dietary-pill--vegan {
   background: #d9f2e6;
-  color: #126b42;
+}
+
+.fiestas-caseta-dietary-pill--gluten-free {
+  background: #fff0d7;
 }
 
 .fiestas-caseta-highlights {
@@ -5858,7 +6097,8 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 }
 
 .fiestas-caseta-placeholder h2,
-.fiestas-caseta-placeholder p {
+.fiestas-caseta-placeholder p,
+.fiestas-caseta-placeholder ul {
   margin: 0;
 }
 
@@ -5867,11 +6107,27 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
   font-size: 1.05rem;
 }
 
-.fiestas-caseta-placeholder p:last-child {
-  margin-top: 0.4rem;
+.fiestas-caseta-placeholder-copy {
   color: #667085;
   font-size: 0.88rem;
   line-height: 1.5;
+}
+
+.fiestas-caseta-placeholder-list {
+  margin-top: 0.8rem !important;
+  padding-left: 1rem;
+  color: #667085;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  list-style: disc;
+}
+
+.fiestas-caseta-placeholder-list li {
+  padding-left: 0.1rem;
+}
+
+.fiestas-caseta-placeholder-list li + li {
+  margin-top: 0.35rem;
 }
 
 .fiestas-caseta-placeholder-link {
@@ -5911,7 +6167,8 @@ html.dark .fiestas-caseta-hero {
 
 html.dark .fiestas-caseta-lead,
 html.dark .fiestas-caseta-location-pending,
-html.dark .fiestas-caseta-placeholder p:last-child {
+html.dark .fiestas-caseta-placeholder-copy,
+html.dark .fiestas-caseta-placeholder-list {
   color: #c4ccd8;
 }
 
@@ -5930,19 +6187,77 @@ html.dark .fiestas-caseta-highlights h3 {
   color: #f8fafc;
 }
 
+html.dark .fiestas-caseta-menu-item-description {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-caseta-menu-item-price {
+  border-color: #4a5563;
+  background: #2a303a;
+  color: #d0d5dd;
+}
+
 html.dark .fiestas-caseta-dietary-pill--vegetarian {
   background: #214333;
-  color: #a5e5bc;
 }
 
 html.dark .fiestas-caseta-dietary-pill--vegan {
   background: #1d4b36;
+}
+
+html.dark .fiestas-caseta-dietary-pill--gluten-free {
+  background: #4b3820;
+}
+
+html.dark .fiestas-caseta-dietary-legend {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-caseta-dietary-legend-icon--vegetarian,
+html.dark .fiestas-caseta-dietary-pill--vegetarian {
+  color: #a5e5bc;
+}
+
+html.dark .fiestas-caseta-dietary-legend-icon--vegan,
+html.dark .fiestas-caseta-dietary-pill--vegan {
   color: #a8ebc2;
+}
+
+html.dark .fiestas-caseta-dietary-legend-icon--gluten-free,
+html.dark .fiestas-caseta-dietary-pill--gluten-free {
+  color: #f7cc88;
+}
+
+html.dark .fiestas-caseta-dish-like {
+  color: #9aa6b7;
+}
+
+html.dark .fiestas-caseta-dish-like:hover,
+html.dark .fiestas-caseta-dish-like:focus-visible {
+  background: color-mix(in srgb, var(--fiestas-type-color, #17b8a4) 16%, transparent);
+  color: #7be0d1;
+}
+
+html.dark .fiestas-caseta-dish-like.is-active,
+html.dark .fiestas-caseta-dish-like:disabled {
+  color: var(--fiestas-type-color, #7be0d1);
 }
 
 html.dark .fiestas-caseta-type-muted {
   background: #2b303a;
   color: #c4ccd8;
+}
+
+html.dark .fiestas-caseta-qr-button {
+  border-color: #3a5b59;
+  color: #7be0d1;
+}
+
+html.dark .fiestas-caseta-qr-button:hover,
+html.dark .fiestas-caseta-qr-button:focus-visible {
+  border-color: #7be0d1;
+  background: #17312f;
+  color: #a8eee5;
 }
 
 html.dark .fiestas-caseta-placeholder h2 {
@@ -7192,6 +7507,34 @@ html.dark .fiestas-popular-status.is-error {
   color: #f0aaa2;
 }
 
+html.dark .fiestas-popular-dish-card {
+  border-color: #313743;
+  background: #1a1f28;
+  box-shadow: none;
+}
+
+html.dark .fiestas-popular-dish-link:hover,
+html.dark .fiestas-popular-dish-link:focus-visible {
+  background: #202631;
+}
+
+html.dark .fiestas-popular-dish-icon {
+  background: #263b3c;
+  background: color-mix(in srgb, var(--fiestas-dish-color, #71d8cb) 20%, #1a1f28);
+}
+
+html.dark .fiestas-popular-dish-title-line strong {
+  color: #f5f3ee;
+}
+
+html.dark .fiestas-popular-dish-location {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-popular-dish-likes {
+  color: #71d8cb;
+}
+
 @media (min-width: 720px) {
   .fiestas-plan-share-dialog {
     align-items: center;
@@ -7311,6 +7654,115 @@ html.dark .fiestas-popular-status.is-error {
   border-style: solid;
   background: #fff7f5;
   color: #8f2d24;
+}
+
+.fiestas-popular-dishes-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.fiestas-popular-dish-card {
+  border: 1px solid #e3e6ec;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 0.25rem 0.8rem rgba(36, 43, 55, 0.06);
+  overflow: hidden;
+}
+
+.fiestas-popular-dish-link {
+  display: grid;
+  grid-template-columns: 3.2rem minmax(0, 1fr) max-content 0.75rem;
+  gap: 0.8rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.9rem 1rem;
+  color: inherit;
+  text-decoration: none;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+.fiestas-popular-dish-link:hover,
+.fiestas-popular-dish-link:focus-visible {
+  background: #fbfcfd;
+}
+
+.fiestas-popular-dish-link:focus-visible {
+  outline: 3px solid rgba(15, 159, 141, 0.4);
+  outline-offset: -3px;
+}
+
+.fiestas-popular-dish-icon {
+  display: inline-flex;
+  width: 3.1rem;
+  height: 3.1rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #e8f7f4;
+  background: color-mix(in srgb, var(--fiestas-dish-color, #0f9f8d) 14%, white);
+  color: var(--fiestas-dish-color, #0f9f8d);
+  font-size: 1.3rem;
+}
+
+.fiestas-popular-dish-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.23rem;
+}
+
+.fiestas-popular-dish-title-line {
+  display: flex;
+  min-width: 0;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  gap: 0.4rem;
+}
+
+.fiestas-popular-dish-title-line strong {
+  min-width: 0;
+  flex: 1 1 auto;
+  color: #202532;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.fiestas-popular-dish-caseta,
+.fiestas-popular-dish-location {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 0.35rem;
+  overflow: hidden;
+  color: #667085;
+  font-size: 0.82rem;
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fiestas-popular-dish-caseta {
+  color: var(--fiestas-dish-color, #0f9f8d);
+  font-weight: 800;
+}
+
+.fiestas-popular-dish-caseta i,
+.fiestas-popular-dish-location i {
+  flex: 0 0 auto;
+}
+
+.fiestas-popular-dish-likes {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #0f8f80;
+  font-size: 0.88rem;
+  font-weight: 850;
+  white-space: nowrap;
+}
+
+.fiestas-popular-dish-arrow {
+  color: #0f9f8d;
+  font-size: 0.95rem;
 }
 
 @keyframes fiestas-popular-spin {
@@ -9086,5 +9538,160 @@ html.dark .fiestas-community-plan-detail-icon {
 
   .fiestas-plan-editor-panel {
     border-radius: 1.25rem;
+  }
+}
+
+/* Directorio de colaboradores: una página de agradecimiento clara y ampliable. */
+.fiestas-collaborators-screen {
+  gap: 1.35rem;
+}
+
+.fiestas-collaborators-page-head {
+  gap: 0.55rem;
+}
+
+.fiestas-collaborators-intro {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 43rem;
+  border-left: 0.28rem solid #0f9f8d;
+  background: #f3eff7;
+  padding: 1.1rem 1.15rem 1.15rem;
+}
+
+.fiestas-collaborators-intro h2,
+.fiestas-collaborators-intro p {
+  margin: 0;
+}
+
+.fiestas-collaborators-intro h2 {
+  max-width: 36rem;
+  color: #242032;
+  font-size: clamp(1.1rem, 4.4vw, 1.45rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.08;
+}
+
+.fiestas-collaborators-intro > p:last-child {
+  max-width: 39rem;
+  color: #586273;
+  font-size: 0.8rem;
+  line-height: 1.45;
+}
+
+.fiestas-collaborators-directory {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.fiestas-collaborators-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.fiestas-collaborator-card {
+  display: grid;
+  min-width: 0;
+  align-content: start;
+  gap: 0.75rem;
+  border: 1px solid #e1e5ec;
+  border-radius: 1.1rem;
+  background: #fff;
+  padding: 0.75rem;
+  color: inherit;
+  text-decoration: none;
+  box-shadow: 0 0.65rem 1.6rem rgba(31, 41, 55, 0.06);
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.fiestas-collaborator-card:hover,
+.fiestas-collaborator-card:focus-visible {
+  border-color: #b9a9cb;
+  box-shadow: 0 0.85rem 1.8rem rgba(68, 53, 88, 0.13);
+  transform: translateY(-0.12rem);
+}
+
+.fiestas-collaborator-card:focus-visible {
+  outline: 3px solid rgba(15, 159, 141, 0.34);
+  outline-offset: 3px;
+}
+
+.fiestas-collaborator-logo-wrap {
+  display: grid;
+  min-height: 8rem;
+  place-items: center;
+  padding: 0.5rem 0.25rem;
+}
+
+.fiestas-collaborator-logo {
+  display: block;
+  width: min(100%, 7rem);
+  aspect-ratio: 1;
+  object-fit: contain;
+}
+
+.fiestas-collaborator-copy {
+  display: grid;
+  min-width: 0;
+  gap: 0.12rem;
+}
+
+.fiestas-collaborator-copy strong {
+  color: #242832;
+  font-size: 0.96rem;
+  font-weight: 900;
+  line-height: 1.15;
+  overflow-wrap: anywhere;
+}
+
+.fiestas-collaborator-copy small {
+  overflow: hidden;
+  color: #798394;
+  font-size: 0.78rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+html.dark .fiestas-collaborators-intro {
+  background: #282331;
+}
+
+html.dark .fiestas-collaborators-intro h2,
+html.dark .fiestas-collaborator-copy strong {
+  color: #f7f8fa;
+}
+
+html.dark .fiestas-collaborators-intro > p:last-child,
+html.dark .fiestas-collaborator-copy small {
+  color: #bdc4cf;
+}
+
+html.dark .fiestas-collaborator-card {
+  border-color: #343a45;
+  background: #20242a;
+  box-shadow: 0 0.65rem 1.6rem rgba(0, 0, 0, 0.2);
+}
+
+html.dark .fiestas-collaborator-card:hover,
+html.dark .fiestas-collaborator-card:focus-visible {
+  border-color: #75678a;
+  box-shadow: 0 0.85rem 1.8rem rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 640px) {
+  .fiestas-collaborators-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .fiestas-collaborator-logo-wrap {
+    min-height: 10rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .fiestas-collaborators-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }

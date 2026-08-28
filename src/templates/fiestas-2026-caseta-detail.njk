@@ -263,18 +263,84 @@
 
     {% if caseta.details %}
     <section class="fiestas-caseta-menu fiestas-detail-card" aria-labelledby="caseta-menu-title">
-      <h2 id="caseta-menu-title"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Carta</h2>
+      <div class="fiestas-caseta-menu-heading">
+        <h2 id="caseta-menu-title"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Carta</h2>
+        <button
+          class="fiestas-caseta-qr-button"
+          type="button"
+          data-fiestas-caseta-qr
+          data-image-src="/assets/qr/casetas/{{ caseta.id }}.png?v={{ assetVersion }}"
+          data-image-alt="Cartel QR de {{ caseta.name }}"
+          aria-controls="caseta-qr-lightbox-{{ caseta.id }}"
+          aria-haspopup="dialog"
+          aria-label="Abrir QR de {{ caseta.name }}"
+        >
+          <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+          <span>QR</span>
+        </button>
+      </div>
+      <div class="detail-lightbox" id="caseta-qr-lightbox-{{ caseta.id }}" data-fiestas-caseta-qr-lightbox role="dialog" aria-modal="true" aria-label="Cartel QR de {{ caseta.name }}" hidden>
+        <button class="detail-lightbox-backdrop" type="button" data-fiestas-caseta-qr-lightbox-close aria-label="Cerrar cartel QR"></button>
+        <div class="detail-lightbox-panel">
+          <button class="detail-lightbox-close" type="button" data-fiestas-caseta-qr-lightbox-close aria-label="Cerrar cartel QR">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+          <img class="detail-lightbox-image" data-fiestas-caseta-qr-lightbox-image src="/assets/qr/casetas/{{ caseta.id }}.png?v={{ assetVersion }}" alt="Cartel QR de {{ caseta.name }}" />
+          <a
+            class="detail-lightbox-download"
+            href="/assets/qr/casetas/{{ caseta.id }}.png?v={{ assetVersion }}"
+            download="casetas-{{ caseta.slug }}-qr.png"
+            data-fiestas-caseta-qr-download
+            data-caseta-id="{{ caseta.id }}"
+          >
+            <i class="fa-solid fa-download" aria-hidden="true"></i>
+            <span>Descargar imagen</span>
+          </a>
+        </div>
+      </div>
       {% for section in caseta.details.menuSections %}
       <div class="fiestas-caseta-menu-section">
         <h3>{{ section.title }}</h3>
         <ul>
           {% for item in section.items %}
-          <li>
-            <span>{{ item.name }}</span>
-            {% if item.dietary == 'vegetarian' %}
-            <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegetarian">Vegetariano</span>
-            {% elif item.dietary == 'vegan' %}
-            <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegan">Vegano</span>
+          {% set hasMenuMeta = item.description or item.price %}
+          <li class="{% if hasMenuMeta %}fiestas-caseta-menu-item fiestas-caseta-menu-item--has-meta{% endif %}">
+            {% if hasMenuMeta %}<details class="fiestas-caseta-menu-item-disclosure">{% endif %}
+            {% if hasMenuMeta %}<summary class="fiestas-caseta-menu-item-main">{% else %}<div class="fiestas-caseta-menu-item-main">{% endif %}
+              <span class="fiestas-caseta-menu-item-name">{{ item.name }}</span>
+              {% if item.dietary == 'vegetarian' or item.dietary == 'vegan' or item.glutenFree %}
+              <span class="fiestas-caseta-dietary-pills">
+                {% if item.dietary == 'vegetarian' %}
+                <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegetarian" role="img" aria-label="Vegetariano" title="Vegetariano"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span>
+                {% elif item.dietary == 'vegan' %}
+                <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegan" role="img" aria-label="Vegano" title="Vegano"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span>
+                {% endif %}
+                {% if item.glutenFree %}<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--gluten-free" role="img" aria-label="Sin gluten" title="Sin gluten"><img class="fiestas-caseta-dietary-icon-image" src="/assets/icons/dietary-gluten-free.png" alt="" aria-hidden="true" /></span>{% endif %}
+              </span>
+              {% endif %}
+            {% if hasMenuMeta %}
+            </summary>
+            <div class="fiestas-caseta-menu-item-meta">
+              {% if item.description %}<p class="fiestas-caseta-menu-item-description">{{ item.description }}</p>{% endif %}
+              {% if item.price %}<span class="fiestas-caseta-menu-item-price">{{ item.price }}</span>{% endif %}
+            </div>
+            </details>
+            {% else %}</div>{% endif %}
+            {% if section.votable and item.id %}
+            <button
+              class="fiestas-caseta-dish-like"
+              type="button"
+              data-fiestas-caseta-dish-like
+              data-caseta-id="{{ caseta.id }}"
+              data-dish-id="{{ item.id }}"
+              data-dish-name="{{ item.name }}"
+              aria-pressed="false"
+              aria-label="Me gusta {{ item.name }}"
+              title="Me gusta {{ item.name }}"
+            >
+              <i class="fa-regular fa-thumbs-up" data-fiestas-caseta-dish-like-icon aria-hidden="true"></i>
+              <span data-fiestas-caseta-dish-like-count hidden></span>
+            </button>
             {% endif %}
           </li>
           {% endfor %}
@@ -289,6 +355,11 @@
         {% endfor %}
       </div>
       {% endif %}
+      <div class="fiestas-caseta-dietary-legend" aria-label="Leyenda de los iconos de la carta">
+        <span><i class="fa-solid fa-leaf fiestas-caseta-dietary-legend-icon fiestas-caseta-dietary-legend-icon--vegetarian" aria-hidden="true"></i>Vegetariano</span>
+        <span><i class="fa-solid fa-seedling fiestas-caseta-dietary-legend-icon fiestas-caseta-dietary-legend-icon--vegan" aria-hidden="true"></i>Vegano</span>
+        <span><img class="fiestas-caseta-dietary-legend-image" src="/assets/icons/dietary-gluten-free.png" alt="" aria-hidden="true" />Sin gluten</span>
+      </div>
     </section>
     {% else %}
     <section class="fiestas-caseta-placeholder" aria-labelledby="caseta-placeholder-title">
@@ -296,11 +367,11 @@
       <div>
         <p class="fiestas-plan-kicker">PRÓXIMAMENTE</p>
         <h2 id="caseta-placeholder-title">Ficha de caseta</h2>
-        <p>
-          Aún no tenemos información sobre la carta de esta caseta.
-          Si tienes una foto o el texto de sus pinchos y tapas,
-          mándanoslo en el <a class="fiestas-caseta-placeholder-link" href="https://t.me/aldeapucela/59137" target="_blank" rel="noopener noreferrer">chat de fiestas</a>.
-        </p>
+        <p class="fiestas-caseta-placeholder-copy">No tenemos información sobre la carta de esta caseta.</p>
+        <ul class="fiestas-caseta-placeholder-list">
+          <li>Puedes mandarnos una foto o el texto de sus pinchos y tapas al <a class="fiestas-caseta-placeholder-link" href="https://t.me/aldeapucela/59137" target="_blank" rel="noopener noreferrer">chat de fiestas</a>.</li>
+          <li>Puedes avisar al dueño o a los trabajadores de la caseta para que nos lo manden ellos y podamos valorar sus pinchos y tapas.</li>
+        </ul>
       </div>
     </section>
     {% endif %}
@@ -406,4 +477,5 @@
 
 {% block extraScripts %}
 <script type="module" src="/assets/js/casetas-favorites.{{ jsVersion }}.js" defer></script>
+<script type="module" src="/assets/js/caseta-dish-likes.{{ jsVersion }}.js" defer></script>
 {% endblock %}

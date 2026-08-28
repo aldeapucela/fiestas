@@ -1,6 +1,6 @@
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { copyFile, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import os from 'node:os';
 
@@ -145,7 +145,7 @@ async function main() {
 
   const temporaryDirectory = await mkdtemp(path.join(os.tmpdir(), 'fiestas-social-plan-'));
   const svgPath = path.join(temporaryDirectory, `${options.planId}.svg`);
-  const outputPath = path.join(root, 'src/assets/social/plans', `${options.planId}.png`);
+  const outputPath = path.join(root, 'src/assets/social/plans', `${options.planId}.jpg`);
   try {
     const posterPaths = await Promise.all(posters.map(async (event, index) => {
       const sourcePath = path.join(root, 'src', event.image.replace(/^\/assets\//, 'assets/'));
@@ -233,7 +233,21 @@ async function main() {
       currentPath = nextPath;
     }
 
-    await copyFile(currentPath, outputPath);
+    await execFileAsync('magick', [
+      currentPath,
+      '-background',
+      'white',
+      '-alpha',
+      'remove',
+      '-alpha',
+      'off',
+      '-strip',
+      '-interlace',
+      'Plane',
+      '-quality',
+      '89',
+      outputPath,
+    ]);
   } finally {
     await rm(temporaryDirectory, { recursive: true, force: true });
   }

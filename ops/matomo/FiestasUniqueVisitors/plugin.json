@@ -1,0 +1,12 @@
+{
+  "name": "FiestasUniqueVisitors",
+  "version": "1.0.0",
+  "description": "Read-only annual unique visitor counts for Fiestas event interactions.",
+  "theme": false,
+  "keywords": ["fiestas", "events", "unique visitors"],
+  "license": "GPL v3+",
+  "require": {
+    "matomo": ">=5.13.0,<6.0.0-b1"
+  },
+  "category": "API"
+}
