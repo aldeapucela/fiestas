@@ -488,7 +488,64 @@
       "location": "San Benito",
       "placement": "En el lateral",
       "addressQuery": "San Benito, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "A compartir — Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-bravas",
+                "name": "Bravas - 5€ — Mayo de ajo asado y brava picante",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Para picar — Pincho de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-choripan",
+                "name": "Choripan - 4€ — Pan tostado, chorizo criollo y chimichurri Argentino"
+              },
+              {
+                "id": "pincho-brioche",
+                "name": "Brioche - 4€ — Costilla, mayo trufada, jugo de carne y queso parmesano rallado"
+              },
+              {
+                "id": "pincho-marinera",
+                "name": "Marinera - 4€ — Ensaladilla rusa de la casa y anchoa sobre base crujiente."
+              }
+            ]
+          },
+          {
+            "title": "El estrella — Pincho estrella",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-pulguita-albondigas",
+                "name": "Pulguita de albóndigas - 6€ — Pulguita de albóndigas con mayo de ajo asado"
+              }
+            ]
+          },
+          {
+            "title": "Para acabar — Postre",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-gofre-nutella",
+                "name": "Gofre Nutella - 2,5€ — Gofre caliente y Nutella",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Bebida y tapa 4€ / Solo tapa 3€"
+        ]
+      }
     },
     {
       "id": "z3-01",
