@@ -36,9 +36,9 @@
 >
   <article class="fiestas-detail fiestas-caseta-detail" data-caseta-id="{{ caseta.id }}">
     <header class="fiestas-detail-top">
-      <a class="fiestas-detail-top-button" href="/casetas/" aria-label="Volver al mapa de casetas">
+      <button class="fiestas-detail-top-button" type="button" data-fiestas-back aria-label="Volver al mapa de casetas">
         <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
-      </a>
+      </button>
       <p>Detalle de caseta</p>
       <div class="fiestas-detail-top-actions">
         <button class="fiestas-detail-top-button fiestas-caseta-favorite-button" type="button" data-fiestas-caseta-favorite-toggle data-caseta-id="{{ caseta.id }}" aria-label="Añadir {{ caseta.name }} a favoritas" aria-pressed="false">
@@ -422,7 +422,7 @@
       </div>
       <div class="fiestas-related-list">
         {% for related in relatedCasetas %}
-        <a class="fiestas-related-item" href="{{ related.urlPath }}">
+        <a class="fiestas-related-item" href="{{ related.urlPath }}" data-fiestas-caseta-return>
           <span class="fiestas-caseta-related-icon" style="--fiestas-type-color: {{ related.color }};" aria-hidden="true">
             <i class="fa-solid fa-store"></i>
           </span>
@@ -439,7 +439,7 @@
 
     <div class="fiestas-detail-feedback" data-fiestas-detail-feedback aria-live="polite" hidden></div>
 
-    <a class="fiestas-caseta-back-link" href="/casetas/">
+    <a class="fiestas-caseta-back-link" href="/casetas/" data-fiestas-caseta-return>
       <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
       <span>Volver a todas las casetas</span>
     </a>
@@ -462,7 +462,7 @@
     <i class="fa-regular fa-heart" aria-hidden="true"></i>
     <span>Mi plan</span>
   </a>
-  <a class="fiestas-bottom-link is-active" href="/casetas/" aria-current="page">
+  <a class="fiestas-bottom-link is-active" href="/casetas/" data-fiestas-caseta-return aria-current="page">
     <i class="fa-solid fa-store" aria-hidden="true"></i>
     <span>Casetas</span>
   </a>

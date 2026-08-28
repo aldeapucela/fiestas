@@ -1,6 +1,7 @@
 import { readCasetaFavoriteIds, setCasetaFavorite, subscribeToCasetaFavorites } from './casetas-favorites.js';
 import { readCasetaDishLikeIds, subscribeToCasetaDishLikes } from './caseta-dish-likes.js';
 import { trackCasetaFavoriteChanged } from './analytics.js';
+import { buildCasetaDetailHref } from './casetas-navigation.js';
 
 const CENTER = [41.645726, -4.732919];
 const DEFAULT_ZOOM = 13;
@@ -265,12 +266,14 @@ function bindControls() {
   els.searchInput?.addEventListener('input', (event) => {
     state.searchQuery = event.currentTarget.value.trim();
     if (els.searchClear) els.searchClear.hidden = !state.searchQuery;
+    syncUrlState();
     renderSheet(getVisibleCasetas());
   });
   els.searchClear?.addEventListener('click', () => {
     state.searchQuery = '';
     if (els.searchInput) els.searchInput.value = '';
     els.searchClear.hidden = true;
+    syncUrlState();
     renderSheet(getVisibleCasetas());
     els.searchInput?.focus();
   });
@@ -314,6 +317,7 @@ function readUrlState() {
   const zone = params.get('zone');
   const location = params.get('location');
   const selectedCaseta = params.get('caseta');
+  state.searchQuery = String(params.get('search') || '').trim();
   if (zone && state.zones.some((item) => item.zone === zone)) state.selectedZone = zone;
   if (!state.selectedZone && selectedCaseta) {
     state.selectedZone = state.casetas.find((caseta) => caseta.id === selectedCaseta)?.zone || null;
@@ -352,6 +356,8 @@ function syncUrlState() {
   else url.searchParams.delete('favorites');
   if (state.onlyLikedDishes) url.searchParams.set('liked', '1');
   else url.searchParams.delete('liked');
+  if (state.searchQuery) url.searchParams.set('search', state.searchQuery);
+  else url.searchParams.delete('search');
   [...state.dietaryFilters]
     .sort()
     .forEach((dietary) => url.searchParams.append('dietary', dietary));
@@ -566,7 +572,7 @@ function casetaRow(caseta) {
   article.className = 'fiestas-map-result fiestas-caseta-result';
   article.dataset.mapResultId = caseta.id;
   article.style.setProperty('--fiestas-type-color', caseta.color);
-  const href = `/c/${encodeURIComponent(caseta.publicSlug || caseta.slug)}/`;
+  const href = buildCasetaDetailHref(caseta);
   const placement = caseta.placement || '';
   const saved = state.casetaFavorites.has(caseta.id);
   const distance = state.userLocation && caseta.coordinates
@@ -644,6 +650,7 @@ function syncSearchUi() {
   els.searchToggle.setAttribute('title', state.searchOpen ? 'Cerrar búsqueda' : 'Buscar caseta');
   els.searchToggle.classList.toggle('is-active', state.searchOpen);
   els.searchPanel.hidden = !state.searchOpen;
+  if (els.searchInput && els.searchInput.value !== state.searchQuery) els.searchInput.value = state.searchQuery;
   if (els.searchClear) els.searchClear.hidden = !state.searchQuery;
 }
 

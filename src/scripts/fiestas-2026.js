@@ -24,6 +24,7 @@ import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-
 import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './community-plans.js';
 import { rankPopularEvents } from './popular-page.js';
 import { getWeatherAtTime, getWeatherCondition, getWeatherLabel, loadWeatherForecast } from './weather.js';
+import { getCasetasReturnPath } from './casetas-navigation.js';
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
@@ -2030,6 +2031,7 @@ function initDetailPage() {
     trackActivityViewed(els.detail.dataset.eventId);
     updateDetailFavorite({ silent: true });
   }
+  if (isCasetaDetail) applyCasetaReturnLinks();
   moveDetailMapAfterActions();
   initDetailDirections();
   if (!isCasetaDetail) {
@@ -2356,6 +2358,10 @@ function updateDetailFavorite(options = {}) {
 }
 
 function goBackToAgenda() {
+  if (els.detail?.dataset.casetaDetail === 'true') {
+    window.location.href = getCasetasReturnPath(window.location.href) || '/casetas/';
+    return;
+  }
   try {
     const referrer = document.referrer ? new URL(document.referrer) : null;
     if (referrer && referrer.origin === window.location.origin && window.history.length > 1) {
@@ -2364,6 +2370,13 @@ function goBackToAgenda() {
     }
   } catch (_) {}
   window.location.href = '/';
+}
+
+function applyCasetaReturnLinks() {
+  const returnPath = getCasetasReturnPath(window.location.href) || '/casetas/';
+  document.querySelectorAll('[data-fiestas-caseta-return]').forEach((link) => {
+    link.setAttribute('href', returnPath);
+  });
 }
 
 async function shareDetail() {
