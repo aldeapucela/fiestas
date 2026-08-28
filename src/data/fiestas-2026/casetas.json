@@ -1893,6 +1893,154 @@
         "query": "Plaza de Santa Cruz, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:54.745Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho con bebida 4,00€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-el-rey-bocata-jijas",
+                "name": "El Rey",
+                "description": "Bocata de Jijas"
+              },
+              {
+                "id": "pincho-el-camello-bocata-moruno",
+                "name": "El Camello",
+                "description": "Bocata moruno con miel y mostaza"
+              },
+              {
+                "id": "pincho-el-coyote-bocata-barbacoa",
+                "name": "El Coyote",
+                "description": "Bocata barbacoa con salsa BBQ"
+              },
+              {
+                "id": "pincho-el-guerrero-bocata-criollo",
+                "name": "El Guerrero",
+                "description": "Bocata criollo con salsa Sriracha"
+              },
+              {
+                "id": "pincho-cochifrito",
+                "name": "Cochifrito",
+                "description": "al ajillo"
+              },
+              {
+                "id": "pincho-delicias-pollo",
+                "name": "Delicias de pollo",
+                "description": "con salsa de Sriracha"
+              },
+              {
+                "id": "pincho-croquetas-jamon-iberico",
+                "name": "Croquetas caseras de jamón ibérico",
+                "description": "(2 UD.)"
+              },
+              {
+                "id": "pincho-chorizos-sidra",
+                "name": "Chorizos a la sidra"
+              }
+            ]
+          },
+          {
+            "title": "Bebida 2,00€",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito"
+              },
+              {
+                "id": "bebida-tinto-verano",
+                "name": "Tinto verano"
+              },
+              {
+                "id": "bebida-verdejo",
+                "name": "Verdejo"
+              },
+              {
+                "id": "bebida-ribera",
+                "name": "Ribera"
+              },
+              {
+                "id": "bebida-cigales",
+                "name": "Cigales"
+              },
+              {
+                "id": "bebida-frizzante",
+                "name": "Frizzante"
+              },
+              {
+                "id": "bebida-vermouth",
+                "name": "Vermouth"
+              },
+              {
+                "id": "bebida-botella-sidra",
+                "name": "Botella sidra",
+                "price": "5,00 €"
+              },
+              {
+                "id": "bebida-cana-cerveza",
+                "name": "Caña cerveza"
+              },
+              {
+                "id": "bebida-radler",
+                "name": "Radler"
+              },
+              {
+                "id": "bebida-cerveza-0-0",
+                "name": "Cerveza 0,0"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto"
+              },
+              {
+                "id": "bebida-acua",
+                "name": "Acua"
+              },
+              {
+                "id": "bebida-refresco",
+                "name": "Refresco"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-cofre-sirope-chocolate-nata",
+                "name": "Cofre",
+                "description": "con sirope de chocolate y nata",
+                "price": "3,50 €"
+              }
+            ]
+          },
+          {
+            "title": "Café",
+            "votable": false,
+            "items": [
+              {
+                "id": "cafe-con-leche",
+                "name": "Café con leche",
+                "price": "1,50 €"
+              },
+              {
+                "id": "cafe-cortado",
+                "name": "Café cortado",
+                "price": "1,50 €"
+              },
+              {
+                "id": "cafe-solo",
+                "name": "Café solo",
+                "price": "1,50 €"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Solo pincho 3,00€"
+        ]
       }
     },
     {
