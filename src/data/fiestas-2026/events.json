@@ -17363,5 +17363,44 @@
     "tags": [
       "Otros"
     ]
+  },
+  {
+    "id": 521,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "21:00",
+    "title": "Les Castizos y Jorge Tejedor (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2d9d1f34500f25a937b6eaaf6cbd42c136d3499a_2_698x1024.jpeg",
+    "location": "Martin “El Catarro”, Calle El Catarro, 24",
+    "zone": "Zona Centro",
+    "description": "El próximo viernes 4 de septiembre de 2026, el local Martin “El Catarro” en Valladolid acogerá una velada musical imperdible. La cita comenzará a partir de las 20:00 horas, ofreciendo un ambiente ideal para disfrutar de la música y la compañía.",
+    "summary": "El próximo viernes 4 de septiembre de 2026, el local Martin “El Catarro” en Valladolid acogerá una velada musical imperdible. La cita comenzará a partir de las 20:00 horas, ofreciendo un ambiente ideal para disfrutar de la música y la compañía.",
+    "performances": [],
+    "organizers": [
+      "Martin “El Catarro”"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6553894,
+      "lng": -4.7329203,
+      "source": "Inferidas por coincidencia de lugar con el evento local 432",
+      "osmType": "way",
+      "osmId": 60449675,
+      "query": "Martin “El Catarro”, Calle El Catarro, 24, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-25T19:23:58.636Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
   }
 ]
