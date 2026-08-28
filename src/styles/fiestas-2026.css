@@ -5843,7 +5843,7 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 
 .fiestas-caseta-menu-section li {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   gap: 0.45rem;
   padding-left: 0.15rem;
 }
@@ -5858,7 +5858,7 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
   width: 100%;
   min-width: 0;
   flex: 1 1 auto;
-  align-items: baseline;
+  align-items: center;
   gap: 0.45rem;
 }
 
