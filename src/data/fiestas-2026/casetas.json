@@ -151,6 +151,113 @@
         "query": "Plaza San Benito, Valladolid, España",
         "accuracy": 0.8,
         "geocodedAt": "2026-08-26"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria + bebida 4,00 €",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-chapata-rabas",
+                "name": "Chapata de rabas (gluten, pescado) 4,00 €"
+              },
+              {
+                "id": "pincho-muniquesa-salchichas",
+                "name": "Muniquesa de salchichas variadas (brocheta) (gluten) 4,00 €"
+              },
+              {
+                "id": "pincho-montadito-bavaro",
+                "name": "Montadito bavaro beicon, Sajonia, queso (gluten, leche) 4,00 €"
+              },
+              {
+                "id": "pincho-queso-cabra-mermelada-tomate",
+                "name": "Queso de cabra a la parrilla mermelada de tomate (gluten y leche) 4,00€",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Pincho de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-lechazo-parrilla",
+                "name": "Pincho de lechazo a la parrilla (120 gr. con hueso) 6,50€ — Bebida aparte"
+              }
+            ]
+          },
+          {
+            "title": "Cocina alemana",
+            "votable": true,
+            "items": [
+              {
+                "id": "cocina-alemana-salchicha-brastwrut",
+                "name": "Salchicha Brastwrut con ensaladilla alemana sin gluten, mostaza 6,00 €",
+                "glutenFree": true
+              },
+              {
+                "id": "cocina-alemana-perrito-aleman",
+                "name": "Perrito alemán especial (franfurt, lechugas, tomate, Cebolia frita) (gluten) 6,50 €"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-casera",
+                "name": "Tarta de queso casera sin gluten, huevos, leche 4,00€",
+                "dietary": "vegetarian",
+                "glutenFree": true
+              },
+              {
+                "id": "postre-coulant-chocolate-sirope-naranja",
+                "name": "Coulant chocolate con sirope de naranja (gluten, leche) 4,00 €",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-vinos-jovenes",
+                "name": "Vinos jovenes 2 €"
+              },
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito 0.20CL 2 €"
+              },
+              {
+                "id": "bebida-refresco-lata",
+                "name": "Refresco en lata 2,50 €"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua 33CL 1,50 €"
+              },
+              {
+                "id": "bebida-cerveza-cana",
+                "name": "Cerveza caña 0.20CL 2 €"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto 1,50 €"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Vino, caña, agua, mosto, Lorencito",
+          "Pincho sin bebida 3,00 €",
+          "Pincho con refresco lata 4,40 €",
+          "Cocina alemana. Bebida aparte",
+          "10%IVA incluido",
+          "Tenemos informacion alergenos reglamento europeo, solicite informacion nuestro personal"
+        ]
       }
     },
     {
@@ -1113,6 +1220,115 @@
         "lng": -4.7277986,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-mejillon-tigre",
+                "name": "Mejillón tigre — Masa de mejillón tigre sobre concha con coco y mayo de limón."
+              },
+              {
+                "id": "pincho-maxi-gyoza-panceta-langostinos",
+                "name": "Maxi gyoza de panceta y langostinos — Lazada en teriyaki, con alioli de wosame y crujiente de kikos."
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-tosta-ventresca",
+                "name": "Tosta de ventresca — Con tomate rallado y polvo de aceituna negra. 5.50€"
+              },
+              {
+                "id": "racion-tosta-langostinos",
+                "name": "Tosta de langostinos — Con mayo de mei, comino y lima. 5.50€"
+              },
+              {
+                "id": "racion-montadito-mogote-iberico",
+                "name": "Montadito de mogote ibérico — Con salsa chimichurri. 6.50€"
+              },
+              {
+                "id": "racion-montadito-butifarra",
+                "name": "Montadito de butifarra — Butifarra rellena de trompeta negra con salsa baconesa. 7.50€"
+              },
+              {
+                "id": "racion-montadito-solomillo-iberico",
+                "name": "Montadito de solomillo ibérico — Con salsa tártara. 7.50€"
+              },
+              {
+                "id": "racion-torrezno-soria",
+                "name": "Torrezno de Soria — Con tosta de tomate rallado. 5.50€"
+              },
+              {
+                "id": "racion-brocheta-pata-pulpo",
+                "name": "Brocheta de pata de pulpo — Con crema de patata ajoarriero. 7.00€"
+              },
+              {
+                "id": "racion-zamburinas",
+                "name": "Zamburínas — Con concassé de tomate. 4 unidades. 10.00€"
+              },
+              {
+                "id": "racion-rabas-calamar",
+                "name": "Rabas de calamar — Con mayo de mei, comino y lima. 10.00€"
+              },
+              {
+                "id": "racion-ensaladilla-langostinos",
+                "name": "Ensaladilla de langostinos — Con aceituna negra y crujiente de kikos. 10.00€"
+              },
+              {
+                "id": "racion-hamburguesa-okelan",
+                "name": "Hamburguesa OKELAN 180 g — Pan brioche, carne de ternera, queso, bacon, salsa santa y crujiente de kikos. 12.00€"
+              },
+              {
+                "id": "racion-patatas-bravas-lagar",
+                "name": "Patatas bravas El Lagar — Patatas bravas de chipotle y patata picante. 12.00€",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "racion-saquitos-carrillera",
+                "name": "Saquitos de carrillera — Con mayo de trufa. 10 unidades. 12.00€"
+              },
+              {
+                "id": "racion-croquetas-zamburinas",
+                "name": "Croquetas de zamburínas — Caseras. 6 unidades. 15.00€"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-torrija-pan-brioche",
+                "name": "Torrija de pan brioche — Casera. Infusionada con crema inglesa de naranja. Con tuffee. 6.00€",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-coulant-queso-manchego",
+                "name": "Coulant de queso manchego — Apto para celíacos. 6.00€",
+                "dietary": "vegetarian",
+                "glutenFree": true
+              },
+              {
+                "id": "postre-coulant-chocolate",
+                "name": "Coulant de chocolate — Apto para celíacos. 6.00€",
+                "dietary": "vegetarian",
+                "glutenFree": true
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Pincho feria sin rebida. 3.50€",
+          "Pincho feria + cerveza, vino o Lorenco. 4.00€",
+          "Pincho feria + refresco. 4.50€"
+        ]
       }
     },
     {
