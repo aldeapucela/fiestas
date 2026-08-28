@@ -206,6 +206,43 @@
         "query": "Plaza San Benito, Valladolid, España",
         "accuracy": 0.8,
         "geocodedAt": "2026-08-26"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-papas-locas", "name": "Papas Locas (con bacon crujiente y salsa chipotle)" },
+              { "id": "racion-pops-pollo", "name": "Pops pollo (bolas de pollo crunchy con salsa)" }
+            ]
+          },
+          {
+            "title": "Pincho de feria",
+            "votable": true,
+            "items": [
+              { "id": "pincho-miniburger-bbq", "name": "Miniburger bbq" },
+              { "id": "pincho-miniburger-clasica", "name": "Miniburger clasica" },
+              { "id": "pincho-miniburger-pollo", "name": "Miniburger pollo" },
+              { "id": "pincho-miniburger-chipotle", "name": "Miniburger chipotle" },
+              { "id": "pincho-perrito-clasico", "name": "Perrito clásico" }
+            ]
+          },
+          {
+            "title": "Pincho estrella",
+            "votable": true,
+            "items": [
+              { "id": "pincho-gofre-burger", "name": "Gofre burger" }
+            ]
+          },
+          {
+            "title": "Postre",
+            "votable": true,
+            "items": [
+              { "id": "postre-chupa-chups-brownie", "name": "Chupa Chups Brownie" }
+            ]
+          }
+        ]
       }
     },
     {
