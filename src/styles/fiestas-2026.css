@@ -5756,6 +5756,43 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
   gap: 0.9rem;
 }
 
+.fiestas-caseta-menu-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.fiestas-caseta-menu-heading h2 {
+  min-width: 0;
+  margin: 0;
+}
+
+.fiestas-caseta-qr-button {
+  display: inline-flex;
+  min-height: 2.2rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 1px solid #cfe4e1;
+  border-radius: 0.55rem;
+  background: transparent;
+  color: #0f766e;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.76rem;
+  font-weight: 850;
+  padding: 0.28rem 0.55rem;
+}
+
+.fiestas-caseta-qr-button:hover,
+.fiestas-caseta-qr-button:focus-visible {
+  border-color: #0f9f8d;
+  background: #eef9f7;
+  color: #087569;
+}
+
 .fiestas-caseta-type-muted {
   background: #f2f4f7;
   color: #667085;
@@ -6027,6 +6064,18 @@ html.dark .fiestas-caseta-dish-like:disabled {
 html.dark .fiestas-caseta-type-muted {
   background: #2b303a;
   color: #c4ccd8;
+}
+
+html.dark .fiestas-caseta-qr-button {
+  border-color: #3a5b59;
+  color: #7be0d1;
+}
+
+html.dark .fiestas-caseta-qr-button:hover,
+html.dark .fiestas-caseta-qr-button:focus-visible {
+  border-color: #7be0d1;
+  background: #17312f;
+  color: #a8eee5;
 }
 
 html.dark .fiestas-caseta-placeholder h2 {

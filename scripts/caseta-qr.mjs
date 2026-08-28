@@ -44,7 +44,6 @@ export function createCasetaQrPosterSvg({ qrSvg, logoHref, logoDataUri, siteUrl 
   const { viewBox, content } = qrSvgParts(qrSvg);
   const [, , qrWidth] = viewBox.trim().split(/[\s,]+/).map(Number);
   if (!Number.isFinite(qrWidth) || qrWidth <= 0) throw new Error('El código QR no tiene unas dimensiones válidas.');
-  const qrScale = 560 / qrWidth;
   const visibleUrl = new URL(siteUrl).host;
   const logo = logoHref || logoDataUri;
   if (!logo) throw new Error('El cartel QR necesita una referencia al logo.');
@@ -53,36 +52,20 @@ export function createCasetaQrPosterSvg({ qrSvg, logoHref, logoDataUri, siteUrl 
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 1600" role="img" aria-labelledby="poster-title poster-description">
   <title id="poster-title">Valora nuestros pinchos</title>
   <desc id="poster-description">Escanea el código QR para descubrir y valorar las casetas de feria de día.</desc>
-  <defs>
-    <linearGradient id="poster-background" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#fff7e8" />
-      <stop offset="0.55" stop-color="#fffdf5" />
-      <stop offset="1" stop-color="#f1e9fb" />
-    </linearGradient>
-    <radialGradient id="poster-glow" cx="0.12" cy="0.2" r="0.8">
-      <stop offset="0" stop-color="#f2c86b" stop-opacity="0.3" />
-      <stop offset="1" stop-color="#f2c86b" stop-opacity="0" />
-    </radialGradient>
-  </defs>
+  <rect width="1200" height="1600" fill="#fffdfa" />
 
-  <rect width="1200" height="1600" fill="url(#poster-background)" />
-  <rect width="1200" height="1600" fill="url(#poster-glow)" />
+  <image x="525" y="72" width="150" height="150" preserveAspectRatio="xMidYMid meet" href="${escapeXml(logo)}" xlink:href="${escapeXml(logo)}" />
+  <text x="600" y="270" text-anchor="middle" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="8">ALDEA PUCELA</text>
+  <text x="600" y="316" text-anchor="middle" fill="#5d7393" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600">Fiestas Valladolid 2026</text>
 
-  <g transform="translate(120 105)">
-    <image x="0" y="0" width="145" height="145" preserveAspectRatio="xMidYMid meet" href="${escapeXml(logo)}" xlink:href="${escapeXml(logo)}" />
-    <text x="185" y="62" fill="#1f293b" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="7">ALDEA PUCELA</text>
-    <text x="185" y="110" fill="#5e6c84" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600">Fiestas Valladolid 2026</text>
-  </g>
+  <text x="600" y="472" text-anchor="middle" fill="#0f9f8d" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" letter-spacing="7">CASETAS · FERIA DE DÍA</text>
+  <text x="600" y="625" text-anchor="middle" fill="#102342" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700">Valora nuestros</text>
+  <text x="600" y="740" text-anchor="middle" fill="#0f9f8d" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="700">pinchos</text>
+  <text x="600" y="900" text-anchor="middle" fill="#102342" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="700" letter-spacing="4">ESCANEA EL CÓDIGO</text>
 
-  <text x="600" y="365" text-anchor="middle" fill="#73579f" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" letter-spacing="8">CASETAS · FERIA DE DÍA</text>
-  <text x="600" y="470" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700">Valora nuestros</text>
-  <text x="600" y="560" text-anchor="middle" fill="#0f9f8d" font-family="Arial, Helvetica, sans-serif" font-size="92" font-weight="700">pinchos</text>
-  <rect x="360" y="620" width="480" height="4" rx="2" fill="#0f9f8d" opacity="0.45" />
-  <text x="600" y="715" text-anchor="middle" fill="#172033" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="700" letter-spacing="4">ESCANEA EL CÓDIGO</text>
-
-  <rect x="155" y="770" width="890" height="640" rx="34" fill="#ffffff" stroke="#e2d9ee" stroke-width="4" />
-  <g transform="translate(320 810) scale(${qrScale})">${content}</g>
-  <text x="600" y="1465" text-anchor="middle" fill="#0f746b" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" letter-spacing="1">${escapeXml(visibleUrl)}</text>
+  <rect x="390" y="950" width="420" height="440" rx="28" fill="#ffffff" />
+  <g transform="translate(420 990) scale(${360 / qrWidth})">${content}</g>
+  <text x="600" y="1480" text-anchor="middle" fill="#0f746b" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" letter-spacing="1">${escapeXml(visibleUrl)}</text>
 </svg>
 `;
 }

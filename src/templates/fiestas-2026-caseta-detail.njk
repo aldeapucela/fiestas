@@ -265,7 +265,31 @@
 
     {% if caseta.details %}
     <section class="fiestas-caseta-menu fiestas-detail-card" aria-labelledby="caseta-menu-title">
-      <h2 id="caseta-menu-title"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Carta</h2>
+      <div class="fiestas-caseta-menu-heading">
+        <h2 id="caseta-menu-title"><i class="fa-solid fa-utensils" aria-hidden="true"></i> Carta</h2>
+        <button
+          class="fiestas-caseta-qr-button"
+          type="button"
+          data-fiestas-caseta-qr
+          data-image-src="/assets/qr/casetas/{{ caseta.id }}.png?v={{ assetVersion }}"
+          data-image-alt="Cartel QR de {{ caseta.name }}"
+          aria-controls="caseta-qr-lightbox-{{ caseta.id }}"
+          aria-haspopup="dialog"
+          aria-label="Abrir QR de {{ caseta.name }}"
+        >
+          <i class="fa-solid fa-qrcode" aria-hidden="true"></i>
+          <span>QR</span>
+        </button>
+      </div>
+      <div class="detail-lightbox" id="caseta-qr-lightbox-{{ caseta.id }}" data-fiestas-caseta-qr-lightbox role="dialog" aria-modal="true" aria-label="Cartel QR de {{ caseta.name }}" hidden>
+        <button class="detail-lightbox-backdrop" type="button" data-fiestas-caseta-qr-lightbox-close aria-label="Cerrar cartel QR"></button>
+        <div class="detail-lightbox-panel">
+          <button class="detail-lightbox-close" type="button" data-fiestas-caseta-qr-lightbox-close aria-label="Cerrar cartel QR">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+          </button>
+          <img class="detail-lightbox-image" data-fiestas-caseta-qr-lightbox-image src="/assets/qr/casetas/{{ caseta.id }}.png?v={{ assetVersion }}" alt="Cartel QR de {{ caseta.name }}" />
+        </div>
+      </div>
       {% for section in caseta.details.menuSections %}
       <div class="fiestas-caseta-menu-section">
         <h3>{{ section.title }}</h3>

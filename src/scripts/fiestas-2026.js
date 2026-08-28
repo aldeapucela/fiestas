@@ -182,7 +182,10 @@ const els = {
   detailWeatherCopy: document.querySelector('[data-fiestas-detail-weather-copy]'),
   detailImage: document.querySelector('[data-fiestas-detail-image]'),
   detailLightbox: document.querySelector('[data-fiestas-detail-lightbox]'),
-  detailLightboxImage: document.querySelector('[data-fiestas-detail-lightbox-image]')
+  detailLightboxImage: document.querySelector('[data-fiestas-detail-lightbox-image]'),
+  detailQr: document.querySelector('[data-fiestas-caseta-qr]'),
+  detailQrLightbox: document.querySelector('[data-fiestas-caseta-qr-lightbox]'),
+  detailQrLightboxImage: document.querySelector('[data-fiestas-caseta-qr-lightbox-image]')
 };
 
 init();
@@ -2037,6 +2040,7 @@ function initDetailPage() {
   els.detailShareCopy?.addEventListener('click', copyShareFallback);
   els.detailBack?.addEventListener('click', goBackToAgenda);
   initDetailLightbox();
+  initCasetaQrLightbox();
   if (!isCasetaDetail) void loadDetailWeather();
   initDetailTransit();
   document.querySelectorAll('[data-fiestas-analytics-action]').forEach((link) => {
@@ -2094,6 +2098,30 @@ function initDetailLightbox() {
   closeButtons.forEach((button) => button.addEventListener('click', closeLightbox));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !els.detailLightbox.hidden) closeLightbox();
+  });
+}
+
+function initCasetaQrLightbox() {
+  if (!els.detailQr || !els.detailQrLightbox || !els.detailQrLightboxImage) return;
+
+  const closeButtons = els.detailQrLightbox.querySelectorAll('[data-fiestas-caseta-qr-lightbox-close]');
+  const openLightbox = () => {
+    els.detailQrLightboxImage.src = els.detailQr.dataset.imageSrc || els.detailQrLightboxImage.src;
+    els.detailQrLightboxImage.alt = els.detailQr.dataset.imageAlt || '';
+    els.detailQrLightbox.hidden = false;
+    document.body.classList.add('detail-lightbox-open');
+    closeButtons[closeButtons.length - 1]?.focus();
+  };
+  const closeLightbox = () => {
+    els.detailQrLightbox.hidden = true;
+    document.body.classList.remove('detail-lightbox-open');
+    els.detailQr.focus();
+  };
+
+  els.detailQr.addEventListener('click', openLightbox);
+  closeButtons.forEach((button) => button.addEventListener('click', closeLightbox));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !els.detailQrLightbox.hidden) closeLightbox();
   });
 }
 
