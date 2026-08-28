@@ -1512,6 +1512,49 @@
         "lng": -4.7308022,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Plaza de Santa Ana, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria + bebida 4,00€",
+            "votable": true,
+            "items": [
+              { "id": "pincho-arroz-cada-dia-uno-zamorana", "name": "Arroz cada dia uno a la zamorana" },
+              { "id": "pincho-paella-negro-especial-casa", "name": "Paella negro especial de la casa" },
+              { "id": "pincho-patatas-rejo", "name": "Patatas con rejo" },
+              { "id": "pincho-primo-pulpo", "name": "El primo del pulpo" },
+              { "id": "pincho-adobo-castellano", "name": "Pincho en adobo castellano" },
+              { "id": "pincho-lacon-pimientos", "name": "Lacón con pimientos" },
+              { "id": "pincho-perrito-caliente", "name": "Perrito caliente" },
+              { "id": "pincho-bocata-panceta", "name": "Bocata de panceta" },
+              { "id": "pincho-callos-garbanzos", "name": "Callos con garbanzos" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-agua", "name": "Agua" },
+              { "id": "bebida-mosto", "name": "Mosto" },
+              { "id": "bebida-cana", "name": "Caña" },
+              { "id": "bebida-lorencito", "name": "Lorencito" },
+              { "id": "bebida-sangria", "name": "Sangria" },
+              { "id": "bebida-vino", "name": "Vino" },
+              { "id": "bebida-refresco", "name": "Refresco", "price": "+0,50€" }
+            ]
+          },
+          {
+            "title": "De postre (crepes y gofres) 5,50€",
+            "votable": true,
+            "items": [
+              { "id": "postre-dulces", "name": "Dulces", "description": "Nutela, fresa, dulce de leche o nata" },
+              { "id": "postre-salados", "name": "Salados", "description": "Jamón y queso" }
+            ]
+          }
+        ],
+        "highlights": [
+          "(LOS PINCHOS DE FERIA SIN GLUTEN Y SIN LACTOSA)"
+        ]
       }
     },
     {
