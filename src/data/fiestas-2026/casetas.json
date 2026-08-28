@@ -11,7 +11,68 @@
       "location": "Plaza Martí y Monsó",
       "placement": "En la propia plaza",
       "addressQuery": "Plaza Martí y Monsó, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-morcilla-black-angus",
+                "name": "Morcilla de black Angus certificada",
+                "description": "sobre un hojaldre caramelizado crema de queso y mermelada de pimiento"
+              },
+              {
+                "id": "pincho-flautin-pollo",
+                "name": "Flautín de pollo crujiente",
+                "description": "con salsa de miel y mostaza"
+              },
+              {
+                "id": "pincho-tarta-queso-toffee",
+                "name": "Tarta de queso",
+                "description": "con toffee"
+              },
+              {
+                "id": "pincho-croqueton-bacalao",
+                "name": "Croquetón de bacalao"
+              },
+              {
+                "id": "pincho-croqueton-jamon",
+                "name": "Croquetón de jamón"
+              }
+            ]
+          },
+          {
+            "title": "Otros platos",
+            "votable": false,
+            "items": [
+              {
+                "id": "plato-fabada-asturiana",
+                "name": "Fabada asturiana"
+              },
+              {
+                "id": "plato-arroz-dia",
+                "name": "Arroz del día"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso",
+                "name": "Tarta de queso"
+              },
+              {
+                "id": "postre-brownie-chocolate-nueces",
+                "name": "Brownie de chocolate con nueces"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z1-02",
