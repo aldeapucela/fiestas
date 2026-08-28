@@ -305,8 +305,10 @@
         <h3>{{ section.title }}</h3>
         <ul>
           {% for item in section.items %}
-          <li>
-            <div class="fiestas-caseta-menu-item-main">
+          {% set hasMenuMeta = item.description or item.price %}
+          <li class="{% if hasMenuMeta %}fiestas-caseta-menu-item fiestas-caseta-menu-item--has-meta{% endif %}">
+            {% if hasMenuMeta %}<details class="fiestas-caseta-menu-item-disclosure">{% endif %}
+            {% if hasMenuMeta %}<summary class="fiestas-caseta-menu-item-main">{% else %}<div class="fiestas-caseta-menu-item-main">{% endif %}
               <span class="fiestas-caseta-menu-item-name">{{ item.name }}</span>
               {% if item.dietary == 'vegetarian' %}
               <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegetarian">Vegetariano</span>
@@ -316,7 +318,14 @@
               {% if item.glutenFree %}
               <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--gluten-free">Sin gluten</span>
               {% endif %}
+            {% if hasMenuMeta %}
+            </summary>
+            <div class="fiestas-caseta-menu-item-meta">
+              {% if item.description %}<p class="fiestas-caseta-menu-item-description">{{ item.description }}</p>{% endif %}
+              {% if item.price %}<span class="fiestas-caseta-menu-item-price">{{ item.price }}</span>{% endif %}
             </div>
+            </details>
+            {% else %}</div>{% endif %}
             {% if section.votable and item.id %}
             <button
               class="fiestas-caseta-dish-like"

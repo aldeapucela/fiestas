@@ -160,19 +160,27 @@
             "items": [
               {
                 "id": "pincho-chapata-rabas",
-                "name": "Chapata de rabas (gluten, pescado) 4,00 €"
+                "name": "Chapata de rabas",
+                "description": "(gluten, pescado)",
+                "price": "4,00 €"
               },
               {
                 "id": "pincho-muniquesa-salchichas",
-                "name": "Muniquesa de salchichas variadas (brocheta) (gluten) 4,00 €"
+                "name": "Muniquesa de salchichas variadas",
+                "description": "(brocheta) (gluten)",
+                "price": "4,00 €"
               },
               {
                 "id": "pincho-montadito-bavaro",
-                "name": "Montadito bavaro beicon, Sajonia, queso (gluten, leche) 4,00 €"
+                "name": "Montadito bavaro",
+                "description": "beicon, Sajonia, queso (gluten, leche)",
+                "price": "4,00 €"
               },
               {
                 "id": "pincho-queso-cabra-mermelada-tomate",
-                "name": "Queso de cabra a la parrilla mermelada de tomate (gluten y leche) 4,00€",
+                "name": "Queso de cabra a la parrilla",
+                "description": "mermelada de tomate (gluten y leche)",
+                "price": "4,00€",
                 "dietary": "vegetarian"
               }
             ]
@@ -183,7 +191,9 @@
             "items": [
               {
                 "id": "pincho-lechazo-parrilla",
-                "name": "Pincho de lechazo a la parrilla (120 gr. con hueso) 6,50€ — Bebida aparte"
+                "name": "Pincho de lechazo a la parrilla",
+                "description": "(120 gr. con hueso) — Bebida aparte",
+                "price": "6,50€"
               }
             ]
           },
@@ -193,12 +203,16 @@
             "items": [
               {
                 "id": "cocina-alemana-salchicha-brastwrut",
-                "name": "Salchicha Brastwrut con ensaladilla alemana sin gluten, mostaza 6,00 €",
+                "name": "Salchicha Brastwrut",
+                "description": "con ensaladilla alemana sin gluten, mostaza",
+                "price": "6,00 €",
                 "glutenFree": true
               },
               {
                 "id": "cocina-alemana-perrito-aleman",
-                "name": "Perrito alemán especial (franfurt, lechugas, tomate, Cebolia frita) (gluten) 6,50 €"
+                "name": "Perrito alemán especial",
+                "description": "(franfurt, lechugas, tomate, Cebolia frita) (gluten)",
+                "price": "6,50 €"
               }
             ]
           },
@@ -208,13 +222,17 @@
             "items": [
               {
                 "id": "postre-tarta-queso-casera",
-                "name": "Tarta de queso casera sin gluten, huevos, leche 4,00€",
+                "name": "Tarta de queso casera",
+                "description": "sin gluten, huevos, leche",
+                "price": "4,00€",
                 "dietary": "vegetarian",
                 "glutenFree": true
               },
               {
                 "id": "postre-coulant-chocolate-sirope-naranja",
-                "name": "Coulant chocolate con sirope de naranja (gluten, leche) 4,00 €",
+                "name": "Coulant chocolate",
+                "description": "con sirope de naranja (gluten, leche)",
+                "price": "4,00 €",
                 "dietary": "vegetarian"
               }
             ]
@@ -225,27 +243,33 @@
             "items": [
               {
                 "id": "bebida-vinos-jovenes",
-                "name": "Vinos jovenes 2 €"
+                "name": "Vinos jovenes",
+                "price": "2 €"
               },
               {
                 "id": "bebida-lorencito",
-                "name": "Lorencito 0.20CL 2 €"
+                "name": "Lorencito 0.20CL",
+                "price": "2 €"
               },
               {
                 "id": "bebida-refresco-lata",
-                "name": "Refresco en lata 2,50 €"
+                "name": "Refresco en lata",
+                "price": "2,50 €"
               },
               {
                 "id": "bebida-agua",
-                "name": "Agua 33CL 1,50 €"
+                "name": "Agua 33CL",
+                "price": "1,50 €"
               },
               {
                 "id": "bebida-cerveza-cana",
-                "name": "Cerveza caña 0.20CL 2 €"
+                "name": "Cerveza caña 0.20CL",
+                "price": "2 €"
               },
               {
                 "id": "bebida-mosto",
-                "name": "Mosto 1,50 €"
+                "name": "Mosto",
+                "price": "1,50 €"
               }
             ]
           }
@@ -339,8 +363,16 @@
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "racion-papas-locas", "name": "Papas Locas (con bacon crujiente y salsa chipotle)" },
-              { "id": "racion-pops-pollo", "name": "Pops pollo (bolas de pollo crunchy con salsa)" }
+              {
+                "id": "racion-papas-locas",
+                "name": "Papas Locas",
+                "description": "con bacon crujiente y salsa chipotle"
+              },
+              {
+                "id": "racion-pops-pollo",
+                "name": "Pops pollo",
+                "description": "bolas de pollo crunchy con salsa"
+              }
             ]
           },
           {
@@ -636,7 +668,9 @@
             "items": [
               {
                 "id": "racion-bravas",
-                "name": "Bravas - 5€ — Mayo de ajo asado y brava picante",
+                "name": "Bravas",
+                "description": "Mayo de ajo asado y brava picante",
+                "price": "5€",
                 "dietary": "vegetarian"
               }
             ]
@@ -647,15 +681,21 @@
             "items": [
               {
                 "id": "pincho-choripan",
-                "name": "Choripan - 4€ — Pan tostado, chorizo criollo y chimichurri Argentino"
+                "name": "Choripan",
+                "description": "Pan tostado, chorizo criollo y chimichurri Argentino",
+                "price": "4€"
               },
               {
                 "id": "pincho-brioche",
-                "name": "Brioche - 4€ — Costilla, mayo trufada, jugo de carne y queso parmesano rallado"
+                "name": "Brioche",
+                "description": "Costilla, mayo trufada, jugo de carne y queso parmesano rallado",
+                "price": "4€"
               },
               {
                 "id": "pincho-marinera",
-                "name": "Marinera - 4€ — Ensaladilla rusa de la casa y anchoa sobre base crujiente."
+                "name": "Marinera",
+                "description": "Ensaladilla rusa de la casa y anchoa sobre base crujiente.",
+                "price": "4€"
               }
             ]
           },
@@ -665,7 +705,9 @@
             "items": [
               {
                 "id": "pincho-pulguita-albondigas",
-                "name": "Pulguita de albóndigas - 6€ — Pulguita de albóndigas con mayo de ajo asado"
+                "name": "Pulguita de albóndigas",
+                "description": "Pulguita de albóndigas con mayo de ajo asado",
+                "price": "6€"
               }
             ]
           },
@@ -675,7 +717,9 @@
             "items": [
               {
                 "id": "postre-gofre-nutella",
-                "name": "Gofre Nutella - 2,5€ — Gofre caliente y Nutella",
+                "name": "Gofre Nutella",
+                "description": "Gofre caliente y Nutella",
+                "price": "2,5€",
                 "dietary": "vegetarian"
               }
             ]
@@ -1229,11 +1273,13 @@
             "items": [
               {
                 "id": "pincho-mejillon-tigre",
-                "name": "Mejillón tigre — Masa de mejillón tigre sobre concha con coco y mayo de limón."
+                "name": "Mejillón tigre",
+                "description": "Masa de mejillón tigre sobre concha con coco y mayo de limón."
               },
               {
                 "id": "pincho-maxi-gyoza-panceta-langostinos",
-                "name": "Maxi gyoza de panceta y langostinos — Lazada en teriyaki, con alioli de wosame y crujiente de kikos."
+                "name": "Maxi gyoza de panceta y langostinos",
+                "description": "Lazada en teriyaki, con alioli de wosame y crujiente de kikos."
               }
             ]
           },
@@ -1243,60 +1289,88 @@
             "items": [
               {
                 "id": "racion-tosta-ventresca",
-                "name": "Tosta de ventresca — Con tomate rallado y polvo de aceituna negra. 5.50€"
+                "name": "Tosta de ventresca",
+                "description": "Con tomate rallado y polvo de aceituna negra.",
+                "price": "5.50€"
               },
               {
                 "id": "racion-tosta-langostinos",
-                "name": "Tosta de langostinos — Con mayo de mei, comino y lima. 5.50€"
+                "name": "Tosta de langostinos",
+                "description": "Con mayo de mei, comino y lima.",
+                "price": "5.50€"
               },
               {
                 "id": "racion-montadito-mogote-iberico",
-                "name": "Montadito de mogote ibérico — Con salsa chimichurri. 6.50€"
+                "name": "Montadito de mogote ibérico",
+                "description": "Con salsa chimichurri.",
+                "price": "6.50€"
               },
               {
                 "id": "racion-montadito-butifarra",
-                "name": "Montadito de butifarra — Butifarra rellena de trompeta negra con salsa baconesa. 7.50€"
+                "name": "Montadito de butifarra",
+                "description": "Butifarra rellena de trompeta negra con salsa baconesa.",
+                "price": "7.50€"
               },
               {
                 "id": "racion-montadito-solomillo-iberico",
-                "name": "Montadito de solomillo ibérico — Con salsa tártara. 7.50€"
+                "name": "Montadito de solomillo ibérico",
+                "description": "Con salsa tártara.",
+                "price": "7.50€"
               },
               {
                 "id": "racion-torrezno-soria",
-                "name": "Torrezno de Soria — Con tosta de tomate rallado. 5.50€"
+                "name": "Torrezno de Soria",
+                "description": "Con tosta de tomate rallado.",
+                "price": "5.50€"
               },
               {
                 "id": "racion-brocheta-pata-pulpo",
-                "name": "Brocheta de pata de pulpo — Con crema de patata ajoarriero. 7.00€"
+                "name": "Brocheta de pata de pulpo",
+                "description": "Con crema de patata ajoarriero.",
+                "price": "7.00€"
               },
               {
                 "id": "racion-zamburinas",
-                "name": "Zamburínas — Con concassé de tomate. 4 unidades. 10.00€"
+                "name": "Zamburínas",
+                "description": "Con concassé de tomate. 4 unidades.",
+                "price": "10.00€"
               },
               {
                 "id": "racion-rabas-calamar",
-                "name": "Rabas de calamar — Con mayo de mei, comino y lima. 10.00€"
+                "name": "Rabas de calamar",
+                "description": "Con mayo de mei, comino y lima.",
+                "price": "10.00€"
               },
               {
                 "id": "racion-ensaladilla-langostinos",
-                "name": "Ensaladilla de langostinos — Con aceituna negra y crujiente de kikos. 10.00€"
+                "name": "Ensaladilla de langostinos",
+                "description": "Con aceituna negra y crujiente de kikos.",
+                "price": "10.00€"
               },
               {
                 "id": "racion-hamburguesa-okelan",
-                "name": "Hamburguesa OKELAN 180 g — Pan brioche, carne de ternera, queso, bacon, salsa santa y crujiente de kikos. 12.00€"
+                "name": "Hamburguesa OKELAN 180 g",
+                "description": "Pan brioche, carne de ternera, queso, bacon, salsa santa y crujiente de kikos.",
+                "price": "12.00€"
               },
               {
                 "id": "racion-patatas-bravas-lagar",
-                "name": "Patatas bravas El Lagar — Patatas bravas de chipotle y patata picante. 12.00€",
+                "name": "Patatas bravas El Lagar",
+                "description": "Patatas bravas de chipotle y patata picante.",
+                "price": "12.00€",
                 "dietary": "vegetarian"
               },
               {
                 "id": "racion-saquitos-carrillera",
-                "name": "Saquitos de carrillera — Con mayo de trufa. 10 unidades. 12.00€"
+                "name": "Saquitos de carrillera",
+                "description": "Con mayo de trufa. 10 unidades.",
+                "price": "12.00€"
               },
               {
                 "id": "racion-croquetas-zamburinas",
-                "name": "Croquetas de zamburínas — Caseras. 6 unidades. 15.00€"
+                "name": "Croquetas de zamburínas",
+                "description": "Caseras. 6 unidades.",
+                "price": "15.00€"
               }
             ]
           },
@@ -1306,18 +1380,24 @@
             "items": [
               {
                 "id": "postre-torrija-pan-brioche",
-                "name": "Torrija de pan brioche — Casera. Infusionada con crema inglesa de naranja. Con tuffee. 6.00€",
+                "name": "Torrija de pan brioche",
+                "description": "Casera. Infusionada con crema inglesa de naranja. Con tuffee.",
+                "price": "6.00€",
                 "dietary": "vegetarian"
               },
               {
                 "id": "postre-coulant-queso-manchego",
-                "name": "Coulant de queso manchego — Apto para celíacos. 6.00€",
+                "name": "Coulant de queso manchego",
+                "description": "Apto para celíacos.",
+                "price": "6.00€",
                 "dietary": "vegetarian",
                 "glutenFree": true
               },
               {
                 "id": "postre-coulant-chocolate",
-                "name": "Coulant de chocolate — Apto para celíacos. 6.00€",
+                "name": "Coulant de chocolate",
+                "description": "Apto para celíacos.",
+                "price": "6.00€",
                 "dietary": "vegetarian",
                 "glutenFree": true
               }
@@ -1374,16 +1454,16 @@
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "racion-calamares", "name": "Calamares 10,00€" },
-              { "id": "racion-patatas-braviolis", "name": "Patatas braviolis 6,00€" },
-              { "id": "racion-fingers", "name": "Fingers 9,00€" }
+              { "id": "racion-calamares", "name": "Calamares", "price": "10,00€" },
+              { "id": "racion-patatas-braviolis", "name": "Patatas braviolis", "price": "6,00€" },
+              { "id": "racion-fingers", "name": "Fingers", "price": "9,00€" }
             ]
           },
           {
             "title": "Postre",
             "votable": true,
             "items": [
-              { "id": "postre-tarta-hojaldre-nata-crema", "name": "Tarta de hojaldre, nata y crema 3,00€" }
+              { "id": "postre-tarta-hojaldre-nata-crema", "name": "Tarta de hojaldre, nata y crema", "price": "3,00€" }
             ]
           }
         ]
@@ -1554,26 +1634,26 @@
             "title": "Pincho feria (pinchos + bebida 4€)",
             "votable": true,
             "items": [
-              { "id": "pincho-croqueta-pato-pekin", "name": "Croqueta de pato Pekín con mayonesa Hoisin (Gluten, lácteos)" },
-              { "id": "pincho-croqueta-mango-kimchi", "name": "Croqueta de Mango y Kimchi con mayonesa de kimchi (Gluten, lácteos, pescado)" },
-              { "id": "pincho-montado-albondigas-tikka", "name": "Montado de albóndigas con salsa Tikka Masala (Gluten, lácteos, mostaza)" },
-              { "id": "pincho-guiso-dia", "name": "Plato guiso del día (Consultar alérgenos)" }
+              { "id": "pincho-croqueta-pato-pekin", "name": "Croqueta de pato Pekín", "description": "con mayonesa Hoisin (Gluten, lácteos)" },
+              { "id": "pincho-croqueta-mango-kimchi", "name": "Croqueta de Mango y Kimchi", "description": "con mayonesa de kimchi (Gluten, lácteos, pescado)" },
+              { "id": "pincho-montado-albondigas-tikka", "name": "Montado de albóndigas", "description": "con salsa Tikka Masala (Gluten, lácteos, mostaza)" },
+              { "id": "pincho-guiso-dia", "name": "Plato guiso del día", "description": "Consultar alérgenos" }
             ]
           },
           {
             "title": "Pincho + bebida (5€)",
             "votable": true,
             "items": [
-              { "id": "pincho-mini-burguer-vacuno", "name": "Mini Burguer de vacuno con queso, cebolla crujiente y nuestra salsa Emmy (Gluten, lácteos)" }
+              { "id": "pincho-mini-burguer-vacuno", "name": "Mini Burguer de vacuno", "description": "con queso, cebolla crujiente y nuestra salsa Emmy (Gluten, lácteos)" }
             ]
           },
           {
             "title": "Raciones para compartir",
             "votable": true,
             "items": [
-              { "id": "racion-gyozas-cerdo-mango", "name": "Gyozas de cerdo con salsa de mango picante y mayonesa Japonesa (6 unidades - 11€) (Gluten, mostaza)" },
-              { "id": "racion-torreznos-soria", "name": "Torreznos de Soria con guacamole (9€) (Gluten)" },
-              { "id": "racion-langostinos-panko", "name": "Langostinos panko con salsa teriyaki (6 unidades - 12€) (Gluten, marisco, soja)" }
+              { "id": "racion-gyozas-cerdo-mango", "name": "Gyozas de cerdo", "description": "con salsa de mango picante y mayonesa Japonesa (6 unidades) (Gluten, mostaza)", "price": "11€" },
+              { "id": "racion-torreznos-soria", "name": "Torreznos de Soria", "description": "con guacamole (Gluten)", "price": "9€" },
+              { "id": "racion-langostinos-panko", "name": "Langostinos panko", "description": "con salsa teriyaki (6 unidades) (Gluten, marisco, soja)", "price": "12€" }
             ]
           },
           {
@@ -1582,7 +1662,9 @@
             "items": [
               {
                 "id": "postre-coulant-chocolate",
-                "name": "Coulant de chocolate y chantilly de vainilla (5€) (Lácteos)",
+                "name": "Coulant de chocolate y chantilly de vainilla",
+                "description": "(Lácteos)",
+                "price": "5€",
                 "dietary": "vegetarian"
               }
             ]

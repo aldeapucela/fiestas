@@ -104,6 +104,8 @@ function normalizeCasetaMenuItem(item, votable = false) {
   if (dietary && !casetaDietaryLabels.has(dietary)) {
     throw new Error(`El plato "${name}" tiene una clasificación dietética no válida.`);
   }
+  const description = String(isObject ? item.description || '' : '').trim();
+  const price = String(isObject ? item.price || '' : '').trim();
   const glutenFree = isObject && item.glutenFree === true;
   if (isObject && item.glutenFree != null && typeof item.glutenFree !== 'boolean') {
     throw new Error(`El plato "${name}" tiene un valor glutenFree no válido.`);
@@ -111,6 +113,8 @@ function normalizeCasetaMenuItem(item, votable = false) {
   return {
     ...(id ? { id } : {}),
     name,
+    ...(description ? { description } : {}),
+    ...(price ? { price } : {}),
     ...(dietary ? { dietary } : {}),
     ...(glutenFree ? { glutenFree: true } : {})
   };
