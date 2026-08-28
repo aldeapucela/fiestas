@@ -35,7 +35,7 @@ test('compacta una matriz QR en una imagen SVG válida', () => {
 
 test('añade la campaña QR a la URL de destino de la caseta', () => {
   assert.equal(
-    createCasetaQrTargetUrl({ baseUrl: 'https://fiestas.aldeapucela.org', id: 'z1-05', slug: 'la-criolla' }),
-    'https://fiestas.aldeapucela.org/c/z1-05/la-criolla/?mtm_campaign=QR'
+    createCasetaQrTargetUrl({ baseUrl: 'https://fiestas.aldeapucela.org', publicSlug: 'la-criolla' }),
+    'https://fiestas.aldeapucela.org/c/la-criolla/?mtm_campaign=QR'
   );
 });

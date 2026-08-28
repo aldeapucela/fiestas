@@ -1,9 +1,12 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { execFile } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { promisify } from 'node:util';
 import { chromium } from 'playwright';
 import QRCode from 'qrcode';
 import { createCasetaQrPosterSvg, createCasetaQrTargetUrl, createCompactQrSvg } from './caseta-qr.mjs';
+import { getCasetaPublicSlug } from './caseta-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -12,10 +15,7 @@ const outputDir = path.join(root, 'src', 'assets', 'qr', 'casetas');
 const publicBaseUrl = 'https://fiestas.aldeapucela.org';
 const force = process.argv.includes('--force');
 const onlyId = process.argv.find((argument) => argument.startsWith('--only='))?.slice('--only='.length) || '';
-
-function slugify(value = '') {
-  return String(value).normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'caseta';
-}
+const execFileAsync = promisify(execFile);
 
 const source = JSON.parse(await fs.readFile(sourcePath, 'utf8'));
 if (source?.schemaVersion !== 1 || !Array.isArray(source?.casetas)) {
@@ -29,6 +29,7 @@ let generated = 0;
 let skipped = 0;
 let browser;
 let page;
+let renderer = 'playwright';
 
 for (const caseta of source.casetas) {
   const id = String(caseta.id || '').trim();
@@ -47,21 +48,36 @@ for (const caseta of source.casetas) {
     }
   }
 
-  const canonicalUrl = createCasetaQrTargetUrl({ baseUrl: publicBaseUrl, id, slug: slugify(name) });
+  const canonicalUrl = createCasetaQrTargetUrl({ baseUrl: publicBaseUrl, publicSlug: getCasetaPublicSlug(caseta) });
   const qrCode = QRCode.create(canonicalUrl, { errorCorrectionLevel: 'M' });
   const poster = createCasetaQrPosterSvg({
     qrSvg: createCompactQrSvg(qrCode),
     logoDataUri,
     siteUrl: canonicalUrl
   });
-  if (!browser) {
+  if (!browser && renderer === 'playwright') {
     const executablePath = process.env.FIESTAS_QR_BROWSER || undefined;
-    browser = await chromium.launch({ headless: true, ...(executablePath ? { executablePath } : {}) });
-    page = await browser.newPage({ viewport: { width: 1200, height: 1600 }, deviceScaleFactor: 1 });
+    try {
+      browser = await chromium.launch({ headless: true, ...(executablePath ? { executablePath } : {}) });
+      page = await browser.newPage({ viewport: { width: 1200, height: 1600 }, deviceScaleFactor: 1 });
+    } catch (error) {
+      renderer = 'magick';
+      console.warn(`No se pudo iniciar el renderizador del navegador (${error.message}). Se usará ImageMagick.`);
+    }
   }
-  const svgDataUrl = 'data:image/svg+xml;base64,' + Buffer.from(poster).toString('base64');
-  await page.goto(svgDataUrl, { waitUntil: 'load' });
-  await page.locator('svg').screenshot({ path: pngPath });
+  if (renderer === 'playwright') {
+    const svgDataUrl = 'data:image/svg+xml;base64,' + Buffer.from(poster).toString('base64');
+    await page.goto(svgDataUrl, { waitUntil: 'load' });
+    await page.locator('svg').screenshot({ path: pngPath });
+  } else {
+    const svgPath = path.join(outputDir, `.tmp-${id}.svg`);
+    await fs.writeFile(svgPath, poster);
+    try {
+      await execFileAsync('magick', [svgPath, '-background', 'none', pngPath]);
+    } finally {
+      await fs.rm(svgPath, { force: true });
+    }
+  }
   generated += 1;
 }
 

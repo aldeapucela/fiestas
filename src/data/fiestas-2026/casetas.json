@@ -5,6 +5,7 @@
   "casetas": [
     {
       "id": "z1-01",
+      "publicSlug": "restaurante-caroba",
       "name": "Restaurante Caroba",
       "zone": "Zona 1",
       "location": "Plaza Martí y Monsó",
@@ -14,6 +15,7 @@
     },
     {
       "id": "z1-02",
+      "publicSlug": "el-corregidor",
       "name": "El Corregidor",
       "zone": "Zona 1",
       "location": "Plaza Martí y Monsó",
@@ -23,6 +25,8 @@
     },
     {
       "id": "z1-03",
+      "publicSlug": "taberna-japonesa-wabi-sabi",
+      "legacySlugs": ["wabi-sabi-taberna-japonesa"],
       "name": "Taberna Japonesa Wabi-Sabi",
       "zone": "Zona 1",
       "location": "Plaza Martí y Monsó",
@@ -32,6 +36,7 @@
     },
     {
       "id": "z1-04",
+      "publicSlug": "la-bambalina",
       "name": "La Bambalina",
       "zone": "Zona 1",
       "location": "Plaza Martí y Monsó",
@@ -41,6 +46,8 @@
     },
     {
       "id": "z1-05",
+      "publicSlug": "la-criolla",
+      "legacySlugs": ["restaurante-la-criolla"],
       "name": "La Criolla",
       "zone": "Zona 1",
       "location": "Calle Calixto Fernández de la Torre",
@@ -60,6 +67,7 @@
     },
     {
       "id": "z1-06",
+      "publicSlug": "la-taberna-del-herrero",
       "name": "La Taberna del Herrero",
       "zone": "Zona 1",
       "location": "Calle Calixto Fernández de la Torre",
@@ -79,6 +87,7 @@
     },
     {
       "id": "z1-08",
+      "publicSlug": "la-vermuteria",
       "name": "La Vermutería",
       "zone": "Zona 1",
       "location": "Calle Campanas",
@@ -88,6 +97,7 @@
     },
     {
       "id": "z1-09",
+      "publicSlug": "bar-el-corcho",
       "name": "Bar El Corcho",
       "zone": "Zona 1",
       "location": "Correos",
@@ -97,6 +107,7 @@
     },
     {
       "id": "z1-11",
+      "publicSlug": "la-mejillonera",
       "name": "La Mejillonera",
       "zone": "Zona 1",
       "location": "Calle Pasión",
@@ -111,6 +122,7 @@
     },
     {
       "id": "z1-12",
+      "publicSlug": "los-zagales",
       "name": "Los Zagales",
       "zone": "Zona 1",
       "location": "Calle Pasión",
@@ -125,6 +137,7 @@
     },
     {
       "id": "z2-01",
+      "publicSlug": "angela",
       "name": "Ángela",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -142,6 +155,7 @@
     },
     {
       "id": "z2-02",
+      "publicSlug": "ditaly",
       "name": "Ditaly",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -159,6 +173,7 @@
     },
     {
       "id": "z2-03",
+      "publicSlug": "la-cartuja",
       "name": "La Cartuja",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -176,6 +191,8 @@
     },
     {
       "id": "z2-04",
+      "publicSlug": "five-napoli-pizza",
+      "legacySlugs": ["five-napoly-pizza"],
       "name": "Five Napoli Pizza",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -193,6 +210,8 @@
     },
     {
       "id": "z2-05",
+      "publicSlug": "la-loca-burger",
+      "legacySlugs": ["la-loca-burguer"],
       "name": "La Loca Burger",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -247,6 +266,7 @@
     },
     {
       "id": "z2-06",
+      "publicSlug": "el-consejero",
       "name": "El Consejero",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -264,6 +284,7 @@
     },
     {
       "id": "z2-07",
+      "publicSlug": "madame-x",
       "name": "Madame X",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -326,6 +347,7 @@
     },
     {
       "id": "z2-08",
+      "publicSlug": "la-casa-de-la-sepia-y-el-pulpo",
       "name": "La Casa de la Sepia y el Pulpo",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -343,6 +365,7 @@
     },
     {
       "id": "z2-09",
+      "publicSlug": "matamales",
       "name": "Matamales",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -360,6 +383,7 @@
     },
     {
       "id": "z2-10",
+      "publicSlug": "restaurante-le-bistro",
       "name": "Restaurante Le Bistró",
       "zone": "Zona 2",
       "location": "Plaza de Fuente Dorada",
@@ -379,6 +403,7 @@
     },
     {
       "id": "z2-11",
+      "publicSlug": "taberna-mianka",
       "name": "Taberna Mianka",
       "zone": "Zona 2",
       "location": "Plaza de Fuente Dorada",
@@ -398,6 +423,7 @@
     },
     {
       "id": "z2-12",
+      "publicSlug": "100-montaditos",
       "name": "100 Montaditos",
       "zone": "Zona 2",
       "location": "Calle Ferrari",
@@ -417,6 +443,8 @@
     },
     {
       "id": "z2-13",
+      "publicSlug": "la-argolla",
+      "legacySlugs": ["bar-argolla"],
       "name": "La Argolla",
       "zone": "Zona 2",
       "location": "Calle Ferrari",
@@ -436,6 +464,7 @@
     },
     {
       "id": "z2-14",
+      "publicSlug": "la-barra-del-hidalgo",
       "name": "La Barra del Hidalgo",
       "zone": "Zona 2",
       "location": "Calle Ferrari",
@@ -455,6 +484,7 @@
     },
     {
       "id": "z2-15",
+      "publicSlug": "la-malquerida",
       "name": "La Malquerida",
       "zone": "Zona 2",
       "location": "Calle Ferrari",
@@ -474,6 +504,7 @@
     },
     {
       "id": "z2-16",
+      "publicSlug": "el-secreto",
       "name": "El Secreto",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -483,6 +514,7 @@
     },
     {
       "id": "z2-17",
+      "publicSlug": "patron",
       "name": "Patrón",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -549,6 +581,7 @@
     },
     {
       "id": "z3-01",
+      "publicSlug": "la-tasca-castellana",
       "name": "La Tasca Castellana",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -629,6 +662,7 @@
     },
     {
       "id": "z3-03",
+      "publicSlug": "el-capote-de-mario",
       "name": "El Capote de Mario",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -648,6 +682,7 @@
     },
     {
       "id": "z3-04",
+      "publicSlug": "la-biblioteca",
       "name": "La Biblioteca",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -667,6 +702,7 @@
     },
     {
       "id": "z3-07",
+      "publicSlug": "deltoya",
       "name": "Deltoya",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -686,6 +722,7 @@
     },
     {
       "id": "z3-08",
+      "publicSlug": "restaurante-foodie",
       "name": "Restaurante Foodie",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -705,6 +742,7 @@
     },
     {
       "id": "z3-10",
+      "publicSlug": "faroles-rock",
       "name": "Faroles Rock",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -724,6 +762,7 @@
     },
     {
       "id": "z3-13",
+      "publicSlug": "10y10",
       "name": "10Y10",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -733,6 +772,7 @@
     },
     {
       "id": "z3-14",
+      "publicSlug": "cafe-bar-la-antigua",
       "name": "Café Bar La Antigua",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -742,6 +782,7 @@
     },
     {
       "id": "z3-15",
+      "publicSlug": "el-escudo-de-paraiso",
       "name": "El Escudo de Paraíso",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -751,6 +792,7 @@
     },
     {
       "id": "z4-01",
+      "publicSlug": "gondomatik",
       "name": "Gondomatik",
       "zone": "Zona 4",
       "location": "Calle Cadenas de San Gregorio",
@@ -760,6 +802,7 @@
     },
     {
       "id": "z4-02",
+      "publicSlug": "restaurante-la-solana",
       "name": "Restaurante La Solana",
       "zone": "Zona 4",
       "location": "Calle Solanilla",
@@ -774,6 +817,7 @@
     },
     {
       "id": "z4-05",
+      "publicSlug": "cafe-iberico-catedral",
       "name": "Café Ibérico",
       "zone": "Zona 4",
       "location": "Lateral de la Catedral / Plaza Portugalete",
@@ -793,6 +837,7 @@
     },
     {
       "id": "z4-06",
+      "publicSlug": "taberna-pucelana",
       "name": "Taberna Pucelana",
       "zone": "Zona 4",
       "location": "Lateral de la Catedral / Plaza Portugalete",
@@ -812,6 +857,7 @@
     },
     {
       "id": "z4-07",
+      "publicSlug": "bundi-catedral",
       "name": "Bundi",
       "zone": "Zona 4",
       "location": "Lateral de la Catedral / Plaza Portugalete",
@@ -831,6 +877,7 @@
     },
     {
       "id": "z4-08",
+      "publicSlug": "mamataco",
       "name": "Mamataco",
       "zone": "Zona 4",
       "location": "Lateral de la Catedral / Plaza Portugalete",
@@ -850,6 +897,7 @@
     },
     {
       "id": "z4-09",
+      "publicSlug": "cafe-con-ron",
       "name": "Café con Ron",
       "zone": "Zona 4",
       "location": "Calle Cadenas de San Gregorio",
@@ -859,6 +907,7 @@
     },
     {
       "id": "z4-10",
+      "publicSlug": "don-bacalao",
       "name": "Don Bacalao",
       "zone": "Zona 4",
       "location": "Calle Solanilla",
@@ -868,6 +917,7 @@
     },
     {
       "id": "z4-11",
+      "publicSlug": "el-barco",
       "name": "El Barco",
       "zone": "Zona 4",
       "location": "Plaza del Salvador",
@@ -877,6 +927,7 @@
     },
     {
       "id": "z4-12",
+      "publicSlug": "grilled-chef",
       "name": "Grilled Chef",
       "zone": "Zona 4",
       "location": "Matías Sangrador",
@@ -886,6 +937,7 @@
     },
     {
       "id": "z4-13",
+      "publicSlug": "la-familia-se-sienta-en-la-mesa",
       "name": "La Familia se Sienta en la Mesa",
       "zone": "Zona 4",
       "location": "Lateral de la Catedral / Plaza Portugalete",
@@ -895,6 +947,7 @@
     },
     {
       "id": "z4-14",
+      "publicSlug": "the-macanudo",
       "name": "The Macanudo",
       "zone": "Zona 4",
       "location": "Matías Sangrador",
@@ -904,6 +957,7 @@
     },
     {
       "id": "z5-03",
+      "publicSlug": "amberes",
       "name": "Amberes",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -918,6 +972,7 @@
     },
     {
       "id": "z5-04",
+      "publicSlug": "lunatico",
       "name": "Lunático",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -932,6 +987,7 @@
     },
     {
       "id": "z5-05",
+      "publicSlug": "la-darsena-de-la-victoria",
       "name": "La Dársena de la Victoria",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -946,6 +1002,7 @@
     },
     {
       "id": "z5-06",
+      "publicSlug": "cafe-iberico-recoletos",
       "name": "Café Ibérico",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -965,6 +1022,7 @@
     },
     {
       "id": "z5-07",
+      "publicSlug": "la-picara",
       "name": "La Pícara",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -984,6 +1042,7 @@
     },
     {
       "id": "z5-09",
+      "publicSlug": "groove",
       "name": "Groove",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -998,6 +1057,7 @@
     },
     {
       "id": "z5-10",
+      "publicSlug": "chester",
       "name": "Chester",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -1012,6 +1072,7 @@
     },
     {
       "id": "z5-11",
+      "publicSlug": "bar-el-manantial",
       "name": "Bar El Manantial",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -1026,6 +1087,7 @@
     },
     {
       "id": "z5-12",
+      "publicSlug": "el-cuarto",
       "name": "El Cuarto",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -1040,6 +1102,7 @@
     },
     {
       "id": "z5-13",
+      "publicSlug": "el-lagar",
       "name": "El Lagar",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -1054,6 +1117,7 @@
     },
     {
       "id": "z5-14",
+      "publicSlug": "palosanto",
       "name": "Palosanto",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
@@ -1111,6 +1175,7 @@
     },
     {
       "id": "z5-17",
+      "publicSlug": "restaurante-talavera",
       "name": "Restaurante Talavera",
       "zone": "Zona 5",
       "location": "Calle Rastro",
@@ -1125,6 +1190,7 @@
     },
     {
       "id": "z5-18",
+      "publicSlug": "taberna-senorito-pico-fino",
       "name": "Taberna Señorito Pico Fino",
       "zone": "Zona 5",
       "location": "Calle María de Molina",
@@ -1139,6 +1205,7 @@
     },
     {
       "id": "z5-20",
+      "publicSlug": "la-pera",
       "name": "La Pera",
       "zone": "Zona 5",
       "location": "Plaza de Santa Ana",
@@ -1153,6 +1220,7 @@
     },
     {
       "id": "z5-21",
+      "publicSlug": "rioluz",
       "name": "Rioluz",
       "zone": "Zona 5",
       "location": "Plaza de Santa Ana",
@@ -1167,6 +1235,7 @@
     },
     {
       "id": "z5-22",
+      "publicSlug": "cafetin-de-las-francesas",
       "name": "Cafetín de las Francesas",
       "zone": "Zona 5",
       "location": "Plaza de Santa Ana",
@@ -1181,6 +1250,7 @@
     },
     {
       "id": "z5-23",
+      "publicSlug": "aquarium-sabores",
       "name": "Aquarium-Sabores",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -1195,6 +1265,7 @@
     },
     {
       "id": "z5-24",
+      "publicSlug": "el-angelillo",
       "name": "El Angelillo",
       "zone": "Zona 5",
       "location": "Calle María de Molina",
@@ -1209,6 +1280,7 @@
     },
     {
       "id": "z5-25",
+      "publicSlug": "la-corona-de-la-santina",
       "name": "La Corona de la Santina",
       "zone": "Zona 5",
       "location": "Plaza de Santa Ana",
@@ -1223,6 +1295,7 @@
     },
     {
       "id": "z5-26",
+      "publicSlug": "restaurante-beher",
       "name": "Restaurante Beher",
       "zone": "Zona 3",
       "location": "Plaza de la Universidad",
@@ -1232,6 +1305,7 @@
     },
     {
       "id": "z5-27",
+      "publicSlug": "river-valley",
       "name": "River Valley",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -1246,6 +1320,7 @@
     },
     {
       "id": "z5-28",
+      "publicSlug": "salaveinte",
       "name": "Salaveinte",
       "zone": "Zona 5",
       "location": "Calle María de Molina",
@@ -1304,6 +1379,7 @@
     },
     {
       "id": "z5-29",
+      "publicSlug": "selvatico",
       "name": "Selvático",
       "zone": "Zona 5",
       "location": "Acera de Recoletos",
@@ -1318,6 +1394,7 @@
     },
     {
       "id": "z6-01",
+      "publicSlug": "barlladolid",
       "name": "Barlladolid",
       "zone": "Zona 6",
       "location": "Avenida Medina del Campo",
@@ -1332,6 +1409,7 @@
     },
     {
       "id": "z6-03",
+      "publicSlug": "andiamo-di-la",
       "name": "Andiamo di la",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
@@ -1346,6 +1424,7 @@
     },
     {
       "id": "z6-04",
+      "publicSlug": "cafe-bar-la-castellana",
       "name": "Café-Bar La Castellana",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
@@ -1360,6 +1439,7 @@
     },
     {
       "id": "z6-05",
+      "publicSlug": "el-fiu-topin-farton",
       "name": "El Fiu Topin Fartón",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
@@ -1374,6 +1454,7 @@
     },
     {
       "id": "z6-07",
+      "publicSlug": "turuleca",
       "name": "Turuleca",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
@@ -1388,6 +1469,7 @@
     },
     {
       "id": "z6-09",
+      "publicSlug": "cafeteria-moka",
       "name": "Cafetería Moka",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
@@ -1402,6 +1484,7 @@
     },
     {
       "id": "z6-10",
+      "publicSlug": "bar-acapulco",
       "name": "Bar Acapulco",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
@@ -1416,6 +1499,7 @@
     },
     {
       "id": "z6-11",
+      "publicSlug": "bundi-paseo-zorrilla",
       "name": "Bundi",
       "zone": "Zona 6",
       "location": "Paseo Zorrilla frente a la Plaza de Toros",
@@ -1430,6 +1514,7 @@
     },
     {
       "id": "z7-02",
+      "publicSlug": "bar-el-faro",
       "name": "Bar El Faro",
       "zone": "Zona 7",
       "location": "Plaza Santa Cruz",
@@ -1449,6 +1534,7 @@
     },
     {
       "id": "z7-04",
+      "publicSlug": "la-carniceria",
       "name": "La Carnicería",
       "zone": "Zona 7",
       "location": "Plaza Santa Cruz",
@@ -1470,6 +1556,7 @@
     },
     {
       "id": "z7-05",
+      "publicSlug": "bar-manducca",
       "name": "Bar Manducca",
       "zone": "Zona 7",
       "location": "Plaza Santa Cruz",
@@ -1479,6 +1566,7 @@
     },
     {
       "id": "z7-06",
+      "publicSlug": "ocho-apellidos-castellanos",
       "name": "Ocho Apellidos Castellanos",
       "zone": "Zona 7",
       "location": "Plaza Santa Cruz",
@@ -1488,6 +1576,7 @@
     },
     {
       "id": "zf-01",
+      "publicSlug": "avila",
       "name": "Ávila",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1504,6 +1593,7 @@
     },
     {
       "id": "zf-02",
+      "publicSlug": "segovia",
       "name": "Segovia",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1520,6 +1610,7 @@
     },
     {
       "id": "zf-03",
+      "publicSlug": "leon",
       "name": "León",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1536,6 +1627,7 @@
     },
     {
       "id": "zf-04",
+      "publicSlug": "zamora",
       "name": "Zamora",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1552,6 +1644,7 @@
     },
     {
       "id": "zf-05",
+      "publicSlug": "salamanca",
       "name": "Salamanca",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1568,6 +1661,7 @@
     },
     {
       "id": "zf-06",
+      "publicSlug": "asturias",
       "name": "Asturias",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1584,6 +1678,7 @@
     },
     {
       "id": "zf-07",
+      "publicSlug": "galicia",
       "name": "Galicia",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1600,6 +1695,7 @@
     },
     {
       "id": "zf-08",
+      "publicSlug": "cantabria",
       "name": "Cantabria",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1616,6 +1712,7 @@
     },
     {
       "id": "zf-09",
+      "publicSlug": "la-rioja",
       "name": "La Rioja",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1632,6 +1729,7 @@
     },
     {
       "id": "zf-10",
+      "publicSlug": "navarra",
       "name": "Navarra",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1648,6 +1746,7 @@
     },
     {
       "id": "zf-11",
+      "publicSlug": "valencia",
       "name": "Valencia",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1664,6 +1763,7 @@
     },
     {
       "id": "zf-12",
+      "publicSlug": "cataluna",
       "name": "Cataluña",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1680,6 +1780,7 @@
     },
     {
       "id": "zf-13",
+      "publicSlug": "baleares",
       "name": "Baleares",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1696,6 +1797,7 @@
     },
     {
       "id": "zf-14",
+      "publicSlug": "andalucia",
       "name": "Andalucía",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1712,6 +1814,7 @@
     },
     {
       "id": "zf-15",
+      "publicSlug": "murcia",
       "name": "Murcia",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1728,6 +1831,7 @@
     },
     {
       "id": "zf-16",
+      "publicSlug": "canarias",
       "name": "Canarias",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",
@@ -1744,6 +1848,7 @@
     },
     {
       "id": "zf-17",
+      "publicSlug": "melilla",
       "name": "Melilla",
       "zone": "Zona Ferias",
       "location": "Recinto ferial José Luis Bellido",

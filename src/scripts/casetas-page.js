@@ -137,7 +137,8 @@ function normalizeCasetas(entries) {
       return {
         id,
         name,
-        slug: String(entry.slug || slugify(name)),
+        slug: String(entry.publicSlug || entry.slug || slugify(name)),
+        publicSlug: String(entry.publicSlug || entry.slug || slugify(name)),
         zone,
         location,
         placement,
@@ -565,7 +566,7 @@ function casetaRow(caseta) {
   article.className = 'fiestas-map-result fiestas-caseta-result';
   article.dataset.mapResultId = caseta.id;
   article.style.setProperty('--fiestas-type-color', caseta.color);
-  const href = `/c/${encodeURIComponent(caseta.id)}/${encodeURIComponent(caseta.slug)}/`;
+  const href = `/c/${encodeURIComponent(caseta.publicSlug || caseta.slug)}/`;
   const placement = caseta.placement || '';
   const saved = state.casetaFavorites.has(caseta.id);
   const distance = state.userLocation && caseta.coordinates

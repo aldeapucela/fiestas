@@ -184,7 +184,7 @@ function buildDishIndex(casetas) {
           glutenFree: item.glutenFree === true,
           location: caseta.location || 'Ubicación por confirmar',
           color: caseta.color,
-          url: `/c/${encodeURIComponent(caseta.id)}/${encodeURIComponent(caseta.slug)}/`
+          url: `/c/${encodeURIComponent(caseta.publicSlug || caseta.slug)}/`
         });
       });
     });

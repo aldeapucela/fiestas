@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    {% set qrPageUrl = publicBaseUrl + '/c/' + caseta.id + '/' + caseta.slug + '/qr/' %}
+    {% set qrPageUrl = publicBaseUrl + caseta.urlPath + 'qr/' %}
     {% set qrSocialImage = publicBaseUrl + '/assets/social/casetas-feria-de-dia.jpg?v=' + assetVersion %}
     <meta name="description" content="Cartel QR de {{ caseta.name }} para descubrir y valorar las casetas de feria de día de Valladolid 2026." />
     <meta name="robots" content="noindex,follow" />

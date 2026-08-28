@@ -19,6 +19,7 @@ const casetas = [
     id: 'z3-01',
     name: 'La Tasca Castellana',
     slug: 'la-tasca-castellana',
+    publicSlug: 'la-tasca-castellana',
     location: 'Plaza de la Universidad',
     color: '#d48625',
     details: {
@@ -40,7 +41,7 @@ test('ranks known popular dishes by likes and links them to their caseta', () =>
   ]);
 
   assert.deepEqual(ranked.map((dish) => dish.dishName), ['Cecina de León', 'Brocheta de pollo']);
-  assert.equal(ranked[0].url, '/c/z3-01/la-tasca-castellana/');
+  assert.equal(ranked[0].url, '/c/la-tasca-castellana/');
   assert.equal(ranked[0].likeCount, 7);
 });
 

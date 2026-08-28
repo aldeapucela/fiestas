@@ -7,6 +7,7 @@ import postcss from 'postcss';
 import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 import { jsonForScript } from './json-for-script.mjs';
+import { casetaDetailPath, casetaLegacyPaths, casetaQrPath, getCasetaPublicSlug } from './caseta-routes.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -558,6 +559,7 @@ async function loadCasetas(vallabusStops = []) {
   }
 
   const ids = new Set();
+  const publicSlugs = new Set();
   const normalized = source.casetas.map((caseta, index) => {
     if (!caseta || typeof caseta !== 'object') throw new Error(`Caseta ${index + 1} must be an object.`);
     const id = String(caseta.id || '').trim();
@@ -569,14 +571,27 @@ async function loadCasetas(vallabusStops = []) {
     if (ids.has(id)) throw new Error(`Caseta id "${id}" is duplicated.`);
     if (!name || !zone || !location || !addressQuery) throw new Error(`Caseta "${id}" is missing name, zone, location or addressQuery.`);
     ids.add(id);
-    const slug = slugify(name);
+    const publicSlug = getCasetaPublicSlug(caseta);
+    if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(publicSlug)) {
+      throw new Error(`Caseta "${id}" has an invalid publicSlug.`);
+    }
+    if (publicSlugs.has(publicSlug)) throw new Error(`Caseta publicSlug "${publicSlug}" is duplicated.`);
+    publicSlugs.add(publicSlug);
+    const legacySlugs = Array.isArray(caseta.legacySlugs)
+      ? [...new Set(caseta.legacySlugs.map((slug) => String(slug || '').trim()).filter(Boolean))]
+      : [];
+    if (legacySlugs.some((slug) => !/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(slug))) {
+      throw new Error(`Caseta "${id}" has an invalid legacySlug.`);
+    }
     const coordinates = hasCoordinates(caseta.coordinates)
       ? normalizeCasetaCoordinates(caseta.coordinates)
       : null;
     return {
       id,
       name,
-      slug,
+      slug: publicSlug,
+      publicSlug,
+      legacySlugs,
       zone,
       location,
       placement: String(caseta.placement || '').trim(),
@@ -586,8 +601,8 @@ async function loadCasetas(vallabusStops = []) {
       coordinates,
       details: normalizeCasetaDetails(caseta.details),
       color: casetaColor(id),
-      urlPath: `/c/${id}/${slug}/`,
-      canonicalUrl: publicBaseUrl + `/c/${id}/${slug}/`,
+      urlPath: casetaDetailPath(publicSlug),
+      canonicalUrl: publicBaseUrl + casetaDetailPath(publicSlug),
       mapUrl: `/casetas/?caseta=${encodeURIComponent(id)}`
     };
   });
@@ -1091,7 +1106,7 @@ async function build() {
     const casetaSocialImage = caseta.image
       ? publicBaseUrl + caseta.image
       : casetasSocialImage;
-    await writeFile(`c/${caseta.id}/${caseta.slug}/index.html`, render('fiestas-2026-caseta-detail.njk', {
+    await writeFile(`c/${caseta.publicSlug}/index.html`, render('fiestas-2026-caseta-detail.njk', {
       ...pageContext(versions),
       title: `${caseta.name} | Casetas de Valladolid 2026`,
       meta: { description: `${caseta.name}, caseta de las Fiestas de Valladolid 2026 en ${caseta.location}.` },
@@ -1111,10 +1126,25 @@ async function build() {
       caseta,
       relatedCasetas: casetas.filter((related) => related.zone === caseta.zone && related.id !== caseta.id)
     }));
-    await writeFile(`c/${caseta.id}/${caseta.slug}/qr/index.html`, render('fiestas-2026-caseta-qr.njk', {
+    await writeFile(`c/${caseta.publicSlug}/qr/index.html`, render('fiestas-2026-caseta-qr.njk', {
       ...pageContext(versions),
       caseta
     }));
+    for (const legacy of casetaLegacyPaths(caseta)) {
+      if (legacy.detail !== caseta.urlPath) {
+        await writeFile(legacy.detail.slice(1) + 'index.html', render('fiestas-2026-caseta-redirect.njk', {
+          ...pageContext(versions),
+          redirectPath: caseta.urlPath
+        }));
+      }
+      const canonicalQrPath = casetaQrPath(caseta.publicSlug);
+      if (legacy.qr !== canonicalQrPath) {
+        await writeFile(legacy.qr.slice(1) + 'index.html', render('fiestas-2026-caseta-redirect.njk', {
+          ...pageContext(versions),
+          redirectPath: canonicalQrPath
+        }));
+      }
+    }
   }
 
   for (const event of events) {
@@ -1140,7 +1170,7 @@ async function build() {
     }));
   }
 
-  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', '/colaboradores/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.flatMap((caseta) => [caseta.urlPath, `${caseta.urlPath}qr/`]), ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', '/colaboradores/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.flatMap((caseta) => [caseta.urlPath, casetaQrPath(caseta.publicSlug)]), ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
