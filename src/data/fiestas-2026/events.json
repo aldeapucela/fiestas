@@ -17402,5 +17402,44 @@
     "tags": [
       "Música"
     ]
+  },
+  {
+    "id": 522,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:59",
+    "title": "XXVII Super Cross Ciudad de Valladolid",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a32317f25c72692132da0096fcb8c9dbb5e036ee_2_724x1024.jpeg",
+    "location": "Ciudad de Valladolid",
+    "zone": "Zona Centro",
+    "description": "El XXVII Super Cross de la Ciudad de Valladolid se celebra el próximo viernes 4 de septiembre de 2026. Este evento de motociclismo se llevará a cabo en la ciudad de Valladolid con una programación que incluye diversas categorías.",
+    "summary": "El XXVII Super Cross de la Ciudad de Valladolid se celebra el próximo viernes 4 de septiembre de 2026. Este evento de motociclismo se llevará a cabo en la ciudad de Valladolid con una programación que incluye diversas categorías.",
+    "performances": [],
+    "organizers": [
+      "Federación de Motociclismo de Castilla y León (FMCL) y Moto-Club Vallisoletano"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6568422,
+      "lng": -4.7367124,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "relation",
+      "osmId": 17696830,
+      "query": "Ciudad de Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-28T20:01:24.377Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
   }
 ]
