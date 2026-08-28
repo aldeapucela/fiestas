@@ -151,6 +151,113 @@
         "query": "Plaza San Benito, Valladolid, España",
         "accuracy": 0.8,
         "geocodedAt": "2026-08-26"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria + bebida 4,00 €",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-chapata-rabas",
+                "name": "Chapata de rabas (gluten, pescado) 4,00 €"
+              },
+              {
+                "id": "pincho-muniquesa-salchichas",
+                "name": "Muniquesa de salchichas variadas (brocheta) (gluten) 4,00 €"
+              },
+              {
+                "id": "pincho-montadito-bavaro",
+                "name": "Montadito bavaro beicon, Sajonia, queso (gluten, leche) 4,00 €"
+              },
+              {
+                "id": "pincho-queso-cabra-mermelada-tomate",
+                "name": "Queso de cabra a la parrilla mermelada de tomate (gluten y leche) 4,00€",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Pincho de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-lechazo-parrilla",
+                "name": "Pincho de lechazo a la parrilla (120 gr. con hueso) 6,50€ — Bebida aparte"
+              }
+            ]
+          },
+          {
+            "title": "Cocina alemana",
+            "votable": true,
+            "items": [
+              {
+                "id": "cocina-alemana-salchicha-brastwrut",
+                "name": "Salchicha Brastwrut con ensaladilla alemana sin gluten, mostaza 6,00 €",
+                "glutenFree": true
+              },
+              {
+                "id": "cocina-alemana-perrito-aleman",
+                "name": "Perrito alemán especial (franfurt, lechugas, tomate, Cebolia frita) (gluten) 6,50 €"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-casera",
+                "name": "Tarta de queso casera sin gluten, huevos, leche 4,00€",
+                "dietary": "vegetarian",
+                "glutenFree": true
+              },
+              {
+                "id": "postre-coulant-chocolate-sirope-naranja",
+                "name": "Coulant chocolate con sirope de naranja (gluten, leche) 4,00 €",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-vinos-jovenes",
+                "name": "Vinos jovenes 2 €"
+              },
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito 0.20CL 2 €"
+              },
+              {
+                "id": "bebida-refresco-lata",
+                "name": "Refresco en lata 2,50 €"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua 33CL 1,50 €"
+              },
+              {
+                "id": "bebida-cerveza-cana",
+                "name": "Cerveza caña 0.20CL 2 €"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto 1,50 €"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Vino, caña, agua, mosto, Lorencito",
+          "Pincho sin bebida 3,00 €",
+          "Pincho con refresco lata 4,40 €",
+          "Cocina alemana. Bebida aparte",
+          "10%IVA incluido",
+          "Tenemos informacion alergenos reglamento europeo, solicite informacion nuestro personal"
+        ]
       }
     },
     {
