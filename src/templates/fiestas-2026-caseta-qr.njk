@@ -3,8 +3,28 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {% set qrPageUrl = publicBaseUrl + '/c/' + caseta.id + '/' + caseta.slug + '/qr/' %}
+    {% set qrSocialImage = publicBaseUrl + '/assets/social/casetas-feria-de-dia.jpg?v=' + assetVersion %}
+    <meta name="description" content="Cartel QR de {{ caseta.name }} para descubrir y valorar las casetas de feria de día de Valladolid 2026." />
     <meta name="robots" content="noindex,follow" />
-    <title>Cartel QR | Casetas Feria de Día</title>
+    <link rel="canonical" href="{{ qrPageUrl }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:title" content="Cartel QR | {{ caseta.name }} | Casetas Feria de Día" />
+    <meta property="og:description" content="Descubre y valora {{ caseta.name }} y las casetas de feria de día de Valladolid 2026." />
+    <meta property="og:url" content="{{ qrPageUrl }}" />
+    <meta property="og:image" content="{{ qrSocialImage }}" />
+    <meta property="og:image:secure_url" content="{{ qrSocialImage }}" />
+    <meta property="og:image:width" content="1731" />
+    <meta property="og:image:height" content="909" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Casetas feria de día | Fiestas Valladolid 2026" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Cartel QR | {{ caseta.name }} | Casetas Feria de Día" />
+    <meta name="twitter:description" content="Descubre y valora {{ caseta.name }} y las casetas de feria de día de Valladolid 2026." />
+    <meta name="twitter:image" content="{{ qrSocialImage }}" />
+    <meta name="twitter:image:alt" content="Casetas feria de día | Fiestas Valladolid 2026" />
+    <title>Cartel QR | {{ caseta.name }} | Casetas Feria de Día</title>
     <style>
       html, body { margin: 0; min-height: 100%; background: #fffdf5; }
       body { display: flex; justify-content: center; }
