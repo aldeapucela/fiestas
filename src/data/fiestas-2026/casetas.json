@@ -1113,6 +1113,115 @@
         "lng": -4.7277986,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-mejillon-tigre",
+                "name": "Mejillón tigre — Masa de mejillón tigre sobre concha con coco y mayo de limón."
+              },
+              {
+                "id": "pincho-maxi-gyoza-panceta-langostinos",
+                "name": "Maxi gyoza de panceta y langostinos — Lazada en teriyaki, con alioli de wosame y crujiente de kikos."
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-tosta-ventresca",
+                "name": "Tosta de ventresca — Con tomate rallado y polvo de aceituna negra. 5.50€"
+              },
+              {
+                "id": "racion-tosta-langostinos",
+                "name": "Tosta de langostinos — Con mayo de mei, comino y lima. 5.50€"
+              },
+              {
+                "id": "racion-montadito-mogote-iberico",
+                "name": "Montadito de mogote ibérico — Con salsa chimichurri. 6.50€"
+              },
+              {
+                "id": "racion-montadito-butifarra",
+                "name": "Montadito de butifarra — Butifarra rellena de trompeta negra con salsa baconesa. 7.50€"
+              },
+              {
+                "id": "racion-montadito-solomillo-iberico",
+                "name": "Montadito de solomillo ibérico — Con salsa tártara. 7.50€"
+              },
+              {
+                "id": "racion-torrezno-soria",
+                "name": "Torrezno de Soria — Con tosta de tomate rallado. 5.50€"
+              },
+              {
+                "id": "racion-brocheta-pata-pulpo",
+                "name": "Brocheta de pata de pulpo — Con crema de patata ajoarriero. 7.00€"
+              },
+              {
+                "id": "racion-zamburinas",
+                "name": "Zamburínas — Con concassé de tomate. 4 unidades. 10.00€"
+              },
+              {
+                "id": "racion-rabas-calamar",
+                "name": "Rabas de calamar — Con mayo de mei, comino y lima. 10.00€"
+              },
+              {
+                "id": "racion-ensaladilla-langostinos",
+                "name": "Ensaladilla de langostinos — Con aceituna negra y crujiente de kikos. 10.00€"
+              },
+              {
+                "id": "racion-hamburguesa-okelan",
+                "name": "Hamburguesa OKELAN 180 g — Pan brioche, carne de ternera, queso, bacon, salsa santa y crujiente de kikos. 12.00€"
+              },
+              {
+                "id": "racion-patatas-bravas-lagar",
+                "name": "Patatas bravas El Lagar — Patatas bravas de chipotle y patata picante. 12.00€",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "racion-saquitos-carrillera",
+                "name": "Saquitos de carrillera — Con mayo de trufa. 10 unidades. 12.00€"
+              },
+              {
+                "id": "racion-croquetas-zamburinas",
+                "name": "Croquetas de zamburínas — Caseras. 6 unidades. 15.00€"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-torrija-pan-brioche",
+                "name": "Torrija de pan brioche — Casera. Infusionada con crema inglesa de naranja. Con tuffee. 6.00€",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-coulant-queso-manchego",
+                "name": "Coulant de queso manchego — Apto para celíacos. 6.00€",
+                "dietary": "vegetarian",
+                "glutenFree": true
+              },
+              {
+                "id": "postre-coulant-chocolate",
+                "name": "Coulant de chocolate — Apto para celíacos. 6.00€",
+                "dietary": "vegetarian",
+                "glutenFree": true
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Pincho feria sin rebida. 3.50€",
+          "Pincho feria + cerveza, vino o Lorenco. 4.00€",
+          "Pincho feria + refresco. 4.50€"
+        ]
       }
     },
     {
