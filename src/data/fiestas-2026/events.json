@@ -17411,9 +17411,9 @@
     "endTime": "23:59",
     "title": "XXVII Super Cross Ciudad de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a32317f25c72692132da0096fcb8c9dbb5e036ee_2_724x1024.jpeg",
-    "location": "Ciudad de Valladolid",
-    "zone": "Zona Centro",
-    "description": "El XXVII Super Cross de la Ciudad de Valladolid se celebra el próximo viernes 4 de septiembre de 2026. Este evento de motociclismo se llevará a cabo en la ciudad de Valladolid con una programación que incluye diversas categorías.",
+    "location": "Circuito Super Cross de Parquesol (Ciudad de Valladolid)",
+    "zone": "Parquesol",
+    "description": "El XXVII Super Cross de la Ciudad de Valladolid se celebra el próximo viernes 4 de septiembre de 2026. Este evento de motociclismo se llevará a cabo en la ciudad de Valladolid con una programación que incluye diversas categorías. La prueba se celebra en el Circuito Super Cross de Parquesol.",
     "summary": "El XXVII Super Cross de la Ciudad de Valladolid se celebra el próximo viernes 4 de septiembre de 2026. Este evento de motociclismo se llevará a cabo en la ciudad de Valladolid con una programación que incluye diversas categorías.",
     "performances": [],
     "organizers": [
@@ -17421,14 +17421,12 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.6568422,
-      "lng": -4.7367124,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "relation",
-      "osmId": 17696830,
-      "query": "Ciudad de Valladolid, Valladolid, España",
+      "lat": 41.6421509,
+      "lng": -4.7545795,
+      "source": "Google Maps (consulta manual)",
+      "query": "Circuito Super Cross de Parquesol, Valladolid, España",
       "accuracy": 1,
-      "geocodedAt": "2026-08-28T20:01:24.377Z"
+      "geocodedAt": "2026-08-28T20:06:00.000Z"
     },
     "type": "Otros",
     "ticket": {
