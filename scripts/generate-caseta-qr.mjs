@@ -3,7 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { chromium } from 'playwright';
 import QRCode from 'qrcode';
-import { createCasetaQrPosterSvg, createCompactQrSvg } from './caseta-qr.mjs';
+import { createCasetaQrPosterSvg, createCasetaQrTargetUrl, createCompactQrSvg } from './caseta-qr.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -47,7 +47,7 @@ for (const caseta of source.casetas) {
     }
   }
 
-  const canonicalUrl = `${publicBaseUrl}/c/${id}/${slugify(name)}/`;
+  const canonicalUrl = createCasetaQrTargetUrl({ baseUrl: publicBaseUrl, id, slug: slugify(name) });
   const qrCode = QRCode.create(canonicalUrl, { errorCorrectionLevel: 'M' });
   const poster = createCasetaQrPosterSvg({
     qrSvg: createCompactQrSvg(qrCode),

@@ -34,6 +34,12 @@ export function createCompactQrSvg(qrCode) {
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${size} ${size}" shape-rendering="crispEdges"><rect width="${size}" height="${size}" fill="#ffffff"/><path fill="#000000" d="${path}"/></svg>`;
 }
 
+export function createCasetaQrTargetUrl({ baseUrl, id, slug }) {
+  const url = new URL(`/c/${encodeURIComponent(id)}/${encodeURIComponent(slug)}/`, baseUrl);
+  url.searchParams.set('mtm_campaign', 'QR');
+  return url.toString();
+}
+
 export function createCasetaQrPosterSvg({ qrSvg, logoHref, logoDataUri, siteUrl }) {
   const { viewBox, content } = qrSvgParts(qrSvg);
   const [, , qrWidth] = viewBox.trim().split(/[\s,]+/).map(Number);
