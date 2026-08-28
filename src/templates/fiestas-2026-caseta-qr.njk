@@ -28,10 +28,25 @@
     <style>
       html, body { margin: 0; min-height: 100%; background: #fffdf5; }
       body { display: flex; justify-content: center; }
+      main { display: flex; width: min(100vw, 1200px); flex-direction: column; align-items: center; }
       img { display: block; width: min(100vw, 1200px); height: auto; }
+      a { display: inline-flex; order: 2; align-items: center; gap: .5rem; margin: 1rem 0 1.5rem; padding: .75rem 1rem; border: 1px solid #0f9f8d; border-radius: .6rem; color: #087569; font: 700 1rem/1.2 system-ui, sans-serif; text-decoration: none; }
+      a:hover, a:focus-visible { background: #eef9f7; }
     </style>
   </head>
   <body>
-    <img src="/assets/qr/casetas/{{ caseta.id }}.png?v={{ assetVersion }}" alt="Cartel para descubrir y valorar las casetas de feria de día" />
+    <main>
+      <img src="/assets/qr/casetas/{{ caseta.id }}.png?v={{ assetVersion }}" alt="Cartel para descubrir y valorar las casetas de feria de día" />
+      <a
+        href="/assets/qr/casetas/{{ caseta.id }}.png?v={{ assetVersion }}"
+        download="casetas-{{ caseta.slug }}-qr.png"
+        data-fiestas-caseta-qr-download
+        data-caseta-id="{{ caseta.id }}"
+      >
+        <span aria-hidden="true">⇩</span>
+        <span>Descargar imagen</span>
+      </a>
+    </main>
+    <script type="module" src="/scripts/fiestas-2026.js"></script>
   </body>
 </html>

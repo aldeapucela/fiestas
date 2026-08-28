@@ -85,6 +85,23 @@ test('tracks caseta removals and rejects invalid caseta IDs', async () => {
   assert.deepEqual(sent, [['trackEvent', 'caseta', 'remove_save', 'z2_07']]);
 });
 
+test('tracks QR opens and image downloads with the stable caseta id', async () => {
+  installBrowserGlobals();
+  const analytics = await import(`../src/scripts/analytics.js?caseta-qr=${Date.now()}`);
+  const sent = [];
+
+  window._paq = { push: (event) => sent.push(event) };
+
+  assert.equal(analytics.trackCasetaQrOpened('Z2-07'), true);
+  assert.equal(analytics.trackCasetaQrDownloaded('z2-07'), true);
+  assert.equal(analytics.trackCasetaQrOpened('event-307'), false);
+  assert.equal(analytics.trackCasetaQrDownloaded(''), false);
+  assert.deepEqual(sent, [
+    ['trackEvent', 'caseta', 'open_qr', 'z2_07'],
+    ['trackEvent', 'caseta', 'download_qr', 'z2_07']
+  ]);
+});
+
 test('does not send caseta favorite events when analytics is disabled or DNT is enabled', async () => {
   installBrowserGlobals();
   window.__FIESTAS_ANALYTICS_CONFIG__ = { enabled: false };

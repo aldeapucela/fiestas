@@ -5,6 +5,8 @@ import {
   trackActivityOpened,
   trackActivityShared,
   trackActivityViewed,
+  trackCasetaQrDownloaded,
+  trackCasetaQrOpened,
   trackDateSelected,
   trackDirectionsOpened,
   trackExternalLinkOpened,
@@ -195,6 +197,7 @@ function init() {
   setupMenuDrawer();
   setupSubscribe();
   setupPlanSelector();
+  bindCasetaQrDownloadTracking();
 
   if (els.casetasPage) {
     bindSiteShareControls();
@@ -2110,6 +2113,7 @@ function initCasetaQrLightbox() {
     els.detailQrLightboxImage.alt = els.detailQr.dataset.imageAlt || '';
     els.detailQrLightbox.hidden = false;
     document.body.classList.add('detail-lightbox-open');
+    trackCasetaQrOpened(els.detailQr.dataset.casetaId || els.detail?.dataset.eventId);
     closeButtons[closeButtons.length - 1]?.focus();
   };
   const closeLightbox = () => {
@@ -2122,6 +2126,14 @@ function initCasetaQrLightbox() {
   closeButtons.forEach((button) => button.addEventListener('click', closeLightbox));
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !els.detailQrLightbox.hidden) closeLightbox();
+  });
+}
+
+function bindCasetaQrDownloadTracking() {
+  document.querySelectorAll('[data-fiestas-caseta-qr-download]').forEach((link) => {
+    link.addEventListener('click', () => {
+      trackCasetaQrDownloaded(link.dataset.casetaId || els.detail?.dataset.eventId);
+    });
   });
 }
 

@@ -10,7 +10,7 @@ const TRACKED_COMMUNITY_PLANS_STORAGE_KEY = 'fiestasPucela:analytics:added-commu
 
 const categoryActions = {
   activity: new Set(['view_detail', 'save', 'remove_save', 'share', 'open_directions', 'open_external_link', 'open_tickets']),
-  caseta: new Set(['save', 'remove_save']),
+  caseta: new Set(['save', 'remove_save', 'open_qr', 'download_qr']),
   caseta_dish: new Set(['like', 'remove_like']),
   agenda: new Set(['select_date', 'select_all_dates', 'apply_filter', 'search', 'open_activity']),
   map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
@@ -85,6 +85,14 @@ export function trackCasetaFavoriteChanged(casetaId, saved) {
     // Analytics must never prevent the local caseta favorite from being saved.
     return false;
   }
+}
+
+export function trackCasetaQrOpened(casetaId) {
+  return pushEvent('caseta', 'open_qr', normalizeCasetaId(casetaId));
+}
+
+export function trackCasetaQrDownloaded(casetaId) {
+  return pushEvent('caseta', 'download_qr', normalizeCasetaId(casetaId));
 }
 
 export function trackCasetaDishLiked(casetaId, dishId) {
