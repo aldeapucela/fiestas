@@ -57,17 +57,17 @@ export function createCasetaQrPosterSvg({ qrSvg, logoHref, logoDataUri, siteUrl 
   <rect width="1200" height="1600" fill="#fffdfa" />
 
   <image x="525" y="72" width="150" height="150" preserveAspectRatio="xMidYMid meet" href="${escapeXml(logo)}" xlink:href="${escapeXml(logo)}" />
-  <text x="600" y="270" text-anchor="middle" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700" letter-spacing="8">ALDEA PUCELA</text>
+  <text x="600" y="270" text-anchor="middle" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">ALDEA PUCELA</text>
   <text x="600" y="316" text-anchor="middle" fill="#5d7393" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600">Fiestas Valladolid 2026</text>
 
-  <text x="600" y="472" text-anchor="middle" fill="#0f9f8d" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700" letter-spacing="7">CASETAS · FERIA DE DÍA</text>
+  <text x="600" y="472" text-anchor="middle" fill="#0f9f8d" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">CASETAS · FERIA DE DÍA</text>
   <text x="600" y="625" text-anchor="middle" fill="#102342" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700">Valora nuestros</text>
   <text x="600" y="740" text-anchor="middle" fill="#0f9f8d" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="700">pinchos</text>
-  <text x="600" y="900" text-anchor="middle" fill="#102342" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="700" letter-spacing="4">ESCANEA EL CÓDIGO</text>
+  <text x="600" y="900" text-anchor="middle" fill="#102342" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="700">ESCANEA EL CÓDIGO</text>
 
   <rect x="390" y="950" width="420" height="440" rx="28" fill="#ffffff" />
   <g transform="translate(420 990) scale(${360 / qrWidth})">${content}</g>
-  <text x="600" y="1480" text-anchor="middle" fill="#0f746b" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700" letter-spacing="1">${escapeXml(visibleUrl)}</text>
+  <text x="600" y="1480" text-anchor="middle" fill="#0f746b" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">${escapeXml(visibleUrl)}</text>
 </svg>
 `;
 }

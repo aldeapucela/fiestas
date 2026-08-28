@@ -23,6 +23,7 @@ test('genera un cartel QR autónomo sin el pie redundante', () => {
   assert.match(poster, /fiestas\.aldeapucela\.org/);
   assert.match(poster, /data:image\/png;base64,logo/);
   assert.equal((poster.match(/<svg\b/g) || []).length, 1);
+  assert.doesNotMatch(poster, /letter-spacing=/);
   assert.doesNotMatch(poster, /Escanea para descubrir y valorar\./);
   assert.doesNotMatch(poster, /La Criolla/);
 });

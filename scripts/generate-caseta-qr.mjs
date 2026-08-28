@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { execFile } from 'node:child_process';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { promisify } from 'node:util';
 import { chromium } from 'playwright';
 import QRCode from 'qrcode';
@@ -13,6 +13,7 @@ const root = path.resolve(__dirname, '..');
 const sourcePath = path.join(root, 'src', 'data', 'fiestas-2026', 'casetas.json');
 const outputDir = path.join(root, 'src', 'assets', 'qr', 'casetas');
 const publicBaseUrl = 'https://fiestas.aldeapucela.org';
+const logoPath = path.join(root, 'src', 'assets', 'favicon.png');
 const force = process.argv.includes('--force');
 const onlyId = process.argv.find((argument) => argument.startsWith('--only='))?.slice('--only='.length) || '';
 const execFileAsync = promisify(execFile);
@@ -23,7 +24,7 @@ if (source?.schemaVersion !== 1 || !Array.isArray(source?.casetas)) {
 }
 
 await fs.mkdir(outputDir, { recursive: true });
-const logo = await fs.readFile(path.join(root, 'src', 'assets', 'favicon.png'));
+const logo = await fs.readFile(logoPath);
 const logoDataUri = 'data:image/png;base64,' + logo.toString('base64');
 let generated = 0;
 let skipped = 0;
@@ -71,7 +72,12 @@ for (const caseta of source.casetas) {
     await page.locator('svg').screenshot({ path: pngPath });
   } else {
     const svgPath = path.join(outputDir, `.tmp-${id}.svg`);
-    await fs.writeFile(svgPath, poster);
+    const fallbackPoster = createCasetaQrPosterSvg({
+      qrSvg: createCompactQrSvg(qrCode),
+      logoHref: pathToFileURL(logoPath).href,
+      siteUrl: canonicalUrl
+    });
+    await fs.writeFile(svgPath, fallbackPoster);
     try {
       await execFileAsync('magick', [svgPath, '-background', 'none', pngPath]);
     } finally {
