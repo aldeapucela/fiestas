@@ -367,6 +367,18 @@ async function copyCasetasData(casetas, assetVersionSeed) {
   assetVersionSeed.push(['data/casetas.json', createHash('sha256').update(content).digest('hex')]);
 }
 
+async function verifyCasetaQrPosters(casetas) {
+  const sourceDir = path.join(root, 'src', 'assets', 'qr', 'casetas');
+  for (const caseta of casetas) {
+    const pngPath = path.join(sourceDir, `${caseta.id}.png`);
+    try {
+      await fs.access(pngPath);
+    } catch (_) {
+      throw new Error(`Falta el cartel QR de ${caseta.id}. Ejecuta npm run casetas:qr.`);
+    }
+  }
+}
+
 async function copyAssetDir(sourceDir, currentDir, assetVersionSeed) {
   const entries = await fs.readdir(currentDir, { withFileTypes: true });
   for (const entry of entries) {
@@ -889,6 +901,7 @@ async function build() {
   const vallabusStops = await loadVallabusStops();
   const casetas = await loadCasetas(vallabusStops);
   await copyCasetasData(casetas, assetVersionSeed);
+  await verifyCasetaQrPosters(casetas);
   const communityPlanMemberships = await loadCommunityPlanMemberships(communityPlans);
   const pwaFiles = await loadPwaFiles();
   const cssVersion = contentVersion(cssVersionSeed);
@@ -1098,6 +1111,7 @@ async function build() {
       caseta,
       relatedCasetas: casetas.filter((related) => related.zone === caseta.zone && related.id !== caseta.id)
     }));
+    await writeFile(`c/${caseta.id}/${caseta.slug}/qr/index.html`, render('fiestas-2026-caseta-qr.njk', { caseta }));
   }
 
   for (const event of events) {
@@ -1123,7 +1137,7 @@ async function build() {
     }));
   }
 
-  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', '/colaboradores/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.map((caseta) => caseta.urlPath), ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', '/colaboradores/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.flatMap((caseta) => [caseta.urlPath, `${caseta.urlPath}qr/`]), ...events.map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
