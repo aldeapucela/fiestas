@@ -3,7 +3,7 @@ import { readCasetaDishLikeIds, subscribeToCasetaDishLikes } from './caseta-dish
 import { trackCasetaFavoriteChanged } from './analytics.js';
 
 const CENTER = [41.645726, -4.732919];
-const DEFAULT_ZOOM = 14;
+const DEFAULT_ZOOM = 13;
 const USER_ZOOM = 14;
 const MAX_CITY_COORDINATE_DISTANCE_KM = 12;
 const CARTO_BASEMAPS_API_KEY = 'cb1_27ug_1_19138f635d4f03358d12cb43';
@@ -20,7 +20,8 @@ const ZONE_COLORS = {
   'Zona 4': '#1976a8',
   'Zona 5': '#ba3d3d',
   'Zona 6': '#087e8c',
-  'Zona 7': '#b94f72'
+  'Zona 7': '#b94f72',
+  'Zona Ferias': '#a85a2a'
 };
 const ZONE_LABELS = {
   'Zona 1': 'Plaza Mayor',
@@ -29,7 +30,8 @@ const ZONE_LABELS = {
   'Zona 4': 'Catedral y Portugalete',
   'Zona 5': 'Acera de Recoletos',
   'Zona 6': 'Paseo Zorrilla · Plaza de Toros',
-  'Zona 7': 'Plaza de Santa Cruz'
+  'Zona 7': 'Plaza de Santa Cruz',
+  'Zona Ferias': 'Recinto ferial José Luis Bellido'
 };
 
 let leafletPromise = null;
@@ -448,6 +450,7 @@ function renderMapMarkers() {
   groupsWithCoordinates.forEach((group) => {
     const markerLabel = group.location ? `${group.zone} - ${group.location}` : group.zone;
     const groupCount = `${group.items.length} ${group.items.length === 1 ? 'caseta' : 'casetas'}`;
+    const markerCode = group.number ? `Z${group.number}` : 'ZF';
     const marker = window.L.marker([group.coordinates.lat, group.coordinates.lng], {
       title: `${markerLabel}. ${groupCount}`,
       alt: `${markerLabel}. ${groupCount}`,
@@ -455,7 +458,7 @@ function renderMapMarkers() {
       zIndexOffset: group.location ? 0 : 1000,
       icon: window.L.divIcon({
         className: `fiestas-map-marker fiestas-caseta-zone-marker${state.selectedZone === group.zone && (!group.location || state.selectedLocation === group.location) ? ' is-selected' : ''}`,
-        html: `<button type="button" style="--fiestas-type-color:${escapeAttribute(group.color)}" aria-label="Ver ${escapeAttribute(markerLabel)} con ${groupCount}"><span>Z${escapeHtml(group.number)}</span></button>`,
+        html: `<button type="button" style="--fiestas-type-color:${escapeAttribute(group.color)}" aria-label="Ver ${escapeAttribute(markerLabel)} con ${groupCount}"><span>${escapeHtml(markerCode)}</span></button>`,
         iconSize: [44, 44],
         iconAnchor: [22, 22]
       })

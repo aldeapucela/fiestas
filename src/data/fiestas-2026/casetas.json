@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "updatedAt": "2026-08-27",
+  "updatedAt": "2026-08-28",
   "casetas": [
     {
       "id": "z1-01",
@@ -1391,6 +1391,278 @@
       "placement": "En la plaza",
       "addressQuery": "Plaza de Santa Cruz, Valladolid, España",
       "coordinates": null
+    },
+    {
+      "id": "zf-01",
+      "name": "Ávila",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-02",
+      "name": "Segovia",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-03",
+      "name": "León",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-04",
+      "name": "Zamora",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-05",
+      "name": "Salamanca",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-06",
+      "name": "Asturias",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-07",
+      "name": "Galicia",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-08",
+      "name": "Cantabria",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-09",
+      "name": "La Rioja",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-10",
+      "name": "Navarra",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-11",
+      "name": "Valencia",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-12",
+      "name": "Cataluña",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-13",
+      "name": "Baleares",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-14",
+      "name": "Andalucía",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-15",
+      "name": "Murcia",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-16",
+      "name": "Canarias",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
+    },
+    {
+      "id": "zf-17",
+      "name": "Melilla",
+      "zone": "Zona Ferias",
+      "location": "Recinto ferial José Luis Bellido",
+      "addressQuery": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "coordinates": {
+        "lat": 41.64727,
+        "lng": -4.76171,
+        "source": "OpenStreetMap",
+        "osmType": "node",
+        "osmId": 13290385301,
+        "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
+        "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      }
     }
   ]
 }
