@@ -1111,7 +1111,10 @@ async function build() {
       caseta,
       relatedCasetas: casetas.filter((related) => related.zone === caseta.zone && related.id !== caseta.id)
     }));
-    await writeFile(`c/${caseta.id}/${caseta.slug}/qr/index.html`, render('fiestas-2026-caseta-qr.njk', { caseta }));
+    await writeFile(`c/${caseta.id}/${caseta.slug}/qr/index.html`, render('fiestas-2026-caseta-qr.njk', {
+      ...pageContext(versions),
+      caseta
+    }));
   }
 
   for (const event of events) {
