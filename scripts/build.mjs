@@ -103,10 +103,15 @@ function normalizeCasetaMenuItem(item, votable = false) {
   if (dietary && !casetaDietaryLabels.has(dietary)) {
     throw new Error(`El plato "${name}" tiene una clasificación dietética no válida.`);
   }
+  const glutenFree = isObject && item.glutenFree === true;
+  if (isObject && item.glutenFree != null && typeof item.glutenFree !== 'boolean') {
+    throw new Error(`El plato "${name}" tiene un valor glutenFree no válido.`);
+  }
   return {
     ...(id ? { id } : {}),
     name,
-    ...(dietary ? { dietary } : {})
+    ...(dietary ? { dietary } : {}),
+    ...(glutenFree ? { glutenFree: true } : {})
   };
 }
 

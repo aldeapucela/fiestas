@@ -32,6 +32,7 @@ test('las casetas se buscan y se filtran por dieta', async ({ page }) => {
   await page.locator('[data-fiestas-casetas-filter-toggle]').click();
   const dietary = page.locator('[data-fiestas-casetas-dietary-filter]').first();
   await expect(dietary).toBeVisible();
+  await expect(page.locator('[data-fiestas-casetas-dietary-filter][value="gluten-free"]')).toBeVisible();
   await dietary.click();
   await expect.poll(() => page.locator(casetas).count()).toBeLessThan(total);
 

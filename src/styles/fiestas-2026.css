@@ -5867,6 +5867,11 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
   color: #126b42;
 }
 
+.fiestas-caseta-dietary-pill--gluten-free {
+  background: #fff0d7;
+  color: #925d14;
+}
+
 .fiestas-caseta-highlights {
   border-top: 1px solid #e7eaf0;
   padding-top: 0.8rem;
@@ -5899,7 +5904,8 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 }
 
 .fiestas-caseta-placeholder h2,
-.fiestas-caseta-placeholder p {
+.fiestas-caseta-placeholder p,
+.fiestas-caseta-placeholder ul {
   margin: 0;
 }
 
@@ -5908,11 +5914,27 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
   font-size: 1.05rem;
 }
 
-.fiestas-caseta-placeholder p:last-child {
-  margin-top: 0.4rem;
+.fiestas-caseta-placeholder-copy {
   color: #667085;
   font-size: 0.88rem;
   line-height: 1.5;
+}
+
+.fiestas-caseta-placeholder-list {
+  margin-top: 0.8rem !important;
+  padding-left: 1rem;
+  color: #667085;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  list-style: disc;
+}
+
+.fiestas-caseta-placeholder-list li {
+  padding-left: 0.1rem;
+}
+
+.fiestas-caseta-placeholder-list li + li {
+  margin-top: 0.35rem;
 }
 
 .fiestas-caseta-placeholder-link {
@@ -5952,7 +5974,8 @@ html.dark .fiestas-caseta-hero {
 
 html.dark .fiestas-caseta-lead,
 html.dark .fiestas-caseta-location-pending,
-html.dark .fiestas-caseta-placeholder p:last-child {
+html.dark .fiestas-caseta-placeholder-copy,
+html.dark .fiestas-caseta-placeholder-list {
   color: #c4ccd8;
 }
 
@@ -5979,6 +6002,11 @@ html.dark .fiestas-caseta-dietary-pill--vegetarian {
 html.dark .fiestas-caseta-dietary-pill--vegan {
   background: #1d4b36;
   color: #a8ebc2;
+}
+
+html.dark .fiestas-caseta-dietary-pill--gluten-free {
+  background: #4b3820;
+  color: #f7cc88;
 }
 
 html.dark .fiestas-caseta-dish-like {

@@ -327,7 +327,7 @@ function readUrlState() {
   ];
   dietaryValues
     .map((value) => value.trim().toLowerCase())
-    .filter((value) => value === 'vegetarian' || value === 'vegan')
+    .filter((value) => value === 'vegetarian' || value === 'vegan' || value === 'gluten-free')
     .forEach((value) => state.dietaryFilters.add(value));
   state.onlyFavorites = ['1', 'true'].includes(String(params.get('favorites') || '').toLowerCase());
   state.onlyLikedDishes = ['1', 'true'].includes(String(params.get('liked') || '').toLowerCase());
@@ -390,8 +390,14 @@ export function casetaHasLikedDish(caseta, likedDishIds = new Set()) {
 
 function getDietaryLabels(details) {
   return [...new Set((details?.menuSections || []).flatMap((section) => (section?.items || [])
-    .map((item) => typeof item === 'object' ? item?.dietary : '')
-    .filter((dietary) => dietary === 'vegetarian' || dietary === 'vegan')))];
+    .flatMap((item) => {
+      if (!item || typeof item !== 'object') return [];
+      return [
+        item.dietary === 'vegetarian' || item.dietary === 'vegan' ? item.dietary : '',
+        item.glutenFree === true ? 'gluten-free' : ''
+      ];
+    })
+    .filter(Boolean)))];
 }
 
 function collectTextValues(value) {
@@ -676,7 +682,11 @@ function syncFilterUi() {
     const active = state.dietaryFilters.has(input.value);
     input.classList.toggle('is-active', active);
     input.setAttribute('aria-pressed', String(active));
-    const label = input.value === 'vegan' ? 'veganas' : 'vegetarianas';
+    const label = {
+      vegetarian: 'vegetarianas',
+      vegan: 'veganas',
+      'gluten-free': 'sin gluten'
+    }[input.value] || input.value;
     input.setAttribute('aria-label', active
       ? 'Mostrar todas las casetas'
       : `Mostrar solo casetas ${label}`);

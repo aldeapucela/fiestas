@@ -279,6 +279,9 @@
               {% elif item.dietary == 'vegan' %}
               <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegan">Vegano</span>
               {% endif %}
+              {% if item.glutenFree %}
+              <span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--gluten-free">Sin gluten</span>
+              {% endif %}
             </div>
             {% if section.votable and item.id %}
             <button
@@ -316,11 +319,11 @@
       <div>
         <p class="fiestas-plan-kicker">PRÓXIMAMENTE</p>
         <h2 id="caseta-placeholder-title">Ficha de caseta</h2>
-        <p>
-          Aún no tenemos información sobre la carta de esta caseta.
-          Si tienes una foto o el texto de sus pinchos y tapas,
-          mándanoslo en el <a class="fiestas-caseta-placeholder-link" href="https://t.me/aldeapucela/59137" target="_blank" rel="noopener noreferrer">chat de fiestas</a>.
-        </p>
+        <p class="fiestas-caseta-placeholder-copy">No tenemos información sobre la carta de esta caseta.</p>
+        <ul class="fiestas-caseta-placeholder-list">
+          <li>Puedes mandarnos una foto o el texto de sus pinchos y tapas al <a class="fiestas-caseta-placeholder-link" href="https://t.me/aldeapucela/59137" target="_blank" rel="noopener noreferrer">chat de fiestas</a>.</li>
+          <li>Puedes avisar al dueño o a los trabajadores de la caseta para que nos lo manden ellos y podamos valorar sus pinchos y tapas.</li>
+        </ul>
       </div>
     </section>
     {% endif %}

@@ -109,6 +109,7 @@ function renderDishList(list, dishes) {
           <strong>${escapeHtml(dish.dishName)}</strong>
           ${dish.dietary === 'vegetarian' ? '<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegetarian">Vegetariano</span>' : ''}
           ${dish.dietary === 'vegan' ? '<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegan">Vegano</span>' : ''}
+          ${dish.glutenFree ? '<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--gluten-free">Sin gluten</span>' : ''}
         </span>
         <span class="fiestas-popular-dish-caseta"><i class="fa-solid fa-store" aria-hidden="true"></i>${escapeHtml(dish.casetaName)}</span>
         <span class="fiestas-popular-dish-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(dish.location)}</span>
@@ -180,6 +181,7 @@ function buildDishIndex(casetas) {
           casetaName: caseta.name,
           dishName,
           dietary: item.dietary || '',
+          glutenFree: item.glutenFree === true,
           location: caseta.location || 'Ubicación por confirmar',
           color: caseta.color,
           url: `/c/${encodeURIComponent(caseta.id)}/${encodeURIComponent(caseta.slug)}/`
