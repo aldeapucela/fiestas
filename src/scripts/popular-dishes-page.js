@@ -102,14 +102,17 @@ function renderDishList(list, dishes) {
     link.className = 'fiestas-popular-dish-link';
     link.href = dish.url;
     link.setAttribute('aria-label', `${dish.dishName}, ${dish.casetaName}, ${dish.likeCount} me gusta`);
+    const dietaryPills = [
+      dish.dietary === 'vegetarian' ? '<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegetarian" role="img" aria-label="Vegetariano" title="Vegetariano"><i class="fa-solid fa-leaf" aria-hidden="true"></i></span>' : '',
+      dish.dietary === 'vegan' ? '<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegan" role="img" aria-label="Vegano" title="Vegano"><i class="fa-solid fa-seedling" aria-hidden="true"></i></span>' : '',
+      dish.glutenFree ? '<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--gluten-free" role="img" aria-label="Sin gluten" title="Sin gluten"><img class="fiestas-caseta-dietary-icon-image" src="/assets/icons/dietary-gluten-free.png" alt="" aria-hidden="true" /></span>' : ''
+    ].filter(Boolean).join('');
     link.innerHTML = `
       <span class="fiestas-popular-dish-icon" aria-hidden="true"><i class="fa-solid fa-utensils"></i></span>
       <span class="fiestas-popular-dish-copy">
         <span class="fiestas-popular-dish-title-line">
           <strong>${escapeHtml(dish.dishName)}</strong>
-          ${dish.dietary === 'vegetarian' ? '<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegetarian">Vegetariano</span>' : ''}
-          ${dish.dietary === 'vegan' ? '<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--vegan">Vegano</span>' : ''}
-          ${dish.glutenFree ? '<span class="fiestas-caseta-dietary-pill fiestas-caseta-dietary-pill--gluten-free">Sin gluten</span>' : ''}
+          ${dietaryPills ? `<span class="fiestas-caseta-dietary-pills">${dietaryPills}</span>` : ''}
         </span>
         <span class="fiestas-popular-dish-caseta"><i class="fa-solid fa-store" aria-hidden="true"></i>${escapeHtml(dish.casetaName)}</span>
         <span class="fiestas-popular-dish-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i>${escapeHtml(dish.location)}</span>

@@ -5370,7 +5370,7 @@ html.dark .fiestas-event-option {
 }
 
 .fiestas-casetas-filter-option-copy strong i {
-  color: #667085;
+  color: #98a2b3;
   transition: color 160ms ease;
 }
 
@@ -5886,7 +5886,15 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 
 .fiestas-caseta-menu-item-name {
   min-width: 0;
-  flex: 0 1 auto;
+  flex: 1 1 auto;
+}
+
+.fiestas-caseta-dietary-pills {
+  display: flex;
+  min-width: max-content;
+  flex: 0 0 auto;
+  align-items: center;
+  gap: 0.3rem;
 }
 
 .fiestas-caseta-menu-item-meta {
@@ -5972,27 +5980,72 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 
 .fiestas-caseta-dietary-pill {
   display: inline-flex;
+  width: 1.5rem;
+  height: 1.5rem;
   align-items: center;
+  justify-content: center;
   border-radius: 9999px;
-  padding: 0.12rem 0.45rem;
-  font-size: 0.68rem;
+  padding: 0;
+  font-size: 0.76rem;
   font-weight: 850;
   line-height: 1.25;
+  white-space: nowrap;
+}
+
+.fiestas-caseta-dietary-icon-image,
+.fiestas-caseta-dietary-legend-image {
+  width: 1rem;
+  height: 1rem;
+  object-fit: contain;
+}
+
+.fiestas-caseta-dietary-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.4rem 0.85rem;
+  margin-top: 1rem;
+  text-align: center;
+  color: #667085;
+  font-size: 0.74rem;
+  line-height: 1.3;
+}
+
+.fiestas-caseta-dietary-legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.fiestas-caseta-dietary-legend-icon {
+  font-size: 0.78rem;
+}
+
+.fiestas-caseta-dietary-legend-icon--vegetarian,
+.fiestas-caseta-dietary-pill--vegetarian {
+  color: #237a4b;
+}
+
+.fiestas-caseta-dietary-legend-icon--vegan,
+.fiestas-caseta-dietary-pill--vegan {
+  color: #126b42;
+}
+
+.fiestas-caseta-dietary-legend-icon--gluten-free,
+.fiestas-caseta-dietary-pill--gluten-free {
+  color: #925d14;
 }
 
 .fiestas-caseta-dietary-pill--vegetarian {
   background: #e6f5ec;
-  color: #237a4b;
 }
 
 .fiestas-caseta-dietary-pill--vegan {
   background: #d9f2e6;
-  color: #126b42;
 }
 
 .fiestas-caseta-dietary-pill--gluten-free {
   background: #fff0d7;
-  color: #925d14;
 }
 
 .fiestas-caseta-highlights {
@@ -6129,16 +6182,32 @@ html.dark .fiestas-caseta-menu-item-price {
 
 html.dark .fiestas-caseta-dietary-pill--vegetarian {
   background: #214333;
-  color: #a5e5bc;
 }
 
 html.dark .fiestas-caseta-dietary-pill--vegan {
   background: #1d4b36;
-  color: #a8ebc2;
 }
 
 html.dark .fiestas-caseta-dietary-pill--gluten-free {
   background: #4b3820;
+}
+
+html.dark .fiestas-caseta-dietary-legend {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-caseta-dietary-legend-icon--vegetarian,
+html.dark .fiestas-caseta-dietary-pill--vegetarian {
+  color: #a5e5bc;
+}
+
+html.dark .fiestas-caseta-dietary-legend-icon--vegan,
+html.dark .fiestas-caseta-dietary-pill--vegan {
+  color: #a8ebc2;
+}
+
+html.dark .fiestas-caseta-dietary-legend-icon--gluten-free,
+html.dark .fiestas-caseta-dietary-pill--gluten-free {
   color: #f7cc88;
 }
 
@@ -7627,13 +7696,14 @@ html.dark .fiestas-popular-dish-likes {
 .fiestas-popular-dish-title-line {
   display: flex;
   min-width: 0;
-  flex-wrap: wrap;
-  align-items: center;
+  flex-wrap: nowrap;
+  align-items: flex-start;
   gap: 0.4rem;
 }
 
 .fiestas-popular-dish-title-line strong {
   min-width: 0;
+  flex: 1 1 auto;
   color: #202532;
   font-size: 1rem;
   line-height: 1.25;
