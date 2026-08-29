@@ -521,9 +521,14 @@
     "title": "X Pucelarock: Juantxo Skalari & la Rude Band más artistas invitados",
     "location": "Paseo de las Moreras – Escenario pistas deportivas",
     "zone": "Moreras",
-    "description": "X Pucelarock: Juantxo Skalari & la Rude Band más artistas invitados",
-    "summary": "X Pucelarock: Juantxo Skalari & la Rude Band más artistas invitados",
-    "performances": [],
+    "description": "X Pucelarock celebra su programación en el Paseo de las Moreras. Actuaciones: Juantxo Skalari & la Rude Band | Amarmal | Reas | Rattenkrieb.",
+    "summary": "Actuaciones: Juantxo Skalari & la Rude Band | Amarmal | Reas | Rattenkrieb.",
+    "performances": [
+      "Juantxo Skalari & la Rude Band",
+      "Amarmal",
+      "Reas",
+      "Rattenkrieb"
+    ],
     "organizers": [
       "Otra Pucela es Posible"
     ],
@@ -2020,9 +2025,14 @@
     "title": "Arde´26",
     "location": "Museo Patio Herreriano. Patio de los Reyes",
     "zone": "Museo Patio Herreriano. Patio de los Reyes",
-    "description": "Arde´26. Quinta Edición: Chus + Ceballos, Óscar de Rivera, Edu Sabanah y Arte Visual Héctor de la Puente",
-    "summary": "Arde´26. Quinta Edición: Chus + Ceballos, Óscar de Rivera, Edu Sabanah y Arte Visual Héctor de la Puente",
-    "performances": [],
+    "description": "Arde´26 Quinta Edición reúne electrónica y arte visual en el Museo Patio Herreriano. Actuaciones: Chus + Ceballos | Óscar de Rivera | Edu Sabanah | Arte Visual Héctor de la Puente.",
+    "summary": "Actuaciones: Chus + Ceballos | Óscar de Rivera | Edu Sabanah | Arte Visual Héctor de la Puente.",
+    "performances": [
+      "Chus + Ceballos",
+      "Óscar de Rivera",
+      "Edu Sabanah",
+      "Arte Visual Héctor de la Puente"
+    ],
     "organizers": [
       "Concejalía de Turismo, Eventos y Marca Ciudad"
     ],
@@ -13691,19 +13701,26 @@
     "date": "2026-09-13",
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "19:30",
-    "endTime": null,
+    "endTime": "20:30",
     "title": "Casa con Dos Puertas Mala Es de Guardar",
     "location": "Sala Borja",
     "zone": "Sala Borja",
-    "description": "Casa con Dos Puertas Mala Es de Guardar\n\nInformación ampliada: La obra de teatro ‘Casa con dos puertas’, escrita por el célebre autor Calderón de la Barca, se presentará el próximo 13 de septiembre a las 20:00 horas. El evento tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una oportunidad para disfrutar de un clásico del Siglo de Oro.",
-    "summary": "La obra de teatro ‘Casa con dos puertas’, escrita por el célebre autor Calderón de la Barca, se presentará el próximo 13 de septiembre a las 20:00 horas. El evento tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una oportunidad para disfrutar de un clásico del Siglo de Oro.",
+    "description": "Casa con Dos Puertas Mala Es de Guardar\n\nInformación ampliada: La obra de teatro “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca, se representa el domingo 13 de septiembre a las 19:30 horas en la Sala Borja. Organiza Teatro Arcón de Olid.",
+    "summary": "La obra de teatro “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca, se representa el domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Teatro Arcón de Olid"
+    ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.65274,
-      "lng": -4.720446,
-      "source": "OpenStreetMap Nominatim"
+      "lat": 41.6527404,
+      "lng": -4.7204461,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7102357207,
+      "query": "Sala Borja, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-26T17:02:56.437Z"
     },
     "type": "Teatro",
     "ticket": {
@@ -14399,7 +14416,7 @@
       "required": true,
       "status": "paid",
       "label": "10 € adultos · 5 € niños",
-      "url": null,
+      "url": "https://elgranviaje.es/",
       "note": "Entrada de pago."
     },
     "tags": [
@@ -14634,56 +14651,24 @@
     "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: Sarabel.",
+    "summary": "Actuaciones: Sarabel.",
+    "performances": [
+      "Sarabel"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 442,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Sofía Gabanna (Concierto)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/77db39a03497be519632cf026dd142ef56043dcf_2_781x1024.jpeg",
-    "location": "Las Moreras",
-    "zone": "Moreras",
-    "description": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en Las Moreras, un espacio emblemático de la ciudad de Valladolid.",
-    "summary": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en Las Moreras, un espacio emblemático de la ciudad de Valladolid.",
-    "performances": [],
-    "organizers": [
-      "Ayuntamiento de Valladolid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.656469,
-      "lng": -4.7325665,
+      "lat": 41.6542704,
+      "lng": -4.7230017,
       "source": "OpenStreetMap Nominatim",
       "osmType": "way",
-      "osmId": 43308194,
-      "query": "Las Moreras, Valladolid, España",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
       "accuracy": 1,
-      "geocodedAt": "2026-08-25T19:53:52.431Z"
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -15325,162 +15310,6 @@
     ]
   },
   {
-    "id": 464,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "ADN Club en Moss Club (Evento)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3d69f16a37751c05ccbc10fad3528dbbe3bfab59_2_819x1024.jpeg",
-    "location": "Moss Club",
-    "zone": "Zona Centro",
-    "description": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
-    "summary": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
-    "performances": [],
-    "organizers": [
-      "ADN Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6552616,
-      "lng": -4.7382618,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 101589975,
-      "query": "Moss Club, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-26T17:02:56.435Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 465,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": null,
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-26T17:02:56.436Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 467,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "01:00",
-    "endTime": "08:00",
-    "title": "Assceussion Rave (Fiestas San Lorenzo)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/eb5f425c2edafc8c38ac9bb226460b20bc85bc0f_2_819x1024.jpeg",
-    "location": "Moss Club",
-    "zone": "Zona Centro",
-    "description": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
-    "summary": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
-    "performances": [],
-    "organizers": [
-      "Hirecut Bookings"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6552616,
-      "lng": -4.7382618,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 101589975,
-      "query": "Moss Club, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-26T17:02:56.436Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 468,
-    "date": "2026-09-13",
-    "dateLabel": "Domingo 13 de septiembre",
-    "startTime": "19:30",
-    "endTime": "20:30",
-    "title": "Casa con dos puertas (Obra de teatro)",
-    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/8/8060ca0dc4314c64c68611b46e4e45833b8b00f6.jpeg",
-    "location": "Teatro Arcón de Olid (Sala Borja)",
-    "zone": "Zona Centro",
-    "description": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
-    "summary": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
-    "performances": [],
-    "organizers": [
-      "Teatro Arcón de Olid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6527404,
-      "lng": -4.7204461,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 7102357207,
-      "query": "Sala Borja, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-26T17:02:56.437Z"
-    },
-    "type": "Teatro",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Teatro"
-    ]
-  },
-  {
     "id": 469,
     "date": "2026-09-10",
     "dateLabel": "Jueves 10 de septiembre",
@@ -15507,7 +15336,7 @@
       "required": true,
       "status": "paid",
       "label": "10 € adultos · 5 € niños",
-      "url": null,
+      "url": "https://elgranviaje.es/",
       "note": "Entrada de pago."
     },
     "tags": [
@@ -15541,7 +15370,7 @@
       "required": true,
       "status": "paid",
       "label": "10 € adultos · 5 € niños",
-      "url": null,
+      "url": "https://elgranviaje.es/",
       "note": "Entrada de pago."
     },
     "tags": [
@@ -15575,7 +15404,7 @@
       "required": true,
       "status": "paid",
       "label": "10 € adultos · 5 € niños",
-      "url": null,
+      "url": "https://elgranviaje.es/",
       "note": "Entrada de pago."
     },
     "tags": [
@@ -15609,42 +15438,8 @@
       "required": true,
       "status": "paid",
       "label": "10 € adultos · 5 € niños",
-      "url": null,
+      "url": "https://elgranviaje.es/",
       "note": "Entrada de pago."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
-    "id": 473,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine. El evento se celebra del 9 al 13 de septiembre de 2026.",
-    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine.",
-    "performances": [],
-    "organizers": [
-      "El Gran Viaje. Partida y Regreso"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
     },
     "tags": [
       "Otros"
@@ -15690,297 +15485,31 @@
     ]
   },
   {
-    "id": 475,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.668Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 476,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.668Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 477,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.668Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 478,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.668Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 479,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.668Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 480,
-    "date": "2026-09-10",
-    "dateLabel": "Jueves 10 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.668Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 481,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.668Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 482,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "21:00",
-    "endTime": "21:00",
+    "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: El Perrez.",
+    "summary": "Actuaciones: El Perrez.",
+    "performances": [
+      "El Perrez"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6542704,
+      "lng": -4.7230017,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -15999,20 +15528,27 @@
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "21:00",
-    "endTime": "21:00",
+    "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: Cristina Lázaro.",
+    "summary": "Actuaciones: Cristina Lázaro.",
+    "performances": [
+      "Cristina Lázaro"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6542704,
+      "lng": -4.7230017,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -16031,20 +15567,27 @@
     "date": "2026-09-07",
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "21:00",
-    "endTime": "21:00",
+    "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: Santi Borja.",
+    "summary": "Actuaciones: Santi Borja.",
+    "performances": [
+      "Santi Borja"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6542704,
+      "lng": -4.7230017,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -16063,20 +15606,27 @@
     "date": "2026-09-08",
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "21:00",
-    "endTime": "21:00",
+    "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: De Alma.",
+    "summary": "Actuaciones: De Alma.",
+    "performances": [
+      "De Alma"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6542704,
+      "lng": -4.7230017,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -16095,20 +15645,27 @@
     "date": "2026-09-09",
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "21:00",
-    "endTime": "21:00",
+    "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: Pin y Manu de Los Lunares.",
+    "summary": "Actuaciones: Pin y Manu de Los Lunares.",
+    "performances": [
+      "Pin y Manu de Los Lunares"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6542704,
+      "lng": -4.7230017,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -16127,20 +15684,27 @@
     "date": "2026-09-10",
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "21:00",
-    "endTime": "21:00",
+    "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: Agüita Sala.",
+    "summary": "Actuaciones: Agüita Sala.",
+    "performances": [
+      "Agüita Sala"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6542704,
+      "lng": -4.7230017,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -16159,20 +15723,27 @@
     "date": "2026-09-11",
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "21:00",
-    "endTime": "21:00",
+    "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: Los Lunares.",
+    "summary": "Actuaciones: Los Lunares.",
+    "performances": [
+      "Los Lunares"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6542704,
+      "lng": -4.7230017,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -16191,20 +15762,27 @@
     "date": "2026-09-12",
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "21:00",
-    "endTime": "21:00",
+    "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: Aire de Fragua.",
+    "summary": "Actuaciones: Aire de Fragua.",
+    "performances": [
+      "Aire de Fragua"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6542704,
+      "lng": -4.7230017,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -16228,9 +15806,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
     "location": "Feria de Valladolid",
     "zone": "Auditorio Feria",
-    "description": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "summary": "La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
-    "performances": [],
+    "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: Fran Pahiño.",
+    "summary": "Actuaciones: Fran Pahiño.",
+    "performances": [
+      "Fran Pahiño"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -16260,9 +15840,13 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3f4584e8851163932ed5b9cc552fb89d8dfc086c_2_768x1024.jpeg",
     "location": "Calle Ebanistería, 2 (Zona Cantarranas)",
     "zone": "Zona Centro",
-    "description": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "summary": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "performances": [],
+    "description": "Agenda de electrónica avanzada Apya durante las Fiestas de Valladolid 2026. Actuaciones: Elegante | Delera | Jmorrison.",
+    "summary": "Actuaciones: Elegante | Delera | Jmorrison.",
+    "performances": [
+      "Elegante",
+      "Delera",
+      "Jmorrison"
+    ],
     "organizers": [
       "Apya"
     ],
@@ -16295,9 +15879,12 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3f4584e8851163932ed5b9cc552fb89d8dfc086c_2_768x1024.jpeg",
     "location": "Calle Ebanistería, 2 (Zona Cantarranas)",
     "zone": "Zona Centro",
-    "description": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "summary": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "performances": [],
+    "description": "Agenda de electrónica avanzada Apya durante las Fiestas de Valladolid 2026. Actuaciones: Sirc Sadie | Exme.",
+    "summary": "Actuaciones: Sirc Sadie | Exme.",
+    "performances": [
+      "Sirc Sadie",
+      "Exme"
+    ],
     "organizers": [
       "Apya"
     ],
@@ -16330,9 +15917,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3f4584e8851163932ed5b9cc552fb89d8dfc086c_2_768x1024.jpeg",
     "location": "Calle Ebanistería, 2 (Zona Cantarranas)",
     "zone": "Zona Centro",
-    "description": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "summary": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "performances": [],
+    "description": "Agenda de electrónica avanzada Apya durante las Fiestas de Valladolid 2026. Actuaciones: Manhu.",
+    "summary": "Actuaciones: Manhu.",
+    "performances": [
+      "Manhu"
+    ],
     "organizers": [
       "Apya"
     ],
@@ -16365,9 +15954,12 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3f4584e8851163932ed5b9cc552fb89d8dfc086c_2_768x1024.jpeg",
     "location": "Calle Ebanistería, 2 (Zona Cantarranas)",
     "zone": "Zona Centro",
-    "description": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "summary": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "performances": [],
+    "description": "Agenda de electrónica avanzada Apya durante las Fiestas de Valladolid 2026. Actuaciones: Javi Burgos | Santi.",
+    "summary": "Actuaciones: Javi Burgos | Santi.",
+    "performances": [
+      "Javi Burgos",
+      "Santi"
+    ],
     "organizers": [
       "Apya"
     ],
@@ -16400,9 +15992,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3f4584e8851163932ed5b9cc552fb89d8dfc086c_2_768x1024.jpeg",
     "location": "Calle Ebanistería, 2 (Zona Cantarranas)",
     "zone": "Zona Centro",
-    "description": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "summary": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "performances": [],
+    "description": "Agenda de electrónica avanzada Apya durante las Fiestas de Valladolid 2026. Actuaciones: Rubio (Camarote).",
+    "summary": "Actuaciones: Rubio (Camarote).",
+    "performances": [
+      "Rubio (Camarote)"
+    ],
     "organizers": [
       "Apya"
     ],
@@ -16435,9 +16029,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3f4584e8851163932ed5b9cc552fb89d8dfc086c_2_768x1024.jpeg",
     "location": "Calle Ebanistería, 2 (Zona Cantarranas)",
     "zone": "Zona Centro",
-    "description": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "summary": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "performances": [],
+    "description": "Agenda de electrónica avanzada Apya durante las Fiestas de Valladolid 2026. Actuaciones: Manhu.",
+    "summary": "Actuaciones: Manhu.",
+    "performances": [
+      "Manhu"
+    ],
     "organizers": [
       "Apya"
     ],
@@ -16470,9 +16066,13 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3f4584e8851163932ed5b9cc552fb89d8dfc086c_2_768x1024.jpeg",
     "location": "Calle Ebanistería, 2 (Zona Cantarranas)",
     "zone": "Zona Centro",
-    "description": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "summary": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "performances": [],
+    "description": "Agenda de electrónica avanzada Apya durante las Fiestas de Valladolid 2026. Actuaciones: Escalante | Element | Jorge PSK (Techno Room).",
+    "summary": "Actuaciones: Escalante | Element | Jorge PSK (Techno Room).",
+    "performances": [
+      "Escalante",
+      "Element",
+      "Jorge PSK (Techno Room)"
+    ],
     "organizers": [
       "Apya"
     ],
@@ -16505,9 +16105,12 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3f4584e8851163932ed5b9cc552fb89d8dfc086c_2_768x1024.jpeg",
     "location": "Calle Ebanistería, 2 (Zona Cantarranas)",
     "zone": "Zona Centro",
-    "description": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "summary": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "performances": [],
+    "description": "Agenda de electrónica avanzada Apya durante las Fiestas de Valladolid 2026. Actuaciones: Rodserious | AK 47.",
+    "summary": "Actuaciones: Rodserious | AK 47.",
+    "performances": [
+      "Rodserious",
+      "AK 47"
+    ],
     "organizers": [
       "Apya"
     ],
@@ -16540,9 +16143,13 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3f4584e8851163932ed5b9cc552fb89d8dfc086c_2_768x1024.jpeg",
     "location": "Calle Ebanistería, 2 (Zona Cantarranas)",
     "zone": "Zona Centro",
-    "description": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "summary": "La agenda de eventos de electrónica avanzada Apya presenta una serie de sesiones musicales programadas para las fiestas de Valladolid. Las actuaciones tendrán lugar en la calle Ebanistería 2, concretamente en la zona de Cantarranas, durante el mes de septiembre.",
-    "performances": [],
+    "description": "Agenda de electrónica avanzada Apya durante las Fiestas de Valladolid 2026. Actuaciones: Escalante | Element | Jorge PSK (Techno Room).",
+    "summary": "Actuaciones: Escalante | Element | Jorge PSK (Techno Room).",
+    "performances": [
+      "Escalante",
+      "Element",
+      "Jorge PSK (Techno Room)"
+    ],
     "organizers": [
       "Apya"
     ],
@@ -16575,9 +16182,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
     "zone": "Zona Centro",
-    "description": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "summary": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "performances": [],
+    "description": "Vermú Torero ofrece conciertos en Calle María Molina desde las 13:30. Actuaciones: Los Lunares.",
+    "summary": "Actuaciones: Los Lunares.",
+    "performances": [
+      "Los Lunares"
+    ],
     "organizers": [
       "Pico Fino, El Angelito y Salaveinte"
     ],
@@ -16614,48 +16223,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
     "zone": "Zona Centro",
-    "description": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "summary": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "performances": [],
-    "organizers": [
-      "Pico Fino, El Angelito y Salaveinte"
+    "description": "Vermú Torero ofrece conciertos en Calle María Molina desde las 13:30. Actuaciones: Santi Borja.",
+    "summary": "Actuaciones: Santi Borja.",
+    "performances": [
+      "Santi Borja"
     ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6496567,
-      "lng": -4.7304819,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33755553,
-      "query": "Calle María Molina, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.670Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 502,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "13:30",
-    "endTime": "13:30",
-    "title": "Vermú Torero (Conciertos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
-    "location": "Calle María Molina",
-    "zone": "Zona Centro",
-    "description": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "summary": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "performances": [],
     "organizers": [
       "Pico Fino, El Angelito y Salaveinte"
     ],
@@ -16692,48 +16264,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
     "zone": "Zona Centro",
-    "description": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "summary": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "performances": [],
-    "organizers": [
-      "Pico Fino, El Angelito y Salaveinte"
+    "description": "Vermú Torero ofrece conciertos en Calle María Molina desde las 13:30. Actuaciones: D’Alma Flamenco Fusión.",
+    "summary": "Actuaciones: D’Alma Flamenco Fusión.",
+    "performances": [
+      "D’Alma Flamenco Fusión"
     ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6496567,
-      "lng": -4.7304819,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33755553,
-      "query": "Calle María Molina, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.670Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 504,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "13:30",
-    "endTime": "13:30",
-    "title": "Vermú Torero (Conciertos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
-    "location": "Calle María Molina",
-    "zone": "Zona Centro",
-    "description": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "summary": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "performances": [],
     "organizers": [
       "Pico Fino, El Angelito y Salaveinte"
     ],
@@ -16770,9 +16305,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
     "zone": "Zona Centro",
-    "description": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "summary": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "performances": [],
+    "description": "Vermú Torero ofrece conciertos en Calle María Molina desde las 13:30. Actuaciones: Sarao de los Flamenkitos.",
+    "summary": "Actuaciones: Sarao de los Flamenkitos.",
+    "performances": [
+      "Sarao de los Flamenkitos"
+    ],
     "organizers": [
       "Pico Fino, El Angelito y Salaveinte"
     ],
@@ -16809,9 +16346,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
     "zone": "Zona Centro",
-    "description": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "summary": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "performances": [],
+    "description": "Vermú Torero ofrece conciertos en Calle María Molina desde las 13:30. Actuaciones: Yaiza Herrero.",
+    "summary": "Actuaciones: Yaiza Herrero.",
+    "performances": [
+      "Yaiza Herrero"
+    ],
     "organizers": [
       "Pico Fino, El Angelito y Salaveinte"
     ],
@@ -16848,9 +16387,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
     "zone": "Zona Centro",
-    "description": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "summary": "El ciclo de conciertos Vermú Torero se despliega en la calle María Molina con una programación variada que invita a disfrutar del ambiente festivo. Las actuaciones comienzan cada jornada a partir de las 13:30h, ofreciendo una alternativa musical para acompañar el almuerzo.",
-    "performances": [],
+    "description": "Vermú Torero ofrece conciertos en Calle María Molina desde las 13:30. Actuaciones: DJ Catarro.",
+    "summary": "Actuaciones: DJ Catarro.",
+    "performances": [
+      "DJ Catarro"
+    ],
     "organizers": [
       "Pico Fino, El Angelito y Salaveinte"
     ],
@@ -16887,48 +16428,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
     "location": "Calle Campanas",
     "zone": "Zona Centro",
-    "description": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "performances": [],
-    "organizers": [
-      "El Campanazo"
+    "description": "El Campanazo celebra actuaciones en Calle Campanas en honor a la Virgen de San Lorenzo. Actuaciones: Los Pibes.",
+    "summary": "Actuaciones: Los Pibes.",
+    "performances": [
+      "Los Pibes"
     ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.5294524,
-      "lng": -4.7533278,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 228399116,
-      "query": "Calle Campanas, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.670Z"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
-    "id": 509,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "17:30",
-    "endTime": "20:30",
-    "title": "Ferias 2026 El Campanazo",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
-    "location": "Calle Campanas",
-    "zone": "Zona Centro",
-    "description": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "performances": [],
     "organizers": [
       "El Campanazo"
     ],
@@ -16965,9 +16469,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
     "location": "Calle Campanas",
     "zone": "Zona Centro",
-    "description": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "performances": [],
+    "description": "El Campanazo celebra actuaciones en Calle Campanas en honor a la Virgen de San Lorenzo. Actuaciones: George Whaley.",
+    "summary": "Actuaciones: George Whaley.",
+    "performances": [
+      "George Whaley"
+    ],
     "organizers": [
       "El Campanazo"
     ],
@@ -17004,48 +16510,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
     "location": "Calle Campanas",
     "zone": "Zona Centro",
-    "description": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "performances": [],
-    "organizers": [
-      "El Campanazo"
+    "description": "El Campanazo celebra actuaciones en Calle Campanas en honor a la Virgen de San Lorenzo. Actuaciones: Berni & Jorge Tejedor.",
+    "summary": "Actuaciones: Berni & Jorge Tejedor.",
+    "performances": [
+      "Berni & Jorge Tejedor"
     ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.5294524,
-      "lng": -4.7533278,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 228399116,
-      "query": "Calle Campanas, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-27T16:57:32.670Z"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
-    "id": 512,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "17:30",
-    "endTime": "20:30",
-    "title": "Ferias 2026 El Campanazo",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
-    "location": "Calle Campanas",
-    "zone": "Zona Centro",
-    "description": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "performances": [],
     "organizers": [
       "El Campanazo"
     ],
@@ -17082,9 +16551,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
     "location": "Calle Campanas",
     "zone": "Zona Centro",
-    "description": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "performances": [],
+    "description": "El Campanazo celebra actuaciones en Calle Campanas en honor a la Virgen de San Lorenzo. Actuaciones: DJ Catarro.",
+    "summary": "Actuaciones: DJ Catarro.",
+    "performances": [
+      "DJ Catarro"
+    ],
     "organizers": [
       "El Campanazo"
     ],
@@ -17121,9 +16592,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
     "location": "Calle Campanas",
     "zone": "Zona Centro",
-    "description": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "performances": [],
+    "description": "El Campanazo celebra actuaciones en Calle Campanas en honor a la Virgen de San Lorenzo. Actuaciones: Los de la Monda.",
+    "summary": "Actuaciones: Los de la Monda.",
+    "performances": [
+      "Los de la Monda"
+    ],
     "organizers": [
       "El Campanazo"
     ],
@@ -17160,9 +16633,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
     "location": "Calle Campanas",
     "zone": "Zona Centro",
-    "description": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "performances": [],
+    "description": "El Campanazo celebra actuaciones en Calle Campanas en honor a la Virgen de San Lorenzo. Actuaciones: Apulse & Joel Marashi.",
+    "summary": "Actuaciones: Apulse & Joel Marashi.",
+    "performances": [
+      "Apulse & Joel Marashi"
+    ],
     "organizers": [
       "El Campanazo"
     ],
@@ -17229,142 +16704,6 @@
     ]
   },
   {
-    "id": 517,
-    "date": "2026-09-10",
-    "dateLabel": "Jueves 10 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine. El evento se celebra del 9 al 13 de septiembre de 2026.",
-    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine.",
-    "performances": [],
-    "organizers": [
-      "El Gran Viaje. Partida y Regreso"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
-    "id": 518,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine. El evento se celebra del 9 al 13 de septiembre de 2026.",
-    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine.",
-    "performances": [],
-    "organizers": [
-      "El Gran Viaje. Partida y Regreso"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
-    "id": 519,
-    "date": "2026-09-12",
-    "dateLabel": "Sábado 12 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine. El evento se celebra del 9 al 13 de septiembre de 2026.",
-    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine.",
-    "performances": [],
-    "organizers": [
-      "El Gran Viaje. Partida y Regreso"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
-    "id": 520,
-    "date": "2026-09-13",
-    "dateLabel": "Domingo 13 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
-    "description": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine. El evento se celebra del 9 al 13 de septiembre de 2026.",
-    "summary": "El Gran Viaje. Partida y Regreso llega a la Feria de Valladolid del 9 al 13 de septiembre de 2026. Esta propuesta se presenta como una experiencia inmersiva diseñada para transportar a los asistentes a la Tierra Media, celebrando el legado de la saga de fantasía más importante de la historia del cine.",
-    "performances": [],
-    "organizers": [
-      "El Gran Viaje. Partida y Regreso"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
     "id": 521,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
@@ -17374,9 +16713,12 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2d9d1f34500f25a937b6eaaf6cbd42c136d3499a_2_698x1024.jpeg",
     "location": "Martin “El Catarro”, Calle El Catarro, 24",
     "zone": "Zona Centro",
-    "description": "El próximo viernes 4 de septiembre de 2026, el local Martin “El Catarro” en Valladolid acogerá una velada musical imperdible. La cita comenzará a partir de las 20:00 horas, ofreciendo un ambiente ideal para disfrutar de la música y la compañía.",
-    "summary": "El próximo viernes 4 de septiembre de 2026, el local Martin “El Catarro” en Valladolid acogerá una velada musical imperdible. La cita comenzará a partir de las 20:00 horas, ofreciendo un ambiente ideal para disfrutar de la música y la compañía.",
-    "performances": [],
+    "description": "El local Martin “El Catarro” acoge una velada musical el viernes 4 de septiembre de 2026. Actuaciones: Les Castizos | Jorge Tejedor.",
+    "summary": "Actuaciones: Les Castizos | Jorge Tejedor.",
+    "performances": [
+      "Les Castizos",
+      "Jorge Tejedor"
+    ],
     "organizers": [
       "Martin “El Catarro”"
     ],
