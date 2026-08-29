@@ -18075,5 +18075,785 @@
     "tags": [
       "Teatro"
     ]
+  },
+  {
+    "id": 553,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 554,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 555,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 556,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 557,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 558,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 559,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 560,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 561,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 562,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Ferias Virgen de San Lorenzo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza Poniente, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:08.678Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 563,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "17:30",
+    "endTime": "18:30",
+    "title": "Los Jarabo y DJ Flaco",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1a7e7694fe719540d7f79b4f5f6ead135aa6e4e4_2_634x1024.jpeg",
+    "location": "Calle Empecinado 5",
+    "zone": "Zona Centro",
+    "description": "Los Jarabo y DJ Flaco se presentan en un evento especial este próximo sábado 5 de septiembre. La cita tendrá lugar en la Calle Empecinado 5, comenzando la actividad a las 17:30 horas.",
+    "summary": "Los Jarabo y DJ Flaco se presentan en un evento especial este próximo sábado 5 de septiembre. La cita tendrá lugar en la Calle Empecinado 5, comenzando la actividad a las 17:30 horas.",
+    "performances": [],
+    "organizers": [
+      "bicorecords"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Calle Empecinado 5, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:11.039Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 564,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Vuelve el Cotorrazo (Programación musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
+    "location": "Maricarmen, C/ Caridad 2",
+    "zone": "Zona Centro",
+    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "performances": [],
+    "organizers": [
+      "Maricarmen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.651627,
+      "lng": -4.7303585,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 9251479606,
+      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:12.186Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 565,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Vuelve el Cotorrazo (Programación musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
+    "location": "Maricarmen, C/ Caridad 2",
+    "zone": "Zona Centro",
+    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "performances": [],
+    "organizers": [
+      "Maricarmen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.651627,
+      "lng": -4.7303585,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 9251479606,
+      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:12.186Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 566,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Vuelve el Cotorrazo (Programación musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
+    "location": "Maricarmen, C/ Caridad 2",
+    "zone": "Zona Centro",
+    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "performances": [],
+    "organizers": [
+      "Maricarmen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.651627,
+      "lng": -4.7303585,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 9251479606,
+      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:12.186Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 567,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Vuelve el Cotorrazo (Programación musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
+    "location": "Maricarmen, C/ Caridad 2",
+    "zone": "Zona Centro",
+    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "performances": [],
+    "organizers": [
+      "Maricarmen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.651627,
+      "lng": -4.7303585,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 9251479606,
+      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:12.186Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 568,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Vuelve el Cotorrazo (Programación musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
+    "location": "Maricarmen, C/ Caridad 2",
+    "zone": "Zona Centro",
+    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "performances": [],
+    "organizers": [
+      "Maricarmen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.651627,
+      "lng": -4.7303585,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 9251479606,
+      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:12.186Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 569,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Vuelve el Cotorrazo (Programación musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
+    "location": "Maricarmen, C/ Caridad 2",
+    "zone": "Zona Centro",
+    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "performances": [],
+    "organizers": [
+      "Maricarmen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.651627,
+      "lng": -4.7303585,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 9251479606,
+      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:12.186Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 570,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Vuelve el Cotorrazo (Programación musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
+    "location": "Maricarmen, C/ Caridad 2",
+    "zone": "Zona Centro",
+    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "performances": [],
+    "organizers": [
+      "Maricarmen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.651627,
+      "lng": -4.7303585,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 9251479606,
+      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:12.186Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 571,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Vuelve el Cotorrazo (Programación musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
+    "location": "Maricarmen, C/ Caridad 2",
+    "zone": "Zona Centro",
+    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "performances": [],
+    "organizers": [
+      "Maricarmen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.651627,
+      "lng": -4.7303585,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 9251479606,
+      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:12.186Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 572,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "20:30",
+    "endTime": "21:30",
+    "title": "Lolita Pantera (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e466bf922aa76c56c7e60925772b381851234f1d_2_1024x1022.jpeg",
+    "location": "Bar Kalathos",
+    "zone": "Zona Centro",
+    "description": "Lolita Pantera llega al Bar Kalathos para ofrecer una actuación musical en directo el próximo domingo 06 de septiembre. La cita tendrá lugar a las 20:30 horas en este conocido espacio de ocio.",
+    "summary": "Lolita Pantera llega al Bar Kalathos para ofrecer una actuación musical en directo el próximo domingo 06 de septiembre. La cita tendrá lugar a las 20:30 horas en este conocido espacio de ocio.",
+    "performances": [],
+    "organizers": [
+      "Bar Kalathos"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6532025,
+      "lng": -4.7241208,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4848168987,
+      "query": "Bar Kalathos, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T18:02:13.335Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
   }
 ]
