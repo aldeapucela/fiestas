@@ -11,21 +11,19 @@ test('extrae el contenido del QR sin anidar otro documento SVG', () => {
   });
 });
 
-test('genera un cartel QR autónomo sin el pie redundante', () => {
+test('genera un cartel QR sobre la plantilla visual sin duplicar su composición', () => {
   const poster = createCasetaQrPosterSvg({
     qrSvg,
-    logoDataUri: 'data:image/png;base64,logo',
+    posterBaseDataUri: 'data:image/jpeg;base64,poster-base',
     siteUrl: 'https://fiestas.aldeapucela.org/c/z1-05/la-criolla/'
   });
 
-  assert.match(poster, /Valora nuestros/);
-  assert.match(poster, /ESCANEA EL CÓDIGO/);
-  assert.match(poster, /fiestas\.aldeapucela\.org/);
-  assert.match(poster, /data:image\/png;base64,logo/);
+  assert.match(poster, /data:image\/jpeg;base64,poster-base/);
+  assert.match(poster, /viewBox="0 0 904 1280"/);
+  assert.match(poster, /<rect x="280" y="825" width="346" height="344"/);
+  assert.match(poster, /translate\(304 849\)/);
   assert.equal((poster.match(/<svg\b/g) || []).length, 1);
-  assert.doesNotMatch(poster, /letter-spacing=/);
-  assert.doesNotMatch(poster, /Escanea para descubrir y valorar\./);
-  assert.doesNotMatch(poster, /La Criolla/);
+  assert.doesNotMatch(poster, /<text /);
 });
 
 test('compacta una matriz QR en una imagen SVG válida', () => {
