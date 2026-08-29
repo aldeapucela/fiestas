@@ -1330,6 +1330,97 @@
         "lng": -4.7281232,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria a elegir",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-guiso-dia",
+                "name": "Guiso del día"
+              },
+              {
+                "id": "pincho-chorizo",
+                "name": "Chorizo"
+              },
+              {
+                "id": "pincho-serranito",
+                "name": "Serranito",
+                "description": "(LOMO, JAMÓN Y PIMIENTOS)"
+              },
+              {
+                "id": "pincho-pinc-ho-moruno",
+                "name": "Pincho moruno"
+              },
+              {
+                "id": "pincho-hamburguesa",
+                "name": "Hamburguesa"
+              },
+              {
+                "id": "pincho-panceta",
+                "name": "Panceta"
+              },
+              {
+                "id": "pincho-raba",
+                "name": "Raba"
+              },
+              {
+                "id": "pincho-croqueton",
+                "name": "Croquetón"
+              },
+              {
+                "id": "pincho-pechuguito",
+                "name": "Pechuguito"
+              },
+              {
+                "id": "pincho-tosta-gambas",
+                "name": "Tosta de gambas"
+              }
+            ]
+          },
+          {
+            "title": "Otros",
+            "votable": false,
+            "items": [
+              {
+                "id": "pincho-unidad",
+                "name": "Pincho",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-cana-vino-mosto",
+                "name": "Caña, vino, mosto",
+                "price": "1,50€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1,20€"
+              },
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito",
+                "price": "1,50€"
+              },
+              {
+                "id": "bebida-refrescos",
+                "name": "Refrescos",
+                "price": "2,00€"
+              },
+              {
+                "id": "postre-tarta-queso",
+                "name": "Tarta de queso",
+                "price": "2,50€"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "CON CAÑA, VINO, AGUA, MOSTO 2,80€",
+          "CON REFRESCO 3,50€"
+        ]
       }
     },
     {
