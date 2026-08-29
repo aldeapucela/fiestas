@@ -1066,6 +1066,48 @@
     ]
   },
   {
+    "id": 523,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de Casa de Cultura y Hogar Navarro y Casa de Ávila",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de Casa de Cultura y Hogar Navarro y Casa de Ávila.",
+    "summary": "Izado de las banderas de Casa de Cultura y Hogar Navarro y Casa de Ávila.",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
     "id": 29,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
@@ -2228,24 +2270,33 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "XLIII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "XLIII feria de folklore y gastronomía: Acordes Navarros de Estella y La Muralla",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLIII feria de folklore y gastronomía. Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero la verbena de Fevapeñas IX Edición. Actuación de Disco Móvil Fórmula 1",
-    "summary": "XLIII feria de folklore y gastronomía. Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero la verbena de Fevapeñas IX Edición. Actuación de Disco Móvil Fórmula 1",
+    "description": "XLIII Feria de Folklore y Gastronomía. Actuaciones: grupos “Acordes Navarros de Estella” (Navarra) y “La Muralla” (Ávila).",
+    "summary": "Actuaciones de los grupos “Acordes Navarros de Estella” (Navarra) y “La Muralla” (Ávila).",
     "performances": [
-      "Actuaciones: Grupos “Acordes Navarros de Estrella” (Navarra) y “La Muralla” (Ávila) del Duero la verbena de Fevapeñas IX Edición. Actuación de Disco Móvil Fórmula 1"
+      "Acordes Navarros de Estella",
+      "La Muralla"
     ],
     "organizers": [
-      "Fevapeñas"
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
     ],
-    "collaborators": [],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
-    "type": "Música",
+    "type": "Folklore",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -2254,10 +2305,9 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
+      "Folklore",
       "Música",
-      "Peñas",
-      "Gastronomía",
-      "Folklore"
+      "Gastronomía"
     ]
   },
   {
@@ -3070,18 +3120,28 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "13:00",
     "endTime": null,
-    "title": "XLIII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "Inauguración oficial de la XLIII feria de folklore y gastronomía",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLIII feria de folklore y gastronomía. Inauguración oficial: desfile e Izado de banderas",
-    "summary": "XLIII feria de folklore y gastronomía. Inauguración oficial: desfile e Izado de banderas",
+    "description": "Inauguración oficial con desfile e izado de las banderas de España, Castilla y León, Valladolid, Federación de Casas Regionales y Provinciales en Castilla y León, Casa de Canarias y Centro Asturiano.",
+    "summary": "Inauguración oficial con desfile e izado de banderas.",
     "performances": [],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Folklore",
     "ticket": {
@@ -4278,20 +4338,31 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "XLIII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "XLIII feria de folklore y gastronomía: El Golpito y Los Trasgos",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLIII feria de folklore y gastronomía. Actuaciones: Parranda “El Golpito” (Canarias) y banda de Gaitas “Los Trasgos” (Asturias)",
-    "summary": "XLIII feria de folklore y gastronomía. Actuaciones: Parranda “El Golpito” (Canarias) y banda de Gaitas “Los Trasgos” (Asturias)",
+    "description": "XLIII Feria de Folklore y Gastronomía. Actuaciones: parranda “El Golpito” (Canarias) y banda de gaitas “Los Trasgos” (Asturias).",
+    "summary": "Actuaciones de la parranda “El Golpito” (Canarias) y la banda de gaitas “Los Trasgos” (Asturias).",
     "performances": [
-      "Actuaciones: Parranda “El Golpito” (Canarias) y banda de Gaitas “Los Trasgos” (Asturias)"
+      "Parranda “El Golpito”",
+      "Banda de gaitas “Los Trasgos”"
     ],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Folklore",
     "ticket": {
@@ -4533,6 +4604,48 @@
     "tags": [
       "Infantil y familiar",
       "Talleres"
+    ]
+  },
+  {
+    "id": 524,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de Casa de Cataluña y Centro Leonés Virgen del Camino",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de Casa de Cataluña y Centro Leonés Virgen del Camino.",
+    "summary": "Izado de las banderas de Casa de Cataluña y Centro Leonés Virgen del Camino.",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
     ]
   },
   {
@@ -5496,20 +5609,31 @@
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "XLIII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "XLIII feria de folklore y gastronomía: Los Perets y Xeitu",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLIII feria de folklore y gastronomía. Actuaciones: grupo “Los Perets” y “Xeitu” (León)",
-    "summary": "XLIII feria de folklore y gastronomía. Actuaciones: grupo “Los Perets” y “Xeitu” (León)",
+    "description": "XLIII Feria de Folklore y Gastronomía. Actuaciones: grupo “Los Perets” y “Xeitu” (León).",
+    "summary": "Actuaciones del grupo “Los Perets” y “Xeitu” (León).",
     "performances": [
-      "Actuaciones: grupo “Los Perets” y “Xeitu” (León)"
+      "Los Perets",
+      "Xeitu"
     ],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Folklore",
     "ticket": {
@@ -5521,6 +5645,7 @@
     },
     "tags": [
       "Folklore",
+      "Música",
       "Gastronomía"
     ]
   },
@@ -5982,6 +6107,48 @@
     "tags": [
       "Infantil y familiar",
       "Talleres"
+    ]
+  },
+  {
+    "id": 525,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de Casa de Galicia y Casa de Andalucía",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de Casa de Galicia y Casa de Andalucía.",
+    "summary": "Izado de las banderas de Casa de Galicia y Casa de Andalucía.",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
     ]
   },
   {
@@ -6911,23 +7078,33 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "XLIII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "XLIII feria de folklore y gastronomía: Nivaria, Axouxere, Anaquiños y Panderet, y Romero y Jara",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLIII feria de folklore y gastronomía. Actuaciones: Grupos Niva ria, Axouxere, Anaquiños y Panderet (Galicia) y grupo “Romero y Jara” (Andalucía)",
-    "summary": "XLIII feria de folklore y gastronomía. Actuaciones: Grupos Niva ria, Axouxere, Anaquiños y Panderet (Galicia) y grupo “Romero y Jara” (Andalucía)",
+    "description": "XLIII Feria de Folklore y Gastronomía. Actuaciones: grupos Nivaria, Axouxere, Anaquiños y Panderet (Galicia) y grupo “Romero y Jara” (Andalucía).",
+    "summary": "Actuaciones de Nivaria, Axouxere, Anaquiños y Panderet (Galicia), y “Romero y Jara” (Andalucía).",
     "performances": [
-      "Niva ria",
+      "Nivaria",
       "Axouxere",
-      "Anaquiños y Panderet (Galicia)",
-      "grupo “Romero y Jara” (Andalucía)"
+      "Anaquiños y Panderet",
+      "Romero y Jara"
     ],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Folklore",
     "ticket": {
@@ -6939,6 +7116,7 @@
     },
     "tags": [
       "Folklore",
+      "Música",
       "Gastronomía"
     ]
   },
@@ -7165,6 +7343,91 @@
     },
     "tags": [
       "Deporte"
+    ]
+  },
+  {
+    "id": 526,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "13:00",
+    "endTime": null,
+    "title": "Día del Niño/Niña en la feria de folklore y gastronomía",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Día del Niño/Niña con atracciones, hinchables y visita de la Tía Melitona.",
+    "summary": "Día del Niño/Niña con atracciones, hinchables y visita de la Tía Melitona.",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Infantil y familiar",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
+    "id": 527,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de bandera de Casa Charra",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de la bandera de Casa Charra.",
+    "summary": "Izado de la bandera de Casa Charra.",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
     ]
   },
   {
@@ -7531,17 +7794,27 @@
     "endTime": null,
     "title": "Tía Melitona",
     "image": "/assets/events/tia-melitona-illustration.png",
-    "location": "Recinto José Luis Bellido – feria de folklore y gastronomía",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
     "description": "Tía Melitona",
     "summary": "Tía Melitona",
     "performances": [],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Folklore",
     "ticket": {
@@ -7552,7 +7825,9 @@
       "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Folklore"
+      "Folklore",
+      "Infantil y familiar",
+      "Gastronomía"
     ]
   },
   {
@@ -8129,20 +8404,30 @@
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "XLIII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "XLIII feria de folklore y gastronomía: Arraigo",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLIII feria de folklore y gastronomía. Actuación: grupo “Arraigo” (Salamanca)",
-    "summary": "XLIII feria de folklore y gastronomía. Actuación: grupo “Arraigo” (Salamanca)",
+    "description": "XLIII Feria de Folklore y Gastronomía. Actuación: grupo “Arraigo” (Salamanca).",
+    "summary": "Actuación del grupo “Arraigo” (Salamanca).",
     "performances": [
-      "Actuación: grupo “Arraigo” (Salamanca)"
+      "Arraigo"
     ],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Folklore",
     "ticket": {
@@ -8154,6 +8439,7 @@
     },
     "tags": [
       "Folklore",
+      "Música",
       "Gastronomía"
     ]
   },
@@ -8377,6 +8663,48 @@
     },
     "tags": [
       "Música"
+    ]
+  },
+  {
+    "id": 528,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de Casa de Valencia y Casa de Zamora",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de Casa de Valencia y Casa de Zamora.",
+    "summary": "Izado de las banderas de Casa de Valencia y Casa de Zamora.",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
     ]
   },
   {
@@ -9404,20 +9732,31 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "XLII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "XLIII feria de folklore y gastronomía: Nit de Foc y Son de los Valles",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLII feria de folklore y gastronomía. Actuaciones: grupo “Nit de Foc” (Valencia) y grupo “Son de los Valles” (Zamora)",
-    "summary": "XLII feria de folklore y gastronomía. Actuaciones: grupo “Nit de Foc” (Valencia) y grupo “Son de los Valles” (Zamora)",
+    "description": "XLIII Feria de Folklore y Gastronomía. Actuaciones: grupo “Nit de Foc” (Valencia) y grupo “Son de los Valles” (Zamora).",
+    "summary": "Actuaciones del grupo “Nit de Foc” (Valencia) y “Son de los Valles” (Zamora).",
     "performances": [
-      "Actuaciones: grupo “Nit de Foc” (Valencia) y grupo “Son de los Valles” (Zamora)"
+      "Nit de Foc",
+      "Son de los Valles"
     ],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Folklore",
     "ticket": {
@@ -9429,6 +9768,7 @@
     },
     "tags": [
       "Folklore",
+      "Música",
       "Gastronomía"
     ]
   },
@@ -9685,6 +10025,48 @@
     },
     "tags": [
       "Música"
+    ]
+  },
+  {
+    "id": 529,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de Casa de Baleares y Casa de Murcia",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de Casa de Baleares y Casa de Murcia.",
+    "summary": "Izado de las banderas de Casa de Baleares y Casa de Murcia.",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
     ]
   },
   {
@@ -10690,20 +11072,31 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "XLIII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "XLIII feria de folklore y gastronomía: Passeig per Balears y Arienzo",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLIII feria de folklore y gastronomía. Actuaciones: grupo “Paseig per Balears” (Baleares) y grupo de Coros y danzas “Arienzo” (Murcia)",
-    "summary": "XLIII feria de folklore y gastronomía. Actuaciones: grupo “Paseig per Balears” (Baleares) y grupo de Coros y danzas “Arienzo” (Murcia)",
+    "description": "XLIII Feria de Folklore y Gastronomía. Actuaciones: grupo “Passeig per Balears” (Baleares) y grupo de coros y danzas “Arienzo” (Murcia).",
+    "summary": "Actuaciones del grupo “Passeig per Balears” (Baleares) y el grupo de coros y danzas “Arienzo” (Murcia).",
     "performances": [
-      "Actuaciones: grupo “Paseig per Balears” (Baleares) y grupo de Coros y danzas “Arienzo” (Murcia)"
+      "Passeig per Balears",
+      "Coros y danzas “Arienzo”"
     ],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Danza",
     "ticket": {
@@ -10715,8 +11108,9 @@
     },
     "tags": [
       "Danza",
-      "Gastronomía",
-      "Folklore"
+      "Folklore",
+      "Música",
+      "Gastronomía"
     ]
   },
   {
@@ -11235,6 +11629,48 @@
     "tags": [
       "Infantil y familiar",
       "Talleres"
+    ]
+  },
+  {
+    "id": 530,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de Casa de Cantabria y Centro Segoviano",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de Casa de Cantabria y Centro Segoviano.",
+    "summary": "Izado de las banderas de Casa de Cantabria y Centro Segoviano.",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
     ]
   },
   {
@@ -12121,20 +12557,31 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "XLIII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "XLIII feria de folklore y gastronomía: San Pablo y AC Segoviana",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLIII feria de folklore y gastronomía. Actuaciones: grupo danzas “San Pablo” (Cantabria) y “A.c. Segoviana” (Segovia)",
-    "summary": "XLIII feria de folklore y gastronomía. Actuaciones: grupo danzas “San Pablo” (Cantabria) y “A.c. Segoviana” (Segovia)",
+    "description": "XLIII Feria de Folklore y Gastronomía. Actuaciones: grupo de danzas “San Pablo” (Cantabria) y “AC Segoviana” (Segovia).",
+    "summary": "Actuaciones del grupo de danzas “San Pablo” (Cantabria) y “AC Segoviana” (Segovia).",
     "performances": [
-      "Actuaciones: grupo danzas “San Pablo” (Cantabria) y “A.c. Segoviana” (Segovia)"
+      "Grupo de danzas “San Pablo”",
+      "AC Segoviana"
     ],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Danza",
     "ticket": {
@@ -12146,8 +12593,9 @@
     },
     "tags": [
       "Danza",
-      "Gastronomía",
-      "Folklore"
+      "Folklore",
+      "Música",
+      "Gastronomía"
     ]
   },
   {
@@ -13213,6 +13661,48 @@
     ]
   },
   {
+    "id": 531,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de Casa de La Rioja y Casa de Melilla",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de Casa de La Rioja y Casa de Melilla.",
+    "summary": "Izado de las banderas de Casa de La Rioja y Casa de Melilla.",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
     "id": 388,
     "date": "2026-09-13",
     "dateLabel": "Domingo 13 de septiembre",
@@ -13964,21 +14454,31 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "XLIII feria de folklore y gastronomía",
-    "location": "Recinto José Luis Bellido",
+    "title": "XLIII feria de folklore y gastronomía: La Pacheca y Farah Diva",
+    "location": "Recinto ferial José Luis Bellido",
     "zone": "Feria de folklore",
-    "description": "XLIII feria de folklore y gastronomía. Actuaciones: grupo charanga “La Pacheca” (La Rioja), grupo de danzas “Farah Diva” (Melilla)",
-    "summary": "XLIII feria de folklore y gastronomía. Actuaciones: grupo charanga “La Pacheca” (La Rioja), grupo de danzas “Farah Diva” (Melilla)",
+    "description": "XLIII Feria de Folklore y Gastronomía. Actuaciones: grupo charanga “La Pacheca” (La Rioja) y grupo de danzas “Farah Diva” (Melilla).",
+    "summary": "Actuaciones del grupo charanga “La Pacheca” (La Rioja) y el grupo de danzas “Farah Diva” (Melilla).",
     "performances": [
-      "charanga “La Pacheca” (La Rioja)",
-      "grupo de danzas “Farah Diva” (Melilla)"
+      "Charanga “La Pacheca”",
+      "Grupo de danzas “Farah Diva”"
     ],
-    "organizers": [],
-    "collaborators": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
       "lat": 41.6489,
       "lng": -4.7557,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
     "type": "Danza",
     "ticket": {
@@ -13990,9 +14490,9 @@
     },
     "tags": [
       "Danza",
+      "Folklore",
       "Música",
-      "Gastronomía",
-      "Folklore"
+      "Gastronomía"
     ]
   },
   {
