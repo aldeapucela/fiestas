@@ -5863,11 +5863,12 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 }
 
 .fiestas-caseta-menu-item-disclosure > summary {
+  position: relative;
   cursor: pointer;
   list-style: none;
   border-radius: 0.35rem;
-  padding: 0.16rem 0.2rem;
-  margin: -0.16rem -0.2rem;
+  padding: 0.16rem 0;
+  margin: -0.16rem 0;
 }
 
 .fiestas-caseta-menu-item-disclosure > summary::-webkit-details-marker {
@@ -5875,19 +5876,21 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 }
 
 .fiestas-caseta-menu-item-disclosure > summary::before {
-  flex: 0 0 auto;
+  position: absolute;
+  top: 50%;
+  left: -1rem;
   color: #98a2b3;
   content: '›';
   font-size: 1.15rem;
   font-weight: 800;
   line-height: 1;
-  margin: -0.05rem 0.05rem 0 -0.05rem;
   opacity: 0.75;
+  transform: translateY(-50%);
   transition: transform 120ms ease;
 }
 
 .fiestas-caseta-menu-item-disclosure[open] > summary::before {
-  transform: rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
 }
 
 .fiestas-caseta-menu-item-disclosure > summary:focus-visible {
