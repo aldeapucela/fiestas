@@ -1151,21 +1151,41 @@
       "id": "z4-11",
       "publicSlug": "el-barco",
       "name": "El Barco",
-      "zone": "Zona 4",
+      "zone": "Zona 8",
       "location": "Plaza del Salvador",
       "placement": "En la plaza",
-      "addressQuery": "Plaza del Salvador, Valladolid, España",
-      "coordinates": null
+      "addressQuery": "Plaza del Salvador, 47002 Valladolid, España",
+      "coordinates": {
+        "lat": 41.650982,
+        "lng": -4.7250314,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 43306328,
+        "displayName": "Plaza del Salvador, Plaza España, Valladolid, Castilla y León, 47002, España",
+        "query": "Plaza del Salvador, 47002 Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T21:25:41.000Z"
+      }
     },
     {
       "id": "z4-12",
       "publicSlug": "grilled-chef",
       "name": "Grilled Chef",
-      "zone": "Zona 4",
+      "zone": "Zona 2",
       "location": "Matías Sangrador",
       "placement": "En su fachada",
       "addressQuery": "Calle Matías Sangrador, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6522448,
+        "lng": -4.7270011,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 33821197,
+        "displayName": "Calle Matías Sangrador, Plaza Mayor, Valladolid, Castilla y León, 47001, España",
+        "query": "Calle Matías Sangrador, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T21:25:41.000Z"
+      }
     },
     {
       "id": "z4-13",
@@ -1181,11 +1201,21 @@
       "id": "z4-14",
       "publicSlug": "the-macanudo",
       "name": "The Macanudo",
-      "zone": "Zona 4",
+      "zone": "Zona 2",
       "location": "Matías Sangrador",
       "placement": "En la terraza del local",
       "addressQuery": "Calle Matías Sangrador, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6522448,
+        "lng": -4.7270011,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 33821197,
+        "displayName": "Calle Matías Sangrador, Plaza Mayor, Valladolid, Castilla y León, 47001, España",
+        "query": "Calle Matías Sangrador, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T21:25:41.000Z"
+      }
     },
     {
       "id": "z5-03",
