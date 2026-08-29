@@ -579,6 +579,41 @@
         "query": "Plaza San Benito, Valladolid, España",
         "accuracy": 0.8,
         "geocodedAt": "2026-08-26"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-atunada",
+                "name": "Atunada",
+                "description": "Empanada de Atún"
+              },
+              {
+                "id": "pincho-salmonaco",
+                "name": "Salmonaco",
+                "description": "Taco de Salmón Ahumado, Nueces y Salsa Tártara"
+              },
+              {
+                "id": "pincho-cabrito",
+                "name": "Cabrito",
+                "description": "Montadito de Jamón, Queso de Cabra y Cebolla Caramelizada"
+              },
+              {
+                "id": "pincho-clandestino",
+                "name": "Clandestino",
+                "description": "Montadito de Secreto con Salsa Chimichurri"
+              },
+              {
+                "id": "pincho-iberico-al-verdejo",
+                "name": "Ibérico al verdejo",
+                "description": "Montadito de solomillo al verdejo"
+              }
+            ]
+          }
+        ]
       }
     },
     {
