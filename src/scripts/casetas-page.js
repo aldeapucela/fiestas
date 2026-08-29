@@ -89,6 +89,7 @@ export function initCasetasPage() {
   els.filterLikedDishes = document.querySelector('[data-fiestas-casetas-liked-dishes-filter]');
   els.filterCount = document.querySelector('[data-fiestas-casetas-filter-count]');
   els.filterClear = document.querySelector('[data-fiestas-casetas-filter-clear]');
+  els.mapClearFilters = document.querySelector('[data-fiestas-map-clear-filters]');
   els.searchToggle = document.querySelector('[data-fiestas-casetas-search-toggle]');
   els.searchPanel = document.querySelector('[data-fiestas-casetas-search-panel]');
   els.searchInput = document.querySelector('[data-fiestas-casetas-search-input]');
@@ -249,6 +250,7 @@ function bindControls() {
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
   });
+  els.mapClearFilters?.addEventListener('click', () => els.filterClear?.click());
   els.searchToggle?.addEventListener('click', () => {
     const opening = !state.searchOpen;
     state.searchOpen = opening;
@@ -718,6 +720,7 @@ function syncFilterUi() {
     if (likedIcon) likedIcon.className = state.onlyLikedDishes ? 'fa-solid fa-thumbs-up' : 'fa-regular fa-thumbs-up';
   }
   if (els.filterClear) els.filterClear.hidden = activeFilterCount === 0;
+  if (els.mapClearFilters) els.mapClearFilters.hidden = activeFilterCount === 0;
 }
 
 function requestLocation(options = {}) {

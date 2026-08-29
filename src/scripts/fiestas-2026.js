@@ -122,6 +122,7 @@ const els = {
   mapDateLabel: document.querySelector('[data-fiestas-map-date-label]'),
   mapFilterToggle: document.querySelector('[data-fiestas-map-filter-toggle]'),
   mapFilterCount: document.querySelector('[data-fiestas-map-filter-count]'),
+  mapClearFilters: document.querySelector('[data-fiestas-map-clear-filters]'),
   mapFilterClose: document.querySelector('[data-fiestas-map-filter-close]'),
   mapLocate: document.querySelector('[data-fiestas-map-locate]'),
   locationNote: document.querySelector('[data-fiestas-location-note]'),
@@ -547,6 +548,8 @@ function bindControls() {
     render({ updateUrl: true });
   });
 
+  els.mapClearFilters?.addEventListener('click', () => els.clearFilters?.click());
+
   els.activeFilters?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-remove-filter]');
     if (!button) return;
@@ -846,6 +849,7 @@ function renderShellState(filtered) {
     els.mapFilterCount.hidden = activeFilterCount === 0;
     els.mapFilterCount.textContent = String(activeFilterCount);
   }
+  if (els.mapClearFilters) els.mapClearFilters.hidden = activeFilterCount === 0;
   if (els.datePanel) els.datePanel.setAttribute('aria-hidden', String(mapMode && !state.mapDateOpen));
   if (els.filterRegion) {
     const dialogOpen = mapMode && state.mapFilterPanelOpen;

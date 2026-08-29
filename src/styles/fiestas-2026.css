@@ -1642,6 +1642,45 @@
     display: none;
   }
 
+  .fiestas-map-clear-filters {
+    display: inline-flex;
+    min-height: 2.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(102, 112, 133, 0.28);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #667085;
+    padding: 0 0.72rem;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 0.45rem 1rem rgba(15, 23, 42, 0.12);
+    cursor: pointer;
+  }
+
+  .fiestas-map-clear-filters:hover,
+  .fiestas-map-clear-filters:focus-visible {
+    border-color: #667085;
+    background: #fff;
+    color: #344054;
+    outline: 3px solid rgba(102, 112, 133, 0.18);
+    outline-offset: 2px;
+  }
+
+  .fiestas-map-clear-filters[hidden] {
+    display: none;
+  }
+
+  .fiestas-map-view > .fiestas-map-clear-filters {
+    position: absolute;
+    top: calc(max(0.55rem, env(safe-area-inset-top)) + 8.65rem);
+    right: 0.85rem;
+    z-index: 42;
+  }
+
   .fiestas-app.is-map-mode .fiestas-filter-region {
     position: fixed;
     top: calc(max(0.55rem, env(safe-area-inset-top)) + 8.85rem);
@@ -4277,6 +4316,7 @@
   html.dark .fiestas-map-header,
   html.dark .fiestas-map-date-toggle,
   html.dark .fiestas-map-filter-toggle,
+  html.dark .fiestas-map-clear-filters,
   html.dark .fiestas-map-filter-close,
   html.dark .fiestas-filter-region,
   html.dark .fiestas-map-sheet,
@@ -4312,6 +4352,19 @@
     border-color: #17b8a4;
     background: #0f766e;
     color: #fff;
+  }
+
+  html.dark .fiestas-map-clear-filters {
+    border-color: #4b5565;
+    background: rgba(26, 31, 40, 0.96);
+    color: #aeb7c5;
+  }
+
+  html.dark .fiestas-map-clear-filters:hover,
+  html.dark .fiestas-map-clear-filters:focus-visible {
+    border-color: #aeb7c5;
+    background: #202631;
+    color: #f5f3ee;
   }
 
   html.dark .fiestas-map-filter-close {
