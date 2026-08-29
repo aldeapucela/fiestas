@@ -1009,8 +1009,18 @@
       "zone": "Zona 4",
       "location": "Calle Cadenas de San Gregorio",
       "placement": "En la calle",
-      "addressQuery": "Calle Cadenas de San Gregorio, Valladolid, España",
-      "coordinates": null
+      "addressQuery": "Calle de las Cadenas de San Gregorio, Valladolid, España",
+      "coordinates": {
+        "lat": 41.6573153,
+        "lng": -4.723223,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 370385131,
+        "displayName": "Calle de las Cadenas de San Gregorio, San Pablo - San Nicolás, Valladolid, Castilla y León, 47011, España",
+        "query": "Calle de las Cadenas de San Gregorio, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T20:59:38.000Z"
+      }
     },
     {
       "id": "z4-02",
@@ -1114,8 +1124,18 @@
       "zone": "Zona 4",
       "location": "Calle Cadenas de San Gregorio",
       "placement": "En la calle",
-      "addressQuery": "Calle Cadenas de San Gregorio, Valladolid, España",
-      "coordinates": null
+      "addressQuery": "Calle de las Cadenas de San Gregorio, Valladolid, España",
+      "coordinates": {
+        "lat": 41.6573153,
+        "lng": -4.723223,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 370385131,
+        "displayName": "Calle de las Cadenas de San Gregorio, San Pablo - San Nicolás, Valladolid, Castilla y León, 47011, España",
+        "query": "Calle de las Cadenas de San Gregorio, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T20:59:38.000Z"
+      }
     },
     {
       "id": "z4-10",
