@@ -1352,7 +1352,7 @@
               },
               {
                 "id": "pincho-pinc-ho-moruno",
-                "name": "Pincho moruno"
+                "name": "Pinc ho moruno"
               },
               {
                 "id": "pincho-hamburguesa",
@@ -1415,11 +1415,23 @@
                 "price": "2,50€"
               }
             ]
+          },
+          {
+            "title": "Ofertas",
+            "votable": false,
+            "items": [
+              {
+                "id": "oferta-con-cana-vino-agua-mosto",
+                "name": "Con caña, vino, agua, mosto",
+                "price": "2,80€"
+              },
+              {
+                "id": "oferta-con-refresco",
+                "name": "Con refresco",
+                "price": "3,50€"
+              }
+            ]
           }
-        ],
-        "highlights": [
-          "CON CAÑA, VINO, AGUA, MOSTO 2,80€",
-          "CON REFRESCO 3,50€"
         ]
       }
     },
