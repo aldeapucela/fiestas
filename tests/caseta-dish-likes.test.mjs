@@ -97,3 +97,11 @@ test('matches casetas with a liked votable dish, not unrelated stored keys', asy
   assert.equal(casetaHasLikedDish(caseta, new Set(['z2-07/bebida-agua'])), false);
   assert.equal(casetaHasLikedDish(caseta, new Set(['z3-01/racion-cecina-leon'])), false);
 });
+
+test('identifies casetas with an integrated menu', async () => {
+  const { casetaHasMenu } = await import(`../src/scripts/casetas-page.js?menu=${Date.now()}`);
+
+  assert.equal(casetaHasMenu({ details: { menuSections: [{ items: [{ name: 'Croqueta' }] }] } }), true);
+  assert.equal(casetaHasMenu({ details: { menuSections: [{ items: [] }] } }), false);
+  assert.equal(casetaHasMenu({ details: null }), false);
+});
