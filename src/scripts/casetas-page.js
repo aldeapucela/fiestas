@@ -2,6 +2,7 @@ import { readCasetaFavoriteIds, setCasetaFavorite, subscribeToCasetaFavorites } 
 import { readCasetaDishLikeIds, subscribeToCasetaDishLikes } from './caseta-dish-likes.js';
 import { trackCasetaFavoriteChanged } from './analytics.js';
 import { buildCasetaDetailHref } from './casetas-navigation.js';
+import { matchesSearch, normalizeText } from './search-text.js';
 
 const CENTER = [41.645726, -4.732919];
 const DEFAULT_ZOOM = 13;
@@ -268,8 +269,10 @@ function bindControls() {
     if (opening) els.searchInput?.focus();
   });
   els.searchInput?.addEventListener('input', (event) => {
-    state.searchQuery = event.currentTarget.value.trim();
-    if (els.searchClear) els.searchClear.hidden = !state.searchQuery;
+    // Sin trim: syncSearchUi() reescribe el input desde el estado, y recortar
+    // aqui borraba el espacio recien tecleado. Se recorta al usar la consulta.
+    state.searchQuery = event.currentTarget.value;
+    if (els.searchClear) els.searchClear.hidden = !state.searchQuery.trim();
     syncUrlState();
     renderSheet(getVisibleCasetas());
   });
@@ -360,7 +363,8 @@ function syncUrlState() {
   else url.searchParams.delete('favorites');
   if (state.onlyLikedDishes) url.searchParams.set('liked', '1');
   else url.searchParams.delete('liked');
-  if (state.searchQuery) url.searchParams.set('search', state.searchQuery);
+  const searchQuery = state.searchQuery.trim();
+  if (searchQuery) url.searchParams.set('search', searchQuery);
   else url.searchParams.delete('search');
   [...state.dietaryFilters]
     .sort()
@@ -377,9 +381,8 @@ function getVisibleCasetas() {
       ? selectedZone.items.filter((caseta) => caseta.location === state.selectedLocation)
       : selectedZone.items
     : state.casetas;
-  const query = normalizeText(state.searchQuery);
   return source.filter((caseta) => {
-    const matchesQuery = !query || caseta.searchText.includes(query);
+    const matchesQuery = matchesSearch(caseta.searchText, state.searchQuery);
     return matchesQuery && matchesCasetaFilters(caseta);
   });
 }
@@ -534,8 +537,8 @@ function renderSheet(items, options = {}) {
   if (!sorted.length) {
     const empty = document.createElement('div');
     empty.className = 'fiestas-empty fiestas-casetas-empty';
-    empty.innerHTML = state.searchQuery
-      ? `<p>No se han encontrado casetas para «${escapeHtml(state.searchQuery)}».</p>`
+    empty.innerHTML = state.searchQuery.trim()
+      ? `<p>No se han encontrado casetas para «${escapeHtml(state.searchQuery.trim())}».</p>`
       : state.onlyFavorites && !state.casetaFavorites.size
         ? '<p>Todavía no has guardado ninguna caseta como favorita.</p>'
         : state.onlyFavorites
@@ -625,8 +628,7 @@ function casetaRow(caseta) {
 }
 
 function getSearchMatch(caseta) {
-  const query = normalizeText(state.searchQuery).trim();
-  if (!query) return null;
+  if (!state.searchQuery.trim()) return null;
 
   const menuMatches = (caseta.details?.menuSections || []).flatMap((section) => [
     ...(section.items || []).map((item) => ({ text: typeof item === 'string' ? item : item?.name }))
@@ -634,7 +636,7 @@ function getSearchMatch(caseta) {
   const highlightMatches = (caseta.details?.highlights || []).map((highlight) => ({ text: highlight }));
 
   return [...menuMatches, ...highlightMatches]
-    .find((candidate) => candidate.text && normalizeText(candidate.text).includes(query)) || null;
+    .find((candidate) => candidate.text && matchesSearch(candidate.text, state.searchQuery)) || null;
 }
 
 function renderLocationStatus(isFocused) {
@@ -655,7 +657,7 @@ function syncSearchUi() {
   els.searchToggle.classList.toggle('is-active', state.searchOpen);
   els.searchPanel.hidden = !state.searchOpen;
   if (els.searchInput && els.searchInput.value !== state.searchQuery) els.searchInput.value = state.searchQuery;
-  if (els.searchClear) els.searchClear.hidden = !state.searchQuery;
+  if (els.searchClear) els.searchClear.hidden = !state.searchQuery.trim();
 }
 
 function setFilterPanelOpen(open, options = {}) {
@@ -946,10 +948,6 @@ function median(values) {
 
 function slugify(value = '') {
   return normalizeText(value).trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'caseta';
-}
-
-function normalizeText(value = '') {
-  return String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
 function escapeHtml(value = '') {
