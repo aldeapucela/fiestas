@@ -24,6 +24,7 @@ import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-
 import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './community-plans.js';
 import { rankPopularEvents } from './popular-page.js';
 import { getWeatherAtTime, getWeatherCondition, getWeatherLabel, loadWeatherForecast } from './weather.js';
+import { matchesSearch, normalizeText } from './search-text.js';
 import { getCasetasReturnPath } from './casetas-navigation.js';
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
@@ -1494,7 +1495,7 @@ function bindMapSheetGestures() {
 function getFilteredEvents() {
   return state.events.filter((event) => {
     if (state.selectedDate && state.selectedDate !== 'all' && event.date !== state.selectedDate) return false;
-    if (state.search && !event.searchable.includes(state.search)) return false;
+    if (!matchesSearch(event.searchable, state.search)) return false;
     if (state.selectedTypes.size && !event.tags.some((tag) => state.selectedTypes.has(tag))) return false;
     if (state.selectedAreas.size && !state.selectedAreas.has(event.area)) return false;
     if (state.selectedTicketKinds.size && !state.selectedTicketKinds.has(event.ticketKind)) return false;
@@ -2832,13 +2833,6 @@ function slugify(value = '') {
     .trim()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
-}
-
-function normalizeText(value = '') {
-  return String(value)
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
 }
 
 function escapeHtml(value = '') {
