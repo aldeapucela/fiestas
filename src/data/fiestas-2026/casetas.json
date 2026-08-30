@@ -93,7 +93,53 @@
       "location": "Plaza Martí y Monsó",
       "placement": "En la propia plaza",
       "addressQuery": "Plaza Martí y Monsó, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-takoyaki", "name": "Takoyaki (4 piezas)", "price": "5,30€" },
+              { "id": "racion-tori-karaage", "name": "Tori karaage (4 piezas)", "price": "6,80€" },
+              { "id": "racion-gyo-za", "name": "Gyo-za (4 piezas)", "price": "5,30€" },
+              { "id": "racion-yakitori", "name": "Yakitori (1 pieza)", "price": "4,80€" },
+              { "id": "racion-wayguy-burger", "name": "Wayguy burger", "price": "8,00€" }
+            ]
+          },
+          {
+            "title": "Sushi",
+            "votable": true,
+            "items": [
+              { "id": "sushi-sushi-variado", "name": "Sushi variado (6 piezas)", "price": "21,00€" }
+            ]
+          },
+          {
+            "title": "Pincho de feria",
+            "votable": true,
+            "items": [
+              { "id": "pincho-2-gyozas-o-2-takoyakis", "name": "2 gyozas o 2 takoyakis", "price": "4,80€" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-vin-de-la-casa", "name": "Vin de la casa", "price": "1,20€" },
+              { "id": "bebida-ribelle-de-duro", "name": "Ribelle de Duró", "price": "2,40€" },
+              { "id": "bebida-sake", "name": "Sake", "price": "2,40€" },
+              { "id": "bebida-sushi-wine", "name": "Sushi wine", "price": "2,40€" },
+              { "id": "bebida-cola-fanta-sprite", "name": "Cola/Fanta/Sprite", "price": "2,40€" },
+              { "id": "bebida-cana-cerveza", "name": "Caña cerveza", "price": "2,40€" },
+              { "id": "bebida-cerveza-sin", "name": "Cerveza Sin", "price": "2,40€" },
+              { "id": "bebida-gazpacho-g-hum", "name": "Gazpacho G. HUM", "price": "2,40€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1,20€" },
+              { "id": "bebida-refresco", "name": "Refresco", "price": "2,40€" },
+              { "id": "bebida-lorencito", "name": "Lorencito", "price": "2,00€" }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z1-04",
