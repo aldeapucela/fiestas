@@ -22,6 +22,7 @@ const ZONE_COLORS = {
   'Zona 5': '#ba3d3d',
   'Zona 6': '#087e8c',
   'Zona 7': '#b94f72',
+  'Zona 8': '#2f7d4f',
   'Zona Ferias': '#a85a2a'
 };
 const ZONE_LABELS = {
@@ -32,6 +33,7 @@ const ZONE_LABELS = {
   'Zona 5': 'Acera de Recoletos',
   'Zona 6': 'Paseo Zorrilla · Plaza de Toros',
   'Zona 7': 'Plaza de Santa Cruz',
+  'Zona 8': 'Plaza del Salvador',
   'Zona Ferias': 'Recinto ferial José Luis Bellido'
 };
 
