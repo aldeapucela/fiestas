@@ -745,7 +745,55 @@
       "location": "San Benito",
       "placement": "En el lateral",
       "addressQuery": "San Benito, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "La especialidad",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-brioche-carrillera",
+                "name": "Brioche de carrillera"
+              }
+            ]
+          },
+          {
+            "title": "Otras",
+            "votable": false,
+            "items": [
+              {
+                "id": "otro-patatas-chorizo",
+                "name": "Patatas con chorizo",
+                "description": "con salsa de pimientos y ajo"
+              },
+              {
+                "id": "otro-secreto-iberico",
+                "name": "Secreto ibérico",
+                "description": "con queso Edam y salsa Mayaki"
+              },
+              {
+                "id": "otro-criollo-chimichurri",
+                "name": "Criollo chimichurri"
+              },
+              {
+                "id": "otro-torreznos-soria-piparra",
+                "name": "Torreznos de Soria y piparra",
+                "description": "con salsa de piquillos y ajo"
+              },
+              {
+                "id": "otro-serranito",
+                "name": "Serranito",
+                "description": "lomo olla, jamón serrano, pimientos y tomate"
+              },
+              {
+                "id": "otro-provolone-tomate",
+                "name": "Provolone con tomate"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z2-17",
