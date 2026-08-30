@@ -1144,8 +1144,18 @@
       "zone": "Zona 4",
       "location": "Calle Solanilla",
       "placement": "En la calle",
-      "addressQuery": "Calle Solanilla, Valladolid, España",
-      "coordinates": null
+      "addressQuery": "Calle de la Solanilla, Valladolid, España",
+      "coordinates": {
+        "lat": 41.6542704,
+        "lng": -4.7230017,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 176086450,
+        "displayName": "Calle de la Solanilla, La Antigua - Santa Cruz, Valladolid, Castilla y León, 47003, España",
+        "query": "Calle de la Solanilla, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-30T06:33:48.000Z"
+      }
     },
     {
       "id": "z4-11",
