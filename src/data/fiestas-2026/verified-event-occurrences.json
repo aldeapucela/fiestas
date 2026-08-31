@@ -1,0 +1,209 @@
+{
+  "2333": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "source": "Cartel de Valladolid suena en grafito enlazado por la fuente remota; indica DEL 4 AL 30 DE SEPTIEMBRE. Verificación visual de continuidad para las fechas de las fiestas."
+  },
+  "2337": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-07",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-04",
+        "startTime": "23:30",
+        "endTime": null,
+        "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+        "performances": ["Mangomudo", "Hugo Terrorman"]
+      },
+      {
+        "date": "2026-09-05",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Terraza de Orbital Club, Plaza de la Rinconada, Valladolid",
+        "performances": ["Funkforward"]
+      },
+      {
+        "date": "2026-09-05",
+        "startTime": "23:30",
+        "endTime": null,
+        "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+        "performances": ["Mangomudo", "Nacho A.", "Josua"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "23:30",
+        "endTime": null,
+        "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+        "performances": ["Funkforward", "Zar1"]
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Terraza de Orbital Club, Plaza de la Rinconada, Valladolid",
+        "performances": ["Noise"]
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Terraza de Orbital Club, Plaza de la Rinconada, Valladolid",
+        "performances": ["Dan Williams", "Valenti", "Escribano", "Roto Ibiza"]
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "23:30",
+        "endTime": null,
+        "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+        "performances": ["DJ Shaweed", "Simulacro"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "23:30",
+        "endTime": null,
+        "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+        "performances": ["Mangomudo", "Minitel"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "23:30",
+        "endTime": null,
+        "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+        "performances": ["Boydivision", "Josua"]
+      }
+    ],
+    "source": "Cartel remoto de OrbitalClub inspeccionado visualmente: sesiones los días 4, 5, 7, 9, 10, 11 y 12; los bloques de terraza de los días 5, 9 y 10 se conservan como ocurrencias separadas. La sesión de 23:30 agrupa los artistas de 00:00 porque cruza la medianoche y pertenece a la fecha de inicio."
+  },
+  "2222": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-08",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "source": "Cartel de Vermú Torero enlazado por la fuente remota; verificación manual de fechas concretas."
+  },
+  "2335": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-05",
+        "startTime": "23:00",
+        "endTime": null,
+        "location": "Pera Limonera, Paseo de Marcelino Martín ‘El Catarro’, Valladolid",
+        "performances": ["Las Doñas"]
+      },
+      {
+        "date": "2026-09-06",
+        "startTime": "17:00",
+        "endTime": null,
+        "location": "Cristongo / Pera Limonera, Paseo de Marcelino Martín ‘El Catarro’, Valladolid",
+        "performances": ["Las Doñas"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "18:00",
+        "endTime": null,
+        "location": "Cotorrazo (La Cotorra), C. Caridad, 2, Valladolid",
+        "performances": ["Las Doñas"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "18:00",
+        "endTime": null,
+        "location": "Terraza Molly Malone, Plaza del Poniente, 5, Valladolid",
+        "performances": ["Las Doñas"]
+      }
+    ],
+    "source": "Cartel remoto de Las Doñas inspeccionado visualmente: 5 sept 23:00 Pera Limonera; 6 sept 17:00 Cristongo/Pera Limonera; 7 sept 18:00 Cotorrazo; 12 sept 18:00 Terraza Molly Malone."
+  },
+  "2322": {
+    "dates": [
+      "2026-09-06",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-06",
+        "startTime": "13:30",
+        "endTime": null,
+        "location": "Bar San Pío X, Calle del Hogar, Valladolid",
+        "performances": []
+      },
+      {
+        "date": "2026-09-08",
+        "startTime": "13:30",
+        "endTime": null,
+        "location": "La Blanca, 4, Calle del Esperanto, Valladolid",
+        "performances": []
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Casetas, Plaza de la Universidad, Valladolid",
+        "performances": []
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "La Boutique y Enboga, Plaza del Poniente, Valladolid",
+        "performances": []
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "13:30",
+        "endTime": null,
+        "location": "Casetas, Plaza del Colegio de Santa Cruz, Valladolid",
+        "performances": []
+      }
+    ],
+    "source": "Cartel de Dos de Picas enlazado por la fuente remota e inspeccionado visualmente: 6 sept 13:30 Bar San Pío X; 8 sept 13:30 La Blanca (Calle Esperanto 4); 9 sept 21:00 casetas Plaza Universidad; 10 sept 20:00 La Boutique y Enboga (Plaza Poniente); 11 sept 13:30 casetas Plaza Santa Cruz. Las coordenadas de locales y plazas se contrastaron con Nominatim."
+  },
+  "2316": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-11"
+    ],
+    "source": "Verificación manual previa del programa de la fuente remota."
+  },
+  "1285599309506": {
+    "dates": [
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "source": "Ficha de la Junta de Castilla y León y bases de la 48.ª Feria de Cerámica y Alfarería de Valladolid: del 8 al 13 de septiembre de 2026, de 11:00 a 22:00, en el Paseo Central del Campo Grande."
+  }
+}

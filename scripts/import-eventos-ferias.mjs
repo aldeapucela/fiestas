@@ -2,10 +2,12 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { setTimeout as wait } from 'node:timers/promises';
 import { fileURLToPath } from 'node:url';
+import { isDailySeries, occurrencesFor } from './import-eventos-ferias-dates.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const eventsPath = path.join(root, 'src', 'data', 'fiestas-2026', 'events.json');
+const verifiedOccurrencesPath = path.join(root, 'src', 'data', 'fiestas-2026', 'verified-event-occurrences.json');
 const cachePath = path.join(root, '.cache', 'fiestas', 'nominatim-location-cache.json');
 const reportsDir = path.join(root, '.cache', 'fiestas', 'reports');
 const sourceUrl = 'https://eventos.aldeapucela.org/site-data.json';
@@ -15,6 +17,7 @@ const args = parseArgs(process.argv.slice(2));
 const events = JSON.parse(await fs.readFile(eventsPath, 'utf8'));
 const source = await fetchJson(sourceUrl);
 const sourceEvents = new Map(source.events.map((event) => [Number(event.id), event]));
+const verifiedOccurrences = await readJson(verifiedOccurrencesPath, {});
 const cache = await readJson(cachePath, {});
 const report = {
   mode: args.apply ? 'apply' : 'dry-run',
@@ -39,6 +42,7 @@ const localById = new Map(events.map((event) => [event.id, event]));
 const matchedRemoteToLocal = buildMatchedRemoteToLocal(events);
 const imageRemoteToLocal = {
   2162: [5],
+  2317: [24],
   2186: [11],
   2164: [19],
   1885: [55],
@@ -120,51 +124,85 @@ for (const [remoteId, localId] of duplicateRemoteToLocal) {
 }
 for (const remote of candidateEvents) {
   const remoteId = Number(remote.id);
-  const occurrenceDates = occurrenceDatesFor(remote);
-  const pendingDates = [];
-  for (const date of occurrenceDates) {
-    const existing = findExistingLocal(remote, events, date);
+  const occurrenceResolution = occurrencesFor(remote, verifiedOccurrences, { maxDate: '2026-09-13' });
+  const pendingOccurrences = [];
+  for (const occurrence of occurrenceResolution.occurrences) {
+    const existing = findExistingLocal(remote, events, occurrence);
     if (!existing) {
-      pendingDates.push(date);
+      pendingOccurrences.push(occurrence);
       continue;
     }
     const changed = enrichExistingEvent(existing, remote);
     if (changed) {
       report.totals.enriched += 1;
-      report.enriched.push({ localId: existing.id, remoteId, date, title: existing.title });
+      report.enriched.push({ localId: existing.id, remoteId, date: occurrence.date, title: existing.title });
     }
     addImageIfMissing(existing, remote, report);
     report.totals.skipped += 1;
-    report.skipped.push({ remoteId, localId: existing.id, date, reason: 'Coincidencia por fecha, hora, título y lugar.' });
+    report.skipped.push({ remoteId, localId: existing.id, date: occurrence.date, reason: 'Coincidencia por fecha, hora, título y lugar.' });
   }
-  if (!pendingDates.length) continue;
+  if (!pendingOccurrences.length) continue;
 
-  const location = locationFor(remote);
-  if (!isConcreteLocation(location)) {
+  if (!occurrenceResolution.verified) {
     report.totals.unresolved += 1;
-    report.unresolved.push({ remoteId, title: remote.title, reason: 'La fuente no proporciona un lugar concreto.', location });
+    report.unresolved.push({
+      remoteId,
+      title: remote.title,
+      reason: occurrenceResolution.reason,
+      dateRange: [remote.startsAt?.slice(0, 10), remote.endsAt?.slice(0, 10)],
+      candidateDates: pendingOccurrences.map((occurrence) => occurrence.date)
+    });
     continue;
   }
 
-  let coordinates;
+  const coordinatesByLocation = new Map();
   try {
-    coordinates = await resolveCoordinates(remote, location, events);
+    for (const occurrence of pendingOccurrences) {
+      const location = locationFor(remote, occurrence);
+      if (!isConcreteLocation(location)) {
+        throw new Error(`La fuente no proporciona un lugar concreto para ${occurrence.date}.`);
+      }
+      const locationKey = simplifyTitle(location);
+      if (!coordinatesByLocation.has(locationKey)) {
+        coordinatesByLocation.set(locationKey, await resolveCoordinates(remote, location, events));
+      }
+    }
   } catch (error) {
     report.totals.unresolved += 1;
-    report.unresolved.push({ remoteId, title: remote.title, reason: error.message, location });
+    report.unresolved.push({
+      remoteId,
+      title: remote.title,
+      reason: error.message,
+      locations: [...new Set(pendingOccurrences.map((occurrence) => locationFor(remote, occurrence)))]
+    });
     continue;
   }
 
-  for (const date of pendingDates) {
+  for (const occurrence of pendingOccurrences) {
     if (localById.has(nextId)) {
       throw new Error(`El ID nuevo ${nextId} ya está ocupado.`);
     }
-    const local = await createLocalEvent(remote, nextId, events, date, coordinates);
+    const location = locationFor(remote, occurrence);
+    const local = await createLocalEvent(
+      remote,
+      nextId,
+      events,
+      occurrence,
+      coordinatesByLocation.get(simplifyTitle(location))
+    );
     nextId += 1;
     events.push(local);
     localById.set(local.id, local);
     report.totals.added += 1;
-    report.added.push({ localId: local.id, remoteId, date, title: local.title });
+    report.added.push({
+      localId: local.id,
+      remoteId,
+      date: occurrence.date,
+      startTime: local.startTime,
+      endTime: local.endTime,
+      location: local.location,
+      title: local.title
+    });
   }
 }
 
@@ -184,20 +222,24 @@ console.log(JSON.stringify({
   totals: report.totals
 }, null, 2));
 
-async function createLocalEvent(remote, id, currentEvents, dateOverride = null, coordinatesOverride = null) {
-  const date = dateOverride || remote.startsAt.slice(0, 10);
-  const location = locationFor(remote);
+async function createLocalEvent(remote, id, currentEvents, occurrence = null, coordinatesOverride = null) {
+  const date = occurrence?.date || remote.startsAt.slice(0, 10);
+  const location = locationFor(remote, occurrence);
   const coordinates = coordinatesOverride || await resolveCoordinates(remote, location, currentEvents);
   const type = typeFor(remote.id, remote);
   const summary = cleanText(remote.summary || remote.title);
   const genericTime = isGenericRemoteTime(remote);
   const isMultiDay = isDailySeries(remote);
   const isOvernight = !genericTime && !isMultiDay && remote.startsAt.slice(0, 10) !== remote.endsAt.slice(0, 10);
-  const sourceStartTime = genericTime ? null : timePart(remote.startsAt);
-  const sourceEndTime = genericTime || isOvernight || isStartOnlySeries(remote)
-    ? null
-    : timePart(remote.endsAt);
-  const performances = performancesFor(remote.id);
+  const sourceStartTime = occurrence && Object.prototype.hasOwnProperty.call(occurrence, 'startTime')
+    ? occurrence.startTime
+    : genericTime ? null : timePart(remote.startsAt);
+  const sourceEndTime = occurrence && Object.prototype.hasOwnProperty.call(occurrence, 'endTime')
+    ? occurrence.endTime
+    : genericTime || isOvernight || isStartOnlySeries(remote)
+      ? null
+      : timePart(remote.endsAt);
+  const performances = occurrence?.performances || performancesFor(remote.id);
   const description = Number(remote.id) === 2183
     ? `${summary} El evento se celebra del 9 al 13 de septiembre de 2026.`
     : summary;
@@ -222,33 +264,6 @@ async function createLocalEvent(remote, id, currentEvents, dateOverride = null, 
     ticket: ticketFor(remote),
     tags: [type]
   };
-}
-
-function occurrenceDatesFor(remote) {
-  const startDate = String(remote.startsAt || '').slice(0, 10);
-  const explicitDates = {
-    2316: ['2026-09-05', '2026-09-11']
-  }[Number(remote.id)];
-  if (explicitDates) return explicitDates;
-  if (!isDailySeries(remote)) return [startDate];
-  const endDate = String(remote.endsAt || '').slice(0, 10);
-  const lastDate = endDate > '2026-09-13' ? '2026-09-13' : endDate;
-  const cursor = new Date(`${startDate}T00:00:00Z`);
-  const last = new Date(`${lastDate}T00:00:00Z`);
-  const dates = [];
-  while (cursor <= last) {
-    dates.push(cursor.toISOString().slice(0, 10));
-    cursor.setUTCDate(cursor.getUTCDate() + 1);
-  }
-  return dates;
-}
-
-function isDailySeries(remote) {
-  const startDate = String(remote.startsAt || '').slice(0, 10);
-  const endDate = String(remote.endsAt || '').slice(0, 10);
-  if (!startDate || startDate === endDate) return false;
-  const duration = Date.parse(remote.endsAt) - Date.parse(remote.startsAt);
-  return !Number.isFinite(duration) || duration >= 24 * 60 * 60 * 1000;
 }
 
 function isStartOnlySeries(remote) {
@@ -308,6 +323,7 @@ function buildMatchedRemoteToLocal(currentEvents) {
     1730: [235],
     1728: [240],
     1310: [281],
+    2317: [24],
     2184: [253],
     1977: [269],
     1971: [272],
@@ -356,9 +372,11 @@ function addImageIfMissing(local, remote, currentReport) {
   return true;
 }
 
-function findExistingLocal(remote, currentEvents, dateOverride = null) {
-  const date = dateOverride || remote.startsAt.slice(0, 10);
-  const remoteTime = isGenericRemoteTime(remote) ? null : timePart(remote.startsAt);
+function findExistingLocal(remote, currentEvents, occurrence = null) {
+  const date = occurrence?.date || remote.startsAt.slice(0, 10);
+  const remoteTime = occurrence && Object.prototype.hasOwnProperty.call(occurrence, 'startTime')
+    ? occurrence.startTime
+    : isGenericRemoteTime(remote) ? null : timePart(remote.startsAt);
   const candidates = currentEvents.filter((event) => event.date === date && (
     event.startTime === remoteTime
     || (remoteTime === null && isDailySeries(remote))
@@ -367,19 +385,19 @@ function findExistingLocal(remote, currentEvents, dateOverride = null) {
   const exactTitle = candidates.filter((event) => simplifyTitle(event.title) === remoteTitle);
   if (exactTitle.length === 1) return exactTitle[0];
   if (exactTitle.length > 1) {
-    const located = exactTitle.find((event) => locationMatches(event, remote));
+    const located = exactTitle.find((event) => locationMatches(event, remote, occurrence));
     if (located) return located;
   }
 
   return candidates.find((event) => {
     const titleScore = tokenOverlap(simplifyTitle(event.title), remoteTitle);
-    return titleScore >= 0.8 && locationMatches(event, remote);
+    return titleScore >= 0.8 && locationMatches(event, remote, occurrence);
   }) || null;
 }
 
-function locationMatches(local, remote) {
+function locationMatches(local, remote, occurrence = null) {
   const localLocation = simplifyTitle([local.location, local.zone].filter(Boolean).join(' '));
-  const remoteLocation = simplifyTitle([remote.venue, remote.address, remote.location].filter(Boolean).join(' '));
+  const remoteLocation = simplifyTitle(occurrence?.location || [remote.venue, remote.address, remote.location].filter(Boolean).join(' '));
   return tokenOverlap(localLocation, remoteLocation) >= 0.3
     || localLocation.includes(remoteLocation)
     || remoteLocation.includes(localLocation);
@@ -401,9 +419,12 @@ function simplifyTitle(value = '') {
     .trim();
 }
 
-function locationFor(remote) {
+function locationFor(remote, occurrence = null) {
+  if (occurrence?.location) return cleanText(occurrence.location);
   const id = Number(remote.id);
   const overrides = {
+    2317: 'Acera de Recoletos',
+    2337: 'Orbital Club, Plaza de la Rinconada',
     2310: 'Calle Calixto Fernández de la Torre, esquina con C. Reina',
     2316: 'Calle Cascajares (zona de El Farolito, La Taberna del Farolito y La Cárcava)',
     2215: 'Bar ZVMO, C. Reina, 1',
@@ -483,6 +504,122 @@ async function resolveCoordinates(remote, location, currentEvents) {
     2194: { lat: 41.656398, lng: -4.738248, source: 'Inferidas por proximidad a eventos de Feria de Valladolid' }
   };
   if (known[id]) return known[id];
+
+  const locationKey = simplifyTitle(location);
+  const knownLocation = [
+    {
+      matches: ['acera de recoletos'],
+      coordinates: {
+        lat: 41.646342,
+        lng: -4.728046,
+        source: 'Google Maps (consulta manual; centro aproximado de Acera de Recoletos)',
+        query: 'C. Acera de Recoletos, Valladolid, España'
+      }
+    },
+    {
+      matches: ['orbital club'],
+      coordinates: {
+        lat: 41.6531507,
+        lng: -4.7289254,
+        source: 'OpenStreetMap Nominatim (ficha local de Orbital Club)',
+        query: 'Orbital Club, Plaza de la Rinconada, Valladolid, España'
+      }
+    },
+    {
+      matches: ['bar san pio', 'san pio x'],
+      coordinates: {
+        lat: 41.6547129,
+        lng: -4.7460191,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'node',
+        osmId: 11963626786,
+        query: 'Bar San Pío X, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['la blanca', 'esperanto'],
+      coordinates: {
+        lat: 41.6349783,
+        lng: -4.736553,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'node',
+        osmId: 12426457236,
+        query: 'La Blanca, 4, Calle del Esperanto, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['universidad'],
+      coordinates: {
+        lat: 41.6528225,
+        lng: -4.7223575,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'way',
+        osmId: 61281999,
+        query: 'Plaza de la Universidad, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['santa cruz'],
+      coordinates: {
+        lat: 41.6513314,
+        lng: -4.7201978,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'relation',
+        osmId: 10750492,
+        query: 'Plaza del Colegio de Santa Cruz, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['molly malone'],
+      coordinates: {
+        lat: 41.6524739,
+        lng: -4.7317957,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'node',
+        osmId: 5376469221,
+        query: 'Molly Malone, Plaza del Poniente, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['plaza poniente', 'plaza del poniente'],
+      coordinates: {
+        lat: 41.6531571,
+        lng: -4.7312823,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'way',
+        osmId: 24432961,
+        query: 'Plaza del Poniente, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['pera limonera'],
+      coordinates: {
+        lat: 41.6571419,
+        lng: -4.7329438,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'way',
+        osmId: 367406151,
+        query: 'La Pera Limonera, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['cotorrazo', 'la cotorra', 'calle caridad 2'],
+      coordinates: {
+        lat: 41.6515827,
+        lng: -4.7303391,
+        source: 'Google Maps (consulta manual; La Cotorra, sede del Cotorrazo)',
+        query: 'La Cotorra, C. Caridad, 2, 47001 Valladolid, España'
+      }
+    }
+  ].find((candidate) => candidate.matches.some((match) => locationKey.includes(match)));
+  if (knownLocation) return { ...knownLocation.coordinates };
 
   const queryById = {
     2198: 'Calle del Bao, Valladolid, España',

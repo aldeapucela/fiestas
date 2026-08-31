@@ -906,8 +906,8 @@
     "title": "Súper masterclass Zumba + Les Mills",
     "location": "Acera Recoletos",
     "zone": "Recoletos",
-    "description": "Súper masterclass Zumba + Les Mills",
-    "summary": "Súper masterclass Zumba + Les Mills",
+    "description": "Súper masterclass Zumba + Les Mills\n\nInformación ampliada: La Súper Masterclass Ferias 2026 se llevará a cabo el próximo sábado 5 de septiembre en la emblemática Acera de los Recoletos. Esta actividad deportiva y de baile está organizada por el Club de Deporte y Ocio (CDO) en el marco de las celebraciones de las festividades.",
+    "summary": "La Súper Masterclass Ferias 2026 se llevará a cabo el próximo sábado 5 de septiembre en la emblemática Acera de los Recoletos. Esta actividad deportiva y de baile está organizada por el Club de Deporte y Ocio (CDO) en el marco de las celebraciones de las festividades.",
     "performances": [],
     "organizers": [
       "CDO"
@@ -931,7 +931,8 @@
     "tags": [
       "Danza",
       "Peñas"
-    ]
+    ],
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1323844a61022fffed8a6b6df91f14f7429a7b4b_2_796x1024.jpeg"
   },
   {
     "id": 25,
@@ -20083,6 +20084,688 @@
     },
     "tags": [
       "Exposición"
+    ]
+  },
+  {
+    "id": 610,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "23:30",
+    "endTime": null,
+    "title": "OrbitalClub - Sesiones Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bf77331b8d6d38ed0fef86ec22c8521944c0d8a9_2_804x1024.jpeg",
+    "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "performances": [
+      "Mangomudo",
+      "Hugo Terrorman"
+    ],
+    "organizers": [
+      "Orbital Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531507,
+      "lng": -4.7289254,
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 611,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "OrbitalClub - Sesiones Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bf77331b8d6d38ed0fef86ec22c8521944c0d8a9_2_804x1024.jpeg",
+    "location": "Terraza de Orbital Club, Plaza de la Rinconada, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "performances": [
+      "Funkforward"
+    ],
+    "organizers": [
+      "Orbital Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531507,
+      "lng": -4.7289254,
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 612,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "23:30",
+    "endTime": null,
+    "title": "OrbitalClub - Sesiones Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bf77331b8d6d38ed0fef86ec22c8521944c0d8a9_2_804x1024.jpeg",
+    "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "performances": [
+      "Mangomudo",
+      "Nacho A.",
+      "Josua"
+    ],
+    "organizers": [
+      "Orbital Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531507,
+      "lng": -4.7289254,
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 613,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "23:30",
+    "endTime": null,
+    "title": "OrbitalClub - Sesiones Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bf77331b8d6d38ed0fef86ec22c8521944c0d8a9_2_804x1024.jpeg",
+    "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "performances": [
+      "Funkforward",
+      "Zar1"
+    ],
+    "organizers": [
+      "Orbital Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531507,
+      "lng": -4.7289254,
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 614,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "OrbitalClub - Sesiones Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bf77331b8d6d38ed0fef86ec22c8521944c0d8a9_2_804x1024.jpeg",
+    "location": "Terraza de Orbital Club, Plaza de la Rinconada, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "performances": [
+      "Noise"
+    ],
+    "organizers": [
+      "Orbital Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531507,
+      "lng": -4.7289254,
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 615,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "OrbitalClub - Sesiones Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bf77331b8d6d38ed0fef86ec22c8521944c0d8a9_2_804x1024.jpeg",
+    "location": "Terraza de Orbital Club, Plaza de la Rinconada, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "performances": [
+      "Dan Williams",
+      "Valenti",
+      "Escribano",
+      "Roto Ibiza"
+    ],
+    "organizers": [
+      "Orbital Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531507,
+      "lng": -4.7289254,
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 616,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "23:30",
+    "endTime": null,
+    "title": "OrbitalClub - Sesiones Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bf77331b8d6d38ed0fef86ec22c8521944c0d8a9_2_804x1024.jpeg",
+    "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "performances": [
+      "DJ Shaweed",
+      "Simulacro"
+    ],
+    "organizers": [
+      "Orbital Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531507,
+      "lng": -4.7289254,
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 617,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "23:30",
+    "endTime": null,
+    "title": "OrbitalClub - Sesiones Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bf77331b8d6d38ed0fef86ec22c8521944c0d8a9_2_804x1024.jpeg",
+    "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "performances": [
+      "Mangomudo",
+      "Minitel"
+    ],
+    "organizers": [
+      "Orbital Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531507,
+      "lng": -4.7289254,
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 618,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "23:30",
+    "endTime": null,
+    "title": "OrbitalClub - Sesiones Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bf77331b8d6d38ed0fef86ec22c8521944c0d8a9_2_804x1024.jpeg",
+    "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
+    "performances": [
+      "Boydivision",
+      "Josua"
+    ],
+    "organizers": [
+      "Orbital Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531507,
+      "lng": -4.7289254,
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 619,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "23:00",
+    "endTime": null,
+    "title": "Las Doñas (Gira de actuaciones)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
+    "location": "Pera Limonera, Paseo de Marcelino Martín ‘El Catarro’, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Las Donas (Gira de actuaciones)",
+    "summary": "Las Donas (Gira de actuaciones)",
+    "performances": [
+      "Las Doñas"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6571419,
+      "lng": -4.7329438,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 367406151,
+      "query": "La Pera Limonera, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 620,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "17:00",
+    "endTime": null,
+    "title": "Las Doñas (Gira de actuaciones)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
+    "location": "Cristongo / Pera Limonera, Paseo de Marcelino Martín ‘El Catarro’, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Las Donas (Gira de actuaciones)",
+    "summary": "Las Donas (Gira de actuaciones)",
+    "performances": [
+      "Las Doñas"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6571419,
+      "lng": -4.7329438,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 367406151,
+      "query": "La Pera Limonera, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 621,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Las Doñas (Gira de actuaciones)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
+    "location": "Cotorrazo (La Cotorra), C. Caridad, 2, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Las Donas (Gira de actuaciones)",
+    "summary": "Las Donas (Gira de actuaciones)",
+    "performances": [
+      "Las Doñas"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6515827,
+      "lng": -4.7303391,
+      "source": "Google Maps (consulta manual; La Cotorra, sede del Cotorrazo)",
+      "query": "La Cotorra, C. Caridad, 2, 47001 Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 622,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Las Doñas (Gira de actuaciones)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
+    "location": "Terraza Molly Malone, Plaza del Poniente, 5, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Las Donas (Gira de actuaciones)",
+    "summary": "Las Donas (Gira de actuaciones)",
+    "performances": [
+      "Las Doñas"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6524739,
+      "lng": -4.7317957,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 5376469221,
+      "query": "Molly Malone, Plaza del Poniente, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 623,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Dos de Picas (Presentación de canción)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/9482038eb184095cb6aef228c2ee9b00e9fec75c_2_820x1024.jpeg",
+    "location": "Bar San Pío X, Calle del Hogar, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "summary": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Ferias y Fiestas de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6547129,
+      "lng": -4.7460191,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 11963626786,
+      "query": "Bar San Pío X, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 624,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Dos de Picas (Presentación de canción)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/9482038eb184095cb6aef228c2ee9b00e9fec75c_2_820x1024.jpeg",
+    "location": "La Blanca, 4, Calle del Esperanto, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "summary": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Ferias y Fiestas de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6349783,
+      "lng": -4.736553,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 12426457236,
+      "query": "La Blanca, 4, Calle del Esperanto, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 625,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Dos de Picas (Presentación de canción)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/9482038eb184095cb6aef228c2ee9b00e9fec75c_2_820x1024.jpeg",
+    "location": "Casetas, Plaza de la Universidad, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "summary": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Ferias y Fiestas de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6528225,
+      "lng": -4.7223575,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 61281999,
+      "query": "Plaza de la Universidad, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 626,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "20:00",
+    "endTime": null,
+    "title": "Dos de Picas (Presentación de canción)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/9482038eb184095cb6aef228c2ee9b00e9fec75c_2_820x1024.jpeg",
+    "location": "La Boutique y Enboga, Plaza del Poniente, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "summary": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Ferias y Fiestas de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza del Poniente, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 627,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Dos de Picas (Presentación de canción)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/9482038eb184095cb6aef228c2ee9b00e9fec75c_2_820x1024.jpeg",
+    "location": "Casetas, Plaza del Colegio de Santa Cruz, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "summary": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Ferias y Fiestas de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6513314,
+      "lng": -4.7201978,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "relation",
+      "osmId": 10750492,
+      "query": "Plaza del Colegio de Santa Cruz, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
     ]
   }
 ]
