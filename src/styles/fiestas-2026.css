@@ -480,9 +480,9 @@
     position: absolute;
     right: 0.55rem;
     bottom: 0.55rem;
-    color: #4b5563;
+    color: #6b7280;
     font-size: 0.82rem;
-    font-weight: 900;
+    font-weight: 750;
     line-height: 1;
     letter-spacing: -0.02em;
     opacity: 1;
@@ -494,7 +494,7 @@
   }
 
   .fiestas-date-card.is-active .fiestas-date-temperature {
-    color: #0f766e;
+    color: #3f7f78;
     opacity: 1;
   }
 
