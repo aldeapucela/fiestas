@@ -114,7 +114,7 @@
     "startTime": "18:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Plaza del Milenio (Huerta del Rey)",
     "zone": "Cúpula del Milenio",
     "description": "Tío Tragaldabas",
@@ -137,7 +137,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 5,
@@ -510,7 +514,12 @@
     "tags": [
       "Música",
       "Folklore"
-    ]
+    ],
+    "image": "/assets/events/ayuntamiento-plaza-mayor-valladolid.jpg",
+    "imageAlt": "Ayuntamiento de Valladolid en la Plaza Mayor",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Casa_Consistorial_de_Valladolid.jpg",
+    "imageCredit": "Josi",
+    "imageLicense": "CC BY-SA 4.0"
   },
   {
     "id": 14,
@@ -973,7 +982,7 @@
     "startTime": "12:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "San Pablo (San Nicolás)",
     "zone": "San Pablo (San Nicolás)",
     "description": "Tío Tragaldabas",
@@ -996,7 +1005,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 27,
@@ -1251,7 +1264,7 @@
     "startTime": "17:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Huerta del Rey (C/ Rastrojo)",
     "zone": "Huerta del Rey (C/ Rastrojo)",
     "description": "Tío Tragaldabas",
@@ -1274,7 +1287,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 34,
@@ -1802,7 +1819,7 @@
     "startTime": "19:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Barrio Girón (Avda. Cerros, Transformador)",
     "zone": "Barrio Girón (Avda. Cerros, Transformador)",
     "description": "Tío Tragaldabas",
@@ -1825,7 +1842,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 50,
@@ -2386,7 +2407,12 @@
     "tags": [
       "Música",
       "Peñas"
-    ]
+    ],
+    "image": "/assets/events/moreras-beach-fest-valladolid.jpg",
+    "imageAlt": "Moreras Beach Fest en Valladolid",
+    "imageSource": "https://info.valladolid.es/evento/moreras-beach-festival-0",
+    "imageCredit": "Ayuntamiento de Valladolid / Info Valladolid",
+    "imageLicense": "Fuente municipal"
   },
   {
     "id": 66,
@@ -2681,7 +2707,12 @@
     },
     "tags": [
       "Fuegos artificiales"
-    ]
+    ],
+    "image": "/assets/events/espectaculo-drones-valladolid.jpg",
+    "imageAlt": "Espectáculo de drones en Valladolid",
+    "imageSource": "https://www.valladolid.es/en/actualidad/noticias/valladolid-proyectara-mayor-espectaculo-luces-drones-castil",
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": "Fuente municipal"
   },
   {
     "id": 75,
@@ -2892,7 +2923,7 @@
     "startTime": "12:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Pinar de Jalón (Plaza Everest)",
     "zone": "Pinar de Jalón (Plaza Everest)",
     "description": "Tío Tragaldabas",
@@ -2915,7 +2946,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 82,
@@ -3232,7 +3267,7 @@
     "startTime": "17:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Arturo Eyries (C/ Costa Rica)",
     "zone": "Arturo Eyries (C/ Costa Rica)",
     "description": "Tío Tragaldabas",
@@ -3255,7 +3290,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 422,
@@ -3813,7 +3852,7 @@
     "startTime": "19:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Los Santos Pilarica (C/ Cometa)",
     "zone": "Los Santos Pilarica (C/ Cometa)",
     "description": "Tío Tragaldabas",
@@ -3836,7 +3875,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 109,
@@ -7483,7 +7526,7 @@
     "startTime": "17:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "La Pilarica (Pº Juan Carlos I con C/ Puente la Reina)",
     "zone": "La Pilarica (Pº Juan Carlos I con C/ Puente la Reina)",
     "description": "Tío Tragaldabas",
@@ -7506,7 +7549,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 210,
@@ -8010,7 +8057,7 @@
     "startTime": "19:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Hospital - San Pedro Apóstol (C/ Madre de Dios)",
     "zone": "Hospital - San Pedro Apóstol (C/ Madre de Dios)",
     "description": "Tío Tragaldabas",
@@ -8033,7 +8080,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 226,
@@ -10187,7 +10238,7 @@
     "startTime": "17:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Covaresa (C/ Miguel de Unamuno)",
     "zone": "Covaresa (C/ Miguel de Unamuno)",
     "description": "Tío Tragaldabas",
@@ -10210,7 +10261,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 288,
@@ -10823,7 +10878,7 @@
     "startTime": "19:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "CC parque Alameda - Cañada",
     "zone": "CC parque Alameda - Cañada",
     "description": "Tío Tragaldabas",
@@ -10846,7 +10901,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 307,
@@ -11264,7 +11323,12 @@
     "tags": [
       "Música",
       "Peñas"
-    ]
+    ],
+    "image": "/assets/events/moreras-beach-fest-valladolid.jpg",
+    "imageAlt": "Moreras Beach Fest en Valladolid",
+    "imageSource": "https://info.valladolid.es/evento/moreras-beach-festival-0",
+    "imageCredit": "Ayuntamiento de Valladolid / Info Valladolid",
+    "imageLicense": "Fuente municipal"
   },
   {
     "id": 317,
@@ -11587,7 +11651,7 @@
     "startTime": "12:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "La Rondilla (Pza. Ribera de Castilla)",
     "zone": "La Rondilla (Pza. Ribera de Castilla)",
     "description": "Tío Tragaldabas",
@@ -11610,7 +11674,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 326,
@@ -11791,7 +11859,7 @@
     "startTime": "17:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Barrio Belén (Pza. De las Nieves)",
     "zone": "Barrio Belén (Pza. De las Nieves)",
     "description": "Tío Tragaldabas",
@@ -11814,7 +11882,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 331,
@@ -12248,7 +12320,7 @@
     "startTime": "19:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Barrio las Flores (parque Jardines)",
     "zone": "Barrio las Flores (parque Jardines)",
     "description": "Tío Tragaldabas",
@@ -12271,7 +12343,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 345,
@@ -13346,7 +13422,7 @@
     "startTime": "12:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Chancillería (Hospital)",
     "zone": "Chancillería (Hospital)",
     "description": "Tío Tragaldabas",
@@ -13369,7 +13445,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 378,
@@ -13787,7 +13867,7 @@
     "startTime": "17:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "LAVA (La Farola - 4 de marzo - la Rubia))",
     "zone": "LAVA (La Farola - 4 de marzo - la Rubia))",
     "description": "Tío Tragaldabas",
@@ -13810,7 +13890,11 @@
     },
     "tags": [
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 390,
@@ -14206,7 +14290,7 @@
     "startTime": "19:00",
     "endTime": null,
     "title": "Tío Tragaldabas",
-    "image": "/assets/events/tio-tragaldabas-illustration.png",
+    "image": "/assets/events/tio-tragaldabas-valladolid.jpg",
     "location": "Plaza Juan de Austria (Plaza de Toros - la Farola - 4 de marzo)",
     "zone": "Plaza de Toros",
     "description": "Tío Tragaldabas",
@@ -14230,7 +14314,11 @@
     "tags": [
       "Toros",
       "Infantil y familiar"
-    ]
+    ],
+    "imageAlt": "Tío Tragaldabas en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Tio_Tragaldabas.jpg",
+    "imageCredit": "Emilio del Prado",
+    "imageLicense": "CC BY-SA 2.0"
   },
   {
     "id": 403,

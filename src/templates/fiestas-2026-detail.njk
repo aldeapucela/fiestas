@@ -59,11 +59,18 @@
         type="button"
         data-fiestas-detail-image
         data-image-src="{{ event.image }}"
-        data-image-alt="{{ event.title }}"
+        data-image-alt="{{ event.imageAlt or event.title }}"
         aria-label="Ver imagen completa"
       >
-        <img src="{{ event.detailImage or event.image }}" alt="" loading="eager" fetchpriority="high" />
+        <img src="{{ event.detailImage or event.image }}" alt="{{ event.imageAlt or event.title }}" loading="eager" fetchpriority="high" />
       </button>
+      {% if event.imageSource and (event.imageCredit or event.imageLicense) %}
+      <figcaption class="fiestas-image-attribution">
+        <a href="{{ event.imageSource }}" target="_blank" rel="noopener noreferrer" aria-label="Créditos de la imagen: {{ event.imageCredit }}{% if event.imageLicense %}, {{ event.imageLicense }}{% endif %}">
+          {{ event.imageCredit }}{% if event.imageLicense %} · {{ event.imageLicense }}{% endif %}
+        </a>
+      </figcaption>
+      {% endif %}
     </figure>
     <div class="detail-lightbox" data-fiestas-detail-lightbox role="dialog" aria-modal="true" aria-label="Imagen de {{ event.title }}" hidden>
       <button class="detail-lightbox-backdrop" type="button" data-fiestas-detail-lightbox-close aria-label="Cerrar imagen"></button>
@@ -72,7 +79,18 @@
           <i class="fa-solid fa-xmark" aria-hidden="true"></i>
         </button>
         {# Sin src inicial: openLightbox() lo asigna desde data-image-src al abrir; así no se descarga el original en cada visita. #}
-        <img class="detail-lightbox-image" data-fiestas-detail-lightbox-image alt="{{ event.title }}" />
+        <img class="detail-lightbox-image" data-fiestas-detail-lightbox-image alt="{{ event.imageAlt or event.title }}" />
+        {% if event.imageSource and (event.imageCredit or event.imageLicense) %}
+        <a
+          class="fiestas-image-attribution fiestas-image-attribution--lightbox"
+          href="{{ event.imageSource }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir créditos de la imagen: {{ event.imageCredit }}{% if event.imageLicense %}, {{ event.imageLicense }}{% endif %}"
+        >
+          {{ event.imageCredit }}{% if event.imageLicense %} · {{ event.imageLicense }}{% endif %}
+        </a>
+        {% endif %}
       </div>
     </div>
     {% endif %}
@@ -472,4 +490,3 @@
 {% include "partials/menu-drawer.njk" %}
 {% include "partials/subscribe-modal.njk" %}
 {% endblock %}
-

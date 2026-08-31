@@ -138,6 +138,9 @@ function buildManifest({ baseUrl, date, events, rankedEvents, imagePath, postIma
       location: event.location || null,
       url: eventUrl(baseUrl, event),
       imageUrl: imageUrl(baseUrl, event.image),
+      imageSource: event.imageSource || null,
+      imageCredit: event.imageCredit || null,
+      imageLicense: event.imageLicense || null,
       saveCount: event.saveCount,
       visitCount: event.visitCount,
       popularityScore: event.popularityScore
