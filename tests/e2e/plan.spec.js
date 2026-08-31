@@ -39,6 +39,18 @@ test('guardar una actividad persiste en localStorage y sobrevive a recargar', as
   }).not.toContain(activityId);
 });
 
+test('Mi plan usa la miniatura optimizada de una actividad con imagen', async ({ page }) => {
+  await page.goto('/');
+  const card = page.locator('[data-fiestas-card]').filter({ hasText: 'Tío Tragaldabas' }).first();
+  await expect(card).toBeVisible();
+  await card.locator('[data-fiestas-save], .fiestas-event-save').first().click();
+
+  await page.goto('/plan/');
+  const image = page.locator('img.fiestas-plan-timeline-image').first();
+  await expect(image).toBeVisible();
+  await expect(image).toHaveAttribute('src', /\/assets\/events\/thumbs\/.*\.webp$/);
+});
+
 // Flujo 8
 test('importar un plan por hash válido lo previsualiza y lo guarda', async ({ page }) => {
   await page.goto('/');

@@ -1201,7 +1201,7 @@ export function renderPlanTimeline(container, plan, events, plans = [], selected
         if (event.image) {
           const image = document.createElement('img');
           image.className = 'fiestas-plan-timeline-image';
-          image.src = event.image;
+          image.src = planTimelineImageUrl(event.image);
           image.alt = '';
           image.loading = 'lazy';
           image.decoding = 'async';
@@ -1875,6 +1875,11 @@ function normalizeEvents(events) {
 function eventUrl(event) {
   const slug = event.slug || slugifyPlanUrl(event.title || 'evento');
   return `/e/${event.id}/${slug}/`;
+}
+
+function planTimelineImageUrl(image = '') {
+  const match = /^\/assets\/events\/([^/]+)\.(?:png|jpe?g)$/i.exec(String(image));
+  return match ? `/assets/events/thumbs/${match[1]}.webp` : image;
 }
 
 function slugifyPlanUrl(value = '') {
