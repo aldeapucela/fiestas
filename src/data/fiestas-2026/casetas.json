@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "updatedAt": "2026-08-28",
+  "updatedAt": "2026-08-31",
   "casetas": [
     {
       "id": "z1-01",
@@ -2089,23 +2089,27 @@
               {
                 "id": "pincho-pitu",
                 "name": "Pincho de pitu",
-                "description": "(solomillo de pollo) con salsa cabrales"
+                "description": "(solomillo de pollo) con salsa cabrales",
+                "glutenFree": true
               },
               {
                 "id": "pincho-torta-maiz-chorizo-sidra",
                 "name": "Torta de maíz",
-                "description": "con chorizo a la sidra"
+                "description": "con chorizo a la sidra",
+                "glutenFree": true
               },
               {
                 "id": "pincho-papas-arrugadas",
                 "name": "Papas arrugadas",
                 "description": "con cabrales o mojo picón",
-                "dietary": "vegetarian"
+                "dietary": "vegetarian",
+                "glutenFree": true
               },
               {
                 "id": "pincho-guiso-garbanzos-pulpo",
                 "name": "Guiso de garbanzos",
-                "description": "con picada de pulpo"
+                "description": "con picada de pulpo",
+                "glutenFree": true
               }
             ]
           },
@@ -2116,11 +2120,13 @@
               {
                 "id": "pincho-sepia-ajillo",
                 "name": "Sepia al ajillo",
-                "description": "con alioli"
+                "description": "con alioli",
+                "glutenFree": true
               },
               {
                 "id": "pincho-moruno-cordero",
-                "name": "Pincho moruno de cordero"
+                "name": "Pincho moruno de cordero",
+                "glutenFree": true
               }
             ]
           },
@@ -2131,15 +2137,18 @@
               {
                 "id": "racion-oreja-plancha",
                 "name": "Oreja a la plancha",
-                "description": "con salsa brava"
+                "description": "con salsa brava",
+                "glutenFree": true
               },
               {
                 "id": "racion-torrezno-soria",
-                "name": "Torrezno de Soria"
+                "name": "Torrezno de Soria",
+                "glutenFree": true
               },
               {
                 "id": "racion-callos-moda-oviedo",
-                "name": "Callos a la moda de Oviedo"
+                "name": "Callos a la moda de Oviedo",
+                "glutenFree": true
               }
             ]
           },
@@ -2150,12 +2159,14 @@
               {
                 "id": "postre-tarta-queso-valladolid",
                 "name": "La mejor tarta de queso de Valladolid",
-                "dietary": "vegetarian"
+                "dietary": "vegetarian",
+                "glutenFree": true
               },
               {
                 "id": "postre-arroz-leche",
                 "name": "Arroz con leche",
-                "dietary": "vegetarian"
+                "dietary": "vegetarian",
+                "glutenFree": true
               }
             ]
           }
