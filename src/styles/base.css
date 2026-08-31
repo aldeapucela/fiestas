@@ -2650,13 +2650,13 @@ html.dark .site-footer-copy a {
   }
 
   .community-prompt-title {
-    max-width: 19rem;
     margin: 0;
     color: var(--community-prompt-text);
-    font-size: clamp(1.45rem, 4.8vw, 1.8rem);
+    font-size: clamp(1.1rem, 4.2vw, 1.55rem);
     font-weight: 850;
-    letter-spacing: -0.035em;
+    letter-spacing: -0.045em;
     line-height: 1.03;
+    white-space: nowrap;
   }
 
   .community-prompt-copy {
@@ -2812,6 +2812,10 @@ html.dark .site-footer-copy a {
     .community-prompt-panel {
       border-radius: 1.55rem;
       padding: 0.9rem 0.9rem calc(1rem + env(safe-area-inset-bottom));
+    }
+
+    .community-prompt-title {
+      font-size: 1.05rem;
     }
   }
 
