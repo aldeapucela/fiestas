@@ -407,6 +407,84 @@
         "query": "Plaza San Benito, Valladolid, España",
         "accuracy": 0.8,
         "geocodedAt": "2026-08-26"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de Feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-pinsa-mortadela-pesto",
+                "name": "Pinsa (pizza-focaccia)",
+                "description": "mortadela y pesto"
+              },
+              {
+                "id": "pincho-pinsa-prosciutto-cotto",
+                "name": "Pinsa (pizza-focaccia)",
+                "description": "prosciutto cotto y mayo-tartufata"
+              },
+              {
+                "id": "pincho-patatas-calabrese",
+                "name": "Patatas a la calabrese",
+                "description": "con crema de nduja"
+              }
+            ]
+          },
+          {
+            "title": "Especialidades",
+            "votable": true,
+            "items": [
+              {
+                "id": "especialidad-pasta-fusilloni-don-vito",
+                "name": "Pasta Fusilloni Don Vito"
+              },
+              {
+                "id": "especialidad-pasta-fusilloni-pesto",
+                "name": "Pasta Fusilloni",
+                "description": "al pesto",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "especialidad-pasta-fusilloni-4-quesos",
+                "name": "Pasta Fusilloni",
+                "description": "4 quesos",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "especialidad-risotto-funghi-tartufata",
+                "name": "Risotto",
+                "description": "funghi tartufata"
+              },
+              {
+                "id": "especialidad-panzerotto",
+                "name": "Panzerotto",
+                "description": "empanada de carne con pesto"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-cremosa",
+                "name": "Tarta de queso cremosa",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-gofre-nutella",
+                "name": "Gofre con Nutella",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-crepe-nutella",
+                "name": "Crepe con Nutella",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1334,7 +1412,85 @@
       "location": "Lateral de la Catedral / Plaza Portugalete",
       "placement": "En el lateral de la Catedral",
       "addressQuery": "Plaza de Portugalete, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de Feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-croqueton-pulpo",
+                "name": "Croquetón de pulpo"
+              },
+              {
+                "id": "pincho-focaccia-bolonia",
+                "name": "Focaccia Bolonia",
+                "description": "(mortadela, rúcola, parmesano y mayonesa trufada)"
+              },
+              {
+                "id": "pincho-papas-arrugadas",
+                "name": "Papas arrugadas",
+                "description": "con mojo picón",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Especialidades",
+            "votable": true,
+            "items": [
+              {
+                "id": "especialidad-pasta-fusilloni-don-vito",
+                "name": "Pasta Fusilloni Don Vito"
+              },
+              {
+                "id": "especialidad-pasta-fusilloni-pesto",
+                "name": "Pasta Fusilloni",
+                "description": "al pesto",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "especialidad-pasta-fusilloni-cuatro-quesos",
+                "name": "Pasta Fusilloni",
+                "description": "cuatro quesos",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "especialidad-risotto-funghi-tartufata",
+                "name": "Risotto",
+                "description": "funghi tartufata"
+              },
+              {
+                "id": "especialidad-panzerotto",
+                "name": "Panzerotto",
+                "description": "empanada de carne con pesto"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-cremosa",
+                "name": "Tarta de queso cremosa",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-gofre-nutella",
+                "name": "Gofre con Nutella",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-crepe-nutella",
+                "name": "Crepe con Nutella",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z4-14",
@@ -1923,6 +2079,87 @@
         "lng": -4.7310121,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Plaza de Santa Ana, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de Feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-pitu",
+                "name": "Pincho de pitu",
+                "description": "(solomillo de pollo) con salsa cabrales"
+              },
+              {
+                "id": "pincho-torta-maiz-chorizo-sidra",
+                "name": "Torta de maíz",
+                "description": "con chorizo a la sidra"
+              },
+              {
+                "id": "pincho-papas-arrugadas",
+                "name": "Papas arrugadas",
+                "description": "con cabrales o mojo picón",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "pincho-guiso-garbanzos-pulpo",
+                "name": "Guiso de garbanzos",
+                "description": "con picada de pulpo"
+              }
+            ]
+          },
+          {
+            "title": "Pinchos Estrella",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-sepia-ajillo",
+                "name": "Sepia al ajillo",
+                "description": "con alioli"
+              },
+              {
+                "id": "pincho-moruno-cordero",
+                "name": "Pincho moruno de cordero"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-oreja-plancha",
+                "name": "Oreja a la plancha",
+                "description": "con salsa brava"
+              },
+              {
+                "id": "racion-torrezno-soria",
+                "name": "Torrezno de Soria"
+              },
+              {
+                "id": "racion-callos-moda-oviedo",
+                "name": "Callos a la moda de Oviedo"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-valladolid",
+                "name": "La mejor tarta de queso de Valladolid",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-arroz-leche",
+                "name": "Arroz con leche",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1953,6 +2190,113 @@
         "lng": -4.7282115,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de Feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-takoyaki",
+                "name": "Takoyaki",
+                "description": "Croquetón de pulpo estilo japonés"
+              },
+              {
+                "id": "pincho-papas-arrugadas",
+                "name": "Papas arrugadas",
+                "description": "con mojo picón",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "pincho-taco-pollo-cajun",
+                "name": "Taco de pollo-cajún",
+                "description": "(lechuga, cebolla encurtida y mayo-chipotle)"
+              },
+              {
+                "id": "pincho-potaje-dia",
+                "name": "Potaje del día"
+              }
+            ]
+          },
+          {
+            "title": "Pinchos Estrella",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-paella-negra-pulpo",
+                "name": "Paella negra",
+                "description": "de pulpo y alioli"
+              },
+              {
+                "id": "pincho-arroz-meloso-pulpo",
+                "name": "Arroz meloso marinero",
+                "description": "de pulpo picado"
+              },
+              {
+                "id": "pincho-fusillone-pollo",
+                "name": "Fusillone",
+                "description": "con salsa cremosa de tomate, pollo, champiñones y parmesano"
+              },
+              {
+                "id": "pincho-fusillone-pesto",
+                "name": "Fusillone",
+                "description": "al pesto",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-empanada-carne",
+                "name": "Empanada de carne",
+                "description": "con mayo-chipotle"
+              },
+              {
+                "id": "racion-croquetas-jamon-iberico",
+                "name": "Croquetas de jamón ibérico",
+                "description": "(4 uds)"
+              },
+              {
+                "id": "racion-oreja-gallega",
+                "name": "Oreja a la gallega"
+              },
+              {
+                "id": "racion-callos-melosos-morro",
+                "name": "Callos melosos",
+                "description": "con morro"
+              },
+              {
+                "id": "racion-torreznos-soria",
+                "name": "Torreznos de Soria"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-valladolid",
+                "name": "La mejor tarta de queso de Valladolid",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-crepe-nutella",
+                "name": "Crepe con Nutella",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-gofre-nutella",
+                "name": "Gofre con Nutella",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ]
       }
     },
     {
