@@ -5,15 +5,44 @@ on:
     branches:
       - master
       - main
+  schedule:
+    - cron: '0 20 3-12 9 *'
   workflow_dispatch:
+    inputs:
+      daily_date:
+        description: 'Fecha a regenerar (opcional; se publican también las demás fechas)'
+        required: false
+        type: string
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
+  publication-window:
+    runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.window.outputs.run }}
+    steps:
+      - name: Check 2026 publication window
+        id: window
+        shell: bash
+        run: |
+          if [ "$GITHUB_EVENT_NAME" != "schedule" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          current_date="$(date -u +%F)"
+          if [[ "$current_date" > "2026-09-02" && "$current_date" < "2026-09-13" ]]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          fi
+
   build:
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    needs: publication-window
+    if: needs.publication-window.outputs.run == 'true' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -36,6 +65,17 @@ jobs:
 
       - name: Build site
         run: npm run build
+
+      - name: Generate daily popular Stories and posts
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        env:
+          DAILY_POPULAR_DATE: ${{ inputs.daily_date }}
+        run: |
+          if [ -n "$DAILY_POPULAR_DATE" ]; then
+            npm run social:daily -- --date "$DAILY_POPULAR_DATE" --all
+          else
+            npm run social:daily -- --all
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5

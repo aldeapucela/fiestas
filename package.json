@@ -18,6 +18,7 @@
     "casetas:locations": "node scripts/enrich-caseta-locations.mjs",
     "casetas:qr": "node scripts/generate-caseta-qr.mjs",
     "social:plan": "node scripts/generate-community-plan-social.mjs",
+    "social:daily": "node scripts/generate-daily-popular.mjs",
     "screenshots": "node scripts/capture-readme-screenshots.mjs"
   },
   "devDependencies": {
