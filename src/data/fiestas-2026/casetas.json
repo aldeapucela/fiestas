@@ -11,7 +11,68 @@
       "location": "Plaza Martí y Monsó",
       "placement": "En la propia plaza",
       "addressQuery": "Plaza Martí y Monsó, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-morcilla-black-angus",
+                "name": "Morcilla de black Angus certificada",
+                "description": "sobre un hojaldre caramelizado crema de queso y mermelada de pimiento"
+              },
+              {
+                "id": "pincho-flautin-pollo",
+                "name": "Flautín de pollo crujiente",
+                "description": "con salsa de miel y mostaza"
+              },
+              {
+                "id": "pincho-tarta-queso-toffee",
+                "name": "Tarta de queso",
+                "description": "con toffee"
+              },
+              {
+                "id": "pincho-croqueton-bacalao",
+                "name": "Croquetón de bacalao"
+              },
+              {
+                "id": "pincho-croqueton-jamon",
+                "name": "Croquetón de jamón"
+              }
+            ]
+          },
+          {
+            "title": "Otros platos",
+            "votable": false,
+            "items": [
+              {
+                "id": "plato-fabada-asturiana",
+                "name": "Fabada asturiana"
+              },
+              {
+                "id": "plato-arroz-dia",
+                "name": "Arroz del día"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso",
+                "name": "Tarta de queso"
+              },
+              {
+                "id": "postre-brownie-chocolate-nueces",
+                "name": "Brownie de chocolate con nueces"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z1-02",
@@ -32,7 +93,53 @@
       "location": "Plaza Martí y Monsó",
       "placement": "En la propia plaza",
       "addressQuery": "Plaza Martí y Monsó, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-takoyaki", "name": "Takoyaki (4 piezas)", "price": "5,30€" },
+              { "id": "racion-tori-karaage", "name": "Tori karaage (4 piezas)", "price": "6,80€" },
+              { "id": "racion-gyo-za", "name": "Gyo-za (4 piezas)", "price": "5,30€" },
+              { "id": "racion-yakitori", "name": "Yakitori (1 pieza)", "price": "4,80€" },
+              { "id": "racion-wayguy-burger", "name": "Wayguy burger", "price": "8,00€" }
+            ]
+          },
+          {
+            "title": "Sushi",
+            "votable": true,
+            "items": [
+              { "id": "sushi-sushi-variado", "name": "Sushi variado (6 piezas)", "price": "21,00€" }
+            ]
+          },
+          {
+            "title": "Pincho de feria",
+            "votable": true,
+            "items": [
+              { "id": "pincho-2-gyozas-o-2-takoyakis", "name": "2 gyozas o 2 takoyakis", "price": "4,80€" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-vin-de-la-casa", "name": "Vin de la casa", "price": "1,20€" },
+              { "id": "bebida-ribelle-de-duro", "name": "Ribelle de Duró", "price": "2,40€" },
+              { "id": "bebida-sake", "name": "Sake", "price": "2,40€" },
+              { "id": "bebida-sushi-wine", "name": "Sushi wine", "price": "2,40€" },
+              { "id": "bebida-cola-fanta-sprite", "name": "Cola/Fanta/Sprite", "price": "2,40€" },
+              { "id": "bebida-cana-cerveza", "name": "Caña cerveza", "price": "2,40€" },
+              { "id": "bebida-cerveza-sin", "name": "Cerveza Sin", "price": "2,40€" },
+              { "id": "bebida-gazpacho-g-hum", "name": "Gazpacho G. HUM", "price": "2,40€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1,20€" },
+              { "id": "bebida-refresco", "name": "Refresco", "price": "2,40€" },
+              { "id": "bebida-lorencito", "name": "Lorencito", "price": "2,00€" }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z1-04",
@@ -300,6 +407,84 @@
         "query": "Plaza San Benito, Valladolid, España",
         "accuracy": 0.8,
         "geocodedAt": "2026-08-26"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de Feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-pinsa-mortadela-pesto",
+                "name": "Pinsa (pizza-focaccia)",
+                "description": "mortadela y pesto"
+              },
+              {
+                "id": "pincho-pinsa-prosciutto-cotto",
+                "name": "Pinsa (pizza-focaccia)",
+                "description": "prosciutto cotto y mayo-tartufata"
+              },
+              {
+                "id": "pincho-patatas-calabrese",
+                "name": "Patatas a la calabrese",
+                "description": "con crema de nduja"
+              }
+            ]
+          },
+          {
+            "title": "Especialidades",
+            "votable": true,
+            "items": [
+              {
+                "id": "especialidad-pasta-fusilloni-don-vito",
+                "name": "Pasta Fusilloni Don Vito"
+              },
+              {
+                "id": "especialidad-pasta-fusilloni-pesto",
+                "name": "Pasta Fusilloni",
+                "description": "al pesto",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "especialidad-pasta-fusilloni-4-quesos",
+                "name": "Pasta Fusilloni",
+                "description": "4 quesos",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "especialidad-risotto-funghi-tartufata",
+                "name": "Risotto",
+                "description": "funghi tartufata"
+              },
+              {
+                "id": "especialidad-panzerotto",
+                "name": "Panzerotto",
+                "description": "empanada de carne con pesto"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-cremosa",
+                "name": "Tarta de queso cremosa",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-gofre-nutella",
+                "name": "Gofre con Nutella",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-crepe-nutella",
+                "name": "Crepe con Nutella",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -518,6 +703,41 @@
         "query": "Plaza San Benito, Valladolid, España",
         "accuracy": 0.8,
         "geocodedAt": "2026-08-26"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-atunada",
+                "name": "Atunada",
+                "description": "Empanada de Atún"
+              },
+              {
+                "id": "pincho-salmonaco",
+                "name": "Salmonaco",
+                "description": "Taco de Salmón Ahumado, Nueces y Salsa Tártara"
+              },
+              {
+                "id": "pincho-cabrito",
+                "name": "Cabrito",
+                "description": "Montadito de Jamón, Queso de Cabra y Cebolla Caramelizada"
+              },
+              {
+                "id": "pincho-clandestino",
+                "name": "Clandestino",
+                "description": "Montadito de Secreto con Salsa Chimichurri"
+              },
+              {
+                "id": "pincho-iberico-al-verdejo",
+                "name": "Ibérico al verdejo",
+                "description": "Montadito de solomillo al verdejo"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -649,7 +869,55 @@
       "location": "San Benito",
       "placement": "En el lateral",
       "addressQuery": "San Benito, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "La especialidad",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-brioche-carrillera",
+                "name": "Brioche de carrillera"
+              }
+            ]
+          },
+          {
+            "title": "Otras",
+            "votable": false,
+            "items": [
+              {
+                "id": "otro-patatas-chorizo",
+                "name": "Patatas con chorizo",
+                "description": "con salsa de pimientos y ajo"
+              },
+              {
+                "id": "otro-secreto-iberico",
+                "name": "Secreto ibérico",
+                "description": "con queso Edam y salsa Mayaki"
+              },
+              {
+                "id": "otro-criollo-chimichurri",
+                "name": "Criollo chimichurri"
+              },
+              {
+                "id": "otro-torreznos-soria-piparra",
+                "name": "Torreznos de Soria y piparra",
+                "description": "con salsa de piquillos y ajo"
+              },
+              {
+                "id": "otro-serranito",
+                "name": "Serranito",
+                "description": "lomo olla, jamón serrano, pimientos y tomate"
+              },
+              {
+                "id": "otro-provolone-tomate",
+                "name": "Provolone con tomate"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z2-17",
@@ -948,8 +1216,18 @@
       "zone": "Zona 4",
       "location": "Calle Cadenas de San Gregorio",
       "placement": "En la calle",
-      "addressQuery": "Calle Cadenas de San Gregorio, Valladolid, España",
-      "coordinates": null
+      "addressQuery": "Calle de las Cadenas de San Gregorio, Valladolid, España",
+      "coordinates": {
+        "lat": 41.6573153,
+        "lng": -4.723223,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 370385131,
+        "displayName": "Calle de las Cadenas de San Gregorio, San Pablo - San Nicolás, Valladolid, Castilla y León, 47011, España",
+        "query": "Calle de las Cadenas de San Gregorio, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T20:59:38.000Z"
+      }
     },
     {
       "id": "z4-02",
@@ -1053,8 +1331,18 @@
       "zone": "Zona 4",
       "location": "Calle Cadenas de San Gregorio",
       "placement": "En la calle",
-      "addressQuery": "Calle Cadenas de San Gregorio, Valladolid, España",
-      "coordinates": null
+      "addressQuery": "Calle de las Cadenas de San Gregorio, Valladolid, España",
+      "coordinates": {
+        "lat": 41.6573153,
+        "lng": -4.723223,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 370385131,
+        "displayName": "Calle de las Cadenas de San Gregorio, San Pablo - San Nicolás, Valladolid, Castilla y León, 47011, España",
+        "query": "Calle de las Cadenas de San Gregorio, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T20:59:38.000Z"
+      }
     },
     {
       "id": "z4-10",
@@ -1063,28 +1351,58 @@
       "zone": "Zona 4",
       "location": "Calle Solanilla",
       "placement": "En la calle",
-      "addressQuery": "Calle Solanilla, Valladolid, España",
-      "coordinates": null
+      "addressQuery": "Calle de la Solanilla, Valladolid, España",
+      "coordinates": {
+        "lat": 41.6542704,
+        "lng": -4.7230017,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 176086450,
+        "displayName": "Calle de la Solanilla, La Antigua - Santa Cruz, Valladolid, Castilla y León, 47003, España",
+        "query": "Calle de la Solanilla, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-30T06:33:48.000Z"
+      }
     },
     {
       "id": "z4-11",
       "publicSlug": "el-barco",
       "name": "El Barco",
-      "zone": "Zona 4",
+      "zone": "Zona 8",
       "location": "Plaza del Salvador",
       "placement": "En la plaza",
-      "addressQuery": "Plaza del Salvador, Valladolid, España",
-      "coordinates": null
+      "addressQuery": "Plaza del Salvador, 47002 Valladolid, España",
+      "coordinates": {
+        "lat": 41.650982,
+        "lng": -4.7250314,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 43306328,
+        "displayName": "Plaza del Salvador, Plaza España, Valladolid, Castilla y León, 47002, España",
+        "query": "Plaza del Salvador, 47002 Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T21:25:41.000Z"
+      }
     },
     {
       "id": "z4-12",
       "publicSlug": "grilled-chef",
       "name": "Grilled Chef",
-      "zone": "Zona 4",
+      "zone": "Zona 2",
       "location": "Matías Sangrador",
       "placement": "En su fachada",
       "addressQuery": "Calle Matías Sangrador, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6522448,
+        "lng": -4.7270011,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 33821197,
+        "displayName": "Calle Matías Sangrador, Plaza Mayor, Valladolid, Castilla y León, 47001, España",
+        "query": "Calle Matías Sangrador, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T21:25:41.000Z"
+      }
     },
     {
       "id": "z4-13",
@@ -1094,17 +1412,105 @@
       "location": "Lateral de la Catedral / Plaza Portugalete",
       "placement": "En el lateral de la Catedral",
       "addressQuery": "Plaza de Portugalete, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de Feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-croqueton-pulpo",
+                "name": "Croquetón de pulpo"
+              },
+              {
+                "id": "pincho-focaccia-bolonia",
+                "name": "Focaccia Bolonia",
+                "description": "(mortadela, rúcola, parmesano y mayonesa trufada)"
+              },
+              {
+                "id": "pincho-papas-arrugadas",
+                "name": "Papas arrugadas",
+                "description": "con mojo picón",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Especialidades",
+            "votable": true,
+            "items": [
+              {
+                "id": "especialidad-pasta-fusilloni-don-vito",
+                "name": "Pasta Fusilloni Don Vito"
+              },
+              {
+                "id": "especialidad-pasta-fusilloni-pesto",
+                "name": "Pasta Fusilloni",
+                "description": "al pesto",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "especialidad-pasta-fusilloni-cuatro-quesos",
+                "name": "Pasta Fusilloni",
+                "description": "cuatro quesos",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "especialidad-risotto-funghi-tartufata",
+                "name": "Risotto",
+                "description": "funghi tartufata"
+              },
+              {
+                "id": "especialidad-panzerotto",
+                "name": "Panzerotto",
+                "description": "empanada de carne con pesto"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-cremosa",
+                "name": "Tarta de queso cremosa",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-gofre-nutella",
+                "name": "Gofre con Nutella",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-crepe-nutella",
+                "name": "Crepe con Nutella",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z4-14",
       "publicSlug": "the-macanudo",
       "name": "The Macanudo",
-      "zone": "Zona 4",
+      "zone": "Zona 2",
       "location": "Matías Sangrador",
       "placement": "En la terraza del local",
       "addressQuery": "Calle Matías Sangrador, Valladolid, España",
-      "coordinates": null
+      "coordinates": {
+        "lat": 41.6522448,
+        "lng": -4.7270011,
+        "source": "OpenStreetMap Nominatim",
+        "osmType": "way",
+        "osmId": 33821197,
+        "displayName": "Calle Matías Sangrador, Plaza Mayor, Valladolid, Castilla y León, 47001, España",
+        "query": "Calle Matías Sangrador, Valladolid, España",
+        "accuracy": 1,
+        "geocodedAt": "2026-08-29T21:25:41.000Z"
+      }
     },
     {
       "id": "z5-03",
@@ -1234,6 +1640,109 @@
         "lng": -4.7281232,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria a elegir",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-guiso-dia",
+                "name": "Guiso del día"
+              },
+              {
+                "id": "pincho-chorizo",
+                "name": "Chorizo"
+              },
+              {
+                "id": "pincho-serranito",
+                "name": "Serranito",
+                "description": "(LOMO, JAMÓN Y PIMIENTOS)"
+              },
+              {
+                "id": "pincho-pinc-ho-moruno",
+                "name": "Pinc ho moruno"
+              },
+              {
+                "id": "pincho-hamburguesa",
+                "name": "Hamburguesa"
+              },
+              {
+                "id": "pincho-panceta",
+                "name": "Panceta"
+              },
+              {
+                "id": "pincho-raba",
+                "name": "Raba"
+              },
+              {
+                "id": "pincho-croqueton",
+                "name": "Croquetón"
+              },
+              {
+                "id": "pincho-pechuguito",
+                "name": "Pechuguito"
+              },
+              {
+                "id": "pincho-tosta-gambas",
+                "name": "Tosta de gambas"
+              }
+            ]
+          },
+          {
+            "title": "Otros",
+            "votable": false,
+            "items": [
+              {
+                "id": "pincho-unidad",
+                "name": "Pincho",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-cana-vino-mosto",
+                "name": "Caña, vino, mosto",
+                "price": "1,50€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1,20€"
+              },
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito",
+                "price": "1,50€"
+              },
+              {
+                "id": "bebida-refrescos",
+                "name": "Refrescos",
+                "price": "2,00€"
+              },
+              {
+                "id": "postre-tarta-queso",
+                "name": "Tarta de queso",
+                "price": "2,50€"
+              }
+            ]
+          },
+          {
+            "title": "Ofertas",
+            "votable": false,
+            "items": [
+              {
+                "id": "oferta-con-cana-vino-agua-mosto",
+                "name": "Con caña, vino, agua, mosto",
+                "price": "2,80€"
+              },
+              {
+                "id": "oferta-con-refresco",
+                "name": "Con refresco",
+                "price": "3,50€"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1570,6 +2079,87 @@
         "lng": -4.7310121,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Plaza de Santa Ana, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de Feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-pitu",
+                "name": "Pincho de pitu",
+                "description": "(solomillo de pollo) con salsa cabrales"
+              },
+              {
+                "id": "pincho-torta-maiz-chorizo-sidra",
+                "name": "Torta de maíz",
+                "description": "con chorizo a la sidra"
+              },
+              {
+                "id": "pincho-papas-arrugadas",
+                "name": "Papas arrugadas",
+                "description": "con cabrales o mojo picón",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "pincho-guiso-garbanzos-pulpo",
+                "name": "Guiso de garbanzos",
+                "description": "con picada de pulpo"
+              }
+            ]
+          },
+          {
+            "title": "Pinchos Estrella",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-sepia-ajillo",
+                "name": "Sepia al ajillo",
+                "description": "con alioli"
+              },
+              {
+                "id": "pincho-moruno-cordero",
+                "name": "Pincho moruno de cordero"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-oreja-plancha",
+                "name": "Oreja a la plancha",
+                "description": "con salsa brava"
+              },
+              {
+                "id": "racion-torrezno-soria",
+                "name": "Torrezno de Soria"
+              },
+              {
+                "id": "racion-callos-moda-oviedo",
+                "name": "Callos a la moda de Oviedo"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-valladolid",
+                "name": "La mejor tarta de queso de Valladolid",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-arroz-leche",
+                "name": "Arroz con leche",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1600,6 +2190,113 @@
         "lng": -4.7282115,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de Feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-takoyaki",
+                "name": "Takoyaki",
+                "description": "Croquetón de pulpo estilo japonés"
+              },
+              {
+                "id": "pincho-papas-arrugadas",
+                "name": "Papas arrugadas",
+                "description": "con mojo picón",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "pincho-taco-pollo-cajun",
+                "name": "Taco de pollo-cajún",
+                "description": "(lechuga, cebolla encurtida y mayo-chipotle)"
+              },
+              {
+                "id": "pincho-potaje-dia",
+                "name": "Potaje del día"
+              }
+            ]
+          },
+          {
+            "title": "Pinchos Estrella",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-paella-negra-pulpo",
+                "name": "Paella negra",
+                "description": "de pulpo y alioli"
+              },
+              {
+                "id": "pincho-arroz-meloso-pulpo",
+                "name": "Arroz meloso marinero",
+                "description": "de pulpo picado"
+              },
+              {
+                "id": "pincho-fusillone-pollo",
+                "name": "Fusillone",
+                "description": "con salsa cremosa de tomate, pollo, champiñones y parmesano"
+              },
+              {
+                "id": "pincho-fusillone-pesto",
+                "name": "Fusillone",
+                "description": "al pesto",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-empanada-carne",
+                "name": "Empanada de carne",
+                "description": "con mayo-chipotle"
+              },
+              {
+                "id": "racion-croquetas-jamon-iberico",
+                "name": "Croquetas de jamón ibérico",
+                "description": "(4 uds)"
+              },
+              {
+                "id": "racion-oreja-gallega",
+                "name": "Oreja a la gallega"
+              },
+              {
+                "id": "racion-callos-melosos-morro",
+                "name": "Callos melosos",
+                "description": "con morro"
+              },
+              {
+                "id": "racion-torreznos-soria",
+                "name": "Torreznos de Soria"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-valladolid",
+                "name": "La mejor tarta de queso de Valladolid",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-crepe-nutella",
+                "name": "Crepe con Nutella",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "postre-gofre-nutella",
+                "name": "Gofre con Nutella",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1893,6 +2590,154 @@
         "query": "Plaza de Santa Cruz, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:54.745Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho con bebida 4,00€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-el-rey-bocata-jijas",
+                "name": "El Rey",
+                "description": "Bocata de Jijas"
+              },
+              {
+                "id": "pincho-el-camello-bocata-moruno",
+                "name": "El Camello",
+                "description": "Bocata moruno con miel y mostaza"
+              },
+              {
+                "id": "pincho-el-coyote-bocata-barbacoa",
+                "name": "El Coyote",
+                "description": "Bocata barbacoa con salsa BBQ"
+              },
+              {
+                "id": "pincho-el-guerrero-bocata-criollo",
+                "name": "El Guerrero",
+                "description": "Bocata criollo con salsa Sriracha"
+              },
+              {
+                "id": "pincho-cochifrito",
+                "name": "Cochifrito",
+                "description": "al ajillo"
+              },
+              {
+                "id": "pincho-delicias-pollo",
+                "name": "Delicias de pollo",
+                "description": "con salsa de Sriracha"
+              },
+              {
+                "id": "pincho-croquetas-jamon-iberico",
+                "name": "Croquetas caseras de jamón ibérico",
+                "description": "(2 UD.)"
+              },
+              {
+                "id": "pincho-chorizos-sidra",
+                "name": "Chorizos a la sidra"
+              }
+            ]
+          },
+          {
+            "title": "Bebida 2,00€",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito"
+              },
+              {
+                "id": "bebida-tinto-verano",
+                "name": "Tinto verano"
+              },
+              {
+                "id": "bebida-verdejo",
+                "name": "Verdejo"
+              },
+              {
+                "id": "bebida-ribera",
+                "name": "Ribera"
+              },
+              {
+                "id": "bebida-cigales",
+                "name": "Cigales"
+              },
+              {
+                "id": "bebida-frizzante",
+                "name": "Frizzante"
+              },
+              {
+                "id": "bebida-vermouth",
+                "name": "Vermouth"
+              },
+              {
+                "id": "bebida-botella-sidra",
+                "name": "Botella sidra",
+                "price": "5,00 €"
+              },
+              {
+                "id": "bebida-cana-cerveza",
+                "name": "Caña cerveza"
+              },
+              {
+                "id": "bebida-radler",
+                "name": "Radler"
+              },
+              {
+                "id": "bebida-cerveza-0-0",
+                "name": "Cerveza 0,0"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto"
+              },
+              {
+                "id": "bebida-acua",
+                "name": "Acua"
+              },
+              {
+                "id": "bebida-refresco",
+                "name": "Refresco"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-cofre-sirope-chocolate-nata",
+                "name": "Cofre",
+                "description": "con sirope de chocolate y nata",
+                "price": "3,50 €"
+              }
+            ]
+          },
+          {
+            "title": "Café",
+            "votable": false,
+            "items": [
+              {
+                "id": "cafe-con-leche",
+                "name": "Café con leche",
+                "price": "1,50 €"
+              },
+              {
+                "id": "cafe-cortado",
+                "name": "Café cortado",
+                "price": "1,50 €"
+              },
+              {
+                "id": "cafe-solo",
+                "name": "Café solo",
+                "price": "1,50 €"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Solo pincho 3,00€"
+        ]
       }
     },
     {

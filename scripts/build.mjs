@@ -179,7 +179,7 @@ async function compileCss(cssVersionSeed) {
 }
 
 async function copyJs(jsVersionSeed) {
-  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'popular-dishes-page.js', 'weather.js', 'fiestas-2026.js', 'casetas-page.js', 'casetas-favorites.js', 'caseta-dish-likes.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js', 'chatbot.js', 'visit-tracker.js', 'events-data.js'];
+  const files = ['analytics.js', 'plan-storage.js', 'plan-export.js', 'plans-page.js', 'community-plans.js', 'popular-page.js', 'popular-dishes-page.js', 'weather.js', 'fiestas-2026.js', 'casetas-page.js', 'casetas-navigation.js', 'search-text.js', 'casetas-favorites.js', 'caseta-dish-likes.js', 'menu-drawer.js', 'pwa.js', 'scroll-top.js', 'subscribe.js', 'theme.js', 'chatbot.js', 'visit-tracker.js', 'events-data.js'];
   const contents = new Map();
   for (const file of files) {
     const source = await fs.readFile(path.join(root, 'src', 'scripts', file), 'utf8');
@@ -1008,7 +1008,7 @@ function pageContext({ assetVersion, cssVersion, jsVersion }) {
     pageJs: 'fiestas-2026.' + jsVersion + '.js',
     // modulepreload de los imports estáticos de fiestas-2026.js: sin esto el
     // navegador los descubre en cascada, módulo a módulo.
-    modulePreloads: ['menu-drawer', 'subscribe', 'theme', 'analytics', 'plan-storage', 'plan-export', 'plans-page', 'community-plans', 'popular-page', 'weather', 'events-data']
+    modulePreloads: ['menu-drawer', 'subscribe', 'theme', 'analytics', 'plan-storage', 'plan-export', 'plans-page', 'community-plans', 'popular-page', 'weather', 'events-data', 'search-text', 'casetas-navigation']
       .map((name) => '/assets/js/' + name + '.' + jsVersion + '.js'),
     communityPlansUrl: '/data/planes.json',
     assetVersion,

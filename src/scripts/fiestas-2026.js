@@ -25,6 +25,8 @@ import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './communi
 import { rankPopularEvents } from './popular-page.js';
 import { loadEvents } from './events-data.js';
 import { getWeatherAtTime, getWeatherCondition, getWeatherLabel, loadWeatherForecast } from './weather.js';
+import { matchesSearch, normalizeText } from './search-text.js';
+import { getCasetasReturnPath } from './casetas-navigation.js';
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
@@ -122,6 +124,7 @@ const els = {
   mapDateLabel: document.querySelector('[data-fiestas-map-date-label]'),
   mapFilterToggle: document.querySelector('[data-fiestas-map-filter-toggle]'),
   mapFilterCount: document.querySelector('[data-fiestas-map-filter-count]'),
+  mapClearFilters: document.querySelector('[data-fiestas-map-clear-filters]'),
   mapFilterClose: document.querySelector('[data-fiestas-map-filter-close]'),
   mapLocate: document.querySelector('[data-fiestas-map-locate]'),
   locationNote: document.querySelector('[data-fiestas-location-note]'),
@@ -561,6 +564,8 @@ function bindControls() {
     render({ updateUrl: true });
   });
 
+  els.mapClearFilters?.addEventListener('click', () => els.clearFilters?.click());
+
   els.activeFilters?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-remove-filter]');
     if (!button) return;
@@ -860,6 +865,7 @@ function renderShellState(filtered) {
     els.mapFilterCount.hidden = activeFilterCount === 0;
     els.mapFilterCount.textContent = String(activeFilterCount);
   }
+  if (els.mapClearFilters) els.mapClearFilters.hidden = activeFilterCount === 0;
   if (els.datePanel) els.datePanel.setAttribute('aria-hidden', String(mapMode && !state.mapDateOpen));
   if (els.filterRegion) {
     const dialogOpen = mapMode && state.mapFilterPanelOpen;
@@ -1512,7 +1518,7 @@ function bindMapSheetGestures() {
 function getFilteredEvents() {
   return state.events.filter((event) => {
     if (state.selectedDate && state.selectedDate !== 'all' && event.date !== state.selectedDate) return false;
-    if (state.search && !event.searchable.includes(state.search)) return false;
+    if (!matchesSearch(event.searchable, state.search)) return false;
     if (state.selectedTypes.size && !event.tags.some((tag) => state.selectedTypes.has(tag))) return false;
     if (state.selectedAreas.size && !state.selectedAreas.has(event.area)) return false;
     if (state.selectedTicketKinds.size && !state.selectedTicketKinds.has(event.ticketKind)) return false;
@@ -2067,6 +2073,7 @@ function initDetailPage() {
     trackActivityViewed(els.detail.dataset.eventId);
     updateDetailFavorite({ silent: true });
   }
+  if (isCasetaDetail) applyCasetaReturnLinks();
   moveDetailMapAfterActions();
   initDetailDirections();
   if (!isCasetaDetail) {
@@ -2393,6 +2400,10 @@ function updateDetailFavorite(options = {}) {
 }
 
 function goBackToAgenda() {
+  if (els.detail?.dataset.casetaDetail === 'true') {
+    window.location.href = getCasetasReturnPath(window.location.href) || '/casetas/';
+    return;
+  }
   try {
     const referrer = document.referrer ? new URL(document.referrer) : null;
     if (referrer && referrer.origin === window.location.origin && window.history.length > 1) {
@@ -2401,6 +2412,13 @@ function goBackToAgenda() {
     }
   } catch (_) {}
   window.location.href = '/';
+}
+
+function applyCasetaReturnLinks() {
+  const returnPath = getCasetasReturnPath(window.location.href) || '/casetas/';
+  document.querySelectorAll('[data-fiestas-caseta-return]').forEach((link) => {
+    link.setAttribute('href', returnPath);
+  });
 }
 
 async function shareDetail() {
@@ -2852,13 +2870,6 @@ function slugify(value = '') {
     .trim()
     .replace(/[^a-z0-9]+/g, '-')
     .replace(/^-+|-+$/g, '');
-}
-
-function normalizeText(value = '') {
-  return String(value)
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
 }
 
 function escapeHtml(value = '') {

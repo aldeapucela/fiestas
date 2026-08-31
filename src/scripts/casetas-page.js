@@ -1,6 +1,8 @@
 import { readCasetaFavoriteIds, setCasetaFavorite, subscribeToCasetaFavorites } from './casetas-favorites.js';
 import { readCasetaDishLikeIds, subscribeToCasetaDishLikes } from './caseta-dish-likes.js';
 import { trackCasetaFavoriteChanged } from './analytics.js';
+import { buildCasetaDetailHref } from './casetas-navigation.js';
+import { matchesSearch, normalizeText } from './search-text.js';
 
 const CENTER = [41.645726, -4.732919];
 const DEFAULT_ZOOM = 13;
@@ -21,6 +23,7 @@ const ZONE_COLORS = {
   'Zona 5': '#ba3d3d',
   'Zona 6': '#087e8c',
   'Zona 7': '#b94f72',
+  'Zona 8': '#2f7d4f',
   'Zona Ferias': '#a85a2a'
 };
 const ZONE_LABELS = {
@@ -31,6 +34,7 @@ const ZONE_LABELS = {
   'Zona 5': 'Acera de Recoletos',
   'Zona 6': 'Paseo Zorrilla · Plaza de Toros',
   'Zona 7': 'Plaza de Santa Cruz',
+  'Zona 8': 'Plaza del Salvador',
   'Zona Ferias': 'Recinto ferial José Luis Bellido'
 };
 
@@ -48,6 +52,7 @@ const state = {
   dietaryFilters: new Set(),
   onlyFavorites: false,
   onlyLikedDishes: false,
+  onlyWithMenu: false,
   casetaFavorites: new Set(),
   likedCasetaDishIds: new Set(),
   filterPanelOpen: false,
@@ -86,8 +91,10 @@ export function initCasetasPage() {
   els.filterInputs = [...document.querySelectorAll('[data-fiestas-casetas-dietary-filter]')];
   els.filterFavorite = document.querySelector('[data-fiestas-casetas-favorites-filter]');
   els.filterLikedDishes = document.querySelector('[data-fiestas-casetas-liked-dishes-filter]');
+  els.filterWithMenu = document.querySelector('[data-fiestas-casetas-menu-filter]');
   els.filterCount = document.querySelector('[data-fiestas-casetas-filter-count]');
   els.filterClear = document.querySelector('[data-fiestas-casetas-filter-clear]');
+  els.mapClearFilters = document.querySelector('[data-fiestas-map-clear-filters]');
   els.searchToggle = document.querySelector('[data-fiestas-casetas-search-toggle]');
   els.searchPanel = document.querySelector('[data-fiestas-casetas-search-panel]');
   els.searchInput = document.querySelector('[data-fiestas-casetas-search-input]');
@@ -240,14 +247,22 @@ function bindControls() {
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
   });
-  els.filterClear?.addEventListener('click', () => {
-    state.dietaryFilters.clear();
-    state.onlyFavorites = false;
-    state.onlyLikedDishes = false;
+  els.filterWithMenu?.addEventListener('click', () => {
+    state.onlyWithMenu = !state.onlyWithMenu;
     syncUrlState();
     renderMapMarkers();
     renderSheet(getVisibleCasetas());
   });
+  els.filterClear?.addEventListener('click', () => {
+    state.dietaryFilters.clear();
+    state.onlyFavorites = false;
+    state.onlyLikedDishes = false;
+    state.onlyWithMenu = false;
+    syncUrlState();
+    renderMapMarkers();
+    renderSheet(getVisibleCasetas());
+  });
+  els.mapClearFilters?.addEventListener('click', () => els.filterClear?.click());
   els.searchToggle?.addEventListener('click', () => {
     const opening = !state.searchOpen;
     state.searchOpen = opening;
@@ -263,14 +278,18 @@ function bindControls() {
     if (opening) els.searchInput?.focus();
   });
   els.searchInput?.addEventListener('input', (event) => {
-    state.searchQuery = event.currentTarget.value.trim();
-    if (els.searchClear) els.searchClear.hidden = !state.searchQuery;
+    // Sin trim: syncSearchUi() reescribe el input desde el estado, y recortar
+    // aqui borraba el espacio recien tecleado. Se recorta al usar la consulta.
+    state.searchQuery = event.currentTarget.value;
+    if (els.searchClear) els.searchClear.hidden = !state.searchQuery.trim();
+    syncUrlState();
     renderSheet(getVisibleCasetas());
   });
   els.searchClear?.addEventListener('click', () => {
     state.searchQuery = '';
     if (els.searchInput) els.searchInput.value = '';
     els.searchClear.hidden = true;
+    syncUrlState();
     renderSheet(getVisibleCasetas());
     els.searchInput?.focus();
   });
@@ -314,6 +333,7 @@ function readUrlState() {
   const zone = params.get('zone');
   const location = params.get('location');
   const selectedCaseta = params.get('caseta');
+  state.searchQuery = String(params.get('search') || '').trim();
   if (zone && state.zones.some((item) => item.zone === zone)) state.selectedZone = zone;
   if (!state.selectedZone && selectedCaseta) {
     state.selectedZone = state.casetas.find((caseta) => caseta.id === selectedCaseta)?.zone || null;
@@ -332,6 +352,7 @@ function readUrlState() {
     .forEach((value) => state.dietaryFilters.add(value));
   state.onlyFavorites = ['1', 'true'].includes(String(params.get('favorites') || '').toLowerCase());
   state.onlyLikedDishes = ['1', 'true'].includes(String(params.get('liked') || '').toLowerCase());
+  state.onlyWithMenu = ['1', 'true'].includes(String(params.get('menu') || '').toLowerCase());
 }
 
 function syncUrlState() {
@@ -352,6 +373,11 @@ function syncUrlState() {
   else url.searchParams.delete('favorites');
   if (state.onlyLikedDishes) url.searchParams.set('liked', '1');
   else url.searchParams.delete('liked');
+  if (state.onlyWithMenu) url.searchParams.set('menu', '1');
+  else url.searchParams.delete('menu');
+  const searchQuery = state.searchQuery.trim();
+  if (searchQuery) url.searchParams.set('search', searchQuery);
+  else url.searchParams.delete('search');
   [...state.dietaryFilters]
     .sort()
     .forEach((dietary) => url.searchParams.append('dietary', dietary));
@@ -367,9 +393,8 @@ function getVisibleCasetas() {
       ? selectedZone.items.filter((caseta) => caseta.location === state.selectedLocation)
       : selectedZone.items
     : state.casetas;
-  const query = normalizeText(state.searchQuery);
   return source.filter((caseta) => {
-    const matchesQuery = !query || caseta.searchText.includes(query);
+    const matchesQuery = matchesSearch(caseta.searchText, state.searchQuery);
     return matchesQuery && matchesCasetaFilters(caseta);
   });
 }
@@ -379,7 +404,12 @@ function matchesCasetaFilters(caseta) {
     || [...state.dietaryFilters].some((dietary) => caseta.dietary.includes(dietary));
   const matchesFavorite = !state.onlyFavorites || state.casetaFavorites.has(caseta.id);
   const matchesLikedDish = !state.onlyLikedDishes || casetaHasLikedDish(caseta, state.likedCasetaDishIds);
-  return matchesDietary && matchesFavorite && matchesLikedDish;
+  const matchesMenu = !state.onlyWithMenu || casetaHasMenu(caseta);
+  return matchesDietary && matchesFavorite && matchesLikedDish && matchesMenu;
+}
+
+export function casetaHasMenu(caseta) {
+  return (caseta?.details?.menuSections || []).some((section) => Array.isArray(section?.items) && section.items.length > 0);
 }
 
 export function casetaHasLikedDish(caseta, likedDishIds = new Set()) {
@@ -445,8 +475,12 @@ function renderMapMarkers() {
         ? 'No hay casetas favoritas con esos filtros.'
         : state.onlyLikedDishes && !state.likedCasetaDishIds.size
           ? 'Todavía no has dado me gusta a ningún pincho.'
-          : state.onlyLikedDishes
+        : state.onlyLikedDishes
             ? 'No hay casetas con pinchos que te gusten y esos filtros.'
+        : state.onlyWithMenu && !state.casetas.some(casetaHasMenu)
+          ? 'Todavía no hay cartas integradas.'
+        : state.onlyWithMenu
+          ? 'No hay casetas con carta y esos filtros.'
         : state.dietaryFilters.size
           ? 'No hay casetas con esos filtros.'
           : 'Las zonas todavía no tienen una ubicación exacta en el mapa.';
@@ -524,8 +558,8 @@ function renderSheet(items, options = {}) {
   if (!sorted.length) {
     const empty = document.createElement('div');
     empty.className = 'fiestas-empty fiestas-casetas-empty';
-    empty.innerHTML = state.searchQuery
-      ? `<p>No se han encontrado casetas para «${escapeHtml(state.searchQuery)}».</p>`
+    empty.innerHTML = state.searchQuery.trim()
+      ? `<p>No se han encontrado casetas para «${escapeHtml(state.searchQuery.trim())}».</p>`
       : state.onlyFavorites && !state.casetaFavorites.size
         ? '<p>Todavía no has guardado ninguna caseta como favorita.</p>'
         : state.onlyFavorites
@@ -534,6 +568,10 @@ function renderSheet(items, options = {}) {
             ? '<p>Todavía no has dado me gusta a ningún pincho.</p>'
             : state.onlyLikedDishes
               ? '<p>No hay casetas con pinchos que te gusten y estos filtros.</p>'
+      : state.onlyWithMenu && !state.casetas.some(casetaHasMenu)
+        ? '<p>Todavía no hay cartas integradas.</p>'
+      : state.onlyWithMenu
+        ? '<p>No hay casetas con carta y estos filtros.</p>'
       : state.dietaryFilters.size
         ? '<p>No hay casetas con esos filtros.</p>'
         : '<p>No hay casetas disponibles.</p>';
@@ -566,7 +604,7 @@ function casetaRow(caseta) {
   article.className = 'fiestas-map-result fiestas-caseta-result';
   article.dataset.mapResultId = caseta.id;
   article.style.setProperty('--fiestas-type-color', caseta.color);
-  const href = `/c/${encodeURIComponent(caseta.publicSlug || caseta.slug)}/`;
+  const href = buildCasetaDetailHref(caseta);
   const placement = caseta.placement || '';
   const saved = state.casetaFavorites.has(caseta.id);
   const distance = state.userLocation && caseta.coordinates
@@ -615,8 +653,7 @@ function casetaRow(caseta) {
 }
 
 function getSearchMatch(caseta) {
-  const query = normalizeText(state.searchQuery).trim();
-  if (!query) return null;
+  if (!state.searchQuery.trim()) return null;
 
   const menuMatches = (caseta.details?.menuSections || []).flatMap((section) => [
     ...(section.items || []).map((item) => ({ text: typeof item === 'string' ? item : item?.name }))
@@ -624,7 +661,7 @@ function getSearchMatch(caseta) {
   const highlightMatches = (caseta.details?.highlights || []).map((highlight) => ({ text: highlight }));
 
   return [...menuMatches, ...highlightMatches]
-    .find((candidate) => candidate.text && normalizeText(candidate.text).includes(query)) || null;
+    .find((candidate) => candidate.text && matchesSearch(candidate.text, state.searchQuery)) || null;
 }
 
 function renderLocationStatus(isFocused) {
@@ -644,7 +681,8 @@ function syncSearchUi() {
   els.searchToggle.setAttribute('title', state.searchOpen ? 'Cerrar búsqueda' : 'Buscar caseta');
   els.searchToggle.classList.toggle('is-active', state.searchOpen);
   els.searchPanel.hidden = !state.searchOpen;
-  if (els.searchClear) els.searchClear.hidden = !state.searchQuery;
+  if (els.searchInput && els.searchInput.value !== state.searchQuery) els.searchInput.value = state.searchQuery;
+  if (els.searchClear) els.searchClear.hidden = !state.searchQuery.trim();
 }
 
 function setFilterPanelOpen(open, options = {}) {
@@ -666,7 +704,8 @@ function syncFilterUi() {
   if (!els.filterToggle || !els.filterPanel) return;
   const activeFilterCount = state.dietaryFilters.size
     + (state.onlyFavorites ? 1 : 0)
-    + (state.onlyLikedDishes ? 1 : 0);
+    + (state.onlyLikedDishes ? 1 : 0)
+    + (state.onlyWithMenu ? 1 : 0);
   els.filterToggle.classList.toggle('is-active', activeFilterCount > 0);
   els.filterToggle.setAttribute('aria-expanded', String(state.filterPanelOpen));
   els.filterToggle.setAttribute('aria-label', activeFilterCount
@@ -710,7 +749,17 @@ function syncFilterUi() {
     const likedIcon = els.filterLikedDishes.querySelector('[data-fiestas-casetas-liked-dishes-icon]');
     if (likedIcon) likedIcon.className = state.onlyLikedDishes ? 'fa-solid fa-thumbs-up' : 'fa-regular fa-thumbs-up';
   }
+  if (els.filterWithMenu) {
+    els.filterWithMenu.classList.toggle('is-active', state.onlyWithMenu);
+    els.filterWithMenu.setAttribute('aria-pressed', String(state.onlyWithMenu));
+    els.filterWithMenu.setAttribute('aria-label', state.onlyWithMenu
+      ? 'Mostrar todas las casetas'
+      : 'Mostrar solo casetas con carta');
+    const menuIcon = els.filterWithMenu.querySelector('[data-fiestas-casetas-menu-icon]');
+    if (menuIcon) menuIcon.className = 'fa-solid fa-utensils';
+  }
   if (els.filterClear) els.filterClear.hidden = activeFilterCount === 0;
+  if (els.mapClearFilters) els.mapClearFilters.hidden = activeFilterCount === 0;
 }
 
 function requestLocation(options = {}) {
@@ -946,10 +995,6 @@ function median(values) {
 
 function slugify(value = '') {
   return normalizeText(value).trim().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '') || 'caseta';
-}
-
-function normalizeText(value = '') {
-  return String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
 }
 
 function escapeHtml(value = '') {

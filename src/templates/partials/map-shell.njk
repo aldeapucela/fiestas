@@ -42,6 +42,10 @@
     <span>Filtros</span>
     <span class="fiestas-map-filter-count" data-fiestas-map-filter-count hidden aria-label="Filtros activos">0</span>
   </button>
+  <button class="fiestas-map-clear-filters" type="button" data-fiestas-map-clear-filters aria-label="Limpiar filtros activos" title="Limpiar filtros" hidden>
+    <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    <span>Limpiar filtros</span>
+  </button>
   {% endif %}
   <div class="fiestas-map-canvas" data-fiestas-map></div>
   <div class="fiestas-map-topbar" aria-label="Controles del mapa">
@@ -50,6 +54,10 @@
       <i class="fa-solid fa-sliders" aria-hidden="true"></i>
       <span>Filtros</span>
       <span class="fiestas-map-filter-count" data-fiestas-casetas-filter-count hidden aria-label="Filtros activos">0</span>
+    </button>
+    <button class="fiestas-map-clear-filters" type="button" data-fiestas-map-clear-filters aria-label="Limpiar filtros activos" title="Limpiar filtros" hidden>
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      <span>Limpiar filtros</span>
     </button>
     {% endif %}
     <button class="fiestas-map-control fiestas-map-control--icon" type="button" data-fiestas-map-locate aria-label="Centrar en mi ubicación" title="Centrar en mi ubicación">
@@ -77,6 +85,11 @@
       <button class="fiestas-casetas-filter-option fiestas-casetas-filter-option--toggle" type="button" data-fiestas-casetas-liked-dishes-filter aria-pressed="false" aria-label="Mostrar casetas con platos que te gustan">
         <span class="fiestas-casetas-filter-option-copy">
           <strong><i class="fa-regular fa-thumbs-up" data-fiestas-casetas-liked-dishes-icon aria-hidden="true"></i> Platos que te gustan</strong>
+        </span>
+      </button>
+      <button class="fiestas-casetas-filter-option fiestas-casetas-filter-option--toggle" type="button" data-fiestas-casetas-menu-filter aria-pressed="false" aria-label="Mostrar casetas con carta">
+        <span class="fiestas-casetas-filter-option-copy">
+          <strong><i class="fa-solid fa-utensils" data-fiestas-casetas-menu-icon aria-hidden="true"></i> Con carta</strong>
         </span>
       </button>
       <button class="fiestas-casetas-filter-option fiestas-casetas-filter-option--toggle" type="button" value="vegetarian" data-fiestas-casetas-dietary-filter aria-pressed="false" aria-label="Mostrar casetas con platos vegetarianos">

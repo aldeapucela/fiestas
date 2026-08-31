@@ -226,6 +226,10 @@ async function createLocalEvent(remote, id, currentEvents, dateOverride = null, 
 
 function occurrenceDatesFor(remote) {
   const startDate = String(remote.startsAt || '').slice(0, 10);
+  const explicitDates = {
+    2316: ['2026-09-05', '2026-09-11']
+  }[Number(remote.id)];
+  if (explicitDates) return explicitDates;
   if (!isDailySeries(remote)) return [startDate];
   const endDate = String(remote.endsAt || '').slice(0, 10);
   const lastDate = endDate > '2026-09-13' ? '2026-09-13' : endDate;
@@ -400,6 +404,11 @@ function simplifyTitle(value = '') {
 function locationFor(remote) {
   const id = Number(remote.id);
   const overrides = {
+    2310: 'Calle Calixto Fernández de la Torre, esquina con C. Reina',
+    2316: 'Calle Cascajares (zona de El Farolito, La Taberna del Farolito y La Cárcava)',
+    2215: 'Bar ZVMO, C. Reina, 1',
+    2313: 'Plaza de Derecho (Facultad de Derecho, Universidad de Valladolid)',
+    2265: 'Bandido Techno Room, Pl. del Pte., 4',
     2218: 'Calle Ebanistería, 2 (Zona Cantarranas)',
     2191: 'Fantasy Discc Pub, Calle Espíritu Santo, 9',
     1999: 'Centro Comercial Vallsur, Paseo de Zorrilla, 328',
@@ -427,6 +436,36 @@ function isConcreteLocation(location) {
 async function resolveCoordinates(remote, location, currentEvents) {
   const id = Number(remote.id);
   const known = {
+    2310: {
+      lat: 41.6518356,
+      lng: -4.7295367,
+      source: 'Google Maps (consulta manual; coordenadas aproximadas de la intersección)',
+      query: 'C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España'
+    },
+    2316: {
+      lat: 41.6521118,
+      lng: -4.7241231,
+      source: 'Google Maps (consulta manual; centro aproximado de tres locales contiguos)',
+      query: 'El Farolito, La Taberna del Farolito y Bar La Cárcava, Valladolid, España'
+    },
+    2215: {
+      lat: 41.6517901,
+      lng: -4.7295341,
+      source: 'Google Maps (consulta manual; ficha de Zvmo)',
+      query: 'Zvmo, C. Reina, 1, 47001 Valladolid, España'
+    },
+    2313: {
+      lat: 41.6519966,
+      lng: -4.7215228,
+      source: 'Google Maps (consulta manual; referencia aproximada de la Facultad de Derecho)',
+      query: 'Facultad de Derecho, Universidad de Valladolid, Pl. de la Univ., s/n, 47002 Valladolid, España'
+    },
+    2265: {
+      lat: 41.6525315,
+      lng: -4.7307035,
+      source: 'Google Maps (consulta manual; dirección aproximada del local)',
+      query: 'Pl. del Pte., 4, 47003 Valladolid, España'
+    },
     2218: {
       lat: 41.6530093,
       lng: -4.7251996,

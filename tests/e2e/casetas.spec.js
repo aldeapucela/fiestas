@@ -70,3 +70,47 @@ test('la ficha de una caseta abre y muestra su contenido', async ({ page }) => {
   await page.goto(urlPath);
   await expect(page.locator('h1')).not.toBeEmpty();
 });
+
+test('la ficha conserva la búsqueda y filtros al volver al listado', async ({ page }) => {
+  await page.goto('/casetas/');
+  const filterCase = await page.evaluate(() => {
+    const caseta = (window.__FIESTAS_2026_CASETAS__ || []).find((item) =>
+      item?.details?.menuSections?.some((section) => section?.items?.some((item) => item?.dietary === 'vegetarian'))
+    );
+    if (!caseta) return null;
+    window.localStorage.setItem('fiestasPucela:casetas-favorites', JSON.stringify([caseta.id]));
+    return caseta;
+  });
+  expect(filterCase).not.toBeNull();
+
+  const params = new URLSearchParams({
+    favorites: '1',
+    search: filterCase.name,
+    zone: filterCase.zone,
+    location: filterCase.location
+  });
+  params.append('dietary', 'vegetarian');
+  await page.goto(`/casetas/?${params.toString()}`);
+  const link = page.locator('.fiestas-map-result-link').first();
+  await expect(link).toBeVisible();
+
+  const href = await link.getAttribute('href');
+  expect(href).toContain('/c/');
+  const detailUrl = new URL(href, 'http://127.0.0.1:8002');
+  const returnPath = detailUrl.searchParams.get('return');
+  expect(returnPath).toContain('/casetas/');
+  const returnUrl = new URL(returnPath, 'http://127.0.0.1:8002');
+  expect(returnUrl.searchParams.get('favorites')).toBe('1');
+  expect(returnUrl.searchParams.get('search')).toBe(filterCase.name);
+  expect(returnUrl.searchParams.get('zone')).toBe(filterCase.zone);
+  expect(returnUrl.searchParams.get('location')).toBe(filterCase.location);
+  expect(returnUrl.searchParams.getAll('dietary')).toContain('vegetarian');
+
+  await page.goto(href);
+  await page.locator('[data-fiestas-back]').click();
+  await expect.poll(async () => new URL(await page.url()).pathname).toBe('/casetas/');
+  const returnedUrl = new URL(await page.url());
+  expect(returnedUrl.searchParams.get('favorites')).toBe('1');
+  expect(returnedUrl.searchParams.get('search')).toBe(filterCase.name);
+  expect(returnedUrl.searchParams.getAll('dietary')).toContain('vegetarian');
+});

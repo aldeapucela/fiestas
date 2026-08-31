@@ -42,32 +42,22 @@ export function createCasetaQrTargetUrl({ baseUrl, publicSlug, slug }) {
   return url.toString();
 }
 
-export function createCasetaQrPosterSvg({ qrSvg, logoHref, logoDataUri, siteUrl }) {
+export function createCasetaQrPosterSvg({ qrSvg, posterBaseHref, posterBaseDataUri, siteUrl }) {
   const { viewBox, content } = qrSvgParts(qrSvg);
   const [, , qrWidth] = viewBox.trim().split(/[\s,]+/).map(Number);
   if (!Number.isFinite(qrWidth) || qrWidth <= 0) throw new Error('El código QR no tiene unas dimensiones válidas.');
-  const visibleUrl = new URL(siteUrl).host;
-  const logo = logoHref || logoDataUri;
-  if (!logo) throw new Error('El cartel QR necesita una referencia al logo.');
+  const posterBase = posterBaseHref || posterBaseDataUri;
+  if (!posterBase) throw new Error('El cartel QR necesita una referencia a la plantilla base.');
 
   return `<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 1600" role="img" aria-labelledby="poster-title poster-description">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 904 1280" width="904" height="1280" role="img" aria-labelledby="poster-title poster-description">
   <title id="poster-title">Valora nuestros pinchos</title>
   <desc id="poster-description">Escanea el código QR para descubrir y valorar las casetas de feria de día.</desc>
-  <rect width="1200" height="1600" fill="#fffdfa" />
+  <image x="0" y="0" width="904" height="1280" preserveAspectRatio="none" href="${escapeXml(posterBase)}" xlink:href="${escapeXml(posterBase)}" />
 
-  <image x="525" y="72" width="150" height="150" preserveAspectRatio="xMidYMid meet" href="${escapeXml(logo)}" xlink:href="${escapeXml(logo)}" />
-  <text x="600" y="270" text-anchor="middle" fill="#172b4d" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="700">ALDEA PUCELA</text>
-  <text x="600" y="316" text-anchor="middle" fill="#5d7393" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="600">Fiestas Valladolid 2026</text>
-
-  <text x="600" y="472" text-anchor="middle" fill="#0f9f8d" font-family="Arial, Helvetica, sans-serif" font-size="31" font-weight="700">CASETAS · FERIA DE DÍA</text>
-  <text x="600" y="625" text-anchor="middle" fill="#102342" font-family="Arial, Helvetica, sans-serif" font-size="78" font-weight="700">Valora nuestros</text>
-  <text x="600" y="740" text-anchor="middle" fill="#0f9f8d" font-family="Arial, Helvetica, sans-serif" font-size="94" font-weight="700">pinchos</text>
-  <text x="600" y="900" text-anchor="middle" fill="#102342" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="700">ESCANEA EL CÓDIGO</text>
-
-  <rect x="390" y="950" width="420" height="440" rx="28" fill="#ffffff" />
-  <g transform="translate(420 990) scale(${360 / qrWidth})">${content}</g>
-  <text x="600" y="1480" text-anchor="middle" fill="#0f746b" font-family="Arial, Helvetica, sans-serif" font-size="32" font-weight="700">${escapeXml(visibleUrl)}</text>
+  <!-- La plantilla ya contiene la composición, logo, textos y URL; solo reemplazamos su QR. -->
+  <rect x="280" y="825" width="346" height="344" rx="18" fill="#fffdfa" stroke="#0f9f8d" stroke-width="3" />
+  <g transform="translate(304 849) scale(${298 / qrWidth})">${content}</g>
 </svg>
 `;
 }

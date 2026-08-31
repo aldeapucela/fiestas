@@ -1649,6 +1649,45 @@
     display: none;
   }
 
+  .fiestas-map-clear-filters {
+    display: inline-flex;
+    min-height: 2.25rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    border: 1px solid rgba(102, 112, 133, 0.28);
+    border-radius: 9999px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #667085;
+    padding: 0 0.72rem;
+    font: inherit;
+    font-size: 0.78rem;
+    font-weight: 800;
+    white-space: nowrap;
+    box-shadow: 0 0.45rem 1rem rgba(15, 23, 42, 0.12);
+    cursor: pointer;
+  }
+
+  .fiestas-map-clear-filters:hover,
+  .fiestas-map-clear-filters:focus-visible {
+    border-color: #667085;
+    background: #fff;
+    color: #344054;
+    outline: 3px solid rgba(102, 112, 133, 0.18);
+    outline-offset: 2px;
+  }
+
+  .fiestas-map-clear-filters[hidden] {
+    display: none;
+  }
+
+  .fiestas-map-view > .fiestas-map-clear-filters {
+    position: absolute;
+    top: calc(max(0.55rem, env(safe-area-inset-top)) + 8.65rem);
+    right: 0.85rem;
+    z-index: 42;
+  }
+
   .fiestas-app.is-map-mode .fiestas-filter-region {
     position: fixed;
     top: calc(max(0.55rem, env(safe-area-inset-top)) + 8.85rem);
@@ -3524,7 +3563,7 @@
     min-height: 2.4rem;
     align-items: center;
     gap: 0.6rem;
-    color: #73579f;
+    color: #4b5563;
     font-size: 0.88rem;
     font-weight: 800;
     text-decoration: none;
@@ -3532,17 +3571,16 @@
 
   .fiestas-community-secondary a:hover,
   .fiestas-community-secondary a:focus-visible {
-    color: #4f386e;
+    color: #313844;
     text-decoration: none;
   }
 
-  .fiestas-community-secondary a.fiestas-community-telegram,
   .fiestas-community-secondary a.fiestas-community-telegram i {
     color: #229ed9;
   }
 
-  .fiestas-community-secondary a.fiestas-community-telegram:hover,
-  .fiestas-community-secondary a.fiestas-community-telegram:focus-visible {
+  .fiestas-community-secondary a.fiestas-community-telegram:hover i,
+  .fiestas-community-secondary a.fiestas-community-telegram:focus-visible i {
     color: #168ac1;
   }
 
@@ -3553,37 +3591,30 @@
     text-align: center;
   }
 
-  .fiestas-community-secondary a.fiestas-community-whatsapp {
-    color: #25d366;
-    font-weight: 700;
-  }
-
   .fiestas-community-secondary a.fiestas-community-whatsapp i {
     color: #25d366;
   }
 
-  .fiestas-community-secondary a.fiestas-community-whatsapp:hover,
-  .fiestas-community-secondary a.fiestas-community-whatsapp:focus-visible {
+  .fiestas-community-secondary a.fiestas-community-whatsapp:hover i,
+  .fiestas-community-secondary a.fiestas-community-whatsapp:focus-visible i {
     color: #278b4d;
   }
 
-  .fiestas-community-secondary a.fiestas-community-facebook,
   .fiestas-community-secondary a.fiestas-community-facebook i {
     color: #1877f2;
   }
 
-  .fiestas-community-secondary a.fiestas-community-facebook:hover,
-  .fiestas-community-secondary a.fiestas-community-facebook:focus-visible {
+  .fiestas-community-secondary a.fiestas-community-facebook:hover i,
+  .fiestas-community-secondary a.fiestas-community-facebook:focus-visible i {
     color: #1264c7;
   }
 
-  .fiestas-community-secondary a.fiestas-community-instagram,
   .fiestas-community-secondary a.fiestas-community-instagram i {
     color: #e4405f;
   }
 
-  .fiestas-community-secondary a.fiestas-community-instagram:hover,
-  .fiestas-community-secondary a.fiestas-community-instagram:focus-visible {
+  .fiestas-community-secondary a.fiestas-community-instagram:hover i,
+  .fiestas-community-secondary a.fiestas-community-instagram:focus-visible i {
     color: #c62e4f;
   }
 
@@ -4101,28 +4132,26 @@
   }
 
   html.dark .fiestas-community-secondary a {
-    color: #c8b3e5;
+    color: #d0d5dc;
   }
 
-  html.dark .fiestas-community-secondary a.fiestas-community-telegram,
+  html.dark .fiestas-community-secondary a:hover,
+  html.dark .fiestas-community-secondary a:focus-visible {
+    color: #f0f2f5;
+  }
+
   html.dark .fiestas-community-secondary a.fiestas-community-telegram i {
     color: #54b8e8;
-  }
-
-  html.dark .fiestas-community-secondary a.fiestas-community-whatsapp {
-    color: #49df7c;
   }
 
   html.dark .fiestas-community-secondary a.fiestas-community-whatsapp i {
     color: #49df7c;
   }
 
-  html.dark .fiestas-community-secondary a.fiestas-community-facebook,
   html.dark .fiestas-community-secondary a.fiestas-community-facebook i {
     color: #5b9df6;
   }
 
-  html.dark .fiestas-community-secondary a.fiestas-community-instagram,
   html.dark .fiestas-community-secondary a.fiestas-community-instagram i {
     color: #f47b96;
   }
@@ -4285,6 +4314,7 @@
   html.dark .fiestas-map-header,
   html.dark .fiestas-map-date-toggle,
   html.dark .fiestas-map-filter-toggle,
+  html.dark .fiestas-map-clear-filters,
   html.dark .fiestas-map-filter-close,
   html.dark .fiestas-filter-region,
   html.dark .fiestas-map-sheet,
@@ -4320,6 +4350,19 @@
     border-color: #17b8a4;
     background: #0f766e;
     color: #fff;
+  }
+
+  html.dark .fiestas-map-clear-filters {
+    border-color: #4b5565;
+    background: rgba(26, 31, 40, 0.96);
+    color: #aeb7c5;
+  }
+
+  html.dark .fiestas-map-clear-filters:hover,
+  html.dark .fiestas-map-clear-filters:focus-visible {
+    border-color: #aeb7c5;
+    background: #202631;
+    color: #f5f3ee;
   }
 
   html.dark .fiestas-map-filter-close {
@@ -5871,11 +5914,12 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 }
 
 .fiestas-caseta-menu-item-disclosure > summary {
+  position: relative;
   cursor: pointer;
   list-style: none;
   border-radius: 0.35rem;
-  padding: 0.16rem 0.2rem;
-  margin: -0.16rem -0.2rem;
+  padding: 0.16rem 0;
+  margin: -0.16rem 0;
 }
 
 .fiestas-caseta-menu-item-disclosure > summary::-webkit-details-marker {
@@ -5883,19 +5927,21 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
 }
 
 .fiestas-caseta-menu-item-disclosure > summary::before {
-  flex: 0 0 auto;
+  position: absolute;
+  top: 50%;
+  left: -1rem;
   color: #98a2b3;
   content: '›';
   font-size: 1.15rem;
   font-weight: 800;
   line-height: 1;
-  margin: -0.05rem 0.05rem 0 -0.05rem;
   opacity: 0.75;
+  transform: translateY(-50%);
   transition: transform 120ms ease;
 }
 
 .fiestas-caseta-menu-item-disclosure[open] > summary::before {
-  transform: rotate(90deg);
+  transform: translateY(-50%) rotate(90deg);
 }
 
 .fiestas-caseta-menu-item-disclosure > summary:focus-visible {
