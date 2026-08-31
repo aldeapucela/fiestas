@@ -250,7 +250,7 @@ async function copyCommunityPlansData(assetVersionSeed) {
     throw new Error('The community plans catalog must use schemaVersion 1 and festival valladolid-2026.');
   }
   const ids = new Set();
-  const plans = value.plans.map((entry, index) => {
+  const plans = await Promise.all(value.plans.map(async (entry, index) => {
     if (!entry || typeof entry !== 'object') throw new Error(`Community plan ${index + 1} must be an object.`);
     const id = String(entry.id || '').trim();
     const name = String(entry.name || '').trim();
@@ -264,8 +264,9 @@ async function copyCommunityPlansData(assetVersionSeed) {
     if (!author || author.length > 80) throw new Error(`Community plan "${id}" must have an author between 1 and 80 characters.`);
     if (!url) throw new Error(`Community plan "${id}" must have a valid JSON url.`);
     ids.add(id);
-    return { id, name, author, icon, url };
-  });
+    const metadata = await readCommunityPlanMetadata(url, id);
+    return { id, name, author, icon, url, ...metadata };
+  }));
   const content = JSON.stringify({
     schemaVersion: 1,
     festival: 'valladolid-2026',
@@ -275,6 +276,37 @@ async function copyCommunityPlansData(assetVersionSeed) {
   await writeFile('data/planes.json', content);
   assetVersionSeed.push(['data/planes.json', createHash('sha256').update(content).digest('hex')]);
   return plans;
+}
+
+async function readCommunityPlanMetadata(url, id) {
+  const parsedUrl = new URL(url, publicBaseUrl);
+  if (parsedUrl.origin !== new URL(publicBaseUrl).origin || !parsedUrl.pathname.startsWith('/data/community-plans/')) return {};
+
+  const sourceDir = path.resolve(root, 'src', 'data', 'community-plans');
+  const fileName = path.basename(parsedUrl.pathname);
+  const sourcePath = path.resolve(sourceDir, fileName);
+  if (path.dirname(sourcePath) !== sourceDir) throw new Error(`Community plan "${id}" points outside the local data directory.`);
+
+  const raw = await fs.readFile(sourcePath, 'utf8');
+  const value = JSON.parse(raw);
+  if (value?.schemaVersion !== 1 || value?.festival !== 'valladolid-2026' || !Array.isArray(value?.plans)) {
+    throw new Error(`Community plan "${id}" has an invalid export.`);
+  }
+
+  const activityIds = new Set();
+  for (const sourcePlan of value.plans) {
+    if (!sourcePlan || typeof sourcePlan !== 'object' || !Array.isArray(sourcePlan.activityIds)) continue;
+    for (const activityId of sourcePlan.activityIds) {
+      const normalizedId = String(activityId).trim();
+      if (normalizedId) activityIds.add(normalizedId);
+    }
+  }
+
+  const activityCount = activityIds.size;
+  return {
+    activityCount,
+    summary: `${activityCount} ${activityCount === 1 ? 'actividad' : 'actividades'}`
+  };
 }
 
 function normalizeCommunityPlanUrl(value) {

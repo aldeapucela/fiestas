@@ -21,11 +21,18 @@ test('populares permite cambiar al ranking por visitas', async ({ page }) => {
 });
 
 test('el catálogo de planes vecinales renderiza y sus fichas abren', async ({ page }) => {
+  const planDataRequests = [];
+  page.on('request', (request) => {
+    const url = new URL(request.url());
+    if (url.pathname.startsWith('/data/community-plans/')) planDataRequests.push(url.pathname);
+  });
   await page.goto('/planes/');
   await expect(page.locator('[data-community-plans-page]')).toBeVisible();
 
   const firstPlan = page.locator('a[href^="/planes/"]').first();
   await expect(firstPlan).toBeVisible();
+  await expect(page.locator('.fiestas-community-plan-card-meta').first()).not.toBeEmpty();
+  expect(planDataRequests).toEqual([]);
   const href = await firstPlan.getAttribute('href');
 
   await page.goto(href);

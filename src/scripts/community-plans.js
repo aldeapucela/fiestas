@@ -8,6 +8,9 @@ const MAX_PLAN_NAME_LENGTH = 80;
 const MAX_ACTIVITY_IDS = 200;
 const MAX_JSON_BYTES = 256 * 1024;
 const PLAN_ADD_COUNTS_API_URL = 'https://api.aldeapucela.org/fiestas/plan-adds';
+const COMMUNITY_PLANS_RANKING_STORAGE_KEY = 'fiestasValladolid:communityPlansRanking:v1';
+const COMMUNITY_PLANS_RANKING_MAX_AGE_MS = 24 * 60 * 60 * 1000;
+const PLAN_ADD_COUNTS_TIMEOUT_MS = 2500;
 
 export function setupCommunityPlansPage(rawEvents = []) {
   const page = document.querySelector('[data-community-plans-page]');
@@ -17,9 +20,11 @@ export function setupCommunityPlansPage(rawEvents = []) {
   const eventById = new Map(events.map((event) => [event.id, event]));
   const catalog = page.querySelector('[data-community-plans-catalog]');
   let entries = [];
+  let catalogRendered = false;
 
   const renderCatalog = () => {
     if (!catalog) return;
+    catalogRendered = true;
     catalog.replaceChildren();
     catalog.setAttribute('aria-busy', 'false');
     if (!entries.length) {
@@ -41,18 +46,30 @@ export function setupCommunityPlansPage(rawEvents = []) {
         pageUrl: `/planes/${entry.id}/`,
         socialImageUrl: `/assets/social/plans/${entry.id}.jpg`
       }));
+      const cachedRanking = readCommunityPlansRankingCache();
+      if (cachedRanking) {
+        entries = restoreCommunityPlansRanking(entries, cachedRanking);
+        renderCatalog();
+      }
       const [enrichedEntries, planAddCounts] = await Promise.all([
-        Promise.all(entries.map((entry) => enrichEntry(entry, eventById))),
+        Promise.all(entries.map((entry) => entry.summary ? entry : enrichEntry(entry, eventById))),
         loadPlanAddCounts()
       ]);
       entries = enrichedEntries.map((entry) => ({
         ...entry,
-        addCount: planAddCounts?.get(entry.id) ?? null
+        addCount: planAddCounts
+          ? (planAddCounts.has(entry.id) ? planAddCounts.get(entry.id) : null)
+          : (entry.addCount ?? null)
       }));
-      entries.sort(comparePlanAddCounts);
-      renderCatalog();
+      if (!catalogRendered) {
+        entries.sort(comparePlanAddCounts);
+        renderCatalog();
+      } else {
+        updatePlanAddCountBadges();
+      }
+      if (planAddCounts) writeCommunityPlansRankingCache([...entries].sort(comparePlanAddCounts));
     } catch (_) {
-      renderCatalogError(catalog);
+      if (!catalogRendered) renderCatalogError(catalog);
     }
   };
 
@@ -261,7 +278,7 @@ async function enrichEntry(entry, eventById) {
 
 async function loadPlanAddCounts() {
   try {
-    const value = await fetchJson(PLAN_ADD_COUNTS_API_URL);
+    const value = await fetchJson(PLAN_ADD_COUNTS_API_URL, { timeoutMs: PLAN_ADD_COUNTS_TIMEOUT_MS });
     if (!value?.ok || !Array.isArray(value.plans)) return null;
     const counts = new Map();
     value.plans.forEach((plan) => {
@@ -272,6 +289,50 @@ async function loadPlanAddCounts() {
     return counts;
   } catch (_) {
     return null;
+  }
+}
+
+function readCommunityPlansRankingCache() {
+  try {
+    const value = JSON.parse(window.localStorage.getItem(COMMUNITY_PLANS_RANKING_STORAGE_KEY) || 'null');
+    if (!value || value.version !== 1 || !Number.isFinite(value.updatedAt) || !Array.isArray(value.ids)) return null;
+    if (Date.now() - value.updatedAt > COMMUNITY_PLANS_RANKING_MAX_AGE_MS) return null;
+    return value;
+  } catch (_) {
+    return null;
+  }
+}
+
+function restoreCommunityPlansRanking(planEntries, cachedRanking) {
+  const rankById = new Map(cachedRanking.ids.map((id, index) => [String(id), index]));
+  const cachedCounts = cachedRanking.counts && typeof cachedRanking.counts === 'object'
+    ? cachedRanking.counts
+    : {};
+  return [...planEntries]
+    .map((entry) => {
+      const count = Number(cachedCounts[entry.id]);
+      return Number.isFinite(count) ? { ...entry, addCount: count } : entry;
+    })
+    .sort((left, right) => {
+      const leftRank = rankById.has(left.id) ? rankById.get(left.id) : Number.MAX_SAFE_INTEGER;
+      const rightRank = rankById.has(right.id) ? rankById.get(right.id) : Number.MAX_SAFE_INTEGER;
+      return leftRank - rightRank;
+    });
+}
+
+function writeCommunityPlansRankingCache(planEntries) {
+  try {
+    const counts = Object.fromEntries(planEntries
+      .filter((entry) => Number.isFinite(entry.addCount))
+      .map((entry) => [entry.id, entry.addCount]));
+    window.localStorage.setItem(COMMUNITY_PLANS_RANKING_STORAGE_KEY, JSON.stringify({
+      version: 1,
+      updatedAt: Date.now(),
+      ids: planEntries.map((entry) => entry.id),
+      counts
+    }));
+  } catch (_) {
+    // Private browsing or storage limits must not block the public catalog.
   }
 }
 
@@ -286,20 +347,27 @@ async function loadExportedPlan(url, eventById) {
   return validateExportPayload(value, eventById);
 }
 
-async function fetchJson(source) {
+async function fetchJson(source, options = {}) {
   const url = safeJsonUrl(source);
   if (!url) throw new Error('Invalid community plan URL');
-  const response = await fetch(url, {
-    headers: { Accept: 'application/json' },
-    cache: 'no-store'
-  });
-  if (!response.ok) throw new Error(`Community plan request failed with ${response.status}`);
-  const text = await response.text();
-  if (new TextEncoder().encode(text).byteLength > MAX_JSON_BYTES) throw new Error('Community plan is too large');
+  const controller = options.timeoutMs ? new AbortController() : null;
+  const timeout = controller ? window.setTimeout(() => controller.abort(), options.timeoutMs) : null;
   try {
-    return JSON.parse(text);
-  } catch (_) {
-    throw new Error('Community plan is not valid JSON');
+    const response = await fetch(url, {
+      headers: { Accept: 'application/json' },
+      cache: 'no-store',
+      ...(controller ? { signal: controller.signal } : {})
+    });
+    if (!response.ok) throw new Error(`Community plan request failed with ${response.status}`);
+    const text = await response.text();
+    if (new TextEncoder().encode(text).byteLength > MAX_JSON_BYTES) throw new Error('Community plan is too large');
+    try {
+      return JSON.parse(text);
+    } catch (_) {
+      throw new Error('Community plan is not valid JSON');
+    }
+  } finally {
+    if (timeout) window.clearTimeout(timeout);
   }
 }
 
@@ -314,11 +382,21 @@ function normalizeCatalog(value) {
     const name = cleanText(rawEntry.name, MAX_PLAN_NAME_LENGTH);
     const author = cleanText(rawEntry.author, MAX_PLAN_NAME_LENGTH);
     const url = safeJsonPlanUrl(rawEntry.url);
+    const summary = cleanText(rawEntry.summary, 80);
+    const activityCount = Number(rawEntry.activityCount);
     if (!/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(id) || ids.has(id) || !name || !author || !url) {
       throw new Error('Invalid community plan catalog metadata');
     }
     ids.add(id);
-    return { id, name, author, url, icon: normalizePlanIcon(rawEntry.icon || communityPlanIcon(id, name)) };
+    return {
+      id,
+      name,
+      author,
+      url,
+      icon: normalizePlanIcon(rawEntry.icon || communityPlanIcon(id, name)),
+      ...(summary ? { summary } : {}),
+      ...(Number.isInteger(activityCount) && activityCount >= 0 ? { activityCount } : {})
+    };
   });
 }
 
@@ -345,6 +423,7 @@ function validateExportPayload(value, eventById) {
 function createPlanCard(entry) {
   const card = document.createElement('article');
   card.className = 'fiestas-community-plan-card';
+  card.dataset.communityPlanId = entry.id;
   card.dataset.communityPlanPreview = entry.pageUrl;
   card.tabIndex = 0;
   card.setAttribute('role', 'group');
@@ -368,12 +447,7 @@ function createPlanCard(entry) {
   const topActions = document.createElement('div');
   topActions.className = 'fiestas-community-plan-card-top-actions';
   if (Number.isFinite(entry.addCount)) {
-    const addCount = document.createElement('span');
-    addCount.className = 'fiestas-community-plan-card-add-count';
-    addCount.setAttribute('aria-label', `${entry.addCount} ${entry.addCount === 1 ? 'persona sigue' : 'personas siguen'} este plan`);
-    addCount.title = `${entry.addCount} ${entry.addCount === 1 ? 'persona sigue' : 'personas siguen'} este plan`;
-    addCount.append(createIcon('fa-users'), document.createTextNode(String(entry.addCount)));
-    media.append(addCount);
+    media.append(createPlanAddCountBadge(entry));
   }
   topActions.append(createShareAction(entry));
   media.append(topActions);
@@ -383,7 +457,7 @@ function createPlanCard(entry) {
   body.className = 'fiestas-community-plan-card-body';
   const meta = document.createElement('p');
   meta.className = 'fiestas-community-plan-card-meta';
-  meta.textContent = entry.summary;
+  meta.textContent = entry.summary || 'Plan vecinal';
   body.append(meta);
 
   const footer = document.createElement('div');
@@ -404,6 +478,39 @@ function createPlanCard(entry) {
   const existing = findExistingCatalogPlan(entry);
   if (existing) markAddedLink(addLink, existing);
   return card;
+}
+
+function createPlanAddCountBadge(entry) {
+  const addCount = document.createElement('span');
+  addCount.className = 'fiestas-community-plan-card-add-count';
+  updatePlanAddCountBadge(addCount, entry);
+  return addCount;
+}
+
+function updatePlanAddCountBadge(badge, entry) {
+  const label = `${entry.addCount} ${entry.addCount === 1 ? 'persona sigue' : 'personas siguen'} este plan`;
+  badge.setAttribute('aria-label', label);
+  badge.title = label;
+  badge.replaceChildren(createIcon('fa-users'), document.createTextNode(String(entry.addCount)));
+}
+
+function updatePlanAddCountBadges() {
+  if (!catalog) return;
+  const entriesById = new Map(entries.map((entry) => [entry.id, entry]));
+  catalog.querySelectorAll('[data-community-plan-id]').forEach((card) => {
+    const entry = entriesById.get(card.dataset.communityPlanId);
+    if (!entry) return;
+    const media = card.querySelector('.fiestas-community-plan-card-media');
+    const topActions = card.querySelector('.fiestas-community-plan-card-top-actions');
+    const badge = card.querySelector('.fiestas-community-plan-card-add-count');
+    if (!Number.isFinite(entry.addCount)) {
+      badge?.remove();
+      return;
+    }
+    const nextBadge = badge || createPlanAddCountBadge(entry);
+    if (!badge && media) media.insertBefore(nextBadge, topActions || null);
+    updatePlanAddCountBadge(nextBadge, entry);
+  });
 }
 
 function renderDetail(container, entry, imported, selectedDay, events) {
