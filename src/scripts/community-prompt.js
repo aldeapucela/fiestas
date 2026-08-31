@@ -6,6 +6,8 @@ import {
 import { getVisitedDays } from './visit-tracker.js';
 
 export const COMMUNITY_PROMPT_STORAGE_KEY = 'fiestasPucela:community-prompt:v1';
+export const COMMUNITY_PROMPT_DETAIL_RETURN_KEY = 'fiestasPucela:community-prompt:detail-return:v1';
+export const COMMUNITY_PROMPT_ACTIVE_SESSION_KEY = 'fiestasPucela:community-prompt:active:v1';
 export const COMMUNITY_PROMPT_SCHEMA_VERSION = 1;
 export const COMMUNITY_PROMPT_MAX_EXPOSURES = 2;
 export const COMMUNITY_PROMPT_SNOOZE_DAYS = 5;
@@ -20,10 +22,7 @@ export const DEFAULT_COMMUNITY_PROMPT_CAMPAIGN = Object.freeze({
 const RELEVANT_ENGAGEMENTS = new Set([
   'activity:save',
   'activity:share',
-  'activity:view_detail',
-  'agenda:search',
   'caseta:save',
-  'plan:add_community',
   'plan:share'
 ]);
 
@@ -102,8 +101,7 @@ export function recordCommunityPromptExposure(state, now = Date.now()) {
   return {
     ...state,
     exposureCount: nextCount,
-    lastShownAt: now,
-    nextEligibleAt: now + COMMUNITY_PROMPT_SNOOZE_MS
+    lastShownAt: now
   };
 }
 
@@ -145,6 +143,64 @@ function getStorage() {
   }
 }
 
+function getSessionStorage() {
+  try {
+    return typeof window !== 'undefined' ? window.sessionStorage : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+function hasActivePromptInSession(storage) {
+  if (!storage || typeof storage.getItem !== 'function') return false;
+  try {
+    return Boolean(storage.getItem(COMMUNITY_PROMPT_ACTIVE_SESSION_KEY));
+  } catch (_) {
+    return false;
+  }
+}
+
+function setActivePromptInSession(storage, active) {
+  if (!storage) return false;
+  try {
+    if (active && typeof storage.setItem === 'function') {
+      storage.setItem(COMMUNITY_PROMPT_ACTIVE_SESSION_KEY, String(Date.now()));
+    } else if (!active && typeof storage.removeItem === 'function') {
+      storage.removeItem(COMMUNITY_PROMPT_ACTIVE_SESSION_KEY);
+    }
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
+function isDetailPage() {
+  return Boolean(document.querySelector('[data-fiestas-detail]'));
+}
+
+function markDetailReturnPending() {
+  const storage = getSessionStorage();
+  if (!storage || typeof storage.setItem !== 'function') return false;
+  try {
+    storage.setItem(COMMUNITY_PROMPT_DETAIL_RETURN_KEY, String(Date.now()));
+    return true;
+  } catch (_) {
+    return false;
+  }
+}
+
+function consumeDetailReturnPending() {
+  const storage = getSessionStorage();
+  if (!storage || typeof storage.getItem !== 'function') return false;
+  try {
+    const pending = Boolean(storage.getItem(COMMUNITY_PROMPT_DETAIL_RETURN_KEY));
+    if (pending && typeof storage.removeItem === 'function') storage.removeItem(COMMUNITY_PROMPT_DETAIL_RETURN_KEY);
+    return pending;
+  } catch (_) {
+    return false;
+  }
+}
+
 function hasBlockingOverlay() {
   return Boolean(document.querySelector([
     '[data-menu-drawer]:not([hidden])',
@@ -172,44 +228,35 @@ export function setupCommunityPrompt() {
     endDate: prompt.dataset.communityPromptEnd || DEFAULT_COMMUNITY_PROMPT_CAMPAIGN.endDate
   };
   const storage = getStorage();
+  const sessionStorage = getSessionStorage();
   let state = readCommunityPromptState(storage, campaign.id);
   let isOpen = false;
-  let returnFocus = null;
-  let previousBodyOverflow = '';
+  let isActiveInSession = hasActivePromptInSession(sessionStorage);
 
   const persist = () => writeCommunityPromptState(storage, state);
 
   const hide = ({ restoreFocus = true } = {}) => {
     prompt.hidden = true;
-    document.body.style.overflow = previousBodyOverflow;
-    document.body.classList.remove('community-prompt-open');
     isOpen = false;
-    if (restoreFocus && returnFocus && typeof returnFocus.focus === 'function' && returnFocus.isConnected) {
-      returnFocus.focus({ preventScroll: true });
-    }
-    returnFocus = null;
+    isActiveInSession = false;
+    setActivePromptInSession(sessionStorage, false);
   };
 
   const show = () => {
-    if (isOpen || hasBlockingOverlay() || !canShowCommunityPrompt({
+    if (isOpen || isActiveInSession || hasBlockingOverlay() || !canShowCommunityPrompt({
       state,
       visitedDays: getVisitedDays(),
       campaign,
       now: Date.now()
     })) return false;
 
-    returnFocus = document.activeElement && typeof document.activeElement.focus === 'function'
-      ? document.activeElement
-      : null;
     state = recordCommunityPromptExposure(state);
     persist();
     prompt.hidden = false;
-    previousBodyOverflow = document.body.style.overflow;
-    document.body.style.overflow = 'hidden';
-    document.body.classList.add('community-prompt-open');
     isOpen = true;
+    isActiveInSession = true;
+    setActivePromptInSession(sessionStorage, true);
     trackCommunityPromptViewed(state.exposureCount);
-    window.requestAnimationFrame(() => dismissButton.focus({ preventScroll: true }));
     return true;
   };
 
@@ -249,19 +296,6 @@ export function setupCommunityPrompt() {
     if (event.key === 'Escape') {
       event.preventDefault();
       snooze();
-      return;
-    }
-    if (event.key !== 'Tab') return;
-    const focusable = [...panel.querySelectorAll('a[href], button:not([disabled])')];
-    if (!focusable.length) return;
-    const first = focusable[0];
-    const last = focusable[focusable.length - 1];
-    if (event.shiftKey && document.activeElement === first) {
-      event.preventDefault();
-      last.focus();
-    } else if (!event.shiftKey && document.activeElement === last) {
-      event.preventDefault();
-      first.focus();
     }
   });
 
@@ -272,6 +306,18 @@ export function setupCommunityPrompt() {
     if (getVisitedDays() < 2) return;
     window.setTimeout(show, 240);
   });
+
+  const showAfterDetailReturn = () => {
+    if (isDetailPage() || !consumeDetailReturnPending()) return;
+    state = { ...state, relevantActionSeen: true };
+    persist();
+    if (getVisitedDays() < 2) return;
+    window.setTimeout(show, 240);
+  };
+
+  if (isDetailPage()) markDetailReturnPending();
+  else showAfterDetailReturn();
+  window.addEventListener('pageshow', showAfterDetailReturn);
 
   return { show, hide, getState: () => ({ ...state }) };
 }

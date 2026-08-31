@@ -29,10 +29,12 @@ test('allows only two exposures and applies a five-day cooldown', () => {
   const third = prompt.recordCommunityPromptExposure({ ...second, nextEligibleAt: 0 }, campaignDate + 2 * prompt.COMMUNITY_PROMPT_SNOOZE_MS);
 
   assert.equal(first.exposureCount, 1);
-  assert.equal(first.nextEligibleAt, campaignDate + prompt.COMMUNITY_PROMPT_SNOOZE_MS);
+  assert.equal(first.nextEligibleAt, 0);
   assert.equal(second.exposureCount, 2);
   assert.equal(third.exposureCount, 2);
-  assert.equal(prompt.canShowCommunityPrompt({ state: first, visitedDays: 2, campaign, now: campaignDate + 1 }), false);
+  assert.equal(prompt.canShowCommunityPrompt({ state: first, visitedDays: 2, campaign, now: campaignDate + 1 }), true);
+  const snoozed = prompt.recordCommunityPromptSnooze(first, campaignDate);
+  assert.equal(prompt.canShowCommunityPrompt({ state: snoozed, visitedDays: 2, campaign, now: campaignDate + 1 }), false);
   assert.equal(prompt.canShowCommunityPrompt({ state: second, visitedDays: 2, campaign, now: campaignDate + prompt.COMMUNITY_PROMPT_SNOOZE_MS + 1 }), false);
 });
 
@@ -42,11 +44,15 @@ test('permanent dismissal blocks the prompt regardless of date', () => {
   assert.equal(prompt.canShowCommunityPrompt({ state, visitedDays: 10, campaign, now: campaignDate }), false);
 });
 
-test('recognizes relevant engagement and only successful searches', () => {
+test('recognizes only save and share engagement', () => {
   assert.equal(prompt.isRelevantCommunityEngagement({ category: 'activity', action: 'save' }), true);
-  assert.equal(prompt.isRelevantCommunityEngagement({ category: 'plan', action: 'add_community' }), true);
-  assert.equal(prompt.isRelevantCommunityEngagement({ category: 'agenda', action: 'search', name: 'with_results' }), true);
+  assert.equal(prompt.isRelevantCommunityEngagement({ category: 'activity', action: 'share' }), true);
+  assert.equal(prompt.isRelevantCommunityEngagement({ category: 'caseta', action: 'save' }), true);
+  assert.equal(prompt.isRelevantCommunityEngagement({ category: 'plan', action: 'share' }), true);
+  assert.equal(prompt.isRelevantCommunityEngagement({ category: 'plan', action: 'add_community' }), false);
+  assert.equal(prompt.isRelevantCommunityEngagement({ category: 'agenda', action: 'search', name: 'with_results' }), false);
   assert.equal(prompt.isRelevantCommunityEngagement({ category: 'agenda', action: 'search', name: 'without_results' }), false);
+  assert.equal(prompt.isRelevantCommunityEngagement({ category: 'activity', action: 'view_detail' }), false);
   assert.equal(prompt.isRelevantCommunityEngagement({ category: 'pwa', action: 'installed' }), false);
 });
 

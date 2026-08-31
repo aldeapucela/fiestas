@@ -6,11 +6,10 @@
   data-community-prompt-end="{{ communityPromptCampaign.endDate }}"
   hidden
 >
-  <div class="community-prompt-backdrop" data-community-prompt-backdrop aria-hidden="true"></div>
-  <section
+  <aside
     class="community-prompt-panel"
-    role="dialog"
-    aria-modal="true"
+    role="region"
+    aria-live="polite"
     aria-labelledby="community-prompt-title"
     aria-describedby="community-prompt-description"
   >
@@ -78,5 +77,5 @@
     <button class="community-prompt-never" type="button" data-community-prompt-never>
       No volver a recordármelo
     </button>
-  </section>
+  </aside>
 </div>
