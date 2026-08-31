@@ -44,7 +44,7 @@
         "startTime": "23:30",
         "endTime": null,
         "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
-        "performances": ["Mangomudo", "Nacho A.", "Josua"]
+        "performances": ["Nacho A.", "Josua"]
       },
       {
         "date": "2026-09-07",
@@ -65,7 +65,7 @@
         "startTime": "20:00",
         "endTime": "23:00",
         "location": "Terraza de Orbital Club, Plaza de la Rinconada, Valladolid",
-        "performances": ["Dan Williams", "Valenti", "Escribano", "Roto Ibiza"]
+        "performances": ["Dan Williams", "César Valenti", "Escribano"]
       },
       {
         "date": "2026-09-10",
@@ -89,7 +89,7 @@
         "performances": ["Boydivision", "Josua"]
       }
     ],
-    "source": "Cartel remoto de OrbitalClub inspeccionado visualmente: sesiones los días 4, 5, 7, 9, 10, 11 y 12; los bloques de terraza de los días 5, 9 y 10 se conservan como ocurrencias separadas. La sesión de 23:30 agrupa los artistas de 00:00 porque cruza la medianoche y pertenece a la fecha de inicio."
+    "source": "Cartel actualizado de Orbital Club aportado por el usuario e inspeccionado visualmente: sesiones los días 4, 5, 7, 9, 10, 11 y 12; los bloques de terraza de los días 5, 9 y 10 se conservan como ocurrencias separadas. El cartel corrige la sesión del 5 de septiembre (Nacho A. y Josua, sin Mangomudo) y la sesión de terraza del 10 de septiembre (Dan Williams, César Valenti y Escribano, sin Roto Ibiza). La sesión de 23:30 agrupa los artistas de 00:00 porque cruza la medianoche y pertenece a la fecha de inicio."
   },
   "2222": {
     "dates": [
