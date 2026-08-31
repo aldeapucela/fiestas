@@ -2416,7 +2416,7 @@ function goBackToAgenda() {
 
 function applyCasetaReturnLinks() {
   const returnPath = getCasetasReturnPath(window.location.href) || '/casetas/';
-  document.querySelectorAll('[data-fiestas-caseta-return]').forEach((link) => {
+  document.querySelectorAll('.fiestas-caseta-back-link[data-fiestas-caseta-return], .fiestas-bottom-link[data-fiestas-caseta-return]').forEach((link) => {
     link.setAttribute('href', returnPath);
   });
 }

@@ -71,6 +71,20 @@ test('la ficha de una caseta abre y muestra su contenido', async ({ page }) => {
   await expect(page.locator('h1')).not.toBeEmpty();
 });
 
+test('las casetas relacionadas abren su propia ficha', async ({ page }) => {
+  await page.goto('/c/la-criolla/');
+  const related = page.locator('.fiestas-related-item').first();
+  await expect(related).toBeVisible();
+
+  const relatedName = await related.locator('strong').textContent();
+  const relatedHref = await related.getAttribute('href');
+  expect(relatedHref).toMatch(/^\/c\/[^/]+\/$/);
+
+  await related.click();
+  await expect(page).toHaveURL(new RegExp(`${relatedHref.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`));
+  await expect(page.locator('h1')).toHaveText(relatedName.trim());
+});
+
 test('la ficha conserva la búsqueda y filtros al volver al listado', async ({ page }) => {
   await page.goto('/casetas/');
   const filterCase = await page.evaluate(() => {
