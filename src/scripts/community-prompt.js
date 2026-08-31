@@ -13,7 +13,7 @@ export const COMMUNITY_PROMPT_SNOOZE_MS = COMMUNITY_PROMPT_SNOOZE_DAYS * 24 * 60
 
 export const DEFAULT_COMMUNITY_PROMPT_CAMPAIGN = Object.freeze({
   id: 'valladolid-2026',
-  startDate: '2026-09-04',
+  startDate: '2026-08-31',
   endDate: '2026-09-13'
 });
 

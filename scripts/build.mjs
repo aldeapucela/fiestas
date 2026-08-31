@@ -18,7 +18,7 @@ const dist = path.join(root, 'dist');
 const publicBaseUrl = 'https://fiestas.aldeapucela.org';
 const communityPromptCampaign = {
   id: 'valladolid-2026',
-  startDate: '2026-09-04',
+  startDate: '2026-08-31',
   endDate: '2026-09-13'
 };
 const analyticsConfig = {
