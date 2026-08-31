@@ -22,7 +22,7 @@ import { readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
 import { createCalendarLinks, createIcsFile } from './plan-export.js';
 import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
 import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './community-plans.js';
-import { rankPopularEvents } from './popular-page.js';
+import { filterPopularVisitedEvents, rankPopularEvents, rankVisitedEvents } from './popular-page.js';
 import { loadEvents } from './events-data.js';
 import { getWeatherAtTime, getWeatherCondition, getWeatherLabel, loadWeatherForecast } from './weather.js';
 import { matchesSearch, normalizeText } from './search-text.js';
@@ -90,6 +90,9 @@ const state = {
   onlyFavorites: false,
   favorites: new Set(readFavorites()),
   saveCounts: new Map(),
+  visitCounts: new Map(),
+  totalVisits: 0,
+  popularMode: 'saves',
   map: null,
   tileLayer: null,
   markers: null,
@@ -113,6 +116,8 @@ const els = {
   casetasPage: document.querySelector('[data-fiestas-casetas-page]'),
   popularPage: document.querySelector('[data-fiestas-popular-page]'),
   popularList: document.querySelector('[data-fiestas-popular-list]'),
+  popularTabs: document.querySelector('[data-fiestas-popular-tabs]'),
+  popularIntro: document.querySelector('[data-fiestas-popular-intro]'),
   popularDishesPage: document.querySelector('[data-fiestas-popular-dishes-page]'),
   agenda: document.querySelector('[data-fiestas-agenda]'),
   mapView: document.querySelector('[data-fiestas-map-view]'),
@@ -228,7 +233,9 @@ async function init() {
   if (els.popularPage) {
     try {
       state.events = normalizeEvents(await loadEvents());
+      state.popularMode = getInitialPopularMode();
       bindSiteShareControls();
+      bindPopularModeControls();
       bindEventCardInteractions(els.popularList);
       renderPopularPage('loading');
       void loadSaveCounts().then((result) => renderPopularPage(result.ok ? 'ready' : 'error'));
@@ -340,13 +347,22 @@ async function loadSaveCounts() {
     const payload = await response.json();
     if (payload?.ok !== true || !Array.isArray(payload.activities)) return { ok: false };
 
-    const counts = new Map();
+    const saveCounts = new Map();
+    const visitCounts = new Map();
     payload.activities.forEach((activity) => {
       const id = String(activity?.id || '').trim();
-      const count = Number(activity?.saveCount);
-      if (id && Number.isFinite(count) && count > 0) counts.set(id, count);
+      const saveCount = Number(activity?.saveCount);
+      const visitCount = Number(activity?.visitCount);
+      if (!id) return;
+      if (Number.isFinite(saveCount) && saveCount > 0) saveCounts.set(id, saveCount);
+      if (Number.isFinite(visitCount) && visitCount > 0) visitCounts.set(id, visitCount);
     });
-    state.saveCounts = counts;
+    state.saveCounts = saveCounts;
+    state.visitCounts = visitCounts;
+    const totalVisits = Number(payload.totalVisits);
+    state.totalVisits = Number.isFinite(totalVisits) && totalVisits >= 0
+      ? totalVisits
+      : [...visitCounts.values()].reduce((total, count) => total + count, 0);
     applySaveCountsToDom();
     return { ok: true };
   } catch (_) {
@@ -359,6 +375,11 @@ async function loadSaveCounts() {
 
 function getSaveCount(activityId) {
   const count = Number(state.saveCounts.get(String(activityId || '')));
+  return Number.isFinite(count) && count > 0 ? count : 0;
+}
+
+function getVisitCount(activityId) {
+  const count = Number(state.visitCounts.get(String(activityId || '')));
   return Number.isFinite(count) && count > 0 ? count : 0;
 }
 
@@ -402,6 +423,8 @@ function renderPopularPage(status = 'ready') {
   const container = els.popularList;
   if (!container) return;
 
+  const isVisits = state.popularMode === 'visits';
+  updatePopularModeDom();
   container.replaceChildren();
   container.setAttribute('aria-busy', String(status === 'loading'));
 
@@ -416,15 +439,22 @@ function renderPopularPage(status = 'ready') {
   }
 
   if (status === 'error') {
-    const message = popularStatus('No se han podido cargar las actividades populares.', true);
+    const message = popularStatus('No se han podido cargar los rankings de actividades.', true);
     message.append(popularBackLink());
     container.append(message);
     return;
   }
 
-  const popularEvents = rankPopularEvents(state.events, state.saveCounts, 3);
+  const rankedEvents = isVisits
+    ? rankVisitedEvents(state.events, state.visitCounts, 3)
+    : rankPopularEvents(state.events, state.saveCounts, 10);
+  const popularEvents = isVisits
+    ? filterPopularVisitedEvents(rankedEvents, state.visitCounts, state.totalVisits).events
+    : rankedEvents;
   if (!popularEvents.length) {
-    const message = popularStatus('Todavía no hay suficientes guardados para mostrar actividades populares.');
+    const message = popularStatus(isVisits
+      ? 'Todavía no hay suficientes visitas para mostrar este ranking.'
+      : 'Todavía no hay suficientes guardados para mostrar este ranking.');
     message.append(popularBackLink());
     container.append(message);
     return;
@@ -432,7 +462,11 @@ function renderPopularPage(status = 'ready') {
 
   const list = document.createElement('div');
   list.className = 'fiestas-event-list fiestas-popular-event-list';
-  popularEvents.forEach((event) => list.append(eventCard(event, { showDate: true })));
+  popularEvents.forEach((event) => list.append(eventCard(event, {
+    showDate: true,
+    rankingMetric: isVisits ? 'visits' : '',
+    rankingCount: isVisits ? getVisitCount(event.id) : 0
+  })));
   container.append(list);
 }
 
@@ -644,6 +678,51 @@ function bindSiteShareControls() {
   document.querySelectorAll('[data-fiestas-share-site]').forEach((button) => {
     button.addEventListener('click', shareSite);
   });
+}
+
+function getInitialPopularMode() {
+  return new URLSearchParams(window.location.search).get('ranking') === 'visitas' ? 'visits' : 'saves';
+}
+
+function bindPopularModeControls() {
+  els.popularTabs?.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-fiestas-popular-mode]');
+    if (!button) return;
+    const mode = button.dataset.fiestasPopularMode;
+    if (!['saves', 'visits'].includes(mode) || mode === state.popularMode) return;
+    state.popularMode = mode;
+    const url = new URL(window.location.href);
+    if (mode === 'visits') url.searchParams.set('ranking', 'visitas');
+    else url.searchParams.delete('ranking');
+    window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+    renderPopularPage('ready');
+  });
+
+  els.popularTabs?.addEventListener('keydown', (event) => {
+    if (!['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    const buttons = [...els.popularTabs.querySelectorAll('[data-fiestas-popular-mode]')];
+    const currentIndex = buttons.indexOf(document.activeElement);
+    if (currentIndex < 0) return;
+    event.preventDefault();
+    const direction = event.key === 'ArrowRight' ? 1 : -1;
+    buttons[(currentIndex + direction + buttons.length) % buttons.length].focus();
+  });
+}
+
+function updatePopularModeDom() {
+  const isVisits = state.popularMode === 'visits';
+  els.popularTabs?.querySelectorAll('[data-fiestas-popular-mode]').forEach((button) => {
+    const isSelected = button.dataset.fiestasPopularMode === state.popularMode;
+    button.classList.toggle('is-active', isSelected);
+    button.setAttribute('aria-selected', String(isSelected));
+    button.tabIndex = isSelected ? 0 : -1;
+  });
+  if (els.popularIntro) {
+    els.popularIntro.textContent = isVisits
+      ? 'Estas son las actividades que más visitas han recibido'
+      : 'Estas son las actividades más guardadas por los vecinos y vecinas';
+  }
+  els.popularList?.setAttribute('aria-labelledby', isVisits ? 'fiestas-popular-tab-visits' : 'fiestas-popular-tab-saves');
 }
 
 function bindEventCardInteractions(container) {
@@ -1005,6 +1084,9 @@ function eventCard(event, options = {}) {
   const dateMarkup = options.showDate
     ? `<span class="fiestas-event-date">${escapeHtml(popularEventDateLabel(event))}</span>`
     : '';
+  const rankingMarkup = options.rankingMetric === 'visits' && options.rankingCount > 0
+    ? `<span class="fiestas-event-ranking-count"><i class="fa-solid fa-eye" aria-hidden="true"></i>${escapeHtml(String(options.rankingCount))} visitas</span>`
+    : '';
   link.href = event.urlPath;
   link.innerHTML = `
     <span class="fiestas-event-time">${timeMarkup(event)}</span>
@@ -1013,6 +1095,7 @@ function eventCard(event, options = {}) {
       ${dateMarkup}
       <span class="fiestas-event-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
       <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-event-place-text">${escapeHtml(place)}</span></span>
+      ${rankingMarkup}
     </span>
   `;
 

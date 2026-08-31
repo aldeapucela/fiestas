@@ -7543,6 +7543,29 @@ html.dark .fiestas-popular-intro p {
   color: #b9c1ce;
 }
 
+html.dark .fiestas-popular-tabs {
+  border-color: #313743;
+  background: #202631;
+}
+
+html.dark .fiestas-popular-tab {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-popular-tab.is-active {
+  background: #73579f;
+  color: #fff;
+}
+
+html.dark .fiestas-popular-tab:not(.is-active):hover {
+  background: #30283c;
+  color: #e8ddf7;
+}
+
+html.dark .fiestas-event-ranking-count {
+  color: #c8b3e5;
+}
+
 html.dark .fiestas-popular-status {
   border-color: #313743;
   background: #1a1f28;
@@ -7658,6 +7681,51 @@ html.dark .fiestas-popular-dish-likes {
   line-height: 1.5;
 }
 
+.fiestas-popular-tabs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  width: min(100%, 34rem);
+  gap: 0.2rem;
+  margin-top: 0.7rem;
+  padding: 0.2rem;
+  border: 1px solid #e2dced;
+  border-radius: 0.9rem;
+  background: #f6f3fa;
+}
+
+.fiestas-popular-tab {
+  display: inline-flex;
+  min-height: 2.55rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  border: 0;
+  border-radius: 0.7rem;
+  background: transparent;
+  color: #6d6780;
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.1;
+  cursor: pointer;
+}
+
+.fiestas-popular-tab.is-active {
+  background: #73579f;
+  color: #fff;
+  box-shadow: 0 0.2rem 0.5rem rgba(77, 58, 111, 0.18);
+}
+
+.fiestas-popular-tab:not(.is-active):hover {
+  background: #ebe5f4;
+  color: #59477f;
+}
+
+.fiestas-popular-tab:focus-visible {
+  outline: 3px solid rgba(15, 159, 141, 0.42);
+  outline-offset: 2px;
+}
+
 .fiestas-popular-list {
   min-width: 0;
 }
@@ -7702,6 +7770,20 @@ html.dark .fiestas-popular-dish-likes {
   border-style: solid;
   background: #fff7f5;
   color: #8f2d24;
+}
+
+.fiestas-event-ranking-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  color: #73579f;
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.fiestas-event-ranking-count i {
+  font-size: 0.68rem;
 }
 
 .fiestas-popular-dishes-list {

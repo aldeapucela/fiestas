@@ -134,6 +134,43 @@ La respuesta contiene los platos con al menos una recomendación:
 
 El workflow de n8n recibe el webhook en `tasks.nukeador.com/webhook/fiestas/caseta-dish-likes`. La ruta pública se publica en `/etc/nginx/sites-enabled/api.aldeapucela.org` del servidor `root@nukeador.com`, con el mismo proxy, CORS, rate limit, caché de 15 minutos, `X-Cache-Status` y respuestas stale que `caseta-saves`. El contador es de visitantes únicos por plato durante 2026; las retiradas no se restan.
 
+## Endpoint público de actividades populares
+
+Los rankings de actividades —guardados y visitas— se consultan juntos mediante el mismo endpoint:
+
+```text
+GET https://api.aldeapucela.org/fiestas/saves
+```
+
+La ruta conserva su nombre histórico para no romper los clientes existentes. La respuesta incluye el ranking de guardados (`saveCount`) y el de visitas de fichas (`visitCount`) en cada actividad, además de indicar la taxonomía de Matomo que alimenta cada métrica:
+
+```json
+{
+  "ok": true,
+  "siteId": 29,
+  "metric": "unique_visitors_year",
+  "metrics": {
+    "saves": { "category": "activity", "action": "save" },
+    "visits": { "category": "activity", "action": "view_detail" }
+  },
+  "activities": [
+    {
+      "id": "1",
+      "saveCount": 70,
+      "visitCount": 914,
+      "rawSaveEventCount": 70,
+      "rawViewEventCount": 1001
+    }
+  ],
+  "totalSaves": 3333,
+  "totalVisits": 16037
+}
+```
+
+`event` mantiene el valor histórico `activity / save` por compatibilidad; el objeto `metrics` es la referencia explícita para consumidores nuevos. Las actividades que solo tienen visitas o solo guardados también se incluyen. El frontend de `/populares/` usa diez guardados como umbral mínimo y, para visitas, aplica un umbral adaptativo del 0,5 % del total anual, con un mínimo de tres visitas, un máximo de 30 tarjetas y un fallback de las cinco primeras cuando el volumen aún es pequeño. Ambos rankings se alternan sin volver a consultar otra URL.
+
+Nginx cachea esta respuesta durante 15 minutos. La clave de caché solo distingue `from` y `to`, no parámetros arbitrarios como `cachebust`; cuando cambia el contrato o se publica una nueva fuente de datos hay que invalidar la entrada de `/fiestas/saves` o solicitarla con `Cache-Control: no-cache` para forzar un `MISS` puntual.
+
 ## Métrica anual y reprocesado
 
 La instancia mantiene activado `General.enable_processing_unique_visitors_year = 1` para poder consultar visitantes únicos anuales de los informes generales. Sin embargo, Matomo 5.13 no expone `nb_uniq_visitors` por nombre de evento para `Events.getName` cuando el periodo es `year` o `range`; tampoco sirve sumar los únicos diarios porque una misma persona puede contarse otra vez cada día.

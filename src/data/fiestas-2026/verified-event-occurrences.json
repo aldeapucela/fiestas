@@ -141,6 +141,85 @@
     ],
     "source": "Cartel remoto de Las Doñas inspeccionado visualmente: 5 sept 23:00 Pera Limonera; 6 sept 17:00 Cristongo/Pera Limonera; 7 sept 18:00 Cotorrazo; 12 sept 18:00 Terraza Molly Malone."
   },
+  "2342": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-05",
+        "startTime": "13:45",
+        "endTime": null,
+        "location": "Calle Ferrari",
+        "performances": ["Cañoneros"]
+      },
+      {
+        "date": "2026-09-06",
+        "startTime": "13:45",
+        "endTime": null,
+        "location": "Calle Ferrari",
+        "performances": ["Ralea"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "13:45",
+        "endTime": null,
+        "location": "Calle Ferrari",
+        "performances": ["JJ Pop"]
+      },
+      {
+        "date": "2026-09-08",
+        "startTime": "13:45",
+        "endTime": null,
+        "location": "Calle Ferrari",
+        "performances": ["Rocanrol Circus"]
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "13:45",
+        "endTime": null,
+        "location": "Calle Ferrari",
+        "performances": ["Thespiertos"]
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "13:45",
+        "endTime": null,
+        "location": "Calle Ferrari",
+        "performances": ["Thespiertos"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "13:45",
+        "endTime": null,
+        "location": "Calle Ferrari",
+        "performances": ["Rocanrol Circus"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "13:45",
+        "endTime": null,
+        "location": "Calle Ferrari",
+        "performances": ["Blodimery"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "13:45",
+        "endTime": null,
+        "location": "Calle Ferrari",
+        "performances": ["Ralea"]
+      }
+    ],
+    "source": "Cartel remoto de Música en la Calle - Calle Ferrari (Ferias 2026), descargado e inspeccionado visualmente: actividad diaria del 5 al 13 de septiembre de 2026, siempre a partir de las 13:45; actuaciones Cañoneros, Ralea, JJ Pop, Rocanrol Circus, Thespiertos, Thespiertos, Rocanrol Circus, Blodimery y Ralea, respectivamente."
+  },
   "2322": {
     "dates": [
       "2026-09-06",

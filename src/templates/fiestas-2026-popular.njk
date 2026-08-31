@@ -28,11 +28,39 @@
     </header>
 
     <section class="fiestas-popular-intro" aria-labelledby="fiestas-popular-title">
-      <p>Estas son las actividades más guardadas por los vecinos y vecinas</p>
+      <p data-fiestas-popular-intro>Estas son las actividades más guardadas por los vecinos y vecinas</p>
       <p class="fiestas-share-feedback" data-fiestas-share-feedback role="status" aria-live="polite" hidden></p>
     </section>
 
-    <section class="fiestas-popular-list" data-fiestas-agenda data-fiestas-popular-list aria-label="Actividades populares" aria-live="polite" aria-busy="true">
+    <div class="fiestas-popular-tabs" data-fiestas-popular-tabs role="tablist" aria-label="Ranking de actividades">
+      <button
+        class="fiestas-popular-tab is-active"
+        type="button"
+        role="tab"
+        id="fiestas-popular-tab-saves"
+        aria-controls="fiestas-popular-list"
+        aria-selected="true"
+        data-fiestas-popular-mode="saves"
+      >
+        <i class="fa-solid fa-bookmark" aria-hidden="true"></i>
+        <span>Por guardados</span>
+      </button>
+      <button
+        class="fiestas-popular-tab"
+        type="button"
+        role="tab"
+        id="fiestas-popular-tab-visits"
+        aria-controls="fiestas-popular-list"
+        aria-selected="false"
+        tabindex="-1"
+        data-fiestas-popular-mode="visits"
+      >
+        <i class="fa-solid fa-eye" aria-hidden="true"></i>
+        <span>Por visitas</span>
+      </button>
+    </div>
+
+    <section class="fiestas-popular-list" data-fiestas-agenda data-fiestas-popular-list aria-labelledby="fiestas-popular-tab-saves" aria-live="polite" aria-busy="true">
       <div class="fiestas-popular-status" data-fiestas-popular-status>
         <i class="fa-solid fa-spinner" aria-hidden="true"></i>
         <span>Cargando actividades populares…</span>

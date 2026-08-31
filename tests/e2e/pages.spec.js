@@ -8,6 +8,18 @@ test('populares renderiza sin romperse aunque no haya datos de guardados', async
   await expect(page.locator('[data-fiestas-popular-list]')).toBeVisible();
 });
 
+test('populares permite cambiar al ranking por visitas', async ({ page }) => {
+  await page.goto('/populares/');
+
+  const visitsTab = page.getByRole('tab', { name: 'Por visitas', exact: true });
+  await expect(visitsTab).toHaveAttribute('aria-selected', 'false');
+  await visitsTab.click();
+
+  await expect(visitsTab).toHaveAttribute('aria-selected', 'true');
+  await expect(page.locator('[data-fiestas-popular-intro]')).toHaveText('Estas son las actividades que más visitas han recibido');
+  await expect(page.locator('[data-fiestas-popular-list]')).toHaveAttribute('aria-labelledby', 'fiestas-popular-tab-visits');
+});
+
 test('el catálogo de planes vecinales renderiza y sus fichas abren', async ({ page }) => {
   await page.goto('/planes/');
   await expect(page.locator('[data-community-plans-page]')).toBeVisible();
