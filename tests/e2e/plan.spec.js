@@ -1,4 +1,4 @@
-import { test, expect } from './fixtures.js';
+import { test, expect, loadClientEvents } from './fixtures.js';
 
 const FAVORITES_KEY = 'fiestasPucela:favorites';
 
@@ -39,11 +39,24 @@ test('guardar una actividad persiste en localStorage y sobrevive a recargar', as
   }).not.toContain(activityId);
 });
 
+test('Mi plan usa la miniatura optimizada de una actividad con imagen', async ({ page }) => {
+  await page.goto('/');
+  const card = page.locator('[data-fiestas-card]').filter({ hasText: 'Tío Tragaldabas' }).first();
+  await expect(card).toBeVisible();
+  await card.locator('[data-fiestas-save], .fiestas-event-save').first().click();
+
+  await page.goto('/plan/');
+  const image = page.locator('img.fiestas-plan-timeline-image').first();
+  await expect(image).toBeVisible();
+  await expect(image).toHaveAttribute('src', /\/assets\/events\/thumbs\/.*\.webp$/);
+});
+
 // Flujo 8
 test('importar un plan por hash válido lo previsualiza y lo guarda', async ({ page }) => {
   await page.goto('/');
   await expect(page.locator('[data-fiestas-card]').first()).toBeVisible();
-  const ids = await page.evaluate(() => (window.__FIESTAS_2026_EVENTS__ || []).slice(0, 3).map((event) => String(event.id)));
+  const events = await loadClientEvents(page);
+  const ids = events.slice(0, 3).map((event) => String(event.id));
   expect(ids.length).toBeGreaterThan(0);
 
   await page.goto(`/plan/importar/?hash=${encodeURIComponent(planHash(ids))}`);

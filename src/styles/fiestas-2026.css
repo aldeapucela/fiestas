@@ -348,6 +348,12 @@
     order: 4;
   }
 
+  /* Mientras la agenda se renderiza en cliente, reserva alto para que el
+     contenido inferior no entre al viewport y luego salte (CLS). */
+  .fiestas-agenda.is-loading {
+    min-height: 120vh;
+  }
+
   .fiestas-plan-card {
     order: 5;
   }
@@ -474,12 +480,12 @@
     position: absolute;
     right: 0.55rem;
     bottom: 0.55rem;
-    color: #8a9098;
+    color: #6b7280;
     font-size: 0.82rem;
-    font-weight: 900;
+    font-weight: 750;
     line-height: 1;
     letter-spacing: -0.02em;
-    opacity: 0.24;
+    opacity: 1;
     pointer-events: none;
   }
 
@@ -488,7 +494,8 @@
   }
 
   .fiestas-date-card.is-active .fiestas-date-temperature {
-    opacity: 0.32;
+    color: #3f7f78;
+    opacity: 1;
   }
 
   .fiestas-date-card[data-date]:not([data-date='all']) {
@@ -2710,7 +2717,7 @@
   }
 
   .fiestas-detail-weather-fact i {
-    color: #8a9098;
+    color: #4b5563;
   }
 
   .fiestas-detail-weather-content {
@@ -2721,7 +2728,7 @@
   }
 
   .fiestas-detail-weather-label {
-    color: rgba(138, 144, 152, 0.52);
+    color: #4b5563;
     font-size: 0.62rem;
     font-weight: 800;
     letter-spacing: 0.08em;
@@ -3950,12 +3957,13 @@
   }
 
   html.dark .fiestas-date-temperature {
-    color: #a3a8b0;
-    opacity: 0.24;
+    color: #cbd5e1;
+    opacity: 1;
   }
 
   html.dark .fiestas-date-card.is-active .fiestas-date-temperature {
-    opacity: 0.32;
+    color: #99f6e4;
+    opacity: 1;
   }
 
   html.dark .fiestas-weather-attribution {
@@ -3982,11 +3990,11 @@
   }
 
   html.dark .fiestas-detail-weather-fact i {
-    color: #a3a8b0;
+    color: #cbd5e1;
   }
 
   html.dark .fiestas-detail-weather-label {
-    color: rgba(163, 168, 176, 0.55);
+    color: #cbd5e1;
   }
 
   html.dark .fiestas-detail-weather-copy {

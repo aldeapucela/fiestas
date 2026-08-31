@@ -1,34 +1,39 @@
 const CACHE_NAME = 'fiestas-valladolid-2026-__APP_VERSION__';
+// Shell mínimo: la home con su grafo completo de módulos, el catálogo de
+// eventos y la página offline. El resto de rutas y assets se cachean en
+// runtime al navegar (cacheFirst para /assets/, networkFirst para páginas).
 const APP_SHELL = [
   '/',
-  '/mapa/',
-  '/plan/',
-  '/planes/',
   '/offline.html',
   '/assets/manifest.webmanifest',
   '/assets/icons/fiestas-192.png',
   '/assets/icons/fiestas-512.png',
   '/assets/icons/apple-touch-icon.png',
-  '/assets/plan-confetti.png',
+  '__EVENTS_DATA_URL__',
   '/assets/css/fiestas-2026.__CSS_VERSION__.css',
   '/assets/js/analytics.__JS_VERSION__.js',
+  '/assets/js/events-data.__JS_VERSION__.js',
   '/assets/js/plan-storage.__JS_VERSION__.js',
   '/assets/js/plan-export.__JS_VERSION__.js',
   '/assets/js/plans-page.__JS_VERSION__.js',
   '/assets/js/community-plans.__JS_VERSION__.js',
+  '/assets/js/popular-page.__JS_VERSION__.js',
   '/assets/js/fiestas-2026.__JS_VERSION__.js',
   '/assets/js/menu-drawer.__JS_VERSION__.js',
   '/assets/js/pwa.__JS_VERSION__.js',
+  '/assets/js/scroll-top.__JS_VERSION__.js',
+  '/assets/js/chatbot.__JS_VERSION__.js',
   '/assets/js/subscribe.__JS_VERSION__.js',
   '/assets/js/theme.__JS_VERSION__.js',
   '/assets/js/visit-tracker.__JS_VERSION__.js'
 ];
 
 self.addEventListener('install', (event) => {
+  // Sin catch: si falla el precache es mejor que el install falle y el
+  // navegador reintente, que activarse con la caché a medias (offline roto).
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then((cache) => cache.addAll(APP_SHELL))
-      .catch(() => undefined)
       .then(() => self.skipWaiting())
   );
 });

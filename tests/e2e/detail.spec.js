@@ -1,14 +1,12 @@
-import { test, expect } from './fixtures.js';
+import { test, expect, loadClientEvents } from './fixtures.js';
 
 // Devuelve la ruta de una ficha con coordenadas leyendo el propio catálogo que
 // la página ya tiene cargado: no depende de ningún evento concreto.
 async function detailPathWithCoordinates(page) {
   await page.goto('/');
   await expect(page.locator('[data-fiestas-card]').first()).toBeVisible();
-  const urlPath = await page.evaluate(() => {
-    const events = window.__FIESTAS_2026_EVENTS__ || [];
-    return (events.find((event) => event.coordinates) || {}).urlPath || '';
-  });
+  const events = await loadClientEvents(page);
+  const urlPath = (events.find((event) => event.coordinates) || {}).urlPath || '';
   expect(urlPath, 'debe existir al menos un evento con coordenadas').toBeTruthy();
   return urlPath;
 }

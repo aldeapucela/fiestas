@@ -2209,8 +2209,9 @@ html.dark .site-footer-copy a {
       radial-gradient(120% 120% at 20% 30%, rgba(8, 12, 22, 0.82) 0%, rgba(8, 12, 22, 0.62) 40%, rgba(8, 12, 22, 0.28) 68%, rgba(8, 12, 22, 0) 100%);
   }
 
+  /* Nota: se elimina la regla content:url('/assets/home-hero-dark.jpg') porque
+     ese asset no existe en este repo y generaba un 404 en modo oscuro. */
   html.dark .hero-mobile-image {
-    content: url('/assets/home-hero-dark.jpg');
     transform: scale(1.02);
     transform-origin: center;
   }

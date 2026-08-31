@@ -1,4 +1,4 @@
-import { test, expect } from './fixtures.js';
+import { test, expect, loadClientEvents } from './fixtures.js';
 
 // Flujo 13: ninguna ruta debe escupir errores de consola ni pedir algo que no
 // exista. Es la red de seguridad barata que caza imports rotos, assets
@@ -40,7 +40,8 @@ for (const [route, marker] of routes) {
 // caseta concretos, así que cambiar el programa no rompe el test.
 test('una ficha de evento carga sin errores de consola ni respuestas fallidas', async ({ page }) => {
   await page.goto('/');
-  const urlPath = await page.evaluate(() => (window.__FIESTAS_2026_EVENTS__ || [])[0]?.urlPath || '');
+  const events = await loadClientEvents(page);
+  const urlPath = events[0]?.urlPath || '';
   expect(urlPath).toBeTruthy();
 
   await page.goto(urlPath);

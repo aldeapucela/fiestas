@@ -102,4 +102,14 @@ export const test = base.extend({
   }
 });
 
+export async function loadClientEvents(page) {
+  return page.evaluate(async () => {
+    const href = document.querySelector('link[data-fiestas-events]')?.href;
+    if (!href) return [];
+    const response = await fetch(href);
+    if (!response.ok) return [];
+    return response.json();
+  });
+}
+
 export { expect };

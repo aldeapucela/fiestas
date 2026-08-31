@@ -2,13 +2,12 @@
 
 {% block bodyClass %}fiestas-page{% if mapPage %} fiestas-map-page{% endif %}{% endblock %}
 
+{# El CSS de Leaflet se inyecta bajo demanda desde ensureLeaflet() al abrir el mapa. #}
 {% block extraHead %}
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-  crossorigin=""
-/>
+{% if mapPage %}
+<link rel="preconnect" href="https://unpkg.com" crossorigin />
+<link rel="preconnect" href="https://a.basemaps.cartocdn.com" />
+{% endif %}
 {% endblock %}
 
 {% block footerClass %} site-footer--fiestas{% endblock %}
@@ -22,12 +21,9 @@
 
 {% block body %}
 <main class="fiestas-app" data-fiestas-app data-community-plans-href="/planes/">
-  <script>
-    window.__FIESTAS_2026_EVENTS__ = {{ fiestasEventsJson | safe }};
-  </script>
   <div class="fiestas-scroll-header" data-fiestas-scroll-header aria-hidden="true" inert>
     <button class="fiestas-scroll-brand" type="button" data-fiestas-scroll-top aria-label="Volver arriba" title="Volver arriba">
-      <img src="/assets/favicon.png" alt="" aria-hidden="true" />
+      <img src="/assets/favicon-128.png" alt="" aria-hidden="true" />
     </button>
     <span class="fiestas-scroll-day" data-fiestas-scroll-day aria-live="polite">Agenda de fiestas</span>
     <div class="fiestas-scroll-actions">
@@ -41,10 +37,10 @@
   </div>
   <section class="fiestas-screen">
     <header class="fiestas-hero" aria-labelledby="fiestas-title">
-      <img class="fiestas-hero-fireworks" src="/assets/hero-fireworks.png" alt="" aria-hidden="true" />
+      <img class="fiestas-hero-fireworks" src="/assets/hero-fireworks.webp" alt="" aria-hidden="true" width="320" height="213" fetchpriority="high" />
       <div class="fiestas-hero-top">
         <a class="fiestas-brand" href="/" aria-label="Portada de Fiestas 2026">
-          <img src="/assets/favicon.png" alt="" />
+          <img src="/assets/favicon-128.png" alt="" />
           <span id="fiestas-title" class="fiestas-title">Fiestas 2026</span>
         </a>
         <div class="fiestas-hero-actions">
@@ -207,14 +203,14 @@
       </section>
     </section>
 
-    <section class="fiestas-agenda" data-fiestas-agenda aria-label="Agenda de fiestas">
+    <section class="fiestas-agenda is-loading" data-fiestas-agenda aria-label="Agenda de fiestas">
       <div class="fiestas-empty">Cargando agenda...</div>
     </section>
 
     {% include "partials/map-shell.njk" %}
 
     <a class="fiestas-plan-card" href="/plan/">
-      <img class="fiestas-plan-icon" src="/assets/plan-confetti.png" alt="" aria-hidden="true" />
+      <img class="fiestas-plan-icon" src="/assets/plan-confetti.webp" alt="" aria-hidden="true" loading="lazy" />
       <span>
         <strong>Vive las Fiestas</strong>
         <small>Guarda actividades y prepara tu plan.</small>

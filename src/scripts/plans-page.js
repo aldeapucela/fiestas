@@ -1112,7 +1112,7 @@ function renderPlanDetail(container, plan, events, plans, selectedDay, feedback,
   copy.append(summary);
   const illustration = document.createElement('img');
   illustration.className = 'fiestas-plan-illustration';
-  illustration.src = '/assets/plan-confetti.png';
+  illustration.src = '/assets/plan-confetti.webp';
   illustration.alt = '';
   illustration.setAttribute('aria-hidden', 'true');
   hero.append(copy, illustration);
@@ -1201,7 +1201,7 @@ export function renderPlanTimeline(container, plan, events, plans = [], selected
         if (event.image) {
           const image = document.createElement('img');
           image.className = 'fiestas-plan-timeline-image';
-          image.src = event.image;
+          image.src = planTimelineImageUrl(event.image);
           image.alt = '';
           image.loading = 'lazy';
           image.decoding = 'async';
@@ -1290,7 +1290,8 @@ function renderPlanTimelineEvent(event, planId, plans, events, options = {}) {
 
 function eventSavedCard(event) {
   const card = eventPlanCard(event);
-  const remove = actionButton('Quitar', 'fa-bookmark-slash', { 'data-plan-remove-saved': event.id });
+  // El icono anterior (bookmark con barra) es solo de FA Pro y nunca llegó a renderizar.
+  const remove = actionButton('Quitar', 'fa-trash-can', { 'data-plan-remove-saved': event.id });
   card.querySelector('.fiestas-plan-event-actions')?.append(remove);
   return card;
 }
@@ -1874,6 +1875,11 @@ function normalizeEvents(events) {
 function eventUrl(event) {
   const slug = event.slug || slugifyPlanUrl(event.title || 'evento');
   return `/e/${event.id}/${slug}/`;
+}
+
+function planTimelineImageUrl(image = '') {
+  const match = /^\/assets\/events\/([^/]+)\.(?:png|jpe?g)$/i.exec(String(image));
+  return match ? `/assets/events/thumbs/${match[1]}.webp` : image;
 }
 
 function slugifyPlanUrl(value = '') {

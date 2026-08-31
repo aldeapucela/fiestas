@@ -10,7 +10,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Fiestas Valladolid" />
     <title>{{ title or 'Fiestas Valladolid 2026 | Aldea Pucela' }}</title>
-    <link rel="icon" type="image/png" href="/assets/favicon.png" />
+    <link rel="icon" type="image/png" href="/assets/favicon-128.png" />
     <link rel="manifest" href="/assets/manifest.webmanifest" />
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png" />
     {# Integraciones externas aprobadas de Aldea Pucela Eventos. #}
@@ -57,9 +57,13 @@
         } catch (_) {}
       }());
     </script>
+    {# Font Awesome va ahora en un subset self-hosted dentro del CSS principal (npm run icons). #}
     <link rel="stylesheet" href="/assets/css/{{ pageCss }}" />
-    {# Se mantiene remoto para aprovechar la caché compartida con eventos.aldeapucela.org. #}
-    <link rel="stylesheet" href="https://eventos.aldeapucela.org/assets/fontawesome/css/all.min.css" />
+    {% if eventsDataUrl %}<link rel="preload" href="{{ eventsDataUrl }}" as="fetch" crossorigin data-fiestas-events />{% endif %}
+    <link rel="preload" href="/assets/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
+    {% for moduleHref in modulePreloads %}<link rel="modulepreload" href="{{ moduleHref }}" />
+    {% endfor %}<link rel="dns-prefetch" href="https://api.aldeapucela.org" />
+    <link rel="dns-prefetch" href="https://stats.aldeapucela.org" />
   </head>
   <body class="{% block bodyClass %}{% endblock %}">
     {% block header %}{% endblock %}
@@ -162,7 +166,8 @@
         </div>
       </section>
     </div>
-    <script type="module" src="/assets/js/{{ pageJs }}?v={{ jsVersion }}" defer></script>
+    {# Sin ?v=: el nombre ya lleva hash y la query impedía que el SW sirviera el módulo precacheado offline. #}
+    <script type="module" src="/assets/js/{{ pageJs }}" defer></script>
     {% block extraScripts %}{% endblock %}
     <script type="module" src="/assets/js/scroll-top.{{ jsVersion }}.js" defer></script>
     <script type="module" src="/assets/js/pwa.{{ jsVersion }}.js" defer></script>
