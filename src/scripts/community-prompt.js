@@ -287,7 +287,6 @@ export function setupCommunityPrompt() {
       state = recordCommunityPromptSnooze(state);
       persist();
       trackCommunityPromptClicked(link.dataset.communityPromptChannel, iteration);
-      hide({ restoreFocus: false });
     });
   });
 

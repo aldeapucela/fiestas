@@ -80,7 +80,7 @@ test('aparece tras dos días y una acción relevante, y respeta dos exposiciones
   await expect(prompt).toBeHidden();
 });
 
-test('un clic de canal cierra y aplica el silencio sin convertirlo en cierre', async ({ page }) => {
+test('los clics de canal mantienen el banner abierto y aplican el silencio', async ({ page }) => {
   await seedEligibleVisitor(page);
   await page.goto('/planes/');
   const prompt = page.locator('[data-community-prompt]');
@@ -93,11 +93,18 @@ test('un clic de canal cierra y aplica el silencio sin convertirlo en cierre', a
   });
   await page.locator('[data-community-prompt-channel="whatsapp"]').click();
 
-  await expect(prompt).toBeHidden();
+  await expect(prompt).toBeVisible();
   const state = await page.evaluate((key) => JSON.parse(localStorage.getItem(key)), COMMUNITY_PROMPT_STATE_KEY);
   expect(state.exposureCount).toBe(1);
   expect(state.nextEligibleAt).toBeGreaterThan(Date.now());
   expect(state.neverAgain).toBe(false);
+
+  await page.locator('[data-community-prompt-channel="chat"]').evaluate((link) => {
+    link.removeAttribute('target');
+    link.addEventListener('click', (event) => event.preventDefault(), { once: true });
+  });
+  await page.locator('[data-community-prompt-channel="chat"]').click();
+  await expect(prompt).toBeVisible();
 });
 
 test('no vuelve a mostrarse al navegar si el visitante todavía no lo ha cerrado', async ({ page }) => {
