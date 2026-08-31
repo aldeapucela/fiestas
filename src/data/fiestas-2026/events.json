@@ -19694,5 +19694,395 @@
     "tags": [
       "Exposición"
     ]
+  },
+  {
+    "id": 600,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 601,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 602,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 603,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 604,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 605,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 606,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 607,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 608,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 609,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Valladolid suena en grafito (Exposición)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+    "location": "Bicoca Records",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "summary": "La exposición ‘Valladolid suena en grafito’ invita a los asistentes a sumergirse en una mirada artística única a través del trabajo de Álvaro Velasco. El evento se desarrollará desde el 4 hasta el 30 de septiembre, ofreciendo una propuesta visual centrada en la identidad local.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "OpenStreetMap Nominatim; dirección C. Empecinado, 5 verificada en directorios locales",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
   }
 ]
