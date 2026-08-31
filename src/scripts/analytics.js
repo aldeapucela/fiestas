@@ -15,8 +15,12 @@ const categoryActions = {
   agenda: new Set(['select_date', 'select_all_dates', 'apply_filter', 'search', 'open_activity']),
   map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
   plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'add_community', 'export', 'import', 'share', 'import_error']),
-  pwa: new Set(['install_clicked', 'install_accepted', 'install_cancelled', 'installed', 'ios_help_opened', 'sw_registration_error'])
+  pwa: new Set(['install_clicked', 'install_accepted', 'install_cancelled', 'installed', 'ios_help_opened', 'sw_registration_error']),
+  community_prompt: new Set(['view', 'click', 'dismiss'])
 };
+
+const COMMUNITY_PROMPT_CHANNELS = new Set(['chat', 'whatsapp', 'newsletter', 'instagram', 'facebook']);
+const COMMUNITY_PROMPT_DISMISS_REASONS = new Set(['snooze_5d', 'never_again']);
 
 const filterNames = new Set(['type', 'area', 'ticket']);
 let analyticsReady = false;
@@ -206,6 +210,26 @@ export function trackPlanImportError(errorType = 'invalid') {
   return pushEvent('plan', 'import_error', errorType);
 }
 
+export function trackCommunityPromptViewed(iteration) {
+  const normalizedIteration = normalizeCommunityPromptIteration(iteration);
+  if (!normalizedIteration) return false;
+  return pushEvent('community_prompt', 'view', 'shown', normalizedIteration);
+}
+
+export function trackCommunityPromptClicked(channel, iteration) {
+  const normalizedChannel = normalizeToken(channel);
+  const normalizedIteration = normalizeCommunityPromptIteration(iteration);
+  if (!COMMUNITY_PROMPT_CHANNELS.has(normalizedChannel) || !normalizedIteration) return false;
+  return pushEvent('community_prompt', 'click', normalizedChannel, normalizedIteration);
+}
+
+export function trackCommunityPromptDismissed(reason, iteration) {
+  const normalizedReason = normalizeToken(reason);
+  const normalizedIteration = normalizeCommunityPromptIteration(iteration);
+  if (!COMMUNITY_PROMPT_DISMISS_REASONS.has(normalizedReason) || !normalizedIteration) return false;
+  return pushEvent('community_prompt', 'dismiss', normalizedReason, normalizedIteration);
+}
+
 export function trackPwaInstallClicked(source = 'install') {
   return pushEvent('pwa', 'install_clicked', 'install', source);
 }
@@ -259,14 +283,26 @@ function isDoNotTrackEnabled() {
 }
 
 function pushEvent(category, action, name, value) {
-  if (!analyticsReady || !categoryActions[category]?.has(action)) return false;
-  const queue = window._paq;
+  if (!categoryActions[category]?.has(action)) return false;
   const normalizedName = normalizeToken(name);
-  if (!hasPushQueue(queue) || !normalizedName) return false;
+  if (!normalizedName) return false;
+  publishEngagement({ category, action, name: normalizedName, value });
+  if (!analyticsReady) return false;
+  const queue = window._paq;
+  if (!hasPushQueue(queue)) return false;
   const event = ['trackEvent', category, action, normalizedName];
   if (value !== undefined) event.push(value);
   queue.push(event);
   return true;
+}
+
+function publishEngagement(detail) {
+  if (typeof window === 'undefined' || typeof window.dispatchEvent !== 'function' || typeof window.CustomEvent !== 'function') return;
+  try {
+    window.dispatchEvent(new window.CustomEvent('fiestas:engagement', { detail }));
+  } catch (_) {
+    // Engagement signals must never interfere with the tracked action.
+  }
 }
 
 function hasTrackedFavorite(activityId) {
@@ -393,6 +429,11 @@ function normalizeToken(value) {
     .replace(/[^a-z0-9]+/g, '_')
     .replace(/^_+|_+$/g, '')
     .slice(0, 120);
+}
+
+function normalizeCommunityPromptIteration(value) {
+  const iteration = Number(value);
+  return Number.isInteger(iteration) && iteration >= 1 && iteration <= 2 ? iteration : 0;
 }
 
 function normalizeCasetaId(value) {

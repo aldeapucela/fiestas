@@ -168,3 +168,46 @@ test('tracks an explicit PWA install action without tracking availability', asyn
   assert.deepEqual(sent, [['trackEvent', 'pwa', 'install_clicked', 'install', 'menu']]);
   assert.equal('trackPwaInstallAvailable' in analytics, false);
 });
+
+test('tracks community prompt views, channel clicks and exclusive dismissals', async () => {
+  installBrowserGlobals();
+  const analytics = await import(`../src/scripts/analytics.js?community-prompt=${Date.now()}`);
+  const sent = [];
+
+  window._paq = { push: (event) => sent.push(event) };
+
+  assert.equal(analytics.trackCommunityPromptViewed(1), true);
+  assert.equal(analytics.trackCommunityPromptClicked('whatsapp', 1), true);
+  assert.equal(analytics.trackCommunityPromptDismissed('snooze_5d', 1), true);
+  assert.equal(analytics.trackCommunityPromptDismissed('never_again', 2), true);
+  assert.equal(analytics.trackCommunityPromptClicked('unknown', 1), false);
+  assert.equal(analytics.trackCommunityPromptViewed(3), false);
+
+  assert.deepEqual(sent, [
+    ['trackEvent', 'community_prompt', 'view', 'shown', 1],
+    ['trackEvent', 'community_prompt', 'click', 'whatsapp', 1],
+    ['trackEvent', 'community_prompt', 'dismiss', 'snooze_5d', 1],
+    ['trackEvent', 'community_prompt', 'dismiss', 'never_again', 2]
+  ]);
+});
+
+test('publishes engagement signals even when Matomo is disabled', async () => {
+  installBrowserGlobals();
+  const signals = [];
+  window.CustomEvent = class CustomEvent {
+    constructor(type, init = {}) {
+      this.type = type;
+      this.detail = init.detail;
+    }
+  };
+  window.dispatchEvent = (event) => signals.push(event);
+  window.__FIESTAS_ANALYTICS_CONFIG__ = { enabled: false };
+  const analytics = await import(`../src/scripts/analytics.js?community-signal=${Date.now()}`);
+  window._paq = { push: () => { throw new Error('disabled analytics should not push'); } };
+
+  assert.equal(analytics.trackCommunityPromptViewed(1), false);
+  assert.deepEqual(signals.map((event) => ({ type: event.type, detail: event.detail })), [{
+    type: 'fiestas:engagement',
+    detail: { category: 'community_prompt', action: 'view', name: 'shown', value: 1 }
+  }]);
+});

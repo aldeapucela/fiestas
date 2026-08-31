@@ -17,6 +17,7 @@ const APP_SHELL = [
   '/assets/js/plan-export.__JS_VERSION__.js',
   '/assets/js/plans-page.__JS_VERSION__.js',
   '/assets/js/community-plans.__JS_VERSION__.js',
+  '/assets/js/community-prompt.__JS_VERSION__.js',
   '/assets/js/popular-page.__JS_VERSION__.js',
   '/assets/js/fiestas-2026.__JS_VERSION__.js',
   '/assets/js/menu-drawer.__JS_VERSION__.js',

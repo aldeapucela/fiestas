@@ -1,0 +1,82 @@
+<div
+  class="community-prompt"
+  data-community-prompt
+  data-community-prompt-campaign-id="{{ communityPromptCampaign.id }}"
+  data-community-prompt-start="{{ communityPromptCampaign.startDate }}"
+  data-community-prompt-end="{{ communityPromptCampaign.endDate }}"
+  hidden
+>
+  <div class="community-prompt-backdrop" data-community-prompt-backdrop aria-hidden="true"></div>
+  <section
+    class="community-prompt-panel"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="community-prompt-title"
+    aria-describedby="community-prompt-description"
+  >
+    <div class="community-prompt-handle" aria-hidden="true"></div>
+    <button class="community-prompt-close" type="button" data-community-prompt-dismiss aria-label="Cerrar">
+      <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+    </button>
+
+    <div class="community-prompt-heading">
+      <img class="community-prompt-logo" src="/assets/favicon-128.png" alt="" />
+      <div>
+        <p class="community-prompt-kicker">ALDEA PUCELA</p>
+        <h2 class="community-prompt-title" id="community-prompt-title">¿Te está sirviendo la agenda?</h2>
+      </div>
+    </div>
+
+    <p class="community-prompt-copy" id="community-prompt-description">
+      Si quieres seguir al día con lo que pasa en Valladolid, puedes unirte a la comunidad.
+    </p>
+
+    <div class="community-prompt-channels" aria-label="Canales de la comunidad">
+      <a
+        class="community-prompt-channel community-prompt-channel-primary"
+        href="https://t.me/aldeapucela/59137"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-community-prompt-channel="chat"
+      >
+        <i class="fa-brands fa-telegram community-prompt-channel-icon" aria-hidden="true"></i>
+        <span class="community-prompt-channel-copy">
+          <strong>Entrar al chat de fiestas</strong>
+          <small>Avisos, recomendaciones y conversación</small>
+        </span>
+      </a>
+      <a
+        class="community-prompt-channel"
+        href="https://aldeapucela.org/whatsapp"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-community-prompt-channel="whatsapp"
+      >
+        <i class="fa-brands fa-whatsapp community-prompt-channel-icon" aria-hidden="true"></i>
+        <span class="community-prompt-channel-copy">
+          <strong>Recibir novedades por WhatsApp</strong>
+          <small>Lo importante, sin ruido</small>
+        </span>
+      </a>
+    </div>
+
+    <div class="community-prompt-alternatives" aria-label="Otras formas de seguir a Aldea Pucela">
+      <a href="https://aldeapucela.org/boletin/" target="_blank" rel="noopener noreferrer" data-community-prompt-channel="newsletter">
+        <i class="fa-regular fa-envelope" aria-hidden="true"></i>
+        <span>Resumen semanal</span>
+      </a>
+      <a href="https://www.instagram.com/eventos.aldeapucela" target="_blank" rel="noopener noreferrer" data-community-prompt-channel="instagram">
+        <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+        <span>Instagram</span>
+      </a>
+      <a href="https://www.facebook.com/aldeapucela" target="_blank" rel="noopener noreferrer" data-community-prompt-channel="facebook">
+        <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+        <span>Facebook</span>
+      </a>
+    </div>
+
+    <button class="community-prompt-never" type="button" data-community-prompt-never>
+      No volver a recordármelo
+    </button>
+  </section>
+</div>
