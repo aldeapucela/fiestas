@@ -5909,6 +5909,49 @@
     ]
   },
   {
+    "id": 639,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "00:00",
+    "endTime": "01:00",
+    "title": "Las Moreras (Lorencito Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0c69a397160fbea7f00422109462214661fd2427_2_819x1024.jpeg",
+    "location": "Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "Las Moreras se presentan en directo como parte de la programación del Lorencito Festival, en el marco de las Ferias y Fiestas de Valladolid 2026. El evento tendrá lugar el martes 8 de septiembre en la ciudad de Valladolid.",
+    "summary": "Las Moreras se presentan en directo como parte de la programación del Lorencito Festival, en el marco de las Ferias y Fiestas de Valladolid 2026. El evento tendrá lugar el martes 8 de septiembre en la ciudad de Valladolid.",
+    "performances": [
+      "Las Moreras"
+    ],
+    "organizers": [
+      "Ayuntamiento de Valladolid",
+      "Consejo de la Juventud de Valladolid",
+      "Aquavall"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6573001,
+      "lng": -4.7332525,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 61755548,
+      "displayName": "Playa de las Moreras, San Pablo - San Nicolás, Valladolid, Castilla y León, España",
+      "query": "Playa de las Moreras, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
     "id": 168,
     "date": "2026-09-08",
     "dateLabel": "Martes 8 de septiembre",
@@ -14609,7 +14652,7 @@
     "image": "/assets/events/siesta-club-pera-limonera-2026.jpg",
     "location": "La Pera Limonera, Playa de las Moreras",
     "zone": "Moreras",
-    "description": "Siesta Club en La Pera Limonera desde las 18:00 h. House y disco house, 100% vinilo, con Chejo, Element, Escalante y Omar Cantt.",
+    "description": "Siesta Club en La Pera Limonera desde las 18:00 h. House y disco house, 100% vinilo, con Chejo, Element, Escalante y Omar Cantt.\n\nInformación ampliada: El evento Siesta Club se celebra en el marco del festival Pera Limonera Dreaming el próximo jueves 10 de septiembre. La jornada dará comienzo con la apertura de puertas a las 18:00 horas, ofreciendo una propuesta musical vibrante para los asistentes.",
     "summary": "Siesta Club en La Pera Limonera desde las 18:00 h. House y disco house, 100% vinilo.",
     "performances": [
       "Chejo",
