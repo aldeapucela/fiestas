@@ -19496,5 +19496,203 @@
     "tags": [
       "Música"
     ]
+  },
+  {
+    "id": 594,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "11:00",
+    "endTime": "22:00",
+    "title": "48.ª Feria de cerámica y alfarería de Valladolid",
+    "location": "Paseo Central del Campo Grande",
+    "zone": "Campo Grande",
+    "description": "48.ª Feria de cerámica y alfarería de Valladolid. Feria artesanal organizada por ACEVA en el Paseo Central del Campo Grande, del 8 al 13 de septiembre, con horario ininterrumpido de 11:00 a 22:00.",
+    "summary": "Feria de cerámica y alfarería de Valladolid, organizada por ACEVA, de 11:00 a 22:00.",
+    "performances": [],
+    "organizers": [
+      "ACEVA (Asociación de Ceramistas Vallisoletanos)"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6468,
+      "lng": -4.7289,
+      "source": "Inferred from matching event location: Paseo Central del Campo Grande"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente no indica venta de entradas para la feria."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 595,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "11:00",
+    "endTime": "22:00",
+    "title": "48.ª Feria de cerámica y alfarería de Valladolid",
+    "location": "Paseo Central del Campo Grande",
+    "zone": "Campo Grande",
+    "description": "48.ª Feria de cerámica y alfarería de Valladolid. Feria artesanal organizada por ACEVA en el Paseo Central del Campo Grande, del 8 al 13 de septiembre, con horario ininterrumpido de 11:00 a 22:00.",
+    "summary": "Feria de cerámica y alfarería de Valladolid, organizada por ACEVA, de 11:00 a 22:00.",
+    "performances": [],
+    "organizers": [
+      "ACEVA (Asociación de Ceramistas Vallisoletanos)"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6468,
+      "lng": -4.7289,
+      "source": "Inferred from matching event location: Paseo Central del Campo Grande"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente no indica venta de entradas para la feria."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 596,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "11:00",
+    "endTime": "22:00",
+    "title": "48.ª Feria de cerámica y alfarería de Valladolid",
+    "location": "Paseo Central del Campo Grande",
+    "zone": "Campo Grande",
+    "description": "48.ª Feria de cerámica y alfarería de Valladolid. Feria artesanal organizada por ACEVA en el Paseo Central del Campo Grande, del 8 al 13 de septiembre, con horario ininterrumpido de 11:00 a 22:00.",
+    "summary": "Feria de cerámica y alfarería de Valladolid, organizada por ACEVA, de 11:00 a 22:00.",
+    "performances": [],
+    "organizers": [
+      "ACEVA (Asociación de Ceramistas Vallisoletanos)"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6468,
+      "lng": -4.7289,
+      "source": "Inferred from matching event location: Paseo Central del Campo Grande"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente no indica venta de entradas para la feria."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 597,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "11:00",
+    "endTime": "22:00",
+    "title": "48.ª Feria de cerámica y alfarería de Valladolid",
+    "location": "Paseo Central del Campo Grande",
+    "zone": "Campo Grande",
+    "description": "48.ª Feria de cerámica y alfarería de Valladolid. Feria artesanal organizada por ACEVA en el Paseo Central del Campo Grande, del 8 al 13 de septiembre, con horario ininterrumpido de 11:00 a 22:00.",
+    "summary": "Feria de cerámica y alfarería de Valladolid, organizada por ACEVA, de 11:00 a 22:00.",
+    "performances": [],
+    "organizers": [
+      "ACEVA (Asociación de Ceramistas Vallisoletanos)"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6468,
+      "lng": -4.7289,
+      "source": "Inferred from matching event location: Paseo Central del Campo Grande"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente no indica venta de entradas para la feria."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 598,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "11:00",
+    "endTime": "22:00",
+    "title": "48.ª Feria de cerámica y alfarería de Valladolid",
+    "location": "Paseo Central del Campo Grande",
+    "zone": "Campo Grande",
+    "description": "48.ª Feria de cerámica y alfarería de Valladolid. Feria artesanal organizada por ACEVA en el Paseo Central del Campo Grande, del 8 al 13 de septiembre, con horario ininterrumpido de 11:00 a 22:00.",
+    "summary": "Feria de cerámica y alfarería de Valladolid, organizada por ACEVA, de 11:00 a 22:00.",
+    "performances": [],
+    "organizers": [
+      "ACEVA (Asociación de Ceramistas Vallisoletanos)"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6468,
+      "lng": -4.7289,
+      "source": "Inferred from matching event location: Paseo Central del Campo Grande"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente no indica venta de entradas para la feria."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 599,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "11:00",
+    "endTime": "22:00",
+    "title": "48.ª Feria de cerámica y alfarería de Valladolid",
+    "location": "Paseo Central del Campo Grande",
+    "zone": "Campo Grande",
+    "description": "48.ª Feria de cerámica y alfarería de Valladolid. Feria artesanal organizada por ACEVA en el Paseo Central del Campo Grande, del 8 al 13 de septiembre, con horario ininterrumpido de 11:00 a 22:00.",
+    "summary": "Feria de cerámica y alfarería de Valladolid, organizada por ACEVA, de 11:00 a 22:00.",
+    "performances": [],
+    "organizers": [
+      "ACEVA (Asociación de Ceramistas Vallisoletanos)"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6468,
+      "lng": -4.7289,
+      "source": "Inferred from matching event location: Paseo Central del Campo Grande"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente no indica venta de entradas para la feria."
+    },
+    "tags": [
+      "Exposición"
+    ]
   }
 ]
