@@ -66,8 +66,8 @@
       </button>
       {% if event.imageSource and (event.imageCredit or event.imageLicense) %}
       <figcaption class="fiestas-image-attribution">
-        <a href="{{ event.imageSource }}" target="_blank" rel="noopener noreferrer" aria-label="Créditos de la imagen: {{ event.imageCredit }}{% if event.imageLicense %}, {{ event.imageLicense }}{% endif %}">
-          {{ event.imageCredit }}{% if event.imageLicense %} · {{ event.imageLicense }}{% endif %}
+        <a href="{{ event.imageSource }}" target="_blank" rel="noopener noreferrer" aria-label="Créditos de la imagen: {{ event.imageCredit }}{% if event.imageCredit and event.imageLicense %} - {% endif %}{{ event.imageLicense }}">
+          {{ event.imageCredit }}{% if event.imageCredit and event.imageLicense %} - {% endif %}{{ event.imageLicense }}
         </a>
       </figcaption>
       {% endif %}
@@ -86,9 +86,9 @@
           href="{{ event.imageSource }}"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="Abrir créditos de la imagen: {{ event.imageCredit }}{% if event.imageLicense %}, {{ event.imageLicense }}{% endif %}"
+          aria-label="Abrir créditos de la imagen: {{ event.imageCredit }}{% if event.imageCredit and event.imageLicense %} - {% endif %}{{ event.imageLicense }}"
         >
-          {{ event.imageCredit }}{% if event.imageLicense %} · {{ event.imageLicense }}{% endif %}
+          {{ event.imageCredit }}{% if event.imageCredit and event.imageLicense %} - {% endif %}{{ event.imageLicense }}
         </a>
         {% endif %}
       </div>

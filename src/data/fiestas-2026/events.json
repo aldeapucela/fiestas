@@ -4,8 +4,8 @@
     "image": "/assets/events/nintendo-logo.svg",
     "imageAlt": "Logotipo de Nintendo",
     "imageSource": "https://commons.wikimedia.org/wiki/File:Nintendo_logo.svg",
-    "imageCredit": "Nintendo / Wikimedia Commons",
-    "imageLicense": "Dominio público (logo de texto; marca registrada)",
+    "imageCredit": "Nintendo",
+    "imageLicense": "Dominio público",
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "12:00",
@@ -41,7 +41,7 @@
     "imageAlt": "Concentración de peñas en Valladolid durante las fiestas",
     "imageSource": "https://www.tribunavalladolid.com/noticias/457152/las-penas-toman-valladolid-durante-diez-dias-con-musica-desfiles-y-actividades-para-todos-los-publicos",
     "imageCredit": "Tribuna de Valladolid",
-    "imageLicense": "© Tribuna de Valladolid",
+    "imageLicense": null,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "16:30",
@@ -87,7 +87,7 @@
     "imageAlt": "Desfile de peñas en Valladolid durante las fiestas",
     "imageSource": "https://www.tribunavalladolid.com/noticias/457152/las-penas-toman-valladolid-durante-diez-dias-con-musica-desfiles-y-actividades-para-todos-los-publicos",
     "imageCredit": "Tribuna de Valladolid",
-    "imageLicense": "© Tribuna de Valladolid",
+    "imageLicense": null,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "18:00",
@@ -2426,8 +2426,8 @@
     "image": "/assets/events/moreras-beach-fest-valladolid.jpg",
     "imageAlt": "Moreras Beach Fest en Valladolid",
     "imageSource": "https://info.valladolid.es/evento/moreras-beach-festival-0",
-    "imageCredit": "Ayuntamiento de Valladolid / Info Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": null
   },
   {
     "id": 66,
@@ -2627,8 +2627,8 @@
     "image": "/assets/events/danzadolid-valladolid.jpg",
     "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
     "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
-    "imageCredit": "Pablo Gestoso / Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageCredit": "Pablo Gestoso",
+    "imageLicense": null
   },
   {
     "id": 72,
@@ -2732,7 +2732,7 @@
     "imageAlt": "Espectáculo de drones en Valladolid",
     "imageSource": "https://www.valladolid.es/en/actualidad/noticias/valladolid-proyectara-mayor-espectaculo-luces-drones-castil",
     "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageLicense": null
   },
   {
     "id": 75,
@@ -2838,8 +2838,8 @@
     "image": "/assets/events/vehiculos-clasicos-valladolid.jpg",
     "imageAlt": "Vehículo clásico expuesto en la Acera de Recoletos de Valladolid",
     "imageSource": "https://www.diariodevalladolid.es/valladolid/170918/79821/coches-clasicos-deslumbran-publico.html",
-    "imageCredit": "Pablo Requejo / Diario de Valladolid",
-    "imageLicense": "© Diario de Valladolid",
+    "imageCredit": "Pablo Requejo",
+    "imageLicense": null,
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "12:00",
@@ -4580,8 +4580,8 @@
     "image": "/assets/events/danzadolid-valladolid.jpg",
     "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
     "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
-    "imageCredit": "Pablo Gestoso / Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageCredit": "Pablo Gestoso",
+    "imageLicense": null
   },
   {
     "id": 129,
@@ -4619,7 +4619,7 @@
     "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
     "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
     "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageLicense": null
   },
   {
     "id": 130,
@@ -4766,8 +4766,8 @@
     "image": "/assets/events/caricaturistas-acera-recoletos-valladolid.jpg",
     "imageAlt": "Caricaturistas trabajando en la Acera de Recoletos de Valladolid",
     "imageSource": "https://www.diariodevalladolid.es/valladolid/fiestas/250908/274693/caricaturas-cambio-sonrisas-recoletos.html",
-    "imageCredit": "PHOTOGENIC / Diario de Valladolid",
-    "imageLicense": "© Diario de Valladolid",
+    "imageCredit": "PHOTOGENIC",
+    "imageLicense": null,
     "date": "2026-09-07",
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "17:00",
@@ -5963,7 +5963,7 @@
     "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
     "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
     "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageLicense": null
   },
   {
     "id": 167,
@@ -6327,8 +6327,8 @@
     "image": "/assets/events/caricaturistas-acera-recoletos-valladolid.jpg",
     "imageAlt": "Caricaturistas trabajando en la Acera de Recoletos de Valladolid",
     "imageSource": "https://www.diariodevalladolid.es/valladolid/fiestas/250908/274693/caricaturas-cambio-sonrisas-recoletos.html",
-    "imageCredit": "PHOTOGENIC / Diario de Valladolid",
-    "imageLicense": "© Diario de Valladolid",
+    "imageCredit": "PHOTOGENIC",
+    "imageLicense": null,
     "date": "2026-09-08",
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "17:00",
@@ -7428,7 +7428,7 @@
     "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
     "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
     "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageLicense": null
   },
   {
     "id": 207,
@@ -7620,8 +7620,8 @@
     "image": "/assets/events/caricaturistas-acera-recoletos-valladolid.jpg",
     "imageAlt": "Caricaturistas trabajando en la Acera de Recoletos de Valladolid",
     "imageSource": "https://www.diariodevalladolid.es/valladolid/fiestas/250908/274693/caricaturas-cambio-sonrisas-recoletos.html",
-    "imageCredit": "PHOTOGENIC / Diario de Valladolid",
-    "imageLicense": "© Diario de Valladolid",
+    "imageCredit": "PHOTOGENIC",
+    "imageLicense": null,
     "date": "2026-09-09",
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "17:00",
@@ -8767,7 +8767,7 @@
     "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
     "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
     "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageLicense": null
   },
   {
     "id": 244,
@@ -10166,7 +10166,7 @@
     "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
     "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
     "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageLicense": null
   },
   {
     "id": 284,
@@ -11402,8 +11402,8 @@
     "image": "/assets/events/moreras-beach-fest-valladolid.jpg",
     "imageAlt": "Moreras Beach Fest en Valladolid",
     "imageSource": "https://info.valladolid.es/evento/moreras-beach-festival-0",
-    "imageCredit": "Ayuntamiento de Valladolid / Info Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": null
   },
   {
     "id": 317,
@@ -11549,7 +11549,7 @@
     "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
     "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
     "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageLicense": null
   },
   {
     "id": 321,
@@ -12939,8 +12939,8 @@
     "image": "/assets/events/globos-valladolid.jpg",
     "imageAlt": "Globos aerostáticos sobre Valladolid",
     "imageSource": "https://www.diariodevalladolid.es/deportes/240902/242883/xxi-open-diego-criado-rey-contara-seis-globos-vallisoletanos.html",
-    "imageCredit": "Montse Álvarez / Diario de Valladolid",
-    "imageLicense": "© Diario de Valladolid",
+    "imageCredit": "Montse Álvarez",
+    "imageLicense": null,
     "date": "2026-09-12",
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "21:00",
@@ -13235,7 +13235,7 @@
     "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
     "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
     "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageLicense": null
   },
   {
     "id": 369,
@@ -13387,8 +13387,8 @@
     "image": "/assets/events/marcha-cicloturistica-valladolid.jpg",
     "imageAlt": "Marcha cicloturística en Valladolid",
     "imageSource": "https://www.diariodevalladolid.es/valladolid/fiestas/240901/242617/marcha-cicloturistica.html",
-    "imageCredit": "E.M. / Diario de Valladolid",
-    "imageLicense": "© Diario de Valladolid",
+    "imageCredit": "E.M.",
+    "imageLicense": null,
     "date": "2026-09-13",
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "10:30",
@@ -13586,8 +13586,8 @@
     "image": "/assets/events/danzadolid-valladolid.jpg",
     "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
     "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
-    "imageCredit": "Pablo Gestoso / Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageCredit": "Pablo Gestoso",
+    "imageLicense": null
   },
   {
     "id": 379,
@@ -14626,8 +14626,8 @@
     "image": "/assets/events/danzadolid-valladolid.jpg",
     "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
     "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
-    "imageCredit": "Pablo Gestoso / Ayuntamiento de Valladolid",
-    "imageLicense": "Fuente municipal"
+    "imageCredit": "Pablo Gestoso",
+    "imageLicense": null
   },
   {
     "id": 409,
