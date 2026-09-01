@@ -15160,7 +15160,7 @@
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "12:00",
     "endTime": "21:00",
-    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
+    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
     "location": "Feria de Valladolid",
     "zone": "Auditorio Feria",
@@ -15172,9 +15172,13 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6556388,
+      "lng": -4.7398018,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 101589967,
+      "query": "Feria de Valladolid, Valladolid, España",
+      "accuracy": 1
     },
     "type": "Otros",
     "ticket": {
@@ -15748,30 +15752,32 @@
     "id": 454,
     "date": "2026-09-12",
     "dateLabel": "Sábado 12 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Exhibición Ultimate Frisbee",
+    "startTime": "10:00",
+    "endTime": "14:00",
+    "title": "Exhibición de ultimate",
     "location": "Centro Deportivo Militar San Isidro",
     "zone": "Centro Deportivo Militar San Isidro",
-    "description": "Exhibición Ultimate Frisbee",
-    "summary": "Exhibición Ultimate Frisbee",
+    "description": "¡Ven a conocer un nuevo deporte: Ultimate Frisbee! Si estás buscando un deporte mixto, sin contacto, donde predomina el buen rollo, pero sin perder la competitividad… Este es tu deporte. ¡Anímate a probarlo! Tendremos un taller para todos los públicos y un partido de exhibición para que conozcas el deporte. Solo tienes que traer ropa deportiva, agua y ganas de aprender. Del resto nos encargamos nosotros. En nuestro instagram puedes tener más info @ultimatum_valladolid",
+    "summary": "¡Ven a conocer un nuevo deporte: Ultimate Frisbee! Si estás buscando un deporte mixto, sin contacto, donde predomina el buen rollo, pero sin perder la competitividad… Este es tu deporte. ¡Anímate a probarlo! Tendremos un taller para todos los públicos y un partido de exhibición para que conozcas el deporte. Solo tienes que traer ropa deportiva, agua y ganas de aprender. Del resto nos encargamos nosotros. En nuestro instagram puedes tener más info @ultimatum_valladolid",
     "performances": [],
     "organizers": [
       "Club Deportivo Sociocultural Militar San Isidro"
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.643763,
-      "lng": -4.705559,
-      "source": "OpenStreetMap Nominatim"
+      "lat": 41.6437626,
+      "lng": -4.7055593,
+      "source": "OpenStreetMap Nominatim",
+      "query": "Centro Deportivo Militar San Isidro, Valladolid, España",
+      "accuracy": 1
     },
     "type": "Deporte",
     "ticket": {
       "required": false,
       "status": "not_required",
-      "label": "Sin entrada indicada",
+      "label": "Entrada libre",
       "url": null,
-      "note": "No consta venta de entradas en el programa para este evento."
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
       "Deporte"
@@ -16080,7 +16086,7 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "12:00",
     "endTime": "21:00",
-    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
+    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
     "location": "Feria de Valladolid",
     "zone": "Auditorio Feria",
@@ -16092,9 +16098,13 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6556388,
+      "lng": -4.7398018,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 101589967,
+      "query": "Feria de Valladolid, Valladolid, España",
+      "accuracy": 1
     },
     "type": "Otros",
     "ticket": {
@@ -16114,7 +16124,7 @@
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "12:00",
     "endTime": "21:00",
-    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
+    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
     "location": "Feria de Valladolid",
     "zone": "Auditorio Feria",
@@ -16126,9 +16136,13 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6556388,
+      "lng": -4.7398018,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 101589967,
+      "query": "Feria de Valladolid, Valladolid, España",
+      "accuracy": 1
     },
     "type": "Otros",
     "ticket": {
@@ -16148,7 +16162,7 @@
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "12:00",
     "endTime": "21:00",
-    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
+    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
     "location": "Feria de Valladolid",
     "zone": "Auditorio Feria",
@@ -16160,9 +16174,13 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6556388,
+      "lng": -4.7398018,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 101589967,
+      "query": "Feria de Valladolid, Valladolid, España",
+      "accuracy": 1
     },
     "type": "Otros",
     "ticket": {
@@ -16182,7 +16200,7 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "12:00",
     "endTime": "21:00",
-    "title": "El Gran Viaje. Partida y Regreso (Recorrido ambientado)",
+    "title": "El Gran Viaje. Partida y Regreso (Experiencia Inmersiva)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/96cbd0cfed0f97ffa34b5d64edd14f05c681c32e_2_721x1024.jpeg",
     "location": "Feria de Valladolid",
     "zone": "Auditorio Feria",
@@ -16194,9 +16212,13 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6556388,
+      "lng": -4.7398018,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 101589967,
+      "query": "Feria de Valladolid, Valladolid, España",
+      "accuracy": 1
     },
     "type": "Otros",
     "ticket": {
@@ -21674,6 +21696,1001 @@
     },
     "tags": [
       "Música"
+    ]
+  },
+  {
+    "id": 661,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "19:30",
+    "endTime": "20:30",
+    "title": "Orquesta Sinfónica del Real Sitio (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/5/5f10c46a45cf68605cf23ba46fbf21dc6dbeb12c.jpeg",
+    "location": "Auditorio Miguel Delibes",
+    "zone": "Zona Centro",
+    "description": "La Orquesta Sinfónica del Real Sitio presenta una velada musical el próximo sábado 12 de septiembre de 2026 a las 19:30 horas. El encuentro tendrá lugar en el emblemático Auditorio Miguel Delibes, un referente de la cultura en la ciudad.",
+    "summary": "La Orquesta Sinfónica del Real Sitio presenta una velada musical el próximo sábado 12 de septiembre de 2026 a las 19:30 horas. El encuentro tendrá lugar en el emblemático Auditorio Miguel Delibes, un referente de la cultura en la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Orquesta Sinfónica del Real Sitio"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6436229,
+      "lng": -4.7555608,
+      "source": "Google Maps (consulta manual; ficha Centro Cultural Miguel Delibes)",
+      "query": "Auditorio Miguel Delibes, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T09:04:45.651Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": true,
+      "status": "paid",
+      "label": "3 €",
+      "url": null,
+      "note": "La fuente remota indica un coste de 3 €; no facilita un enlace de venta."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 662,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "ADN Club en Moss Club (Evento)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3d69f16a37751c05ccbc10fad3528dbbe3bfab59_2_819x1024.jpeg",
+    "location": "Moss Club",
+    "zone": "Zona Centro",
+    "description": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
+    "summary": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "ADN Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6552616,
+      "lng": -4.7382618,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 101589975,
+      "query": "Moss Club, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T10:11:08.144Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 663,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "22:00",
+    "title": "Tardeos de Ferias (Ciclo de eventos)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
+    "location": "In Clan Club, C. Bao, s/n, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
+    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
+    "performances": [
+      "DJY4GGER",
+      "DJ CHUSKY"
+    ],
+    "organizers": [
+      "In Clan Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6550846,
+      "lng": -4.7239775,
+      "source": "Google Maps (contraste manual; ficha exacta de In Clan)",
+      "query": "In Clan Club, C. Bao, s/n, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 664,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "20:00",
+    "endTime": "22:00",
+    "title": "Tardeos de Ferias (Ciclo de eventos)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
+    "location": "In Clan Club, C. Bao, s/n, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
+    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
+    "performances": [
+      "DJ NEVER",
+      "DJ NEKE"
+    ],
+    "organizers": [
+      "In Clan Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6550846,
+      "lng": -4.7239775,
+      "source": "Google Maps (contraste manual; ficha exacta de In Clan)",
+      "query": "In Clan Club, C. Bao, s/n, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 665,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "20:00",
+    "endTime": "22:00",
+    "title": "Tardeos de Ferias (Ciclo de eventos)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
+    "location": "In Clan Club, C. Bao, s/n, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
+    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
+    "performances": [
+      "DJ JULIO",
+      "LARIO DJ"
+    ],
+    "organizers": [
+      "In Clan Club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6550846,
+      "lng": -4.7239775,
+      "source": "Google Maps (contraste manual; ficha exacta de In Clan)",
+      "query": "In Clan Club, C. Bao, s/n, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 666,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "01:00",
+    "endTime": "08:00",
+    "title": "Assceussion Rave (Fiestas San Lorenzo)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/eb5f425c2edafc8c38ac9bb226460b20bc85bc0f_2_819x1024.jpeg",
+    "location": "Moss Club",
+    "zone": "Zona Centro",
+    "description": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
+    "summary": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
+    "performances": [],
+    "organizers": [
+      "Hirecut Bookings"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6552616,
+      "lng": -4.7382618,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 101589975,
+      "query": "Moss Club, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T10:11:08.152Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 667,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "19:30",
+    "endTime": "20:30",
+    "title": "Casa con dos puertas (Obra de teatro)",
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/8/8060ca0dc4314c64c68611b46e4e45833b8b00f6.jpeg",
+    "location": "Teatro Arcón de Olid (Sala Borja)",
+    "zone": "Zona Centro",
+    "description": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
+    "summary": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
+    "performances": [],
+    "organizers": [
+      "Teatro Arcón de Olid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6527404,
+      "lng": -4.7204461,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7102357207,
+      "query": "Sala Borja, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T10:11:08.153Z"
+    },
+    "type": "Teatro",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Teatro"
+    ]
+  },
+  {
+    "id": 668,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 669,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "11:00",
+    "endTime": "14:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 670,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 671,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "11:00",
+    "endTime": "14:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 672,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 673,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 674,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 675,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 676,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 677,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "11:00",
+    "endTime": "14:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 678,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "19:00",
+    "endTime": "22:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 679,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "11:00",
+    "endTime": "14:00",
+    "title": "Exposición Valladolid en piezas",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/812427418cf2a941c788eacc7b7383dbc2fdf73b_2_741x1024.jpeg",
+    "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3",
+    "zone": "Zona Centro",
+    "description": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "summary": "La exposición ‘Valladolid en piezas’ se llevará a cabo desde el 4 hasta el 20 de septiembre en la sala de convenciones de la Cafetería Papillón, situada en la Avenida Miguel Ángel Blanco, 3. Este evento ofrece una perspectiva singular de la ciudad a través de la técnica de los puzzles.",
+    "performances": [],
+    "organizers": [
+      "Asociación Medio Ambiental A.M.A. El Pisuerga"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6500245,
+      "lng": -4.7375027,
+      "source": "Google Maps (consulta manual; ficha de Papillon)",
+      "query": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.914Z"
+    },
+    "type": "Exposición",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Exposición"
+    ]
+  },
+  {
+    "id": 680,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Farah Diva - Actuaciones Feria y Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a27da7d01dfce09138cd3598ae5483e46fb87a8d_2_753x1024.jpeg",
+    "location": "Plaza España",
+    "zone": "Zona Centro",
+    "description": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "summary": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "performances": [
+      "Danzando en la calle",
+      "Random de kpop"
+    ],
+    "organizers": [
+      "Centro de Danza Farah Diva"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6499582,
+      "lng": -4.7246622,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "relation",
+      "osmId": 12816089,
+      "query": "Plaza España, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.920Z"
+    },
+    "type": "Danza",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Danza"
+    ]
+  },
+  {
+    "id": 681,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "Farah Diva - Actuaciones Feria y Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a27da7d01dfce09138cd3598ae5483e46fb87a8d_2_753x1024.jpeg",
+    "location": "Plaza Zorrilla",
+    "zone": "Zona Centro",
+    "description": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "summary": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "performances": [
+      "La 8 Magazine Valladolid"
+    ],
+    "organizers": [
+      "Centro de Danza Farah Diva"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6480074,
+      "lng": -4.7290426,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4908535046,
+      "query": "Plaza Zorrilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.920Z"
+    },
+    "type": "Danza",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Danza"
+    ]
+  },
+  {
+    "id": 682,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "13:15",
+    "endTime": null,
+    "title": "Farah Diva - Actuaciones Feria y Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a27da7d01dfce09138cd3598ae5483e46fb87a8d_2_753x1024.jpeg",
+    "location": "Parking del estadio",
+    "zone": "Zona Centro",
+    "description": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "summary": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "performances": [
+      "Desfile inaugural de la Feria del Folklore y la Gastronomía"
+    ],
+    "organizers": [
+      "Centro de Danza Farah Diva"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6463497,
+      "lng": -4.7614922,
+      "source": "Google Maps (consulta manual; ficha de Aparcamiento estadio José Zorrilla)",
+      "query": "Parking del estadio, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.920Z"
+    },
+    "type": "Danza",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Danza"
+    ]
+  },
+  {
+    "id": 683,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Farah Diva - Actuaciones Feria y Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a27da7d01dfce09138cd3598ae5483e46fb87a8d_2_753x1024.jpeg",
+    "location": "Antiguo Picadero de la Academia de Caballería",
+    "zone": "Zona Centro",
+    "description": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "summary": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "performances": [
+      "Muestra de escuelas Prodanza"
+    ],
+    "organizers": [
+      "Centro de Danza Farah Diva"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6477991,
+      "lng": -4.7306772,
+      "source": "Google Maps (consulta manual; ficha de Academia de Caballería)",
+      "query": "Antiguo Picadero de la Academia de Caballería, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.920Z"
+    },
+    "type": "Danza",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Danza"
+    ]
+  },
+  {
+    "id": 684,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Farah Diva - Actuaciones Feria y Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a27da7d01dfce09138cd3598ae5483e46fb87a8d_2_753x1024.jpeg",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Zona Centro",
+    "description": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "summary": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "performances": [
+      "Día de la Casa Melilla"
+    ],
+    "organizers": [
+      "Centro de Danza Farah Diva"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6447538,
+      "lng": -4.7584186,
+      "source": "Google Maps (consulta manual; ficha de Recinto Ferial Jose Luis Bellido)",
+      "query": "Recinto ferial José Luis Bellido, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.920Z"
+    },
+    "type": "Danza",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Danza"
+    ]
+  },
+  {
+    "id": 685,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Farah Diva - Actuaciones Feria y Fiestas 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a27da7d01dfce09138cd3598ae5483e46fb87a8d_2_753x1024.jpeg",
+    "location": "Antiguo Picadero de la Academia de Caballería",
+    "zone": "Zona Centro",
+    "description": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "summary": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
+    "performances": [
+      "Danzadolid (Urban Dance)"
+    ],
+    "organizers": [
+      "Centro de Danza Farah Diva"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6477991,
+      "lng": -4.7306772,
+      "source": "Google Maps (consulta manual; ficha de Academia de Caballería)",
+      "query": "Antiguo Picadero de la Academia de Caballería, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.920Z"
+    },
+    "type": "Danza",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Danza"
+    ]
+  },
+  {
+    "id": 686,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "23:00",
+    "endTime": null,
+    "title": "PEC! La Fiesta (Especial Fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f2ccf5f247fa53bfeeb92974962a6f3642153975_2_681x1024.jpeg",
+    "location": "Sala Segundo Acto, Calle María de Molina 7",
+    "zone": "Zona Centro",
+    "description": "La fiesta PEC! llega a la sala Segundo Acto para celebrar una edición especial de fiestas. El evento se llevará a cabo el próximo sábado 12 de septiembre a partir de las 23:00 horas en Valladolid.",
+    "summary": "La fiesta PEC! llega a la sala Segundo Acto para celebrar una edición especial de fiestas. El evento se llevará a cabo el próximo sábado 12 de septiembre a partir de las 23:00 horas en Valladolid.",
+    "performances": [
+      "Unai Goiko",
+      "Paul Moon (warm up)",
+      "Diego A-K"
+    ],
+    "organizers": [
+      "PEC! La Fiesta"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6495801,
+      "lng": -4.7303446,
+      "source": "Google Maps (consulta manual; ficha de Segundo Acto)",
+      "query": "Sala Segundo Acto, Calle María de Molina 7, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T12:10:59.921Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": true,
+      "status": "paid",
+      "label": "15 € anticipada / 18 € en puerta",
+      "url": null,
+      "note": "La fuente remota indica entradas anticipadas de 15 € y de puerta de 18 €, ambas con una consumición incluida; no facilita un enlace de venta."
+    },
+    "tags": [
+      "Otros"
     ]
   }
 ]

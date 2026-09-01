@@ -400,6 +400,189 @@
     ],
     "source": "Verificación manual previa del programa de la fuente remota."
   },
+  "2183": {
+    "dates": [
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-09",
+        "startTime": "12:00",
+        "endTime": "21:00",
+        "location": "Feria de Valladolid"
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "12:00",
+        "endTime": "21:00",
+        "location": "Feria de Valladolid"
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "12:00",
+        "endTime": "21:00",
+        "location": "Feria de Valladolid"
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "12:00",
+        "endTime": "21:00",
+        "location": "Feria de Valladolid"
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "12:00",
+        "endTime": "21:00",
+        "location": "Feria de Valladolid"
+      }
+    ],
+    "source": "Cartel remoto de El Gran Viaje, inspeccionado visualmente, indica del 9 al 13 de septiembre de 2026; horario diario 12:00–21:00 confirmado en la página oficial elgranviaje.es el 1 de septiembre de 2026."
+  },
+  "2198": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-07",
+      "2026-09-11"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-04",
+        "startTime": "20:00",
+        "endTime": "22:00",
+        "location": "In Clan Club, C. Bao, s/n, Valladolid",
+        "performances": ["DJY4GGER", "DJ CHUSKY"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "20:00",
+        "endTime": "22:00",
+        "location": "In Clan Club, C. Bao, s/n, Valladolid",
+        "performances": ["DJ NEVER", "DJ NEKE"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "20:00",
+        "endTime": "22:00",
+        "location": "In Clan Club, C. Bao, s/n, Valladolid",
+        "performances": ["DJ JULIO", "LARIO DJ"]
+      }
+    ],
+    "source": "Cartel remoto de Tardeos de Ferias, descargado e inspeccionado visualmente: sesiones los días 4, 7 y 11 de septiembre de 2026, todas de 20:00 a 22:00, con las actuaciones asignadas a cada fecha."
+  },
+  "2215": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-05",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Bar ZVMO, C. Calixto Fernández de la Torre, esquina C. Reina",
+        "performances": ["DJ CATARRO"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Bar ZVMO, C. Calixto Fernández de la Torre, esquina C. Reina",
+        "performances": ["LOS DAZA"]
+      },
+      {
+        "date": "2026-09-08",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Bar ZVMO, C. Calixto Fernández de la Torre, esquina C. Reina",
+        "performances": ["CALVARIO FEST. PANI - VILLA - PRECO"]
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Bar ZVMO, C. Calixto Fernández de la Torre, esquina C. Reina",
+        "performances": ["FÉLIX VILLADA"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Bar ZVMO, C. Calixto Fernández de la Torre, esquina C. Reina",
+        "performances": ["XANGAI"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Bar ZVMO, C. Calixto Fernández de la Torre, esquina C. Reina",
+        "performances": ["BLACK BROTHER’S"]
+      }
+    ],
+    "source": "Cartel remoto de El Exquinazo Tardeo, descargado e inspeccionado visualmente: sesiones los días 5, 7, 8, 9, 11 y 12 de septiembre de 2026, todas de 18:00 a 21:00, con las actuaciones asignadas a cada fecha."
+  },
+  "2315": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-05",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Maricarmen, C/ Caridad 2, Valladolid",
+        "performances": ["FÉLIX VILLADA", "LOS DEL LÍO"]
+      },
+      {
+        "date": "2026-09-06",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Maricarmen, C/ Caridad 2, Valladolid",
+        "performances": ["LOS DAZA"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Maricarmen, C/ Caridad 2, Valladolid",
+        "performances": ["LAS DOÑAS", "KIKE AV"]
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Maricarmen, C/ Caridad 2, Valladolid",
+        "performances": ["LUISMI", "GEORGE WHALEY"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Maricarmen, C/ Caridad 2, Valladolid",
+        "performances": ["PRE-FIESTA FOLCLORE (BY DANI DEL LÍO)"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "location": "Maricarmen, C/ Caridad 2, Valladolid",
+        "performances": ["LORENZ", "FÉLIX VILLADA"]
+      }
+    ],
+    "source": "Cartel remoto de Vuelve el Cotorrazo, descargado e inspeccionado visualmente: sesiones los días 5, 6, 7, 10, 11 y 12 de septiembre de 2026, todas de 18:00 a 21:00, con las actuaciones asignadas a cada fecha."
+  },
   "1285599309506": {
     "dates": [
       "2026-09-08",
@@ -410,5 +593,147 @@
       "2026-09-13"
     ],
     "source": "Ficha de la Junta de Castilla y León, bases y cartel aportado por el usuario, inspeccionado visualmente: la 48.ª Feria de Cerámica y Alfarería de Valladolid se celebra del 8 al 13 de septiembre de 2026, de 11:00 a 22:00, en el Paseo Central del Campo Grande."
+  },
+  "2363": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-04",
+        "startTime": "19:00",
+        "endTime": "22:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-05",
+        "startTime": "11:00",
+        "endTime": "14:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-05",
+        "startTime": "19:00",
+        "endTime": "22:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-06",
+        "startTime": "11:00",
+        "endTime": "14:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "19:00",
+        "endTime": "22:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-08",
+        "startTime": "19:00",
+        "endTime": "22:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "19:00",
+        "endTime": "22:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "19:00",
+        "endTime": "22:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "19:00",
+        "endTime": "22:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "11:00",
+        "endTime": "14:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "19:00",
+        "endTime": "22:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "11:00",
+        "endTime": "14:00",
+        "location": "Cafetería Papillón (sala de convenciones) Av. Miguel Ángel Blanco, 3"
+      }
+    ],
+    "source": "Cartel remoto de Exposición Valladolid en piezas, descargado e inspeccionado visualmente: actividad continua del 4 al 20 de septiembre de 2026; laborables 19:00–22:00, sábados 11:00–14:00 y 19:00–22:00, domingos 11:00–14:00. Se registran las ocurrencias del intervalo operativo 4–13 de septiembre."
+  },
+  "2361": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-09",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-05",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Plaza España",
+        "performances": ["Danzando en la calle", "Random de kpop"]
+      },
+      {
+        "date": "2026-09-05",
+        "startTime": "22:00",
+        "endTime": null,
+        "location": "Plaza Zorrilla",
+        "performances": ["La 8 Magazine Valladolid"]
+      },
+      {
+        "date": "2026-09-06",
+        "startTime": "13:15",
+        "endTime": null,
+        "location": "Parking del estadio",
+        "performances": ["Desfile inaugural de la Feria del Folklore y la Gastronomía"]
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Antiguo Picadero de la Academia de Caballería",
+        "performances": ["Muestra de escuelas Prodanza"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "13:30",
+        "endTime": null,
+        "location": "Recinto ferial José Luis Bellido",
+        "performances": ["Día de la Casa Melilla"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Antiguo Picadero de la Academia de Caballería",
+        "performances": ["Danzadolid (Urban Dance)"]
+      }
+    ],
+    "source": "Cartel remoto de Farah Diva - Actuaciones Feria y Fiestas 2026, descargado e inspeccionado visualmente: sesiones el 5 (Plaza España 21:00 y Plaza Zorrilla 22:00), 6 (Parking del estadio 13:15), 9 (Antiguo Picadero de la Academia de Caballería 21:00) y 13 de septiembre (Recinto ferial José Luis Bellido 13:30 y Antiguo Picadero de la Academia de Caballería 21:00)."
   }
 }
