@@ -1302,7 +1302,59 @@
       "location": "Plaza de la Universidad",
       "placement": "En la plaza",
       "addressQuery": "Plaza de la Universidad, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Nuestros pinchos — Pincho + Bebida: 4,00€ · Pincho sin bebida: 3,00€ · Bebida: 2,00€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-brioche-chistorra-yema-huevo",
+                "name": "Brioche de chistorra",
+                "description": "con yema de huevo y patatas chips"
+              },
+              {
+                "id": "pincho-empanadilla-carrillera-vino-tinto",
+                "name": "Empanadilla casera de carrillera",
+                "description": "al vino tinto"
+              },
+              {
+                "id": "pincho-mini-gofre-pollo-crispy",
+                "name": "Mini gofre de pollo crispy",
+                "description": "con salsa de siracha"
+              },
+              {
+                "id": "pincho-chapata-calamares",
+                "name": "Chapata de calamares",
+                "description": "con mayo de piquillo"
+              },
+              {
+                "id": "pincho-bocatin-secreto-salsa-robert",
+                "name": "Bocatín de secreto",
+                "description": "con salsa Robert"
+              },
+              {
+                "id": "pincho-mini-burger-ternera",
+                "name": "Mini burger de ternera",
+                "description": "queso y cebolla caramelizada"
+              },
+              {
+                "id": "pincho-morcilla-compota-manzana",
+                "name": "Pincho de morcilla",
+                "description": "con compota de manzana"
+              },
+              {
+                "id": "racion-patatas-alioli-10-10",
+                "name": "Ración de patatas ali-oli al estilo 10&10"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Aviso sobre alérgenos: Nuestros productos pueden contener trazas de gluten, huevo, leche, soja, frutos secos y otros alérgenos. En caso de alergia o intolerancia, consulte con nuestro personal."
+        ]
+      }
     },
     {
       "id": "z3-14",
