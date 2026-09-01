@@ -149,7 +149,62 @@
       "location": "Plaza Martí y Monsó",
       "placement": "En su propia terraza",
       "addressQuery": "Plaza Martí y Monsó, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria — 4,00€ Pincho + bebida · 3,00€ Pincho sin bebida · 2,00€ Bebida",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-bocatin-calamares",
+                "name": "Bocatín de calamares",
+                "description": "con mayo cítrica."
+              },
+              {
+                "id": "pincho-brioche-costilla",
+                "name": "Brioche de costilla",
+                "description": "con cebolla crujiente."
+              },
+              {
+                "id": "pincho-bocatin-secreto",
+                "name": "Bocatín de secreto",
+                "description": "al chimichurri."
+              },
+              {
+                "id": "pincho-empanadilla-carrillera",
+                "name": "Empanadilla de carrillera",
+                "description": "con pimientos confitados."
+              },
+              {
+                "id": "pincho-mini-smash-burger",
+                "name": "Mini smash burger",
+                "description": "con cheddar, bacon y mermelada de bacon."
+              },
+              {
+                "id": "pincho-bocatin-panceta",
+                "name": "Bocatín de panceta",
+                "description": "marinada, queso ahumado y piparras."
+              }
+            ]
+          },
+          {
+            "title": "Ración",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-papas-arrugas",
+                "name": "Papas arrugás",
+                "description": "con mojo rojo y mayo de humo",
+                "price": "5€"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Aviso sobre alérgenos: Nuestros productos pueden contener trazas de gluten, huevo, leche, soja, frutos secos y otros alérgenos. En caso de alergia o intolerancia, consulte con nuestro personal."
+        ]
+      }
     },
     {
       "id": "z1-05",
@@ -859,6 +914,66 @@
         "query": "Calle Ferrari, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:35.820Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria — Pincho + Bebida: 4,00€ · Pincho sin bebida: 3,00€ · Bebida: 2,00€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-taco-cochinita",
+                "name": "Taco de cochinita",
+                "description": "con guacamole"
+              },
+              {
+                "id": "pincho-palomitas-solomillo",
+                "name": "Palomitas de solomillo",
+                "description": "con salsa whisky"
+              },
+              {
+                "id": "pincho-gyozas-pollo-miso",
+                "name": "Gyozas de pollo al miso",
+                "description": "con salsa hoisin"
+              },
+              {
+                "id": "pincho-hojaldre-lechazo",
+                "name": "Hojaldre de lechazo",
+                "description": "en su jugo"
+              },
+              {
+                "id": "pincho-bocatin-calamares",
+                "name": "Bocatín de calamares",
+                "description": "con mayonesa cítrica"
+              },
+              {
+                "id": "pincho-bocaguiso-carrillera",
+                "name": "Bocaguiso de carrillera",
+                "description": "con relish de pepinillo"
+              },
+              {
+                "id": "pincho-mini-burger-malquerida",
+                "name": "Mini burger malquerida",
+                "description": "con queso, cebolla y kimchi"
+              }
+            ]
+          },
+          {
+            "title": "Ración",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-papas-arrugas",
+                "name": "Papas arrugás",
+                "description": "con mojo rojo y mayo de humo",
+                "price": "5€"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Aviso sobre alérgenos: Nuestros productos pueden contener trazas de gluten, huevo, leche, soja, frutos secos y otros alérgenos. En caso de alergia o intolerancia, consulte con nuestro personal."
+        ]
       }
     },
     {
