@@ -207,10 +207,12 @@
     "title": "Entre Bobos anda el juego",
     "location": "Teatro Zorrilla",
     "zone": "Teatro Zorrilla",
-    "description": "Entre Bobos anda el juego Información ampliada: la compañía Morboria Teatro presenta la obra ‘Entre Bobos y anda el juego’, basada en el legado de Rojas Zorrilla. La función tendrá lugar el próximo 4 de septiembre a las 19:30 horas en las instalaciones del Teatro Zorrilla\n\nInformación ampliada: La compañía Morboria Teatro presenta la obra ‘Entre Bobos y Anda el Juego’, basada en el legado de Rojas Zorrilla. La función tendrá lugar el próximo 4 de septiembre a las 19:30 horas en las instalaciones del Teatro Zorrilla.",
-    "summary": "La compañía Morboria Teatro presenta la obra ‘Entre Bobos y anda el juego’, basada en el legado de Rojas Zorrilla. La función tendrá lugar el próximo 4 de septiembre a las 19:30 horas en las instalaciones del Teatro Zorrilla",
+    "description": "Morboria Teatro presenta Entre bobos anda el juego, una propuesta teatral basada en la obra de Rojas Zorrilla. La función se celebra el viernes 4 de septiembre a las 19:30 horas en el Teatro Zorrilla.",
+    "summary": "Morboria Teatro presenta Entre bobos anda el juego en el Teatro Zorrilla.",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Morboria Teatro"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.651628,
@@ -360,40 +362,6 @@
       "Humor y monólogos"
     ],
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e44723f2db3b2797fa257a0cc06524493cc5e83c_2_1024x1024.jpeg"
-  },
-  {
-    "id": 420,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "23:00",
-    "title": "Paco Devotion",
-    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
-    "location": "Plaza Poniente (La Boutique / Enboga)",
-    "zone": "Plaza Poniente",
-    "description": "Actuación de Paco Devotion en Plaza Poniente, con la Boutique y Enboga",
-    "summary": "Paco Devotion en Plaza Poniente, con la Boutique y Enboga",
-    "performances": [
-      "Paco Devotion"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.653157,
-      "lng": -4.731282,
-      "source": "Inferidas desde evento existente en Plaza Poniente"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ]
   },
   {
     "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
@@ -686,8 +654,8 @@
     "title": "Hasta que el divorcio nos separe",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "Hasta que el divorcio nos separe Información ampliada: la obra de teatro ‘Hasta que el divorcio nos separe’, una idea original de Leonardo Abreu, se presenta en el Teatro Cervantes de Valladolid. La función tendrá lugar el próximo 4 de septiembre a las 21:00 horas\n\nInformación ampliada: La obra de teatro ‘Hasta que el divorcio nos separe’, una idea original de Leonardo Abreu, se presenta en el Teatro Cervantes de Valladolid. La función tendrá lugar el próximo 4 de septiembre a las 21:00 horas.",
-    "summary": "La obra de teatro ‘Hasta que el divorcio nos separe’, una idea original de Leonardo Abreu, se presenta en el Teatro Cervantes de Valladolid. La función tendrá lugar el próximo 4 de septiembre a las 21:00 horas",
+    "description": "Hasta que el divorcio nos separe es una comedia teatral para amar y traicionar, a partir de una idea original de Leonardo Abreu. La función se celebra el viernes 4 de septiembre a las 21:00 horas en el Teatro Cervantes.",
+    "summary": "Comedia teatral Hasta que el divorcio nos separe en el Teatro Cervantes.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -863,11 +831,11 @@
     "title": "Skate Event",
     "location": "Acera de Recoletos",
     "zone": "Recoletos",
-    "description": "Skate Event. Pruebas para todos los niveles. Inscripción gratuita hasta completar plazas Información ampliada: la marca Aldertone Skateboard presenta el Skate Event, una cita dedicada a la cultura del monopatín que tendrá lugar el próximo 5 de septiembre de 2026. El encuentro se celebrará en la emblemática Acera de Recoletos, un espacio ideal para la práctica de este deporte urbano\n\nInformación ampliada: La marca Aldertone Skateboard presenta el Skate Event, una cita dedicada a la cultura del monopatín que tendrá lugar el próximo 5 de septiembre de 2026. El encuentro se celebrará en la emblemática Acera de Recoletos, un espacio ideal para la práctica de este deporte urbano.",
-    "summary": "Skate Event. Pruebas para todos los niveles. Inscripción gratuita hasta completar plazas",
+    "description": "Aldertone Skateboard organiza Skate Event en la Acera de Recoletos el sábado 5 de septiembre a las 11:00 horas. La actividad incluye pruebas para distintos niveles, como best trick y best line, y premios para participantes.",
+    "summary": "Skate Event de Aldertone Skateboard en la Acera de Recoletos, con pruebas para distintos niveles y premios.",
     "performances": [],
     "organizers": [
-      "Aldertone Skate board"
+      "Aldertone Skateboard"
     ],
     "collaborators": [
       "Coordinadora de Peñas"
@@ -1250,11 +1218,11 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "17:00",
     "endTime": null,
-    "title": "Tarzán",
+    "title": "Tarzán: soy igual a ti",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "Tarzán. Soy Igual a Ti Información ampliada: la obra de teatro Tarzán Soy igual a ti llega al Teatro Cervantes de Valladolid el próximo 5 de septiembre a las 17:00 horas. Se trata de una propuesta escénica diseñada especialmente para disfrutar en compañía de los más pequeños\n\nInformación ampliada: La obra de teatro Tarzán Soy igual a ti llega al Teatro Cervantes de Valladolid el próximo 5 de septiembre a las 17:00 horas. Se trata de una propuesta escénica diseñada especialmente para disfrutar en compañía de los más pequeños.",
-    "summary": "La obra de teatro Tarzán Soy igual a ti llega al Teatro Cervantes de Valladolid el próximo 5 de septiembre a las 17:00 horas. Se trata de una propuesta escénica diseñada especialmente para disfrutar en compañía de los más pequeños",
+    "description": "Tarzán: soy igual a ti se representa en el Teatro Cervantes el sábado 5 de septiembre a las 17:00 horas. El montaje propone una función familiar de teatro musical y aventura.",
+    "summary": "Tarzán: soy igual a ti llega al Teatro Cervantes con una función familiar el sábado 5 de septiembre a las 17:00 horas.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -2011,10 +1979,12 @@
     "title": "La Venganza de Don Mendo",
     "location": "Sala Borja",
     "zone": "Sala Borja",
-    "description": "La Venganza de Don Mendo Información ampliada: la compañía Diabla Teatro presenta la divertida comedia ‘La Venganza de Don Mendo’, escrita por Pedro Muñoz Seca. La cita tendrá lugar el próximo 5 de septiembre a las 20:00 horas en las instalaciones de la Sala Borja en Valladolid\n\nInformación ampliada: La compañía Diabla Teatro presenta la divertida comedia ‘La Venganza de Don Mendo’, escrita por Pedro Muñoz Seca. La cita tendrá lugar el próximo 5 de septiembre a las 20:00 horas en las instalaciones de la Sala Borja en Valladolid.",
-    "summary": "La compañía Diabla Teatro presenta la divertida comedia ‘La Venganza de Don Mendo’, escrita por Pedro Muñoz Seca. La cita tendrá lugar el próximo 5 de septiembre a las 20:00 horas en las instalaciones de la Sala Borja en Valladolid",
+    "description": "Diabla Teatro presenta La venganza de Don Mendo, de Pedro Muñoz Seca, el sábado 5 de septiembre a las 20:00 horas en la Sala Borja.",
+    "summary": "Diabla Teatro presenta La venganza de Don Mendo en la Sala Borja.",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Diabla Teatro"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.65274,
@@ -2040,11 +2010,11 @@
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "Las Niñas del Sexorcista",
+    "title": "Las niñas del Sexorcista",
     "location": "Teatro Zorrilla",
     "zone": "Teatro Zorrilla",
-    "description": "Las Niñas del Sexorcista Información ampliada: el Teatro Zorilla presenta una propuesta escénica que tendrá lugar el próximo 5 de septiembre a las 20:00 horas. El evento promete una experiencia teatral única para los asistentes en este emblemático espacio cultural\n\nInformación ampliada: El Teatro Zorilla presenta una propuesta escénica que tendrá lugar el próximo 5 de septiembre a las 20:00 horas. El evento promete una experiencia teatral única para los asistentes en este emblemático espacio cultural.",
-    "summary": "El Teatro Zorilla presenta una propuesta escénica que tendrá lugar el próximo 5 de septiembre a las 20:00 horas. El evento promete una experiencia teatral única para los asistentes en este emblemático espacio cultural",
+    "description": "Las niñas del Sexorcista se representa en el Teatro Zorrilla el sábado 5 de septiembre a las 20:00 horas.",
+    "summary": "Las niñas del Sexorcista se representa en el Teatro Zorrilla.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -2151,9 +2121,11 @@
     "title": "Apocalípticamente correcto",
     "location": "Teatro Carrión",
     "zone": "Teatro Carrión",
-    "description": "Apocalípticamente correcto. Luis Piedrahita Información ampliada: espectáculo de comedia titulado ‘Apocalípticamente correcto’ protagonizado por Luis Piedrahita. El evento se llevará a cabo en el Teatro Carrión en la ciudad de Valladolid\n\nInformación ampliada: Espectáculo de comedia titulado ‘Apocalípticamente Correcto’ protagonizado por Luis Piedrahita. El evento se llevará a cabo en el Teatro Carrión en la ciudad de Valladolid.",
-    "summary": "Espectáculo de comedia titulado ‘Apocalípticamente correcto’ protagonizado por Luis Piedrahita. El evento se llevará a cabo en el Teatro Carrión en la ciudad de Valladolid",
-    "performances": [],
+    "description": "Luis Piedrahita presenta Apocalípticamente correcto en el Teatro Carrión el sábado 5 de septiembre a las 20:30 horas.",
+    "summary": "Luis Piedrahita presenta Apocalípticamente correcto en el Teatro Carrión.",
+    "performances": [
+      "Luis Piedrahita"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -2477,8 +2449,8 @@
     "title": "Bianca Navajas",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "Bianca Navajas Información ampliada: la obra Bianca Navajas llega al Teatro Cervantes de Valladolid el próximo 5 de septiembre a las 21:00 horas. Esta producción, escrita por Leonardo Abreu, promete una velada inolvidable cargada de risas y nostalgia\n\nInformación ampliada: La obra Bianca Navajas llega al Teatro Cervantes de Valladolid el próximo 5 de septiembre a las 21:00 horas. Esta producción, escrita por Leonardo Abreu, promete una velada inolvidable cargada de risas y nostalgia.",
-    "summary": "La obra Bianca Navajas llega al Teatro Cervantes de Valladolid el próximo 5 de septiembre a las 21:00 horas. Esta producción, escrita por Leonardo Abreu, promete una velada inolvidable cargada de risas y nostalgia",
+    "description": "Bianca Navajas, escrita por Leonardo Abreu, se representa en el Teatro Cervantes el sábado 5 de septiembre a las 21:00 horas.",
+    "summary": "Bianca Navajas, escrita por Leonardo Abreu, se representa en el Teatro Cervantes.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -2509,12 +2481,16 @@
     "title": "Danzando en la calle: Farah Diva XXI Edición",
     "location": "Plaza España",
     "zone": "Plaza España",
-    "description": "Danzando en la calle: Farah Diva XXI Edición. Exhibición de danza a cargo de profesores y alumnos de diferentes disciplinas del centro: danza oriental, predanza, urban y comer cial dance. A las 21:45 h Random de kpop de libre participación. Centro de danza Farah Diva",
-    "summary": "Danzando en la calle: Farah Diva XXI Edición. Exhibición de danza a cargo de profesores y alumnos de diferentes disciplinas del centro: danza oriental, predanza, urban y comer cial dance. A las 21:45 h Random de kpop de libre participación. Centro de danza Farah Diva",
+    "description": "Danzando en la calle: Farah Diva XXI Edición reúne en Plaza España una exhibición de danza a cargo de profesores y alumnos del Centro de Danza Farah Diva. La actividad incluye danza oriental, predanza, urban y comercial dance, y a las 21:45 h un random de K-pop de libre participación.",
+    "summary": "Exhibición de danza de Farah Diva en Plaza España, con muestra de diferentes disciplinas y random de K-pop de libre participación.",
     "performances": [
-      "21:45 h Random de kpop de libre participación"
+      "21:45 h Random de kpop de libre participación",
+      "Danzando en la calle",
+      "Random de kpop"
     ],
-    "organizers": [],
+    "organizers": [
+      "Centro de Danza Farah Diva"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.649045,
@@ -2531,7 +2507,8 @@
     },
     "tags": [
       "Danza"
-    ]
+    ],
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a27da7d01dfce09138cd3598ae5483e46fb87a8d_2_753x1024.jpeg"
   },
   {
     "id": 69,
@@ -2777,14 +2754,12 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "10:00",
     "endTime": null,
-    "title": "XXII concentración y exposición Harley Davidson And Custom Ciudad de Valladolid",
+    "title": "XXII Reunión Harley & Custom Ciudad de Valladolid",
     "location": "Exterior Cúpula del Milenio",
     "zone": "Cúpula del Milenio",
-    "description": "XXII concentración y exposición Harley Davidson And Custom Ciudad de Valladolid. A las 11:15 h Salida de la ruta H.o.g. Valladolid Chapter Información ampliada: XXII Reunión Harley & Custom ‘Ciudad de Valladolid’",
-    "summary": "XXII Reunión Harley & Custom ‘Ciudad de Valladolid’",
-    "performances": [
-      "11:15 h Salida de la ruta H"
-    ],
+    "description": "XXII Reunión Harley & Custom Ciudad de Valladolid en el exterior de la Cúpula del Milenio el domingo 6 de septiembre desde las 10:00 horas. A las 11:15 h está prevista la salida de la ruta H.O.G. Valladolid Chapter.",
+    "summary": "Concentración y exposición Harley & Custom en el exterior de la Cúpula del Milenio.",
+    "performances": [],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -2849,14 +2824,15 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "12:00",
     "endTime": null,
-    "title": "Exposición de Vehícu los y motos clásicas",
+    "title": "Exposición de vehículos y motos clásicas",
     "location": "Acera Recoletos",
     "zone": "Recoletos",
-    "description": "Exposición de Vehícu los y motos clásicas",
-    "summary": "Exposición de Vehícu los y motos clásicas",
+    "description": "Exposición de coches, vehículos y motos clásicas en la Acera de Recoletos el domingo 6 de septiembre a las 12:00 horas. La muestra ofrece un recorrido visual por la historia del motor dentro de la programación de fiestas.",
+    "summary": "Exposición de coches, vehículos y motos clásicas en la Acera de Recoletos.",
     "performances": [],
     "organizers": [
-      "Asociación de Vehículos clásicos de Valladolid"
+      "Asociación de Vehículos clásicos de Valladolid",
+      "Ayuntamiento de Valladolid"
     ],
     "collaborators": [
       "Coordinadora de Peñas"
@@ -2866,7 +2842,7 @@
       "lng": -4.728046,
       "source": "OpenStreetMap Nominatim"
     },
-    "type": "Peñas",
+    "type": "Exposición",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -2877,6 +2853,10 @@
     "tags": [
       "Peñas",
       "Exposición"
+    ],
+    "images": [
+      "/assets/events/vehiculos-clasicos-valladolid.jpg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cc4f013321ebef1e1d52d3275b9a9c78cd2655a2_2_760x1024.jpeg"
     ]
   },
   {
@@ -3053,11 +3033,11 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "12:30",
     "endTime": null,
-    "title": "Tarzán",
+    "title": "Tarzán: soy igual a ti",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "Tarzán. Soy Igual a Ti Información ampliada: la obra de teatro Tarzán Soy Igual a Ti se presentará el próximo 6 de septiembre a las 12:30 horas en las instalaciones del Teatro Cervantes de Valladolid. Este montaje invita a disfrutar de una historia llena de vida y emoción en un entorno teatral privilegiado\n\nInformación ampliada: La obra de teatro Tarzán Soy Igual a Ti se presentará el próximo 6 de septiembre a las 12:30 horas en las instalaciones del Teatro Cervantes de Valladolid. Este montaje invita a disfrutar de una historia llena de vida y emoción en un entorno teatral privilegiado.",
-    "summary": "La obra de teatro Tarzán Soy Igual a Ti se presentará el próximo 6 de septiembre a las 12:30 horas en las instalaciones del Teatro Cervantes de Valladolid. Este montaje invita a disfrutar de una historia llena de vida y emoción en un entorno teatral privilegiado",
+    "description": "Tarzán: soy igual a ti se representa en el Teatro Cervantes el domingo 6 de septiembre a las 12:30 horas. El montaje propone una función familiar de teatro musical y aventura.",
+    "summary": "Tarzán: soy igual a ti llega al Teatro Cervantes con una función familiar el domingo 6 de septiembre a las 12:30 horas.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -3267,10 +3247,12 @@
     "title": "La Ratonera de Agatha Christie",
     "location": "Teatro Zorrilla",
     "zone": "Teatro Zorrilla",
-    "description": "La Ratonera de Agatha Christie Información ampliada: la Olympia Metropolitana presenta la emblemática obra de teatro la Ratonera, escrita por la célebre autora Agatha Christie. El evento tendrá lugar el próximo 6 de septiembre con dos funciones programadas a las 17:00 y a las 19:30 horas en el emblemático Teatro Zorilla\n\nInformación ampliada: La Olympia Metropolitana presenta la emblemática obra de teatro La Ratonera, escrita por la célebre autora Agatha Christie. El evento tendrá lugar el próximo 6 de septiembre con dos funciones programadas a las 17:00 y a las 19:30 horas en el emblemático Teatro Zorilla.",
-    "summary": "La Olympia Metropolitana presenta la emblemática obra de teatro la Ratonera, escrita por la célebre autora Agatha Christie. El evento tendrá lugar el próximo 6 de septiembre con dos funciones programadas a las 17:00 y a las 19:30 horas en el emblemático Teatro Zorilla",
+    "description": "Olympia Metropolitana presenta La ratonera, de Agatha Christie, en el Teatro Zorrilla el domingo 6 de septiembre. Esta ficha corresponde a la función de las 17:00 horas.",
+    "summary": "La ratonera, de Agatha Christie, se representa en el Teatro Zorrilla a las 17:00 horas.",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Olympia Metropolitana"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.651628,
@@ -3403,8 +3385,8 @@
     "title": "Campeonato mundial de cortes",
     "location": "Plaza de Toros",
     "zone": "Plaza de Toros",
-    "description": "Campeonato mundial de cortes de Equinotau ro para Raúl Nieto",
-    "summary": "Campeonato mundial de cortes de Equinotau ro para Raúl Nieto",
+    "description": "Campeonato mundial de cortes en la Plaza de Toros de Valladolid el domingo 6 de septiembre a las 18:00 horas.",
+    "summary": "Campeonato mundial de cortes en la Plaza de Toros de Valladolid.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -3530,12 +3512,17 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "18:00",
     "endTime": null,
-    "title": "Yo Solo quiero irme a Francia",
+    "title": "Yo solo quiero irme a Francia",
     "location": "Teatro Carrión",
     "zone": "Teatro Carrión",
-    "description": "Yo Solo quiero irme a Francia. Maria Galiana Información ampliada: la obra de teatro ‘Yo solo quiero irme a Francia’, con texto y dirección de Elisabeth Larena, presenta un elenco compuesto por María Galiana, Nieve de Medina, Anna Mayo y María Roja. El evento se llevará a cabo en el Teatro Carrión en Valladolid el 6 de septiembre a las 18:00h\n\nInformación ampliada: La obra de teatro ‘Yo solo quiero irme a Francia’, con texto y dirección de Elisabeth Larena, presenta un elenco compuesto por María Galiana, Nieve de Medina, Anna Mayo y María Roja. El evento se llevará a cabo en el Teatro Carrión en Valladolid el 6 de septiembre a las 18:00h.",
-    "summary": "La obra de teatro ‘Yo solo quiero irme a Francia’, con texto y dirección de Elisabeth Larena, presenta un elenco compuesto por María Galiana, Nieve de Medina, Anna Mayo y María Roja. El evento se llevará a cabo en el Teatro Carrión en Valladolid el 6 de septiembre a las 18:00h",
-    "performances": [],
+    "description": "Yo solo quiero irme a Francia, con texto y dirección de Elisabeth Larena, se representa en el Teatro Carrión el domingo 6 de septiembre a las 18:00 horas. El elenco anunciado incluye a María Galiana, Nieve de Medina, Anna Mayo y María Roja.",
+    "summary": "Obra de Elisabeth Larena con María Galiana, Nieve de Medina, Anna Mayo y María Roja en el Teatro Carrión.",
+    "performances": [
+      "María Galiana",
+      "Nieve de Medina",
+      "Anna Mayo",
+      "María Roja"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -3983,10 +3970,12 @@
     "title": "La Ratonera de Agatha Christie",
     "location": "Teatro Zorrilla",
     "zone": "Teatro Zorrilla",
-    "description": "La Ratonera de Agatha Christie Información ampliada: la Olympia Metropolitana presenta la emblemática obra de teatro la Ratonera, escrita por la célebre autora Agatha Christie. El evento tendrá lugar el próximo 6 de septiembre con dos funciones programadas a las 17:00 y a las 19:30 horas en el emblemático Teatro Zorilla\n\nInformación ampliada: La Olympia Metropolitana presenta la emblemática obra de teatro La Ratonera, escrita por la célebre autora Agatha Christie. El evento tendrá lugar el próximo 6 de septiembre con dos funciones programadas a las 17:00 y a las 19:30 horas en el emblemático Teatro Zorilla.",
-    "summary": "La Olympia Metropolitana presenta la emblemática obra de teatro la Ratonera, escrita por la célebre autora Agatha Christie. El evento tendrá lugar el próximo 6 de septiembre con dos funciones programadas a las 17:00 y a las 19:30 horas en el emblemático Teatro Zorilla",
+    "description": "Olympia Metropolitana presenta La ratonera, de Agatha Christie, en el Teatro Zorrilla el domingo 6 de septiembre. Esta ficha corresponde a la función de las 19:30 horas.",
+    "summary": "La ratonera, de Agatha Christie, se representa en el Teatro Zorrilla a las 19:30 horas.",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Olympia Metropolitana"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.651628,
@@ -4209,11 +4198,11 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "Tartufo",
+    "title": "Tartufo Play",
     "location": "Sala Borja",
     "zone": "Sala Borja",
-    "description": "Tartufo Información ampliada: la obra de teatro titulada Tartufo Play se llevará a cabo el próximo 6 de septiembre a las 20:00 horas. La representación tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una propuesta escénica para los amantes del drama clásico\n\nInformación ampliada: La obra de teatro titulada Tartufo Play se llevará a cabo el próximo 6 de septiembre a las 20:00 horas. La representación tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una propuesta escénica para los amantes del drama clásico.",
-    "summary": "La obra de teatro titulada Tartufo Play se llevará a cabo el próximo 6 de septiembre a las 20:00 horas. La representación tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una propuesta escénica para los amantes del drama clásico",
+    "description": "Tartufo Play se representa en la Sala Borja el domingo 6 de septiembre a las 20:00 horas.",
+    "summary": "Representación de Tartufo Play en la Sala Borja.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -4382,13 +4371,15 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "Ni Contigo Ni Sintigo",
+    "title": "Ni contigo ni sintigo",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "Ni Contigo Ni Sintigo Información ampliada: la compañía vallisoletana Diamante Producciones presenta su obra ‘Ni contigo ni sintigo’ el próximo 6 de septiembre a las 20:30 horas. El evento tendrá lugar en el emblemático Teatro Cervantes de Valladolid, formando parte de la programación de las ferias y fiestas de la Virgen de San Lorenzo\n\nInformación ampliada: La compañía vallisoletana Diamante Producciones presenta su obra ‘Ni contigo ni sintigo’ el próximo 6 de septiembre a las 20:30 horas. El evento tendrá lugar en el emblemático Teatro Cervantes de Valladolid, formando parte de la programación de las Ferias y Fiestas de la Virgen de San Lorenzo.",
-    "summary": "La compañía vallisoletana Diamante Producciones presenta su obra ‘Ni contigo ni sintigo’ el próximo 6 de septiembre a las 20:30 horas. El evento tendrá lugar en el emblemático Teatro Cervantes de Valladolid, formando parte de la programación de las ferias y fiestas de la Virgen de San Lorenzo",
+    "description": "Diamante Producciones presenta Ni contigo ni sintigo, una comedia dirigida por Marisa Mibelt, el domingo 6 de septiembre a las 20:30 horas en el Teatro Cervantes.",
+    "summary": "Diamante Producciones presenta Ni contigo ni sintigo en el Teatro Cervantes.",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Diamante Producciones"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.649632,
@@ -4913,15 +4904,18 @@
     "startTime": "18:00",
     "endTime": "21:00",
     "title": "Paco Devotion",
-    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
     "location": "C/ Matías Sangrador (Macanudo / Griller’ Chef)",
     "zone": "Zona Centro",
-    "description": "Actuación de Paco Devotion en la calle Matías Sangrador, con Macanudo y Griller’ Chef",
-    "summary": "Paco Devotion en la calle Matías Sangrador, con Macanudo y Griller’ Chef",
+    "description": "Paco Devotion actúa el lunes 7 de septiembre de 18:00 a 21:00 horas en la calle Matías Sangrador, junto a Fuente Dorada, dentro de la programación Vibra 2026 con The Macanudo y Griller Chef.",
+    "summary": "Paco Devotion en la calle Matías Sangrador, junto a Fuente Dorada, dentro de Vibra 2026.",
     "performances": [
       "Paco Devotion"
     ],
-    "organizers": [],
+    "organizers": [
+      "The Macanudo",
+      "Griller Chef"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.654,
@@ -4938,6 +4932,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
+      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
     ]
   },
   {
@@ -5332,9 +5330,11 @@
     "title": "Entre Pícaros anda el juego",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "Entre Pícaros anda el juego Información ampliada: la obra entre Pícaros anda el juego llega al Teatro Cervantes el próximo 7 de septiembre a las 19:30 horas. Esta producción es una creación colectiva bajo la dirección de Alejandro Espeso, que promete una experiencia escénica única\n\nInformación ampliada: La obra Entre Pícaros anda el juego llega al Teatro Cervantes el próximo 7 de septiembre a las 19:30 horas. Esta producción es una creación colectiva bajo la dirección de Alejandro Espeso, que promete una experiencia escénica única.",
-    "summary": "La obra entre Pícaros anda el juego llega al Teatro Cervantes el próximo 7 de septiembre a las 19:30 horas. Esta producción es una creación colectiva bajo la dirección de Alejandro Espeso, que promete una experiencia escénica única",
-    "performances": [],
+    "description": "Entre pícaros anda el juego es una adaptación libre sobre textos de Cervantes, Lope de Vega, Quevedo y otros autores clásicos. La creación colectiva, dirigida por Alejandro Espeso, se representa en el Teatro Cervantes el lunes 7 de septiembre a las 19:30 horas.",
+    "summary": "Entre pícaros anda el juego adapta textos de Cervantes, Lope de Vega, Quevedo y otros autores clásicos.",
+    "performances": [
+      "Creación colectiva"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -5345,10 +5345,10 @@
     "type": "Teatro",
     "ticket": {
       "required": true,
-      "status": "required",
-      "label": "Entradas Teatro Cervantes",
+      "status": "paid",
+      "label": "Entrada 10€",
       "url": "https://www.teatrocervantesva.es/",
-      "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
+      "note": "El cartel indica entrada de 10€. Revisa disponibilidad en taquilla o canal de venta."
     },
     "tags": [
       "Teatro"
@@ -5428,10 +5428,12 @@
     "title": "La Marquesa Rosalinda",
     "location": "Sala Borja",
     "zone": "Sala Borja",
-    "description": "La Marquesa Rosalinda Información ampliada: la compañía de Peripló Teatro presenta la obra ‘La Marquesa Rosalinda’, escrita por el célebre autor Ramón del Valle-Inclán. La cita tendrá lugar el próximo 7 de septiembre a las 20:00 horas en la Sala Borja\n\nInformación ampliada: La compañía De Peripló Teatro presenta la obra ‘La Marquesa Rosalinda’, escrita por el célebre autor Ramón del Valle-Inclán. La cita tendrá lugar el próximo 7 de septiembre a las 20:00 horas en la Sala Borja.",
-    "summary": "La compañía de Peripló Teatro presenta la obra ‘La Marquesa Rosalinda’, escrita por el célebre autor Ramón del Valle-Inclán. La cita tendrá lugar el próximo 7 de septiembre a las 20:00 horas en la Sala Borja",
+    "description": "Peripló Teatro presenta La marquesa Rosalinda, de Ramón del Valle-Inclán, el lunes 7 de septiembre a las 20:00 horas en la Sala Borja.",
+    "summary": "Peripló Teatro presenta La marquesa Rosalinda, de Ramón del Valle-Inclán, en la Sala Borja.",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Peripló Teatro"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.65274,
@@ -5751,12 +5753,15 @@
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "21:00",
     "endTime": null,
-    "title": "Concierto de Helena Bianco con la banda y Coro Escuela Municipal de Música de Valladolid",
+    "title": "Helena Bianco con la Banda y el Coro EMMVA",
     "location": "Academia de Caballería",
     "zone": "Academia de Caballería",
-    "description": "Concierto de Helena Bianco con la banda y Coro Escuela Municipal de Música de Valladolid Información ampliada: Helena Bianco llega a Valladolid para ofrecer una actuación musical junto a la banda y el Coro Emmva. El evento tendrá lugar el próximo 7 de septiembre de 2026 a las 21:00 horas en la emblemática Academia de Caballería\n\nInformación ampliada: Helena Bianco llega a Valladolid para ofrecer una actuación musical junto a la Banda y el Coro EMMVA. El evento tendrá lugar el próximo 7 de septiembre de 2026 a las 21:00 horas en la emblemática Academia de Caballería.",
-    "summary": "Helena Bianco llega a Valladolid para ofrecer una actuación musical junto a la banda y el Coro Emmva. El evento tendrá lugar el próximo 7 de septiembre de 2026 a las 21:00 horas en la emblemática Academia de Caballería",
-    "performances": [],
+    "description": "Helena Bianco actúa con la Banda y el Coro de la Escuela Municipal de Música de Valladolid el lunes 7 de septiembre a las 21:00 horas en la Academia de Caballería.",
+    "summary": "Helena Bianco actúa con la Banda y el Coro EMMVA en la Academia de Caballería.",
+    "performances": [
+      "Helena Bianco",
+      "Banda y Coro EMMVA"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -5817,9 +5822,11 @@
     "title": "Petite Lorena",
     "location": "Teatro Carrión",
     "zone": "Teatro Carrión",
-    "description": "Petite Lorena. Tremenda Información ampliada: el cartel anuncia la presentación de ‘Petite Tremenda’ en el Teatro Carrión. El evento tendrá lugar el 7 de septiembre a las 21:00 horas en Valladolid\n\nInformación ampliada: El cartel anuncia la presentación de ‘Petite Tremenda’ en el Teatro Carrión. El evento tendrá lugar el 7 de septiembre a las 21:00 horas en Valladolid.",
-    "summary": "El cartel anuncia la presentación de ‘Petite Tremenda’ en el Teatro Carrión. El evento tendrá lugar el 7 de septiembre a las 21:00 horas en Valladolid",
-    "performances": [],
+    "description": "Petite Lorena presenta Tremenda en el Teatro Carrión el lunes 7 de septiembre a las 21:00 horas.",
+    "summary": "Petite Lorena presenta Tremenda en el Teatro Carrión.",
+    "performances": [
+      "Petite Lorena"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -6007,49 +6014,6 @@
     ]
   },
   {
-    "id": 639,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": "00:00",
-    "endTime": "01:00",
-    "title": "Las Moreras (Lorencito festival)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0c69a397160fbea7f00422109462214661fd2427_2_819x1024.jpeg",
-    "location": "Playa de las Moreras",
-    "zone": "Moreras",
-    "description": "Las Moreras se presentan en directo como parte de la programación del Lorencito festival, en el marco de las ferias y fiestas de Valladolid 2026. El evento tendrá lugar el martes 8 de septiembre en la ciudad de Valladolid\n\nInformación ampliada: El Lorencito Festival se celebra en Las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos.",
-    "summary": "Las Moreras se presentan en directo como parte de la programación del Lorencito festival, en el marco de las ferias y fiestas de Valladolid 2026. El evento tendrá lugar el martes 8 de septiembre en la ciudad de Valladolid",
-    "performances": [
-      "Las Moreras"
-    ],
-    "organizers": [
-      "Ayuntamiento de Valladolid",
-      "Consejo de la Juventud de Valladolid",
-      "Aquavall"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6573001,
-      "lng": -4.7332525,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 61755548,
-      "displayName": "Playa de las Moreras, San Pablo - San Nicolás, Valladolid, Castilla y León, España",
-      "query": "Playa de las Moreras, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 168,
     "date": "2026-09-08",
     "dateLabel": "Martes 8 de septiembre",
@@ -6193,12 +6157,12 @@
     "date": "2026-09-08",
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "12:30",
-    "endTime": null,
-    "title": "Música en Directo grupo Cuatro Latas",
+    "endTime": "13:30",
+    "title": "Vermut Torero: concierto del grupo Cuatro Latas",
     "location": "C/ Caamaño, 128",
     "zone": "C/ Caamaño, 128",
-    "description": "Música en Directo grupo Cuatro Latas",
-    "summary": "Música en Directo grupo Cuatro Latas",
+    "description": "La Peña Karaoke Rosabel organiza el Vermut Torero con música en directo del grupo Cuatro Latas el martes 8 de septiembre a las 12:30 horas en C/ Caamaño, 128.",
+    "summary": "Concierto del grupo Cuatro Latas dentro del Vermut Torero de la Peña Karaoke Rosabel.",
     "performances": [
       "Cuatro Latas"
     ],
@@ -6214,15 +6178,16 @@
     "type": "Música",
     "ticket": {
       "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "status": "not_required",
+      "label": "Entrada libre",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
       "Música",
       "Peñas"
-    ]
+    ],
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e11b271ad8efb03fabf7911beddf2826fed9365c_2_466x1024.jpeg"
   },
   {
     "id": 173,
@@ -6928,13 +6893,15 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "Cuando Deje de Llover",
+    "title": "Cuando deje de llover",
     "location": "Sala Borja",
     "zone": "Sala Borja",
-    "description": "Cuando Deje de Llover Información ampliada: la compañía Tiramisú Teatro presenta la obra titulada ‘Cuando deje de llover’, un evento que tendrá lugar el próximo 8 de septiembre a las 20:00 horas. La representación se llevará a cabo en las instalaciones de la Sala Borja\n\nInformación ampliada: La compañía Tiramisú Teatro presenta la obra titulada ‘Cuando deje de llover’, un evento que tendrá lugar el próximo 8 de septiembre a las 20:00 horas. La representación se llevará a cabo en las instalaciones de la Sala Borja.",
-    "summary": "La compañía Tiramisú Teatro presenta la obra titulada ‘Cuando deje de llover’, un evento que tendrá lugar el próximo 8 de septiembre a las 20:00 horas. La representación se llevará a cabo en las instalaciones de la Sala Borja",
+    "description": "Tramísu Teatro representa Cuando deje de llover, de Andrew Bovell y con dirección de Manu Requejo, el martes 8 de septiembre a las 20:00 horas en la Sala Borja.",
+    "summary": "Tramísu Teatro representa Cuando deje de llover, de Andrew Bovell, en la Sala Borja.",
     "performances": [],
-    "organizers": [],
+    "organizers": [
+      "Tramísu Teatro"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.65274,
@@ -7056,12 +7023,14 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "Yo Sobreviví a Egb",
+    "title": "Yo sobreviví a la EGB",
     "location": "Teatro Carrión",
     "zone": "Teatro Carrión",
-    "description": "Yo Sobreviví a Egb. Jordi Meca Información ampliada: se presenta ‘Yo sobreviví a la Egb’, un espectáculo de Jordi Merca. El evento contará con música en directo y se llevará a cabo en el Teatro Carrión en Valladolid\n\nInformación ampliada: Se presenta ‘Yo sobreviví a la EGB’, un espectáculo de Jordi Merca. El evento contará con música en directo y se llevará a cabo en el Teatro Carrión en Valladolid.",
-    "summary": "Se presenta ‘Yo sobreviví a la Egb’, un espectáculo de Jordi Merca. El evento contará con música en directo y se llevará a cabo en el Teatro Carrión en Valladolid",
-    "performances": [],
+    "description": "Jordi Merca presenta Yo sobreviví a la EGB en el Teatro Carrión el martes 8 de septiembre a las 20:00 horas, en un espectáculo con música en directo.",
+    "summary": "Jordi Merca presenta Yo sobreviví a la EGB en el Teatro Carrión, con música en directo.",
+    "performances": [
+      "Jordi Merca"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -7091,16 +7060,19 @@
     "title": "Lorencito festival",
     "location": "Paseo de las Moreras – Escenario pistas deportivas",
     "zone": "Moreras",
-    "description": "Lorencito festival: Faenna, Sofía Gabanna, Zake y Otros artistas Urbanos Información ampliada: el Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos\n\nInformación ampliada: El Lorencito Festival se celebra en Las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos.",
-    "summary": "El Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos",
+    "description": "Lorencito festival programa una jornada musical en Las Moreras el martes 8 de septiembre, con actuaciones de Faenna, Sofía Gabanna, Zake, Las Moreras y otros artistas urbanos. La actividad forma parte de la programación del festival en las Ferias y Fiestas de Valladolid 2026.",
+    "summary": "Lorencito festival en Las Moreras, con Faenna, Sofía Gabanna, Zake, Las Moreras y otros artistas urbanos.",
     "performances": [
       "Faenna",
       "Sofía Gabanna",
       "Zake",
-      "Otros artistas Urbanos"
+      "Otros artistas Urbanos",
+      "Las Moreras"
     ],
     "organizers": [
-      "Consejo de la Juventud de Valladolid"
+      "Consejo de la Juventud de Valladolid",
+      "Ayuntamiento de Valladolid",
+      "Aquavall"
     ],
     "collaborators": [],
     "coordinates": {
@@ -7119,7 +7091,12 @@
     "tags": [
       "Música"
     ],
-    "image": "/assets/events/lorencito-festival-2026.jpg"
+    "image": "/assets/events/lorencito-festival-2026.jpg",
+    "images": [
+      "/assets/events/lorencito-festival-2026.jpg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0c69a397160fbea7f00422109462214661fd2427_2_819x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/77db39a03497be519632cf026dd142ef56043dcf_2_781x1024.jpeg"
+    ]
   },
   {
     "id": 198,
@@ -7167,12 +7144,14 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "Aguadulce Habaneras",
+    "title": "Aguadulce habaneras",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "Aguadulce Habaneras Información ampliada: el Teatro Cervantes de Valladolid presenta el concierto ‘Aguadulce habaneras: de coplillas y habaneras’, una propuesta musical que tendrá lugar el próximo 8 de septiembre a las 20:30 horas\n\nInformación ampliada: El Teatro Cervantes de Valladolid presenta el concierto ‘Aguadulce habaneras: de coplillas y habaneras’, una propuesta musical que tendrá lugar el próximo 8 de septiembre a las 20:30 horas.",
-    "summary": "El Teatro Cervantes de Valladolid presenta el concierto ‘Aguadulce habaneras: de coplillas y habaneras’, una propuesta musical que tendrá lugar el próximo 8 de septiembre a las 20:30 horas",
-    "performances": [],
+    "description": "Aguadulce habaneras presenta un concierto de coplillas y habaneras con sabor a Carlos Cano el martes 8 de septiembre a las 20:30 horas en el Teatro Cervantes.",
+    "summary": "Aguadulce habaneras ofrece coplillas y habaneras con sabor a Carlos Cano en el Teatro Cervantes.",
+    "performances": [
+      "Aguadulce Habaneras"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -8514,12 +8493,17 @@
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "20:30",
     "endTime": null,
-    "title": "La Ceremonia de las Criadas",
+    "title": "La ceremonia de las criadas",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "La Ceremonia de las Criadas Información ampliada: la obra de teatro la Ceremonia de las Criadas se representará el próximo 9 de septiembre a las 20:30 horas en el Teatro Cervantes de Valladolid. Esta producción promete sumergir al espectador en una atmósfera cargada de misterio y tensión dramática\n\nInformación ampliada: La obra de teatro La Ceremonia de las Criadas se representará el próximo 9 de septiembre a las 20:30 horas en el Teatro Cervantes de Valladolid. Esta producción promete sumergir al espectador en una atmósfera cargada de misterio y tensión dramática.",
-    "summary": "La obra de teatro la Ceremonia de las Criadas se representará el próximo 9 de septiembre a las 20:30 horas en el Teatro Cervantes de Valladolid. Esta producción promete sumergir al espectador en una atmósfera cargada de misterio y tensión dramática",
-    "performances": [],
+    "description": "La ceremonia de las criadas se representa en el Teatro Cervantes el miércoles 9 de septiembre a las 20:30 horas. El cartel anuncia a Pilar Redondo, Patricia Gómez y Diana Fonseca, con espacio musical de Edgar Masa.",
+    "summary": "La ceremonia de las criadas se representa en el Teatro Cervantes con Pilar Redondo, Patricia Gómez, Diana Fonseca y espacio musical de Edgar Masa.",
+    "performances": [
+      "Pilar Redondo",
+      "Patricia Gómez",
+      "Diana Fonseca",
+      "Edgar Masa"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -9644,12 +9628,14 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "20:00",
     "endTime": null,
-    "title": "Aquí No Paga Nadie",
+    "title": "Aquí no paga nadie",
     "location": "Sala Borja",
     "zone": "Sala Borja",
-    "description": "Aquí No Paga Nadie Información ampliada: la obra de teatro ‘Aquí No paga nadie’ se presenta el próximo 10 de septiembre a las 20:00 horas en el espacio cultural Salaborja. Esta producción es una adaptación libérrima del texto original de Darío Fo, un referente fundamental del teatro social y satírico\n\nInformación ampliada: La obra de teatro ‘Aquí NO paga nadie’ se presenta el próximo 10 de septiembre a las 20:00 horas en el espacio cultural Salaborja. Esta producción es una adaptación libérrima del texto original de Darío Fo, un referente fundamental del teatro social y satírico.",
-    "summary": "La obra de teatro ‘Aquí No paga nadie’ se presenta el próximo 10 de septiembre a las 20:00 horas en el espacio cultural Salaborja. Esta producción es una adaptación libérrima del texto original de Darío Fo, un referente fundamental del teatro social y satírico",
-    "performances": [],
+    "description": "Aquí no paga nadie es una adaptación libre sobre el texto de Darío Fo, dirigida por Alejandro Espeso. La función se celebra el jueves 10 de septiembre a las 20:00 horas en la Sala Borja.",
+    "summary": "Adaptación libre de Aquí no paga nadie, texto de Darío Fo, en la Sala Borja.",
+    "performances": [
+      "Grupo de Teatro El Quintero"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -9956,13 +9942,17 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "21:00",
     "endTime": null,
-    "title": "Concierto de la banda Sinfónica de Arroyo",
+    "title": "Contrastes sinfónicos",
     "location": "Academia de Caballería",
     "zone": "Academia de Caballería",
-    "description": "Concierto de la banda Sinfónica de Arroyo. Contrastes Sinfónicos: Tradición, Cine y Naturaleza Información ampliada: la banda Sinfónica de Arroyo presenta su concierto titulado Contrastes Sinfónicos en el marco de la feria y fiestas de Valladolid. La cita tendrá lugar el próximo jueves 10 de septiembre a las 21:00 horas en el Picadero de la Academia de Caballería\n\nInformación ampliada: La Banda Sinfónica de Arroyo presenta su concierto titulado Contrastes Sinfónicos en el marco de la Feria y Fiestas de Valladolid. La cita tendrá lugar el próximo jueves 10 de septiembre a las 21:00 horas en el Picadero de la Academia de Caballería.",
-    "summary": "La banda Sinfónica de Arroyo presenta su concierto titulado Contrastes Sinfónicos en el marco de la feria y fiestas de Valladolid. La cita tendrá lugar el próximo jueves 10 de septiembre a las 21:00 horas en el Picadero de la Academia de Caballería",
-    "performances": [],
-    "organizers": [],
+    "description": "La Banda Sinfónica de Arroyo presenta Contrastes sinfónicos, un concierto de Feria y Fiestas de Valladolid, el jueves 10 de septiembre a las 21:00 horas en el Picadero de la Academia de Caballería. La dirección corre a cargo de Francisco Corrales.",
+    "summary": "La Banda Sinfónica de Arroyo presenta Contrastes sinfónicos en el Picadero de la Academia de Caballería.",
+    "performances": [
+      "Banda Sinfónica de Arroyo"
+    ],
+    "organizers": [
+      "Banda Sinfónica de Arroyo"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.647868,
@@ -9988,11 +9978,11 @@
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "21:00",
     "endTime": null,
-    "title": "Los Hombres de Lady",
+    "title": "Los hombres de Lady",
     "location": "Teatro Cervantes",
     "zone": "Teatro Cervantes",
-    "description": "Los Hombres de Lady Información ampliada: el Teatro Cervantes de Valladolid presenta la obra ‘Los hombres de Lady’, un espectáculo de humor que tendrá lugar el próximo 10 de septiembre a las 21:00 horas. La cita promete una velada única llena de risas y entretenimiento\n\nInformación ampliada: El Teatro Cervantes de Valladolid presenta la obra ‘Los hombres de Lady’, un espectáculo de humor que tendrá lugar el próximo 10 de septiembre a las 21:00 horas. La cita promete una velada única llena de risas y entretenimiento.",
-    "summary": "El Teatro Cervantes de Valladolid presenta la obra ‘Los hombres de Lady’, un espectáculo de humor que tendrá lugar el próximo 10 de septiembre a las 21:00 horas. La cita promete una velada única llena de risas y entretenimiento",
+    "description": "Los hombres de Lady se representa en el Teatro Cervantes el jueves 10 de septiembre a las 21:00 horas. El cartel presenta una propuesta de humor alrededor de la pregunta: después de los tres maridos, ¿qué pasó?",
+    "summary": "Los hombres de Lady llega al Teatro Cervantes con una propuesta de humor.",
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -15127,13 +15117,19 @@
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "19:00",
     "endTime": "20:00",
-    "title": "Benditos 90's Fest (Festival)",
+    "title": "Benditos 90's Fest",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6ee51a16018002b8e695494cf7c4816a43d40910_2_567x1023.jpeg",
     "location": "La Pera Limonera, Playa de las Moreras",
     "zone": "Moreras",
-    "description": "Benditos 90’s Fest (Festival)",
-    "summary": "Benditos 90’s Fest (Festival)",
-    "performances": [],
+    "description": "La Pera Limonera acoge Benditos 90's Fest el martes 8 de septiembre a las 19:00 horas dentro de la programación de conciertos de Fiestas 2026, con las actuaciones de Benditos 90s, Dany BPM, Sergei Rez, Ruben Botas y Rocío Torío.",
+    "summary": "Benditos 90's Fest en La Pera Limonera, con Benditos 90s, Dany BPM, Sergei Rez, Ruben Botas y Rocío Torío.",
+    "performances": [
+      "Benditos 90s",
+      "Dany BPM",
+      "Sergei Rez",
+      "Ruben Botas",
+      "Rocío Torío"
+    ],
     "organizers": [
       "Rubi 5"
     ],
@@ -15146,13 +15142,17 @@
     "type": "Música",
     "ticket": {
       "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "status": "not_required",
+      "label": "Entrada libre",
       "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6ee51a16018002b8e695494cf7c4816a43d40910_2_567x1023.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg"
     ]
   },
   {
@@ -17467,9 +17467,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/29fc3965473a0c0489f406c57035ed4d22b167bc_2_472x1024.jpeg",
     "location": "Pera Limonera",
     "zone": "Zona Centro",
-    "description": "Super Cristongo llega a la sala Pera Limonera para ofrecer una propuesta única de entretenimiento. El evento se llevará a cabo el próximo domingo 6 de septiembre, con un horario comprendido entre las 17:00 y la 01:00 horas\n\nInformación ampliada: Super Cristongo llega a la sala Pera Limonera para ofrecer una propuesta única de entretenimiento. El evento se llevará a cabo el próximo domingo 6 de septiembre, con un horario comprendido entre las 17:00 y la 01:00 horas.",
-    "summary": "Super Cristongo llega a la sala Pera Limonera para ofrecer una propuesta única de entretenimiento. El evento se llevará a cabo el próximo domingo 6 de septiembre, con un horario comprendido entre las 17:00 y la 01:00 horas",
-    "performances": [],
+    "description": "Super Cristongo llega a Pera Limonera el domingo 6 de septiembre desde las 17:00 horas, con una propuesta de entretenimiento y la actuación de Las Doñas.",
+    "summary": "Super Cristongo en Pera Limonera, con actuación de Las Doñas.",
+    "performances": [
+      "Las Doñas"
+    ],
     "organizers": [
       "Pera Limonera"
     ],
@@ -17483,48 +17485,6 @@
       "query": "Pera Limonera, Valladolid, España",
       "accuracy": 1,
       "geocodedAt": "2026-08-27T16:57:34.498Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 521,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "21:00",
-    "title": "Les Castizos y Jorge Tejedor (Concierto)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2d9d1f34500f25a937b6eaaf6cbd42c136d3499a_2_698x1024.jpeg",
-    "location": "Martin “El Catarro”, calle el Catarro, 24",
-    "zone": "Zona Centro",
-    "description": "El local Martin “El Catarro” acoge una velada musical el viernes 4 de septiembre de 2026. Actuaciones: Les Castizos | Jorge Tejedor. Información ampliada: el próximo viernes 4 de septiembre de 2026, el local Martin “El Catarro” en Valladolid acogerá una velada musical imperdible. La cita comenzará a partir de las 20:00 horas, ofreciendo un ambiente ideal para disfrutar de la música y la compañía Información ampliada: El evento musical Les Castizos y Jorge Tejedor se llevará a cabo el próximo viernes 4 de septiembre de 2026 en el establecimiento Pera Limonera. La cita comenzará a partir de las 20:00 horas, ofreciendo una velada de música y buen ambiente.\n\nInformación ampliada: El próximo viernes 4 de septiembre de 2026, el local Martin “El Catarro” en Valladolid acogerá una velada musical imperdible. La cita comenzará a partir de las 20:00 horas, ofreciendo un ambiente ideal para disfrutar de la música y la compañía.",
-    "summary": "Actuaciones: Les Castizos | Jorge Tejedor",
-    "performances": [
-      "Les Castizos",
-      "Jorge Tejedor"
-    ],
-    "organizers": [
-      "Martin “El Catarro”"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553894,
-      "lng": -4.7329203,
-      "source": "Inferidas por coincidencia de lugar con el evento local 432",
-      "osmType": "way",
-      "osmId": 60449675,
-      "query": "Martin “El Catarro”, Calle El Catarro, 24, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-25T19:23:58.636Z"
     },
     "type": "Música",
     "ticket": {
@@ -17654,46 +17614,6 @@
     ]
   },
   {
-    "id": 545,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Sofía Gabanna (Concierto)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/77db39a03497be519632cf026dd142ef56043dcf_2_781x1024.jpeg",
-    "location": "Playa de las Moreras",
-    "zone": "Moreras",
-    "description": "Sofía Gabanna llega al Lorencito festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en la Playa de las Moreras, un espacio emblemático de la ciudad de Valladolid\n\nInformación ampliada: Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en Las Moreras, un espacio emblemático de la ciudad de Valladolid.",
-    "summary": "Sofía Gabanna llega al Lorencito festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en la Playa de las Moreras, un espacio emblemático de la ciudad de Valladolid",
-    "performances": [],
-    "organizers": [
-      "Ayuntamiento de Valladolid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6573001,
-      "lng": -4.7332525,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 61755548,
-      "displayName": "Playa de las Moreras, San Pablo - San Nicolás, Valladolid, Castilla y León, España",
-      "query": "Playa de las Moreras, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-31T20:07:07.000Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 553,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
@@ -17703,8 +17623,8 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
     "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Programación musical ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Paco Devotion\n\nInformación ampliada: Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Actuaciones: Paco Devotion",
+    "description": "Programación musical de las Ferias Virgen de San Lorenzo en Plaza Poniente, con la actuación de Paco Devotion el viernes 4 de septiembre de 20:00 a 23:00 horas. La cita se celebra en Plaza Poniente, con La Boutique y Enboga.",
+    "summary": "Actuación de Paco Devotion en Plaza Poniente dentro de la programación de Ferias Virgen de San Lorenzo.",
     "performances": [
       "Paco Devotion"
     ],
@@ -17732,6 +17652,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
     ]
   },
   {
@@ -18249,8 +18173,8 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
     "location": "Maricarmen, C/ Caridad 2",
     "zone": "Zona Centro",
-    "description": "Vuelve el Cotorrazo en Maricarmen, C/ Caridad 2, de 18:00 a 21:00. Actuaciones: las Doñas y Kike Av\n\nInformación ampliada: El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "summary": "Actuaciones: las Doñas y Kike Av",
+    "description": "Vuelve el Cotorrazo programa una tarde musical en Maricarmen, C/ Caridad 2, el lunes 7 de septiembre de 18:00 a 21:00 horas, con las actuaciones de Las Doñas y Kike Av.",
+    "summary": "Actuaciones de Las Doñas y Kike Av dentro de Vuelve el Cotorrazo.",
     "performances": [
       "Las Doñas",
       "Kike Av"
@@ -18279,6 +18203,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg"
     ]
   },
   {
@@ -19082,41 +19010,6 @@
       "lng": -4.7215228,
       "source": "Google Maps (consulta manual; referencia aproximada de la Facultad de Derecho)",
       "query": "Facultad de Derecho, Universidad de Valladolid, Pl. de la Univ., s/n, 47002 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 593,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "16:00",
-    "endTime": "17:00",
-    "title": "Bandido (Fiestas de San Lorenzo 2026)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/851644358609e02b180f1617d2c3ea465387b752_2_559x1024.jpeg",
-    "location": "Bandido Techno Room, Pl. Del Pte., 4",
-    "zone": "Zona Centro",
-    "description": "La celebración de las fiestas de San Lorenzo 2026 llega a la escena electrónica con un evento especial en el espacio Bandido Techno Room. La cita tendrá lugar el próximo 07 de septiembre, con una apertura de puertas programada a las 16:00 horas\n\nInformación ampliada: La celebración de las fiestas de San Lorenzo 2026 llega a la escena electrónica con un evento especial en el espacio Bandido Techno Room. La cita tendrá lugar el próximo 07 de septiembre, con una apertura de puertas programada a las 16:00 horas.",
-    "summary": "La celebración de las fiestas de San Lorenzo 2026 llega a la escena electrónica con un evento especial en el espacio Bandido Techno Room. La cita tendrá lugar el próximo 07 de septiembre, con una apertura de puertas programada a las 16:00 horas",
-    "performances": [],
-    "organizers": [
-      "Bandido Techno Room"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6525315,
-      "lng": -4.7307035,
-      "source": "Google Maps (consulta manual; dirección aproximada del local)",
-      "query": "Pl. del Pte., 4, 47003 Valladolid, España"
     },
     "type": "Música",
     "ticket": {
@@ -20090,79 +19983,6 @@
       "osmId": 367406151,
       "query": "La Pera Limonera, Valladolid, España",
       "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 620,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "17:00",
-    "endTime": null,
-    "title": "Las Doñas (Gira de actuaciones)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
-    "location": "Cristongo / Pera Limonera, Paseo de Marcelino Martín ‘El Catarro’, Valladolid",
-    "zone": "Zona Centro",
-    "description": "Las Donas (Gira de actuaciones)",
-    "summary": "Las Donas (Gira de actuaciones)",
-    "performances": [
-      "Las Doñas"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6571419,
-      "lng": -4.7329438,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 367406151,
-      "query": "La Pera Limonera, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 621,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "18:00",
-    "endTime": null,
-    "title": "Las Doñas (Gira de actuaciones)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
-    "location": "Cotorrazo (La Cotorra), C. Caridad, 2, Valladolid",
-    "zone": "Zona Centro",
-    "description": "Las Donas (Gira de actuaciones)",
-    "summary": "Las Donas (Gira de actuaciones)",
-    "performances": [
-      "Las Doñas"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6515827,
-      "lng": -4.7303391,
-      "source": "Google Maps (consulta manual; La Cotorra, sede del Cotorrazo)",
-      "query": "La Cotorra, C. Caridad, 2, 47001 Valladolid, España"
     },
     "type": "Música",
     "ticket": {
@@ -21579,46 +21399,6 @@
     ]
   },
   {
-    "id": 658,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "18:00",
-    "endTime": null,
-    "title": "Vibra 2026 (Festival)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
-    "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
-    "zone": "Zona Centro",
-    "description": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días\n\nInformación ampliada: El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
-    "summary": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días",
-    "performances": [
-      "Paco Dvt"
-    ],
-    "organizers": [
-      "The Macanudo",
-      "Griller Chef"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6521311,
-      "lng": -4.7264818,
-      "source": "Google Maps (consulta manual; ficha de Fuente Dorada)",
-      "query": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T08:26:21.069Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 659,
     "date": "2026-09-11",
     "dateLabel": "Viernes 11 de septiembre",
@@ -21731,201 +21511,6 @@
       "label": "3 €",
       "url": null,
       "note": "La fuente remota indica un coste de 3 €; no facilita un enlace de venta."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 662,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "ADN Club en Moss Club (Evento)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3d69f16a37751c05ccbc10fad3528dbbe3bfab59_2_819x1024.jpeg",
-    "location": "Moss Club",
-    "zone": "Zona Centro",
-    "description": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
-    "summary": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
-    "performances": [],
-    "organizers": [
-      "ADN Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6552616,
-      "lng": -4.7382618,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 101589975,
-      "query": "Moss Club, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T10:11:08.144Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 663,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, C. Bao, s/n, Valladolid",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [
-      "DJY4GGER",
-      "DJ CHUSKY"
-    ],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6550846,
-      "lng": -4.7239775,
-      "source": "Google Maps (contraste manual; ficha exacta de In Clan)",
-      "query": "In Clan Club, C. Bao, s/n, 47003 Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 664,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, C. Bao, s/n, Valladolid",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [
-      "DJ NEVER",
-      "DJ NEKE"
-    ],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6550846,
-      "lng": -4.7239775,
-      "source": "Google Maps (contraste manual; ficha exacta de In Clan)",
-      "query": "In Clan Club, C. Bao, s/n, 47003 Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 665,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, C. Bao, s/n, Valladolid",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [
-      "DJ JULIO",
-      "LARIO DJ"
-    ],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6550846,
-      "lng": -4.7239775,
-      "source": "Google Maps (contraste manual; ficha exacta de In Clan)",
-      "query": "In Clan Club, C. Bao, s/n, 47003 Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 666,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "01:00",
-    "endTime": "08:00",
-    "title": "Assceussion Rave (Fiestas San Lorenzo)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/eb5f425c2edafc8c38ac9bb226460b20bc85bc0f_2_819x1024.jpeg",
-    "location": "Moss Club",
-    "zone": "Zona Centro",
-    "description": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
-    "summary": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
-    "performances": [],
-    "organizers": [
-      "Hirecut Bookings"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6552616,
-      "lng": -4.7382618,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 101589975,
-      "query": "Moss Club, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T10:11:08.152Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
     },
     "tags": [
       "Música"
@@ -22415,48 +22000,6 @@
     ]
   },
   {
-    "id": 680,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": "21:00",
-    "endTime": null,
-    "title": "Farah Diva - Actuaciones Feria y Fiestas 2026",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a27da7d01dfce09138cd3598ae5483e46fb87a8d_2_753x1024.jpeg",
-    "location": "Plaza España",
-    "zone": "Zona Centro",
-    "description": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
-    "summary": "Farah Diva - Actuaciones Feria y Fiestas de la Virgen de San Lorenzo 2026",
-    "performances": [
-      "Danzando en la calle",
-      "Random de kpop"
-    ],
-    "organizers": [
-      "Centro de Danza Farah Diva"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6499582,
-      "lng": -4.7246622,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "relation",
-      "osmId": 12816089,
-      "query": "Plaza España, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T12:10:59.920Z"
-    },
-    "type": "Danza",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Danza"
-    ]
-  },
-  {
     "id": 681,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
@@ -22830,14 +22373,15 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0ecf4b97f0b3153bc9088a13985eb34ed63a041c_2_581x1024.jpeg",
     "location": "Plaza Poniente",
     "zone": "Zona Centro",
-    "description": "Bandido presenta su programación especial de eventos musicales que tendrá lugar desde el 4 hasta el 13 de septiembre de 2026. La actividad se desarrollará en la Plaza Poniente de Valladolid, abriendo sus puertas diariamente a partir de las 16:00 horas.",
-    "summary": "Bandido presenta su programación especial de eventos musicales que tendrá lugar desde el 4 hasta el 13 de septiembre de 2026. La actividad se desarrollará en la Plaza Poniente de Valladolid, abriendo sus puertas diariamente a partir de las 16:00 horas.",
+    "description": "Bandido presenta su programación especial de fiestas el lunes 7 de septiembre desde las 16:00 horas en Plaza Poniente, con Technoroom y SHYxBANDIDO.",
+    "summary": "Programación Bandido del lunes 7 de septiembre, con Technoroom y SHYxBANDIDO.",
     "performances": [
       "Technoroom",
       "SHYxBANDIDO"
     ],
     "organizers": [
-      "Bandido"
+      "Bandido",
+      "Bandido Techno Room"
     ],
     "collaborators": [],
     "coordinates": {
@@ -23192,45 +22736,6 @@
     ]
   },
   {
-    "id": 699,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "12:00",
-    "endTime": "13:00",
-    "title": "Exhibición Coches y motos clásicos (Exposición)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cc4f013321ebef1e1d52d3275b9a9c78cd2655a2_2_760x1024.jpeg",
-    "location": "Acera Recoletos",
-    "zone": "Zona Centro",
-    "description": "La exhibición de coches y motos clásicos se llevará a cabo el próximo 6 de septiembre a las 12:00 horas. Este evento de carácter retro tendrá lugar en el Acera Recoletos, ofreciendo un recorrido visual por la historia del motor.",
-    "summary": "La exhibición de coches y motos clásicos se llevará a cabo el próximo 6 de septiembre a las 12:00 horas. Este evento de carácter retro tendrá lugar en el Acera Recoletos, ofreciendo un recorrido visual por la historia del motor.",
-    "performances": [],
-    "organizers": [
-      "Ayuntamiento de Valladolid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6463418,
-      "lng": -4.7280458,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 297294852,
-      "query": "Acera Recoletos, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T13:08:02.860Z"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
     "id": 700,
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
@@ -23254,45 +22759,6 @@
       "osmType": "way",
       "osmId": 26947357,
       "query": "Centro Comercial Vallsur, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T13:08:02.860Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 701,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": "12:30",
-    "endTime": "13:30",
-    "title": "Vermut Torero: Concierto Grupo 4 Latas",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e11b271ad8efb03fabf7911beddf2826fed9365c_2_466x1024.jpeg",
-    "location": "C/ Caamaño, 128",
-    "zone": "Zona Centro",
-    "description": "El evento Vermut Torero presenta una actuación musical en directo a cargo del grupo 4 Latas. La cita tendrá lugar el próximo 8 de septiembre a las 12:30 horas, ofreciendo una propuesta musical que combina géneros como el rock y el indie.",
-    "summary": "El evento Vermut Torero presenta una actuación musical en directo a cargo del grupo 4 Latas. La cita tendrá lugar el próximo 8 de septiembre a las 12:30 horas, ofreciendo una propuesta musical que combina géneros como el rock y el indie.",
-    "performances": [],
-    "organizers": [
-      "Peña Karaoke Rosabel"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6281056,
-      "lng": -4.7250434,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 12832206377,
-      "query": "C/ Caamaño, 128, Valladolid, España",
       "accuracy": 1,
       "geocodedAt": "2026-09-01T13:08:02.860Z"
     },
@@ -23359,8 +22825,8 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
     "location": "La Pera Limonera, Playa de las Moreras",
     "zone": "Moreras",
-    "description": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
-    "summary": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
+    "description": "La Pera Limonera acoge una cita musical de fiestas el viernes 4 de septiembre a las 20:00 horas, con las actuaciones de Les Castizos, Jorge Tejedor y Revu y Ardiya. La propuesta reúne el concierto anunciado en la programación de Fiestas 2026 y la actuación de Les Castizos y Jorge Tejedor en un único evento para evitar duplicidades.",
+    "summary": "Concierto de Les Castizos, Jorge Tejedor y Revu y Ardiya en La Pera Limonera durante las Fiestas de Valladolid 2026.",
     "performances": [
       "Les Castizos",
       "Jorge Tejedor",
@@ -23387,6 +22853,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2d9d1f34500f25a937b6eaaf6cbd42c136d3499a_2_698x1024.jpeg"
     ]
   },
   {
@@ -23484,48 +22954,6 @@
     "performances": [
       "A Tomar Por Culo Club",
       "By Siloé"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6571419,
-      "lng": -4.7329438,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 367406151,
-      "query": "La Pera Limonera, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 707,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": "19:00",
-    "endTime": null,
-    "title": "Conciertos de Fiestas 2026 en La Pera Limonera",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
-    "location": "La Pera Limonera, Playa de las Moreras",
-    "zone": "Moreras",
-    "description": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
-    "summary": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
-    "performances": [
-      "Benditos 90s",
-      "Dany BPM",
-      "Sergei Rez",
-      "Ruben Botas",
-      "Rocío Torío"
     ],
     "organizers": [],
     "collaborators": [],
@@ -24178,45 +23606,6 @@
     ]
   },
   {
-    "id": 724,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "21:00",
-    "endTime": null,
-    "title": "Eventos ferias en La casa de zorrilla",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
-    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
-    "zone": "Zona Centro",
-    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
-    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
-    "performances": [
-      "Amigos del Teatro"
-    ],
-    "organizers": [
-      "La Casa de Zorrilla"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6563987,
-      "lng": -4.7235721,
-      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
-      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T16:16:09.092Z"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
     "id": 725,
     "date": "2026-09-10",
     "dateLabel": "Jueves 10 de septiembre",
@@ -24230,84 +23619,6 @@
     "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
     "performances": [
       "Pino Cairel (Casa de Andalucía)"
-    ],
-    "organizers": [
-      "La Casa de Zorrilla"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6563987,
-      "lng": -4.7235721,
-      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
-      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T16:16:09.092Z"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
-    "id": 726,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "21:00",
-    "endTime": null,
-    "title": "Eventos ferias en La casa de zorrilla",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
-    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
-    "zone": "Zona Centro",
-    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
-    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
-    "performances": [
-      "Raúl Rulo"
-    ],
-    "organizers": [
-      "La Casa de Zorrilla"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6563987,
-      "lng": -4.7235721,
-      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
-      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T16:16:09.092Z"
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
-    "id": 727,
-    "date": "2026-09-12",
-    "dateLabel": "Sábado 12 de septiembre",
-    "startTime": "21:00",
-    "endTime": null,
-    "title": "Eventos ferias en La casa de zorrilla",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
-    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
-    "zone": "Zona Centro",
-    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
-    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
-    "performances": [
-      "CaracolaDos"
     ],
     "organizers": [
       "La Casa de Zorrilla"
