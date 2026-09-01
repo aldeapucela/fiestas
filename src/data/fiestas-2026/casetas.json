@@ -111,7 +111,8 @@
             "title": "Sushi",
             "votable": true,
             "items": [
-              { "id": "sushi-sushi-variado", "name": "Sushi variado (6 piezas)", "price": "21,00€" }
+              { "id": "sushi-sushi-variado", "name": "Sushi variado (6 piezas)", "price": "8,00€" },
+              { "id": "sushi-sushi-variado-18-piezas", "name": "Sushi variado (18 piezas)", "price": "21,00€" }
             ]
           },
           {
