@@ -21502,7 +21502,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-09-01T08:26:21.069Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -21511,7 +21511,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -21541,7 +21541,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-09-01T08:26:21.069Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -21550,7 +21550,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -21580,7 +21580,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-09-01T08:26:21.069Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -21589,7 +21589,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -21620,7 +21620,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-09-01T08:26:21.069Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -21629,7 +21629,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -21659,7 +21659,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-09-01T08:26:21.069Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -21668,7 +21668,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   }
 ]
