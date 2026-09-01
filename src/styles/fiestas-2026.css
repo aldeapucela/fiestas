@@ -6100,6 +6100,15 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
   object-fit: contain;
 }
 
+.fiestas-caseta-price-note {
+  max-width: 42rem;
+  margin: 0 auto;
+  color: #98a2b3;
+  font-size: 0.68rem;
+  line-height: 1.45;
+  text-align: center;
+}
+
 .fiestas-caseta-dietary-legend {
   display: flex;
   flex-wrap: wrap;
@@ -6295,6 +6304,10 @@ html.dark .fiestas-caseta-dietary-pill--gluten-free {
 
 html.dark .fiestas-caseta-dietary-legend {
   color: #b9c1ce;
+}
+
+html.dark .fiestas-caseta-price-note {
+  color: #8994a5;
 }
 
 html.dark .fiestas-caseta-dietary-legend-icon--vegetarian,
