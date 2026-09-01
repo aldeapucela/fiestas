@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "exportedAt": "2026-08-28T07:58:57.000Z",
+  "exportedAt": "2026-09-01T19:06:40.000Z",
   "plans": [
     {
       "name": "De tardeo en tardeo",
@@ -43,7 +43,10 @@
         "709",
         "710",
         "711",
-        "713"
+        "713",
+        "759",
+        "760",
+        "761"
       ]
     }
   ]
