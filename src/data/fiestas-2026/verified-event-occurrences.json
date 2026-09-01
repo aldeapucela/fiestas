@@ -1221,5 +1221,32 @@
       {"date": "2026-09-13", "startTime": "13:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Tocado y Hundido"]}
     ],
     "source": "Cartel remoto de Fiestas Virgen de San Lorenzo '26 descargado e inspeccionado visualmente: actuaciones el 5 de septiembre a las 13:00 (Santi Borja y Emilio), el 6 a las 13:00 (Pimpin de Los Lunares), el 8 a las 20:00 (Los Patricios), el 12 a las 13:00 (Yaiza Herrero) y el 13 a las 13:00 (Tocado y Hundido), todas en la terraza de Dovleuve, Paseo de Zorrilla 17."
+  },
+  "2419": {
+    "dates": ["2026-09-12", "2026-09-13"],
+    "occurrences": [
+      {
+        "date": "2026-09-12",
+        "startTime": "10:00",
+        "endTime": "14:00",
+        "location": "Pabellón Polideportivo Lalo García",
+        "performances": []
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "16:00",
+        "endTime": "20:00",
+        "location": "Pabellón Polideportivo Lalo García",
+        "performances": []
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "10:00",
+        "endTime": "14:00",
+        "location": "Pabellón Polideportivo Lalo García",
+        "performances": []
+      }
+    ],
+    "source": "Cartel remoto del 1er Torneo Baloncesto Veteranos inspeccionado visualmente (11 al 13 de septiembre, sin desglose diario) y ficha oficial de la Fundación Municipal de Deportes: https://www.fmdva.org/eventos/listado-de-eventos/1%C2%BA-torneo-baloncesto-veteranos-valladolid/. La ficha oficial concreta actividad el 12 de septiembre de 10:00 a 14:00 y de 16:00 a 20:00, y el 13 de septiembre de 10:00 a 14:00, en el Pabellón Polideportivo Lalo García. Coordenadas resueltas con OpenStreetMap Nominatim mediante la consulta «Pabellón Polideportivo Lalo García, Valladolid, España»: 41.6349531,-4.7662401."
   }
 }

@@ -15954,21 +15954,26 @@
     "date": "2026-09-12",
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "10:00",
-    "endTime": null,
-    "title": "I torneo Baloncesto Veteranos de Valladolid",
-    "location": "Polideportivo Lalo García",
+    "endTime": "14:00",
+    "title": "1er Torneo Baloncesto Veteranos (Deporte)",
+    "location": "Pabellón Polideportivo Lalo García",
     "zone": "Polideportivo Lalo García",
-    "description": "I torneo Baloncesto Veteranos de Valladolid. Polideportivo Lalo García",
-    "summary": "I torneo Baloncesto Veteranos de Valladolid. Polideportivo Lalo García",
+    "description": "1er Torneo Baloncesto Veteranos (Deporte). Pabellón Polideportivo Lalo García\n\nInformación ampliada: El 1er Torneo Baloncesto Veteranos se celebra en la ciudad de Valladolid del 11 al 13 de septiembre de 2026. Este evento deportivo reúne a equipos de distintas localidades en una competición que celebra la trayectoria y la pasión por el baloncesto.",
+    "summary": "1er Torneo Baloncesto Veteranos (Deporte). Pabellón Polideportivo Lalo García",
     "performances": [],
     "organizers": [
       "Club Valladolid Huerta del Rey"
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.63537,
-      "lng": -4.766208,
-      "source": "OpenStreetMap Nominatim"
+      "lat": 41.6349531,
+      "lng": -4.7662401,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 432527282,
+      "query": "Pabellón Polideportivo Lalo García, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T21:03:32.400Z"
     },
     "type": "Deporte",
     "ticket": {
@@ -15980,7 +15985,8 @@
     },
     "tags": [
       "Deporte"
-    ]
+    ],
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2cf9bb04153795ab6e8dcfc0969e2287a7cb0175_2_600x1024.jpeg"
   },
   {
     "id": 461,
@@ -25455,6 +25461,84 @@
     },
     "tags": [
       "Música"
+    ]
+  },
+  {
+    "id": 774,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "16:00",
+    "endTime": "20:00",
+    "title": "1er Torneo Baloncesto Veteranos (Deporte)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2cf9bb04153795ab6e8dcfc0969e2287a7cb0175_2_600x1024.jpeg",
+    "location": "Pabellón Polideportivo Lalo García",
+    "zone": "Polideportivo Lalo García",
+    "description": "El 1er Torneo Baloncesto Veteranos se celebra en la ciudad de Valladolid del 11 al 13 de septiembre de 2026. Este evento deportivo reúne a equipos de distintas localidades en una competición que celebra la trayectoria y la pasión por el baloncesto.",
+    "summary": "El 1er Torneo Baloncesto Veteranos se celebra en la ciudad de Valladolid del 11 al 13 de septiembre de 2026. Este evento deportivo reúne a equipos de distintas localidades en una competición que celebra la trayectoria y la pasión por el baloncesto.",
+    "performances": [],
+    "organizers": [
+      "Ayuntamiento de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6349531,
+      "lng": -4.7662401,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 432527282,
+      "query": "Pabellón Polideportivo Lalo García, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T21:04:18.969Z"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 775,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "10:00",
+    "endTime": "14:00",
+    "title": "1er Torneo Baloncesto Veteranos (Deporte)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2cf9bb04153795ab6e8dcfc0969e2287a7cb0175_2_600x1024.jpeg",
+    "location": "Pabellón Polideportivo Lalo García",
+    "zone": "Polideportivo Lalo García",
+    "description": "El 1er Torneo Baloncesto Veteranos se celebra en la ciudad de Valladolid del 11 al 13 de septiembre de 2026. Este evento deportivo reúne a equipos de distintas localidades en una competición que celebra la trayectoria y la pasión por el baloncesto.",
+    "summary": "El 1er Torneo Baloncesto Veteranos se celebra en la ciudad de Valladolid del 11 al 13 de septiembre de 2026. Este evento deportivo reúne a equipos de distintas localidades en una competición que celebra la trayectoria y la pasión por el baloncesto.",
+    "performances": [],
+    "organizers": [
+      "Ayuntamiento de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6349531,
+      "lng": -4.7662401,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 432527282,
+      "query": "Pabellón Polideportivo Lalo García, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T21:04:18.969Z"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Deporte"
     ]
   }
 ]
