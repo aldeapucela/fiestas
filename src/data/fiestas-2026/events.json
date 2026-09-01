@@ -404,9 +404,14 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.654981,
-      "lng": -4.724086,
-      "source": "Inferidas desde evento existente en Plaza del Rosarillo"
+      "lat": 41.6553096,
+      "lng": -4.7238053,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 33822015,
+      "query": "Calle del Bao, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T11:03:09.286Z"
     },
     "type": "Música",
     "ticket": {
@@ -5598,9 +5603,14 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.654981,
-      "lng": -4.724086,
-      "source": "Inferidas desde evento existente en Plaza del Rosarillo"
+      "lat": 41.6553096,
+      "lng": -4.7238053,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 33822015,
+      "query": "Calle del Bao, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T11:03:09.286Z"
     },
     "type": "Música",
     "ticket": {
@@ -11155,9 +11165,14 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.654981,
-      "lng": -4.724086,
-      "source": "Inferidas desde evento existente en Plaza del Rosarillo"
+      "lat": 41.6553096,
+      "lng": -4.7238053,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 33822015,
+      "query": "Calle del Bao, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T11:03:09.286Z"
     },
     "type": "Música",
     "ticket": {
@@ -13394,8 +13409,8 @@
     "startTime": "10:30",
     "endTime": null,
     "title": "VIII Marcha Cicloturística",
-    "location": null,
-    "zone": null,
+    "location": "Acera Recoletos",
+    "zone": "Recoletos",
     "description": "VIII Marcha Cicloturística. Inscripción gratuita. Embajador Adrián Gumiel Andrés (Gumi), Delegado provincial de Valladolid. Se recordará a los ciclistas fallecidos en accidentes de tráfico",
     "summary": "VIII Marcha Cicloturística. Inscripción gratuita. Embajador Adrián Gumiel Andrés (Gumi), Delegado provincial de Valladolid. Se recordará a los ciclistas fallecidos en accidentes de tráfico",
     "performances": [],
@@ -13405,7 +13420,12 @@
     "collaborators": [
       "clubs y Federaciones de Castilla y León"
     ],
-    "coordinates": null,
+    "coordinates": {
+      "lat": 41.646342,
+      "lng": -4.728046,
+      "source": "Inferred from matching event location; location contrasted with Vallisoletana listing",
+      "query": "Acera Recoletos, Valladolid, España"
+    },
     "type": "Peñas",
     "ticket": {
       "required": false,
@@ -14432,11 +14452,11 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "19:30",
     "endTime": "20:30",
-    "title": "Casa con Dos Puertas Mala Es de Guardar",
+    "title": "Casa con dos puertas mala es de guardar",
     "location": "Sala Borja",
     "zone": "Sala Borja",
-    "description": "Casa con Dos Puertas Mala Es de Guardar Información ampliada: La obra de teatro “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca, se representa el domingo 13 de septiembre a las 19:30 horas en la Sala Borja. Organiza Teatro Arcón de Olid.\n\nInformación ampliada: La obra de teatro ‘Casa con dos puertas’, escrita por el célebre autor Calderón de la Barca, se presentará el próximo 13 de septiembre a las 20:00 horas. El evento tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una oportunidad para disfrutar de un clásico del Siglo de Oro.",
-    "summary": "La obra de teatro “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca, se representa el domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
+    "description": "Representación de la obra “La casa con dos puertas mala es de guardar”, de Calderón de la Barca, con dirección y adaptación de Néstor Vallejo. Función de Teatro Arcón de Olid el domingo 13 de septiembre a las 19:30 en Sala Borja.",
+    "summary": "Teatro Arcón de Olid representa “La casa con dos puertas mala es de guardar”, de Calderón de la Barca, en Sala Borja.",
     "performances": [],
     "organizers": [
       "Teatro Arcón de Olid"
@@ -14456,14 +14476,14 @@
     "ticket": {
       "required": true,
       "status": "required",
-      "label": "Consultar entradas Sala Borja",
+      "label": "Entrada necesaria",
       "url": "https://salaborja.es/",
-      "note": "Entrada necesaria. Revisa disponibilidad, precio y horarios en la web de venta."
+      "note": "El cartel indica venta en Entradium hasta el 31 de agosto y en taquilla del 1 al 13 de septiembre; revisa disponibilidad en Sala Borja."
     },
     "tags": [
       "Teatro"
     ],
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5eb1d7a67125aa82f3cff7f0ba1dd181aee910e2_2_810x1024.jpeg"
+    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/8/8060ca0dc4314c64c68611b46e4e45833b8b00f6.jpeg"
   },
   {
     "id": 404,
@@ -16546,11 +16566,11 @@
     "date": "2026-09-13",
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "21:00",
-    "endTime": "21:00",
+    "endTime": null,
     "title": "Actuaciones Musicales Feria de Valladolid",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/26912e7687028e8668fb808f65c3bde0186f98ee_2_472x1024.jpeg",
-    "location": "Feria de Valladolid",
-    "zone": "Auditorio Feria",
+    "location": "Calle de la Solanilla",
+    "zone": "La Antigua - Santa Cruz",
     "description": "Actuaciones musicales de la Feria de Valladolid en Calle de la Solanilla. Actuaciones: Fran Pahiño.\n\nInformación ampliada: La Feria de Valladolid celebra su programación musical con una serie de actuaciones dedicadas al flamenco y las rumbas. El ciclo de conciertos se desarrollará a lo largo de los primeros días de septiembre, contando con la presencia de diversos artistas en las casetas de La Solana y Don Bacalao.",
     "summary": "Actuaciones: Fran Pahiño.",
     "performances": [
@@ -16559,9 +16579,14 @@
     "organizers": [],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656398,
-      "lng": -4.738248,
-      "source": "Inferidas por proximidad a eventos de Feria de Valladolid"
+      "lat": 41.6542704,
+      "lng": -4.7230017,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 176086450,
+      "query": "Calle de la Solanilla, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T09:46:00.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -16922,7 +16947,7 @@
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "13:30",
-    "endTime": "13:30",
+    "endTime": null,
     "title": "Vermú Torero (Conciertos)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
@@ -16963,7 +16988,7 @@
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "13:30",
-    "endTime": "13:30",
+    "endTime": null,
     "title": "Vermú Torero (Conciertos)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
@@ -17004,7 +17029,7 @@
     "date": "2026-09-08",
     "dateLabel": "Martes 8 de septiembre",
     "startTime": "13:30",
-    "endTime": "13:30",
+    "endTime": null,
     "title": "Vermú Torero (Conciertos)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
@@ -17045,7 +17070,7 @@
     "date": "2026-09-10",
     "dateLabel": "Jueves 10 de septiembre",
     "startTime": "13:30",
-    "endTime": "13:30",
+    "endTime": null,
     "title": "Vermú Torero (Conciertos)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
@@ -17086,7 +17111,7 @@
     "date": "2026-09-11",
     "dateLabel": "Viernes 11 de septiembre",
     "startTime": "13:30",
-    "endTime": "13:30",
+    "endTime": null,
     "title": "Vermú Torero (Conciertos)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
@@ -17127,7 +17152,7 @@
     "date": "2026-09-12",
     "dateLabel": "Sábado 12 de septiembre",
     "startTime": "13:30",
-    "endTime": "13:30",
+    "endTime": null,
     "title": "Vermú Torero (Conciertos)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6757d8e43af7a365a8d0bf900f1f36a6ff1b3871_2_576x1024.jpeg",
     "location": "Calle María Molina",
@@ -17528,357 +17553,6 @@
     ]
   },
   {
-    "id": 532,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "ADN Club en Moss Club (Evento)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3d69f16a37751c05ccbc10fad3528dbbe3bfab59_2_819x1024.jpeg",
-    "location": "Moss Club",
-    "zone": "Zona Centro",
-    "description": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
-    "summary": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
-    "performances": [],
-    "organizers": [
-      "ADN Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6552616,
-      "lng": -4.7382618,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 101589975,
-      "query": "Moss Club, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.285Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 533,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 534,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 535,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 536,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 537,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 538,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 539,
-    "date": "2026-09-10",
-    "dateLabel": "Jueves 10 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 540,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 543,
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
@@ -18166,84 +17840,6 @@
     ]
   },
   {
-    "id": 551,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "01:00",
-    "endTime": "08:00",
-    "title": "Assceussion Rave (Fiestas San Lorenzo)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/eb5f425c2edafc8c38ac9bb226460b20bc85bc0f_2_819x1024.jpeg",
-    "location": "Moss Club",
-    "zone": "Zona Centro",
-    "description": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
-    "summary": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
-    "performances": [],
-    "organizers": [
-      "Hirecut Bookings"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6552616,
-      "lng": -4.7382618,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 101589975,
-      "query": "Moss Club, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:11.671Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 552,
-    "date": "2026-09-13",
-    "dateLabel": "Domingo 13 de septiembre",
-    "startTime": "19:30",
-    "endTime": "20:30",
-    "title": "Casa con dos puertas (Obra de teatro)",
-    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/8/8060ca0dc4314c64c68611b46e4e45833b8b00f6.jpeg",
-    "location": "Teatro Arcón de Olid (Sala Borja)",
-    "zone": "Zona Centro",
-    "description": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
-    "summary": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
-    "performances": [],
-    "organizers": [
-      "Teatro Arcón de Olid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6527404,
-      "lng": -4.7204461,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 7102357207,
-      "query": "Sala Borja, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:11.672Z"
-    },
-    "type": "Teatro",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Teatro"
-    ]
-  },
-  {
     "id": 553,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
@@ -18251,11 +17847,13 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Paco Devotion.",
+    "summary": "Actuaciones: Paco Devotion.",
+    "performances": [
+      "Paco Devotion"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18270,7 +17868,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18279,7 +17877,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18290,11 +17888,14 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Luis López y Yorska.",
+    "summary": "Actuaciones: Luis López y Yorska.",
+    "performances": [
+      "Luis López",
+      "Yorska"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18309,7 +17910,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18318,7 +17919,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18329,11 +17930,15 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Darío Núñez, Queco y Ángel Rodríguez.",
+    "summary": "Actuaciones: Darío Núñez, Queco y Ángel Rodríguez.",
+    "performances": [
+      "Darío Núñez",
+      "Queco",
+      "Ángel Rodríguez"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18348,7 +17953,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18357,7 +17962,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18368,11 +17973,14 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Quilombros y Yorska.",
+    "summary": "Actuaciones: Quilombros y Yorska.",
+    "performances": [
+      "Quilombros",
+      "Yorska"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18387,7 +17995,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18396,7 +18004,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18407,11 +18015,14 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Los Pichas y Los de la Plaza.",
+    "summary": "Actuaciones: Los Pichas y Los de la Plaza.",
+    "performances": [
+      "Los Pichas",
+      "Los de la Plaza"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18426,7 +18037,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18435,7 +18046,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18446,11 +18057,15 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Queco, Yorska y Pani.",
+    "summary": "Actuaciones: Queco, Yorska y Pani.",
+    "performances": [
+      "Queco",
+      "Yorska",
+      "Pani"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18465,7 +18080,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18474,7 +18089,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18485,11 +18100,14 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Dos de Picas y Queco.",
+    "summary": "Actuaciones: Dos de Picas y Queco.",
+    "performances": [
+      "Dos de Picas",
+      "Queco"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18504,7 +18122,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18513,7 +18131,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18524,11 +18142,14 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Los del Lío y Jorge Tejedor.",
+    "summary": "Actuaciones: Los del Lío y Jorge Tejedor.",
+    "performances": [
+      "Los del Lío",
+      "Jorge Tejedor"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18543,7 +18164,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18552,7 +18173,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18563,11 +18184,17 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Siesta Club, Chejo, Escalante, Element y Omar Cantt.",
+    "summary": "Actuaciones: Siesta Club, Chejo, Escalante, Element y Omar Cantt.",
+    "performances": [
+      "Siesta Club",
+      "Chejo",
+      "Escalante",
+      "Element",
+      "Omar Cantt"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18582,7 +18209,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18591,7 +18218,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18602,11 +18229,14 @@
     "endTime": "23:00",
     "title": "Ferias Virgen de San Lorenzo",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "summary": "Las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad.",
-    "performances": [],
+    "description": "Programación musical Ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Apulse y Yorska.",
+    "summary": "Actuaciones: Apulse y Yorska.",
+    "performances": [
+      "Apulse",
+      "Yorska"
+    ],
     "organizers": [
       "Beluga, Enboga & La Boutique"
     ],
@@ -18621,7 +18251,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -18630,7 +18260,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -18682,9 +18312,12 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
     "location": "Maricarmen, C/ Caridad 2",
     "zone": "Zona Centro",
-    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "performances": [],
+    "description": "Vuelve el Cotorrazo en Maricarmen, C/ Caridad 2, de 18:00 a 21:00. Actuaciones: Félix Villada y Los del Lío.",
+    "summary": "Actuaciones: Félix Villada y Los del Lío.",
+    "performances": [
+      "Félix Villada",
+      "Los del Lío"
+    ],
     "organizers": [
       "Maricarmen"
     ],
@@ -18721,9 +18354,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
     "location": "Maricarmen, C/ Caridad 2",
     "zone": "Zona Centro",
-    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "performances": [],
+    "description": "Vuelve el Cotorrazo en Maricarmen, C/ Caridad 2, de 18:00 a 21:00. Actuaciones: Los Daza.",
+    "summary": "Actuaciones: Los Daza.",
+    "performances": [
+      "Los Daza"
+    ],
     "organizers": [
       "Maricarmen"
     ],
@@ -18760,87 +18395,12 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
     "location": "Maricarmen, C/ Caridad 2",
     "zone": "Zona Centro",
-    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "performances": [],
-    "organizers": [
-      "Maricarmen"
+    "description": "Vuelve el Cotorrazo en Maricarmen, C/ Caridad 2, de 18:00 a 21:00. Actuaciones: Las Doñas y Kike AV.",
+    "summary": "Actuaciones: Las Doñas y Kike AV.",
+    "performances": [
+      "Las Doñas",
+      "Kike AV"
     ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.651627,
-      "lng": -4.7303585,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 9251479606,
-      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T18:02:12.186Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 567,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": "18:00",
-    "endTime": "21:00",
-    "title": "Vuelve el Cotorrazo (Programación musical)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
-    "location": "Maricarmen, C/ Caridad 2",
-    "zone": "Zona Centro",
-    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "performances": [],
-    "organizers": [
-      "Maricarmen"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.651627,
-      "lng": -4.7303585,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 9251479606,
-      "query": "Maricarmen, C/ Caridad 2, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T18:02:12.186Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 568,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "18:00",
-    "endTime": "21:00",
-    "title": "Vuelve el Cotorrazo (Programación musical)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
-    "location": "Maricarmen, C/ Caridad 2",
-    "zone": "Zona Centro",
-    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "performances": [],
     "organizers": [
       "Maricarmen"
     ],
@@ -18877,9 +18437,12 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
     "location": "Maricarmen, C/ Caridad 2",
     "zone": "Zona Centro",
-    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "performances": [],
+    "description": "Vuelve el Cotorrazo en Maricarmen, C/ Caridad 2, de 18:00 a 21:00. Actuaciones: Luismi y George Whaley.",
+    "summary": "Actuaciones: Luismi y George Whaley.",
+    "performances": [
+      "Luismi",
+      "George Whaley"
+    ],
     "organizers": [
       "Maricarmen"
     ],
@@ -18916,9 +18479,12 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
     "location": "Maricarmen, C/ Caridad 2",
     "zone": "Zona Centro",
-    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "performances": [],
+    "description": "Vuelve el Cotorrazo en Maricarmen, C/ Caridad 2, de 18:00 a 21:00. Actuaciones: Pre-fiesta Folclore y Dani del Lío.",
+    "summary": "Actuaciones: Pre-fiesta Folclore y Dani del Lío.",
+    "performances": [
+      "Pre-fiesta Folclore",
+      "Dani del Lío"
+    ],
     "organizers": [
       "Maricarmen"
     ],
@@ -18955,9 +18521,12 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
     "location": "Maricarmen, C/ Caridad 2",
     "zone": "Zona Centro",
-    "description": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "summary": "El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
-    "performances": [],
+    "description": "Vuelve el Cotorrazo en Maricarmen, C/ Caridad 2, de 18:00 a 21:00. Actuaciones: Lorenz y Félix Villada.",
+    "summary": "Actuaciones: Lorenz y Félix Villada.",
+    "performances": [
+      "Lorenz",
+      "Félix Villada"
+    ],
     "organizers": [
       "Maricarmen"
     ],
@@ -19027,15 +18596,18 @@
     "id": 573,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
-    "startTime": null,
+    "startTime": "23:59",
     "endTime": null,
-    "title": "VMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
+    "title": "ZVMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bdd8318a0b984cbb0f73b7dfcf1e3db1b91a2c71_2_585x1024.jpeg",
     "location": "Calle Calixto Fernández de la Torre, esquina con C. Reina",
     "zone": "Zona Centro",
-    "description": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "summary": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "performances": [],
+    "description": "ZVMO Noche en Calle Calixto Fernández de la Torre, esquina con C. Reina, a partir de las 24:00. Actuaciones: DJ Tito y Fiesta Española.",
+    "summary": "Actuaciones: DJ Tito y Fiesta Española.",
+    "performances": [
+      "DJ Tito",
+      "Fiesta Española"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -19044,7 +18616,7 @@
       "source": "Google Maps (consulta manual; coordenadas aproximadas de la intersección)",
       "query": "C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -19053,22 +18625,24 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
     "id": 574,
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
-    "startTime": null,
+    "startTime": "23:59",
     "endTime": null,
-    "title": "VMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
+    "title": "ZVMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bdd8318a0b984cbb0f73b7dfcf1e3db1b91a2c71_2_585x1024.jpeg",
     "location": "Calle Calixto Fernández de la Torre, esquina con C. Reina",
     "zone": "Zona Centro",
-    "description": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "summary": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "performances": [],
+    "description": "ZVMO Noche en Calle Calixto Fernández de la Torre, esquina con C. Reina, a partir de las 24:00. Actuaciones: Santi Borja.",
+    "summary": "Actuaciones: Santi Borja.",
+    "performances": [
+      "Santi Borja"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -19077,7 +18651,7 @@
       "source": "Google Maps (consulta manual; coordenadas aproximadas de la intersección)",
       "query": "C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -19086,22 +18660,24 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
     "id": 575,
     "date": "2026-09-07",
     "dateLabel": "Lunes 7 de septiembre",
-    "startTime": null,
+    "startTime": "23:59",
     "endTime": null,
-    "title": "VMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
+    "title": "ZVMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bdd8318a0b984cbb0f73b7dfcf1e3db1b91a2c71_2_585x1024.jpeg",
     "location": "Calle Calixto Fernández de la Torre, esquina con C. Reina",
     "zone": "Zona Centro",
-    "description": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "summary": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "performances": [],
+    "description": "ZVMO Noche en Calle Calixto Fernández de la Torre, esquina con C. Reina, a partir de las 24:00. Actuaciones: Los Perets.",
+    "summary": "Actuaciones: Los Perets.",
+    "performances": [
+      "Los Perets"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -19110,7 +18686,7 @@
       "source": "Google Maps (consulta manual; coordenadas aproximadas de la intersección)",
       "query": "C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -19119,22 +18695,25 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
     "id": 576,
     "date": "2026-09-08",
     "dateLabel": "Martes 8 de septiembre",
-    "startTime": null,
+    "startTime": "23:59",
     "endTime": null,
-    "title": "VMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
+    "title": "ZVMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bdd8318a0b984cbb0f73b7dfcf1e3db1b91a2c71_2_585x1024.jpeg",
     "location": "Calle Calixto Fernández de la Torre, esquina con C. Reina",
     "zone": "Zona Centro",
-    "description": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "summary": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "performances": [],
+    "description": "ZVMO Noche en Calle Calixto Fernández de la Torre, esquina con C. Reina, a partir de las 24:00. Actuaciones: Patry Muñoz y Mikeas Dual.",
+    "summary": "Actuaciones: Patry Muñoz y Mikeas Dual.",
+    "performances": [
+      "Patry Muñoz",
+      "Mikeas Dual"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -19143,7 +18722,7 @@
       "source": "Google Maps (consulta manual; coordenadas aproximadas de la intersección)",
       "query": "C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -19152,22 +18731,24 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
     "id": 577,
     "date": "2026-09-09",
     "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": null,
+    "startTime": "23:59",
     "endTime": null,
-    "title": "VMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
+    "title": "ZVMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bdd8318a0b984cbb0f73b7dfcf1e3db1b91a2c71_2_585x1024.jpeg",
     "location": "Calle Calixto Fernández de la Torre, esquina con C. Reina",
     "zone": "Zona Centro",
-    "description": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "summary": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "performances": [],
+    "description": "ZVMO Noche en Calle Calixto Fernández de la Torre, esquina con C. Reina, a partir de las 24:00. Actuaciones: El Sarao de los Flamenkitos.",
+    "summary": "Actuaciones: El Sarao de los Flamenkitos.",
+    "performances": [
+      "El Sarao de los Flamenkitos"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -19176,7 +18757,7 @@
       "source": "Google Maps (consulta manual; coordenadas aproximadas de la intersección)",
       "query": "C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -19185,22 +18766,24 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
     "id": 578,
     "date": "2026-09-10",
     "dateLabel": "Jueves 10 de septiembre",
-    "startTime": null,
+    "startTime": "23:59",
     "endTime": null,
-    "title": "VMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
+    "title": "ZVMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bdd8318a0b984cbb0f73b7dfcf1e3db1b91a2c71_2_585x1024.jpeg",
     "location": "Calle Calixto Fernández de la Torre, esquina con C. Reina",
     "zone": "Zona Centro",
-    "description": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "summary": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "performances": [],
+    "description": "ZVMO Noche en Calle Calixto Fernández de la Torre, esquina con C. Reina, a partir de las 24:00. Actuaciones: José Ferreruela y Banda.",
+    "summary": "Actuaciones: José Ferreruela y Banda.",
+    "performances": [
+      "José Ferreruela y Banda"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -19209,7 +18792,7 @@
       "source": "Google Maps (consulta manual; coordenadas aproximadas de la intersección)",
       "query": "C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -19218,22 +18801,25 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
     "id": 579,
     "date": "2026-09-11",
     "dateLabel": "Viernes 11 de septiembre",
-    "startTime": null,
+    "startTime": "23:59",
     "endTime": null,
-    "title": "VMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
+    "title": "ZVMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bdd8318a0b984cbb0f73b7dfcf1e3db1b91a2c71_2_585x1024.jpeg",
     "location": "Calle Calixto Fernández de la Torre, esquina con C. Reina",
     "zone": "Zona Centro",
-    "description": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "summary": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "performances": [],
+    "description": "ZVMO Noche en Calle Calixto Fernández de la Torre, esquina con C. Reina, a partir de las 24:00. Actuaciones: DJ Tito y Fiesta Española.",
+    "summary": "Actuaciones: DJ Tito y Fiesta Española.",
+    "performances": [
+      "DJ Tito",
+      "Fiesta Española"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -19242,7 +18828,7 @@
       "source": "Google Maps (consulta manual; coordenadas aproximadas de la intersección)",
       "query": "C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -19251,22 +18837,25 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
     "id": 580,
     "date": "2026-09-12",
     "dateLabel": "Sábado 12 de septiembre",
-    "startTime": null,
+    "startTime": "23:59",
     "endTime": null,
-    "title": "VMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
+    "title": "ZVMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bdd8318a0b984cbb0f73b7dfcf1e3db1b91a2c71_2_585x1024.jpeg",
     "location": "Calle Calixto Fernández de la Torre, esquina con C. Reina",
     "zone": "Zona Centro",
-    "description": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "summary": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "performances": [],
+    "description": "ZVMO Noche en Calle Calixto Fernández de la Torre, esquina con C. Reina, a partir de las 24:00. Actuaciones: DJ Tito y Fiesta Española.",
+    "summary": "Actuaciones: DJ Tito y Fiesta Española.",
+    "performances": [
+      "DJ Tito",
+      "Fiesta Española"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -19275,7 +18864,7 @@
       "source": "Google Maps (consulta manual; coordenadas aproximadas de la intersección)",
       "query": "C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -19284,22 +18873,24 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
     "id": 581,
     "date": "2026-09-13",
     "dateLabel": "Domingo 13 de septiembre",
-    "startTime": null,
+    "startTime": "23:59",
     "endTime": null,
-    "title": "VMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
+    "title": "ZVMO NOCHE (Fiestas de la Virgen de San Lorenzo)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bdd8318a0b984cbb0f73b7dfcf1e3db1b91a2c71_2_585x1024.jpeg",
     "location": "Calle Calixto Fernández de la Torre, esquina con C. Reina",
     "zone": "Zona Centro",
-    "description": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "summary": "El programa de espectáculos nocturnos VMO NOCHE se integra dentro de la programación oficial de las Ferias y Fiestas de la Virgen de San Lorenzo. Las actividades se desarrollarán durante el mes de septiembre de 2026 en la ciudad de Valladolid.",
-    "performances": [],
+    "description": "ZVMO Noche en Calle Calixto Fernández de la Torre, esquina con C. Reina, a partir de las 24:00. Actuaciones: Gitana.",
+    "summary": "Actuaciones: Gitana.",
+    "performances": [
+      "Gitana"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -19308,7 +18899,7 @@
       "source": "Google Maps (consulta manual; coordenadas aproximadas de la intersección)",
       "query": "C. Reina & Calle Calixto Fernández de la Torre, 47001 Valladolid, España"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -19317,7 +18908,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -19400,44 +18991,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0219e6188c2bbd373dbdd870c6b8df86136260f9_2_602x1024.jpeg",
     "location": "Bar ZVMO, C. Reina, 1",
     "zone": "Zona Centro",
-    "description": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "summary": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "performances": [],
-    "organizers": [
-      "Ferias y Fiestas de la Virgen de San Lorenzo"
+    "description": "El Exquinazo Tardeo en escenario en terraza Bar ZVMO, de 18:00 a 21:00. Actuaciones: DJ Catarro.",
+    "summary": "Actuaciones: DJ Catarro.",
+    "performances": [
+      "DJ Catarro"
     ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6517901,
-      "lng": -4.7295341,
-      "source": "Google Maps (consulta manual; ficha de Zvmo)",
-      "query": "Zvmo, C. Reina, 1, 47001 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 585,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "18:00",
-    "endTime": "21:00",
-    "title": "El Exquinazo Tardeo (Tardeo Musical)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0219e6188c2bbd373dbdd870c6b8df86136260f9_2_602x1024.jpeg",
-    "location": "Bar ZVMO, C. Reina, 1",
-    "zone": "Zona Centro",
-    "description": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "summary": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "performances": [],
     "organizers": [
       "Ferias y Fiestas de la Virgen de San Lorenzo"
     ],
@@ -19470,9 +19028,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0219e6188c2bbd373dbdd870c6b8df86136260f9_2_602x1024.jpeg",
     "location": "Bar ZVMO, C. Reina, 1",
     "zone": "Zona Centro",
-    "description": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "summary": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "performances": [],
+    "description": "El Exquinazo Tardeo en escenario en terraza Bar ZVMO, de 18:00 a 21:00. Actuaciones: Los Daza.",
+    "summary": "Actuaciones: Los Daza.",
+    "performances": [
+      "Los Daza"
+    ],
     "organizers": [
       "Ferias y Fiestas de la Virgen de San Lorenzo"
     ],
@@ -19505,9 +19065,14 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0219e6188c2bbd373dbdd870c6b8df86136260f9_2_602x1024.jpeg",
     "location": "Bar ZVMO, C. Reina, 1",
     "zone": "Zona Centro",
-    "description": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "summary": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "performances": [],
+    "description": "El Exquinazo Tardeo en escenario en terraza Bar ZVMO, de 18:00 a 21:00. Actuaciones: Calvario Fest, Pani, Villa y Preco.",
+    "summary": "Actuaciones: Calvario Fest, Pani, Villa y Preco.",
+    "performances": [
+      "Calvario Fest",
+      "Pani",
+      "Villa",
+      "Preco"
+    ],
     "organizers": [
       "Ferias y Fiestas de la Virgen de San Lorenzo"
     ],
@@ -19540,44 +19105,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0219e6188c2bbd373dbdd870c6b8df86136260f9_2_602x1024.jpeg",
     "location": "Bar ZVMO, C. Reina, 1",
     "zone": "Zona Centro",
-    "description": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "summary": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "performances": [],
-    "organizers": [
-      "Ferias y Fiestas de la Virgen de San Lorenzo"
+    "description": "El Exquinazo Tardeo en escenario en terraza Bar ZVMO, de 18:00 a 21:00. Actuaciones: Félix Villada.",
+    "summary": "Actuaciones: Félix Villada.",
+    "performances": [
+      "Félix Villada"
     ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6517901,
-      "lng": -4.7295341,
-      "source": "Google Maps (consulta manual; ficha de Zvmo)",
-      "query": "Zvmo, C. Reina, 1, 47001 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 589,
-    "date": "2026-09-10",
-    "dateLabel": "Jueves 10 de septiembre",
-    "startTime": "18:00",
-    "endTime": "21:00",
-    "title": "El Exquinazo Tardeo (Tardeo Musical)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0219e6188c2bbd373dbdd870c6b8df86136260f9_2_602x1024.jpeg",
-    "location": "Bar ZVMO, C. Reina, 1",
-    "zone": "Zona Centro",
-    "description": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "summary": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "performances": [],
     "organizers": [
       "Ferias y Fiestas de la Virgen de San Lorenzo"
     ],
@@ -19610,9 +19142,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0219e6188c2bbd373dbdd870c6b8df86136260f9_2_602x1024.jpeg",
     "location": "Bar ZVMO, C. Reina, 1",
     "zone": "Zona Centro",
-    "description": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "summary": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "performances": [],
+    "description": "El Exquinazo Tardeo en escenario en terraza Bar ZVMO, de 18:00 a 21:00. Actuaciones: Xangai.",
+    "summary": "Actuaciones: Xangai.",
+    "performances": [
+      "Xangai"
+    ],
     "organizers": [
       "Ferias y Fiestas de la Virgen de San Lorenzo"
     ],
@@ -19645,9 +19179,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0219e6188c2bbd373dbdd870c6b8df86136260f9_2_602x1024.jpeg",
     "location": "Bar ZVMO, C. Reina, 1",
     "zone": "Zona Centro",
-    "description": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "summary": "El Exquinazo Tardeo se presenta como una propuesta musical de tardeo durante las Ferias y Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar en la terraza del Bar ZVMO en Valladolid, con sesiones que se desarrollarán entre las 18:00 y las 21:00 horas.",
-    "performances": [],
+    "description": "El Exquinazo Tardeo en escenario en terraza Bar ZVMO, de 18:00 a 21:00. Actuaciones: Black Brother's.",
+    "summary": "Actuaciones: Black Brother's.",
+    "performances": [
+      "Black Brother's"
+    ],
     "organizers": [
       "Ferias y Fiestas de la Virgen de San Lorenzo"
     ],
