@@ -220,6 +220,132 @@
     ],
     "source": "Cartel remoto de Música en la Calle - Calle Ferrari (Ferias 2026), descargado e inspeccionado visualmente: actividad diaria del 5 al 13 de septiembre de 2026, siempre a partir de las 13:45; actuaciones Cañoneros, Ralea, JJ Pop, Rocanrol Circus, Thespiertos, Thespiertos, Rocanrol Circus, Blodimery y Ralea, respectivamente."
   },
+  "2345": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-04",
+        "location": "Vándalo Bar",
+        "performances": ["Paul Moon"]
+      },
+      {
+        "date": "2026-09-05",
+        "location": "Vándalo Bar",
+        "performances": ["Xems Mulas"]
+      },
+      {
+        "date": "2026-09-06",
+        "location": "Vándalo Bar",
+        "performances": ["Xfranru"]
+      },
+      {
+        "date": "2026-09-07",
+        "location": "Vándalo Bar",
+        "performances": ["Xems Mulas"]
+      },
+      {
+        "date": "2026-09-08",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "Vándalo Bar",
+        "performances": ["Craps"]
+      },
+      {
+        "date": "2026-09-08",
+        "startTime": "23:00",
+        "endTime": null,
+        "location": "Vándalo Bar",
+        "performances": ["Jowi"]
+      },
+      {
+        "date": "2026-09-09",
+        "location": "Vándalo Bar",
+        "performances": ["Jowi"]
+      },
+      {
+        "date": "2026-09-10",
+        "location": "Vándalo Bar",
+        "performances": ["La Deve Chacho", "Xfranru"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "Vándalo Bar",
+        "performances": ["Paco DVT"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "23:00",
+        "endTime": null,
+        "location": "Vándalo Bar",
+        "performances": ["Jowi"]
+      },
+      {
+        "date": "2026-09-12",
+        "location": "Vándalo Bar",
+        "performances": ["Xems Mulas"]
+      }
+    ],
+    "source": "Cartel remoto de Vándalo en Fiestas, descargado e inspeccionado visualmente: sesiones los días 4, 5, 6, 7, 8, 9, 10, 11 y 12 de septiembre; actuaciones Paul Moon, Xems Mulas, Xfranru, Xems Mulas, Craps a las 20:00, Jowi a las 23:00, Jowi, La Deve Chacho y Xfranru, Paco DVT a las 20:00, Jowi a las 23:00 y Xems Mulas, respectivamente."
+  },
+  "2358": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-05",
+        "startTime": "18:00",
+        "endTime": null,
+        "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+        "performances": ["Oscar Mina"]
+      },
+      {
+        "date": "2026-09-06",
+        "startTime": "18:00",
+        "endTime": null,
+        "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+        "performances": ["Mr.Kitos"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "18:00",
+        "endTime": null,
+        "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+        "performances": ["Paco DVT"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "18:00",
+        "endTime": null,
+        "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+        "performances": ["Mr.Kitos (Hits)", "Ruben Botas"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "18:00",
+        "endTime": null,
+        "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+        "performances": ["Los Pibes"]
+      }
+    ],
+    "source": "Cartel remoto de Vibra 2026 (2358), descargado e inspeccionado visualmente: sesiones los días 5, 6, 7, 11 y 12 de septiembre de 2026, todas a las 18:00, sin actividad indicada los días 8, 9 y 10. Actuaciones: Oscar Mina; Mr.Kitos; Paco DVT; Mr.Kitos (Hits) y Ruben Botas; Los Pibes. Ubicación indicada en el cartel: C/ Matías Sagrador (junto a Fuente Dorada)."
+  },
   "2322": {
     "dates": [
       "2026-09-06",

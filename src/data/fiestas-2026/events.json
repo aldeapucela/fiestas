@@ -2595,6 +2595,11 @@
   },
   {
     "id": 71,
+    "image": "/assets/events/danzadolid-valladolid.jpg",
+    "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
+    "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
+    "imageCredit": "Pablo Gestoso",
+    "imageLicense": null,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
     "startTime": "22:00",
@@ -2623,12 +2628,7 @@
     "tags": [
       "Danza",
       "Folklore"
-    ],
-    "image": "/assets/events/danzadolid-valladolid.jpg",
-    "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
-    "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
-    "imageCredit": "Pablo Gestoso",
-    "imageLicense": null
+    ]
   },
   {
     "id": 72,
@@ -4549,6 +4549,11 @@
   },
   {
     "id": 128,
+    "image": "/assets/events/danzadolid-valladolid.jpg",
+    "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
+    "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
+    "imageCredit": "Pablo Gestoso",
+    "imageLicense": null,
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "22:00",
@@ -4576,12 +4581,7 @@
     },
     "tags": [
       "Danza"
-    ],
-    "image": "/assets/events/danzadolid-valladolid.jpg",
-    "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
-    "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
-    "imageCredit": "Pablo Gestoso",
-    "imageLicense": null
+    ]
   },
   {
     "id": 129,
@@ -4590,6 +4590,11 @@
     "startTime": "22:15",
     "endTime": null,
     "title": "Fuegos Artificiales (Sesión 1ª)",
+    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
+    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
+    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": null,
     "location": "Paraje del Caño Hondo",
     "zone": "Caño Hondo",
     "description": "Fuegos Artificiales (Sesión 1ª). Pirotecnia Gironina (Valencia)",
@@ -4614,12 +4619,7 @@
     },
     "tags": [
       "Fuegos artificiales"
-    ],
-    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
-    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
-    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
-    "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": null
+    ]
   },
   {
     "id": 130,
@@ -5934,6 +5934,11 @@
     "startTime": "22:15",
     "endTime": null,
     "title": "Fuegos Artificiales (Sesión 2.ª)",
+    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
+    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
+    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": null,
     "location": "Paraje del Caño Hondo",
     "zone": "Caño Hondo",
     "description": "Fuegos Artificiales (Sesión 2.ª). Pirotecnia Caballer Fx (Valencia)",
@@ -5958,12 +5963,7 @@
     },
     "tags": [
       "Fuegos artificiales"
-    ],
-    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
-    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
-    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
-    "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": null
+    ]
   },
   {
     "id": 167,
@@ -6046,6 +6046,11 @@
     "startTime": "10:30",
     "endTime": null,
     "title": "Procesión de Ntra",
+    "image": "/assets/events/procesion-virgen-san-lorenzo-valladolid.jpg",
+    "imageAlt": "Procesión de la Virgen de San Lorenzo en Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Procesion_Virgen_San_Lorenzo_VA_(2).jpg",
+    "imageCredit": "Queninosta",
+    "imageLicense": "CC BY-SA 3.0",
     "location": "Salida: Iglesia de San Lorenzo. Llegada: S.i. Catedral de Valladolid",
     "zone": "Salida: Iglesia de San Lorenzo. Llegada: S.i. Catedral de Valladolid",
     "description": "Procesión de Ntra. Sra. De San Lorenzo con la banda de Cornetas y tambores “Pureza” de Valladolid, Asociación Cultural “Zagalejo” y la banda de la Escuela Municipal de Música de Valladolid Acompañando a la Virgen",
@@ -6071,12 +6076,7 @@
     "tags": [
       "Religioso",
       "Música"
-    ],
-    "image": "/assets/events/procesion-virgen-san-lorenzo-valladolid.jpg",
-    "imageAlt": "Procesión de la Virgen de San Lorenzo en Valladolid",
-    "imageSource": "https://commons.wikimedia.org/wiki/File:Procesion_Virgen_San_Lorenzo_VA_(2).jpg",
-    "imageCredit": "Queninosta",
-    "imageLicense": "CC BY-SA 3.0"
+    ]
   },
   {
     "id": 169,
@@ -7399,6 +7399,11 @@
     "startTime": "22:15",
     "endTime": null,
     "title": "Fuegos Artificiales (Sesión 3ª)",
+    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
+    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
+    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": null,
     "location": "Paraje del Caño Hondo",
     "zone": "Caño Hondo",
     "description": "Fuegos Artificiales (Sesión 3ª) Pirotecnia Tamarit (Valencia)",
@@ -7423,12 +7428,7 @@
     },
     "tags": [
       "Fuegos artificiales"
-    ],
-    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
-    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
-    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
-    "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": null
+    ]
   },
   {
     "id": 207,
@@ -8738,6 +8738,11 @@
     "startTime": "22:15",
     "endTime": null,
     "title": "Fuegos Artificiales (Sesión 4.ª)",
+    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
+    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
+    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": null,
     "location": "Paraje del Caño Hondo",
     "zone": "Caño Hondo",
     "description": "Fuegos Artificiales (Sesión 4.ª). Pirotecnia Xaraiva (Galicia)",
@@ -8762,12 +8767,7 @@
     },
     "tags": [
       "Fuegos artificiales"
-    ],
-    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
-    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
-    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
-    "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": null
+    ]
   },
   {
     "id": 244,
@@ -10137,6 +10137,11 @@
     "startTime": "22:15",
     "endTime": null,
     "title": "Fuegos Artificiales (Sesión 5.ª)",
+    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
+    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
+    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": null,
     "location": "Paraje del Caño Hondo",
     "zone": "Caño Hondo",
     "description": "Fuegos Artificiales (Sesión 5.ª). Pirotecnia Vulcano (Madrid)",
@@ -10161,12 +10166,7 @@
     },
     "tags": [
       "Fuegos artificiales"
-    ],
-    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
-    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
-    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
-    "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": null
+    ]
   },
   {
     "id": 284,
@@ -11520,6 +11520,11 @@
     "startTime": "22:15",
     "endTime": null,
     "title": "Fuegos Artificiales (Sesión 6.ª)",
+    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
+    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
+    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": null,
     "location": "Paraje del Caño Hondo",
     "zone": "Caño Hondo",
     "description": "Fuegos Artificiales (Sesión 6.ª). Pirotecnia Zaragozana (Zaragoza)",
@@ -11544,12 +11549,7 @@
     },
     "tags": [
       "Fuegos artificiales"
-    ],
-    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
-    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
-    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
-    "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": null
+    ]
   },
   {
     "id": 321,
@@ -13206,6 +13206,11 @@
     "startTime": "22:15",
     "endTime": null,
     "title": "Fuegos Artificiales (Sesión 7.ª)",
+    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
+    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
+    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
+    "imageCredit": "Ayuntamiento de Valladolid",
+    "imageLicense": null,
     "location": "Paraje del Caño Hondo",
     "zone": "Caño Hondo",
     "description": "Fuegos Artificiales (Sesión 7.ª). Pirotecnia Pibierzo (León)",
@@ -13230,12 +13235,7 @@
     },
     "tags": [
       "Fuegos artificiales"
-    ],
-    "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
-    "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
-    "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
-    "imageCredit": "Ayuntamiento de Valladolid",
-    "imageLicense": null
+    ]
   },
   {
     "id": 369,
@@ -13351,6 +13351,11 @@
     "startTime": "10:00",
     "endTime": "14:00",
     "title": "Especial Ecomercado",
+    "image": "/assets/events/ecomercado-plaza-espana-valladolid.jpg",
+    "imageAlt": "Mercado en la Plaza de España de Valladolid",
+    "imageSource": "https://commons.wikimedia.org/wiki/File:Mercado_en_Plaza_Espa%C3%B1a.jpg",
+    "imageCredit": "MiguelAlanCS",
+    "imageLicense": "CC BY-SA 4.0",
     "location": "Plaza España",
     "zone": "Plaza España",
     "description": "Especial Ecomercado: acércate a este espacio de encuentro de consumo ecológico donde se comercializan productos agroalimentarios ecológicos certificados y de proximidad, celebrando con nosotros en la Marquesina de la Plaza de España, las fiestas de la Virgen de San Lorenzo",
@@ -13375,12 +13380,7 @@
     },
     "tags": [
       "Gastronomía"
-    ],
-    "image": "/assets/events/ecomercado-plaza-espana-valladolid.jpg",
-    "imageAlt": "Mercado en la Plaza de España de Valladolid",
-    "imageSource": "https://commons.wikimedia.org/wiki/File:Mercado_en_Plaza_Espa%C3%B1a.jpg",
-    "imageCredit": "MiguelAlanCS",
-    "imageLicense": "CC BY-SA 4.0"
+    ]
   },
   {
     "id": 373,
@@ -13559,6 +13559,11 @@
     "startTime": "12:00",
     "endTime": null,
     "title": "XXII Danzadolid: espectáculo amateur de escuelas infantiles de danza hasta 16 años aprox",
+    "image": "/assets/events/danzadolid-valladolid.jpg",
+    "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
+    "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
+    "imageCredit": "Pablo Gestoso",
+    "imageLicense": null,
     "location": "Academia de Caballería",
     "zone": "Academia de Caballería",
     "description": "XXII Danzadolid: espectáculo amateur de escuelas infantiles de danza hasta 16 años aprox. Todos los estilos",
@@ -13582,12 +13587,7 @@
     "tags": [
       "Danza",
       "Infantil y familiar"
-    ],
-    "image": "/assets/events/danzadolid-valladolid.jpg",
-    "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
-    "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
-    "imageCredit": "Pablo Gestoso",
-    "imageLicense": null
+    ]
   },
   {
     "id": 379,
@@ -14600,6 +14600,11 @@
     "startTime": "20:00",
     "endTime": null,
     "title": "XXII Danzadolid: espectáculo amateur de escuelas de danza",
+    "image": "/assets/events/danzadolid-valladolid.jpg",
+    "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
+    "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
+    "imageCredit": "Pablo Gestoso",
+    "imageLicense": null,
     "location": "Academia de Caballería",
     "zone": "Academia de Caballería",
     "description": "XXII Danzadolid: espectáculo amateur de escuelas de danza. Danzas Hispanoamericanas (Bailes Latinos), danzas Urbanas, Kizomba, Country…",
@@ -14622,12 +14627,7 @@
     },
     "tags": [
       "Danza"
-    ],
-    "image": "/assets/events/danzadolid-valladolid.jpg",
-    "imageAlt": "Actuación de danza en Danzadolid, Valladolid",
-    "imageSource": "https://admin.info.valladolid.es/sites/default/files/2025-08/ValladolidFiestas2025.pdf",
-    "imageCredit": "Pablo Gestoso",
-    "imageLicense": null
+    ]
   },
   {
     "id": 409,
@@ -17964,24 +17964,25 @@
     "endTime": null,
     "title": "Sofía Gabanna (Concierto)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/77db39a03497be519632cf026dd142ef56043dcf_2_781x1024.jpeg",
-    "location": "Las Moreras",
+    "location": "Playa de las Moreras",
     "zone": "Moreras",
-    "description": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en Las Moreras, un espacio emblemático de la ciudad de Valladolid.",
-    "summary": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en Las Moreras, un espacio emblemático de la ciudad de Valladolid.",
+    "description": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en la Playa de las Moreras, un espacio emblemático de la ciudad de Valladolid.",
+    "summary": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en la Playa de las Moreras, un espacio emblemático de la ciudad de Valladolid.",
     "performances": [],
     "organizers": [
       "Ayuntamiento de Valladolid"
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.656469,
-      "lng": -4.7325665,
+      "lat": 41.6573001,
+      "lng": -4.7332525,
       "source": "OpenStreetMap Nominatim",
       "osmType": "way",
-      "osmId": 43308194,
-      "query": "Las Moreras, Valladolid, España",
+      "osmId": 61755548,
+      "displayName": "Playa de las Moreras, San Pablo - San Nicolás, Valladolid, Castilla y León, España",
+      "query": "Playa de las Moreras, Valladolid, España",
       "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:11.667Z"
+      "geocodedAt": "2026-08-31T20:07:07.000Z"
     },
     "type": "Música",
     "ticket": {
@@ -21444,6 +21445,843 @@
       "query": "Dimmer Bar, Valladolid, España",
       "accuracy": 1,
       "geocodedAt": "2026-08-31T13:09:36.142Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 640,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Paul Moon"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 641,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Xems Mulas"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 642,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Xfranru"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 643,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Xems Mulas"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 644,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "20:00",
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Craps"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 645,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "23:00",
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Jowi"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 646,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Jowi"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 647,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "La Deve Chacho",
+      "Xfranru"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 648,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "20:00",
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Paco DVT"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 649,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "23:00",
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Jowi"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 650,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Vándalo en Fiestas (Programación Especial)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
+    "location": "Vándalo Bar",
+    "zone": "Zona Centro",
+    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.",
+    "performances": [
+      "Xems Mulas"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529156,
+      "lng": -4.7280623,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 4907605910,
+      "query": "Vándalo Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T15:04:20.188Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 651,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "19:00",
+    "endTime": "21:00",
+    "title": "DJ EN VIVO (Música + celebración + Tierra)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5206175193ef86ed6756e1e35468e328ef9d748c_2_819x1024.jpeg",
+    "location": "Tierra Batidos Arzobispo Gandasegui 5, C. de la Antigua, 2, Local 15",
+    "zone": "Zona Centro",
+    "description": "Tierra Batidos presenta una sesión de DJ en vivo que tendrá lugar el próximo 05 de septiembre. El evento se desarrollará en el horario comprendido entre las 19:00 y las 21:00 horas, ofreciendo un espacio de encuentro para los amantes de la buena música.",
+    "summary": "Tierra Batidos presenta una sesión de DJ en vivo que tendrá lugar el próximo 05 de septiembre. El evento se desarrollará en el horario comprendido entre las 19:00 y las 21:00 horas, ofreciendo un espacio de encuentro para los amantes de la buena música.",
+    "performances": [],
+    "organizers": [
+      "Tierra Batidos"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65369,
+      "lng": -4.7223499,
+      "source": "Google Maps (consulta manual; ficha de TIERRA Batidos)",
+      "query": "Tierra Batidos Arzobispo Gandasegui 5, C. de la Antigua, 2, Local 15, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T16:05:40.972Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 652,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Zachy The Deejay (Sesión de DJ)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a31a1a6cb09280dff4616c04d2d36b4a5e7043be_2_595x1024.jpeg",
+    "location": "Radial",
+    "zone": "Zona Centro",
+    "description": "La discoteca Radial presenta una noche especial con la actuación de Zachy The Deejay. El evento tendrá lugar el próximo sábado a las 00:00 horas, ofreciendo una experiencia musical diseñada para disfrutar durante toda la madrugada.",
+    "summary": "La discoteca Radial presenta una noche especial con la actuación de Zachy The Deejay. El evento tendrá lugar el próximo sábado a las 00:00 horas, ofreciendo una experiencia musical diseñada para disfrutar durante toda la madrugada.",
+    "performances": [],
+    "organizers": [
+      "Radial Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6569683,
+      "lng": -4.7233331,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 5270120722,
+      "query": "Radial, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T19:03:20.639Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 653,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "20:30",
+    "endTime": "21:30",
+    "title": "Biloba (Música que ruge)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3935711acc61804c6c370ef0896a29e1e303056d_2_823x1024.jpeg",
+    "location": "Plaza Federico Wattenberg",
+    "zone": "Zona Centro",
+    "description": "El evento Biloba se llevará a cabo el próximo sábado 5 de septiembre a las 20:30 horas. La cita tendrá lugar en la Plaza Federico Wattenberg, en la ciudad de Valladolid, ofreciendo una propuesta musical vibrante.",
+    "summary": "El evento Biloba se llevará a cabo el próximo sábado 5 de septiembre a las 20:30 horas. La cita tendrá lugar en la Plaza Federico Wattenberg, en la ciudad de Valladolid, ofreciendo una propuesta musical vibrante.",
+    "performances": [],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6568986,
+      "lng": -4.7234353,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 60418546,
+      "query": "Plaza Federico Wattenberg, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T21:04:11.198Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 654,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Generación Techno Dance (Evento)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/495dc55da32bcd3b6ca328e3199d62bcd2cee339_2_676x1023.jpeg",
+    "location": "Escenario Pistas Deportivas de Moreras",
+    "zone": "Moreras",
+    "description": "La fiesta Generación Techno Dance se llevará a cabo el próximo lunes 7 de septiembre en el escenario de las pistas deportivas de Moreras. Este evento promete una noche de ritmo y energía para todos los amantes de la música electrónica.",
+    "summary": "La fiesta Generación Techno Dance se llevará a cabo el próximo lunes 7 de septiembre en el escenario de las pistas deportivas de Moreras. Este evento promete una noche de ritmo y energía para todos los amantes de la música electrónica.",
+    "performances": [],
+    "organizers": [
+      "Ayuntamiento de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6548258,
+      "lng": -4.7335351,
+      "source": "Google Maps (consulta manual; ficha de Pistas deportivas del Parque de las Moreras)",
+      "query": "Escenario Pistas Deportivas de Moreras, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T06:05:49.883Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 655,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "16:30",
+    "endTime": "17:30",
+    "title": "Martes Tardeo (Punto de Encuentro)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e46f3d97854dcc21d1859eeea24a5e4d434e7b07_2_598x1024.jpeg",
+    "location": "LaLuPe",
+    "zone": "Zona Centro",
+    "description": "El establecimiento LaLuPe presenta su propuesta de Martes Tardeo, un punto de encuentro diseñado para disfrutar de las tardes en un ambiente relajado. El evento se desarrolla cada martes a partir de las 16:30 horas.",
+    "summary": "El establecimiento LaLuPe presenta su propuesta de Martes Tardeo, un punto de encuentro diseñado para disfrutar de las tardes en un ambiente relajado. El evento se desarrolla cada martes a partir de las 16:30 horas.",
+    "performances": [],
+    "organizers": [
+      "LaLuPe"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6539028,
+      "lng": -4.7286085,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 5269964322,
+      "query": "LaLuPe, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T06:05:49.884Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 656,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Vibra 2026 (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
+    "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+    "zone": "Zona Centro",
+    "description": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "summary": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "performances": [
+      "Oscar Mina"
+    ],
+    "organizers": [
+      "The Macanudo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521311,
+      "lng": -4.7264818,
+      "source": "Google Maps (consulta manual; ficha de Fuente Dorada)",
+      "query": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T08:26:21.069Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 657,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Vibra 2026 (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
+    "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+    "zone": "Zona Centro",
+    "description": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "summary": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "performances": [
+      "Mr.Kitos"
+    ],
+    "organizers": [
+      "The Macanudo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521311,
+      "lng": -4.7264818,
+      "source": "Google Maps (consulta manual; ficha de Fuente Dorada)",
+      "query": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T08:26:21.069Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 658,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Vibra 2026 (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
+    "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+    "zone": "Zona Centro",
+    "description": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "summary": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "performances": [
+      "Paco DVT"
+    ],
+    "organizers": [
+      "The Macanudo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521311,
+      "lng": -4.7264818,
+      "source": "Google Maps (consulta manual; ficha de Fuente Dorada)",
+      "query": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T08:26:21.069Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 659,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Vibra 2026 (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
+    "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+    "zone": "Zona Centro",
+    "description": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "summary": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "performances": [
+      "Mr.Kitos (Hits)",
+      "Ruben Botas"
+    ],
+    "organizers": [
+      "The Macanudo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521311,
+      "lng": -4.7264818,
+      "source": "Google Maps (consulta manual; ficha de Fuente Dorada)",
+      "query": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T08:26:21.069Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 660,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Vibra 2026 (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
+    "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+    "zone": "Zona Centro",
+    "description": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "summary": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "performances": [
+      "Los Pibes"
+    ],
+    "organizers": [
+      "The Macanudo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521311,
+      "lng": -4.7264818,
+      "source": "Google Maps (consulta manual; ficha de Fuente Dorada)",
+      "query": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T08:26:21.069Z"
     },
     "type": "Otros",
     "ticket": {
