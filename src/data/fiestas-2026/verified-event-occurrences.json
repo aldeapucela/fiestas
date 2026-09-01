@@ -1150,5 +1150,76 @@
       }
     ],
     "source": "Programa remoto de Ruta en Moto Ribera del Duero descargado e inspeccionado visualmente: salida y acreditaciones a las 09:00 en Bar La Real; llegada a Dehesa de los Canónigos a las 11:00; llegada a Carramimbre a las 12:25, cata a las 14:00 y fin de la visita a las 15:20; regreso y sorteo en Bar La Real a las 16:30. Google Maps confirmó los tres recintos; los desplazamientos no se crean como fichas separadas."
+  },
+  "2411": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Paul Moon"]},
+      {"date": "2026-09-05", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Xems Mulas"]},
+      {"date": "2026-09-06", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Paul Moon"]},
+      {"date": "2026-09-07", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Xems Mulas", "Xfranru"]},
+      {"date": "2026-09-08", "startTime": "20:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Craps"]},
+      {"date": "2026-09-08", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Jowi"]},
+      {"date": "2026-09-09", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Jowi"]},
+      {"date": "2026-09-10", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["La Deve Chacho", "Xfranru"]},
+      {"date": "2026-09-11", "startTime": "20:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Paco DVT"]},
+      {"date": "2026-09-11", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Jowi"]},
+      {"date": "2026-09-12", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Xems Mulas"]}
+    ],
+    "source": "Cartel remoto de Vándalo en Fiestas descargado e inspeccionado visualmente: actividad los días 4, 5, 6, 7, 8, 9, 10, 11 y 12 de septiembre; los días 8 y 11 tienen sesiones de terraza a las 20:00 y sesiones nocturnas a las 23:00, y el resto comienza a las 23:00."
+  },
+  "2412": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "location": "Plaza Poniente", "performances": ["Paco Devotion"]},
+      {"date": "2026-09-05", "location": "Plaza Poniente", "performances": ["Luis Lopez", "Yorska"]},
+      {"date": "2026-09-06", "location": "Plaza Poniente", "performances": ["Dario Nuñez", "Queco", "Angel Rodriguez"]},
+      {"date": "2026-09-07", "location": "Plaza Poniente", "performances": ["Quilombros", "Yorska"]},
+      {"date": "2026-09-08", "location": "Plaza Poniente", "performances": ["Los Pichas", "Los de la Plaza"]},
+      {"date": "2026-09-09", "location": "Plaza Poniente", "performances": ["Queco", "Yorska", "Pani"]},
+      {"date": "2026-09-10", "location": "Plaza Poniente", "performances": ["Dos de Picas", "Queco"]},
+      {"date": "2026-09-11", "location": "Plaza Poniente", "performances": ["Los del Lio", "Jorge Tejedor"]},
+      {"date": "2026-09-12", "location": "Plaza Poniente", "performances": ["Siesta Club", "Chejo", "Escalante", "Element", "Omar Cantt"]},
+      {"date": "2026-09-13", "location": "Plaza Poniente", "performances": ["Apulse", "Yorska"]}
+    ],
+    "source": "Cartel remoto de Programación Musical Plaza Poniente descargado e inspeccionado visualmente: actividad diaria del 4 al 13 de septiembre, sin horas publicadas; actuaciones Paco Devotion; Luis Lopez y Yorska; Dario Nuñez, Queco y Angel Rodriguez; Quilombros y Yorska; Los Pichas y Los de la Plaza; Queco, Yorska y Pani; Dos de Picas y Queco; Los del Lio y Jorge Tejedor; Siesta Club, Chejo, Escalante, Element y Omar Cantt; Apulse y Yorska, respectivamente."
+  },
+  "2413": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-08",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {"date": "2026-09-05", "startTime": "13:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Santi Borja y Emilio"]},
+      {"date": "2026-09-06", "startTime": "13:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Pimpin de Los Lunares"]},
+      {"date": "2026-09-08", "startTime": "20:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Los Patricios"]},
+      {"date": "2026-09-12", "startTime": "13:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Yaiza Herrero"]},
+      {"date": "2026-09-13", "startTime": "13:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Tocado y Hundido"]}
+    ],
+    "source": "Cartel remoto de Fiestas Virgen de San Lorenzo '26 descargado e inspeccionado visualmente: actuaciones el 5 de septiembre a las 13:00 (Santi Borja y Emilio), el 6 a las 13:00 (Pimpin de Los Lunares), el 8 a las 20:00 (Los Patricios), el 12 a las 13:00 (Yaiza Herrero) y el 13 a las 13:00 (Tocado y Hundido), todas en la terraza de Dovleuve, Paseo de Zorrilla 17."
   }
 }
