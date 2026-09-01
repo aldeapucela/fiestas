@@ -625,6 +625,7 @@ async function loadEvents(vallabusStops = []) {
       ? normalizeCoordinates(event.coordinates)
       : null;
     const nearbyStops = nearbyVallabusStops(coordinates, vallabusStops);
+    const images = normalizeEventImages(event);
     return {
     id: String(event.id || ''),
     date: String(event.date || ''),
@@ -632,7 +633,8 @@ async function loadEvents(vallabusStops = []) {
     startTime: String(event.startTime || ''),
     endTime: String(event.endTime || ''),
     title: String(event.title || 'Evento'),
-    image: event.image ? String(event.image) : '',
+    image: images[0] || '',
+    ...(images.length > 1 ? { images } : {}),
     imageAlt: String(event.imageAlt || event.title || 'Imagen de la actividad'),
     imageSource: event.imageSource ? String(event.imageSource) : '',
     imageCredit: event.imageCredit ? String(event.imageCredit) : '',
@@ -673,6 +675,21 @@ async function loadEvents(vallabusStops = []) {
       osmUrl: event.coordinates ? 'https://www.openstreetmap.org/?mlat=' + event.coordinates.lat + '&mlon=' + event.coordinates.lng + '#map=17/' + event.coordinates.lat + '/' + event.coordinates.lng : '',
       directionsUrl: event.coordinates ? 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(event.coordinates.lat + ',' + event.coordinates.lng) : ''
     }));
+}
+
+function normalizeEventImages(event) {
+  const images = [];
+  const add = (value) => {
+    if (Array.isArray(value)) {
+      value.forEach(add);
+      return;
+    }
+    const image = String(value || '').trim();
+    if (image && !images.includes(image)) images.push(image);
+  };
+  add(event.image);
+  add(event.images);
+  return images;
 }
 
 function hasCoordinates(coordinates) {

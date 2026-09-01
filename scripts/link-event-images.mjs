@@ -174,7 +174,13 @@ for (const event of sourceEvents) {
     unmatched.push(event);
     continue;
   }
-  event.image = Array.isArray(match.remote.image) ? match.remote.image[0] : String(match.remote.image);
+  const images = uniqueImages([event.image, event.images, match.remote.image]);
+  event.image = images[0] || '';
+  if (images.length > 1) {
+    event.images = images;
+  } else {
+    delete event.images;
+  }
   matches.push({
     id: event.id,
     title: event.title,
@@ -185,6 +191,20 @@ for (const event of sourceEvents) {
     locationScore: Number(match.score.location.toFixed(2)),
     timeScore: Number(match.score.time.toFixed(2))
   });
+}
+
+function uniqueImages(values) {
+  const images = [];
+  const add = (value) => {
+    if (Array.isArray(value)) {
+      value.forEach(add);
+      return;
+    }
+    const image = String(value || '').trim();
+    if (image && !images.includes(image)) images.push(image);
+  };
+  values.forEach(add);
+  return images;
 }
 
 if (writeChanges) {
