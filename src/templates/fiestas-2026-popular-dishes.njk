@@ -31,8 +31,64 @@
     </header>
 
     <section class="fiestas-popular-intro" aria-labelledby="fiestas-popular-dishes-title">
-      <p>Los pinchos y tapas más valorados de estas fiestas y ferias.</p>
+      <div class="fiestas-popular-intro-row">
+        <p>Los pinchos y tapas más valorados de estas fiestas y ferias.</p>
+        <button
+          class="fiestas-popular-dishes-filter-toggle"
+          type="button"
+          data-fiestas-popular-dishes-filter-toggle
+          aria-expanded="false"
+          aria-controls="fiestas-popular-dishes-filter-panel"
+          aria-label="Filtrar pinchos populares"
+        >
+          <i class="fa-solid fa-sliders" aria-hidden="true"></i>
+          <span>Filtros</span>
+          <span class="fiestas-popular-dishes-filter-count" data-fiestas-popular-dishes-filter-count hidden aria-label="Filtros activos">0</span>
+        </button>
+      </div>
       <p class="fiestas-share-feedback" data-fiestas-share-feedback role="status" aria-live="polite" hidden></p>
+    </section>
+
+    <section
+      class="fiestas-popular-dishes-filter-panel"
+      id="fiestas-popular-dishes-filter-panel"
+      data-fiestas-popular-dishes-filter-panel
+      aria-label="Filtros de pinchos"
+      hidden
+    >
+      <button class="fiestas-popular-dishes-filter-close" type="button" data-fiestas-popular-dishes-filter-close aria-label="Cerrar filtros">
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+      </button>
+      <fieldset class="fiestas-popular-dishes-filter-group">
+        <legend>Dieta</legend>
+        <div class="fiestas-popular-dishes-filter-options">
+          <button class="fiestas-popular-dishes-filter-option is-active" type="button" data-fiestas-popular-dishes-filter="dietary" value="" aria-pressed="true">
+            <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+            <span>Todos</span>
+          </button>
+          <button class="fiestas-popular-dishes-filter-option" type="button" data-fiestas-popular-dishes-filter="dietary" value="vegetarian" aria-pressed="false">
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+            <span>Vegetarianos</span>
+          </button>
+          <button class="fiestas-popular-dishes-filter-option" type="button" data-fiestas-popular-dishes-filter="dietary" value="vegan" aria-pressed="false">
+            <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+            <span>Veganos</span>
+          </button>
+        </div>
+      </fieldset>
+      <fieldset class="fiestas-popular-dishes-filter-group">
+        <legend>Intolerancias</legend>
+        <div class="fiestas-popular-dishes-filter-options">
+          <button class="fiestas-popular-dishes-filter-option" type="button" data-fiestas-popular-dishes-filter="gluten-free" aria-pressed="false">
+            <img src="/assets/icons/dietary-gluten-free.png" alt="" aria-hidden="true" />
+            <span>Sin gluten</span>
+          </button>
+        </div>
+      </fieldset>
+      <button class="fiestas-popular-dishes-filter-clear" type="button" data-fiestas-popular-dishes-filter-clear hidden>
+        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        <span>Limpiar filtros</span>
+      </button>
     </section>
 
     <section class="fiestas-popular-list fiestas-popular-dishes-list" data-fiestas-popular-dishes-list aria-label="Pinchos populares" aria-live="polite" aria-busy="true">

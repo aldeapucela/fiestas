@@ -9861,3 +9861,249 @@ html.dark .fiestas-collaborator-card:focus-visible {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
+
+/* Filtros de pinchos: visibles solo cuando se solicitan y sin competir con el ranking. */
+.fiestas-popular-intro-row {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.fiestas-popular-intro-row > p {
+  min-width: 0;
+  flex: 1 1 auto;
+}
+
+.fiestas-popular-dishes-filter-toggle {
+  display: inline-flex;
+  min-height: 2.55rem;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  gap: 0.42rem;
+  border: 1px solid #d9dee7;
+  border-radius: 999px;
+  background: #fff;
+  color: #667085;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 850;
+  padding: 0.35rem 0.7rem;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.fiestas-popular-dishes-filter-toggle:hover,
+.fiestas-popular-dishes-filter-toggle:focus-visible {
+  border-color: #0f9f8d;
+  color: #0f766e;
+}
+
+.fiestas-popular-dishes-filter-toggle:focus-visible,
+.fiestas-popular-dishes-filter-close:focus-visible,
+.fiestas-popular-dishes-filter-option:focus-visible,
+.fiestas-popular-dishes-filter-clear:focus-visible {
+  outline: 3px solid rgba(15, 159, 141, 0.38);
+  outline-offset: 2px;
+}
+
+.fiestas-popular-dishes-filter-toggle.is-active {
+  border-color: #0f9f8d;
+  background: #0f9f8d;
+  color: #fff;
+}
+
+.fiestas-popular-dishes-filter-count {
+  display: inline-grid;
+  min-width: 1.3rem;
+  height: 1.3rem;
+  place-items: center;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f766e;
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.fiestas-popular-dishes-filter-count[hidden],
+.fiestas-popular-dishes-filter-panel[hidden],
+.fiestas-popular-dishes-filter-clear[hidden] {
+  display: none;
+}
+
+.fiestas-popular-dishes-filter-panel {
+  position: relative;
+  display: grid;
+  width: min(100%, 34rem);
+  gap: 0.95rem;
+  border: 1px solid #e2dced;
+  border-radius: 1rem;
+  background: #fbfcfd;
+  padding: 0.95rem;
+  box-shadow: 0 0.35rem 1rem rgba(36, 43, 55, 0.06);
+}
+
+.fiestas-popular-dishes-filter-close {
+  display: inline-grid;
+  position: absolute;
+  top: 0.65rem;
+  right: 0.65rem;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex: 0 0 auto;
+  place-items: center;
+  border: 1px solid #d9dee7;
+  border-radius: 50%;
+  background: #fff;
+  color: #667085;
+  cursor: pointer;
+  font: inherit;
+  font-size: 1rem;
+}
+
+.fiestas-popular-dishes-filter-group {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  border: 0;
+  padding: 0;
+}
+
+.fiestas-popular-dishes-filter-group legend {
+  margin-bottom: 0.1rem;
+  color: #667085;
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.fiestas-popular-dishes-filter-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.45rem;
+}
+
+.fiestas-popular-dishes-filter-option {
+  display: inline-flex;
+  min-height: 2.7rem;
+  min-width: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 1px solid #d9dee7;
+  border-radius: 0.75rem;
+  background: #fff;
+  color: #667085;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 0.35rem 0.45rem;
+  text-align: center;
+  transition: border-color 160ms ease, background-color 160ms ease, color 160ms ease;
+}
+
+.fiestas-popular-dishes-filter-option:hover {
+  border-color: #8bcfc5;
+  color: #0f766e;
+}
+
+.fiestas-popular-dishes-filter-option.is-active {
+  border-color: rgba(15, 159, 141, 0.55);
+  background: rgba(15, 159, 141, 0.1);
+  color: #0f766e;
+}
+
+.fiestas-popular-dishes-filter-option i {
+  flex: 0 0 auto;
+}
+
+.fiestas-popular-dishes-filter-option img {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex: 0 0 auto;
+  filter: grayscale(1) opacity(0.62);
+  object-fit: contain;
+}
+
+.fiestas-popular-dishes-filter-option.is-active img {
+  filter: grayscale(1) sepia(1) saturate(4) hue-rotate(122deg) brightness(0.78);
+}
+
+.fiestas-popular-dishes-filter-clear {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  border: 0;
+  background: transparent;
+  color: #667085;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.82rem;
+  font-weight: 800;
+  padding: 0.25rem;
+  text-decoration: none;
+}
+
+html.dark .fiestas-popular-dishes-filter-toggle {
+  border-color: #414958;
+  background: #1a1f28;
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-popular-dishes-filter-toggle:hover,
+html.dark .fiestas-popular-dishes-filter-toggle:focus-visible {
+  border-color: #71d8cb;
+  color: #9be8dd;
+}
+
+html.dark .fiestas-popular-dishes-filter-toggle.is-active {
+  border-color: #159b8b;
+  background: #159b8b;
+  color: #fff;
+}
+
+html.dark .fiestas-popular-dishes-filter-panel,
+html.dark .fiestas-popular-dishes-filter-option,
+html.dark .fiestas-popular-dishes-filter-close {
+  border-color: #313743;
+  background: #1a1f28;
+}
+
+html.dark .fiestas-popular-dishes-filter-panel {
+  background: #171b22;
+}
+
+html.dark .fiestas-popular-dishes-filter-option {
+  color: #f5f3ee;
+}
+
+html.dark .fiestas-popular-dishes-filter-group legend,
+html.dark .fiestas-popular-dishes-filter-close,
+html.dark .fiestas-popular-dishes-filter-clear {
+  color: #b9c1ce;
+}
+
+html.dark .fiestas-popular-dishes-filter-option.is-active {
+  border-color: rgba(113, 216, 203, 0.58);
+  background: rgba(23, 184, 164, 0.14);
+  color: #9be8dd;
+}
+
+@media (max-width: 360px) {
+  .fiestas-popular-intro-row {
+    align-items: flex-start;
+  }
+
+  .fiestas-popular-dishes-filter-toggle {
+    padding-inline: 0.58rem;
+  }
+
+  .fiestas-popular-dishes-filter-options {
+    grid-template-columns: 1fr;
+  }
+}

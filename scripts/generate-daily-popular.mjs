@@ -23,6 +23,7 @@ import {
 const root = process.cwd();
 const defaultMetricsUrl = 'https://api.aldeapucela.org/fiestas/saves';
 const defaultBaseUrl = 'https://fiestas.aldeapucela.org';
+const remoteImageCache = new Map();
 
 function parseArgs(argv) {
   const options = { date: null, all: false, metricsFile: null, metricsUrl: defaultMetricsUrl, outputDir: 'dist/daily-popular', baseUrl: defaultBaseUrl };
@@ -290,9 +291,30 @@ function buildPostSvg({ date, posterImages, logoData }) {
 </svg>`;
 }
 
+async function readPosterImage(image) {
+  if (/^https?:\/\//i.test(image)) {
+    if (!remoteImageCache.has(image)) {
+      const request = fetch(image, {
+        headers: {
+          accept: 'image/avif,image/webp,image/apng,image/svg+xml,image/*,*/*;q=0.8',
+          'user-agent': 'AldeaPucelaFiestas/1.0 (+https://fiestas.aldeapucela.org/)'
+        },
+        signal: AbortSignal.timeout(20000)
+      }).then(async (response) => {
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        return Buffer.from(await response.arrayBuffer());
+      });
+      remoteImageCache.set(image, request);
+    }
+    return remoteImageCache.get(image);
+  }
+
+  const sourcePath = path.join(root, 'src', image.replace(/^\//, ''));
+  return fs.readFile(sourcePath);
+}
+
 async function preparePosterImage(event) {
-  const sourcePath = path.join(root, 'src', event.image.replace(/^\//, ''));
-  const content = await fs.readFile(sourcePath);
+  const content = await readPosterImage(event.image);
   return sharp(content)
     .rotate()
     .resize(390, 280, { fit: 'cover', position: 'centre' })
@@ -303,7 +325,9 @@ async function preparePosterImage(event) {
 function storyVisualEvents(rankedEvents) {
   const usedImages = new Set();
   return rankedEvents.slice(0, DAILY_POPULAR_MAX_ITEMS).map((event) => {
-    const image = typeof event.image === 'string' && event.image.startsWith('/assets/') && !usedImages.has(event.image)
+    const image = typeof event.image === 'string'
+      && (/^https?:\/\//i.test(event.image) || event.image.startsWith('/assets/'))
+      && !usedImages.has(event.image)
       ? event.image
       : null;
     if (image) usedImages.add(image);
@@ -319,7 +343,14 @@ async function prepareLogo() {
 async function generateDailyImages({ date, posterEvents, storyOutputPath, postOutputPath }) {
   const posterImages = [];
   for (const { event, image: imagePath } of posterEvents) {
-    const image = imagePath ? await preparePosterImage({ ...event, image: imagePath }) : null;
+    let image = null;
+    if (imagePath) {
+      try {
+        image = await preparePosterImage({ ...event, image: imagePath });
+      } catch (error) {
+        console.warn(`No se pudo cargar la imagen de ${event.title}: ${error.message}`);
+      }
+    }
     posterImages.push({ event, imageData: image?.toString('base64') || null });
   }
   const logo = await prepareLogo();

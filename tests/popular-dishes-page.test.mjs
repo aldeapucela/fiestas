@@ -3,6 +3,66 @@ import test from 'node:test';
 
 const popularDishes = await import(`../src/scripts/popular-dishes-page.js?test=${Date.now()}`);
 
+test('reads dietary filters from shareable URLs', () => {
+  assert.deepEqual(popularDishes.readPopularDishFilters('?dietary=vegan&gluten-free=1'), {
+    dietary: 'vegan',
+    glutenFree: true
+  });
+  assert.deepEqual(popularDishes.readPopularDishFilters('?diet=vegetarian&glutenFree=1'), {
+    dietary: 'vegetarian',
+    glutenFree: true
+  });
+  assert.deepEqual(popularDishes.readPopularDishFilters('?dietary=unknown&gluten-free=0'), {
+    dietary: '',
+    glutenFree: false
+  });
+});
+
+test('builds descriptive share labels for active dietary filters', () => {
+  assert.equal(popularDishes.getPopularDishShareLabel({}), 'Pinchos populares');
+  assert.equal(popularDishes.getPopularDishShareLabel({ dietary: 'vegetarian' }), 'Pinchos populares vegetarianos');
+  assert.equal(popularDishes.getPopularDishShareLabel({ dietary: 'vegan' }), 'Pinchos populares veganos');
+  assert.equal(popularDishes.getPopularDishShareLabel({ glutenFree: true }), 'Pinchos populares sin gluten');
+  assert.equal(popularDishes.getPopularDishShareLabel({ dietary: 'vegetarian', glutenFree: true }), 'Pinchos populares vegetarianos y sin gluten');
+});
+
+test('filters dietary preferences before applying the popularity threshold', () => {
+  const dishes = [
+    { dishName: 'Pincho general', dietary: '', glutenFree: false, likeCount: 80 },
+    { dishName: 'Pincho vegano', dietary: 'vegan', glutenFree: true, likeCount: 1 },
+    { dishName: 'Pincho vegetariano', dietary: 'vegetarian', glutenFree: true, likeCount: 1 },
+    { dishName: 'Pincho vegetariano con gluten', dietary: 'vegetarian', glutenFree: false, likeCount: 1 }
+  ];
+
+  const result = popularDishes.getPopularDishesForFilters(dishes, {
+    dietary: 'vegan',
+    glutenFree: true
+  });
+
+  assert.equal(result.totalLikes, 1);
+  assert.equal(result.threshold, 1);
+  assert.deepEqual(result.matchingDishes.map((dish) => dish.dishName), ['Pincho vegano']);
+  assert.deepEqual(result.dishes.map((dish) => dish.dishName), ['Pincho vegano']);
+});
+
+test('vegetarian filtering includes vegan dishes and gluten-free remains an independent constraint', () => {
+  const dishes = [
+    { dishName: 'Vegano sin gluten', dietary: 'vegan', glutenFree: true, likeCount: 2 },
+    { dishName: 'Vegetariano sin gluten', dietary: 'vegetarian', glutenFree: true, likeCount: 2 },
+    { dishName: 'Vegetariano con gluten', dietary: 'vegetarian', glutenFree: false, likeCount: 2 }
+  ];
+
+  const result = popularDishes.getPopularDishesForFilters(dishes, {
+    dietary: 'vegetarian',
+    glutenFree: true
+  });
+
+  assert.deepEqual(result.matchingDishes.map((dish) => dish.dishName), [
+    'Vegano sin gluten',
+    'Vegetariano sin gluten'
+  ]);
+});
+
 test('uses an adaptive vote threshold for popular dishes', () => {
   assert.equal(popularDishes.getPopularDishThreshold(0), 1);
   assert.equal(popularDishes.getPopularDishThreshold(49), 1);

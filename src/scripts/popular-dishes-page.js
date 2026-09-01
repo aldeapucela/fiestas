@@ -2,6 +2,46 @@ const CASETA_DISH_LIKES_API_URL = 'https://api.aldeapucela.org/fiestas/caseta-di
 const REQUEST_TIMEOUT = 5000;
 const popularDishCollator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const MIN_VISIBLE_POPULAR_DISHES = 5;
+const DIETARY_FILTERS = new Set(['vegetarian', 'vegan']);
+
+export function getPopularDishShareLabel(filters = {}) {
+  const dietaryLabel = filters.dietary === 'vegan'
+    ? 'veganos'
+    : filters.dietary === 'vegetarian' ? 'vegetarianos' : '';
+  if (dietaryLabel && filters.glutenFree === true) return `Pinchos populares ${dietaryLabel} y sin gluten`;
+  if (dietaryLabel) return `Pinchos populares ${dietaryLabel}`;
+  if (filters.glutenFree === true) return 'Pinchos populares sin gluten';
+  return 'Pinchos populares';
+}
+
+export function readPopularDishFilters(search = '') {
+  const params = new URLSearchParams(search);
+  const dietary = params.get('dietary') || params.get('diet') || '';
+  return {
+    dietary: DIETARY_FILTERS.has(dietary) ? dietary : '',
+    glutenFree: params.get('gluten-free') === '1' || params.get('glutenFree') === '1'
+  };
+}
+
+export function filterDishesByPreferences(dishes = [], filters = {}) {
+  const dietary = DIETARY_FILTERS.has(filters.dietary) ? filters.dietary : '';
+  const glutenFree = filters.glutenFree === true;
+  return (Array.isArray(dishes) ? dishes : []).filter((dish) => {
+    const matchesDietary = !dietary
+      || (dietary === 'vegetarian' && ['vegetarian', 'vegan'].includes(dish.dietary))
+      || (dietary === 'vegan' && dish.dietary === 'vegan');
+    return matchesDietary && (!glutenFree || dish.glutenFree === true);
+  });
+}
+
+export function getPopularDishesForFilters(dishes = [], filters = {}) {
+  const matchingDishes = filterDishesByPreferences(dishes, filters);
+  const totalLikes = matchingDishes.reduce((sum, dish) => sum + Math.max(0, Number(dish?.likeCount) || 0), 0);
+  return {
+    matchingDishes,
+    ...filterPopularDishes(matchingDishes, totalLikes)
+  };
+}
 
 export function getPopularDishThreshold(totalLikes) {
   const total = Number(totalLikes);
@@ -54,19 +94,129 @@ export function initPopularDishesPage() {
   if (!list) return;
 
   const casetas = normalizeCasetas(window.__FIESTAS_2026_CASETAS__ || []);
+  const filterToggle = document.querySelector('[data-fiestas-popular-dishes-filter-toggle]');
+  const filterPanel = document.querySelector('[data-fiestas-popular-dishes-filter-panel]');
+  const filterClose = document.querySelector('[data-fiestas-popular-dishes-filter-close]');
+  const filterOptions = [...document.querySelectorAll('[data-fiestas-popular-dishes-filter]')];
+  const filterCount = document.querySelector('[data-fiestas-popular-dishes-filter-count]');
+  const filterClear = document.querySelector('[data-fiestas-popular-dishes-filter-clear]');
+  const shareButton = document.querySelector('[data-fiestas-share-site]');
+  const state = {
+    filters: readPopularDishFilters(window.location.search),
+    rankedDishes: [],
+    filterPanelOpen: false
+  };
+
+  const renderFilteredResults = () => {
+    const popular = getPopularDishesForFilters(state.rankedDishes, state.filters);
+    if (!popular.matchingDishes.length) {
+      renderStatus(list, 'No hay pinchos que coincidan con estos filtros.', { backHref: '/pinchos-populares/' });
+      return;
+    }
+    if (!popular.dishes.length) {
+      renderStatus(list, 'Todavía no hay suficientes votos para mostrar pinchos con estos filtros.', { backHref: '/pinchos-populares/' });
+      return;
+    }
+    renderDishList(list, popular.dishes);
+  };
+
+  const updateFilterUrl = () => {
+    const url = new URL(window.location.href);
+    if (state.filters.dietary) url.searchParams.set('dietary', state.filters.dietary);
+    else url.searchParams.delete('dietary');
+    url.searchParams.delete('diet');
+    if (state.filters.glutenFree) url.searchParams.set('gluten-free', '1');
+    else url.searchParams.delete('gluten-free');
+    url.searchParams.delete('glutenFree');
+    window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
+  };
+
+  const updateShareMetadata = () => {
+    if (!shareButton) return;
+    const label = getPopularDishShareLabel(state.filters);
+    const shareUrl = new URL(shareButton.dataset.shareUrl || window.location.href);
+    shareUrl.search = window.location.search;
+    shareUrl.hash = window.location.hash;
+    shareButton.dataset.shareTitle = `${label} | Fiestas Valladolid 2026`;
+    shareButton.dataset.shareText = `Descubre ${label.toLowerCase()} de Valladolid`;
+    shareButton.dataset.shareUrl = shareUrl.toString();
+    shareButton.setAttribute('aria-label', `Compartir ${label.toLowerCase()}`);
+    shareButton.title = `Compartir ${label.toLowerCase()}`;
+  };
+
+  const updateFilterControls = () => {
+    const activeCount = Number(Boolean(state.filters.dietary)) + Number(state.filters.glutenFree);
+    if (filterToggle) {
+      filterToggle.classList.toggle('is-active', activeCount > 0);
+      filterToggle.setAttribute('aria-expanded', String(state.filterPanelOpen));
+      filterToggle.setAttribute('aria-label', activeCount
+        ? `Filtros, ${activeCount} activos`
+        : 'Filtrar pinchos populares');
+    }
+    if (filterCount) {
+      filterCount.hidden = activeCount === 0;
+      filterCount.textContent = String(activeCount);
+    }
+    filterOptions.forEach((option) => {
+      const kind = option.dataset.fiestasPopularDishesFilter;
+      const active = kind === 'dietary'
+        ? state.filters.dietary === option.value
+        : kind === 'gluten-free' && state.filters.glutenFree;
+      option.classList.toggle('is-active', active);
+      option.setAttribute('aria-pressed', String(active));
+    });
+    if (filterClear) filterClear.hidden = activeCount === 0;
+  };
+
+  const setFilterPanelOpen = (open, { restoreFocus = true } = {}) => {
+    state.filterPanelOpen = open;
+    if (filterPanel) filterPanel.hidden = !open;
+    updateFilterControls();
+    if (!open && restoreFocus) filterToggle?.focus();
+  };
+
+  filterToggle?.addEventListener('click', () => setFilterPanelOpen(!state.filterPanelOpen));
+  filterClose?.addEventListener('click', () => setFilterPanelOpen(false));
+  filterOptions.forEach((option) => {
+    option.addEventListener('click', () => {
+      if (option.dataset.fiestasPopularDishesFilter === 'dietary') {
+        state.filters.dietary = state.filters.dietary === option.value ? '' : option.value;
+      } else if (option.dataset.fiestasPopularDishesFilter === 'gluten-free') {
+        state.filters.glutenFree = !state.filters.glutenFree;
+      }
+      updateFilterUrl();
+      updateShareMetadata();
+      updateFilterControls();
+      renderFilteredResults();
+    });
+  });
+  filterClear?.addEventListener('click', () => {
+    state.filters = { dietary: '', glutenFree: false };
+    updateFilterUrl();
+    updateShareMetadata();
+    updateFilterControls();
+    renderFilteredResults();
+  });
+  document.addEventListener('click', (event) => {
+    if (state.filterPanelOpen
+      && !event.target.closest('[data-fiestas-popular-dishes-filter-toggle]')
+      && !event.target.closest('[data-fiestas-popular-dishes-filter-panel]')) {
+      setFilterPanelOpen(false, { restoreFocus: false });
+    }
+  });
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && state.filterPanelOpen) setFilterPanelOpen(false);
+  });
+  updateShareMetadata();
+  updateFilterControls();
   renderStatus(list, 'Cargando pinchos populares…', { loading: true });
   void loadPopularDishes().then((result) => {
     if (!result.ok) {
       renderStatus(list, 'No se han podido cargar los pinchos populares.', { error: true, backHref: '/casetas/' });
       return;
     }
-    const rankedDishes = rankPopularDishes(casetas, result.dishes);
-    const popular = filterPopularDishes(rankedDishes, result.totalLikes);
-    if (!popular.dishes.length) {
-      renderStatus(list, 'Todavía no hay pinchos con me gusta.', { backHref: '/casetas/' });
-      return;
-    }
-    renderDishList(list, popular.dishes);
+    state.rankedDishes = rankPopularDishes(casetas, result.dishes);
+    renderFilteredResults();
   });
 }
 
