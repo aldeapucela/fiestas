@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "updatedAt": "2026-08-31",
+  "updatedAt": "2026-09-01",
   "casetas": [
     {
       "id": "z1-01",
@@ -2885,6 +2885,47 @@
         "osmId": 13290385301,
         "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
         "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-patatas-revolconas", "name": "Patatas revolconas", "price": "6€" },
+              { "id": "racion-picadillo-matanza", "name": "Picadillo de la matanza", "price": "5,50€" },
+              { "id": "pincho-chorizo-aceite", "name": "Pincho de chorizo en aceite", "price": "2,50€" },
+              { "id": "pincho-muralito", "name": "Muralito", "price": "2,50€" },
+              { "id": "montado-lomo-aceite", "name": "Montado de lomo en aceite", "price": "5€" },
+              { "id": "racion-queso-cabra", "name": "Queso de cabra", "price": "4,50€" },
+              { "id": "montado-pepito-ternera", "name": "Pepito de ternera", "price": "8,50€" },
+              { "id": "racion-hornazo-castellano", "name": "Hornazo castellano al corte", "price": "4€" },
+              { "id": "racion-alubias-barco", "name": "Alubias del barco", "price": "3,50€" }
+            ]
+          },
+          {
+            "title": "Postres y otros",
+            "votable": true,
+            "items": [
+              { "id": "postre-porcion-tarta", "name": "Porción de tarta", "description": "Yema; queso con membrillo", "price": "3€" },
+              { "id": "postre-yemas-santa-teresa", "name": "Yemas de Santa Teresa", "description": "Tradicionales o variadas; caja de 12 unidades", "price": "12€" },
+              { "id": "postre-caja-pastas-murallita", "name": "Caja de pastas «Murallita»", "price": "14€" },
+              { "id": "otros-bolsa-pipas", "name": "Bolsa de pipas Hijos de Calvo", "price": "2,50€" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-refrescos", "name": "Refrescos", "description": "Coca-Cola; Coca-Cola Zero; Fanta naranja; Fanta limón", "price": "2€" },
+              { "id": "bebida-vino", "name": "Vino", "description": "Chato; DOP Cebreros: 10 Delirios tinto, rosado y blanco; DOP Verdejo de Rueda: Ysabel de Madrigal", "price": "1,50€" },
+              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón; cerveza sin gluten", "price": "2,50€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
+              { "id": "bebida-crema-yema", "name": "Crema de yema de huevo" },
+              { "id": "bebida-licor-higos", "name": "Licor de higos", "price": "2,50€" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -2970,6 +3011,46 @@
         "osmId": 13290385301,
         "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
         "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "pincho-canape-cabrales", "name": "Canapé de cabrales", "price": "2,50€" },
+              { "id": "pincho-bollo-prenao", "name": "Bollo preñao", "price": "4,50€" },
+              { "id": "racion-callos", "name": "Callos", "price": "8€" },
+              { "id": "racion-callos-patatas-fritas", "name": "Callos con patatas fritas", "price": "8€" },
+              { "id": "racion-patatas-cabrales", "name": "Patatas al cabrales", "price": "5,50€" },
+              { "id": "pincho-chorizo-sidra", "name": "Chorizo a la sidra", "price": "3,50€" },
+              { "id": "racion-empanada", "name": "Empanada", "price": "5€" },
+              { "id": "pincho-culin-sidra-cabrales", "name": "Culín de sidra + pincho de cabrales", "price": "3€" },
+              { "id": "racion-fabada", "name": "Fabada", "price": "8€" }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              { "id": "postre-arroz-leche", "name": "Arroz con leche", "price": "3,50€" },
+              { "id": "postre-tarta-sidra", "name": "Tarta a la sidra" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,50€" },
+              { "id": "bebida-cana-sidra-dulce", "name": "Caña de sidra dulce", "price": "2,50€" },
+              { "id": "bebida-culin-sidra", "name": "Culín de sidra", "price": "1€" },
+              { "id": "bebida-botella-sidra", "name": "Botella de sidra", "description": "+ 1€ de fianza, que se devuelve a la reposición", "price": "5,50€" },
+              { "id": "bebida-zumo-manzana", "name": "Zumo de manzana", "price": "2€" },
+              { "id": "bebida-refrescos", "name": "Refrescos", "price": "2€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1€" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -3004,6 +3085,57 @@
         "osmId": 13290385301,
         "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
         "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-rabas", "name": "Rabas", "price": "10€" },
+              { "id": "racion-sardinas-asadas", "name": "Sardinas asadas", "description": "Ración 10€; media ración 5,50€" },
+              { "id": "racion-marmita-bonito", "name": "Marmita de bonito", "price": "5€" },
+              { "id": "racion-alubias-almejas", "name": "Alubias con almejas", "price": "5€" },
+              { "id": "bocadito-bonito", "name": "Bocadito de bonito", "price": "4€" },
+              { "id": "bocadito-rabas", "name": "Bocadito de rabas", "price": "4€" },
+              { "id": "racion-anchoas-aceite", "name": "Anchoas en aceite", "price": "7€" },
+              { "id": "racion-boquerones-vinagre", "name": "Boquerones en vinagre aliñados", "price": "4€" },
+              { "id": "queso-nata-pieza-grande", "name": "Queso de nata (pieza grande)", "description": "Pieza completa; 2 kg", "price": "25€" },
+              { "id": "queso-nata-pieza-pequena", "name": "Queso de nata (pieza pequeña)", "description": "Pieza completa; 0,530 kg", "price": "9€" },
+              { "id": "queso-nata-membrillo-pincho", "name": "Queso de nata con membrillo (pincho)", "price": "2€" },
+              { "id": "queso-nata-membrillo-racion", "name": "Queso de nata con membrillo (ración)", "price": "6€" },
+              { "id": "queso-nata-anchoa-pincho", "name": "Queso de nata con anchoa (pincho)", "price": "2€" },
+              { "id": "queso-nata-anchoa-racion", "name": "Queso de nata con anchoa (ración)", "price": "7€" }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              { "id": "postre-sobaos-grandes", "name": "Sobaos pasiegos grandes", "description": "Unidad 3€; paquete de 1 kg 13€" },
+              { "id": "postre-sobaos-pequenos", "name": "Sobaos pasiegos pequeños", "description": "Unidad 1,50€; paquete de 1 kg 13€" },
+              { "id": "postre-corbatas-unquera", "name": "Corbatas de Unquera", "description": "Unidad 1,50€; caja 9,50€" },
+              { "id": "postre-quesada-pasiega", "name": "Quesada pasiega", "description": "Pincho 2€; quesada 900 g 13,50€; al vacío 650 g 12€" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "description": "Caña", "price": "2,50€" },
+              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,50€" },
+              { "id": "bebida-chato-vino", "name": "Chato de vino", "description": "Tostaniego; tinto; rosado; frizzante; vaso 1,50€" },
+              { "id": "bebida-botellin-mosto", "name": "Botellín de mosto", "price": "2€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
+              { "id": "bebida-refrescos", "name": "Refrescos", "price": "2€" },
+              { "id": "bebida-cafe-orujo-potes", "name": "Café con orujo de Potes", "price": "2€" },
+              { "id": "bebida-cremas-potes", "name": "Cremas de Potes", "description": "Chupito 2€; melón; fresas con chocolate; yogur; crema de orujo de Liébana" }
+            ]
+          }
+        ],
+        "highlights": [
+          "Pagos con tarjeta — mínimo 10€"
+        ]
       }
     },
     {
@@ -3089,6 +3221,48 @@
         "osmId": 13290385301,
         "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
         "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "tosta-sobrasada-mallorquina", "name": "Tosta de sobrasada mallorquina", "price": "5€" },
+              { "id": "miniburguer-rafa-nadal", "name": "Miniburguer Rafa Nadal", "price": "5€" },
+              { "id": "racion-ensalada-pasta-marinera", "name": "Ensalada de pasta marinera", "price": "8€" },
+              { "id": "montado-ternera-queso-mahon", "name": "Montado de ternera con queso Mahon", "price": "6,50€" },
+              { "id": "racion-tiras-calamar-mojo-balear", "name": "Tiras de calamar con mojo balear", "price": "9€" },
+              { "id": "racion-huevos-sobrasada", "name": "Huevos fritos con patatas y salsa de sobrasada", "price": "8€" },
+              { "id": "racion-tortilla-sobrasada-mahon", "name": "Tortilla de patata con sobrasada y queso Mahon", "price": "8,50€" },
+              { "id": "racion-ciurons-escaldins", "name": "Ciurons escaldins", "price": "7,50€" }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              { "id": "postre-ensaimada", "name": "Ensaimada", "price": "4€" },
+              { "id": "postre-tarta-queso", "name": "Tarta de queso", "price": "3,50€" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,50€" },
+              { "id": "bebida-vino-tinto", "name": "Vino tinto", "price": "1,30€" },
+              { "id": "bebida-vino-rosado", "name": "Vino rosado" },
+              { "id": "bebida-vino-blanco-canario", "name": "Vino blanco canario", "price": "1,80€" },
+              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "price": "2,30€" },
+              { "id": "bebida-chato-mosto", "name": "Chato de mosto", "description": "Vaso 2,50€; chato 1,50€" },
+              { "id": "bebida-refrescos", "name": "Refrescos", "price": "2€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
+              { "id": "bebida-brisa-canaria", "name": "Brisa Canaria", "description": "Caña 2,50€; pinta 3,50€" },
+              { "id": "bebida-aire-guanche", "name": "Aire guanche" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -3106,6 +3280,42 @@
         "osmId": 13290385301,
         "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
         "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones y pinchos",
+            "votable": true,
+            "items": [
+              { "id": "racion-papas-alinas", "name": "Papas aliñás", "price": "5€" },
+              { "id": "racion-aceitunas", "name": "Aceitunas", "price": "2€" },
+              { "id": "racion-adobo", "name": "Adobo", "price": "9,50€" },
+              { "id": "racion-berenjenas-miel-cana", "name": "Berenjenas con miel de caña", "price": "5€" },
+              { "id": "bocadillo-calamares-bebida", "name": "Bocadillo de calamares + bebida", "price": "7,5€" },
+              { "id": "racion-calamares-fritos", "name": "Calamares fritos", "price": "8,50€" },
+              { "id": "racion-boquerones", "name": "Boquerones", "price": "9€" },
+              { "id": "racion-chopitos", "name": "Chopitos", "price": "9,50€" },
+              { "id": "racion-tortitas-camarones", "name": "Tortitas de camarones (3 uds)", "price": "7,5€" },
+              { "id": "racion-gambas-cocidas", "name": "Gambas cocidas", "price": "9€" },
+              { "id": "racion-langostinos-plancha", "name": "Langostinos a la plancha", "price": "6€" },
+              { "id": "racion-salmorejo", "name": "Salmorejo", "price": "3€" },
+              { "id": "racion-gazpacho", "name": "Gazpacho", "price": "2€" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,5€" },
+              { "id": "bebida-fino", "name": "Fino", "description": "Manzanilla; Pedro Ximénez", "price": "2€" },
+              { "id": "bebida-refrescos", "name": "Refrescos", "description": "Coca-Cola; Coca-Cola Zero; Coca-Cola Zero-Zero; Fanta naranja; Fanta limón", "price": "2€" },
+              { "id": "bebida-rebujo", "name": "Rebujo", "description": "Chato 2€; caña 2,5€; cachi 7€" },
+              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "price": "2€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
+              { "id": "bebida-cafe-solo", "name": "Café solo", "price": "1€" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -3140,6 +3350,44 @@
         "osmId": 13290385301,
         "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
         "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones y pinchos",
+            "votable": true,
+            "items": [
+              { "id": "racion-papas-mojo-picon", "name": "Papas con mojo picón", "description": "Ración 5,50€; media ración 3,30€" },
+              { "id": "racion-carne-fiesta", "name": "Carne fiesta", "description": "Ración 6€; media ración 3,50€" },
+              { "id": "racion-platano-guanche", "name": "Plátano guanche", "price": "3€" },
+              { "id": "menu-del-dia", "name": "Menú del día", "description": "Preguntar en barra", "price": "8€" },
+              { "id": "racion-queso-sin-guayaba", "name": "Queso sin guayaba (ración)", "price": "5€" },
+              { "id": "racion-queso-con-guayaba", "name": "Queso con guayaba (ración)", "price": "5,50€" },
+              { "id": "pincho-queso-sin-guayaba", "name": "Queso sin guayaba (pincho)", "price": "1€" },
+              { "id": "pincho-queso-con-guayaba", "name": "Queso con guayaba (pincho)", "price": "1,50€" },
+              { "id": "bebida-tapa-dia", "name": "Bebida + tapa del día", "price": "3,50€" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,50€" },
+              { "id": "bebida-vino-tinto", "name": "Vino tinto", "price": "1,30€" },
+              { "id": "bebida-vino-rosado", "name": "Vino rosado" },
+              { "id": "bebida-vino-blanco-canario", "name": "Vino blanco canario", "price": "1,80€" },
+              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "price": "2,30€" },
+              { "id": "bebida-chato-mosto", "name": "Chato de mosto", "description": "Vaso 2,50€; chato 1,50€" },
+              { "id": "bebida-refrescos", "name": "Refrescos", "description": "Coca-Cola; Coca-Cola Zero; Coca-Cola Zero-Zero; Fanta naranja; Fanta limón; Fuze Tea", "price": "2€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
+              { "id": "bebida-brisa-canaria", "name": "Brisa Canaria", "description": "Caña 2,50€; pinta 3,50€" },
+              { "id": "bebida-aire-guanche", "name": "Aire guanche" }
+            ]
+          }
+        ],
+        "highlights": [
+          "Se dispone pagos con tarjeta"
+        ]
       }
     },
     {
