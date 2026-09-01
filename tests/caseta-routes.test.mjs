@@ -26,7 +26,8 @@ test('construye rutas legacy para la ficha y su QR', () => {
     legacySlugs: ['restaurante-la-criolla']
   }), [
     { detail: '/c/z1-05/la-criolla/', qr: '/c/z1-05/la-criolla/qr/' },
-    { detail: '/c/z1-05/restaurante-la-criolla/', qr: '/c/z1-05/restaurante-la-criolla/qr/' }
+    { detail: '/c/z1-05/restaurante-la-criolla/', qr: '/c/z1-05/restaurante-la-criolla/qr/' },
+    { detail: '/c/restaurante-la-criolla/', qr: '/c/restaurante-la-criolla/qr/' }
   ]);
 });
 
