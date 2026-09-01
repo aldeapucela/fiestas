@@ -25417,5 +25417,44 @@
     "tags": [
       "Música"
     ]
+  },
+  {
+    "id": 773,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "20:00",
+    "endTime": "21:00",
+    "title": "Las Chicas en Concierto",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3caccf11b505af7eb798832d9f63b2932aed4d0b_2_571x1024.jpeg",
+    "location": "Plaza Semprún",
+    "zone": "Zona Centro",
+    "description": "El grupo musical Las Chicas llega a la ciudad para ofrecer un concierto en directo el próximo 5 de septiembre. La cita tendrá lugar en la emblemática Plaza Semprún, comenzando la actividad a partir de las 20:00 horas.",
+    "summary": "El grupo musical Las Chicas llega a la ciudad para ofrecer un concierto en directo el próximo 5 de septiembre. La cita tendrá lugar en la emblemática Plaza Semprún, comenzando la actividad a partir de las 20:00 horas.",
+    "performances": [],
+    "organizers": [
+      "Bodega Paco / Peña"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6416754,
+      "lng": -4.7163724,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 136729479,
+      "query": "Plaza Semprún, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T20:03:04.707Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
   }
 ]
