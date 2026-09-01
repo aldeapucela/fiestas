@@ -1347,7 +1347,8 @@
               },
               {
                 "id": "racion-patatas-alioli-10-10",
-                "name": "Ración de patatas ali-oli al estilo 10&10"
+                "name": "Ración de patatas ali-oli al estilo 10&10",
+                "price": "5€"
               }
             ]
           }
