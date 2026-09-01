@@ -27,13 +27,17 @@ export function casetaLegacyDetailPath(id, slug) {
 }
 
 export function casetaLegacyPaths(caseta) {
+  const publicSlug = getCasetaPublicSlug(caseta);
   const slugs = new Set([
     slugifyCaseta(caseta?.name),
     ...(Array.isArray(caseta?.legacySlugs) ? caseta.legacySlugs : [])
   ].map((slug) => String(slug || '').trim()).filter(Boolean));
-  return [...slugs].map((slug) => ({
-    detail: casetaLegacyDetailPath(caseta.id, slug),
-    qr: `${casetaLegacyDetailPath(caseta.id, slug)}qr/`
-  }));
+  return [...slugs].flatMap((slug) => {
+    const legacyDetail = casetaLegacyDetailPath(caseta.id, slug);
+    const paths = [{ detail: legacyDetail, qr: `${legacyDetail}qr/` }];
+    if (slug !== publicSlug) {
+      paths.push({ detail: casetaDetailPath(slug), qr: casetaQrPath(slug) });
+    }
+    return paths;
+  });
 }
-

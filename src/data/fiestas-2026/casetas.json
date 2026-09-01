@@ -1386,22 +1386,23 @@
     },
     {
       "id": "z4-12",
-      "publicSlug": "grilled-chef",
-      "name": "Grilled Chef",
+      "publicSlug": "griller-chef",
+      "legacySlugs": ["grilled-chef"],
+      "name": "Griller Chef",
       "zone": "Zona 2",
-      "location": "Matías Sangrador",
-      "placement": "En su fachada",
-      "addressQuery": "Calle Matías Sangrador, Valladolid, España",
+      "location": "Calle Ferrari 5",
+      "placement": "Dos accesos: calle Ferrari 5 y calle Matías Sangrador",
+      "addressQuery": "Calle Ferrari 5, Valladolid, España",
       "coordinates": {
-        "lat": 41.6522448,
-        "lng": -4.7270011,
+        "lat": 41.652035,
+        "lng": -4.7270618,
         "source": "OpenStreetMap Nominatim",
-        "osmType": "way",
-        "osmId": 33821197,
-        "displayName": "Calle Matías Sangrador, Plaza Mayor, Valladolid, Castilla y León, 47001, España",
-        "query": "Calle Matías Sangrador, Valladolid, España",
+        "osmType": "node",
+        "osmId": 11306017421,
+        "displayName": "Calle de Ferrari, 5, Plaza Mayor, Valladolid, Castilla y León, 47002, España",
+        "query": "Calle Ferrari 5, Valladolid, España",
         "accuracy": 1,
-        "geocodedAt": "2026-08-29T21:25:41.000Z"
+        "geocodedAt": "2026-09-01T08:32:28.000Z"
       }
     },
     {
