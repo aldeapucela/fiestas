@@ -735,5 +735,165 @@
       }
     ],
     "source": "Cartel remoto de Farah Diva - Actuaciones Feria y Fiestas 2026, descargado e inspeccionado visualmente: sesiones el 5 (Plaza España 21:00 y Plaza Zorrilla 22:00), 6 (Parking del estadio 13:15), 9 (Antiguo Picadero de la Academia de Caballería 21:00) y 13 de septiembre (Recinto ferial José Luis Bellido 13:30 y Antiguo Picadero de la Academia de Caballería 21:00)."
+  },
+  "2366": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-07",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-05",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "performances": ["Chejo"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "performances": ["Mr. Kitos vs Perejius"]
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "performances": ["Carlos Jean"]
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "performances": ["Los del Lío"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "performances": ["Paco"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "18:00",
+        "endTime": "21:00",
+        "performances": ["Josemy & D. Triana"]
+      }
+    ],
+    "source": "Cartel remoto de The Bowie Street Festival 2026, descargado e inspeccionado visualmente: actuaciones los días 5 (Chejo), 7 (Mr. Kitos vs Perejius), 9 (Carlos Jean), 10 (Los del Lío), 12 (Paco) y 13 de septiembre (Josemy & D. Triana), todas de 18:00 a 21:00. El cartel no identifica un lugar concreto; la ficha remota tampoco proporciona ubicación representable."
+  },
+  "2371": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-04",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["Rubén Akita", "Willy Gas", "Guillerlu"]
+      },
+      {
+        "date": "2026-09-05",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["Sote", "Guillerlu", "Albert Novo"]
+      },
+      {
+        "date": "2026-09-06",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["Xangai", "SHYxBANDIDO", "RRUBIOO"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["Technoroom", "SHYxBANDIDO"]
+      },
+      {
+        "date": "2026-09-08",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["Sote", "Xangai", "RRUBIOO"]
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["Sote", "Pani", "RRUBIOO"]
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["Meigo DJ", "Paulmoon", "Peti"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["Meigo DJ", "Peti", "Pani"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["Josemy Álvarez", "Pablo D. Triana", "Delera", "Meigo DJ"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "16:00",
+        "endTime": null,
+        "location": "Plaza Poniente",
+        "performances": ["SHYxBANDIDO", "Paco Devotion"]
+      }
+    ],
+    "source": "Cartel remoto de Bandido, descargado e inspeccionado visualmente: actividad todos los días del 4 al 13 de septiembre, apertura desde las 16:00 y ubicación Plaza Poniente. Actuaciones por fecha: 4 Rubén Akita/Willy Gas/Guillerlu; 5 Sote/Guillerlu/Albert Novo; 6 Xangai/SHYxBANDIDO/RRUBIOO; 7 Technoroom/SHYxBANDIDO; 8 Sote/Xangai/RRUBIOO; 9 Sote/Pani/RRUBIOO; 10 Meigo DJ/Paulmoon/Peti; 11 Meigo DJ/Peti/Pani; 12 Josemy Álvarez/Pablo D. Triana/Delera/Meigo DJ; 13 SHYxBANDIDO/Paco Devotion. El cartel no indica hora de cierre."
+  },
+  "2368": {
+    "dates": ["2026-09-06"],
+    "occurrences": [
+      {
+        "date": "2026-09-06",
+        "startTime": "16:00",
+        "endTime": "17:00",
+        "location": "Centro Comercial Vallsur"
+      }
+    ],
+    "source": "Ficha remota de la XXII Reunión Harley & Custom: 6 de septiembre a las 16:00 en CC Vallsur. La ubicación se normaliza como Centro Comercial Vallsur; coordenadas contrastadas con Nominatim y Google Maps."
+  },
+  "2369": {
+    "dates": ["2026-09-08"],
+    "occurrences": [
+      {
+        "date": "2026-09-08",
+        "startTime": "12:30",
+        "endTime": "13:30",
+        "location": "C/ Caamaño, 128"
+      }
+    ],
+    "source": "Ficha remota de Vermut Torero: 8 de septiembre a las 12:30 en C/ Caamaño nº 128 (Las Delicias). La ubicación se normaliza como C/ Caamaño, 128 y se resuelve con Nominatim."
   }
 }
