@@ -1992,6 +1992,104 @@
         "lng": -4.726724,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Calle Rastro, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-arroz-zamorana",
+                "name": "Arroz a la zamorana",
+                "description": "(Pincho-bebida)",
+                "price": "4,00€"
+              },
+              {
+                "id": "pincho-bunuelo-lechazo",
+                "name": "Buñuelo de lechazo",
+                "description": "(Pincho-bebida)",
+                "price": "4,00€"
+              },
+              {
+                "id": "pincho-salmorejo-cordobes",
+                "name": "Salmorejo cordobés",
+                "description": "(Pincho-bebida)",
+                "price": "4,00€"
+              },
+              {
+                "id": "pincho-potaje-bacalao",
+                "name": "Potaje de bacalao",
+                "description": "(Pincho-bebida)",
+                "price": "4,00€"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-arroz-meloso-setas-boletus",
+                "name": "Arroz meloso de setas y boletus",
+                "price": "7,00€"
+              },
+              {
+                "id": "racion-fingers-pollo-diablo",
+                "name": "Fingers de pollo diablo",
+                "description": "con salsa gribiche",
+                "price": "6,50€"
+              },
+              {
+                "id": "racion-croquetas-jamon",
+                "name": "Croquetas de jamón",
+                "price": "8,50€"
+              },
+              {
+                "id": "racion-ensaladilla-rusa",
+                "name": "Ensaladilla rusa",
+                "price": "6,50€"
+              },
+              {
+                "id": "racion-torrezno-soriano",
+                "name": "Torrezno soriano",
+                "price": "7,50€"
+              },
+              {
+                "id": "racion-oreja-gallega",
+                "name": "Oreja a la gallega",
+                "price": "7,00€"
+              },
+              {
+                "id": "racion-paquito-pulguita-lechazo",
+                "name": "Paquito pulguita de lechazo asado",
+                "price": "6,50€"
+              },
+              {
+                "id": "racion-bombitas-mollete-ijas",
+                "name": "Bombitas de mollete de ijás",
+                "description": "con huevo frito",
+                "price": "5,50€"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-coulis-frutos-rojos",
+                "name": "Tarta de queso",
+                "description": "con coulis de frutos rojos",
+                "price": "5,50€",
+                "dietary": "vegetarian"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Avisar a nuestro personal de cualquier intolerancia"
+        ]
       }
     },
     {
