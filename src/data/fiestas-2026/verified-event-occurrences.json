@@ -895,5 +895,130 @@
       }
     ],
     "source": "Ficha remota de Vermut Torero: 8 de septiembre a las 12:30 en C/ Caamaño nº 128 (Las Delicias). La ubicación se normaliza como C/ Caamaño, 128 y se resuelve con Nominatim."
+  },
+  "2374": {
+    "dates": [
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-07",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Terraza Puerto Canalla, Plaza del Poniente, 6, Valladolid",
+        "performances": ["Apulse"]
+      },
+      {
+        "date": "2026-09-08",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Terraza Puerto Canalla, Plaza del Poniente, 6, Valladolid",
+        "performances": ["Jowi", "Joan Roca"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Terraza Puerto Canalla, Plaza del Poniente, 6, Valladolid",
+        "performances": ["Catarro"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Terraza Puerto Canalla, Plaza del Poniente, 6, Valladolid",
+        "performances": ["Las Doñas", "Fiesta de la Leche"]
+      }
+    ],
+    "source": "Cartel remoto de Tardeos Canallas (Ferias 2026), descargado e inspeccionado visualmente: sesiones el 7 (Apulse), 8 (Jowi y Joan Roca), 11 (Catarro) y 12 de septiembre (Las Doñas, Fiesta de la Leche), todas de 20:00 a 23:00 en Terraza Puerto Canalla."
+  },
+  "2379": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-04",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "La Pera Limonera, Playa de las Moreras",
+        "performances": ["Les Castizos", "Jorge Tejedor", "Revu y Ardiya"]
+      },
+      {
+        "date": "2026-09-05",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "La Pera Limonera, Playa de las Moreras",
+        "performances": ["Humberto", "Las Doñas", "Alex Belt", "Felix Villada", "DJs en terraza"]
+      },
+      {
+        "date": "2026-09-06",
+        "startTime": "17:00",
+        "endTime": null,
+        "location": "La Pera Limonera, Playa de las Moreras",
+        "performances": ["Cristongo"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "La Pera Limonera, Playa de las Moreras",
+        "performances": ["A Tomar Por Culo Club", "By Siloé"]
+      },
+      {
+        "date": "2026-09-08",
+        "startTime": "19:00",
+        "endTime": null,
+        "location": "La Pera Limonera, Playa de las Moreras",
+        "performances": ["Benditos 90s", "Dany BPM", "Sergei Rez", "Ruben Botas", "Rocío Torío"]
+      }
+    ],
+    "source": "Cartel remoto de Conciertos de Fiestas 2026 en La Pera Limonera, descargado e inspeccionado visualmente: sesiones el 4 (Les Castizos), 5 (Humberto), 6 (Cristongo), 7 (By Siloé) y 8 de septiembre (Benditos 90s), en La Pera Limonera. El cartel indica 20:00 los días 4 y 5, desde las 17:00 el día 6, 20:00 el día 7 y 19:00 el día 8; no indica hora de cierre."
+  },
+  "2380": {
+    "dates": [
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-09",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "La Pera Limonera, Playa de las Moreras",
+        "performances": ["Yatengounplan", "Chema Rivas", "Luismi Lorenz", "George Whaley"]
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "La Pera Limonera, Playa de las Moreras",
+        "performances": ["Tardeo con DJs (La Siesta Club)"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "La Pera Limonera, Playa de las Moreras",
+        "performances": ["Folclore by Dani del Lío"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "La Pera Limonera, Playa de las Moreras",
+        "performances": ["All Daza", "Justav DJ", "Nelson Daza", "Guille Daza", "Meliibea"]
+      }
+    ],
+    "source": "Cartel remoto de Conciertos de Fiestas 2026 en La Pera Limonera, descargado e inspeccionado visualmente: sesiones el 9 (Yatengounplan), 10 (Tardeo con DJs, La Siesta Club), 11 (Folclore by Dani del Lío) y 12 de septiembre (All Daza), en La Pera Limonera. El cartel indica desde las 20:00 y no indica hora de cierre."
   }
 }
