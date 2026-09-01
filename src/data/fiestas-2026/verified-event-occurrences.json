@@ -1026,5 +1026,129 @@
       }
     ],
     "source": "Cartel remoto de Conciertos de Fiestas 2026 en La Pera Limonera, descargado e inspeccionado visualmente: sesiones el 9 (Yatengounplan), 10 (Tardeo con DJs, La Siesta Club), 11 (Folclore by Dani del Lío) y 12 de septiembre (All Daza), en La Pera Limonera. El cartel indica desde las 20:00 y no indica hora de cierre."
+  },
+  "2392": {
+    "dates": ["2026-09-07"],
+    "occurrences": [
+      {
+        "date": "2026-09-07",
+        "startTime": "17:00",
+        "endTime": "20:00",
+        "location": "La Santa, C. San Benito, 5, 47003 Valladolid",
+        "performances": ["Xangai", "Pani", "Furones"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid",
+        "performances": ["Xangai", "Pani", "Furones"]
+      }
+    ],
+    "source": "Cartel remoto de Xangai & Pani & Furones inspeccionado visualmente: el 7 de septiembre, 17:00–20:00 en La Santa (Zona San Benito) y 20:00–23:00 en Montellén (Zona Montellén). Google Maps confirmó las fichas y las direcciones concretas de ambos locales."
+  },
+  "2395": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-05",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+        "performances": ["Rodinia"]
+      },
+      {
+        "date": "2026-09-06",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+        "performances": ["Rodinia"]
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+        "performances": ["Amigos del Teatro"]
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+        "performances": ["Pino Cairel (Casa de Andalucía)"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+        "performances": ["Raúl Rulo"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+        "performances": ["CaracolaDos"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+        "performances": ["Lita Barnés", "José Luis García Oliveros", "Vicente Zautúa", "María Pérez"]
+      }
+    ],
+    "source": "Cartel remoto de Feria y Fiestas de la Virgen de San Lorenzo descargado e inspeccionado visualmente: actividad los días 5, 6, 9, 10, 11, 12 y 13 de septiembre, siempre a las 21:00 en Casa de Zorrilla Sala NAC; no indica hora de cierre. El mismo cartel anuncia además el III Festival Rara Avis del 24 al 26 de septiembre, fuera de la ventana actual del importador."
+  },
+  "2397": {
+    "dates": ["2026-09-13"],
+    "occurrences": [
+      {
+        "date": "2026-09-13",
+        "startTime": "09:00",
+        "endTime": "10:00",
+        "location": "Café Real (fuente: Bar La Real), C. las Lagares, 2, 09441 Sotillo de la Ribera, Burgos",
+        "performances": ["Entrega de acreditaciones y café para los inscritos"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "11:00",
+        "endTime": "11:30",
+        "location": "Bodega Dehesa de los Canónigos, Carretera Renedo-Pesquera, Km 37, 47315 Pesquera de Duero, Valladolid",
+        "performances": ["Minuto de silencio en memoria de Iván y su familia"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "12:25",
+        "endTime": "14:00",
+        "location": "Bodegas Carramimbre, Carretera Zaragoza a Portugal por Zamora, Padilla de Duero, 47300 Peñafiel, Valladolid",
+        "performances": ["Visita guiada a la bodega"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "14:00",
+        "endTime": "15:20",
+        "location": "Bodegas Carramimbre, Carretera Zaragoza a Portugal por Zamora, Padilla de Duero, 47300 Peñafiel, Valladolid",
+        "performances": ["Cata de vinos y aperitivo"]
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "16:30",
+        "endTime": null,
+        "location": "Café Real (fuente: Bar La Real), C. las Lagares, 2, 09441 Sotillo de la Ribera, Burgos",
+        "performances": ["Sorteo de regalos"]
+      }
+    ],
+    "source": "Programa remoto de Ruta en Moto Ribera del Duero descargado e inspeccionado visualmente: salida y acreditaciones a las 09:00 en Bar La Real; llegada a Dehesa de los Canónigos a las 11:00; llegada a Carramimbre a las 12:25, cata a las 14:00 y fin de la visita a las 15:20; regreso y sorteo en Bar La Real a las 16:30. Google Maps confirmó los tres recintos; los desplazamientos no se crean como fichas separadas."
   }
 }

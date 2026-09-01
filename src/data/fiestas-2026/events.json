@@ -24098,5 +24098,664 @@
     "tags": [
       "Otros"
     ]
+  },
+  {
+    "id": 722,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Eventos ferias en La casa de zorrilla",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
+    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "performances": [
+      "Rodinia"
+    ],
+    "organizers": [
+      "La Casa de Zorrilla"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6563987,
+      "lng": -4.7235721,
+      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
+      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.092Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 723,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Eventos ferias en La casa de zorrilla",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
+    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "performances": [
+      "Rodinia"
+    ],
+    "organizers": [
+      "La Casa de Zorrilla"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6563987,
+      "lng": -4.7235721,
+      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
+      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.092Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 724,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Eventos ferias en La casa de zorrilla",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
+    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "performances": [
+      "Amigos del Teatro"
+    ],
+    "organizers": [
+      "La Casa de Zorrilla"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6563987,
+      "lng": -4.7235721,
+      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
+      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.092Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 725,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Eventos ferias en La casa de zorrilla",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
+    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "performances": [
+      "Pino Cairel (Casa de Andalucía)"
+    ],
+    "organizers": [
+      "La Casa de Zorrilla"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6563987,
+      "lng": -4.7235721,
+      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
+      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.092Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 726,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Eventos ferias en La casa de zorrilla",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
+    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "performances": [
+      "Raúl Rulo"
+    ],
+    "organizers": [
+      "La Casa de Zorrilla"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6563987,
+      "lng": -4.7235721,
+      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
+      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.092Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 727,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Eventos ferias en La casa de zorrilla",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
+    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "performances": [
+      "CaracolaDos"
+    ],
+    "organizers": [
+      "La Casa de Zorrilla"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6563987,
+      "lng": -4.7235721,
+      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
+      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.092Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 728,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Eventos ferias en La casa de zorrilla",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/73d552535d3df743831be2691172333d146498aa_2_819x1024.jpeg",
+    "location": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid",
+    "zone": "Zona Centro",
+    "description": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "summary": "Feria y Fiestas de la Virgen de San Lorenzo",
+    "performances": [
+      "Lita Barnés",
+      "José Luis García Oliveros",
+      "Vicente Zautúa",
+      "María Pérez"
+    ],
+    "organizers": [
+      "La Casa de Zorrilla"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6563987,
+      "lng": -4.7235721,
+      "source": "OpenStreetMap Nominatim (coordenadas verificadas en eventos locales existentes)",
+      "query": "Casa de Zorrilla, Calle Fray Luis de Granada, 1, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.092Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 729,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "17:00",
+    "endTime": "20:00",
+    "title": "Xangai & Pani & Furones (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/16aa4376bf6b4b8298fec6abcb712135576399e5_2_935x1024.jpeg",
+    "location": "La Santa, C. San Benito, 5, 47003 Valladolid",
+    "zone": "Zona Centro",
+    "description": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo lunes 7 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche.",
+    "summary": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo lunes 7 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche.",
+    "performances": [
+      "Xangai",
+      "Pani",
+      "Furones"
+    ],
+    "organizers": [
+      "La Santa Coctelería y Montellen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6541309,
+      "lng": -4.7290258,
+      "source": "Google Maps (consulta manual; ficha La Santa)",
+      "query": "La Santa, C. San Benito, 5, 47003 Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.093Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 730,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Xangai & Pani & Furones (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/16aa4376bf6b4b8298fec6abcb712135576399e5_2_935x1024.jpeg",
+    "location": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid",
+    "zone": "Zona Centro",
+    "description": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo lunes 7 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche.",
+    "summary": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo lunes 7 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche.",
+    "performances": [
+      "Xangai",
+      "Pani",
+      "Furones"
+    ],
+    "organizers": [
+      "La Santa Coctelería y Montellen"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6532344,
+      "lng": -4.728258,
+      "source": "Google Maps (consulta manual; ficha Restaurante Montellén)",
+      "query": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.093Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 731,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "21:00",
+    "endTime": "22:00",
+    "title": "Lost Way (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba1a0f0ea54aac8311414adeed75fc92e0245c43_2_819x1024.jpeg",
+    "location": "Plaza de la Universidad",
+    "zone": "Zona Centro",
+    "description": "La banda Lost Way llega a la Plaza de la Universidad en Valladolid para ofrecer un espectáculo en directo el próximo 10 de septiembre de 2026 a las 21:00 horas.",
+    "summary": "La banda Lost Way llega a la Plaza de la Universidad en Valladolid para ofrecer un espectáculo en directo el próximo 10 de septiembre de 2026 a las 21:00 horas.",
+    "performances": [],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6528225,
+      "lng": -4.7223575,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 61281999,
+      "query": "Plaza de la Universidad, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 732,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "17:00",
+    "endTime": "20:00",
+    "title": "Richi Risco (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/71c259465563da1c70f210cbe3dc58e2d88807d3_2_923x1024.jpeg",
+    "location": "La Santa Coctelería Zona San Benito",
+    "zone": "Zona Centro",
+    "description": "Richi Risco llega a la Zona San Benito para ofrecer una actuación musical en el establecimiento La Santa Coctelería. El evento tendrá lugar este viernes 11 de septiembre, en un horario comprendido entre las 17:00 y las 20:00 horas.",
+    "summary": "Richi Risco llega a la Zona San Benito para ofrecer una actuación musical en el establecimiento La Santa Coctelería. El evento tendrá lugar este viernes 11 de septiembre, en un horario comprendido entre las 17:00 y las 20:00 horas.",
+    "performances": [],
+    "organizers": [
+      "La Santa Coctelería"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6541309,
+      "lng": -4.7290258,
+      "source": "Google Maps (consulta manual; ficha La Santa)",
+      "query": "La Santa Coctelería Zona San Benito, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:09.094Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 733,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "17:00",
+    "endTime": "21:00",
+    "title": "Cabina abierta (Sesión de vinilos)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/63c883c17d936d4f80cbb504215042c075491895_2_819x1024.jpeg",
+    "location": "Bicoca Records, Empecinado 5",
+    "zone": "Zona Centro",
+    "description": "Bicoca Records organiza una nueva edición de su iniciativa de cabina abierta, un espacio dedicado a los amantes de la música en formato físico. La cita tendrá lugar el próximo 12 de septiembre, en un horario comprendido entre las 17:00 y las 21:00 horas.",
+    "summary": "Bicoca Records organiza una nueva edición de su iniciativa de cabina abierta, un espacio dedicado a los amantes de la música en formato físico. La cita tendrá lugar el próximo 12 de septiembre, en un horario comprendido entre las 17:00 y las 21:00 horas.",
+    "performances": [],
+    "organizers": [
+      "Bicoca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6564533,
+      "lng": -4.7220586,
+      "source": "Inferidas por coincidencia de lugar con el evento local 600",
+      "osmType": "node",
+      "osmId": 6564582082,
+      "query": "Bicoca Records, Empecinado 5, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-31T11:40:41.346Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 734,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "09:00",
+    "endTime": "10:00",
+    "title": "Ruta en Moto Ribera del Duero (Programa)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bb46df71840d38fe57ce1ac59cca756100e95a0b_2_691x1024.jpeg",
+    "location": "Café Real (fuente: Bar La Real), C. las Lagares, 2, 09441 Sotillo de la Ribera, Burgos",
+    "zone": "Zona Centro",
+    "description": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "summary": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "performances": [
+      "Entrega de acreditaciones y café para los inscritos"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.7763145,
+      "lng": -3.8245266,
+      "source": "Google Maps (consulta manual; ficha Café Real, correspondiente al Bar La Real del programa)",
+      "query": "Café Real (fuente: Bar La Real), C. las Lagares, 2, 09441 Sotillo de la Ribera, Burgos, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:10.347Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 735,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "11:00",
+    "endTime": "11:30",
+    "title": "Ruta en Moto Ribera del Duero (Programa)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bb46df71840d38fe57ce1ac59cca756100e95a0b_2_691x1024.jpeg",
+    "location": "Bodega Dehesa de los Canónigos, Carretera Renedo-Pesquera, Km 37, 47315 Pesquera de Duero, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "summary": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "performances": [
+      "Minuto de silencio en memoria de Iván y su familia"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6360179,
+      "lng": -4.2159248,
+      "source": "Google Maps (consulta manual; ficha Bodega Dehesa de los Canónigos)",
+      "query": "Bodega Dehesa de los Canónigos, Carretera Renedo-Pesquera, Km 37, 47315 Pesquera de Duero, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:10.347Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 736,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "12:25",
+    "endTime": "14:00",
+    "title": "Ruta en Moto Ribera del Duero (Programa)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bb46df71840d38fe57ce1ac59cca756100e95a0b_2_691x1024.jpeg",
+    "location": "Bodegas Carramimbre, Carretera Zaragoza a Portugal por Zamora, Padilla de Duero, 47300 Peñafiel, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "summary": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "performances": [
+      "Visita guiada a la bodega"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6106963,
+      "lng": -4.1558619,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 1304001174,
+      "query": "Bodegas Carramimbre, Carretera Zaragoza a Portugal por Zamora, Padilla de Duero, 47300 Peñafiel, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:10.347Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 737,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "14:00",
+    "endTime": "15:20",
+    "title": "Ruta en Moto Ribera del Duero (Programa)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bb46df71840d38fe57ce1ac59cca756100e95a0b_2_691x1024.jpeg",
+    "location": "Bodegas Carramimbre, Carretera Zaragoza a Portugal por Zamora, Padilla de Duero, 47300 Peñafiel, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "summary": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "performances": [
+      "Cata de vinos y aperitivo"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6106963,
+      "lng": -4.1558619,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 1304001174,
+      "query": "Bodegas Carramimbre, Carretera Zaragoza a Portugal por Zamora, Padilla de Duero, 47300 Peñafiel, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:10.347Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 738,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "16:30",
+    "endTime": null,
+    "title": "Ruta en Moto Ribera del Duero (Programa)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/bb46df71840d38fe57ce1ac59cca756100e95a0b_2_691x1024.jpeg",
+    "location": "Café Real (fuente: Bar La Real), C. las Lagares, 2, 09441 Sotillo de la Ribera, Burgos",
+    "zone": "Zona Centro",
+    "description": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "summary": "La Ruta en Moto Ribera del Duero invita a los entusiastas del motociclismo a una jornada especial de convivencia y enoturismo el próximo 13 de septiembre. El recorrido comienza a las 10:00 h tras la entrega de acreditaciones en el Bar La Real, integrando un momento de homenaje en memoria de Iván y su familia.",
+    "performances": [
+      "Sorteo de regalos"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.7763145,
+      "lng": -3.8245266,
+      "source": "Google Maps (consulta manual; ficha Café Real, correspondiente al Bar La Real del programa)",
+      "query": "Café Real (fuente: Bar La Real), C. las Lagares, 2, 09441 Sotillo de la Ribera, Burgos, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-01T16:16:10.347Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
   }
 ]
