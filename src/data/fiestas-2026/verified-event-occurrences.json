@@ -1248,5 +1248,30 @@
       }
     ],
     "source": "Cartel remoto del 1er Torneo Baloncesto Veteranos inspeccionado visualmente (11 al 13 de septiembre, sin desglose diario) y ficha oficial de la Fundación Municipal de Deportes: https://www.fmdva.org/eventos/listado-de-eventos/1%C2%BA-torneo-baloncesto-veteranos-valladolid/. La ficha oficial concreta actividad el 12 de septiembre de 10:00 a 14:00 y de 16:00 a 20:00, y el 13 de septiembre de 10:00 a 14:00, en el Pabellón Polideportivo Lalo García. Coordenadas resueltas con OpenStreetMap Nominatim mediante la consulta «Pabellón Polideportivo Lalo García, Valladolid, España»: 41.6349531,-4.7662401."
+  },
+  "2388": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "startTime": "20:00", "endTime": "23:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["DJ Guti", "DJ Estefano Di Massi"]},
+      {"date": "2026-09-05", "startTime": "18:00", "endTime": "21:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Dinosaurios"]},
+      {"date": "2026-09-06", "startTime": "18:00", "endTime": "21:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Jamones"]},
+      {"date": "2026-09-07", "startTime": "13:00", "endTime": "16:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Juan La Forga"]},
+      {"date": "2026-09-08", "startTime": "18:00", "endTime": "21:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Los del Lío"]},
+      {"date": "2026-09-09", "startTime": "13:00", "endTime": "16:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Ralea"]},
+      {"date": "2026-09-10", "startTime": "13:00", "endTime": "16:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Los Pichas"]},
+      {"date": "2026-09-11", "startTime": "18:00", "endTime": "21:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Dinosaurios"]},
+      {"date": "2026-09-13", "startTime": "13:00", "endTime": "16:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Bloody Mary"]}
+    ],
+    "source": "Cartel remoto de Cascajares Fest descargado e inspeccionado visualmente: actividad los días 4, 5, 6, 7, 8, 9, 10, 11 y 13 de septiembre de 2026, sin actividad el día 12; el cartel asigna respectivamente DJ Guti y DJ Estefano Di Massi (20:00–23:00), Dinosaurios (18:00–21:00), Jamones (18:00–21:00), Juan La Forga (13:00–16:00), Los del Lío (18:00–21:00), Ralea (13:00–16:00), Los Pichas (13:00–16:00), Dinosaurios (18:00–21:00) y Bloody Mary (13:00–16:00), siempre en el Escenario Cascajares. La ubicación se contrastó con Calle de Cascajares en OpenStreetMap Nominatim (41.6521922,-4.7240083) y con la referencia de Google Maps ya usada para los locales del mismo tramo."
   }
 }

@@ -25540,5 +25540,366 @@
     "tags": [
       "Deporte"
     ]
+  },
+  {
+    "id": 776,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Cascajares Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "performances": [
+      "DJ Guti",
+      "DJ Estefano Di Massi"
+    ],
+    "organizers": [
+      "El Farolito, Diaynoche, La Carcava"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 777,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Cascajares Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "performances": [
+      "Dinosaurios"
+    ],
+    "organizers": [
+      "El Farolito, Diaynoche, La Carcava"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 778,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Cascajares Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "performances": [
+      "Jamones"
+    ],
+    "organizers": [
+      "El Farolito, Diaynoche, La Carcava"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 779,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "title": "Cascajares Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "performances": [
+      "Juan La Forga"
+    ],
+    "organizers": [
+      "El Farolito, Diaynoche, La Carcava"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 780,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Cascajares Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "performances": [
+      "Los del Lío"
+    ],
+    "organizers": [
+      "El Farolito, Diaynoche, La Carcava"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 781,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "title": "Cascajares Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "performances": [
+      "Ralea"
+    ],
+    "organizers": [
+      "El Farolito, Diaynoche, La Carcava"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 782,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "title": "Cascajares Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "performances": [
+      "Los Pichas"
+    ],
+    "organizers": [
+      "El Farolito, Diaynoche, La Carcava"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 783,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Cascajares Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "performances": [
+      "Dinosaurios"
+    ],
+    "organizers": [
+      "El Farolito, Diaynoche, La Carcava"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 784,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "13:00",
+    "endTime": "16:00",
+    "title": "Cascajares Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "performances": [
+      "Bloody Mary"
+    ],
+    "organizers": [
+      "El Farolito, Diaynoche, La Carcava"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
   }
 ]
