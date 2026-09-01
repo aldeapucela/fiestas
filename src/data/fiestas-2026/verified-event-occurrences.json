@@ -750,40 +750,46 @@
         "date": "2026-09-05",
         "startTime": "18:00",
         "endTime": "21:00",
+        "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
         "performances": ["Chejo"]
       },
       {
         "date": "2026-09-07",
         "startTime": "18:00",
         "endTime": "21:00",
+        "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
         "performances": ["Mr. Kitos vs Perejius"]
       },
       {
         "date": "2026-09-09",
         "startTime": "18:00",
         "endTime": "21:00",
+        "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
         "performances": ["Carlos Jean"]
       },
       {
         "date": "2026-09-10",
         "startTime": "18:00",
         "endTime": "21:00",
+        "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
         "performances": ["Los del Lío"]
       },
       {
         "date": "2026-09-12",
         "startTime": "18:00",
         "endTime": "21:00",
+        "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
         "performances": ["Paco"]
       },
       {
         "date": "2026-09-13",
         "startTime": "18:00",
         "endTime": "21:00",
+        "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
         "performances": ["Josemy & D. Triana"]
       }
     ],
-    "source": "Cartel remoto de The Bowie Street Festival 2026, descargado e inspeccionado visualmente: actuaciones los días 5 (Chejo), 7 (Mr. Kitos vs Perejius), 9 (Carlos Jean), 10 (Los del Lío), 12 (Paco) y 13 de septiembre (Josemy & D. Triana), todas de 18:00 a 21:00. El cartel no identifica un lugar concreto; la ficha remota tampoco proporciona ubicación representable."
+    "source": "Cartel remoto de The Bowie Street Festival 2026, descargado e inspeccionado visualmente: actuaciones los días 5 (Chejo), 7 (Mr. Kitos vs Perejius), 9 (Carlos Jean), 10 (Los del Lío), 12 (Paco) y 13 de septiembre (Josemy & D. Triana), todas de 18:00 a 21:00. La ubicación se completa con Google Maps: The Bowie, C. Cánovas del Castillo, 4, 47002 Valladolid; contraste Nominatim con la consulta The Bowie, Valladolid, España."
   },
   "2371": {
     "dates": [

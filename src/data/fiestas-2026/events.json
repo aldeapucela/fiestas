@@ -23870,5 +23870,233 @@
     "tags": [
       "Otros"
     ]
+  },
+  {
+    "id": 716,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "The Bowie Street Festival 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b0eee157b486da86e9be313c1cbf02b2b0d9376f_2_818x1024.jpeg",
+    "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "summary": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "performances": [
+      "Chejo"
+    ],
+    "organizers": [
+      "The Bowie"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520561,
+      "lng": -4.7254466,
+      "source": "Google Maps (consulta manual; ficha The Bowie)",
+      "query": "Bar Bowie, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 717,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "The Bowie Street Festival 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b0eee157b486da86e9be313c1cbf02b2b0d9376f_2_818x1024.jpeg",
+    "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "summary": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "performances": [
+      "Mr. Kitos vs Perejius"
+    ],
+    "organizers": [
+      "The Bowie"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520561,
+      "lng": -4.7254466,
+      "source": "Google Maps (consulta manual; ficha The Bowie)",
+      "query": "Bar Bowie, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 718,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "The Bowie Street Festival 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b0eee157b486da86e9be313c1cbf02b2b0d9376f_2_818x1024.jpeg",
+    "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "summary": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "performances": [
+      "Carlos Jean"
+    ],
+    "organizers": [
+      "The Bowie"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520561,
+      "lng": -4.7254466,
+      "source": "Google Maps (consulta manual; ficha The Bowie)",
+      "query": "Bar Bowie, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 719,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "The Bowie Street Festival 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b0eee157b486da86e9be313c1cbf02b2b0d9376f_2_818x1024.jpeg",
+    "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "summary": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "performances": [
+      "Los del Lío"
+    ],
+    "organizers": [
+      "The Bowie"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520561,
+      "lng": -4.7254466,
+      "source": "Google Maps (consulta manual; ficha The Bowie)",
+      "query": "Bar Bowie, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 720,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "The Bowie Street Festival 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b0eee157b486da86e9be313c1cbf02b2b0d9376f_2_818x1024.jpeg",
+    "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "summary": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "performances": [
+      "Paco"
+    ],
+    "organizers": [
+      "The Bowie"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520561,
+      "lng": -4.7254466,
+      "source": "Google Maps (consulta manual; ficha The Bowie)",
+      "query": "Bar Bowie, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 721,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "The Bowie Street Festival 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b0eee157b486da86e9be313c1cbf02b2b0d9376f_2_818x1024.jpeg",
+    "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "summary": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "performances": [
+      "Josemy & D. Triana"
+    ],
+    "organizers": [
+      "The Bowie"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520561,
+      "lng": -4.7254466,
+      "source": "Google Maps (consulta manual; ficha The Bowie)",
+      "query": "Bar Bowie, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
   }
 ]
