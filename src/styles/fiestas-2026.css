@@ -9753,7 +9753,7 @@ html.dark .fiestas-community-plan-detail-icon {
   line-height: 1.08;
 }
 
-.fiestas-collaborators-intro > p:last-child {
+.fiestas-collaborators-intro > p {
   max-width: 39rem;
   color: #586273;
   font-size: 0.8rem;
@@ -9843,7 +9843,7 @@ html.dark .fiestas-collaborator-copy strong {
   color: #f7f8fa;
 }
 
-html.dark .fiestas-collaborators-intro > p:last-child,
+html.dark .fiestas-collaborators-intro > p,
 html.dark .fiestas-collaborator-copy small {
   color: #bdc4cf;
 }
