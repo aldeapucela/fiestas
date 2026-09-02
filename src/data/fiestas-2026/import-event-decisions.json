@@ -222,6 +222,94 @@
       "location": "Bar San Pio X, calle Hogar",
       "deletedLocalId": 786,
       "reason": "786 borrado por indicación manual tras revisión de duplicados; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Virgen de San Lorenzo (Concierto Quilombros)",
+      "date": "2026-09-07",
+      "startTime": "20:00",
+      "location": "Plaza Poniente",
+      "deletedLocalId": 842,
+      "reason": "842 integrado en 556 por indicación manual; no reimportar como ficha independiente. Equivale al evento local 556."
+    },
+    {
+      "title": "Tardeos de ferias (Ciclo de eventos)",
+      "date": "2026-09-04",
+      "startTime": "20:00",
+      "location": "In Clan club, C. Bao, s/n, Valladolid",
+      "deletedLocalId": 805,
+      "reason": "805 borrado por indicación manual; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Adn club en Moss club (Evento)",
+      "date": "2026-09-04",
+      "startTime": null,
+      "location": "Moss club",
+      "deletedLocalId": 793,
+      "reason": "793 borrado por indicación manual; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Programación musical Plaza Poniente",
+      "date": "2026-09-04",
+      "startTime": null,
+      "location": "Plaza Poniente",
+      "deletedLocalId": 794,
+      "reason": "794 borrado por indicación manual; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Programación musical Plaza Poniente",
+      "date": "2026-09-05",
+      "startTime": null,
+      "location": "Plaza Poniente",
+      "deletedLocalId": 795,
+      "reason": "795 borrado por indicación manual; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Programación musical Plaza Poniente",
+      "date": "2026-09-06",
+      "startTime": null,
+      "location": "Plaza Poniente",
+      "deletedLocalId": 796,
+      "reason": "796 borrado por indicación manual; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Programación musical Plaza Poniente",
+      "date": "2026-09-07",
+      "startTime": null,
+      "location": "Plaza Poniente",
+      "deletedLocalId": 797,
+      "reason": "797 borrado por indicación manual; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Programación musical Plaza Poniente",
+      "date": "2026-09-08",
+      "startTime": null,
+      "location": "Plaza Poniente",
+      "deletedLocalId": 798,
+      "reason": "798 borrado por indicación manual; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Programación musical Plaza Poniente",
+      "date": "2026-09-09",
+      "startTime": null,
+      "location": "Plaza Poniente",
+      "deletedLocalId": 799,
+      "reason": "799 borrado por indicación manual; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Assceussion Rave (Fiestas San Lorenzo)",
+      "date": "2026-09-11",
+      "startTime": "01:00",
+      "location": "Moss club",
+      "deletedLocalId": 823,
+      "reason": "823 borrado por indicación manual; no reimportar sin revisión manual."
+    },
+    {
+      "title": "Programación musical Plaza Poniente",
+      "date": "2026-09-13",
+      "startTime": null,
+      "location": "Plaza Poniente",
+      "deletedLocalId": 803,
+      "reason": "803 borrado por indicación manual; no reimportar sin revisión manual."
     }
   ]
 }
