@@ -143,16 +143,17 @@
     align-items: center;
     justify-content: center;
     border: 0;
-    border-radius: 0.6rem;
-    background: rgba(102, 81, 125, 0.08);
+    border-radius: 50%;
+    background: rgba(248, 247, 250, 0.96);
+    box-shadow: 0 0.25rem 0.75rem rgba(72, 61, 86, 0.14);
     color: #66517d;
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
 
   .fiestas-scroll-action:hover,
   .fiestas-scroll-action:focus-visible {
-    background: rgba(15, 159, 141, 0.11);
-    color: #0f8f80;
+    background: #0f8f80;
+    color: #fff;
   }
 
   @media (prefers-reduced-motion: reduce) {
@@ -283,10 +284,11 @@
     align-items: center;
     justify-content: center;
     border: 0;
-    border-radius: 0.65rem;
-    background: rgba(102, 81, 125, 0.08);
-    color: #73579f;
-    font-size: 1.12rem;
+    border-radius: 50%;
+    background: rgba(248, 247, 250, 0.96);
+    box-shadow: 0 0.3rem 0.85rem rgba(72, 61, 86, 0.16);
+    color: #66517d;
+    font-size: 1.42rem;
     transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
   }
 
@@ -298,17 +300,18 @@
     align-items: center;
     justify-content: center;
     border: 0;
-    border-radius: 0.65rem;
-    background: rgba(102, 81, 125, 0.08);
-    color: #73579f;
-    font-size: 1.12rem;
+    border-radius: 50%;
+    background: rgba(248, 247, 250, 0.96);
+    box-shadow: 0 0.3rem 0.85rem rgba(72, 61, 86, 0.16);
+    color: #66517d;
+    font-size: 1.42rem;
     transition: background 160ms ease, border-color 160ms ease, color 160ms ease, transform 160ms ease;
   }
 
   .fiestas-share-toggle:hover,
   .fiestas-share-toggle:focus-visible {
-    background: rgba(15, 159, 141, 0.11);
-    color: #0f8f80;
+    background: #0f8f80;
+    color: #fff;
   }
 
   .fiestas-search-toggle:hover,
@@ -4282,15 +4285,27 @@
 
   html.dark .fiestas-scroll-action {
     border-color: transparent;
-    background: rgba(200, 179, 229, 0.12);
-    color: #c8b3e5;
+    background: rgba(35, 41, 51, 0.94);
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.28);
+    color: #f1eef7;
   }
 
   html.dark .fiestas-share-toggle,
   html.dark .fiestas-search-toggle {
     border-color: transparent;
-    background: rgba(200, 179, 229, 0.12);
-    color: #c8b3e5;
+    background: rgba(35, 41, 51, 0.94);
+    box-shadow: 0 0.3rem 0.85rem rgba(0, 0, 0, 0.3);
+    color: #f1eef7;
+  }
+
+  html.dark .fiestas-scroll-action:hover,
+  html.dark .fiestas-scroll-action:focus-visible,
+  html.dark .fiestas-share-toggle:hover,
+  html.dark .fiestas-share-toggle:focus-visible,
+  html.dark .fiestas-search-toggle:hover,
+  html.dark .fiestas-search-toggle:focus-visible {
+    background: #0f766e;
+    color: #fff;
   }
 
   html.dark .fiestas-search-panel:not([hidden]) .fiestas-search {
