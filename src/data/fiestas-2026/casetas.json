@@ -1572,6 +1572,34 @@
         "query": "Calle Ferrari 5, Valladolid, España",
         "accuracy": 1,
         "geocodedAt": "2026-09-01T08:32:28.000Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Trilogía de tapas ahumadas",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-pulled-pork-ahumado",
+                "name": "Pulled pork ahumado",
+                "description": "con salsa barbacoa y gelificación de vino tinto."
+              },
+              {
+                "id": "pincho-chorizo-ahumado",
+                "name": "Chorizo ahumado",
+                "description": "con gelificación de vino tinto."
+              },
+              {
+                "id": "pincho-morcilla-manzana",
+                "name": "Morcilla",
+                "description": "con manzana y gelificación de manzana."
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Las tres tapas comparten una misma base: pan tostado con mantequilla ahumada y una croqueta de chorizo ahumado."
+        ]
       }
     },
     {
