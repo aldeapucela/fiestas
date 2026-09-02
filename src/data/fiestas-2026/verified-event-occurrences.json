@@ -1308,5 +1308,63 @@
       {"date": "2026-09-13", "startTime": "13:00", "endTime": "16:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Bloody Mary"]}
     ],
     "source": "Cartel remoto de Cascajares Fest descargado e inspeccionado visualmente: actividad los días 4, 5, 6, 7, 8, 9, 10, 11 y 13 de septiembre de 2026, sin actividad el día 12; el cartel asigna respectivamente DJ Guti y DJ Estefano Di Massi (20:00–23:00), Dinosaurios (18:00–21:00), Jamones (18:00–21:00), Juan La Forga (13:00–16:00), Los del Lío (18:00–21:00), Ralea (13:00–16:00), Los Pichas (13:00–16:00), Dinosaurios (18:00–21:00) y Bloody Mary (13:00–16:00), siempre en el Escenario Cascajares. La ubicación se contrastó con Calle de Cascajares en OpenStreetMap Nominatim (41.6521922,-4.7240083) y con la referencia de Google Maps ya usada para los locales del mismo tramo."
+  },
+  "2444": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-04",
+        "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+        "performances": ["Noche: Vicky Groovy & Spinky"]
+      },
+      {
+        "date": "2026-09-05",
+        "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+        "performances": ["Noche: Chema Díaz"]
+      },
+      {
+        "date": "2026-09-07",
+        "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+        "performances": [
+          "Noche: Sote",
+          "Nuestro Balcón: Sote / Curro Puertas, Zachy DJ & Daniel Williams"
+        ]
+      },
+      {
+        "date": "2026-09-08",
+        "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+        "performances": ["Nuestro Balcón: John Ceb (special session)"]
+      },
+      {
+        "date": "2026-09-09",
+        "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+        "performances": ["Nuestro Balcón: Sirc Sadie, Chema Díaz & Spinky"]
+      },
+      {
+        "date": "2026-09-10",
+        "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+        "performances": ["Noche: Curro Puertas"]
+      },
+      {
+        "date": "2026-09-11",
+        "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+        "performances": ["Noche: Daniel Williams"]
+      },
+      {
+        "date": "2026-09-12",
+        "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+        "performances": ["Noche: Sirc Sadie"]
+      }
+    ],
+    "source": "Cartel remoto de Ferias 2026 de La Española, descargado e inspeccionado visualmente: actividad los días 4 (Vicky Groovy & Spinky), 5 (Chema Díaz), 7 (Sote; además Nuestro Balcón con Sote / Curro Puertas, Zachy DJ y Daniel Williams), 8 (Nuestro Balcón con John Ceb), 9 (Nuestro Balcón con Sirc Sadie, Chema Díaz y Spinky), 10 (Curro Puertas), 11 (Daniel Williams) y 12 de septiembre (Sirc Sadie); no hay actividad publicada el día 6 y el cartel no indica horarios. La ubicación frente a la Catedral se resolvió con OpenStreetMap Nominatim mediante la consulta «La Española Cuando Besa, C. Arribas, 6, Valladolid, España»: 41.6522738,-4.7236187, ficha «La Española Cuando Besa»; Google Maps confirmó el mismo establecimiento en C. Arribas, 6 con 41.652227,-4.7236123 mediante la consulta «La Española Frente a la Catedral, Valladolid»."
   }
 }

@@ -14288,7 +14288,7 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
     "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Plaza Poniente",
-    "description": "Programación musical de las ferias Virgen de San Lorenzo en Plaza Poniente, con la actuación de Paco Devotion el viernes 4 de septiembre de 20:00 a 23:00 horas. La cita se celebra en Plaza Poniente, con la Boutique y Enboga",
+    "description": "Programación musical de las ferias Virgen de San Lorenzo en Plaza Poniente, con la actuación de Paco Devotion el viernes 4 de septiembre de 20:00 a 23:00 horas. La cita se celebra en Plaza Poniente, con la Boutique y Enboga\n\nInformación ampliada: Paco Devotion llega a la Plaza Poniente para ofrecer un espectáculo musical en el marco de las celebraciones de las Ferias 2026 de la Virgen de San Lorenzo. El evento tendrá lugar el próximo viernes 4 de septiembre, con un horario comprendido entre las 20:00h y las 23:00h.",
     "summary": "Actuación de Paco Devotion en Plaza Poniente dentro de la programación de ferias Virgen de San Lorenzo",
     "performances": [
       "Paco Devotion"
@@ -17689,7 +17689,7 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
     "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Programación musical ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Darío Núñez, Queco y Ángel Rodríguez Información ampliada: las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad",
+    "description": "Programación musical ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Darío Núñez, Queco y Ángel Rodríguez Información ampliada: las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad\n\nInformación ampliada: El evento Warm Up se celebra en el marco de las Ferias de la Virgen de San Lorenzo, teniendo lugar este domingo 6 de septiembre en la Plaza Poniente. La cita musical comenzará a las 20:00h y se extenderá hasta las 23:00h.",
     "summary": "Actuaciones: Darío Núñez, Queco y Ángel Rodríguez",
     "performances": [
       "Darío Núñez",
@@ -17816,7 +17816,7 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
     "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Zona Centro",
-    "description": "Programación musical ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Queco, Yorska y Pani Información ampliada: las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad",
+    "description": "Programación musical ferias 2026 Virgen de San Lorenzo en Plaza Poniente (La Boutique / Enboga), de 20:00 a 23:00. Actuaciones: Queco, Yorska y Pani Información ampliada: las fiestas de la Virgen de San Lorenzo traen consigo una variada programación de espectáculos en la emblemática Plaza Poniente. Durante el mes de septiembre, diversos artistas y grupos se citarán para celebrar este acontecimiento tradicional en el corazón de la ciudad\n\nInformación ampliada: La celebración de las Ferias 2026 presenta el evento Virgen de San Lorenzo, una cita musical que tendrá lugar el próximo miércoles 9 de septiembre. La actividad se desarrollará en la Plaza Poniente, comenzando su programación a partir de las 20:00 horas.",
     "summary": "Actuaciones: Queco, Yorska y Pani",
     "performances": [
       "Queco",
@@ -26515,6 +26515,565 @@
       "query": "Paseo Central del Campo Grande, Valladolid, España",
       "accuracy": 0.8,
       "geocodedAt": "2026-09-02T11:06:54.970Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 832,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Ferias La Española 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cd4b96459e7a6e1f38a88088d7e6a9b1f83071b5_2_717x1024.jpeg",
+    "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "summary": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "performances": [
+      "Noche: Vicky Groovy & Spinky"
+    ],
+    "organizers": [
+      "La Española"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6522738,
+      "lng": -4.7236187,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7579001794,
+      "query": "La Española Cuando Besa, C. Arribas, 6, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:08:05.389Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 833,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Ferias La Española 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cd4b96459e7a6e1f38a88088d7e6a9b1f83071b5_2_717x1024.jpeg",
+    "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "summary": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "performances": [
+      "Noche: Chema Díaz"
+    ],
+    "organizers": [
+      "La Española"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6522738,
+      "lng": -4.7236187,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7579001794,
+      "query": "La Española Cuando Besa, C. Arribas, 6, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:08:05.389Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 834,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Ferias La Española 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cd4b96459e7a6e1f38a88088d7e6a9b1f83071b5_2_717x1024.jpeg",
+    "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "summary": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "performances": [
+      "Noche: Sote",
+      "Nuestro Balcón: Sote / Curro Puertas, Zachy DJ & Daniel Williams"
+    ],
+    "organizers": [
+      "La Española"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6522738,
+      "lng": -4.7236187,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7579001794,
+      "query": "La Española Cuando Besa, C. Arribas, 6, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:08:05.389Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 835,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Ferias La Española 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cd4b96459e7a6e1f38a88088d7e6a9b1f83071b5_2_717x1024.jpeg",
+    "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "summary": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "performances": [
+      "Nuestro Balcón: John Ceb (special session)"
+    ],
+    "organizers": [
+      "La Española"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6522738,
+      "lng": -4.7236187,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7579001794,
+      "query": "La Española Cuando Besa, C. Arribas, 6, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:08:05.389Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 836,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Ferias La Española 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cd4b96459e7a6e1f38a88088d7e6a9b1f83071b5_2_717x1024.jpeg",
+    "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "summary": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "performances": [
+      "Nuestro Balcón: Sirc Sadie, Chema Díaz & Spinky"
+    ],
+    "organizers": [
+      "La Española"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6522738,
+      "lng": -4.7236187,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7579001794,
+      "query": "La Española Cuando Besa, C. Arribas, 6, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:08:05.389Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 837,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Ferias La Española 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cd4b96459e7a6e1f38a88088d7e6a9b1f83071b5_2_717x1024.jpeg",
+    "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "summary": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "performances": [
+      "Noche: Curro Puertas"
+    ],
+    "organizers": [
+      "La Española"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6522738,
+      "lng": -4.7236187,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7579001794,
+      "query": "La Española Cuando Besa, C. Arribas, 6, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:08:05.389Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 838,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Ferias La Española 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cd4b96459e7a6e1f38a88088d7e6a9b1f83071b5_2_717x1024.jpeg",
+    "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "summary": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "performances": [
+      "Noche: Daniel Williams"
+    ],
+    "organizers": [
+      "La Española"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6522738,
+      "lng": -4.7236187,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7579001794,
+      "query": "La Española Cuando Besa, C. Arribas, 6, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:08:05.389Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 839,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Ferias La Española 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cd4b96459e7a6e1f38a88088d7e6a9b1f83071b5_2_717x1024.jpeg",
+    "location": "La Española Cuando Besa, C. Arribas, 6, Valladolid",
+    "zone": "Zona Centro",
+    "description": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "summary": "La discoteca La Española presenta su programación especial para las ferias de 2026, con una serie de actuaciones nocturnas programadas durante el mes de septiembre. El evento se desarrollará en su ubicación frente a la Catedral de Valladolid, ofreciendo una agenda variada de música y entretenimiento.",
+    "performances": [
+      "Noche: Sirc Sadie"
+    ],
+    "organizers": [
+      "La Española"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6522738,
+      "lng": -4.7236187,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 7579001794,
+      "query": "La Española Cuando Besa, C. Arribas, 6, Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:08:05.389Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 840,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:30",
+    "endTime": "21:30",
+    "title": "Leopardas (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/db9bcd79eac604eba8fa0486444f2d69754aeab8_2_774x1024.jpeg",
+    "location": "Faroles",
+    "zone": "Zona Centro",
+    "description": "La banda Leopardas llega a la ciudad para ofrecer una actuación musical en vivo el próximo viernes 4 de septiembre. El evento tendrá lugar en el emblemático espacio de Faroles, en Valladolid, a partir de las 20:30 horas.",
+    "summary": "La banda Leopardas llega a la ciudad para ofrecer una actuación musical en vivo el próximo viernes 4 de septiembre. El evento tendrá lugar en el emblemático espacio de Faroles, en Valladolid, a partir de las 20:30 horas.",
+    "performances": [],
+    "organizers": [
+      "Bicyca Records"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6543105,
+      "lng": -4.7245051,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 5599725859,
+      "query": "Faroles, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:08:05.392Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 841,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Virgen de San Lorenzo (Feria 2026)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/415c5b149dca9ee7910720fde2a4d75fed4d1485_2_584x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "La celebración de las Ferias 2026 de la Virgen de San Lorenzo incluye una noche de música con la actuación de DJs invitados. El evento tendrá lugar el sábado 5 de septiembre en la Plaza Poniente, con un horario comprendido entre las 20:00h y las 23:00h.",
+    "summary": "La celebración de las Ferias 2026 de la Virgen de San Lorenzo incluye una noche de música con la actuación de DJs invitados. El evento tendrá lugar el sábado 5 de septiembre en la Plaza Poniente, con un horario comprendido entre las 20:00h y las 23:00h.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga y La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza del Poniente, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 842,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Virgen de San Lorenzo (Concierto Quilombros)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3277fab7c91d0c5a2e8c6a1251dfd0b0ea894ac5_2_593x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "El evento musical Virgen de San Lorenzo se celebra en el marco de las Ferias 2026. La cita tendrá lugar el próximo lunes 7 de septiembre en la Plaza Poniente, con un horario comprendido entre las 20:00h y las 23:00h.",
+    "summary": "El evento musical Virgen de San Lorenzo se celebra en el marco de las Ferias 2026. La cita tendrá lugar el próximo lunes 7 de septiembre en la Plaza Poniente, con un horario comprendido entre las 20:00h y las 23:00h.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza del Poniente, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 843,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Os Pichas (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/9ac4bc442c42d19b84d5a8c0934de2cd91e13054_2_596x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "La agrupación musical Os Pichas llega a la Plaza Poniente para ofrecer un espectáculo en directo en el marco de las celebraciones de las Ferias 2026. El evento tendrá lugar el próximo martes 8 de septiembre, con un horario comprendido entre las 20:00h y las 23:00h.",
+    "summary": "La agrupación musical Os Pichas llega a la Plaza Poniente para ofrecer un espectáculo en directo en el marco de las celebraciones de las Ferias 2026. El evento tendrá lugar el próximo martes 8 de septiembre, con un horario comprendido entre las 20:00h y las 23:00h.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza del Poniente, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 844,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Dos de Picas (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/78a067c499511d83d1c2fa43bfc505584e842f95_2_586x1024.jpeg",
+    "location": "Plaza Poniente",
+    "zone": "Zona Centro",
+    "description": "El dúo Dos de Picas llega a la Plaza Poniente para formar parte de la programación de las Ferias 2026 de la Virgen de San Lorenzo. La actuación tendrá lugar el próximo jueves 10 de septiembre, en un horario comprendido entre las 20:00 y las 23:00 horas.",
+    "summary": "El dúo Dos de Picas llega a la Plaza Poniente para formar parte de la programación de las Ferias 2026 de la Virgen de San Lorenzo. La actuación tendrá lugar el próximo jueves 10 de septiembre, en un horario comprendido entre las 20:00 y las 23:00 horas.",
+    "performances": [],
+    "organizers": [
+      "Beluga, Enboga & La Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6531571,
+      "lng": -4.7312823,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 24432961,
+      "query": "Plaza del Poniente, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 845,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Vibra 2026 (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
+    "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+    "zone": "Zona Centro",
+    "description": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "summary": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
+    "performances": [
+      "Paco DVT"
+    ],
+    "organizers": [
+      "The Macanudo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521311,
+      "lng": -4.7264818,
+      "source": "Google Maps (consulta manual; ficha de Fuente Dorada)",
+      "query": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T13:13:07.571Z"
     },
     "type": "Otros",
     "ticket": {
