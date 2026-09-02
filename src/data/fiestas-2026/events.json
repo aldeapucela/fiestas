@@ -24003,45 +24003,6 @@
     ]
   },
   {
-    "id": 762,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "18:00",
-    "endTime": null,
-    "title": "Vibra 2026 (Festival)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
-    "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
-    "zone": "Zona Centro",
-    "description": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días\n\nInformación ampliada: El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días.",
-    "summary": "El festival Vibra 2026 llega para ofrecer una programación musical variada durante el mes de septiembre. El evento se desarrolla en la calle Matías Sagrador, junto a Fuente Dorada, con actuaciones programadas en diferentes días",
-    "performances": [
-      "Paco Dvt"
-    ],
-    "organizers": [
-      "The Macanudo"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6521311,
-      "lng": -4.7264818,
-      "source": "Google Maps (consulta manual; ficha de Fuente Dorada)",
-      "query": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T19:05:36.302Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 763,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
