@@ -1,0 +1,227 @@
+{
+  "blockedRemoteIds": {
+    "2148": {
+      "reason": "Ubicación ambigua en Las Moreras; no se fuerza el cruce."
+    }
+  },
+  "duplicateRemoteToLocal": {
+    "1999": {
+      "localId": 474,
+      "reason": "Registro remoto duplicado de un evento ya importado con horario actualizado."
+    },
+    "2424": {
+      "localId": 756,
+      "reason": "Registro remoto equivalente al evento local 756 tras unificar el evento local 789; no crear ficha independiente."
+    }
+  },
+  "blockedEventFingerprints": [
+    {
+      "title": "Vibra 2026 (Festival)",
+      "date": "2026-09-07",
+      "startTime": "18:00",
+      "location": "C/ Matías Sagrador (junto a Fuente Dorada), Valladolid",
+      "deletedLocalId": 762,
+      "reason": "Recreaba el evento local 762 eliminado en 415d2ad; no reimportar con otro ID."
+    },
+    {
+      "title": "Farah Diva - Actuaciones feria y fiestas 2026",
+      "date": "2026-09-05",
+      "startTime": "21:00",
+      "location": "Plaza España",
+      "deletedLocalId": 763,
+      "reason": "Conflicto 1: unificado por indicación manual. No reimportar como ficha independiente; equivale al evento local 68."
+    },
+    {
+      "title": "Eventos ferias en la casa de zorrilla",
+      "date": "2026-09-05",
+      "startTime": "21:00",
+      "location": "Casa de Zorrilla, calle Fray Luis de Granada, 1, Valladolid",
+      "deletedLocalId": 722,
+      "reason": "Conflicto 2: unificado por indicación manual. No reimportar como ficha independiente; equivale al evento local 431."
+    },
+    {
+      "title": "Conciertos de Fiestas 2026 en La Pera Limonera",
+      "date": "2026-09-08",
+      "startTime": "19:00",
+      "location": "La Pera Limonera, Playa de las Moreras",
+      "deletedLocalId": 828,
+      "reason": "Conflicto 3: unificado por indicación manual. No reimportar como ficha independiente; equivale al evento local 433."
+    },
+    {
+      "title": "Las Doñas (Gira de actuaciones)",
+      "date": "2026-09-06",
+      "startTime": "17:00",
+      "location": "Cristongo / Pera Limonera, Paseo de Marcelino Martín ‘El Catarro’, Valladolid",
+      "deletedLocalId": 811,
+      "reason": "Conflicto 9: 811 integrado en 516; 516 es el evento global. No reimportar como ficha independiente; equivale al evento local 516."
+    },
+    {
+      "title": "Las Doñas (Gira de actuaciones)",
+      "date": "2026-09-07",
+      "startTime": "18:00",
+      "location": "Cotorrazo (La Cotorra), C. Caridad, 2, Valladolid",
+      "deletedLocalId": 812,
+      "reason": "Conflicto 10: 812 integrado en 566. No reimportar como ficha independiente; equivale al evento local 566."
+    },
+    {
+      "title": "Santi Borja y Emilio (Concierto)",
+      "date": "2026-09-05",
+      "startTime": "13:00",
+      "location": "Dovleuve, Paseo de Zorrilla 17",
+      "deletedLocalId": 785,
+      "reason": "Conflicto 14: 785 integrado en 752. No reimportar como ficha independiente; equivale al evento local 752."
+    },
+    {
+      "title": "Pimpin de \"Los Lunares\" (Concierto en terraza)",
+      "date": "2026-09-06",
+      "startTime": "13:00",
+      "location": "Paseo de Zorrilla 17",
+      "deletedLocalId": 787,
+      "reason": "Conflicto 15: 787 integrado en 753. No reimportar como ficha independiente; equivale al evento local 753."
+    },
+    {
+      "title": "Yaiza Herrero (Concierto)",
+      "date": "2026-09-12",
+      "startTime": "13:00",
+      "location": "Dovleuve (Terraza), Paseo de Zorrilla 17",
+      "deletedLocalId": 788,
+      "reason": "Conflicto 16: 788 integrado en 755. No reimportar como ficha independiente; equivale al evento local 755."
+    },
+    {
+      "title": "Tocado y Hundido (Concierto)",
+      "date": "2026-09-13",
+      "startTime": "13:00",
+      "location": "Dovleuve (Terraza), Paseo de Zorrilla 17",
+      "deletedLocalId": 789,
+      "reason": "Conflicto 17: 789 integrado en 756. No reimportar como ficha independiente; equivale al evento local 756."
+    },
+    {
+      "title": "Dinosaurios DJs (Sesiones de música)",
+      "date": "2026-09-11",
+      "startTime": "18:00",
+      "location": "Calle Cascajares (zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+      "deletedLocalId": 809,
+      "reason": "Conflicto 18: 809 integrado en 783. No reimportar como ficha independiente; equivale al evento local 783."
+    },
+    {
+      "title": "Eventos ferias en la casa de zorrilla",
+      "date": "2026-09-09",
+      "startTime": "21:00",
+      "location": "Casa de Zorrilla, calle Fray Luis de Granada, 1, Valladolid",
+      "deletedLocalId": 764,
+      "reason": "Conflicto 4: borrado por indicación manual. No reimportar sin revisión manual."
+    },
+    {
+      "title": "Eventos ferias en la casa de zorrilla",
+      "date": "2026-09-10",
+      "startTime": "21:00",
+      "location": "Casa de Zorrilla, calle Fray Luis de Granada, 1, Valladolid",
+      "deletedLocalId": 725,
+      "reason": "Conflicto 5: borrado por indicación manual. No reimportar sin revisión manual."
+    },
+    {
+      "title": "OrbitalClub - Sesiones Fiestas 2026",
+      "date": "2026-09-11",
+      "startTime": "23:30",
+      "location": "Orbital Club, Plaza de la Rinconada, Valladolid",
+      "deletedLocalId": 808,
+      "reason": "Conflicto 6: borrado por indicación manual. No reimportar sin revisión manual."
+    },
+    {
+      "title": "Eventos ferias en la casa de zorrilla",
+      "date": "2026-09-11",
+      "startTime": "21:00",
+      "location": "Casa de Zorrilla, calle Fray Luis de Granada, 1, Valladolid",
+      "deletedLocalId": 765,
+      "reason": "Conflicto 7: borrado por indicación manual. No reimportar sin revisión manual."
+    },
+    {
+      "title": "Eventos ferias en la casa de zorrilla",
+      "date": "2026-09-12",
+      "startTime": "21:00",
+      "location": "Casa de Zorrilla, calle Fray Luis de Granada, 1, Valladolid",
+      "deletedLocalId": 766,
+      "reason": "Conflicto 8: borrado por indicación manual. No reimportar sin revisión manual."
+    },
+    {
+      "title": "Tardeos Canallas (Ferias 2026)",
+      "date": "2026-09-12",
+      "startTime": "20:00",
+      "location": "Terraza Puerto Canalla, Plaza del Poniente, 6, Valladolid",
+      "deletedLocalId": 818,
+      "reason": "Conflicto 11: borrado por indicación manual. No reimportar sin revisión manual."
+    },
+    {
+      "title": "Dos de Picas (Presentación de canción)",
+      "date": "2026-09-10",
+      "startTime": "20:00",
+      "location": "La Boutique y Enboga, Plaza del Poniente, Valladolid",
+      "deletedLocalId": 626,
+      "reason": "Conflicto 12: borrado por indicación manual. No reimportar sin revisión manual."
+    },
+    {
+      "title": "Bandido (Fiestas de San Lorenzo 2026)",
+      "date": "2026-09-07",
+      "startTime": "16:00",
+      "location": "Bandido Techno Room, Pl. del Pte., 4",
+      "deletedLocalId": 815,
+      "reason": "Conflicto 13: borrado por indicación manual. No reimportar sin revisión manual."
+    },
+    {
+      "title": "Conciertos de Fiestas 2026 en La Pera Limonera",
+      "date": "2026-09-06",
+      "startTime": "17:00",
+      "location": "La Pera Limonera, Playa de las Moreras",
+      "deletedLocalId": 826,
+      "reason": "Conflicto adicional: 826 integrado en 516 tras marcar 516 como evento global de Super Cristongo. No reimportar como ficha independiente; equivale al evento local 516."
+    },
+    {
+      "title": "Os Pichas (Concierto)",
+      "date": "2026-09-08",
+      "startTime": "20:00",
+      "location": "Plaza Poniente",
+      "deletedLocalId": 843,
+      "reason": "843 integrado en 557 por indicación manual; no reimportar como ficha independiente. Equivale al evento local 557."
+    },
+    {
+      "title": "Dos de Picas (Concierto)",
+      "date": "2026-09-10",
+      "startTime": "20:00",
+      "location": "Plaza Poniente",
+      "deletedLocalId": 844,
+      "reason": "844 integrado en 559 por indicación manual; no reimportar como ficha independiente. Equivale al evento local 559."
+    },
+    {
+      "title": "Les Castizos y Jorge Tejedor (Concierto)",
+      "date": "2026-09-04",
+      "startTime": "20:00",
+      "location": "Pera Limonera",
+      "deletedLocalId": 804,
+      "reason": "804 integrado en 703 por indicación manual; no reimportar como ficha independiente. Equivale al evento local 703."
+    },
+    {
+      "title": "Los Patricios (Concierto)",
+      "date": "2026-09-08",
+      "startTime": "20:00",
+      "location": "Paseo de Zorrilla 17 (Terraza) Paseo de Zorrilla 17",
+      "deletedLocalId": 829,
+      "reason": "829 integrado en 754 por indicación manual; no reimportar como ficha independiente. Equivale al evento local 754."
+    },
+    {
+      "title": "Vándalo en Fiestas (Programación Especial)",
+      "date": "2026-09-11",
+      "startTime": "20:00",
+      "location": "Vándalo Bar",
+      "deletedLocalId": 792,
+      "reason": "792 integrado en 427 por indicación manual; no reimportar como ficha independiente. Equivale al evento local 427."
+    },
+    {
+      "title": "Dos de Picas (Presentación musical)",
+      "date": "2026-09-06",
+      "startTime": "13:00",
+      "location": "Bar San Pio X, calle Hogar",
+      "deletedLocalId": 786,
+      "reason": "786 borrado por indicación manual tras revisión de duplicados; no reimportar sin revisión manual."
+    }
+  ]
+}

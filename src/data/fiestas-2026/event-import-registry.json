@@ -1427,9 +1427,8 @@
           "reason": "Censo histórico de informes de importación."
         },
         "day-2026-09-10": {
-          "status": "linked",
-          "localEventId": "626",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-11": {
           "status": "linked",
@@ -1500,8 +1499,8 @@
         },
         "day-2026-09-06": {
           "status": "linked",
-          "localEventId": "811",
-          "reason": "Censo histórico de informes de importación."
+          "localEventId": "516",
+          "reason": "Actualizado tras resolver duplicados locales; la ocurrencia apunta al evento conservado."
         },
         "day-2026-09-07": {
           "status": "pending_review",
@@ -2028,8 +2027,8 @@
         },
         "day-2026-09-08": {
           "status": "linked",
-          "localEventId": "828",
-          "reason": "Censo histórico de informes de importación."
+          "localEventId": "433",
+          "reason": "Actualizado tras resolver duplicados locales; la ocurrencia apunta al evento conservado."
         }
       }
     },
@@ -2102,8 +2101,8 @@
       "occurrences": {
         "day-2026-09-05": {
           "status": "linked",
-          "localEventId": "722",
-          "reason": "Censo histórico de informes de importación."
+          "localEventId": "431",
+          "reason": "Actualizado tras resolver duplicados locales; la ocurrencia apunta al evento conservado."
         },
         "day-2026-09-06": {
           "status": "linked",
@@ -2111,24 +2110,20 @@
           "reason": "Censo histórico de informes de importación."
         },
         "day-2026-09-09": {
-          "status": "linked",
-          "localEventId": "764",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-10": {
-          "status": "linked",
-          "localEventId": "725",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-11": {
-          "status": "linked",
-          "localEventId": "765",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-12": {
-          "status": "linked",
-          "localEventId": "766",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-13": {
           "status": "linked",
@@ -2219,8 +2214,8 @@
         },
         "day-2026-09-11": {
           "status": "linked",
-          "localEventId": "792",
-          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+          "localEventId": "427",
+          "reason": "Actualizado tras resolver duplicados locales; la ocurrencia apunta al evento conservado."
         },
         "day-2026-09-12": {
           "status": "linked",
@@ -2337,8 +2332,8 @@
       "occurrences": {
         "single": {
           "status": "linked",
-          "localEventId": "785",
-          "reason": "Censo histórico de informes de importación."
+          "localEventId": "752",
+          "reason": "Actualizado tras resolver duplicados locales; la ocurrencia apunta al evento conservado."
         }
       }
     },
@@ -2346,8 +2341,8 @@
       "occurrences": {
         "single": {
           "status": "linked",
-          "localEventId": "787",
-          "reason": "Censo histórico de informes de importación."
+          "localEventId": "753",
+          "reason": "Actualizado tras resolver duplicados locales; la ocurrencia apunta al evento conservado."
         }
       }
     },
@@ -2355,8 +2350,8 @@
       "occurrences": {
         "single": {
           "status": "linked",
-          "localEventId": "829",
-          "reason": "Censo histórico de informes de importación."
+          "localEventId": "754",
+          "reason": "Actualizado tras resolver duplicados locales; la ocurrencia apunta al evento conservado."
         }
       }
     },
@@ -2364,8 +2359,8 @@
       "occurrences": {
         "single": {
           "status": "linked",
-          "localEventId": "788",
-          "reason": "Censo histórico de informes de importación."
+          "localEventId": "755",
+          "reason": "Actualizado tras resolver duplicados locales; la ocurrencia apunta al evento conservado."
         }
       }
     },
@@ -2389,9 +2384,8 @@
     "2426": {
       "occurrences": {
         "single": {
-          "status": "linked",
-          "localEventId": "786",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         }
       }
     },
@@ -2576,6 +2570,13 @@
         "las-donas-gira-de-actuaciones"
       ]
     },
+    "626": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "dos-de-picas-presentacion-de-cancion"
+      ]
+    },
     "648": {
       "targetEventId": "427",
       "reason": "Evento fusionado durante la normalización del issue 66.",
@@ -2616,6 +2617,20 @@
       "reason": "Evento fusionado durante la normalización del issue 66.",
       "oldSlugs": [
         "conciertos-de-fiestas-2026-en-la-pera-limonera"
+      ]
+    },
+    "722": {
+      "targetEventId": "431",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "eventos-ferias-en-la-casa-de-zorrilla"
+      ]
+    },
+    "725": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "eventos-ferias-en-la-casa-de-zorrilla"
       ]
     },
     "742": {
@@ -2723,6 +2738,27 @@
         "tardeos-de-ferias-ciclo-de-eventos"
       ]
     },
+    "764": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "eventos-ferias-en-la-casa-de-zorrilla"
+      ]
+    },
+    "765": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "eventos-ferias-en-la-casa-de-zorrilla"
+      ]
+    },
+    "766": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "eventos-ferias-en-la-casa-de-zorrilla"
+      ]
+    },
     "768": {
       "targetEventId": "566",
       "reason": "Evento fusionado durante la normalización del issue 66.",
@@ -2749,6 +2785,83 @@
       "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
       "oldSlugs": [
         "assceussion-rave-fiestas-san-lorenzo"
+      ]
+    },
+    "785": {
+      "targetEventId": "752",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "santi-borja-y-emilio-concierto"
+      ]
+    },
+    "786": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "dos-de-picas-presentacion-musical"
+      ]
+    },
+    "787": {
+      "targetEventId": "753",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "pimpin-de-los-lunares-concierto-en-terraza"
+      ]
+    },
+    "788": {
+      "targetEventId": "755",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "yaiza-herrero-concierto"
+      ]
+    },
+    "792": {
+      "targetEventId": "427",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "vandalo-en-fiestas-programacion-especial"
+      ]
+    },
+    "804": {
+      "targetEventId": "703",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "les-castizos-y-jorge-tejedor-concierto"
+      ]
+    },
+    "811": {
+      "targetEventId": "516",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "las-donas-gira-de-actuaciones"
+      ]
+    },
+    "828": {
+      "targetEventId": "433",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "conciertos-de-fiestas-2026-en-la-pera-limonera"
+      ]
+    },
+    "829": {
+      "targetEventId": "754",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "los-patricios-concierto"
+      ]
+    },
+    "843": {
+      "targetEventId": "557",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "os-pichas-concierto"
+      ]
+    },
+    "844": {
+      "targetEventId": "559",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "dos-de-picas-concierto"
       ]
     }
   }
