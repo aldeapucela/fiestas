@@ -364,48 +364,6 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e44723f2db3b2797fa257a0cc06524493cc5e83c_2_1024x1024.jpeg"
   },
   {
-    "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
-    "location": "Calle Bao junto a Plaza del Rosarillo",
-    "zone": "Plaza del Rosarillo",
-    "organizers": [
-      "inClan club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ],
-    "id": 443,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de ferias: set house remember",
-    "description": "Tardeo de ferias al aire libre en calle Bao junto a Plaza del Rosarillo. Set house remember con DJ Y4gger y DJ Chusky",
-    "summary": "Set house remember al aire libre con DJ Y4gger y DJ Chusky",
-    "performances": [
-      "DJ Y4gger",
-      "DJ Chusky"
-    ]
-  },
-  {
     "id": 11,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
@@ -794,44 +752,6 @@
     "image": "https://www.valladolid.es/es/ayuntamiento/notas-prensa/consejo-local-juventud-presenta-programacion-lorencito-fest.ficheros/1201123-20260710%20presenta%20programaci%C3%B3n%20Lorencito%20Fest%20cartel.jpg/g%2C1201123-20260710%20presenta%20programaci%C3%B3n%20Lorencito%20Fest%20cartel.jpg"
   },
   {
-    "id": 418,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "23:00",
-    "endTime": "08:00",
-    "title": "Adn con Skryption en Mõss club Valladolid",
-    "location": "Mõss club, Av. Ramón Pradera, 47009 Valladolid",
-    "zone": "Pabellón Feria de Valladolid",
-    "description": "Adn aterriza en Mõss club para una noche de techno con Skryption, Alex Vigo e Iban Zero",
-    "summary": "Noche de techno en Mõss club con Skryption, Alex Vigo e Iban Zero",
-    "performances": [
-      "Skryption",
-      "Alex Vigo",
-      "Iban Zero"
-    ],
-    "organizers": [
-      "To Music Entertainment"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.655639,
-      "lng": -4.739802,
-      "source": "Inferidas por proximidad al Pabellón Feria de Valladolid"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": true,
-      "status": "required",
-      "label": "Entrada desde 15 €",
-      "url": "https://site.fourvenues.com/es/to-music-entertainment/events/adn-w-skryption--mss-club-valladolid-04-09-2026-P249",
-      "note": "Venta de entradas por tramos en Fourvenues."
-    },
-    "tags": [
-      "Música"
-    ],
-    "image": "/assets/events/adn-skryption-moss-club-2026.jpg"
-  },
-  {
     "id": 22,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
@@ -1075,48 +995,6 @@
     },
     "tags": [
       "Peñas"
-    ]
-  },
-  {
-    "id": 523,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": "13:30",
-    "endTime": null,
-    "title": "Izado de banderas de casa de Cultura y Hogar Navarro y casa de Ávila",
-    "location": "Recinto ferial José Luis Bellido",
-    "zone": "Feria de folklore",
-    "description": "Izado de las banderas de casa de Cultura y Hogar Navarro y casa de Ávila",
-    "summary": "Izado de las banderas de casa de Cultura y Hogar Navarro y casa de Ávila",
-    "performances": [],
-    "organizers": [
-      "Federación de Casas Regionales y Provinciales en Castilla y León",
-      "Concejalía de Turismo, Eventos y Marca Ciudad"
-    ],
-    "collaborators": [
-      "Junta de Castilla y León",
-      "Excma. Diputación de Valladolid",
-      "Cruz Roja",
-      "Caja Rural de Zamora",
-      "Coca Cola",
-      "Eco System XXI"
-    ],
-    "coordinates": {
-      "lat": 41.6489,
-      "lng": -4.7557,
-      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
-    },
-    "type": "Folklore",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Folklore",
-      "Gastronomía"
     ]
   },
   {
@@ -1422,40 +1300,6 @@
     "tags": [
       "Música",
       "Peñas"
-    ]
-  },
-  {
-    "id": 421,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": "18:00",
-    "endTime": "21:00",
-    "title": "Paco Devotion",
-    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
-    "location": "La Catedral (Los Ilustres / Jero / Melêl)",
-    "zone": "S.i. Catedral de Valladolid",
-    "description": "Actuación de Paco Devotion en la Catedral, con los Ilustres, Jero y Melêl",
-    "summary": "Paco Devotion en la Catedral, con los Ilustres, Jero y Melêl",
-    "performances": [
-      "Paco Devotion"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6536,
-      "lng": -4.7238,
-      "source": "Manual desde ubicación Catedral de Valladolid"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
     ]
   },
   {
@@ -3320,40 +3164,6 @@
     "imageLicense": "CC BY-SA 2.0"
   },
   {
-    "id": 422,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "17:00",
-    "endTime": "20:00",
-    "title": "Paco Devotion",
-    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
-    "location": "San Benito (Madame X / la Santa)",
-    "zone": "Zona Centro",
-    "description": "Actuación de Paco Devotion en San Benito, con Madame X y la Santa",
-    "summary": "Paco Devotion en San Benito, con Madame X y la Santa",
-    "performances": [
-      "Paco Devotion"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6539,
-      "lng": -4.7296,
-      "source": "Manual desde ubicación San Benito"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 92,
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
@@ -4695,48 +4505,6 @@
     ]
   },
   {
-    "id": 524,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "13:30",
-    "endTime": null,
-    "title": "Izado de banderas de casa de Cataluña y Centro Leonés Virgen del Camino",
-    "location": "Recinto ferial José Luis Bellido",
-    "zone": "Feria de folklore",
-    "description": "Izado de las banderas de casa de Cataluña y Centro Leonés Virgen del Camino",
-    "summary": "Izado de las banderas de casa de Cataluña y Centro Leonés Virgen del Camino",
-    "performances": [],
-    "organizers": [
-      "Federación de Casas Regionales y Provinciales en Castilla y León",
-      "Concejalía de Turismo, Eventos y Marca Ciudad"
-    ],
-    "collaborators": [
-      "Junta de Castilla y León",
-      "Excma. Diputación de Valladolid",
-      "Cruz Roja",
-      "Caja Rural de Zamora",
-      "Coca Cola",
-      "Eco System XXI"
-    ],
-    "coordinates": {
-      "lat": 41.6489,
-      "lng": -4.7557,
-      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
-    },
-    "type": "Folklore",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Folklore",
-      "Gastronomía"
-    ]
-  },
-  {
     "id": 132,
     "date": "2026-09-07",
     "dateLabel": "Lunes 7 de septiembre",
@@ -4906,47 +4674,6 @@
     "tags": [
       "Peñas",
       "Música"
-    ]
-  },
-  {
-    "id": 423,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "18:00",
-    "endTime": "21:00",
-    "title": "Paco Devotion",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
-    "location": "C/ Matías Sangrador (Macanudo / Griller’ Chef)",
-    "zone": "Zona Centro",
-    "description": "Paco Devotion actúa el lunes 7 de septiembre de 18:00 a 21:00 horas en la calle Matías Sangrador, junto a Fuente Dorada, dentro de la programación Vibra 2026 con The Macanudo y",
-    "summary": "Paco Devotion en la calle Matías Sangrador, junto a Fuente Dorada, dentro de Vibra 2026",
-    "performances": [
-      "Paco Devotion"
-    ],
-    "organizers": [
-      "The Macanudo",
-      "Griller Chef"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.654,
-      "lng": -4.7288,
-      "source": "Manual desde dirección del cartel"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ],
-    "images": [
-      "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
-      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
     ]
   },
   {
@@ -5608,48 +5335,6 @@
     ]
   },
   {
-    "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
-    "location": "Calle Bao junto a Plaza del Rosarillo",
-    "zone": "Plaza del Rosarillo",
-    "organizers": [
-      "inClan club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ],
-    "id": 444,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de ferias: set remember 90’s",
-    "description": "Tardeo de ferias al aire libre en calle Bao junto a Plaza del Rosarillo. Set remember 90’s con DJ Never y DJ Neke",
-    "summary": "Set remember 90’s al aire libre con DJ Never y DJ Neke",
-    "performances": [
-      "DJ Never",
-      "DJ Neke"
-    ]
-  },
-  {
     "id": 157,
     "date": "2026-09-07",
     "dateLabel": "Lunes 7 de septiembre",
@@ -6234,48 +5919,6 @@
     "tags": [
       "Infantil y familiar",
       "Talleres"
-    ]
-  },
-  {
-    "id": 525,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": "13:30",
-    "endTime": null,
-    "title": "Izado de banderas de casa de Galicia y casa de Andalucía",
-    "location": "Recinto ferial José Luis Bellido",
-    "zone": "Feria de folklore",
-    "description": "Izado de las banderas de casa de Galicia y casa de Andalucía",
-    "summary": "Izado de las banderas de casa de Galicia y casa de Andalucía",
-    "performances": [],
-    "organizers": [
-      "Federación de Casas Regionales y Provinciales en Castilla y León",
-      "Concejalía de Turismo, Eventos y Marca Ciudad"
-    ],
-    "collaborators": [
-      "Junta de Castilla y León",
-      "Excma. Diputación de Valladolid",
-      "Cruz Roja",
-      "Caja Rural de Zamora",
-      "Coca Cola",
-      "Eco System XXI"
-    ],
-    "coordinates": {
-      "lat": 41.6489,
-      "lng": -4.7557,
-      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
-    },
-    "type": "Folklore",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Folklore",
-      "Gastronomía"
     ]
   },
   {
@@ -6865,40 +6508,6 @@
       "Música"
     ],
     "image": "https://foro.aldeapucela.org/uploads/default/original/2X/9/92d0e9db9cf75b0556461d62fa87b728320064c2.jpeg"
-  },
-  {
-    "id": 424,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": "19:30",
-    "endTime": "22:30",
-    "title": "Paco Devotion",
-    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
-    "location": "C/ Francisco Zarandona, 10 (La Lupe / American Dream)",
-    "zone": "Zona Centro",
-    "description": "Actuación de Paco Devotion en la calle Francisco Zarandona 10, con la Lupe y American Dream",
-    "summary": "Paco Devotion en la calle Francisco Zarandona 10, con la Lupe y American Dream",
-    "performances": [
-      "Paco Devotion"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6528,
-      "lng": -4.7247,
-      "source": "Manual desde dirección del cartel"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ]
   },
   {
     "id": 192,
@@ -7494,91 +7103,6 @@
     },
     "tags": [
       "Deporte"
-    ]
-  },
-  {
-    "id": 526,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "13:00",
-    "endTime": null,
-    "title": "Día del Niño/Niña en la feria de folklore y gastronomía",
-    "location": "Recinto ferial José Luis Bellido",
-    "zone": "Feria de folklore",
-    "description": "Día del Niño/Niña con atracciones, hinchables y visita de la Tía Melitona",
-    "summary": "Día del Niño/Niña con atracciones, hinchables y visita de la Tía Melitona",
-    "performances": [],
-    "organizers": [
-      "Federación de Casas Regionales y Provinciales en Castilla y León",
-      "Concejalía de Turismo, Eventos y Marca Ciudad"
-    ],
-    "collaborators": [
-      "Junta de Castilla y León",
-      "Excma. Diputación de Valladolid",
-      "Cruz Roja",
-      "Caja Rural de Zamora",
-      "Coca Cola",
-      "Eco System XXI"
-    ],
-    "coordinates": {
-      "lat": 41.6489,
-      "lng": -4.7557,
-      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
-    },
-    "type": "Infantil y familiar",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Infantil y familiar",
-      "Folklore",
-      "Gastronomía"
-    ]
-  },
-  {
-    "id": 527,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "13:30",
-    "endTime": null,
-    "title": "Izado de bandera de casa Charra",
-    "location": "Recinto ferial José Luis Bellido",
-    "zone": "Feria de folklore",
-    "description": "Izado de la bandera de casa Charra",
-    "summary": "Izado de la bandera de casa Charra",
-    "performances": [],
-    "organizers": [
-      "Federación de Casas Regionales y Provinciales en Castilla y León",
-      "Concejalía de Turismo, Eventos y Marca Ciudad"
-    ],
-    "collaborators": [
-      "Junta de Castilla y León",
-      "Excma. Diputación de Valladolid",
-      "Cruz Roja",
-      "Caja Rural de Zamora",
-      "Coca Cola",
-      "Eco System XXI"
-    ],
-    "coordinates": {
-      "lat": 41.6489,
-      "lng": -4.7557,
-      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
-    },
-    "type": "Folklore",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Folklore",
-      "Gastronomía"
     ]
   },
   {
@@ -8841,48 +8365,6 @@
     ]
   },
   {
-    "id": 528,
-    "date": "2026-09-10",
-    "dateLabel": "Jueves 10 de septiembre",
-    "startTime": "13:30",
-    "endTime": null,
-    "title": "Izado de banderas de casa de Valencia y casa de Zamora",
-    "location": "Recinto ferial José Luis Bellido",
-    "zone": "Feria de folklore",
-    "description": "Izado de las banderas de casa de Valencia y casa de Zamora",
-    "summary": "Izado de las banderas de casa de Valencia y casa de Zamora",
-    "performances": [],
-    "organizers": [
-      "Federación de Casas Regionales y Provinciales en Castilla y León",
-      "Concejalía de Turismo, Eventos y Marca Ciudad"
-    ],
-    "collaborators": [
-      "Junta de Castilla y León",
-      "Excma. Diputación de Valladolid",
-      "Cruz Roja",
-      "Caja Rural de Zamora",
-      "Coca Cola",
-      "Eco System XXI"
-    ],
-    "coordinates": {
-      "lat": 41.6489,
-      "lng": -4.7557,
-      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
-    },
-    "type": "Folklore",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Folklore",
-      "Gastronomía"
-    ]
-  },
-  {
     "id": 246,
     "date": "2026-09-10",
     "dateLabel": "Jueves 10 de septiembre",
@@ -9845,40 +9327,6 @@
     ]
   },
   {
-    "id": 426,
-    "date": "2026-09-10",
-    "dateLabel": "Jueves 10 de septiembre",
-    "startTime": "20:00",
-    "endTime": "23:00",
-    "title": "Paco Devotion",
-    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
-    "location": "C/ Arribas, 18 (Bizarro)",
-    "zone": "Zona Centro",
-    "description": "Actuación de Paco Devotion en la calle Arribas 18, con Bizarro",
-    "summary": "Paco Devotion en la calle Arribas 18, con Bizarro",
-    "performances": [
-      "Paco Devotion"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6532,
-      "lng": -4.7246,
-      "source": "Manual desde dirección del cartel"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 275,
     "date": "2026-09-10",
     "dateLabel": "Jueves 10 de septiembre",
@@ -10218,48 +9666,6 @@
     },
     "tags": [
       "Música"
-    ]
-  },
-  {
-    "id": 529,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "13:30",
-    "endTime": null,
-    "title": "Izado de banderas de casa de Baleares y casa de Murcia",
-    "location": "Recinto ferial José Luis Bellido",
-    "zone": "Feria de folklore",
-    "description": "Izado de las banderas de casa de Baleares y casa de Murcia",
-    "summary": "Izado de las banderas de casa de Baleares y casa de Murcia",
-    "performances": [],
-    "organizers": [
-      "Federación de Casas Regionales y Provinciales en Castilla y León",
-      "Concejalía de Turismo, Eventos y Marca Ciudad"
-    ],
-    "collaborators": [
-      "Junta de Castilla y León",
-      "Excma. Diputación de Valladolid",
-      "Cruz Roja",
-      "Caja Rural de Zamora",
-      "Coca Cola",
-      "Eco System XXI"
-    ],
-    "coordinates": {
-      "lat": 41.6489,
-      "lng": -4.7557,
-      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
-    },
-    "type": "Folklore",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Folklore",
-      "Gastronomía"
     ]
   },
   {
@@ -11134,88 +10540,6 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/94bd5bbb953237b81f2c307a6ad091449d96abde_2_819x1024.jpeg"
   },
   {
-    "id": 427,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "20:00",
-    "endTime": "23:00",
-    "title": "Paco Devotion",
-    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
-    "location": "C/ Cebadería, 7 (Vándalo)",
-    "zone": "Zona Centro",
-    "description": "Paco Devotion actúa en Vándalo Bar, C/ Cebadería 7, el viernes 11 de septiembre de 20:00 a 23:00 horas dentro de Vándalo en fiestas",
-    "summary": "Paco Devotion en Vándalo Bar dentro de Vándalo en fiestas",
-    "performances": [
-      "Paco Devotion"
-    ],
-    "organizers": [
-      "Vándalo Bar"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6518,
-      "lng": -4.7281,
-      "source": "Manual desde dirección del cartel"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ],
-    "images": [
-      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
-      "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg"
-    ]
-  },
-  {
-    "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
-    "location": "Calle Bao junto a Plaza del Rosarillo",
-    "zone": "Plaza del Rosarillo",
-    "organizers": [
-      "inClan club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Gratis",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ],
-    "id": 445,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de ferias: remember dance 2000’s",
-    "description": "Tardeo de ferias al aire libre en calle Bao junto a Plaza del Rosarillo. Remember dance 2000’s con DJ Julio y Lario DJ",
-    "summary": "Remember dance 2000’s al aire libre con DJ Julio y Lario DJ",
-    "performances": [
-      "DJ Julio",
-      "Lario DJ"
-    ]
-  },
-  {
     "id": 311,
     "date": "2026-09-11",
     "dateLabel": "Viernes 11 de septiembre",
@@ -11620,46 +10944,6 @@
     "image": "/assets/events/carolina-durante-plaza-mayor-2026.jpg"
   },
   {
-    "id": 419,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "01:00",
-    "endTime": "08:00",
-    "title": "Asscenssion Rave fiestas San Lorenzo 2026",
-    "location": "Mõss club, Av. Ramón Pradera, 47009 Valladolid",
-    "zone": "Pabellón Feria de Valladolid",
-    "description": "Asscenssion Rave fiestas San Lorenzo 2026 en Mõss club, con Vlace b2b Ksn, Adrián Oblanca, Mbpm, Ganso b2b Mor8 y Alexxgonzi b2b Savana Bass",
-    "summary": "Asscenssion Rave fiestas San Lorenzo 2026 en Mõss club, de 01:00 a 08:00",
-    "performances": [
-      "Vlace b2b Ksn",
-      "Adrián Oblanca",
-      "Mbpm",
-      "Ganso b2b Mor8",
-      "Alexxgonzi b2b Savana Bass"
-    ],
-    "organizers": [
-      "Asscenssion Rave"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.655639,
-      "lng": -4.739802,
-      "source": "Inferidas por proximidad al Pabellón Feria de Valladolid"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": true,
-      "status": "required",
-      "label": "Entradas Fourvenues",
-      "url": "https://site.fourvenues.com/es/asscenssion-rave/events/asscenssion-fiestas-san-lorenzo-2026-11-09-2026-XVLB",
-      "note": "Entrada necesaria. Acceso +18."
-    },
-    "tags": [
-      "Música"
-    ],
-    "image": "/assets/events/asscenssion-rave-san-lorenzo-2026.jpg"
-  },
-  {
     "id": 322,
     "date": "2026-09-12",
     "dateLabel": "Sábado 12 de septiembre",
@@ -11857,48 +11141,6 @@
     "tags": [
       "Infantil y familiar",
       "Talleres"
-    ]
-  },
-  {
-    "id": 530,
-    "date": "2026-09-12",
-    "dateLabel": "Sábado 12 de septiembre",
-    "startTime": "13:30",
-    "endTime": null,
-    "title": "Izado de banderas de casa de Cantabria y Centro Segoviano",
-    "location": "Recinto ferial José Luis Bellido",
-    "zone": "Feria de folklore",
-    "description": "Izado de las banderas de casa de Cantabria y Centro Segoviano",
-    "summary": "Izado de las banderas de casa de Cantabria y Centro Segoviano",
-    "performances": [],
-    "organizers": [
-      "Federación de Casas Regionales y Provinciales en Castilla y León",
-      "Concejalía de Turismo, Eventos y Marca Ciudad"
-    ],
-    "collaborators": [
-      "Junta de Castilla y León",
-      "Excma. Diputación de Valladolid",
-      "Cruz Roja",
-      "Caja Rural de Zamora",
-      "Coca Cola",
-      "Eco System XXI"
-    ],
-    "coordinates": {
-      "lat": 41.6489,
-      "lng": -4.7557,
-      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
-    },
-    "type": "Folklore",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Folklore",
-      "Gastronomía"
     ]
   },
   {
@@ -13934,48 +13176,6 @@
     ]
   },
   {
-    "id": 531,
-    "date": "2026-09-13",
-    "dateLabel": "Domingo 13 de septiembre",
-    "startTime": "13:30",
-    "endTime": null,
-    "title": "Izado de banderas de casa de la Rioja y casa de Melilla",
-    "location": "Recinto ferial José Luis Bellido",
-    "zone": "Feria de folklore",
-    "description": "Izado de las banderas de casa de la Rioja y casa de Melilla",
-    "summary": "Izado de las banderas de casa de la Rioja y casa de Melilla",
-    "performances": [],
-    "organizers": [
-      "Federación de Casas Regionales y Provinciales en Castilla y León",
-      "Concejalía de Turismo, Eventos y Marca Ciudad"
-    ],
-    "collaborators": [
-      "Junta de Castilla y León",
-      "Excma. Diputación de Valladolid",
-      "Cruz Roja",
-      "Caja Rural de Zamora",
-      "Coca Cola",
-      "Eco System XXI"
-    ],
-    "coordinates": {
-      "lat": 41.6489,
-      "lng": -4.7557,
-      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
-    },
-    "type": "Folklore",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Folklore",
-      "Gastronomía"
-    ]
-  },
-  {
     "id": 388,
     "date": "2026-09-13",
     "dateLabel": "Domingo 13 de septiembre",
@@ -14994,6 +14194,374 @@
     ]
   },
   {
+    "id": 418,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "23:00",
+    "endTime": "08:00",
+    "title": "Adn con Skryption en Mõss club Valladolid",
+    "location": "Mõss club, Av. Ramón Pradera, 47009 Valladolid",
+    "zone": "Pabellón Feria de Valladolid",
+    "description": "Adn aterriza en Mõss club para una noche de techno con Skryption, Alex Vigo e Iban Zero",
+    "summary": "Noche de techno en Mõss club con Skryption, Alex Vigo e Iban Zero",
+    "performances": [
+      "Skryption",
+      "Alex Vigo",
+      "Iban Zero"
+    ],
+    "organizers": [
+      "To Music Entertainment"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.655639,
+      "lng": -4.739802,
+      "source": "Inferidas por proximidad al Pabellón Feria de Valladolid"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": true,
+      "status": "required",
+      "label": "Entrada desde 15 €",
+      "url": "https://site.fourvenues.com/es/to-music-entertainment/events/adn-w-skryption--mss-club-valladolid-04-09-2026-P249",
+      "note": "Venta de entradas por tramos en Fourvenues."
+    },
+    "tags": [
+      "Música"
+    ],
+    "image": "/assets/events/adn-skryption-moss-club-2026.jpg"
+  },
+  {
+    "id": 419,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "01:00",
+    "endTime": "08:00",
+    "title": "Asscenssion Rave fiestas San Lorenzo 2026",
+    "location": "Mõss club, Av. Ramón Pradera, 47009 Valladolid",
+    "zone": "Pabellón Feria de Valladolid",
+    "description": "Asscenssion Rave fiestas San Lorenzo 2026 en Mõss club, con Vlace b2b Ksn, Adrián Oblanca, Mbpm, Ganso b2b Mor8 y Alexxgonzi b2b Savana Bass",
+    "summary": "Asscenssion Rave fiestas San Lorenzo 2026 en Mõss club, de 01:00 a 08:00",
+    "performances": [
+      "Vlace b2b Ksn",
+      "Adrián Oblanca",
+      "Mbpm",
+      "Ganso b2b Mor8",
+      "Alexxgonzi b2b Savana Bass"
+    ],
+    "organizers": [
+      "Asscenssion Rave"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.655639,
+      "lng": -4.739802,
+      "source": "Inferidas por proximidad al Pabellón Feria de Valladolid"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": true,
+      "status": "required",
+      "label": "Entradas Fourvenues",
+      "url": "https://site.fourvenues.com/es/asscenssion-rave/events/asscenssion-fiestas-san-lorenzo-2026-11-09-2026-XVLB",
+      "note": "Entrada necesaria. Acceso +18."
+    },
+    "tags": [
+      "Música"
+    ],
+    "image": "/assets/events/asscenssion-rave-san-lorenzo-2026.jpg"
+  },
+  {
+    "id": 420,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Paco Devotion",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+    "location": "Plaza Poniente (La Boutique / Enboga)",
+    "zone": "Plaza Poniente",
+    "description": "Programación musical de las ferias Virgen de San Lorenzo en Plaza Poniente, con la actuación de Paco Devotion el viernes 4 de septiembre de 20:00 a 23:00 horas. La cita se celebra en Plaza Poniente, con la Boutique y Enboga",
+    "summary": "Actuación de Paco Devotion en Plaza Poniente dentro de la programación de ferias Virgen de San Lorenzo",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [
+      "Beluga, Enboga & la Boutique"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.653157,
+      "lng": -4.731282,
+      "source": "Inferidas desde evento existente en Plaza Poniente"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
+    ]
+  },
+  {
+    "id": 421,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "La Catedral (Los Ilustres / Jero / Melêl)",
+    "zone": "S.i. Catedral de Valladolid",
+    "description": "Actuación de Paco Devotion en la Catedral, con los Ilustres, Jero y Melêl",
+    "summary": "Paco Devotion en la Catedral, con los Ilustres, Jero y Melêl",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6536,
+      "lng": -4.7238,
+      "source": "Manual desde ubicación Catedral de Valladolid"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 422,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "17:00",
+    "endTime": "20:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "San Benito (Madame X / la Santa)",
+    "zone": "Zona Centro",
+    "description": "Actuación de Paco Devotion en San Benito, con Madame X y la Santa",
+    "summary": "Paco Devotion en San Benito, con Madame X y la Santa",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6539,
+      "lng": -4.7296,
+      "source": "Manual desde ubicación San Benito"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 423,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "18:00",
+    "endTime": "21:00",
+    "title": "Paco Devotion",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
+    "location": "C/ Matías Sangrador (Macanudo / Griller’ Chef)",
+    "zone": "Zona Centro",
+    "description": "Paco Devotion actúa el lunes 7 de septiembre de 18:00 a 21:00 horas en la calle Matías Sangrador, junto a Fuente Dorada, dentro de la programación Vibra 2026 con The Macanudo y",
+    "summary": "Paco Devotion en la calle Matías Sangrador, junto a Fuente Dorada, dentro de Vibra 2026",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [
+      "The Macanudo",
+      "Griller Chef"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.654,
+      "lng": -4.7288,
+      "source": "Manual desde dirección del cartel"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c5b132b7f8e9144480220d4dba8164f6410e35a9_2_483x1024.jpeg",
+      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
+    ]
+  },
+  {
+    "id": 424,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "19:30",
+    "endTime": "22:30",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "C/ Francisco Zarandona, 10 (La Lupe / American Dream)",
+    "zone": "Zona Centro",
+    "description": "Actuación de Paco Devotion en la calle Francisco Zarandona 10, con la Lupe y American Dream",
+    "summary": "Paco Devotion en la calle Francisco Zarandona 10, con la Lupe y American Dream",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6528,
+      "lng": -4.7247,
+      "source": "Manual desde dirección del cartel"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 425,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "19:00",
+    "endTime": "00:00",
+    "title": "XXVII Super Cross nocturno Ciudad de Valladolid",
+    "location": "Circuito de Super Cross de Parquesol",
+    "zone": "Parquesol",
+    "description": "XXVII Super Cross nocturno Ciudad de Valladolid. De 19:00 a 00:00 h",
+    "summary": "XXVII Super Cross nocturno Ciudad de Valladolid. De 19:00 a 00:00 h",
+    "performances": [],
+    "organizers": [
+      "Club Deportivo Moto club Vallisoletano"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.641021,
+      "lng": -4.755955,
+      "source": "Inferred from nearby Calle Padre Llanos, Parquesol via OpenStreetMap Nominatim"
+    },
+    "type": "Deporte",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Sin entrada indicada",
+      "url": null,
+      "note": "No consta venta de entradas en el programa para este evento."
+    },
+    "tags": [
+      "Deporte"
+    ]
+  },
+  {
+    "id": 426,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "C/ Arribas, 18 (Bizarro)",
+    "zone": "Zona Centro",
+    "description": "Actuación de Paco Devotion en la calle Arribas 18, con Bizarro",
+    "summary": "Paco Devotion en la calle Arribas 18, con Bizarro",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6532,
+      "lng": -4.7246,
+      "source": "Manual desde dirección del cartel"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 427,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Paco Devotion",
+    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "location": "C/ Cebadería, 7 (Vándalo)",
+    "zone": "Zona Centro",
+    "description": "Paco Devotion actúa en Vándalo Bar, C/ Cebadería 7, el viernes 11 de septiembre de 20:00 a 23:00 horas dentro de Vándalo en fiestas",
+    "summary": "Paco Devotion en Vándalo Bar dentro de Vándalo en fiestas",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [
+      "Vándalo Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6518,
+      "lng": -4.7281,
+      "source": "Manual desde dirección del cartel"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ],
+    "images": [
+      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg"
+    ]
+  },
+  {
     "id": 428,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
@@ -15496,36 +15064,129 @@
     ]
   },
   {
-    "id": 425,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "19:00",
-    "endTime": "00:00",
-    "title": "XXVII Super Cross nocturno Ciudad de Valladolid",
-    "location": "Circuito de Super Cross de Parquesol",
-    "zone": "Parquesol",
-    "description": "XXVII Super Cross nocturno Ciudad de Valladolid. De 19:00 a 00:00 h",
-    "summary": "XXVII Super Cross nocturno Ciudad de Valladolid. De 19:00 a 00:00 h",
-    "performances": [],
+    "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
+    "location": "Calle Bao junto a Plaza del Rosarillo",
+    "zone": "Plaza del Rosarillo",
     "organizers": [
-      "Club Deportivo Moto club Vallisoletano"
+      "inClan club"
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.641021,
-      "lng": -4.755955,
-      "source": "Inferred from nearby Calle Padre Llanos, Parquesol via OpenStreetMap Nominatim"
+      "lat": 41.6553096,
+      "lng": -4.7238053,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 33822015,
+      "query": "Calle del Bao, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T11:03:09.286Z"
     },
-    "type": "Deporte",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
-      "label": "Sin entrada indicada",
+      "label": "Gratis",
       "url": null,
-      "note": "No consta venta de entradas en el programa para este evento."
+      "note": "El cartel no indica venta de entradas."
     },
     "tags": [
-      "Deporte"
+      "Música"
+    ],
+    "id": 443,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "22:00",
+    "title": "Tardeos de ferias: set house remember",
+    "description": "Tardeo de ferias al aire libre en calle Bao junto a Plaza del Rosarillo. Set house remember con DJ Y4gger y DJ Chusky",
+    "summary": "Set house remember al aire libre con DJ Y4gger y DJ Chusky",
+    "performances": [
+      "DJ Y4gger",
+      "DJ Chusky"
+    ]
+  },
+  {
+    "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
+    "location": "Calle Bao junto a Plaza del Rosarillo",
+    "zone": "Plaza del Rosarillo",
+    "organizers": [
+      "inClan club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6553096,
+      "lng": -4.7238053,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 33822015,
+      "query": "Calle del Bao, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T11:03:09.286Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ],
+    "id": 444,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "20:00",
+    "endTime": "22:00",
+    "title": "Tardeos de ferias: set remember 90’s",
+    "description": "Tardeo de ferias al aire libre en calle Bao junto a Plaza del Rosarillo. Set remember 90’s con DJ Never y DJ Neke",
+    "summary": "Set remember 90’s al aire libre con DJ Never y DJ Neke",
+    "performances": [
+      "DJ Never",
+      "DJ Neke"
+    ]
+  },
+  {
+    "image": "/assets/events/tardeos-ferias-inclan-club-2026.jpg",
+    "location": "Calle Bao junto a Plaza del Rosarillo",
+    "zone": "Plaza del Rosarillo",
+    "organizers": [
+      "inClan club"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6553096,
+      "lng": -4.7238053,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 33822015,
+      "query": "Calle del Bao, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-08-29T11:03:09.286Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ],
+    "id": 445,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "20:00",
+    "endTime": "22:00",
+    "title": "Tardeos de ferias: remember dance 2000’s",
+    "description": "Tardeo de ferias al aire libre en calle Bao junto a Plaza del Rosarillo. Remember dance 2000’s con DJ Julio y Lario DJ",
+    "summary": "Remember dance 2000’s al aire libre con DJ Julio y Lario DJ",
+    "performances": [
+      "DJ Julio",
+      "Lario DJ"
     ]
   },
   {
@@ -17590,43 +17251,382 @@
     ]
   },
   {
-    "id": 420,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "23:00",
-    "title": "Paco Devotion",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente (La Boutique / Enboga)",
-    "zone": "Plaza Poniente",
-    "description": "Programación musical de las ferias Virgen de San Lorenzo en Plaza Poniente, con la actuación de Paco Devotion el viernes 4 de septiembre de 20:00 a 23:00 horas. La cita se celebra en Plaza Poniente, con la Boutique y Enboga",
-    "summary": "Actuación de Paco Devotion en Plaza Poniente dentro de la programación de ferias Virgen de San Lorenzo",
-    "performances": [
-      "Paco Devotion"
-    ],
+    "id": 523,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de casa de Cultura y Hogar Navarro y casa de Ávila",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de casa de Cultura y Hogar Navarro y casa de Ávila",
+    "summary": "Izado de las banderas de casa de Cultura y Hogar Navarro y casa de Ávila",
+    "performances": [],
     "organizers": [
-      "Beluga, Enboga & la Boutique"
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
     ],
-    "collaborators": [],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
     "coordinates": {
-      "lat": 41.653157,
-      "lng": -4.731282,
-      "source": "Inferidas desde evento existente en Plaza Poniente"
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
     },
-    "type": "Música",
+    "type": "Folklore",
     "ticket": {
       "required": false,
-      "status": "not_required",
-      "label": "Gratis",
+      "status": "unknown",
+      "label": "Entrada no indicada",
       "url": null,
-      "note": "El cartel no indica venta de entradas."
+      "note": "El programa no indica venta de entradas para este evento."
     },
     "tags": [
-      "Música"
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
+    "id": 524,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de casa de Cataluña y Centro Leonés Virgen del Camino",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de casa de Cataluña y Centro Leonés Virgen del Camino",
+    "summary": "Izado de las banderas de casa de Cataluña y Centro Leonés Virgen del Camino",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
     ],
-    "images": [
-      "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
+    "id": 525,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de casa de Galicia y casa de Andalucía",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de casa de Galicia y casa de Andalucía",
+    "summary": "Izado de las banderas de casa de Galicia y casa de Andalucía",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
+    "id": 526,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "13:00",
+    "endTime": null,
+    "title": "Día del Niño/Niña en la feria de folklore y gastronomía",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Día del Niño/Niña con atracciones, hinchables y visita de la Tía Melitona",
+    "summary": "Día del Niño/Niña con atracciones, hinchables y visita de la Tía Melitona",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Infantil y familiar",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Infantil y familiar",
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
+    "id": 527,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de bandera de casa Charra",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de la bandera de casa Charra",
+    "summary": "Izado de la bandera de casa Charra",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
+    "id": 528,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de casa de Valencia y casa de Zamora",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de casa de Valencia y casa de Zamora",
+    "summary": "Izado de las banderas de casa de Valencia y casa de Zamora",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
+    "id": 529,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de casa de Baleares y casa de Murcia",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de casa de Baleares y casa de Murcia",
+    "summary": "Izado de las banderas de casa de Baleares y casa de Murcia",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
+    "id": 530,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de casa de Cantabria y Centro Segoviano",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de casa de Cantabria y Centro Segoviano",
+    "summary": "Izado de las banderas de casa de Cantabria y Centro Segoviano",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
+    ]
+  },
+  {
+    "id": 531,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "13:30",
+    "endTime": null,
+    "title": "Izado de banderas de casa de la Rioja y casa de Melilla",
+    "location": "Recinto ferial José Luis Bellido",
+    "zone": "Feria de folklore",
+    "description": "Izado de las banderas de casa de la Rioja y casa de Melilla",
+    "summary": "Izado de las banderas de casa de la Rioja y casa de Melilla",
+    "performances": [],
+    "organizers": [
+      "Federación de Casas Regionales y Provinciales en Castilla y León",
+      "Concejalía de Turismo, Eventos y Marca Ciudad"
+    ],
+    "collaborators": [
+      "Junta de Castilla y León",
+      "Excma. Diputación de Valladolid",
+      "Cruz Roja",
+      "Caja Rural de Zamora",
+      "Coca Cola",
+      "Eco System XXI"
+    ],
+    "coordinates": {
+      "lat": 41.6489,
+      "lng": -4.7557,
+      "source": "Inferidas por coincidencia de lugar con eventos existentes del Recinto José Luis Bellido"
+    },
+    "type": "Folklore",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El programa no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Folklore",
+      "Gastronomía"
     ]
   },
   {
@@ -24795,86 +24795,6 @@
     ]
   },
   {
-    "id": 790,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "17:00",
-    "endTime": "20:00",
-    "title": "Los del Lío y Marco Galindo",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f3f5d438bf70cc5e1f9da2403b18c6dda2687619_2_898x1024.jpeg",
-    "location": "Zona San Benito (La Santa / Madame X)",
-    "zone": "Zona Centro",
-    "description": "Los del Lío y Marco Galindo actúan en la zona San Benito el lunes 7 de septiembre de 17:00 a 20:00 horas.",
-    "summary": "Los del Lío y Marco Galindo en la zona San Benito de 17:00 a 20:00 horas",
-    "performances": [
-      "Los del Lío",
-      "Marco Galindo"
-    ],
-    "organizers": [
-      "La Santa Coctelería",
-      "Montellén",
-      "Madame X"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6541309,
-      "lng": -4.7290258,
-      "source": "Inferidas desde evento existente en La Santa, C. San Benito, 5",
-      "query": "La Santa, C. San Benito, 5, 47003 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 791,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "20:00",
-    "endTime": "23:00",
-    "title": "Los del Lío y Marco Galindo",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f3f5d438bf70cc5e1f9da2403b18c6dda2687619_2_898x1024.jpeg",
-    "location": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid",
-    "zone": "Zona Centro",
-    "description": "Los del Lío y Marco Galindo actúan en Montellén el lunes 7 de septiembre de 20:00 a 23:00 horas.",
-    "summary": "Los del Lío y Marco Galindo en Montellén de 20:00 a 23:00 horas",
-    "performances": [
-      "Los del Lío",
-      "Marco Galindo"
-    ],
-    "organizers": [
-      "La Santa Coctelería",
-      "Montellén",
-      "Madame X"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6532344,
-      "lng": -4.728258,
-      "source": "Inferidas desde evento existente en Restaurante Montellén, C. Sandoval, 7",
-      "query": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "El cartel no indica venta de entradas."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 785,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
@@ -25067,6 +24987,86 @@
       "label": "Entrada libre",
       "url": null,
       "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 790,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "17:00",
+    "endTime": "20:00",
+    "title": "Los del Lío y Marco Galindo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f3f5d438bf70cc5e1f9da2403b18c6dda2687619_2_898x1024.jpeg",
+    "location": "Zona San Benito (La Santa / Madame X)",
+    "zone": "Zona Centro",
+    "description": "Los del Lío y Marco Galindo actúan en la zona San Benito el lunes 7 de septiembre de 17:00 a 20:00 horas.",
+    "summary": "Los del Lío y Marco Galindo en la zona San Benito de 17:00 a 20:00 horas",
+    "performances": [
+      "Los del Lío",
+      "Marco Galindo"
+    ],
+    "organizers": [
+      "La Santa Coctelería",
+      "Montellén",
+      "Madame X"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6541309,
+      "lng": -4.7290258,
+      "source": "Inferidas desde evento existente en La Santa, C. San Benito, 5",
+      "query": "La Santa, C. San Benito, 5, 47003 Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 791,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Los del Lío y Marco Galindo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f3f5d438bf70cc5e1f9da2403b18c6dda2687619_2_898x1024.jpeg",
+    "location": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid",
+    "zone": "Zona Centro",
+    "description": "Los del Lío y Marco Galindo actúan en Montellén el lunes 7 de septiembre de 20:00 a 23:00 horas.",
+    "summary": "Los del Lío y Marco Galindo en Montellén de 20:00 a 23:00 horas",
+    "performances": [
+      "Los del Lío",
+      "Marco Galindo"
+    ],
+    "organizers": [
+      "La Santa Coctelería",
+      "Montellén",
+      "Madame X"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6532344,
+      "lng": -4.728258,
+      "source": "Inferidas desde evento existente en Restaurante Montellén, C. Sandoval, 7",
+      "query": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
     },
     "tags": [
       "Música"
