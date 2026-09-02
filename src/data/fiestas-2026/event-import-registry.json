@@ -948,9 +948,8 @@
           "reason": "Censo histórico de informes de importación."
         },
         "day-2026-09-04": {
-          "status": "linked",
-          "localEventId": "805",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         }
       }
     },
@@ -2227,34 +2226,28 @@
     "2412": {
       "occurrences": {
         "day-2026-09-04": {
-          "status": "linked",
-          "localEventId": "794",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-05": {
-          "status": "linked",
-          "localEventId": "795",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-06": {
-          "status": "linked",
-          "localEventId": "796",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-07": {
-          "status": "linked",
-          "localEventId": "797",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-08": {
-          "status": "linked",
-          "localEventId": "798",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-09": {
-          "status": "linked",
-          "localEventId": "799",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-10": {
           "status": "linked",
@@ -2272,9 +2265,8 @@
           "reason": "Censo histórico de informes de importación."
         },
         "day-2026-09-13": {
-          "status": "linked",
-          "localEventId": "803",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         }
       }
     },
@@ -2822,6 +2814,62 @@
         "vandalo-en-fiestas-programacion-especial"
       ]
     },
+    "793": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "adn-club-en-moss-club-evento"
+      ]
+    },
+    "794": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "795": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "796": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "797": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "798": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "799": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "803": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
     "804": {
       "targetEventId": "703",
       "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
@@ -2829,11 +2877,25 @@
         "les-castizos-y-jorge-tejedor-concierto"
       ]
     },
+    "805": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "tardeos-de-ferias-ciclo-de-eventos"
+      ]
+    },
     "811": {
       "targetEventId": "516",
       "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
       "oldSlugs": [
         "las-donas-gira-de-actuaciones"
+      ]
+    },
+    "823": {
+      "targetEventId": null,
+      "reason": "Evento eliminado por decisión manual; tombstone para impedir recreación.",
+      "oldSlugs": [
+        "assceussion-rave-fiestas-san-lorenzo"
       ]
     },
     "828": {
@@ -2848,6 +2910,13 @@
       "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
       "oldSlugs": [
         "los-patricios-concierto"
+      ]
+    },
+    "842": {
+      "targetEventId": "556",
+      "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
+      "oldSlugs": [
+        "virgen-de-san-lorenzo-concierto-quilombros"
       ]
     },
     "843": {
