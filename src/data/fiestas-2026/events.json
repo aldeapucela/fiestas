@@ -24004,8 +24004,8 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/14036144d93f7cb7c7f41c4b75385e39498daa41_2_699x1024.jpeg",
     "location": "Dovleuve Paseo de Zorrilla 17",
     "zone": "Campo Grande",
-    "description": "El establecimiento Dovleuve presenta su programación musical de conciertos en terraza en el marco de las fiestas de la Virgen de San Lorenzo. La actividad se desarrollará durante el mes de septiembre con diversas actuaciones en directo",
-    "summary": "El establecimiento Dovleuve presenta su programación musical de conciertos en terraza en el marco de las fiestas de la Virgen de San Lorenzo. La actividad se desarrollará durante el mes de septiembre con diversas actuaciones en directo",
+    "description": "El establecimiento Dovleuve presenta su programación musical de conciertos en terraza en el marco de las Fiestas de la Virgen de San Lorenzo. La actividad se desarrollará durante el mes de septiembre con diversas actuaciones en directo.\n\nInformación ampliada: La agrupación musical Tocado y Hundido se presenta en el marco de las Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar el próximo domingo 13 de septiembre a las 13:00 horas en el Paseo de Zorrilla.",
+    "summary": "El establecimiento Dovleuve presenta su programación musical de conciertos en terraza en el marco de las Fiestas de la Virgen de San Lorenzo. La actividad se desarrollará durante el mes de septiembre con diversas actuaciones en directo.",
     "performances": [
       "Tocado y Hundido"
     ],
@@ -24795,7 +24795,7 @@
     ]
   },
   {
-    "id": 785,
+    "id": 790,
     "date": "2026-09-07",
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "17:00",
@@ -24835,7 +24835,7 @@
     ]
   },
   {
-    "id": 786,
+    "id": 791,
     "date": "2026-09-07",
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "20:00",

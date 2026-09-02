@@ -6,7 +6,7 @@ Fecha: 2026-09-02
 
 - Eventos antes de la edición: 720.
 - Eventos después de la edición: 691.
-- Eventos creados desde cartel: 785 y 786.
+- Eventos creados desde cartel: 790 y 791.
 - Plan comunitario actualizado: `de-tardeo-en-tardeo.fiestas-plan.json` ya no referencia IDs borrados.
 - Carteles inspeccionados visualmente: Lorencito Festival y Los del Lío & Marco Galindo.
 
@@ -137,12 +137,12 @@ Fecha: 2026-09-02
 - Inicial: 2026-09-11 (Viernes 11 de septiembre), 18:00-21:00. Cascajares Fest (Festival) en Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava). Actuaciones: Dinosaurios. Imagen principal: https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg. Total imágenes: 1.
 - Final: 2026-09-11 (Viernes 11 de septiembre), 18:00-21:00. Cascajares Fest (Festival) en Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava). Actuaciones: Dinosaurios, Dinosaurios DJs. Imagen principal: https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg. Total imágenes: 2.
 
-### Evento 785
+### Evento 790
 
 - Inicial: No existía.
 - Final: 2026-09-07 (Lunes 7 de septiembre), 17:00-20:00. Los del Lío y Marco Galindo en Zona San Benito (La Santa / Madame X). Actuaciones: Los del Lío, Marco Galindo. Imagen principal: https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f3f5d438bf70cc5e1f9da2403b18c6dda2687619_2_898x1024.jpeg. Total imágenes: 1.
 
-### Evento 786
+### Evento 791
 
 - Inicial: No existía.
 - Final: 2026-09-07 (Lunes 7 de septiembre), 20:00-23:00. Los del Lío y Marco Galindo en Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid. Actuaciones: Los del Lío, Marco Galindo. Imagen principal: https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f3f5d438bf70cc5e1f9da2403b18c6dda2687619_2_898x1024.jpeg. Total imágenes: 1.
@@ -201,5 +201,5 @@ Fecha: 2026-09-02
 - 741 queda como un único DJ: Sirc Sadie.
 - 21, 73, 165, 254, 319 y 367 reciben actuaciones extraídas del cartel Lorencito Festival.
 - 20, 563 y 253 reciben actuaciones extraídas de su título/cartel.
-- 785 y 786 se crean desde el cartel Los del Lío y Marco Galindo, separando las dos ubicaciones y horarios que aparecen en la imagen.
+- 790 y 791 se crean desde el cartel Los del Lío y Marco Galindo, separando las dos ubicaciones y horarios que aparecen en la imagen.
 
