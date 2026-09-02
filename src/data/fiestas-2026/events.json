@@ -26529,5 +26529,42 @@
     "tags": [
       "Otros"
     ]
+  },
+  {
+    "id": 831,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "21:30",
+    "endTime": "22:30",
+    "title": "Récord Mundial: El Mosaico de Globos más Grande (Evento)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/379a523d689db40f1579dfcf1fb8e6e6eedb7814_2_726x1024.jpeg",
+    "location": "Paseo Central del Campo Grande",
+    "zone": "Campo Grande",
+    "description": "Valladolid se prepara para un acontecimiento histórico con el intento de establecer un nuevo Récord Mundial. El evento consiste en la creación del mosaico de globos más grande del mundo realizado íntegramente por personas.",
+    "summary": "Valladolid se prepara para un acontecimiento histórico con el intento de establecer un nuevo Récord Mundial. El evento consiste en la creación del mosaico de globos más grande del mundo realizado íntegramente por personas.",
+    "performances": [],
+    "organizers": [
+      "Ayuntamiento de Valladolid, Diputación de Valladolid y Junta de Castilla y León"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6468,
+      "lng": -4.7289,
+      "source": "Inferida del evento local 1 para el mismo Paseo Central; Nominatim no devolvió coincidencia exacta y Google Maps confirmó el Parque Campo Grande",
+      "query": "Paseo Central del Campo Grande, Valladolid, España",
+      "accuracy": 0.8,
+      "geocodedAt": "2026-09-02T11:06:54.970Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
   }
 ]
