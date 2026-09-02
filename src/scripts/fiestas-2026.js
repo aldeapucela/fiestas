@@ -30,6 +30,7 @@ import { getCasetasReturnPath } from './casetas-navigation.js';
 
 const collator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const defaultQueryKeys = ['date', 'q', 'type', 'area', 'ticket', 'view', 'event'];
+const DEFAULT_DOCUMENT_TITLE = document.title;
 const SITE_SHARE_URL = 'https://fiestas.aldeapucela.org/?mtm_campaign=share';
 const SITE_SHARE_MESSAGE = `Mira, la mejor web para seguir las fiestas y ferias de Valladolid 2026\n\n${SITE_SHARE_URL}`;
 const SAVE_COUNTS_API_URL = 'https://api.aldeapucela.org/fiestas/saves';
@@ -803,9 +804,15 @@ function normalizeEvents(events) {
   }).sort(compareEvents);
 }
 
+function updateDocumentTitle() {
+  const query = els.search?.value.trim();
+  document.title = query ? `${query} | Fiestas Valladolid 2026` : DEFAULT_DOCUMENT_TITLE;
+}
+
 function render(options = {}) {
   const filtered = getFilteredEvents();
   renderShellState(filtered);
+  updateDocumentTitle();
 
   if (options.updateUrl && !isApplyingUrlState) updateUrlFromState();
 
