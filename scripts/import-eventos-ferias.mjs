@@ -2,12 +2,15 @@ import fs from 'node:fs/promises';
 import path from 'node:path';
 import { setTimeout as wait } from 'node:timers/promises';
 import { fileURLToPath } from 'node:url';
+import { buildImportGuard } from './event-import-guard.mjs';
+import { findLikelyDuplicateEvent } from './event-duplicate-detection.mjs';
 import { isDailySeries, occurrencesFor } from './import-eventos-ferias-dates.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const eventsPath = path.join(root, 'src', 'data', 'fiestas-2026', 'events.json');
 const verifiedOccurrencesPath = path.join(root, 'src', 'data', 'fiestas-2026', 'verified-event-occurrences.json');
+const importDecisionsPath = path.join(root, 'src', 'data', 'fiestas-2026', 'import-event-decisions.json');
 const cachePath = path.join(root, '.cache', 'fiestas', 'nominatim-location-cache.json');
 const reportsDir = path.join(root, '.cache', 'fiestas', 'reports');
 const sourceUrl = 'https://eventos.aldeapucela.org/site-data.json';
@@ -18,19 +21,22 @@ const events = JSON.parse(await fs.readFile(eventsPath, 'utf8'));
 const source = await fetchJson(sourceUrl);
 const sourceEvents = new Map(source.events.map((event) => [Number(event.id), event]));
 const verifiedOccurrences = await readJson(verifiedOccurrencesPath, {});
+const importDecisions = await readJson(importDecisionsPath, {});
+const importGuard = buildImportGuard(importDecisions);
 const cache = await readJson(cachePath, {});
 const report = {
   mode: args.apply ? 'apply' : 'dry-run',
   sourceUrl,
   generatedAt: new Date().toISOString(),
   dateWindow: ['2026-09-04', '2026-09-13'],
-  totals: { sourceInWindow: 0, sourceOutsideValladolid: 0, sourceUnavailable: 0, enriched: 0, imagesAdded: 0, added: 0, skipped: 0, unresolved: 0 },
-  excluded: [{ id: 2148, reason: 'Ubicación ambigua en Las Moreras; no se fuerza el cruce.' }],
+  totals: { sourceInWindow: 0, sourceOutsideValladolid: 0, sourceUnavailable: 0, enriched: 0, imagesAdded: 0, added: 0, skipped: 0, blocked: 0, unresolved: 0 },
+  excluded: importGuard.blockedRemoteEntries(),
   sourceUnavailable: [],
   enriched: [],
   imagesAdded: [],
   added: [],
   skipped: [],
+  blocked: [],
   unresolved: []
 };
 
@@ -100,18 +106,16 @@ for (const [remoteIdText, localIds] of Object.entries(imageRemoteToLocal)) {
   }
 }
 
-const excludedRemoteIds = new Set([2148]);
-const duplicateRemoteToLocal = new Map([[1999, 474]]);
 const knownMatchedRemoteIds = new Set(Object.keys(matchedRemoteToLocal).map(Number));
 const candidateEvents = windowEvents.filter((remote) => {
   const remoteId = Number(remote.id);
   return isValladolid(remote)
     && !knownMatchedRemoteIds.has(remoteId)
-    && !duplicateRemoteToLocal.has(remoteId)
-    && !excludedRemoteIds.has(remoteId);
+    && !importGuard.getDuplicateLocal(remoteId)
+    && !importGuard.getBlockedRemote(remoteId);
 });
 let nextId = Math.max(...events.map((event) => Number(event.id))) + 1;
-for (const [remoteId, localId] of duplicateRemoteToLocal) {
+for (const { remoteId, localId, reason } of importGuard.duplicateRemoteEntries()) {
   const remote = sourceEvents.get(remoteId);
   if (!remote || !isInDateWindow(remote.startsAt)) continue;
   report.totals.skipped += 1;
@@ -119,7 +123,18 @@ for (const [remoteId, localId] of duplicateRemoteToLocal) {
     remoteId,
     localId,
     date: remote.startsAt.slice(0, 10),
-    reason: 'Registro remoto duplicado de un evento ya importado con horario actualizado.'
+    reason
+  });
+}
+for (const { id, reason } of importGuard.blockedRemoteEntries()) {
+  const remote = sourceEvents.get(id);
+  if (!remote || !isInDateWindow(remote.startsAt)) continue;
+  report.totals.blocked += 1;
+  report.blocked.push({
+    remoteId: id,
+    date: remote.startsAt.slice(0, 10),
+    title: remote.title,
+    reason
   });
 }
 for (const remote of candidateEvents) {
@@ -127,7 +142,20 @@ for (const remote of candidateEvents) {
   const occurrenceResolution = occurrencesFor(remote, verifiedOccurrences, { maxDate: '2026-09-13' });
   const pendingOccurrences = [];
   for (const occurrence of occurrenceResolution.occurrences) {
-    const existing = findExistingLocal(remote, events, occurrence);
+    const blockedEvent = importGuard.getBlockedEvent(remoteOccurrenceCandidate(remote, occurrence));
+    if (blockedEvent) {
+      report.totals.blocked += 1;
+      report.blocked.push({
+        remoteId,
+        deletedLocalId: blockedEvent.deletedLocalId,
+        date: occurrence.date,
+        title: remote.title,
+        reason: blockedEvent.reason
+      });
+      continue;
+    }
+    const existingMatch = findExistingLocal(remote, events, occurrence);
+    const existing = existingMatch?.event || null;
     if (!existing) {
       pendingOccurrences.push(occurrence);
       continue;
@@ -139,7 +167,7 @@ for (const remote of candidateEvents) {
     }
     addImageIfMissing(existing, remote, report);
     report.totals.skipped += 1;
-    report.skipped.push({ remoteId, localId: existing.id, date: occurrence.date, reason: 'Coincidencia por fecha, hora, título y lugar.' });
+    report.skipped.push({ remoteId, localId: existing.id, date: occurrence.date, reason: existingMatch.reason });
   }
   if (!pendingOccurrences.length) continue;
 
@@ -373,26 +401,43 @@ function addImageIfMissing(local, remote, currentReport) {
 }
 
 function findExistingLocal(remote, currentEvents, occurrence = null) {
-  const date = occurrence?.date || remote.startsAt.slice(0, 10);
-  const remoteTime = occurrence && Object.prototype.hasOwnProperty.call(occurrence, 'startTime')
-    ? occurrence.startTime
-    : isGenericRemoteTime(remote) ? null : timePart(remote.startsAt);
+  const candidate = remoteOccurrenceCandidate(remote, occurrence);
+  const { date, startTime: remoteTime } = candidate;
+  const duplicate = findLikelyDuplicateEvent(candidate, currentEvents);
+  if (duplicate) return duplicate;
+
   const candidates = currentEvents.filter((event) => event.date === date && (
     event.startTime === remoteTime
     || (remoteTime === null && isDailySeries(remote))
   ));
   const remoteTitle = simplifyTitle(remote.title);
   const exactTitle = candidates.filter((event) => simplifyTitle(event.title) === remoteTitle);
-  if (exactTitle.length === 1) return exactTitle[0];
+  if (exactTitle.length === 1) return { event: exactTitle[0], reason: 'Coincidencia por fecha, hora y título exacto normalizado.' };
   if (exactTitle.length > 1) {
     const located = exactTitle.find((event) => locationMatches(event, remote, occurrence));
-    if (located) return located;
+    if (located) return { event: located, reason: 'Coincidencia por fecha, hora, título y lugar.' };
   }
 
-  return candidates.find((event) => {
+  const fuzzyMatch = candidates.find((event) => {
     const titleScore = tokenOverlap(simplifyTitle(event.title), remoteTitle);
     return titleScore >= 0.8 && locationMatches(event, remote, occurrence);
-  }) || null;
+  });
+  return fuzzyMatch ? { event: fuzzyMatch, reason: 'Coincidencia por fecha, hora, título parecido y lugar.' } : null;
+}
+
+function remoteOccurrenceCandidate(remote, occurrence = null) {
+  return {
+    date: occurrence?.date || remote.startsAt.slice(0, 10),
+    startTime: occurrence && Object.prototype.hasOwnProperty.call(occurrence, 'startTime')
+      ? occurrence.startTime
+      : isGenericRemoteTime(remote) ? null : timePart(remote.startsAt),
+    endTime: occurrence && Object.prototype.hasOwnProperty.call(occurrence, 'endTime')
+      ? occurrence.endTime
+      : isGenericRemoteTime(remote) ? null : timePart(remote.endsAt),
+    title: cleanText(remote.title),
+    location: locationFor(remote, occurrence),
+    performances: occurrence?.performances || performancesFor(remote.id)
+  };
 }
 
 function locationMatches(local, remote, occurrence = null) {
