@@ -26,6 +26,12 @@ const ZONE_COLORS = {
   'Zona 8': '#2f7d4f',
   'Zona Ferias': '#a85a2a'
 };
+const DIETARY_TITLE_LABELS = {
+  vegetarian: 'Platos vegetarianos',
+  vegan: 'Platos veganos',
+  'gluten-free': 'Platos sin gluten'
+};
+const DEFAULT_DOCUMENT_TITLE = document.title;
 const ZONE_LABELS = {
   'Zona 1': 'Plaza Mayor',
   'Zona 2': 'San Benito',
@@ -530,8 +536,16 @@ function resetMapSelection({ collapse = false, render = true } = {}) {
   return true;
 }
 
+function updateDocumentTitle() {
+  const labels = [...state.dietaryFilters].map((value) => DIETARY_TITLE_LABELS[value]).filter(Boolean).sort();
+  document.title = labels.length
+    ? `${labels.join(' y ')} | Casetas Feria de Día | Fiestas Valladolid 2026`
+    : DEFAULT_DOCUMENT_TITLE;
+}
+
 function renderSheet(items, options = {}) {
   if (!els.mapSheet) return;
+  updateDocumentTitle();
   if (state.sheetState !== 'expanded') state.searchOpen = false;
   const sorted = [...items].sort(compareCasetas);
   const isFocused = Boolean(state.selectedZone);
