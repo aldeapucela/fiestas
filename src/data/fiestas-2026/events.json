@@ -21978,7 +21978,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-09-01T12:10:59.921Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": true,
       "status": "paid",
@@ -21987,7 +21987,7 @@
       "note": "La fuente remota indica entradas anticipadas de 15 € y de puerta de 18 €, ambas con una consumición incluida; no facilita un enlace de venta."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -22559,7 +22559,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-09-01T14:08:24.554Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -22568,7 +22568,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -22689,7 +22689,7 @@
       "query": "Terraza Puerto Canalla, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -22698,7 +22698,7 @@
       "note": "La fuente remota no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -22728,7 +22728,7 @@
       "query": "Terraza Puerto Canalla, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -22737,7 +22737,7 @@
       "note": "La fuente remota no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -22766,7 +22766,7 @@
       "query": "Terraza Puerto Canalla, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -22775,7 +22775,7 @@
       "note": "La fuente remota no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -22809,7 +22809,7 @@
       "query": "La Pera Limonera, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -22818,7 +22818,7 @@
       "note": "La fuente remota no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -22849,7 +22849,7 @@
       "query": "La Pera Limonera, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -22858,7 +22858,7 @@
       "note": "La fuente remota no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -22893,7 +22893,7 @@
       "query": "La Pera Limonera, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "unknown",
@@ -22902,7 +22902,7 @@
       "note": "La fuente remota no indica venta de entradas para este evento."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -22931,7 +22931,7 @@
       "query": "Bar Bowie, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -22940,7 +22940,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -22970,7 +22970,7 @@
       "query": "Bar Bowie, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -22979,7 +22979,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -23008,7 +23008,7 @@
       "query": "Bar Bowie, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -23017,7 +23017,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -23046,7 +23046,7 @@
       "query": "Bar Bowie, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -23055,7 +23055,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -23084,7 +23084,7 @@
       "query": "Bar Bowie, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -23093,7 +23093,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -23122,7 +23122,7 @@
       "query": "Bar Bowie, Valladolid, España",
       "accuracy": 1
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -23131,7 +23131,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -23475,7 +23475,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-08-31T11:40:41.346Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -23484,7 +23484,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
@@ -24027,7 +24027,7 @@
       "accuracy": 1,
       "geocodedAt": "2026-09-01T19:05:36.302Z"
     },
-    "type": "Otros",
+    "type": "Música",
     "ticket": {
       "required": false,
       "status": "not_required",
@@ -24036,7 +24036,7 @@
       "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
-      "Otros"
+      "Música"
     ]
   },
   {
