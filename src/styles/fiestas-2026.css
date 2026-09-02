@@ -5529,6 +5529,19 @@ html.dark .fiestas-event-option {
   padding-right: 3.5rem;
 }
 
+.fiestas-casetas-search-status {
+  overflow: hidden;
+  color: #73579f;
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.fiestas-casetas-search-status[hidden] {
+  display: none;
+}
+
 .fiestas-casetas-search-shell {
   position: static;
   margin: 0;
@@ -5725,6 +5738,12 @@ html.dark .fiestas-event-option {
   margin: 0.6rem 0 0;
 }
 
+.fiestas-casetas-empty-hint {
+  color: #73579f;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
 html.dark .fiestas-casetas-search {
   border-color: #313743;
   background: #1a1f28;
@@ -5773,6 +5792,11 @@ html.dark .fiestas-casetas-search-toggle.is-active {
   border-color: rgba(113, 216, 203, 0.42);
   background: rgba(23, 184, 164, 0.14);
   color: #9ae8dd;
+}
+
+html.dark .fiestas-casetas-search-status,
+html.dark .fiestas-casetas-empty-hint {
+  color: #c8b3e5;
 }
 
 html.dark .fiestas-casetas-search input {

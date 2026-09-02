@@ -120,6 +120,9 @@
       <span aria-hidden="true"></span>
       <strong data-fiestas-map-sheet-title>{% if isCasetas %}Casetas en Valladolid{% else %}Actividades del día{% endif %}</strong>
       <small data-fiestas-map-sheet-count>0 {% if isCasetas %}casetas{% else %}actividades{% endif %}</small>
+      {% if isCasetas %}
+      <small class="fiestas-casetas-search-status" data-fiestas-casetas-search-status hidden></small>
+      {% endif %}
     </button>
     {% if isCasetas %}
     <div class="fiestas-casetas-search-shell" data-fiestas-casetas-search>

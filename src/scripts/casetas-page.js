@@ -91,6 +91,7 @@ export function initCasetasPage() {
   els.mapSheetTitle = document.querySelector('[data-fiestas-map-sheet-title]');
   els.mapSheetCount = document.querySelector('[data-fiestas-map-sheet-count]');
   els.mapSheetTabLabel = document.querySelector('[data-fiestas-map-sheet-tab-label]');
+  els.searchStatus = document.querySelector('[data-fiestas-casetas-search-status]');
   els.filterToggle = document.querySelector('[data-fiestas-casetas-filter-toggle]');
   els.filterPanel = document.querySelector('[data-fiestas-casetas-filter-panel]');
   els.filterClose = document.querySelector('[data-fiestas-casetas-filter-close]');
@@ -289,6 +290,7 @@ function bindControls() {
     state.searchQuery = event.currentTarget.value;
     if (els.searchClear) els.searchClear.hidden = !state.searchQuery.trim();
     syncUrlState();
+    renderMapMarkers();
     renderSheet(getVisibleCasetas());
   });
   els.searchClear?.addEventListener('click', () => {
@@ -296,6 +298,7 @@ function bindControls() {
     if (els.searchInput) els.searchInput.value = '';
     els.searchClear.hidden = true;
     syncUrlState();
+    renderMapMarkers();
     renderSheet(getVisibleCasetas());
     els.searchInput?.focus();
   });
@@ -348,6 +351,7 @@ function readUrlState() {
   if (selectedZone && location && selectedZone.items.some((caseta) => caseta.location === location)) {
     state.selectedLocation = location;
   }
+  state.searchOpen = Boolean(state.searchQuery);
   const dietaryValues = [
     ...params.getAll('dietary').flatMap((value) => value.split(',')),
     ...params.getAll('diet')
@@ -472,10 +476,14 @@ function renderMapMarkers() {
   state.markers.clearLayers();
   const groupsWithCoordinates = state.mapGroups.map((group) => ({
     ...group,
-    items: group.items.filter(matchesCasetaFilters)
+    items: group.items.filter((caseta) => matchesSearch(caseta.searchText, state.searchQuery)
+      && matchesCasetaFilters(caseta))
   })).filter((group) => hasCoordinates(group.coordinates) && group.items.length);
   if (!groupsWithCoordinates.length) {
-    const emptyMessage = state.onlyFavorites && !state.casetaFavorites.size
+    const searchQuery = state.searchQuery.trim();
+    const emptyMessage = searchQuery
+      ? `No hay casetas para «${searchQuery}» con los filtros activos.`
+      : state.onlyFavorites && !state.casetaFavorites.size
       ? 'Todavía no has guardado ninguna caseta como favorita.'
       : state.onlyFavorites
         ? 'No hay casetas favoritas con esos filtros.'
@@ -518,7 +526,7 @@ function renderMapMarkers() {
 function selectMapGroup(group) {
   state.selectedZone = group.zone;
   state.selectedLocation = group.location || null;
-  state.searchOpen = false;
+  state.searchOpen = Boolean(state.searchQuery.trim());
   state.sheetState = 'expanded';
   syncUrlState();
   renderMapMarkers();
@@ -546,7 +554,7 @@ function updateDocumentTitle() {
 function renderSheet(items, options = {}) {
   if (!els.mapSheet) return;
   updateDocumentTitle();
-  if (state.sheetState !== 'expanded') state.searchOpen = false;
+  if (state.sheetState !== 'expanded' && !state.searchQuery.trim()) state.searchOpen = false;
   const sorted = [...items].sort(compareCasetas);
   const isFocused = Boolean(state.selectedZone);
   const zoneTitle = state.selectedZone
@@ -563,6 +571,11 @@ function renderSheet(items, options = {}) {
   if (els.mapSheetTitle) els.mapSheetTitle.textContent = zoneTitle;
   if (els.mapSheetCount) els.mapSheetCount.textContent = countText;
   if (els.mapSheetTabLabel) els.mapSheetTabLabel.textContent = `Ver ${countText}`;
+  const searchQuery = state.searchQuery.trim();
+  if (els.searchStatus) {
+    els.searchStatus.hidden = !searchQuery;
+    els.searchStatus.textContent = searchQuery ? `Búsqueda activa: «${searchQuery}»` : '';
+  }
   syncSearchUi();
   syncFilterUi();
   renderLocationStatus(isFocused);
@@ -572,8 +585,13 @@ function renderSheet(items, options = {}) {
   if (!sorted.length) {
     const empty = document.createElement('div');
     empty.className = 'fiestas-empty fiestas-casetas-empty';
-    empty.innerHTML = state.searchQuery.trim()
-      ? `<p>No se han encontrado casetas para «${escapeHtml(state.searchQuery.trim())}».</p>`
+    const searchScope = state.selectedLocation
+      ? ` en ${escapeHtml(state.selectedLocation)}`
+      : state.selectedZone
+        ? ` en ${escapeHtml(state.selectedZone.toLowerCase())}`
+        : '';
+    empty.innerHTML = searchQuery
+      ? `<p>No hay casetas${searchScope} para «${escapeHtml(searchQuery)}».</p><p class="fiestas-casetas-empty-hint">La búsqueda sigue activa.</p>`
       : state.onlyFavorites && !state.casetaFavorites.size
         ? '<p>Todavía no has guardado ninguna caseta como favorita.</p>'
         : state.onlyFavorites
@@ -690,10 +708,16 @@ function renderLocationStatus(isFocused) {
 
 function syncSearchUi() {
   if (!els.searchToggle || !els.searchPanel) return;
+  const searchQuery = state.searchQuery.trim();
+  const hasSearchQuery = Boolean(searchQuery);
   els.searchToggle.setAttribute('aria-expanded', String(state.searchOpen));
-  els.searchToggle.setAttribute('aria-label', state.searchOpen ? 'Cerrar búsqueda' : 'Buscar caseta');
+  els.searchToggle.setAttribute('aria-label', state.searchOpen
+    ? 'Cerrar búsqueda'
+    : hasSearchQuery
+      ? `Abrir búsqueda. Búsqueda activa: ${searchQuery}`
+      : 'Buscar caseta');
   els.searchToggle.setAttribute('title', state.searchOpen ? 'Cerrar búsqueda' : 'Buscar caseta');
-  els.searchToggle.classList.toggle('is-active', state.searchOpen);
+  els.searchToggle.classList.toggle('is-active', state.searchOpen || hasSearchQuery);
   els.searchPanel.hidden = !state.searchOpen;
   if (els.searchInput && els.searchInput.value !== state.searchQuery) els.searchInput.value = state.searchQuery;
   if (els.searchClear) els.searchClear.hidden = !state.searchQuery.trim();
