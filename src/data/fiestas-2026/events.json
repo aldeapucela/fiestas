@@ -17614,6 +17614,44 @@
     ]
   },
   {
+    "id": 420,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Paco Devotion",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
+      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
+    ],
+    "location": "Plaza Poniente (La Boutique / Enboga)",
+    "zone": "Plaza Poniente",
+    "description": "Actuación de Paco Devotion en Plaza Poniente, con La Boutique y Enboga.",
+    "summary": "Paco Devotion en Plaza Poniente, con La Boutique y Enboga.",
+    "performances": [
+      "Paco Devotion"
+    ],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.653157,
+      "lng": -4.731282,
+      "source": "Inferidas desde evento existente en Plaza Poniente"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Gratis",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
     "id": 553,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
@@ -17652,10 +17690,6 @@
     },
     "tags": [
       "Música"
-    ],
-    "images": [
-      "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
     ]
   },
   {
