@@ -1558,7 +1558,91 @@
       "location": "Plaza de la Universidad",
       "placement": "En la plaza",
       "addressQuery": "Plaza de la Universidad, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Crepes",
+            "votable": true,
+            "items": [
+              {
+                "id": "crepe-azucar",
+                "name": "Azúcar",
+                "price": "5€"
+              },
+              {
+                "id": "crepe-nutella",
+                "name": "Nutella",
+                "price": "5€"
+              },
+              {
+                "id": "crepe-fresa",
+                "name": "Fresa",
+                "price": "6€"
+              }
+            ]
+          },
+          {
+            "title": "Café de puchero",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-solo-o-americano",
+                "name": "Solo o americano",
+                "price": "2,50€"
+              }
+            ]
+          },
+          {
+            "title": "Pincho + bebida",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-canutillos-crema-cafe-puchero",
+                "name": "Canutillos de crema",
+                "description": "CON CAFÉ PUCHERO",
+                "price": "4€"
+              }
+            ]
+          },
+          {
+            "title": "Postres varios",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-ponche-seguidiano",
+                "name": "Ponche seguidiano",
+                "price": "6€"
+              },
+              {
+                "id": "postre-tarta-pinones",
+                "name": "Tarta de piñones",
+                "price": "6,50€"
+              },
+              {
+                "id": "postre-ligote-tiramisu",
+                "name": "Ligote tiramisú",
+                "price": "6€"
+              },
+              {
+                "id": "postre-tarta-aniversario",
+                "name": "Tarta aniversario",
+                "price": "6€"
+              },
+              {
+                "id": "postre-4-trufas-chocolate",
+                "name": "4 trufas de chocolate",
+                "price": "6€"
+              },
+              {
+                "id": "postre-2-canutillos-crema",
+                "name": "2 canutillos de crema",
+                "price": "3€"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z4-01",
@@ -1713,6 +1797,115 @@
         "query": "Calle de la Solanilla, Valladolid, España",
         "accuracy": 1,
         "geocodedAt": "2026-08-30T06:33:48.000Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho + bebida 4,00€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-croqueton-bacalao",
+                "name": "Croquetón de bacalao"
+              },
+              {
+                "id": "pincho-bunuelo-bacalao",
+                "name": "Buñuelo de bacalao"
+              },
+              {
+                "id": "pincho-gilda-boqueron",
+                "name": "Gilda de boquerón"
+              }
+            ]
+          },
+          {
+            "title": "Pincho de feria suelto 3,00€",
+            "votable": true,
+            "items": []
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-mejillones-vapor",
+                "name": "Mejillones al vapor",
+                "price": "12,00€"
+              },
+              {
+                "id": "racion-cono-gamba-cocida",
+                "name": "Cono de gamba cocida",
+                "price": "12,00€"
+              },
+              {
+                "id": "racion-jamon-iberico",
+                "name": "Jamón ibérico",
+                "price": "18,00€"
+              },
+              {
+                "id": "racion-4-gildas-xl",
+                "name": "4 gildas XL",
+                "price": "8,50€"
+              },
+              {
+                "id": "racion-pulpo-a-feira",
+                "name": "Pulpo a feira",
+                "price": "18,00€"
+              }
+            ]
+          },
+          {
+            "title": "Bebida",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-cana",
+                "name": "Caña",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1,50€"
+              },
+              {
+                "id": "bebida-refresco",
+                "name": "Refresco",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-vino",
+                "name": "Vino",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-tinto-verano",
+                "name": "Tinto verano"
+              },
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-vaso-cana",
+                "name": "Vaso caña",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-botella-mar-de-frades",
+                "name": "Botella Mar de Frades",
+                "description": "(BOTELLA 1/2 LITRO)",
+                "price": "10,00€"
+              }
+            ]
+          }
+        ]
       }
     },
     {
