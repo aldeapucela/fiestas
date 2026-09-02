@@ -44,6 +44,8 @@
     {% block extraHead %}{% endblock %}
     <script>
       window.__FIESTAS_ANALYTICS_CONFIG__ = {{ analyticsConfig | dumpForScript | safe }};
+      window.__FIESTAS_EVENT_ALIASES__ = {{ eventAliases | dumpForScript | safe }};
+      window.__FIESTAS_EVENT_ALIAS_VERSION__ = {{ eventAliasVersion | dumpForScript | safe }};
     </script>
     <script>
       (function () {

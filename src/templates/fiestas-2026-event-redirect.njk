@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,follow" />
+    <link rel="canonical" href="{{ publicBaseUrl }}{{ redirectPath }}" />
+    <meta http-equiv="refresh" content="0;url={{ redirectPath }}" />
+    <title>Redirigiendo a la ficha de la actividad</title>
+  </head>
+  <body>
+    <p>Redirigiendo a la ficha de la actividad…</p>
+    <p><a href="{{ redirectPath }}">Continuar</a></p>
+    <script>
+      (function () {
+        const target = {{ redirectPath | dump | safe }};
+        const destination = new URL(target, window.location.origin);
+        destination.search = window.location.search;
+        destination.hash = window.location.hash;
+        window.location.replace(destination.href);
+      }());
+    </script>
+  </body>
+</html>

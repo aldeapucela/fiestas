@@ -1,21 +1,47 @@
 import fs from 'node:fs/promises';
+import fsSync from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
+import { execFile as execFileCallback } from 'node:child_process';
 import { setTimeout as wait } from 'node:timers/promises';
 import { fileURLToPath } from 'node:url';
+import { promisify } from 'node:util';
 import { buildImportGuard } from './event-import-guard.mjs';
 import { findLikelyDuplicateEvent } from './event-duplicate-detection.mjs';
 import { isDailySeries, occurrencesFor } from './import-eventos-ferias-dates.mjs';
+import {
+  assertRegistryIntegrity,
+  emptyImportRegistry,
+  getRegisteredOccurrence,
+  normalizeImportRegistry,
+  occurrenceRegistryKey,
+  registerOccurrence
+} from './event-import-registry.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const eventsPath = path.join(root, 'src', 'data', 'fiestas-2026', 'events.json');
 const verifiedOccurrencesPath = path.join(root, 'src', 'data', 'fiestas-2026', 'verified-event-occurrences.json');
 const importDecisionsPath = path.join(root, 'src', 'data', 'fiestas-2026', 'import-event-decisions.json');
+const importRegistryPath = path.join(root, 'src', 'data', 'fiestas-2026', 'event-import-registry.json');
 const cachePath = path.join(root, '.cache', 'fiestas', 'nominatim-location-cache.json');
 const reportsDir = path.join(root, '.cache', 'fiestas', 'reports');
+const snapshotsDir = path.join(root, '.cache', 'fiestas', 'import-snapshots');
+const lockPath = path.join(root, '.cache', 'fiestas', 'event-import.lock');
 const sourceUrl = 'https://eventos.aldeapucela.org/site-data.json';
 const userAgent = 'AldeaPucelaFiestas/1.0 (contacto@aldeapucela.org)';
 const args = parseArgs(process.argv.slice(2));
+const execFile = promisify(execFileCallback);
+
+await acquireImportLock();
+process.on('exit', () => {
+  try { fsSync.rmSync(lockPath, { recursive: true, force: true }); } catch (_) { /* best effort */ }
+});
+
+if (args.applyPlan) {
+  await applyPreparedPlan(args.applyPlan);
+  process.exit(0);
+}
 
 const events = JSON.parse(await fs.readFile(eventsPath, 'utf8'));
 const source = await fetchJson(sourceUrl);
@@ -23,13 +49,26 @@ const sourceEvents = new Map(source.events.map((event) => [Number(event.id), eve
 const verifiedOccurrences = await readJson(verifiedOccurrencesPath, {});
 const importDecisions = await readJson(importDecisionsPath, {});
 const importGuard = buildImportGuard(importDecisions);
+const registry = normalizeImportRegistry(await readJson(importRegistryPath, emptyImportRegistry()));
 const cache = await readJson(cachePath, {});
+const initialHashes = {
+  gitHead: await gitHead(),
+  events: hashJson(events),
+  verifiedOccurrences: hashJson(verifiedOccurrences),
+  registry: hashJson(registry)
+};
+let sourceSnapshotPath = null;
+if (args.prepare) {
+  sourceSnapshotPath = path.join(snapshotsDir, `source-${stamp()}.json`);
+  await fs.mkdir(snapshotsDir, { recursive: true });
+  await fs.writeFile(sourceSnapshotPath, `${JSON.stringify(source, null, 2)}\n`);
+}
 const report = {
-  mode: args.apply ? 'apply' : 'dry-run',
+  mode: args.prepare ? 'prepare' : args.apply ? 'apply' : 'dry-run',
   sourceUrl,
   generatedAt: new Date().toISOString(),
   dateWindow: ['2026-09-04', '2026-09-13'],
-  totals: { sourceInWindow: 0, sourceOutsideValladolid: 0, sourceUnavailable: 0, enriched: 0, imagesAdded: 0, added: 0, skipped: 0, blocked: 0, unresolved: 0 },
+  totals: { sourceInWindow: 0, sourceOutsideValladolid: 0, sourceUnavailable: 0, enriched: 0, imagesAdded: 0, added: 0, skipped: 0, blocked: 0, unresolved: 0, conflicts: 0 },
   excluded: importGuard.blockedRemoteEntries(),
   sourceUnavailable: [],
   enriched: [],
@@ -37,7 +76,8 @@ const report = {
   added: [],
   skipped: [],
   blocked: [],
-  unresolved: []
+  unresolved: [],
+  conflicts: []
 };
 
 const windowEvents = source.events.filter((event) => isInDateWindow(event.startsAt));
@@ -67,6 +107,9 @@ const imageRemoteToLocal = {
   1884: [395],
   1980: [403]
 };
+
+registerKnownMatches(matchedRemoteToLocal, sourceEvents, localById, registry);
+registerKnownMatches(imageRemoteToLocal, sourceEvents, localById, registry);
 
 for (const [remoteIdText, localIds] of Object.entries(matchedRemoteToLocal)) {
   const remoteId = Number(remoteIdText);
@@ -107,6 +150,10 @@ for (const [remoteIdText, localIds] of Object.entries(imageRemoteToLocal)) {
 }
 
 const knownMatchedRemoteIds = new Set(Object.keys(matchedRemoteToLocal).map(Number));
+for (const { remoteId, localId } of importGuard.duplicateRemoteEntries()) {
+  registerKnownMatches({ [remoteId]: [localId] }, sourceEvents, localById, registry);
+}
+
 const candidateEvents = windowEvents.filter((remote) => {
   const remoteId = Number(remote.id);
   return isValladolid(remote)
@@ -141,7 +188,8 @@ for (const remote of candidateEvents) {
   const remoteId = Number(remote.id);
   const occurrenceResolution = occurrencesFor(remote, verifiedOccurrences, { maxDate: '2026-09-13' });
   const pendingOccurrences = [];
-  for (const occurrence of occurrenceResolution.occurrences) {
+  for (const [occurrenceIndex, occurrence] of occurrenceResolution.occurrences.entries()) {
+    const registryKey = occurrenceRegistryKey(remote, occurrence, occurrenceIndex);
     const blockedEvent = importGuard.getBlockedEvent(remoteOccurrenceCandidate(remote, occurrence));
     if (blockedEvent) {
       report.totals.blocked += 1;
@@ -154,10 +202,38 @@ for (const remote of candidateEvents) {
       });
       continue;
     }
+    const registered = getRegisteredOccurrence(registry, remoteId, registryKey);
+    if (registered) {
+      if (registered.status === 'linked' && !localById.has(Number(registered.localEventId))) {
+        throw new Error(`El registro ${remoteId}:${registryKey} apunta al evento local inexistente ${registered.localEventId}.`);
+      }
+      report.totals.skipped += 1;
+      report.skipped.push({
+        remoteId,
+        localId: registered.localEventId,
+        date: occurrence.date,
+        reason: registered.status === 'linked'
+          ? 'Ocurrencia registrada; no se vuelve a importar.'
+          : `Ocurrencia marcada como ${registered.status}.`
+      });
+      continue;
+    }
     const existingMatch = findExistingLocal(remote, events, occurrence);
     const existing = existingMatch?.event || null;
     if (!existing) {
-      pendingOccurrences.push(occurrence);
+      const possibleMatches = findPossibleLocals(remote, events, occurrence);
+      if (possibleMatches.length) {
+        report.totals.conflicts += 1;
+        report.conflicts.push({
+          remoteId,
+          date: occurrence.date,
+          title: remote.title,
+          possibleLocalIds: possibleMatches.map((event) => event.id),
+          reason: 'Coincidencia aproximada; requiere revisión y no se crea automáticamente.'
+        });
+        continue;
+      }
+      pendingOccurrences.push({ ...occurrence, registryKey });
       continue;
     }
     const changed = enrichExistingEvent(existing, remote);
@@ -167,6 +243,11 @@ for (const remote of candidateEvents) {
     }
     addImageIfMissing(existing, remote, report);
     report.totals.skipped += 1;
+    registerOccurrence(registry, remoteId, registryKey, {
+      status: 'linked',
+      localEventId: existing.id,
+      reason: existingMatch.reason
+    });
     report.skipped.push({ remoteId, localId: existing.id, date: occurrence.date, reason: existingMatch.reason });
   }
   if (!pendingOccurrences.length) continue;
@@ -221,6 +302,11 @@ for (const remote of candidateEvents) {
     nextId += 1;
     events.push(local);
     localById.set(local.id, local);
+    registerOccurrence(registry, remoteId, occurrence.registryKey, {
+      status: 'linked',
+      localEventId: local.id,
+      reason: 'Nueva ocurrencia importada con identidad registrada.'
+    });
     report.totals.added += 1;
     report.added.push({
       localId: local.id,
@@ -234,8 +320,33 @@ for (const remote of candidateEvents) {
   }
 }
 
+if (args.apply && (report.unresolved.length || report.conflicts.length)) {
+  throw new Error(`La importación tiene ${report.unresolved.length} pendientes y ${report.conflicts.length} conflictos; prepara y revisa antes de aplicar.`);
+}
+
 if (args.apply) {
-  await fs.writeFile(eventsPath, `${JSON.stringify(events, null, 2)}\n`);
+  assertRegistryIntegrity(registry, events);
+  await writeAtomic(eventsPath, `${JSON.stringify(events, null, 2)}\n`);
+  await writeAtomic(importRegistryPath, `${JSON.stringify(registry, null, 2)}\n`);
+}
+
+if (args.prepare) {
+  assertRegistryIntegrity(registry, events);
+  const planPath = path.join(root, '.cache', 'fiestas', `eventos-ferias-import-plan-${stamp()}.json`);
+  await fs.writeFile(planPath, `${JSON.stringify({
+    schemaVersion: 1,
+    generatedAt: new Date().toISOString(),
+    sourceUrl,
+    sourceSnapshotPath: path.relative(root, sourceSnapshotPath),
+    sourceSnapshotSha256: hashJson(source),
+    initialHashes,
+    result: {
+      events,
+      registry
+    },
+    report
+  }, null, 2)}\n`);
+  report.planPath = path.relative(root, planPath);
 }
 
 await fs.mkdir(path.dirname(cachePath), { recursive: true });
@@ -246,6 +357,7 @@ await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
 
 console.log(JSON.stringify({
   reportPath: path.relative(root, reportPath),
+  ...(report.planPath ? { planPath: report.planPath } : {}),
   mode: report.mode,
   totals: report.totals
 }, null, 2));
@@ -438,6 +550,22 @@ function remoteOccurrenceCandidate(remote, occurrence = null) {
     location: locationFor(remote, occurrence),
     performances: occurrence?.performances || performancesFor(remote.id)
   };
+}
+
+function findPossibleLocals(remote, currentEvents, occurrence = null) {
+  const date = occurrence?.date || remote.startsAt.slice(0, 10);
+  const remoteTime = occurrence && Object.prototype.hasOwnProperty.call(occurrence, 'startTime')
+    ? occurrence.startTime
+    : isGenericRemoteTime(remote) ? null : timePart(remote.startsAt);
+  const candidates = currentEvents.filter((event) => event.date === date && (
+    event.startTime === remoteTime
+    || (remoteTime === null && isDailySeries(remote))
+  ));
+  const remoteTitle = simplifyTitle(remote.title);
+  return candidates.filter((event) => {
+    const titleScore = tokenOverlap(simplifyTitle(event.title), remoteTitle);
+    return titleScore >= 0.8 && locationMatches(event, remote, occurrence);
+  });
 }
 
 function locationMatches(local, remote, occurrence = null) {
@@ -913,7 +1041,14 @@ function scoreNominatimResult(result, query) {
 }
 
 function parseArgs(values) {
-  return { apply: values.includes('--apply') };
+  const prepare = values.includes('--prepare');
+  const apply = values.includes('--apply');
+  const applyPlanIndex = values.indexOf('--apply-plan');
+  const applyPlan = applyPlanIndex >= 0 ? values[applyPlanIndex + 1] : null;
+  if (prepare && apply || apply && applyPlan || prepare && applyPlan || (applyPlanIndex >= 0 && !applyPlan)) {
+    throw new Error('Usa exactamente uno de --prepare, --apply o --apply-plan <ruta>.');
+  }
+  return { apply, prepare, applyPlan };
 }
 
 async function fetchJson(url) {
@@ -933,4 +1068,129 @@ async function readJson(filePath, fallback) {
 
 function stamp() {
   return new Date().toISOString().replace(/[:.]/g, '-');
+}
+
+function hashJson(value) {
+  return createHash('sha256').update(JSON.stringify(value)).digest('hex');
+}
+
+async function gitHead() {
+  try {
+    const result = await execFile('git', ['rev-parse', 'HEAD'], { cwd: root });
+    return result.stdout.trim();
+  } catch (_) {
+    return null;
+  }
+}
+
+async function acquireImportLock() {
+  await fs.mkdir(path.dirname(lockPath), { recursive: true });
+  try {
+    await fs.mkdir(lockPath);
+    await fs.writeFile(path.join(lockPath, 'owner.json'), `${JSON.stringify({ pid: process.pid, createdAt: new Date().toISOString() }, null, 2)}\n`);
+  } catch (error) {
+    if (error.code !== 'EEXIST') throw error;
+    try {
+      const stats = await fs.stat(lockPath);
+      if (Date.now() - stats.mtimeMs > 2 * 60 * 60 * 1000) {
+        await fs.rm(lockPath, { recursive: true, force: true });
+        await fs.mkdir(lockPath);
+        await fs.writeFile(path.join(lockPath, 'owner.json'), `${JSON.stringify({ pid: process.pid, createdAt: new Date().toISOString(), recovered: true }, null, 2)}\n`);
+        return;
+      }
+    } catch (_) {
+      // Another process may have removed the lock while it was inspected.
+    }
+    throw new Error('Ya hay una importación de eventos en ejecución; no se aplica este lote.');
+  }
+}
+
+function registerKnownMatches(matches, sourceEvents, localById, registry) {
+  for (const [remoteIdText, localIds] of Object.entries(matches)) {
+    const remoteId = Number(remoteIdText);
+    const remote = sourceEvents.get(remoteId);
+    if (!remote) continue;
+    for (const localId of localIds) {
+      const local = localById.get(Number(localId));
+      if (!local) continue;
+      const occurrence = {
+        date: local.date,
+        startTime: local.startTime,
+        endTime: local.endTime,
+        location: local.location
+      };
+      const key = occurrenceRegistryKey(remote, occurrence);
+      const current = getRegisteredOccurrence(registry, remoteId, key);
+      if (current) continue;
+      registerOccurrence(registry, remoteId, key, {
+        status: 'linked',
+        localEventId: local.id,
+        reason: 'Relación histórica conservada por el importador.'
+      });
+    }
+  }
+}
+
+async function applyPreparedPlan(planPathValue) {
+  const planPath = path.resolve(root, String(planPathValue || ''));
+  const plan = JSON.parse(await fs.readFile(planPath, 'utf8'));
+  if (plan.schemaVersion !== 1 || !plan.initialHashes || !plan.result?.events || !plan.result?.registry) {
+    throw new Error('El plan de importación no tiene un formato válido.');
+  }
+  if ((Array.isArray(plan.report?.unresolved) && plan.report.unresolved.length)
+    || (Array.isArray(plan.report?.conflicts) && plan.report.conflicts.length)) {
+    throw new Error(`El plan contiene ${plan.report.unresolved?.length || 0} pendientes y ${plan.report.conflicts?.length || 0} conflictos; revísalos antes de aplicar.`);
+  }
+
+  const currentEvents = JSON.parse(await fs.readFile(eventsPath, 'utf8'));
+  const currentVerifiedOccurrences = await readJson(verifiedOccurrencesPath, {});
+  const currentRegistry = normalizeImportRegistry(await readJson(importRegistryPath, emptyImportRegistry()));
+  const currentHashes = {
+    gitHead: await gitHead(),
+    events: hashJson(currentEvents),
+    verifiedOccurrences: hashJson(currentVerifiedOccurrences),
+    registry: hashJson(currentRegistry)
+  };
+  for (const key of Object.keys(plan.initialHashes)) {
+    if (currentHashes[key] !== plan.initialHashes[key]) {
+      throw new Error(`El estado cambió desde --prepare (${key}); vuelve a preparar la importación.`);
+    }
+  }
+
+  const snapshotPath = path.resolve(root, plan.sourceSnapshotPath || '');
+  const snapshot = JSON.parse(await fs.readFile(snapshotPath, 'utf8'));
+  if (hashJson(snapshot) !== plan.sourceSnapshotSha256) {
+    throw new Error('La instantánea remota del plan está dañada o no coincide.');
+  }
+
+  const resultEvents = Array.isArray(plan.result.events) ? plan.result.events : [];
+  const resultRegistry = normalizeImportRegistry(plan.result.registry);
+  assertRegistryIntegrity(resultRegistry, resultEvents);
+  await writeAtomic(eventsPath, `${JSON.stringify(resultEvents, null, 2)}\n`);
+  await writeAtomic(importRegistryPath, `${JSON.stringify(resultRegistry, null, 2)}\n`);
+  await fs.mkdir(reportsDir, { recursive: true });
+  const report = {
+    ...(plan.report || {}),
+    mode: 'apply-plan',
+    appliedAt: new Date().toISOString(),
+    sourceSnapshotPath: path.relative(root, snapshotPath)
+  };
+  const reportPath = path.join(reportsDir, `eventos-ferias-import-${stamp()}-apply-plan.json`);
+  await fs.writeFile(reportPath, `${JSON.stringify(report, null, 2)}\n`);
+  console.log(JSON.stringify({
+    reportPath: path.relative(root, reportPath),
+    mode: 'apply-plan',
+    totals: report.totals || {}
+  }, null, 2));
+}
+
+async function writeAtomic(filePath, content) {
+  const temporaryPath = `${filePath}.tmp-${process.pid}`;
+  try {
+    await fs.writeFile(temporaryPath, content);
+    await fs.rename(temporaryPath, filePath);
+  } catch (error) {
+    await fs.rm(temporaryPath, { force: true });
+    throw error;
+  }
 }

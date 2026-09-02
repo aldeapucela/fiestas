@@ -1233,6 +1233,63 @@
         "query": "Plaza de la Universidad, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:37.841Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho",
+            "votable": true,
+            "items": [
+              { "id": "pincho-solomillo", "name": "Solomillo", "description": "al roquefort" },
+              { "id": "pincho-panceta", "name": "Panceta", "description": "a la sal de ajo" },
+              { "id": "pincho-provolone", "name": "Provolone", "description": "a la plancha", "dietary": "vegetarian" },
+              { "id": "pincho-patatas-revolconas", "name": "Patatas revolconas" },
+              { "id": "pincho-perrito", "name": "Perrito", "description": "a la mostaza y miel" },
+              { "id": "pincho-morcilla", "name": "Morcilla", "description": "con cebolla caramelizada" },
+              { "id": "pincho-brocheta-moruna-gaucha", "name": "Brocheta moruna gaucha" },
+              { "id": "pincho-chorizo", "name": "Chorizo", "description": "a la sidra" },
+              { "id": "pincho-piruleta-cecina", "name": "Piruleta de cecina" },
+              { "id": "pincho-hojaldre-empanada-gallega", "name": "Hojaldre de empanada gallega" }
+            ]
+          },
+          {
+            "title": "Bebida",
+            "votable": false,
+            "items": [
+              { "id": "bebida-cana-cerveza", "name": "Caña de cerveza" },
+              { "id": "bebida-vino-tinto-ribera", "name": "Vino tinto Ribera del Duero" },
+              { "id": "bebida-vino-verdejo-rueda", "name": "Vino verdejo de Rueda" },
+              { "id": "bebida-vino-rosado-cigales", "name": "Vino rosado de Cigales" },
+              { "id": "bebida-lorencito", "name": "Lorencito" },
+              { "id": "bebida-tinto-verano", "name": "Tinto de verano" },
+              { "id": "bebida-refrescos", "name": "Refrescos" },
+              { "id": "bebida-cerveza-sin-alcohol", "name": "Cerveza sin alcohol" },
+              { "id": "bebida-agua", "name": "Agua" }
+            ]
+          },
+          {
+            "title": "Pincho+bebida 4€",
+            "votable": true,
+            "items": []
+          },
+          {
+            "title": "Botella de sidra 5€",
+            "votable": false,
+            "items": []
+          },
+          {
+            "title": "Paella + bebida (solo al mediodía) 4€",
+            "votable": false,
+            "items": []
+          },
+          {
+            "title": "Postre",
+            "votable": true,
+            "items": [
+              { "id": "postre-abisinio-crema", "name": "Abisinio de crema artesano", "price": "3,5€" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1273,6 +1330,48 @@
         "query": "Plaza de la Universidad, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:37.841Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho + bebida",
+            "votable": true,
+            "items": [
+              { "id": "pincho-arroz-costillas", "name": "Arroz de costillas", "description": "(Cotillas, zanahorias, patatas)" },
+              { "id": "pincho-arroz-taiwan", "name": "Arroz taiwan", "description": "(Pancetas, cebollas fritas)" },
+              { "id": "pincho-ban-mian", "name": "Ban mian", "description": "(Pasta china, carne picada, brotes de soja, ajo)" },
+              { "id": "pincho-bao", "name": "Bao", "description": "(Relleno de carne)" },
+              { "id": "pincho-gyozas", "name": "Gyozas", "description": "(Relleno de pollo)" },
+              { "id": "pincho-mo", "name": "Mó", "description": "(Pancetas)" },
+              { "id": "pincho-pollo-agridulce", "name": "Pollo agridulce" },
+              { "id": "pincho-bolitas-pollo-frito", "name": "Bolitas de pollo frito" },
+              { "id": "pincho-salchichas-taiwan", "name": "Salchichas taiwan" }
+            ]
+          },
+          {
+            "title": "Debidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-vino-tinto", "name": "Vino tinto" },
+              { "id": "bebida-verdejo", "name": "Verdejo" },
+              { "id": "bebida-rosado", "name": "Rosado" },
+              { "id": "bebida-frizzante", "name": "Frizzante" },
+              { "id": "bebida-cana-cerveza", "name": "Caña de cerveza" },
+              { "id": "bebida-cerveza-sin-alcohol", "name": "Cerveza sin alcohol" },
+              { "id": "bebida-agua", "name": "Agua" },
+              { "id": "bebida-refrescos", "name": "Refrescos" }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              { "id": "postre-tarta-yogur", "name": "Tarta de yogur", "description": "con arándanos" },
+              { "id": "postre-tarta-queso", "name": "Tarta de queso", "description": "con nuez, miel y galleta" },
+              { "id": "postre-tarta-dos-chocolates", "name": "Tarta de dos chocolates" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1293,6 +1392,89 @@
         "query": "Plaza de la Universidad, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:37.841Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria + bebida (4 €)",
+            "votable": true,
+            "items": [
+              { "id": "pincho-chapata-panceta", "name": "Chapata panceta", "description": "queso y piparra" },
+              { "id": "pincho-chapata-pollo-tex-mex", "name": "Chapata de pollo tex mex", "description": "pico de gallo + alioli" },
+              { "id": "pincho-chapata-solomillo", "name": "Chapata solomillo", "description": "pimienta" },
+              { "id": "pincho-brocheta-langostino-tempura", "name": "Brocheta de langostino tempura" },
+              { "id": "pincho-empanadilla-oreja", "name": "Empanadilla de oreja" },
+              { "id": "pincho-chapata-lomo-seitan", "name": "Chapata lomo seitán", "description": "con pimientos" },
+              { "id": "pincho-chapata-proteina-guisante", "name": "Chapata proteína de guisante", "description": "alioli y pico de gallo" },
+              { "id": "pincho-chapata-morcilla", "name": "Chapata de morcilla", "description": "con manzana" },
+              { "id": "pincho-piparras-rebozadas", "name": "Piparras rebozadas", "description": "con salsa yogur" },
+              { "id": "pincho-empanadilla-boletus", "name": "Empanadilla de boletus", "description": "trufa y queso" }
+            ]
+          },
+          {
+            "title": "Menú diario — Sábado",
+            "votable": false,
+            "items": [
+              { "id": "menu-diario-sabado-arroz-zamorana", "name": "Arroz zamorana" }
+            ]
+          },
+          {
+            "title": "Menú diario — Domingo",
+            "votable": false,
+            "items": [
+              { "id": "menu-diario-domingo-garbanzos-callos", "name": "Garbanzos con callos" }
+            ]
+          },
+          {
+            "title": "Menú diario — Lunes",
+            "votable": false,
+            "items": [
+              { "id": "menu-diario-lunes-patatas-carne", "name": "Patatas con carne" }
+            ]
+          },
+          {
+            "title": "Menú diario — Martes",
+            "votable": false,
+            "items": [
+              { "id": "menu-diario-martes-alubias-pintas", "name": "Alubias pintas", "description": "(oreja y chorizo)" }
+            ]
+          },
+          {
+            "title": "Menú diario — Miércoles",
+            "votable": false,
+            "items": [
+              { "id": "menu-diario-miercoles-patatas-marinera", "name": "Patatas marinera" }
+            ]
+          },
+          {
+            "title": "Menú diario — Jueves",
+            "votable": false,
+            "items": [
+              { "id": "menu-diario-jueves-garbanzos", "name": "Garbanzos", "description": "(chorizo y panceta)" }
+            ]
+          },
+          {
+            "title": "Menú diario — Viernes",
+            "votable": false,
+            "items": [
+              { "id": "menu-diario-viernes-marmitako", "name": "Marmitako" }
+            ]
+          },
+          {
+            "title": "Menú diario — Sábado",
+            "votable": false,
+            "items": [
+              { "id": "menu-diario-sabado-judiones-abuela", "name": "Judiones de la abuela" }
+            ]
+          },
+          {
+            "title": "Menú diario — Domingo",
+            "votable": false,
+            "items": [
+              { "id": "menu-diario-domingo-arroz-zamorana", "name": "Arroz zamorana" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1723,6 +1905,27 @@
         "lng": -4.7288673,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              { "id": "pincho-montadito-panceta", "name": "Montadito de panceta", "description": "queso ahumado y cebolla caramelizada al vermut" },
+              { "id": "pincho-montadito-lagarto", "name": "Montadito de lagarto", "description": "provolone y pesto de tomate seco" },
+              { "id": "pincho-mini-brioche-langostino", "name": "Mini brioche de langostino crispy", "description": "lombarda cítrica y mayonesa kimchi" },
+              { "id": "pincho-mini-brioche-morcilla-angus", "name": "Mini brioche de morcilla de angus", "description": "queso de cabra y chutney de tomate" }
+            ]
+          },
+          {
+            "title": "Ración",
+            "votable": true,
+            "items": [
+              { "id": "racion-torreznito", "name": "Torreznito", "description": "con pico de gallo" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1869,6 +2072,27 @@
         "lng": -4.7283724,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              { "id": "pincho-montadito-rabas", "name": "Montadito de rabas", "description": "con mayonesa rosa" },
+              { "id": "pincho-montadito-secreto", "name": "Montadito de secreto", "description": "con mini de pimientos fritos y jalapeños" },
+              { "id": "pincho-mini-brioche-pull-pork", "name": "Mini brioche de pull pork", "description": "con cebolla encurtida" },
+              { "id": "pincho-mini-brioche-criollo", "name": "Mini brioche de criollo", "description": "con chimichurri" }
+            ]
+          },
+          {
+            "title": "Ración",
+            "votable": true,
+            "items": [
+              { "id": "racion-patatas-bravas-thai", "name": "Patatas bravas Thai" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -3211,6 +3435,59 @@
         "query": "Plaza de Santa Cruz, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:54.745Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho + bebida 4,00€",
+            "votable": true,
+            "items": [
+              { "id": "pincho-moruno", "name": "Moruno", "description": "a la mostaza" },
+              { "id": "pincho-mini-burguer", "name": "Mini Burguer", "description": "con cebolla caramelizada" },
+              { "id": "pincho-tosta-morcilla", "name": "Tosta de morcilla", "description": "con compota de manzana" },
+              { "id": "pincho-gilda-xl", "name": "Gilda XL" }
+            ]
+          },
+          {
+            "title": "Pincho suelto 3,00€",
+            "votable": true,
+            "items": []
+          },
+          {
+            "title": "Chapata + bebida 4,00€",
+            "votable": true,
+            "items": [
+              { "id": "chapata-panceta", "name": "Panceta", "description": "con queso" },
+              { "id": "chapata-rabas-ali-oli", "name": "Rabas Ali Oli" },
+              { "id": "chapata-pollo-empanado", "name": "Pollo empanado", "description": "con miel mostaza" },
+              { "id": "chapata-jamon", "name": "Jamón", "description": "con tumaca" }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-rabas-ali-oli", "name": "Rabas Ali Oli", "price": "8,50€" },
+              { "id": "racion-morcilla-leon", "name": "Morcilla de León", "price": "8,50€" },
+              { "id": "racion-jamon", "name": "Jamón", "description": "con tumaca", "price": "9,50€" },
+              { "id": "racion-4-gildas-xl", "name": "4 Gildas XL", "price": "8,50€" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-cana", "name": "Caña", "price": "2,00€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1,50€" },
+              { "id": "bebida-refresco", "name": "Refresco", "price": "2,50€" },
+              { "id": "bebida-vino", "name": "Vino", "price": "2,50€" },
+              { "id": "bebida-mosto", "name": "Mosto", "price": "2,00€" },
+              { "id": "bebida-tinto-verano", "name": "Tinto verano", "description": "vaso", "price": "2,00€" },
+              { "id": "bebida-lorencito", "name": "Lorencito", "price": "2,00€" },
+              { "id": "bebida-botella-sidra", "name": "Botella de sidra", "price": "5,00€" }
+            ]
+          }
+        ]
       }
     },
     {

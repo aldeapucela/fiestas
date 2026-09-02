@@ -80,3 +80,33 @@ test('un hash corrupto muestra el error y no rompe la página', async ({ page })
   await expect(page.locator('[data-plan-import-title]')).toBeVisible();
   await expect(page.locator('[data-plan-import-shared-preview]')).toBeHidden();
 });
+
+test('migra favoritos y planes personales que apuntan a un evento fusionado', async ({ page }) => {
+  await page.addInitScript(() => {
+    localStorage.setItem('fiestasPucela:favorites', JSON.stringify(['583']));
+    localStorage.setItem('fiestasPucela:plans', JSON.stringify({
+      schemaVersion: 1,
+      plans: [{
+        id: 'local-legacy-plan',
+        name: 'Plan antiguo',
+        createdAt: '2026-08-20T10:00:00.000Z',
+        updatedAt: '2026-08-20T10:00:00.000Z',
+        activityIds: ['583', '783'],
+        icon: 'music'
+      }]
+    }));
+  });
+  await page.goto('/');
+
+  await expect.poll(async () => page.evaluate(() => ({
+    favorites: JSON.parse(localStorage.getItem('fiestasPucela:favorites') || '[]'),
+    planIds: JSON.parse(localStorage.getItem('fiestasPucela:plans') || '{}').plans?.[0]?.activityIds
+  }))).toEqual({ favorites: ['783'], planIds: ['783'] });
+});
+
+test('un hash antiguo resuelve aliases hacia el evento canónico', async ({ page }) => {
+  await page.goto(`/plan/importar/?hash=${encodeURIComponent(planHash(['583']))}`);
+
+  await expect(page.locator('[data-plan-import-shared-preview]')).toBeVisible();
+  await expect(page.locator('[data-plan-import-status]')).not.toContainText(/no hay actividades compatibles/i);
+});
