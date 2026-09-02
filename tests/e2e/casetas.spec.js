@@ -55,6 +55,23 @@ test('mantiene visible la búsqueda al abrir el cajón desde una URL compartida'
   await expect(status).toHaveText('Búsqueda activa: «croquetas»');
 });
 
+test('filtra las casetas pendientes de carta desde un enlace y permite limpiarlo', async ({ page }) => {
+  await page.goto('/casetas/');
+  const casetaRows = page.locator(casetas);
+  const allRows = await casetaRows.count();
+
+  await page.goto('/casetas/?menu=missing');
+
+  await expect.poll(() => casetaRows.count()).toBeGreaterThan(0);
+  expect(await casetaRows.count()).toBeLessThan(allRows);
+  await expect(page.locator('[data-fiestas-map-clear-filters]')).toBeVisible();
+  expect(new URL(page.url()).searchParams.get('menu')).toBe('missing');
+
+  await page.locator('[data-fiestas-map-clear-filters]').click();
+  await expect.poll(() => casetaRows.count()).toBe(allRows);
+  expect(new URL(page.url()).searchParams.get('menu')).toBeNull();
+});
+
 test('guardar una caseta como favorita persiste al recargar', async ({ page }) => {
   await page.goto('/casetas/');
   const favorite = page.locator(casetas).first();
