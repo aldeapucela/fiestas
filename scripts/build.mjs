@@ -633,6 +633,7 @@ async function loadEvents(vallabusStops = []) {
     startTime: String(event.startTime || ''),
     endTime: String(event.endTime || ''),
     title: String(event.title || 'Evento'),
+    slug: event.slug ? slugify(event.slug) : '',
     image: images[0] || '',
     ...(images.length > 1 ? { images } : {}),
     imageAlt: String(event.imageAlt || event.title || 'Imagen de la actividad'),
@@ -657,24 +658,27 @@ async function loadEvents(vallabusStops = []) {
     };
   }).filter((event) => event.id && event.date)
     .sort((a, b) => a.date.localeCompare(b.date) || sortMinutes(a.startTime) - sortMinutes(b.startTime) || a.title.localeCompare(b.title, 'es'))
-    .map((event) => ({
-      ...event,
-      slug: slugify(event.title),
-      detailImage: detailImageUrl(event.image),
-      icon: fiestas2026Icon(event.type),
-      socialImagePath: '/assets/social/categories/' + socialCategorySlug(event.type) + '.jpg',
-      socialImageAlt: 'Icono morado de la categoría ' + event.type + ' sobre fondo blanco',
-      socialImageWidth: 512,
-      socialImageHeight: 512,
-      urlPath: '/e/' + event.id + '/' + slugify(event.title) + '/',
-      canonicalUrl: publicBaseUrl + '/e/' + event.id + '/' + slugify(event.title) + '/',
-      shareText: shareText(event),
-      ticketLabel: ticketKindLabel(event.ticketKind),
-      ticketDetail: ticketDetail(event.ticketKind, event.ticket),
-      mapUrl: '/mapa/?event=' + encodeURIComponent(event.id),
-      osmUrl: event.coordinates ? 'https://www.openstreetmap.org/?mlat=' + event.coordinates.lat + '&mlon=' + event.coordinates.lng + '#map=17/' + event.coordinates.lat + '/' + event.coordinates.lng : '',
-      directionsUrl: event.coordinates ? 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(event.coordinates.lat + ',' + event.coordinates.lng) : ''
-    }));
+    .map((event) => {
+      const slug = slugify(event.slug || event.title);
+      return {
+        ...event,
+        slug,
+        detailImage: detailImageUrl(event.image),
+        icon: fiestas2026Icon(event.type),
+        socialImagePath: '/assets/social/categories/' + socialCategorySlug(event.type) + '.jpg',
+        socialImageAlt: 'Icono morado de la categoría ' + event.type + ' sobre fondo blanco',
+        socialImageWidth: 512,
+        socialImageHeight: 512,
+        urlPath: '/e/' + event.id + '/' + slug + '/',
+        canonicalUrl: publicBaseUrl + '/e/' + event.id + '/' + slug + '/',
+        shareText: shareText(event),
+        ticketLabel: ticketKindLabel(event.ticketKind),
+        ticketDetail: ticketDetail(event.ticketKind, event.ticket),
+        mapUrl: '/mapa/?event=' + encodeURIComponent(event.id),
+        osmUrl: event.coordinates ? 'https://www.openstreetmap.org/?mlat=' + event.coordinates.lat + '&mlon=' + event.coordinates.lng + '#map=17/' + event.coordinates.lat + '/' + event.coordinates.lng : '',
+        directionsUrl: event.coordinates ? 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(event.coordinates.lat + ',' + event.coordinates.lng) : ''
+      };
+    });
 }
 
 function normalizeEventImages(event) {

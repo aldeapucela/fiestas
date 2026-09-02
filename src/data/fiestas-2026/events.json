@@ -4406,7 +4406,8 @@
     "dateLabel": "Domingo 6 de septiembre",
     "startTime": "22:15",
     "endTime": null,
-    "title": "Fuegos Artificiales (Sesión 1ª)",
+    "title": "CANCELADA: Fuegos Artificiales (Sesión 1ª)",
+    "slug": "fuegos-artificiales-sesion-1",
     "image": "/assets/events/fuegos-artificiales-valladolid.jpg",
     "imageAlt": "Fuegos artificiales sobre Valladolid durante las fiestas",
     "imageSource": "https://www.valladolid.es/en/ayuntamiento/notas-prensa/feria-fiestas-virgen-san-lorenzo-resultan-exito-cuanto-publ",
@@ -4414,8 +4415,8 @@
     "imageLicense": null,
     "location": "Paraje del Caño Hondo",
     "zone": "Caño Hondo",
-    "description": "Fuegos Artificiales (Sesión 1ª). Pirotecnia Gironina (Valencia)",
-    "summary": "Fuegos Artificiales (Sesión 1ª). Pirotecnia Gironina (Valencia)",
+    "description": "Sesión cancelada: la sesión de fuegos artificiales prevista para el 6 de septiembre se cancela debido a la declaración de alerta por peligro meteorológico en Castilla y León. Pirotecnia Gironina (Valencia).",
+    "summary": "Sesión cancelada: la sesión de fuegos artificiales prevista para el 6 de septiembre se cancela debido a la declaración de alerta por peligro meteorológico en Castilla y León. Pirotecnia Gironina (Valencia).",
     "performances": [
       "Pirotecnia Gironina (Valencia)"
     ],
