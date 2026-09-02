@@ -732,7 +732,14 @@
     "zone": "Plaza Mayor",
     "description": "Cristongo Flower Power: las Doñas, Mr Kitos, los Daza, Marlena, los del Lío y DJ Nano Información ampliada: el evento musical ‘El Cristongo’ se celebra en el marco de las fiestas de la Virgen de San Lorenzo 2026 bajo el lema ‘Una gran fiesta Flower Power’. El cartel anuncia la participación de los artistas Marlena, DJ Nano y los del Lío\n\nInformación ampliada: El evento musical ‘El Cristongo’ se celebra en el marco de las Fiestas de la Virgen de San Lorenzo 2026 bajo el lema ‘Una gran fiesta Flower Power’. El cartel anuncia la participación de los artistas Marlena, DJ Nano y Los del Lío.",
     "summary": "El evento musical ‘El Cristongo’ se celebra en el marco de las fiestas de la Virgen de San Lorenzo 2026 bajo el lema ‘Una gran fiesta Flower Power’. El cartel anuncia la participación de los artistas Marlena, DJ Nano y los del Lío",
-    "performances": [],
+    "performances": [
+      "Las Doñas",
+      "Mr Kitos",
+      "Los Daza",
+      "Marlena",
+      "Los del Lío",
+      "DJ Nano"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -758,12 +765,14 @@
     "dateLabel": "Viernes 4 de septiembre",
     "startTime": "22:00",
     "endTime": "04:00",
-    "title": "Lorencito festival: OazË Underground",
+    "title": "Lorencito festival: Oazë Underground",
     "location": "Escenario Rosaleda – Skate plaza",
     "zone": "Moreras",
-    "description": "Lorencito festival: OazË Underground Información ampliada: el Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos. Información ampliada: el Oaze underground X Lorencito festival se llevará a cabo el viernes 4 de septiembre a partir de las 22:00 horas. La cita tendrá lugar en el Skatepark de las Moreras, ubicado en la zona de la Rosaleda en Valladolid\n\nInformación ampliada: El Oaze underground X Lorencito Festival se llevará a cabo el viernes 4 de septiembre a partir de las 22:00 horas. La cita tendrá lugar en el Skatepark de las Moreras, ubicado en la zona de la Rosaleda en Valladolid.",
-    "summary": "El Oaze underground X Lorencito festival se llevará a cabo el viernes 4 de septiembre a partir de las 22:00 horas. La cita tendrá lugar en el Skatepark de las Moreras, ubicado en la zona de la Rosaleda en Valladolid",
-    "performances": [],
+    "description": "Lorencito Festival programa Oazë Underground en Las Moreras el viernes 4 de septiembre de 22:00 a 04:00 horas.",
+    "summary": "Oazë Underground en Lorencito Festival.",
+    "performances": [
+      "Oazë Underground"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -2659,7 +2668,9 @@
     "zone": "Moreras",
     "description": "Lorencito festival: Mimosos Información ampliada: el Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos\n\nInformación ampliada: El Lorencito Festival se celebra en Las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos.",
     "summary": "El Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos",
-    "performances": [],
+    "performances": [
+      "Mimosos"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -5923,7 +5934,9 @@
     "zone": "Moreras",
     "description": "Lorencito festival: Pólvora Información ampliada: el Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos. Información ampliada: el evento Pólvora se celebra en el marco del Lorencito festival, con una cita programada para el 7 de septiembre de 2026 en la Skate Plaza las Moreras de Valladolid. La jornada musical comenzará a las 22:00 horas y se extenderá hasta la madrugada\n\nInformación ampliada: El evento Pólvora se celebra en el marco del Lorencito Festival, con una cita programada para el 7 de septiembre de 2026 en la Skate Plaza Las Moreras de Valladolid. La jornada musical comenzará a las 22:00 horas y se extenderá hasta la madrugada.",
     "summary": "El Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos",
-    "performances": [],
+    "performances": [
+      "Pólvora"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -9114,7 +9127,11 @@
     "zone": "Moreras",
     "description": "9ª Edición festival Reggae se Dice ‘Regue’ Sumerr & Unruly Youth, Amazonians, Twinkle Sisters & Friends Asociación Cultural Sol y Reggae Información ampliada: festival Reggae “Sedice Regue” (9ª Edición)",
     "summary": "Festival Reggae “Sedice Regue” (9ª Edición)",
-    "performances": [],
+    "performances": [
+      "Sumerr & Unruly Youth",
+      "Amazonians",
+      "Twinkle Sisters & Friends"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -9146,7 +9163,10 @@
     "zone": "Moreras",
     "description": "Lorencito festival: Broke & Sakuteo + Skate Información ampliada: el Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos\n\nInformación ampliada: El Lorencito Festival se celebra en Las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos.",
     "summary": "El Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos",
-    "performances": [],
+    "performances": [
+      "Broke",
+      "Skate"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -11123,12 +11143,14 @@
     "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
     "location": "C/ Cebadería, 7 (Vándalo)",
     "zone": "Zona Centro",
-    "description": "Actuación de Paco Devotion en la calle Cebadería 7, con Vándalo",
-    "summary": "Paco Devotion en la calle Cebadería 7, con Vándalo",
+    "description": "Paco Devotion actúa en Vándalo Bar, C/ Cebadería 7, el viernes 11 de septiembre de 20:00 a 23:00 horas dentro de Vándalo en fiestas.",
+    "summary": "Paco Devotion en Vándalo Bar dentro de Vándalo en fiestas.",
     "performances": [
       "Paco Devotion"
     ],
-    "organizers": [],
+    "organizers": [
+      "Vándalo Bar"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.6518,
@@ -11145,6 +11167,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg"
     ]
   },
   {
@@ -11498,7 +11524,9 @@
     "zone": "Moreras",
     "description": "Lorencito festival: la Neverita Información ampliada: el Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos\n\nInformación ampliada: El Lorencito Festival se celebra en Las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos.",
     "summary": "El Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos",
-    "performances": [],
+    "performances": [
+      "La Neverita"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -13184,7 +13212,9 @@
     "zone": "Moreras",
     "description": "Lorencito festival: Noise Room Información ampliada: el Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos\n\nInformación ampliada: El Lorencito Festival se celebra en Las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos.",
     "summary": "El Lorencito festival se celebra en las Moreras del 4 al 12 de septiembre, ofreciendo una programación intensa de música y cultura. Durante estos días, el festival se convierte en un punto de encuentro clave para los amantes de los ritmos contemporáneos",
-    "performances": [],
+    "performances": [
+      "Noise Room"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -14870,7 +14900,9 @@
       "Escalante",
       "Omar Cantt"
     ],
-    "organizers": [],
+    "organizers": [
+      "La Pera Limonera"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.6573,
@@ -14887,6 +14919,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "/assets/events/siesta-club-pera-limonera-2026.jpg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/538258e09f0f07a6985733e7248d0610b02ab41d_2_623x1024.jpeg"
     ]
   },
   {
@@ -15076,15 +15112,18 @@
     "id": 432,
     "date": "2026-09-07",
     "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "22:00",
-    "endTime": "23:00",
+    "startTime": "20:00",
+    "endTime": null,
     "title": "Pera Limonera (Concierto)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/872b52f13644cb7112bbff314c04496af718102d_2_715x1024.jpeg",
     "location": "A Tomar por Culo club, Paseo de Marcelino Martín “El Catarro”",
     "zone": "Moreras",
-    "description": "El grupo musical Pera Limonera llega a la ciudad de Valladolid para ofrecer una actuación en directo. El evento tendrá lugar el próximo 7 de septiembre en las instalaciones de\n\nInformación ampliada: El grupo musical Pera Limonera llega a la ciudad de Valladolid para ofrecer una actuación en directo. El evento tendrá lugar el próximo 7 de septiembre en las instalaciones de A Tomar Por Culo Club.",
-    "summary": "El grupo musical Pera Limonera llega a la ciudad de Valladolid para ofrecer una actuación en directo. El evento tendrá lugar el próximo 7 de septiembre en las instalaciones de",
-    "performances": [],
+    "description": "Pera Limonera actúa en A Tomar por Culo Club el lunes 7 de septiembre desde las 20:00 horas, dentro de la programación de fiestas.",
+    "summary": "Pera Limonera en A Tomar por Culo Club desde las 20:00 horas.",
+    "performances": [
+      "Pera Limonera",
+      "By Siloé"
+    ],
     "organizers": [
       "A Tomar por Culo club"
     ],
@@ -15269,28 +15308,28 @@
     "id": 437,
     "date": "2026-09-11",
     "dateLabel": "Viernes 11 de septiembre",
-    "startTime": null,
+    "startTime": "23:30",
     "endTime": null,
     "title": "Minitel Valladolid (Evento) en Orbital club",
-    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/d/dc9648469a48c62940338f5b63d0f8a2e4177f7e.jpeg",
-    "location": "Orbital club, Plaza de la Rinconada",
+    "image": "/assets/events/orbital-club-programacion-especial-septiembre-2026.jpg",
+    "location": "Orbital club, Plaza de la Rinconada, Valladolid",
     "zone": "Zona Centro",
-    "description": "Minitel Valladolid (Evento) en Orbital club en Plaza de la Rinconada",
-    "summary": "Minitel Valladolid (Evento) en Orbital club en Plaza de la Rinconada",
-    "performances": [],
+    "description": "Orbital Club programa una noche de fiestas el viernes 11 de septiembre desde las 23:30 horas, con Mangomudo y Minitel en Plaza de la Rinconada.",
+    "summary": "Mangomudo y Minitel en Orbital Club desde las 23:30 horas.",
+    "performances": [
+      "Mangomudo",
+      "Minitel"
+    ],
     "organizers": [
-      "@baila_minitel"
+      "@baila_minitel",
+      "Orbital club"
     ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.6531507,
       "lng": -4.7289254,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 952112076,
-      "query": "Plaza de la Rinconada, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-25T19:23:58.636Z"
+      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
+      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
     },
     "type": "Música",
     "ticket": {
@@ -15302,6 +15341,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "/assets/events/orbital-club-programacion-especial-septiembre-2026.jpg",
+      "https://foro.aldeapucela.org/uploads/default/original/2X/d/dc9648469a48c62940338f5b63d0f8a2e4177f7e.jpeg"
     ]
   },
   {
@@ -17473,10 +17516,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/29fc3965473a0c0489f406c57035ed4d22b167bc_2_472x1024.jpeg",
     "location": "Pera Limonera",
     "zone": "Zona Centro",
-    "description": "Super Cristongo llega a Pera Limonera el domingo 6 de septiembre desde las 17:00 horas, con una propuesta de entretenimiento y la actuación de Las Doñas.\n\nInformación ampliada: Super Cristongo llega a la sala Pera Limonera para ofrecer una propuesta única de entretenimiento. El evento se llevará a cabo el próximo domingo 6 de septiembre, con un horario comprendido entre las 17:00 y la 01:00 horas.",
-    "summary": "Super Cristongo en Pera Limonera, con actuación de Las Doñas.",
+    "description": "Super Cristongo llega a La Pera Limonera el domingo 6 de septiembre desde las 17:00 horas, con la actuación de Las Doñas dentro de la programación de fiestas.",
+    "summary": "Super Cristongo en La Pera Limonera, con actuación de Las Doñas.",
     "performances": [
-      "Las Doñas"
+      "Las Doñas",
+      "Cristongo"
     ],
     "organizers": [
       "Pera Limonera"
@@ -17502,6 +17546,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/29fc3965473a0c0489f406c57035ed4d22b167bc_2_472x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg"
     ]
   },
   {
@@ -17542,84 +17590,6 @@
     ]
   },
   {
-    "id": 543,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "17:30",
-    "endTime": "20:30",
-    "title": "Ferias 2026 el Campanazo",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
-    "location": "Calle Campanas",
-    "zone": "Zona Centro",
-    "description": "Las ferias 2026 de el Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la calle Campanas, ofreciendo una variedad de propuestas para todos los gustos\n\nInformación ampliada: Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las ferias 2026 de el Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la calle Campanas, ofreciendo una variedad de propuestas para todos los gustos",
-    "performances": [],
-    "organizers": [
-      "El Campanazo"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6520111,
-      "lng": -4.7304879,
-      "source": "OpenStreetMap Nominatim (Plaza de Martí y Monsó, ubicación verificada para Calle Campanas)",
-      "osmType": "relation",
-      "osmId": 8141812,
-      "query": "Plaza de Martí y Monsó, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.288Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 544,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "17:30",
-    "endTime": "20:30",
-    "title": "Ferias 2026 el Campanazo",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4e99c1e417c42b77fbb21ec686877e44f2e19bdf_2_824x1024.jpeg",
-    "location": "Calle Campanas",
-    "zone": "Zona Centro",
-    "description": "Las ferias 2026 de el Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la calle Campanas, ofreciendo una variedad de propuestas para todos los gustos\n\nInformación ampliada: Las Ferias 2026 de El Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la Calle Campanas, ofreciendo una variedad de propuestas para todos los gustos.",
-    "summary": "Las ferias 2026 de el Campanazo celebran un ciclo de actuaciones musicales en honor a la Virgen de San Lorenzo. El programa se desarrolla a lo largo de varios días en la calle Campanas, ofreciendo una variedad de propuestas para todos los gustos",
-    "performances": [],
-    "organizers": [
-      "El Campanazo"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6520111,
-      "lng": -4.7304879,
-      "source": "OpenStreetMap Nominatim (Plaza de Martí y Monsó, ubicación verificada para Calle Campanas)",
-      "osmType": "relation",
-      "osmId": 8141812,
-      "query": "Plaza de Martí y Monsó, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.288Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 420,
     "date": "2026-09-04",
     "dateLabel": "Viernes 4 de septiembre",
@@ -17657,45 +17627,6 @@
     "images": [
       "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
       "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg"
-    ]
-  },
-  {
-    "id": 533,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, Calle Bao junto a Plaza Rosarillo",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6553096,
-      "lng": -4.7238053,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 33822015,
-      "query": "Calle del Bao, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
     ]
   },
   {
@@ -18093,7 +18024,10 @@
     "zone": "Zona Centro",
     "description": "Los Jarabo y DJ Flaco se presentan en un evento especial este próximo sábado 5 de septiembre. La cita tendrá lugar en la calle Empecinado 5, comenzando la actividad a las 17:30 horas\n\nInformación ampliada: Los Jarabo y DJ Flaco se presentan en un evento especial este próximo sábado 5 de septiembre. La cita tendrá lugar en la Calle Empecinado 5, comenzando la actividad a las 17:30 horas.",
     "summary": "Los Jarabo y DJ Flaco se presentan en un evento especial este próximo sábado 5 de septiembre. La cita tendrá lugar en la calle Empecinado 5, comenzando la actividad a las 17:30 horas",
-    "performances": [],
+    "performances": [
+      "Los Jarabo",
+      "DJ Flaco"
+    ],
     "organizers": [
       "bicorecords"
     ],
@@ -18213,7 +18147,7 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/32b83abb21b90b02cfffbcfdf730470b141fd6bc_2_472x1024.jpeg",
     "location": "Maricarmen, C/ Caridad 2",
     "zone": "Zona Centro",
-    "description": "Vuelve el Cotorrazo programa una tarde musical en Maricarmen, C/ Caridad 2, el lunes 7 de septiembre de 18:00 a 21:00 horas, con las actuaciones de Las Doñas y Kike Av.\n\nInformación ampliada: El ciclo musical Vuelve el Cotorrazo regresa con una variada programación de actuaciones en vivo que se desarrollará a lo largo de varios días. El evento tendrá lugar en la calle Caridad 2, concentrando diversas propuestas artísticas en un ambiente festivo.",
+    "description": "Vuelve el Cotorrazo programa una tarde musical en Maricarmen, C/ Caridad 2, el lunes 7 de septiembre de 18:00 a 21:00 horas, con las actuaciones de Las Doñas y Kike Av.",
     "summary": "Actuaciones de Las Doñas y Kike Av dentro de Vuelve el Cotorrazo.",
     "performances": [
       "Las Doñas",
@@ -18737,41 +18671,6 @@
     "id": 582,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
-    "startTime": "13:00",
-    "endTime": "18:00",
-    "title": "Dinosaurios DJs (Sesiones de música)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6ec0f6c10f12901fb68519a583523f2006400969_2_847x1024.jpeg",
-    "location": "Calle Cascajares (zona de el Farolito, la Taberna del Farolito y la Cárcava)",
-    "zone": "Zona Centro",
-    "description": "El colectivo de DJs Dinosaurios llega a las ferias de Valladolid para ofrecer una propuesta musical dinámica. Las actuaciones están programadas para el sábado 5 de septiembre con un formato de vermut a las 13:00h, y el viernes 11 de septiembre con una sesión de tardeo a partir de las 18:00h\n\nInformación ampliada: El colectivo de DJs Dinosaurios llega a las Ferias de Valladolid para ofrecer una propuesta musical dinámica. Las actuaciones están programadas para el sábado 5 de septiembre con un formato de vermut a las 13:00h, y el viernes 11 de septiembre con una sesión de tardeo a partir de las 18:00h.",
-    "summary": "El colectivo de DJs Dinosaurios llega a las ferias de Valladolid para ofrecer una propuesta musical dinámica. Las actuaciones están programadas para el sábado 5 de septiembre con un formato de vermut a las 13:00h, y el viernes 11 de septiembre con una sesión de tardeo a partir de las 18:00h",
-    "performances": [],
-    "organizers": [
-      "Dinosaurios DJs"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6521118,
-      "lng": -4.7241231,
-      "source": "Google Maps (consulta manual; centro aproximado de tres locales contiguos)",
-      "query": "El Farolito, La Taberna del Farolito y Bar La Cárcava, Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 583,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
     "startTime": "13:00",
     "endTime": "18:00",
     "title": "Dinosaurios DJs (Sesiones de música)",
@@ -19923,44 +19822,6 @@
     ]
   },
   {
-    "id": 617,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "23:30",
-    "endTime": null,
-    "title": "OrbitalClub - Sesiones fiestas 2026",
-    "image": "/assets/events/orbital-club-programacion-especial-septiembre-2026.jpg",
-    "location": "Orbital club, Plaza de la Rinconada, Valladolid",
-    "zone": "Zona Centro",
-    "description": "La programación especial de fiestas de septiembre de 2026 en Orbital club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables\n\nInformación ampliada: La programación especial de fiestas de septiembre de 2026 en Orbital Club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables.",
-    "summary": "La programación especial de fiestas de septiembre de 2026 en Orbital club ofrece una variada selección de eventos musicales y nocturnos. Durante todo el mes, el club presenta una serie de actuaciones que incluyen diversos estilos de música electrónica y ritmos bailables",
-    "performances": [
-      "Mangomudo",
-      "Minitel"
-    ],
-    "organizers": [
-      "Orbital club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531507,
-      "lng": -4.7289254,
-      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
-      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 618,
     "date": "2026-09-12",
     "dateLabel": "Sábado 12 de septiembre",
@@ -19999,67 +19860,30 @@
     ]
   },
   {
-    "id": 619,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": "23:00",
-    "endTime": null,
-    "title": "Las Doñas (Gira de actuaciones)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
-    "location": "Pera Limonera, Paseo de Marcelino Martín ‘El Catarro’, Valladolid",
-    "zone": "Zona Centro",
-    "description": "Las Donas (Gira de actuaciones)",
-    "summary": "Las Donas (Gira de actuaciones)",
-    "performances": [
-      "Las Doñas"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6571419,
-      "lng": -4.7329438,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 367406151,
-      "query": "La Pera Limonera, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 622,
     "date": "2026-09-12",
     "dateLabel": "Sábado 12 de septiembre",
-    "startTime": "18:00",
-    "endTime": null,
+    "startTime": "20:00",
+    "endTime": "23:00",
     "title": "Las Doñas (Gira de actuaciones)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
-    "location": "Terraza Molly Malone, Plaza del Poniente, 5, Valladolid",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/723f0316b8c2c9cbb083b58388dfd5df2e6339b8_2_738x1024.jpeg",
+    "location": "Terraza Puerto Canalla, Plaza del Poniente, 6, Valladolid",
     "zone": "Zona Centro",
-    "description": "Las Donas (Gira de actuaciones)",
-    "summary": "Las Donas (Gira de actuaciones)",
+    "description": "Tardeos Canallas programa Las Doñas y Fiesta de la Leche en la Terraza Puerto Canalla el sábado 12 de septiembre de 20:00 a 23:00 horas.",
+    "summary": "Las Doñas y Fiesta de la Leche en la Terraza Puerto Canalla.",
     "performances": [
-      "Las Doñas"
+      "Las Doñas",
+      "Fiesta de la Leche"
     ],
-    "organizers": [],
+    "organizers": [
+      "Puerto Canalla"
+    ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.6524739,
-      "lng": -4.7317957,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 5376469221,
-      "query": "Molly Malone, Plaza del Poniente, Valladolid, España",
+      "lat": 41.652475,
+      "lng": -4.7318993,
+      "source": "Google Maps (consulta manual; ficha PUERTO CANALLA)",
+      "query": "Terraza Puerto Canalla, Valladolid, España",
       "accuracy": 1
     },
     "type": "Música",
@@ -20072,6 +19896,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/723f0316b8c2c9cbb083b58388dfd5df2e6339b8_2_738x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg"
     ]
   },
   {
@@ -21037,47 +20865,6 @@
     ]
   },
   {
-    "id": 648,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "20:00",
-    "endTime": null,
-    "title": "Vándalo en fiestas (Programación Especial)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39965e5f45564328e9c072339ccd5781e234188e_2_838x1024.jpeg",
-    "location": "Vándalo Bar",
-    "zone": "Zona Centro",
-    "description": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza Información ampliada: Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza.\n\nInformación ampliada: Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘En Fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una variada selección de actuaciones musicales y sesiones en su espacio.",
-    "summary": "Vándalo Bar presenta su programación especial de septiembre de 2026 bajo el título ‘Vándalo en fiestas’. El evento se desarrollará a lo largo de diversas fechas durante el mes, ofreciendo una agenda variada de actuaciones musicales y sesiones en su terraza",
-    "performances": [
-      "Paco Dvt"
-    ],
-    "organizers": [
-      "Vándalo Bar"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6529156,
-      "lng": -4.7280623,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 4907605910,
-      "query": "Vándalo Bar, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-31T15:04:20.188Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 649,
     "date": "2026-09-11",
     "dateLabel": "Viernes 11 de septiembre",
@@ -21554,45 +21341,6 @@
     },
     "tags": [
       "Música"
-    ]
-  },
-  {
-    "id": 667,
-    "date": "2026-09-13",
-    "dateLabel": "Domingo 13 de septiembre",
-    "startTime": "19:30",
-    "endTime": "20:30",
-    "title": "Casa con dos puertas (Obra de teatro)",
-    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/8/8060ca0dc4314c64c68611b46e4e45833b8b00f6.jpeg",
-    "location": "Teatro Arcón de Olid (Sala Borja)",
-    "zone": "Zona Centro",
-    "description": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
-    "summary": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja.",
-    "performances": [],
-    "organizers": [
-      "Teatro Arcón de Olid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6527404,
-      "lng": -4.7204461,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 7102357207,
-      "query": "Sala Borja, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T10:11:08.153Z"
-    },
-    "type": "Teatro",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Teatro"
     ]
   },
   {
@@ -22411,7 +22159,7 @@
     "endTime": null,
     "title": "Programación Bandido (Septiembre 2026)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0ecf4b97f0b3153bc9088a13985eb34ed63a041c_2_581x1024.jpeg",
-    "location": "Plaza Poniente",
+    "location": "Bandido Techno Room, Plaza Poniente",
     "zone": "Zona Centro",
     "description": "Bandido presenta su programación especial de fiestas el lunes 7 de septiembre desde las 16:00 horas en Plaza Poniente, con Technoroom y SHYxBANDIDO.\n\nInformación ampliada: Bandido presenta su programación especial de eventos musicales que tendrá lugar desde el 4 hasta el 13 de septiembre de 2026. La actividad se desarrollará en la Plaza Poniente de Valladolid, abriendo sus puertas diariamente a partir de las 16:00 horas.",
     "summary": "Programación Bandido del lunes 7 de septiembre, con Technoroom y SHYxBANDIDO.",
@@ -22443,6 +22191,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0ecf4b97f0b3153bc9088a13985eb34ed63a041c_2_581x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/851644358609e02b180f1617d2c3ea465387b752_2_559x1024.jpeg"
     ]
   },
   {
@@ -22865,12 +22617,60 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
     "location": "La Pera Limonera, Playa de las Moreras",
     "zone": "Moreras",
-    "description": "La Pera Limonera acoge una cita musical de fiestas el viernes 4 de septiembre a las 20:00 horas, con las actuaciones de Les Castizos, Jorge Tejedor y Revu y Ardiya. La propuesta reúne el concierto anunciado en la programación de Fiestas 2026 y la actuación de Les Castizos y Jorge Tejedor en un único evento para evitar duplicidades.",
+    "description": "La Pera Limonera acoge una cita musical de fiestas el viernes 4 de septiembre a las 20:00 horas, con las actuaciones de Les Castizos, Jorge Tejedor y Revu y Ardiya.",
     "summary": "Concierto de Les Castizos, Jorge Tejedor y Revu y Ardiya en La Pera Limonera durante las Fiestas de Valladolid 2026.",
     "performances": [
       "Les Castizos",
       "Jorge Tejedor",
       "Revu y Ardiya"
+    ],
+    "organizers": [
+      "Pera Limonera"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6571419,
+      "lng": -4.7329438,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 367406151,
+      "query": "La Pera Limonera, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2d9d1f34500f25a937b6eaaf6cbd42c136d3499a_2_698x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/81bd22dd37447d7b75c9d15916c0b5fbad19b2df_2_597x1024.jpeg"
+    ]
+  },
+  {
+    "id": 704,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "20:00",
+    "endTime": null,
+    "title": "Conciertos de Fiestas 2026 en La Pera Limonera",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
+    "location": "La Pera Limonera, Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "La Pera Limonera programa una jornada musical el sábado 5 de septiembre desde las 20:00 horas, con Humberto, Las Doñas, Alex Belt y Félix Villada.",
+    "summary": "Humberto, Las Doñas, Alex Belt y Félix Villada en La Pera Limonera.",
+    "performances": [
+      "Humberto",
+      "Las Doñas",
+      "Alex Belt",
+      "Felix Villada"
     ],
     "organizers": [],
     "collaborators": [],
@@ -22896,126 +22696,7 @@
     ],
     "images": [
       "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
-      "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2d9d1f34500f25a937b6eaaf6cbd42c136d3499a_2_698x1024.jpeg"
-    ]
-  },
-  {
-    "id": 704,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": "20:00",
-    "endTime": null,
-    "title": "Conciertos de Fiestas 2026 en La Pera Limonera",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
-    "location": "La Pera Limonera, Playa de las Moreras",
-    "zone": "Moreras",
-    "description": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
-    "summary": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
-    "performances": [
-      "Humberto",
-      "Las Doñas",
-      "Alex Belt",
-      "Felix Villada",
-      "DJs en terraza"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6571419,
-      "lng": -4.7329438,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 367406151,
-      "query": "La Pera Limonera, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 705,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "17:00",
-    "endTime": null,
-    "title": "Conciertos de Fiestas 2026 en La Pera Limonera",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
-    "location": "La Pera Limonera, Playa de las Moreras",
-    "zone": "Moreras",
-    "description": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
-    "summary": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
-    "performances": [
-      "Cristongo"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6571419,
-      "lng": -4.7329438,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 367406151,
-      "query": "La Pera Limonera, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 706,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "20:00",
-    "endTime": null,
-    "title": "Conciertos de Fiestas 2026 en La Pera Limonera",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
-    "location": "La Pera Limonera, Playa de las Moreras",
-    "zone": "Moreras",
-    "description": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
-    "summary": "Las Fiestas de la Virgen de San Lorenzo presentan un destacado ciclo de actuaciones musicales que se desarrollará durante los primeros días de septiembre. El programa incluye diversas propuestas que van desde el pop y la música urbana hasta sesiones de DJs y nostalgia musical.",
-    "performances": [
-      "A Tomar Por Culo Club",
-      "By Siloé"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6571419,
-      "lng": -4.7329438,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 367406151,
-      "query": "La Pera Limonera, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg"
     ]
   },
   {
@@ -23134,45 +22815,6 @@
     ]
   },
   {
-    "id": 711,
-    "date": "2026-09-12",
-    "dateLabel": "Sábado 12 de septiembre",
-    "startTime": "20:00",
-    "endTime": "23:00",
-    "title": "Tardeos Canallas (Ferias 2026)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/723f0316b8c2c9cbb083b58388dfd5df2e6339b8_2_738x1024.jpeg",
-    "location": "Terraza Puerto Canalla, Plaza del Poniente, 6, Valladolid",
-    "zone": "Zona Centro",
-    "description": "Los Tardeos Canallas presentan su programación especial para las Ferias 2026, ofreciendo una serie de actuaciones musicales en la Terraza Puerto Canalla. El ciclo se desarrolla durante varios días del mes con sesiones que se extienden desde las 20:00 hasta las 23:00 horas.",
-    "summary": "Los Tardeos Canallas presentan su programación especial para las Ferias 2026, ofreciendo una serie de actuaciones musicales en la Terraza Puerto Canalla. El ciclo se desarrolla durante varios días del mes con sesiones que se extienden desde las 20:00 hasta las 23:00 horas.",
-    "performances": [
-      "Las Doñas",
-      "Fiesta de la Leche"
-    ],
-    "organizers": [
-      "Puerto Canalla"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.652475,
-      "lng": -4.7318993,
-      "source": "Google Maps (consulta manual; ficha PUERTO CANALLA)",
-      "query": "Terraza Puerto Canalla, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
     "id": 712,
     "date": "2026-09-09",
     "dateLabel": "Miércoles 9 de septiembre",
@@ -23189,46 +22831,6 @@
       "Chema Rivas",
       "Luismi Lorenz",
       "George Whaley"
-    ],
-    "organizers": [
-      "La Pera Limonera"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6571419,
-      "lng": -4.7329438,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 367406151,
-      "query": "La Pera Limonera, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Otros",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Otros"
-    ]
-  },
-  {
-    "id": 713,
-    "date": "2026-09-10",
-    "dateLabel": "Jueves 10 de septiembre",
-    "startTime": "20:00",
-    "endTime": null,
-    "title": "Conciertos de Fiestas 2026 en La Pera Limonera",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/538258e09f0f07a6985733e7248d0610b02ab41d_2_623x1024.jpeg",
-    "location": "La Pera Limonera, Playa de las Moreras",
-    "zone": "Moreras",
-    "description": "Las Fiestas de la Virgen de San Lorenzo 2026 presentan una variada programación de música y ocio para celebrar las festividades locales. El programa incluye diversas noches de fiesta con actuaciones de artistas y DJs invitados en diferentes fechas de septiembre.",
-    "summary": "Las Fiestas de la Virgen de San Lorenzo 2026 presentan una variada programación de música y ocio para celebrar las festividades locales. El programa incluye diversas noches de fiesta con actuaciones de artistas y DJs invitados en diferentes fechas de septiembre.",
-    "performances": [
-      "Tardeo con DJs (La Siesta Club)"
     ],
     "organizers": [
       "La Pera Limonera"
@@ -23387,10 +22989,11 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b0eee157b486da86e9be313c1cbf02b2b0d9376f_2_818x1024.jpeg",
     "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
     "zone": "Zona Centro",
-    "description": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
-    "summary": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "description": "The Bowie Street Festival programa a los DJs Mr. Kitos y Peredius el lunes 7 de septiembre de 18:00 a 21:00 horas.",
+    "summary": "DJs Mr. Kitos y Peredius en The Bowie Street Festival.",
     "performances": [
-      "Mr. Kitos vs Perejius"
+      "Mr. Kitos",
+      "Peredius"
     ],
     "organizers": [
       "The Bowie"
@@ -23501,10 +23104,10 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b0eee157b486da86e9be313c1cbf02b2b0d9376f_2_818x1024.jpeg",
     "location": "The Bowie, C. Cánovas del Castillo, 4, Valladolid",
     "zone": "Zona Centro",
-    "description": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
-    "summary": "El The Bowie Street Festival 2026 se celebra del 4 al 13 de septiembre, ofreciendo una variada programación de música en directo. El evento tendrá lugar en un entorno urbano, con actuaciones programadas diariamente entre las 18:00 y las 21:00 horas.",
+    "description": "The Bowie Street Festival programa a Paco Devotion el sábado 12 de septiembre de 18:00 a 21:00 horas.",
+    "summary": "Paco Devotion en The Bowie Street Festival.",
     "performances": [
-      "Paco"
+      "Paco Devotion"
     ],
     "organizers": [
       "The Bowie"
@@ -23728,16 +23331,16 @@
   },
   {
     "id": 729,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
     "startTime": "17:00",
     "endTime": "20:00",
     "title": "Xangai & Pani & Furones (Concierto)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/16aa4376bf6b4b8298fec6abcb712135576399e5_2_935x1024.jpeg",
     "location": "La Santa, C. San Benito, 5, 47003 Valladolid",
     "zone": "Zona Centro",
-    "description": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo lunes 7 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche.",
-    "summary": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo lunes 7 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche.",
+    "description": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo sábado 12 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche.",
+    "summary": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo sábado 12 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche.",
     "performances": [
       "Xangai",
       "Pani",
@@ -24195,15 +23798,14 @@
     "dateLabel": "Lunes 7 de septiembre",
     "startTime": "23:59",
     "endTime": null,
-    "title": "SIRC · SADIE (Concierto)",
+    "title": "Sirc Sadie (DJ)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0127ac4b32ffc5769e988e250fbfb6a756c1f815_2_768x1024.jpeg",
     "location": "Cap Berlin, Calle Arribas, 3",
     "zone": "Zona Centro",
-    "description": "SIRC y SADIE se presentan en una fecha especial el próximo lunes 7 de septiembre de 2026. La cita tendrá lugar en las instalaciones de Cap Berlin a partir de las 23:59 horas, ofreciendo una experiencia nocturna única.",
-    "summary": "SIRC y SADIE se presentan en una fecha especial el próximo lunes 7 de septiembre de 2026. La cita tendrá lugar en las instalaciones de Cap Berlin a partir de las 23:59 horas, ofreciendo una experiencia nocturna única.",
+    "description": "Sirc Sadie se presenta en Cap Berlin el lunes 7 de septiembre de 2026 a partir de las 23:59 horas.",
+    "summary": "Sirc Sadie en Cap Berlin a partir de las 23:59 horas.",
     "performances": [
-      "SIRC",
-      "SADIE"
+      "Sirc Sadie"
     ],
     "organizers": [
       "Cap Berlin"
@@ -24216,420 +23818,6 @@
       "query": "Cap Berlin, Calle Arribas, 3, Valladolid, España",
       "accuracy": 1,
       "geocodedAt": "2026-09-01T18:01:00.000Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 742,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Paco Devotion"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 743,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Luis Lopez",
-      "Yorska"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 744,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Dario Nuñez",
-      "Queco",
-      "Angel Rodriguez"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 745,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Quilombros",
-      "Yorska"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 746,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Los Pichas",
-      "Los de la Plaza"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 747,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Queco",
-      "Yorska",
-      "Pani"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 748,
-    "date": "2026-09-10",
-    "dateLabel": "Jueves 10 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Dos de Picas",
-      "Queco"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 749,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Los del Lio",
-      "Jorge Tejedor"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 750,
-    "date": "2026-09-12",
-    "dateLabel": "Sábado 12 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Siesta Club",
-      "Chejo",
-      "Escalante",
-      "Element",
-      "Omar Cantt"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 751,
-    "date": "2026-09-13",
-    "dateLabel": "Domingo 13 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación Musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio.",
-    "performances": [
-      "Apulse",
-      "Yorska"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
     },
     "type": "Música",
     "ticket": {
@@ -24843,197 +24031,6 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 757,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "ADN Club en Moss Club (Evento)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3d69f16a37751c05ccbc10fad3528dbbe3bfab59_2_819x1024.jpeg",
-    "location": "Moss Club",
-    "zone": "Zona Centro",
-    "description": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
-    "summary": "ADN Club presenta una nueva cita musical en Moss Club Valladolid, programada para el viernes 4 de septiembre de 2026. La velada promete una experiencia sonora intensa en uno de los espacios de ocio más destacados de la ciudad.",
-    "performances": [],
-    "organizers": [
-      "ADN Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6552616,
-      "lng": -4.7382618,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 101589975,
-      "query": "Moss Club, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T19:05:36.294Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 758,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "21:00",
-    "title": "Les Castizos y Jorge Tejedor (Concierto)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/81bd22dd37447d7b75c9d15916c0b5fbad19b2df_2_597x1024.jpeg",
-    "location": "Pera Limonera",
-    "zone": "Zona Centro",
-    "description": "El evento musical Les Castizos y Jorge Tejedor se llevará a cabo el próximo viernes 4 de septiembre de 2026 en el establecimiento Pera Limonera. La cita comenzará a partir de las 20:00 horas, ofreciendo una velada de música y buen ambiente.\n\nInformación ampliada: El próximo viernes 4 de septiembre de 2026, el local Martin “El Catarro” en Valladolid acogerá una velada musical imperdible. La cita comenzará a partir de las 20:00 horas, ofreciendo un ambiente ideal para disfrutar de la música y la compañía.",
-    "summary": "El evento musical Les Castizos y Jorge Tejedor se llevará a cabo el próximo viernes 4 de septiembre de 2026 en el establecimiento Pera Limonera. La cita comenzará a partir de las 20:00 horas, ofreciendo una velada de música y buen ambiente.",
-    "performances": [],
-    "organizers": [
-      "Pera Limonera"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6571419,
-      "lng": -4.7329438,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 367406151,
-      "query": "La Pera Limonera, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 759,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, C. Bao, s/n, Valladolid",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [
-      "DJY4GGER",
-      "DJ CHUSKY"
-    ],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6550846,
-      "lng": -4.7239775,
-      "source": "Google Maps (consulta manual; ficha de In Clan)",
-      "query": "In Clan, C. Bao, s/n, 47003 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 760,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, C. Bao, s/n, Valladolid",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [
-      "DJ NEVER",
-      "DJ NEKE"
-    ],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6550846,
-      "lng": -4.7239775,
-      "source": "Google Maps (consulta manual; ficha de In Clan)",
-      "query": "In Clan, C. Bao, s/n, 47003 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 761,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de Ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan Club, C. Bao, s/n, Valladolid",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "summary": "La serie de eventos denominada Tardeos de Ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid.",
-    "performances": [
-      "DJ JULIO",
-      "LARIO DJ"
-    ],
-    "organizers": [
-      "In Clan Club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6550846,
-      "lng": -4.7239775,
-      "source": "Google Maps (consulta manual; ficha de In Clan)",
-      "query": "In Clan, C. Bao, s/n, 47003 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
       "Música"
@@ -25276,41 +24273,6 @@
     ]
   },
   {
-    "id": 768,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "18:00",
-    "endTime": null,
-    "title": "Las Doñas (Gira de actuaciones)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
-    "location": "Cotorrazo (La Cotorra), C. Caridad, 2, Valladolid",
-    "zone": "Zona Centro",
-    "description": "Las Donas (Gira de actuaciones)",
-    "summary": "Las Donas (Gira de actuaciones)",
-    "performances": [
-      "Las Doñas"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6515827,
-      "lng": -4.7303391,
-      "source": "Google Maps (consulta manual; La Cotorra, sede del Cotorrazo)",
-      "query": "La Cotorra, C. Caridad, 2, 47001 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 769,
     "date": "2026-09-06",
     "dateLabel": "Domingo 6 de septiembre",
@@ -25347,115 +24309,6 @@
     },
     "tags": [
       "Otros"
-    ]
-  },
-  {
-    "id": 770,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "16:00",
-    "endTime": "17:00",
-    "title": "Bandido (Fiestas de San Lorenzo 2026)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/851644358609e02b180f1617d2c3ea465387b752_2_559x1024.jpeg",
-    "location": "Bandido Techno Room, Pl. del Pte., 4",
-    "zone": "Zona Centro",
-    "description": "La celebración de las fiestas de San Lorenzo 2026 llega a la escena electrónica con un evento especial en el espacio Bandido Techno Room. La cita tendrá lugar el próximo 07 de septiembre, con una apertura de puertas programada a las 16:00 horas.",
-    "summary": "La celebración de las fiestas de San Lorenzo 2026 llega a la escena electrónica con un evento especial en el espacio Bandido Techno Room. La cita tendrá lugar el próximo 07 de septiembre, con una apertura de puertas programada a las 16:00 horas.",
-    "performances": [],
-    "organizers": [
-      "Bandido Techno Room"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6525315,
-      "lng": -4.7307035,
-      "source": "Google Maps (consulta manual; dirección aproximada del local)",
-      "query": "Pl. del Pte., 4, 47003 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 771,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Sofía Gabanna (Concierto)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/77db39a03497be519632cf026dd142ef56043dcf_2_781x1024.jpeg",
-    "location": "Playa de las Moreras",
-    "zone": "Moreras",
-    "description": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en Las Moreras, un espacio emblemático de la ciudad de Valladolid.",
-    "summary": "Sofía Gabanna llega al Lorencito Festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en Las Moreras, un espacio emblemático de la ciudad de Valladolid.",
-    "performances": [],
-    "organizers": [
-      "Ayuntamiento de Valladolid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6572792,
-      "lng": -4.7335306,
-      "source": "Google Maps (consulta manual; ficha de Playa de las Moreras)",
-      "query": "Playa de las Moreras, Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 772,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "01:00",
-    "endTime": "08:00",
-    "title": "Assceussion Rave (Fiestas San Lorenzo)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/eb5f425c2edafc8c38ac9bb226460b20bc85bc0f_2_819x1024.jpeg",
-    "location": "Moss Club",
-    "zone": "Zona Centro",
-    "description": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
-    "summary": "La Assceussion Rave se celebra en el marco de las Fiestas de San Lorenzo 2026. El evento tendrá lugar en Moss Club el viernes 11 de septiembre, comenzando su actividad a partir de la una de la madrugada.",
-    "performances": [],
-    "organizers": [
-      "Hirecut Bookings"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6552616,
-      "lng": -4.7382618,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 101589975,
-      "query": "Moss Club, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T19:05:36.305Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
     ]
   },
   {
@@ -25866,13 +24719,15 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
     "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
     "zone": "Zona Centro",
-    "description": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
-    "summary": "El Cascajares Fest se presenta como una propuesta cultural y de ocio que reúne diversos artistas y propuestas musicales en el Escenario Cascajares. El programa se desarrolla a lo largo de varios días, ofreciendo una variada selección de actuaciones que abarcan distintos géneros y estilos.",
+    "description": "Cascajares Fest reúne el viernes 11 de septiembre una sesión musical en el Escenario Cascajares, con Dinosaurios DJs y el ambiente de El Farolito, Diaynoche y La Cárcava.",
+    "summary": "Dinosaurios DJs en Cascajares Fest el viernes 11 de septiembre.",
     "performances": [
-      "Dinosaurios"
+      "Dinosaurios",
+      "Dinosaurios DJs"
     ],
     "organizers": [
-      "El Farolito, Diaynoche, La Carcava"
+      "El Farolito, Diaynoche, La Carcava",
+      "Dinosaurios DJs"
     ],
     "collaborators": [],
     "coordinates": {
@@ -25894,6 +24749,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/cf0049ab73d03526539656bd0b6a93059fdf1549_2_822x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/6ec0f6c10f12901fb68519a583523f2006400969_2_847x1024.jpeg"
     ]
   },
   {
@@ -25931,6 +24790,86 @@
       "label": "Entrada libre",
       "url": null,
       "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 785,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "17:00",
+    "endTime": "20:00",
+    "title": "Los del Lío y Marco Galindo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f3f5d438bf70cc5e1f9da2403b18c6dda2687619_2_898x1024.jpeg",
+    "location": "Zona San Benito (La Santa / Madame X)",
+    "zone": "Zona Centro",
+    "description": "Los del Lío y Marco Galindo actúan en la zona San Benito el lunes 7 de septiembre de 17:00 a 20:00 horas, dentro de la programación conjunta de La Santa, Montellén y Madame X.",
+    "summary": "Los del Lío y Marco Galindo en la zona San Benito de 17:00 a 20:00 horas.",
+    "performances": [
+      "Los del Lío",
+      "Marco Galindo"
+    ],
+    "organizers": [
+      "La Santa Coctelería",
+      "Montellén",
+      "Madame X"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6541309,
+      "lng": -4.7290258,
+      "source": "Inferidas desde evento existente en La Santa, C. San Benito, 5",
+      "query": "La Santa, C. San Benito, 5, 47003 Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 786,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Los del Lío y Marco Galindo",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f3f5d438bf70cc5e1f9da2403b18c6dda2687619_2_898x1024.jpeg",
+    "location": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid",
+    "zone": "Zona Centro",
+    "description": "Los del Lío y Marco Galindo actúan en Montellén el lunes 7 de septiembre de 20:00 a 23:00 horas, dentro de la programación conjunta de La Santa, Montellén y Madame X.",
+    "summary": "Los del Lío y Marco Galindo en Montellén de 20:00 a 23:00 horas.",
+    "performances": [
+      "Los del Lío",
+      "Marco Galindo"
+    ],
+    "organizers": [
+      "La Santa Coctelería",
+      "Montellén",
+      "Madame X"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6532344,
+      "lng": -4.728258,
+      "source": "Inferidas desde evento existente en Restaurante Montellén, C. Sandoval, 7",
+      "query": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "El cartel no indica venta de entradas."
     },
     "tags": [
       "Música"
