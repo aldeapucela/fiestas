@@ -87,7 +87,9 @@
     {
       "id": "z1-03",
       "publicSlug": "taberna-japonesa-wabi-sabi",
-      "legacySlugs": ["wabi-sabi-taberna-japonesa"],
+      "legacySlugs": [
+        "wabi-sabi-taberna-japonesa"
+      ],
       "name": "Taberna Japonesa Wabi-Sabi",
       "zone": "Zona 1",
       "location": "Plaza Martí y Monsó",
@@ -100,43 +102,119 @@
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "racion-takoyaki", "name": "Takoyaki (4 piezas)", "price": "5,30€" },
-              { "id": "racion-tori-karaage", "name": "Tori karaage (4 piezas)", "price": "6,80€" },
-              { "id": "racion-gyo-za", "name": "Gyo-za (4 piezas)", "price": "5,30€" },
-              { "id": "racion-yakitori", "name": "Yakitori (1 pieza)", "price": "4,80€" },
-              { "id": "racion-wayguy-burger", "name": "Wayguy burger", "price": "8,00€" }
+              {
+                "id": "racion-takoyaki",
+                "name": "Takoyaki (4 piezas)",
+                "price": "5,30€"
+              },
+              {
+                "id": "racion-tori-karaage",
+                "name": "Tori karaage (4 piezas)",
+                "price": "6,80€"
+              },
+              {
+                "id": "racion-gyo-za",
+                "name": "Gyo-za (4 piezas)",
+                "price": "5,30€"
+              },
+              {
+                "id": "racion-yakitori",
+                "name": "Yakitori (1 pieza)",
+                "price": "4,80€"
+              },
+              {
+                "id": "racion-wayguy-burger",
+                "name": "Wayguy burger",
+                "price": "8,00€"
+              }
             ]
           },
           {
             "title": "Sushi",
             "votable": true,
             "items": [
-              { "id": "sushi-sushi-variado", "name": "Sushi variado (6 piezas)", "price": "8,00€" },
-              { "id": "sushi-sushi-variado-18-piezas", "name": "Sushi variado (18 piezas)", "price": "21,00€" }
+              {
+                "id": "sushi-sushi-variado",
+                "name": "Sushi variado (6 piezas)",
+                "price": "8,00€"
+              },
+              {
+                "id": "sushi-sushi-variado-18-piezas",
+                "name": "Sushi variado (18 piezas)",
+                "price": "21,00€"
+              }
             ]
           },
           {
             "title": "Pincho de feria",
             "votable": true,
             "items": [
-              { "id": "pincho-2-gyozas-o-2-takoyakis", "name": "2 gyozas o 2 takoyakis", "price": "4,80€" }
+              {
+                "id": "pincho-2-gyozas-o-2-takoyakis",
+                "name": "2 gyozas o 2 takoyakis",
+                "price": "4,80€"
+              }
             ]
           },
           {
             "title": "Bebidas",
             "votable": false,
             "items": [
-              { "id": "bebida-vin-de-la-casa", "name": "Vin de la casa", "price": "1,20€" },
-              { "id": "bebida-ribelle-de-duro", "name": "Ribelle de Duró", "price": "2,40€" },
-              { "id": "bebida-sake", "name": "Sake", "price": "2,40€" },
-              { "id": "bebida-sushi-wine", "name": "Sushi wine", "price": "2,40€" },
-              { "id": "bebida-cola-fanta-sprite", "name": "Cola/Fanta/Sprite", "price": "2,40€" },
-              { "id": "bebida-cana-cerveza", "name": "Caña cerveza", "price": "2,40€" },
-              { "id": "bebida-cerveza-sin", "name": "Cerveza Sin", "price": "2,40€" },
-              { "id": "bebida-gazpacho-g-hum", "name": "Gazpacho G. HUM", "price": "2,40€" },
-              { "id": "bebida-agua", "name": "Agua", "price": "1,20€" },
-              { "id": "bebida-refresco", "name": "Refresco", "price": "2,40€" },
-              { "id": "bebida-lorencito", "name": "Lorencito", "price": "2,00€" }
+              {
+                "id": "bebida-vin-de-la-casa",
+                "name": "Vin de la casa",
+                "price": "1,20€"
+              },
+              {
+                "id": "bebida-ribelle-de-duro",
+                "name": "Ribelle de Duró",
+                "price": "2,40€"
+              },
+              {
+                "id": "bebida-sake",
+                "name": "Sake",
+                "price": "2,40€"
+              },
+              {
+                "id": "bebida-sushi-wine",
+                "name": "Sushi wine",
+                "price": "2,40€"
+              },
+              {
+                "id": "bebida-cola-fanta-sprite",
+                "name": "Cola/Fanta/Sprite",
+                "price": "2,40€"
+              },
+              {
+                "id": "bebida-cana-cerveza",
+                "name": "Caña cerveza",
+                "price": "2,40€"
+              },
+              {
+                "id": "bebida-cerveza-sin",
+                "name": "Cerveza Sin",
+                "price": "2,40€"
+              },
+              {
+                "id": "bebida-gazpacho-g-hum",
+                "name": "Gazpacho G. HUM",
+                "price": "2,40€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1,20€"
+              },
+              {
+                "id": "bebida-refresco",
+                "name": "Refresco",
+                "price": "2,40€"
+              },
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito",
+                "price": "2,00€"
+              }
             ]
           }
         ]
@@ -210,7 +288,9 @@
     {
       "id": "z1-05",
       "publicSlug": "la-criolla",
-      "legacySlugs": ["restaurante-la-criolla"],
+      "legacySlugs": [
+        "restaurante-la-criolla"
+      ],
       "name": "La Criolla",
       "zone": "Zona 1",
       "location": "Calle Calixto Fernández de la Torre",
@@ -564,7 +644,9 @@
     {
       "id": "z2-04",
       "publicSlug": "five-napoli-pizza",
-      "legacySlugs": ["five-napoly-pizza"],
+      "legacySlugs": [
+        "five-napoly-pizza"
+      ],
       "name": "Five Napoli Pizza",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -583,7 +665,9 @@
     {
       "id": "z2-05",
       "publicSlug": "la-loca-burger",
-      "legacySlugs": ["la-loca-burguer"],
+      "legacySlugs": [
+        "la-loca-burguer"
+      ],
       "name": "La Loca Burger",
       "zone": "Zona 2",
       "location": "San Benito",
@@ -620,25 +704,46 @@
             "title": "Pincho de feria",
             "votable": true,
             "items": [
-              { "id": "pincho-miniburger-bbq", "name": "Miniburger bbq" },
-              { "id": "pincho-miniburger-clasica", "name": "Miniburger clasica" },
-              { "id": "pincho-miniburger-pollo", "name": "Miniburger pollo" },
-              { "id": "pincho-miniburger-chipotle", "name": "Miniburger chipotle" },
-              { "id": "pincho-perrito-clasico", "name": "Perrito clásico" }
+              {
+                "id": "pincho-miniburger-bbq",
+                "name": "Miniburger bbq"
+              },
+              {
+                "id": "pincho-miniburger-clasica",
+                "name": "Miniburger clasica"
+              },
+              {
+                "id": "pincho-miniburger-pollo",
+                "name": "Miniburger pollo"
+              },
+              {
+                "id": "pincho-miniburger-chipotle",
+                "name": "Miniburger chipotle"
+              },
+              {
+                "id": "pincho-perrito-clasico",
+                "name": "Perrito clásico"
+              }
             ]
           },
           {
             "title": "Pincho estrella",
             "votable": true,
             "items": [
-              { "id": "pincho-gofre-burger", "name": "Gofre burger" }
+              {
+                "id": "pincho-gofre-burger",
+                "name": "Gofre burger"
+              }
             ]
           },
           {
             "title": "Postre",
             "votable": true,
             "items": [
-              { "id": "postre-chupa-chups-brownie", "name": "Chupa Chups Brownie" }
+              {
+                "id": "postre-chupa-chups-brownie",
+                "name": "Chupa Chups Brownie"
+              }
             ]
           }
         ]
@@ -683,28 +788,61 @@
             "title": "Pinchos con bebida",
             "votable": true,
             "items": [
-              { "id": "pincho-bocata-rabas-alioli", "name": "Bocata de rabas con alioli" },
-              { "id": "pincho-brocheta-pollo", "name": "Brocheta de pollo" },
-              { "id": "pincho-brocheta-langostinos", "name": "Brocheta de langostinos" },
-              { "id": "pincho-chorizo-sidra", "name": "Chorizo a la sidra" },
-              { "id": "pincho-jamon-tomate", "name": "Jamón con tomate" },
-              { "id": "pincho-solomillo-roquefort", "name": "Solomillo al roquefort" }
+              {
+                "id": "pincho-bocata-rabas-alioli",
+                "name": "Bocata de rabas con alioli"
+              },
+              {
+                "id": "pincho-brocheta-pollo",
+                "name": "Brocheta de pollo"
+              },
+              {
+                "id": "pincho-brocheta-langostinos",
+                "name": "Brocheta de langostinos"
+              },
+              {
+                "id": "pincho-chorizo-sidra",
+                "name": "Chorizo a la sidra"
+              },
+              {
+                "id": "pincho-jamon-tomate",
+                "name": "Jamón con tomate"
+              },
+              {
+                "id": "pincho-solomillo-roquefort",
+                "name": "Solomillo al roquefort"
+              }
             ]
           },
           {
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "racion-chorizo-a-la-sidra", "name": "Chorizo a la sidra" },
-              { "id": "racion-chorizo-con-sidra", "name": "Chorizo con sidra" },
-              { "id": "racion-croquetas-caseras", "name": "Croquetas caseras" },
+              {
+                "id": "racion-chorizo-a-la-sidra",
+                "name": "Chorizo a la sidra"
+              },
+              {
+                "id": "racion-chorizo-con-sidra",
+                "name": "Chorizo con sidra"
+              },
+              {
+                "id": "racion-croquetas-caseras",
+                "name": "Croquetas caseras"
+              },
               {
                 "id": "racion-patatas-bravas",
                 "name": "Patatas bravas",
                 "dietary": "vegetarian"
               },
-              { "id": "racion-pollo-crujiente", "name": "Pollo crujiente" },
-              { "id": "racion-rabas", "name": "Rabas" }
+              {
+                "id": "racion-pollo-crujiente",
+                "name": "Pollo crujiente"
+              },
+              {
+                "id": "racion-rabas",
+                "name": "Rabas"
+              }
             ]
           },
           {
@@ -859,7 +997,9 @@
     {
       "id": "z2-13",
       "publicSlug": "la-argolla",
-      "legacySlugs": ["bar-argolla"],
+      "legacySlugs": [
+        "bar-argolla"
+      ],
       "name": "La Argolla",
       "zone": "Zona 2",
       "location": "Calle Ferrari",
@@ -1139,20 +1279,44 @@
             "title": "Pincho + bebida",
             "votable": true,
             "items": [
-              { "id": "pincho-chapatina-rabas-alioli", "name": "Chapatina de rabas con alioli" },
-              { "id": "pincho-chapatina-rabas-salsa-brava", "name": "Chapatina de rabas con alioli y salsa brava" },
-              { "id": "pincho-chapatina-cecina-tomate", "name": "Chapatina de cecina de León con tomate triturado" },
-              { "id": "pincho-chapatina-chorizo-chimichurri", "name": "Chapatina de chorizo criollo con salsa chimichurri" },
-              { "id": "pincho-chapatina-atun-pimientos", "name": "Chapatina de atún con pimientos" }
+              {
+                "id": "pincho-chapatina-rabas-alioli",
+                "name": "Chapatina de rabas con alioli"
+              },
+              {
+                "id": "pincho-chapatina-rabas-salsa-brava",
+                "name": "Chapatina de rabas con alioli y salsa brava"
+              },
+              {
+                "id": "pincho-chapatina-cecina-tomate",
+                "name": "Chapatina de cecina de León con tomate triturado"
+              },
+              {
+                "id": "pincho-chapatina-chorizo-chimichurri",
+                "name": "Chapatina de chorizo criollo con salsa chimichurri"
+              },
+              {
+                "id": "pincho-chapatina-atun-pimientos",
+                "name": "Chapatina de atún con pimientos"
+              }
             ]
           },
           {
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "racion-rabas-alioli", "name": "Rabas con alioli" },
-              { "id": "racion-careta-cerdo", "name": "Careta de cerdo" },
-              { "id": "racion-cecina-leon", "name": "Cecina de León" },
+              {
+                "id": "racion-rabas-alioli",
+                "name": "Rabas con alioli"
+              },
+              {
+                "id": "racion-careta-cerdo",
+                "name": "Careta de cerdo"
+              },
+              {
+                "id": "racion-cecina-leon",
+                "name": "Cecina de León"
+              },
               {
                 "id": "racion-jalapenos-cheddar",
                 "name": "Jalapeños con queso cheddar (6 uds.)",
@@ -1556,7 +1720,9 @@
     {
       "id": "z4-12",
       "publicSlug": "griller-chef",
-      "legacySlugs": ["grilled-chef"],
+      "legacySlugs": [
+        "grilled-chef"
+      ],
       "name": "Griller Chef",
       "zone": "Zona 2",
       "location": "Calle Ferrari 5",
@@ -2232,39 +2398,88 @@
             "title": "Pincho de feria + bebida 3,90€",
             "votable": true,
             "items": [
-              { "id": "pincho-bocatin-panceta", "name": "Bocatín de panceta" },
-              { "id": "pincho-bocatin-calamares", "name": "Bocatín de calamares" },
-              { "id": "pincho-bocatin-pollo-asado-alioli", "name": "Bocatín de pollo asado alioli" },
-              { "id": "pincho-bocatin-kebab", "name": "Bocatín de kebab" },
-              { "id": "pincho-criollo", "name": "Criollo" },
-              { "id": "pincho-guijuelito-trufado", "name": "Guijuelito trufado" },
-              { "id": "pincho-perrito-brutal", "name": "Perrito brutal" },
-              { "id": "pincho-bocatin-chistorra", "name": "Bocatín de chistorra" },
-              { "id": "pincho-bocatin-morcilla-cigales-queso-cabra-higos", "name": "Bocatín de morcilla de Cigales, queso de cabra e higos" }
+              {
+                "id": "pincho-bocatin-panceta",
+                "name": "Bocatín de panceta"
+              },
+              {
+                "id": "pincho-bocatin-calamares",
+                "name": "Bocatín de calamares"
+              },
+              {
+                "id": "pincho-bocatin-pollo-asado-alioli",
+                "name": "Bocatín de pollo asado alioli"
+              },
+              {
+                "id": "pincho-bocatin-kebab",
+                "name": "Bocatín de kebab"
+              },
+              {
+                "id": "pincho-criollo",
+                "name": "Criollo"
+              },
+              {
+                "id": "pincho-guijuelito-trufado",
+                "name": "Guijuelito trufado"
+              },
+              {
+                "id": "pincho-perrito-brutal",
+                "name": "Perrito brutal"
+              },
+              {
+                "id": "pincho-bocatin-chistorra",
+                "name": "Bocatín de chistorra"
+              },
+              {
+                "id": "pincho-bocatin-morcilla-cigales-queso-cabra-higos",
+                "name": "Bocatín de morcilla de Cigales, queso de cabra e higos"
+              }
             ]
           },
           {
             "title": "Hamburguesas + bebida 6,50€",
             "votable": true,
             "items": [
-              { "id": "hamburguesa-pollo-crunch", "name": "Hamburguesa de pollo crunch" },
-              { "id": "hamburguesa-ternera-queso-bacon-cebolla", "name": "Hamburguesa de ternera con queso, bacon y cebolla" }
+              {
+                "id": "hamburguesa-pollo-crunch",
+                "name": "Hamburguesa de pollo crunch"
+              },
+              {
+                "id": "hamburguesa-ternera-queso-bacon-cebolla",
+                "name": "Hamburguesa de ternera con queso, bacon y cebolla"
+              }
             ]
           },
           {
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "racion-calamares", "name": "Calamares", "price": "10,00€" },
-              { "id": "racion-patatas-braviolis", "name": "Patatas braviolis", "price": "6,00€" },
-              { "id": "racion-fingers", "name": "Fingers", "price": "9,00€" }
+              {
+                "id": "racion-calamares",
+                "name": "Calamares",
+                "price": "10,00€"
+              },
+              {
+                "id": "racion-patatas-braviolis",
+                "name": "Patatas braviolis",
+                "price": "6,00€"
+              },
+              {
+                "id": "racion-fingers",
+                "name": "Fingers",
+                "price": "9,00€"
+              }
             ]
           },
           {
             "title": "Postre",
             "votable": true,
             "items": [
-              { "id": "postre-tarta-hojaldre-nata-crema", "name": "Tarta de hojaldre, nata y crema", "price": "3,00€" }
+              {
+                "id": "postre-tarta-hojaldre-nata-crema",
+                "name": "Tarta de hojaldre, nata y crema",
+                "price": "3,00€"
+              }
             ]
           }
         ]
@@ -2418,36 +2633,102 @@
             "title": "Pincho de feria + bebida 4,00€",
             "votable": true,
             "items": [
-              { "id": "pincho-arroz-cada-dia-uno-zamorana", "name": "Arroz cada dia uno a la zamorana", "glutenFree": true },
-              { "id": "pincho-paella-negro-especial-casa", "name": "Paella negro especial de la casa", "glutenFree": true },
-              { "id": "pincho-patatas-rejo", "name": "Patatas con rejo", "glutenFree": true },
-              { "id": "pincho-primo-pulpo", "name": "El primo del pulpo", "glutenFree": true },
-              { "id": "pincho-adobo-castellano", "name": "Pincho en adobo castellano", "glutenFree": true },
-              { "id": "pincho-lacon-pimientos", "name": "Lacón con pimientos", "glutenFree": true },
-              { "id": "pincho-perrito-caliente", "name": "Perrito caliente", "glutenFree": true },
-              { "id": "pincho-bocata-panceta", "name": "Bocata de panceta", "glutenFree": true },
-              { "id": "pincho-callos-garbanzos", "name": "Callos con garbanzos", "glutenFree": true }
+              {
+                "id": "pincho-arroz-cada-dia-uno-zamorana",
+                "name": "Arroz cada dia uno a la zamorana",
+                "glutenFree": true
+              },
+              {
+                "id": "pincho-paella-negro-especial-casa",
+                "name": "Paella negro especial de la casa",
+                "glutenFree": true
+              },
+              {
+                "id": "pincho-patatas-rejo",
+                "name": "Patatas con rejo",
+                "glutenFree": true
+              },
+              {
+                "id": "pincho-primo-pulpo",
+                "name": "El primo del pulpo",
+                "glutenFree": true
+              },
+              {
+                "id": "pincho-adobo-castellano",
+                "name": "Pincho en adobo castellano",
+                "glutenFree": true
+              },
+              {
+                "id": "pincho-lacon-pimientos",
+                "name": "Lacón con pimientos",
+                "glutenFree": true
+              },
+              {
+                "id": "pincho-perrito-caliente",
+                "name": "Perrito caliente",
+                "glutenFree": true
+              },
+              {
+                "id": "pincho-bocata-panceta",
+                "name": "Bocata de panceta",
+                "glutenFree": true
+              },
+              {
+                "id": "pincho-callos-garbanzos",
+                "name": "Callos con garbanzos",
+                "glutenFree": true
+              }
             ]
           },
           {
             "title": "Bebidas",
             "votable": false,
             "items": [
-              { "id": "bebida-agua", "name": "Agua" },
-              { "id": "bebida-mosto", "name": "Mosto" },
-              { "id": "bebida-cana", "name": "Caña" },
-              { "id": "bebida-lorencito", "name": "Lorencito" },
-              { "id": "bebida-sangria", "name": "Sangria" },
-              { "id": "bebida-vino", "name": "Vino" },
-              { "id": "bebida-refresco", "name": "Refresco", "price": "+0,50€" }
+              {
+                "id": "bebida-agua",
+                "name": "Agua"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto"
+              },
+              {
+                "id": "bebida-cana",
+                "name": "Caña"
+              },
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito"
+              },
+              {
+                "id": "bebida-sangria",
+                "name": "Sangria"
+              },
+              {
+                "id": "bebida-vino",
+                "name": "Vino"
+              },
+              {
+                "id": "bebida-refresco",
+                "name": "Refresco",
+                "price": "+0,50€"
+              }
             ]
           },
           {
             "title": "De postre (crepes y gofres) 5,50€",
             "votable": true,
             "items": [
-              { "id": "postre-dulces", "name": "Dulces", "description": "Nutela, fresa, dulce de leche o nata" },
-              { "id": "postre-salados", "name": "Salados", "description": "Jamón y queso" }
+              {
+                "id": "postre-dulces",
+                "name": "Dulces",
+                "description": "Nutela, fresa, dulce de leche o nata"
+              },
+              {
+                "id": "postre-salados",
+                "name": "Salados",
+                "description": "Jamón y queso"
+              }
             ]
           }
         ],
@@ -3017,26 +3298,61 @@
             "title": "Pincho feria (pinchos + bebida 4€)",
             "votable": true,
             "items": [
-              { "id": "pincho-croqueta-pato-pekin", "name": "Croqueta de pato Pekín", "description": "con mayonesa Hoisin (Gluten, lácteos)" },
-              { "id": "pincho-croqueta-mango-kimchi", "name": "Croqueta de Mango y Kimchi", "description": "con mayonesa de kimchi (Gluten, lácteos, pescado)" },
-              { "id": "pincho-montado-albondigas-tikka", "name": "Montado de albóndigas", "description": "con salsa Tikka Masala (Gluten, lácteos, mostaza)" },
-              { "id": "pincho-guiso-dia", "name": "Plato guiso del día", "description": "Consultar alérgenos" }
+              {
+                "id": "pincho-croqueta-pato-pekin",
+                "name": "Croqueta de pato Pekín",
+                "description": "con mayonesa Hoisin (Gluten, lácteos)"
+              },
+              {
+                "id": "pincho-croqueta-mango-kimchi",
+                "name": "Croqueta de Mango y Kimchi",
+                "description": "con mayonesa de kimchi (Gluten, lácteos, pescado)"
+              },
+              {
+                "id": "pincho-montado-albondigas-tikka",
+                "name": "Montado de albóndigas",
+                "description": "con salsa Tikka Masala (Gluten, lácteos, mostaza)"
+              },
+              {
+                "id": "pincho-guiso-dia",
+                "name": "Plato guiso del día",
+                "description": "Consultar alérgenos"
+              }
             ]
           },
           {
             "title": "Pincho + bebida (5€)",
             "votable": true,
             "items": [
-              { "id": "pincho-mini-burguer-vacuno", "name": "Mini Burguer de vacuno", "description": "con queso, cebolla crujiente y nuestra salsa Emmy (Gluten, lácteos)" }
+              {
+                "id": "pincho-mini-burguer-vacuno",
+                "name": "Mini Burguer de vacuno",
+                "description": "con queso, cebolla crujiente y nuestra salsa Emmy (Gluten, lácteos)"
+              }
             ]
           },
           {
             "title": "Raciones para compartir",
             "votable": true,
             "items": [
-              { "id": "racion-gyozas-cerdo-mango", "name": "Gyozas de cerdo", "description": "con salsa de mango picante y mayonesa Japonesa (6 unidades) (Gluten, mostaza)", "price": "11€" },
-              { "id": "racion-torreznos-soria", "name": "Torreznos de Soria", "description": "con guacamole (Gluten)", "price": "9€" },
-              { "id": "racion-langostinos-panko", "name": "Langostinos panko", "description": "con salsa teriyaki (6 unidades) (Gluten, marisco, soja)", "price": "12€" }
+              {
+                "id": "racion-gyozas-cerdo-mango",
+                "name": "Gyozas de cerdo",
+                "description": "con salsa de mango picante y mayonesa Japonesa (6 unidades) (Gluten, mostaza)",
+                "price": "11€"
+              },
+              {
+                "id": "racion-torreznos-soria",
+                "name": "Torreznos de Soria",
+                "description": "con guacamole (Gluten)",
+                "price": "9€"
+              },
+              {
+                "id": "racion-langostinos-panko",
+                "name": "Langostinos panko",
+                "description": "con salsa teriyaki (6 unidades) (Gluten, marisco, soja)",
+                "price": "12€"
+              }
             ]
           },
           {
@@ -3430,37 +3746,117 @@
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "racion-patatas-revolconas", "name": "Patatas revolconas", "price": "6€" },
-              { "id": "racion-picadillo-matanza", "name": "Picadillo de la matanza", "price": "5,50€" },
-              { "id": "pincho-chorizo-aceite", "name": "Pincho de chorizo en aceite", "price": "2,50€" },
-              { "id": "pincho-muralito", "name": "Muralito", "price": "2,50€" },
-              { "id": "montado-lomo-aceite", "name": "Montado de lomo en aceite", "price": "5€" },
-              { "id": "racion-queso-cabra", "name": "Queso de cabra", "price": "4,50€" },
-              { "id": "montado-pepito-ternera", "name": "Pepito de ternera", "price": "8,50€" },
-              { "id": "racion-hornazo-castellano", "name": "Hornazo castellano al corte", "price": "4€" },
-              { "id": "racion-alubias-barco", "name": "Alubias del barco", "price": "3,50€" }
+              {
+                "id": "racion-patatas-revolconas",
+                "name": "Patatas revolconas",
+                "price": "6€"
+              },
+              {
+                "id": "racion-picadillo-matanza",
+                "name": "Picadillo de la matanza",
+                "price": "5,50€"
+              },
+              {
+                "id": "pincho-chorizo-aceite",
+                "name": "Pincho de chorizo en aceite",
+                "price": "2,50€"
+              },
+              {
+                "id": "pincho-muralito",
+                "name": "Muralito",
+                "price": "2,50€"
+              },
+              {
+                "id": "montado-lomo-aceite",
+                "name": "Montado de lomo en aceite",
+                "price": "5€"
+              },
+              {
+                "id": "racion-queso-cabra",
+                "name": "Queso de cabra",
+                "price": "4,50€"
+              },
+              {
+                "id": "montado-pepito-ternera",
+                "name": "Pepito de ternera",
+                "price": "8,50€"
+              },
+              {
+                "id": "racion-hornazo-castellano",
+                "name": "Hornazo castellano al corte",
+                "price": "4€"
+              },
+              {
+                "id": "racion-alubias-barco",
+                "name": "Alubias del barco",
+                "price": "3,50€"
+              }
             ]
           },
           {
             "title": "Postres y otros",
             "votable": true,
             "items": [
-              { "id": "postre-porcion-tarta", "name": "Porción de tarta", "description": "Yema; queso con membrillo", "price": "3€" },
-              { "id": "postre-yemas-santa-teresa", "name": "Yemas de Santa Teresa", "description": "Tradicionales o variadas; caja de 12 unidades", "price": "12€" },
-              { "id": "postre-caja-pastas-murallita", "name": "Caja de pastas «Murallita»", "price": "14€" },
-              { "id": "otros-bolsa-pipas", "name": "Bolsa de pipas Hijos de Calvo", "price": "2,50€" }
+              {
+                "id": "postre-porcion-tarta",
+                "name": "Porción de tarta",
+                "description": "Yema; queso con membrillo",
+                "price": "3€"
+              },
+              {
+                "id": "postre-yemas-santa-teresa",
+                "name": "Yemas de Santa Teresa",
+                "description": "Tradicionales o variadas; caja de 12 unidades",
+                "price": "12€"
+              },
+              {
+                "id": "postre-caja-pastas-murallita",
+                "name": "Caja de pastas «Murallita»",
+                "price": "14€"
+              },
+              {
+                "id": "otros-bolsa-pipas",
+                "name": "Bolsa de pipas Hijos de Calvo",
+                "price": "2,50€"
+              }
             ]
           },
           {
             "title": "Bebidas",
             "votable": false,
             "items": [
-              { "id": "bebida-refrescos", "name": "Refrescos", "description": "Coca-Cola; Coca-Cola Zero; Fanta naranja; Fanta limón", "price": "2€" },
-              { "id": "bebida-vino", "name": "Vino", "description": "Chato; DOP Cebreros: 10 Delirios tinto, rosado y blanco; DOP Verdejo de Rueda: Ysabel de Madrigal", "price": "1,50€" },
-              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón; cerveza sin gluten", "price": "2,50€" },
-              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
-              { "id": "bebida-crema-yema", "name": "Crema de yema de huevo" },
-              { "id": "bebida-licor-higos", "name": "Licor de higos", "price": "2,50€" }
+              {
+                "id": "bebida-refrescos",
+                "name": "Refrescos",
+                "description": "Coca-Cola; Coca-Cola Zero; Fanta naranja; Fanta limón",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-vino",
+                "name": "Vino",
+                "description": "Chato; DOP Cebreros: 10 Delirios tinto, rosado y blanco; DOP Verdejo de Rueda: Ysabel de Madrigal",
+                "price": "1,50€"
+              },
+              {
+                "id": "bebida-cerveza",
+                "name": "Cerveza",
+                "description": "Caña; caña sin alcohol; caña con limón; cerveza sin gluten",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1€"
+              },
+              {
+                "id": "bebida-crema-yema",
+                "name": "Crema de yema de huevo"
+              },
+              {
+                "id": "bebida-licor-higos",
+                "name": "Licor de higos",
+                "price": "2,50€"
+              }
             ]
           }
         ]
@@ -3626,7 +4022,7 @@
               {
                 "id": "bebida-botella-vino-toro",
                 "name": "Botella de vino",
-                "description": "tinto, blanco o rosado de Toro (Zamora)",
+                "description": "TINTO, BLANCO O ROSADO DE TORO (Zamora)",
                 "price": "9,00 €"
               },
               {
@@ -3647,7 +4043,7 @@
               {
                 "id": "bebida-chato-vino-toro",
                 "name": "Chato de vino",
-                "description": "tinto, blanco o rosado de Toro (Zamora)",
+                "description": "TINTO, BLANCO O ROSADO DE TORO (Zamora)",
                 "price": "1,50 €"
               },
               {
@@ -3721,36 +4117,109 @@
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "pincho-canape-cabrales", "name": "Canapé de cabrales", "price": "2,50€" },
-              { "id": "pincho-bollo-prenao", "name": "Bollo preñao", "price": "4,50€" },
-              { "id": "racion-callos", "name": "Callos", "price": "8€" },
-              { "id": "racion-callos-patatas-fritas", "name": "Callos con patatas fritas", "price": "8€" },
-              { "id": "racion-patatas-cabrales", "name": "Patatas al cabrales", "price": "5,50€" },
-              { "id": "pincho-chorizo-sidra", "name": "Chorizo a la sidra", "price": "3,50€" },
-              { "id": "racion-empanada", "name": "Empanada", "price": "5€" },
-              { "id": "pincho-culin-sidra-cabrales", "name": "Culín de sidra + pincho de cabrales", "price": "3€" },
-              { "id": "racion-fabada", "name": "Fabada", "price": "8€" }
+              {
+                "id": "pincho-canape-cabrales",
+                "name": "Canapé de cabrales",
+                "price": "2,50€"
+              },
+              {
+                "id": "pincho-bollo-prenao",
+                "name": "Bollo preñao",
+                "price": "4,50€"
+              },
+              {
+                "id": "racion-callos",
+                "name": "Callos",
+                "price": "8€"
+              },
+              {
+                "id": "racion-callos-patatas-fritas",
+                "name": "Callos con patatas fritas",
+                "price": "8€"
+              },
+              {
+                "id": "racion-patatas-cabrales",
+                "name": "Patatas al cabrales",
+                "price": "5,50€"
+              },
+              {
+                "id": "pincho-chorizo-sidra",
+                "name": "Chorizo a la sidra",
+                "price": "3,50€"
+              },
+              {
+                "id": "racion-empanada",
+                "name": "Empanada",
+                "price": "5€"
+              },
+              {
+                "id": "pincho-culin-sidra-cabrales",
+                "name": "Culín de sidra + pincho de cabrales",
+                "price": "3€"
+              },
+              {
+                "id": "racion-fabada",
+                "name": "Fabada",
+                "price": "8€"
+              }
             ]
           },
           {
             "title": "Postres",
             "votable": true,
             "items": [
-              { "id": "postre-arroz-leche", "name": "Arroz con leche", "price": "3,50€" },
-              { "id": "postre-tarta-sidra", "name": "Tarta a la sidra" }
+              {
+                "id": "postre-arroz-leche",
+                "name": "Arroz con leche",
+                "price": "3,50€"
+              },
+              {
+                "id": "postre-tarta-sidra",
+                "name": "Tarta a la sidra"
+              }
             ]
           },
           {
             "title": "Bebidas",
             "votable": false,
             "items": [
-              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,50€" },
-              { "id": "bebida-cana-sidra-dulce", "name": "Caña de sidra dulce", "price": "2,50€" },
-              { "id": "bebida-culin-sidra", "name": "Culín de sidra", "price": "1€" },
-              { "id": "bebida-botella-sidra", "name": "Botella de sidra", "description": "+ 1€ de fianza, que se devuelve a la reposición", "price": "5,50€" },
-              { "id": "bebida-zumo-manzana", "name": "Zumo de manzana", "price": "2€" },
-              { "id": "bebida-refrescos", "name": "Refrescos", "price": "2€" },
-              { "id": "bebida-agua", "name": "Agua", "price": "1€" }
+              {
+                "id": "bebida-cerveza",
+                "name": "Cerveza",
+                "description": "Caña; caña sin alcohol; caña con limón",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-cana-sidra-dulce",
+                "name": "Caña de sidra dulce",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-culin-sidra",
+                "name": "Culín de sidra",
+                "price": "1€"
+              },
+              {
+                "id": "bebida-botella-sidra",
+                "name": "Botella de sidra",
+                "description": "+ 1€ de fianza, que se devuelve a la reposición",
+                "price": "5,50€"
+              },
+              {
+                "id": "bebida-zumo-manzana",
+                "name": "Zumo de manzana",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-refrescos",
+                "name": "Refrescos",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1€"
+              }
             ]
           }
         ]
@@ -3805,44 +4274,152 @@
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "racion-rabas", "name": "Rabas", "price": "10€" },
-              { "id": "racion-sardinas-asadas", "name": "Sardinas asadas", "description": "Ración 10€; media ración 5,50€" },
-              { "id": "racion-marmita-bonito", "name": "Marmita de bonito", "price": "5€" },
-              { "id": "racion-alubias-almejas", "name": "Alubias con almejas", "price": "5€" },
-              { "id": "bocadito-bonito", "name": "Bocadito de bonito", "price": "4€" },
-              { "id": "bocadito-rabas", "name": "Bocadito de rabas", "price": "4€" },
-              { "id": "racion-anchoas-aceite", "name": "Anchoas en aceite", "price": "7€" },
-              { "id": "racion-boquerones-vinagre", "name": "Boquerones en vinagre aliñados", "price": "4€" },
-              { "id": "queso-nata-pieza-grande", "name": "Queso de nata (pieza grande)", "description": "Pieza completa; 2 kg", "price": "25€" },
-              { "id": "queso-nata-pieza-pequena", "name": "Queso de nata (pieza pequeña)", "description": "Pieza completa; 0,530 kg", "price": "9€" },
-              { "id": "queso-nata-membrillo-pincho", "name": "Queso de nata con membrillo (pincho)", "price": "2€" },
-              { "id": "queso-nata-membrillo-racion", "name": "Queso de nata con membrillo (ración)", "price": "6€" },
-              { "id": "queso-nata-anchoa-pincho", "name": "Queso de nata con anchoa (pincho)", "price": "2€" },
-              { "id": "queso-nata-anchoa-racion", "name": "Queso de nata con anchoa (ración)", "price": "7€" }
+              {
+                "id": "racion-rabas",
+                "name": "Rabas",
+                "price": "10€"
+              },
+              {
+                "id": "racion-sardinas-asadas",
+                "name": "Sardinas asadas",
+                "description": "Ración 10€; media ración 5,50€"
+              },
+              {
+                "id": "racion-marmita-bonito",
+                "name": "Marmita de bonito",
+                "price": "5€"
+              },
+              {
+                "id": "racion-alubias-almejas",
+                "name": "Alubias con almejas",
+                "price": "5€"
+              },
+              {
+                "id": "bocadito-bonito",
+                "name": "Bocadito de bonito",
+                "price": "4€"
+              },
+              {
+                "id": "bocadito-rabas",
+                "name": "Bocadito de rabas",
+                "price": "4€"
+              },
+              {
+                "id": "racion-anchoas-aceite",
+                "name": "Anchoas en aceite",
+                "price": "7€"
+              },
+              {
+                "id": "racion-boquerones-vinagre",
+                "name": "Boquerones en vinagre aliñados",
+                "price": "4€"
+              },
+              {
+                "id": "queso-nata-pieza-grande",
+                "name": "Queso de nata (pieza grande)",
+                "description": "Pieza completa; 2 kg",
+                "price": "25€"
+              },
+              {
+                "id": "queso-nata-pieza-pequena",
+                "name": "Queso de nata (pieza pequeña)",
+                "description": "Pieza completa; 0,530 kg",
+                "price": "9€"
+              },
+              {
+                "id": "queso-nata-membrillo-pincho",
+                "name": "Queso de nata con membrillo (pincho)",
+                "price": "2€"
+              },
+              {
+                "id": "queso-nata-membrillo-racion",
+                "name": "Queso de nata con membrillo (ración)",
+                "price": "6€"
+              },
+              {
+                "id": "queso-nata-anchoa-pincho",
+                "name": "Queso de nata con anchoa (pincho)",
+                "price": "2€"
+              },
+              {
+                "id": "queso-nata-anchoa-racion",
+                "name": "Queso de nata con anchoa (ración)",
+                "price": "7€"
+              }
             ]
           },
           {
             "title": "Postres",
             "votable": true,
             "items": [
-              { "id": "postre-sobaos-grandes", "name": "Sobaos pasiegos grandes", "description": "Unidad 3€; paquete de 1 kg 13€" },
-              { "id": "postre-sobaos-pequenos", "name": "Sobaos pasiegos pequeños", "description": "Unidad 1,50€; paquete de 1 kg 13€" },
-              { "id": "postre-corbatas-unquera", "name": "Corbatas de Unquera", "description": "Unidad 1,50€; caja 9,50€" },
-              { "id": "postre-quesada-pasiega", "name": "Quesada pasiega", "description": "Pincho 2€; quesada 900 g 13,50€; al vacío 650 g 12€" }
+              {
+                "id": "postre-sobaos-grandes",
+                "name": "Sobaos pasiegos grandes",
+                "description": "Unidad 3€; paquete de 1 kg 13€"
+              },
+              {
+                "id": "postre-sobaos-pequenos",
+                "name": "Sobaos pasiegos pequeños",
+                "description": "Unidad 1,50€; paquete de 1 kg 13€"
+              },
+              {
+                "id": "postre-corbatas-unquera",
+                "name": "Corbatas de Unquera",
+                "description": "Unidad 1,50€; caja 9,50€"
+              },
+              {
+                "id": "postre-quesada-pasiega",
+                "name": "Quesada pasiega",
+                "description": "Pincho 2€; quesada 900 g 13,50€; al vacío 650 g 12€"
+              }
             ]
           },
           {
             "title": "Bebidas",
             "votable": false,
             "items": [
-              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "description": "Caña", "price": "2,50€" },
-              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,50€" },
-              { "id": "bebida-chato-vino", "name": "Chato de vino", "description": "Tostaniego; tinto; rosado; frizzante; vaso 1,50€" },
-              { "id": "bebida-botellin-mosto", "name": "Botellín de mosto", "price": "2€" },
-              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
-              { "id": "bebida-refrescos", "name": "Refrescos", "price": "2€" },
-              { "id": "bebida-cafe-orujo-potes", "name": "Café con orujo de Potes", "price": "2€" },
-              { "id": "bebida-cremas-potes", "name": "Cremas de Potes", "description": "Chupito 2€; melón; fresas con chocolate; yogur; crema de orujo de Liébana" }
+              {
+                "id": "bebida-tinto-verano",
+                "name": "Tinto de verano",
+                "description": "Caña",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-cerveza",
+                "name": "Cerveza",
+                "description": "Caña; caña sin alcohol; caña con limón",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-chato-vino",
+                "name": "Chato de vino",
+                "description": "Tostaniego; tinto; rosado; frizzante; vaso 1,50€"
+              },
+              {
+                "id": "bebida-botellin-mosto",
+                "name": "Botellín de mosto",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1€"
+              },
+              {
+                "id": "bebida-refrescos",
+                "name": "Refrescos",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-cafe-orujo-potes",
+                "name": "Café con orujo de Potes",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-cremas-potes",
+                "name": "Cremas de Potes",
+                "description": "Chupito 2€; melón; fresas con chocolate; yogur; crema de orujo de Liébana"
+              }
             ]
           }
         ],
@@ -3966,38 +4543,117 @@
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "tosta-sobrasada-mallorquina", "name": "Tosta de sobrasada mallorquina", "price": "5€" },
-              { "id": "miniburguer-rafa-nadal", "name": "Miniburguer Rafa Nadal", "price": "5€" },
-              { "id": "racion-ensalada-pasta-marinera", "name": "Ensalada de pasta marinera", "price": "8€" },
-              { "id": "montado-ternera-queso-mahon", "name": "Montado de ternera con queso Mahon", "price": "6,50€" },
-              { "id": "racion-tiras-calamar-mojo-balear", "name": "Tiras de calamar con mojo balear", "price": "9€" },
-              { "id": "racion-huevos-sobrasada", "name": "Huevos fritos con patatas y salsa de sobrasada", "price": "8€" },
-              { "id": "racion-tortilla-sobrasada-mahon", "name": "Tortilla de patata con sobrasada y queso Mahon", "price": "8,50€" },
-              { "id": "racion-ciurons-escaldins", "name": "Ciurons escaldins", "price": "7,50€" }
+              {
+                "id": "tosta-sobrasada-mallorquina",
+                "name": "Tosta de sobrasada mallorquina",
+                "price": "5€"
+              },
+              {
+                "id": "miniburguer-rafa-nadal",
+                "name": "Miniburguer Rafa Nadal",
+                "price": "5€"
+              },
+              {
+                "id": "racion-ensalada-pasta-marinera",
+                "name": "Ensalada de pasta marinera",
+                "price": "8€"
+              },
+              {
+                "id": "montado-ternera-queso-mahon",
+                "name": "Montado de ternera con queso Mahon",
+                "price": "6,50€"
+              },
+              {
+                "id": "racion-tiras-calamar-mojo-balear",
+                "name": "Tiras de calamar con mojo balear",
+                "price": "9€"
+              },
+              {
+                "id": "racion-huevos-sobrasada",
+                "name": "Huevos fritos con patatas y salsa de sobrasada",
+                "price": "8€"
+              },
+              {
+                "id": "racion-tortilla-sobrasada-mahon",
+                "name": "Tortilla de patata con sobrasada y queso Mahon",
+                "price": "8,50€"
+              },
+              {
+                "id": "racion-ciurons-escaldins",
+                "name": "Ciurons escaldins",
+                "price": "7,50€"
+              }
             ]
           },
           {
             "title": "Postres",
             "votable": true,
             "items": [
-              { "id": "postre-ensaimada", "name": "Ensaimada", "price": "4€" },
-              { "id": "postre-tarta-queso", "name": "Tarta de queso", "price": "3,50€" }
+              {
+                "id": "postre-ensaimada",
+                "name": "Ensaimada",
+                "price": "4€"
+              },
+              {
+                "id": "postre-tarta-queso",
+                "name": "Tarta de queso",
+                "price": "3,50€"
+              }
             ]
           },
           {
             "title": "Bebidas",
             "votable": false,
             "items": [
-              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,50€" },
-              { "id": "bebida-vino-tinto", "name": "Vino tinto", "price": "1,30€" },
-              { "id": "bebida-vino-rosado", "name": "Vino rosado" },
-              { "id": "bebida-vino-blanco-canario", "name": "Vino blanco canario", "price": "1,80€" },
-              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "price": "2,30€" },
-              { "id": "bebida-chato-mosto", "name": "Chato de mosto", "description": "Vaso 2,50€; chato 1,50€" },
-              { "id": "bebida-refrescos", "name": "Refrescos", "price": "2€" },
-              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
-              { "id": "bebida-brisa-canaria", "name": "Brisa Canaria", "description": "Caña 2,50€; pinta 3,50€" },
-              { "id": "bebida-aire-guanche", "name": "Aire guanche" }
+              {
+                "id": "bebida-cerveza",
+                "name": "Cerveza",
+                "description": "Caña; caña sin alcohol; caña con limón",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-vino-tinto",
+                "name": "Vino tinto",
+                "price": "1,30€"
+              },
+              {
+                "id": "bebida-vino-rosado",
+                "name": "Vino rosado"
+              },
+              {
+                "id": "bebida-vino-blanco-canario",
+                "name": "Vino blanco canario",
+                "price": "1,80€"
+              },
+              {
+                "id": "bebida-tinto-verano",
+                "name": "Tinto de verano",
+                "price": "2,30€"
+              },
+              {
+                "id": "bebida-chato-mosto",
+                "name": "Chato de mosto",
+                "description": "Vaso 2,50€; chato 1,50€"
+              },
+              {
+                "id": "bebida-refrescos",
+                "name": "Refrescos",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1€"
+              },
+              {
+                "id": "bebida-brisa-canaria",
+                "name": "Brisa Canaria",
+                "description": "Caña 2,50€; pinta 3,50€"
+              },
+              {
+                "id": "bebida-aire-guanche",
+                "name": "Aire guanche"
+              }
             ]
           }
         ]
@@ -4030,32 +4686,115 @@
             "title": "Raciones y pinchos",
             "votable": true,
             "items": [
-              { "id": "racion-papas-alinas", "name": "Papas aliñás", "price": "5€" },
-              { "id": "racion-aceitunas", "name": "Aceitunas", "price": "2€" },
-              { "id": "racion-adobo", "name": "Adobo", "price": "9,50€" },
-              { "id": "racion-berenjenas-miel-cana", "name": "Berenjenas con miel de caña", "price": "5€" },
-              { "id": "bocadillo-calamares-bebida", "name": "Bocadillo de calamares + bebida", "price": "7,5€" },
-              { "id": "racion-calamares-fritos", "name": "Calamares fritos", "price": "8,50€" },
-              { "id": "racion-boquerones", "name": "Boquerones", "price": "9€" },
-              { "id": "racion-chopitos", "name": "Chopitos", "price": "9,50€" },
-              { "id": "racion-tortitas-camarones", "name": "Tortitas de camarones (3 uds)", "price": "7,5€" },
-              { "id": "racion-gambas-cocidas", "name": "Gambas cocidas", "price": "9€" },
-              { "id": "racion-langostinos-plancha", "name": "Langostinos a la plancha", "price": "6€" },
-              { "id": "racion-salmorejo", "name": "Salmorejo", "price": "3€" },
-              { "id": "racion-gazpacho", "name": "Gazpacho", "price": "2€" }
+              {
+                "id": "racion-papas-alinas",
+                "name": "Papas aliñás",
+                "price": "5€"
+              },
+              {
+                "id": "racion-aceitunas",
+                "name": "Aceitunas",
+                "price": "2€"
+              },
+              {
+                "id": "racion-adobo",
+                "name": "Adobo",
+                "price": "9,50€"
+              },
+              {
+                "id": "racion-berenjenas-miel-cana",
+                "name": "Berenjenas con miel de caña",
+                "price": "5€"
+              },
+              {
+                "id": "bocadillo-calamares-bebida",
+                "name": "Bocadillo de calamares + bebida",
+                "price": "7,5€"
+              },
+              {
+                "id": "racion-calamares-fritos",
+                "name": "Calamares fritos",
+                "price": "8,50€"
+              },
+              {
+                "id": "racion-boquerones",
+                "name": "Boquerones",
+                "price": "9€"
+              },
+              {
+                "id": "racion-chopitos",
+                "name": "Chopitos",
+                "price": "9,50€"
+              },
+              {
+                "id": "racion-tortitas-camarones",
+                "name": "Tortitas de camarones (3 uds)",
+                "price": "7,5€"
+              },
+              {
+                "id": "racion-gambas-cocidas",
+                "name": "Gambas cocidas",
+                "price": "9€"
+              },
+              {
+                "id": "racion-langostinos-plancha",
+                "name": "Langostinos a la plancha",
+                "price": "6€"
+              },
+              {
+                "id": "racion-salmorejo",
+                "name": "Salmorejo",
+                "price": "3€"
+              },
+              {
+                "id": "racion-gazpacho",
+                "name": "Gazpacho",
+                "price": "2€"
+              }
             ]
           },
           {
             "title": "Bebidas",
             "votable": false,
             "items": [
-              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,5€" },
-              { "id": "bebida-fino", "name": "Fino", "description": "Manzanilla; Pedro Ximénez", "price": "2€" },
-              { "id": "bebida-refrescos", "name": "Refrescos", "description": "Coca-Cola; Coca-Cola Zero; Coca-Cola Zero-Zero; Fanta naranja; Fanta limón", "price": "2€" },
-              { "id": "bebida-rebujo", "name": "Rebujo", "description": "Chato 2€; caña 2,5€; cachi 7€" },
-              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "price": "2€" },
-              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
-              { "id": "bebida-cafe-solo", "name": "Café solo", "price": "1€" }
+              {
+                "id": "bebida-cerveza",
+                "name": "Cerveza",
+                "description": "Caña; caña sin alcohol; caña con limón",
+                "price": "2,5€"
+              },
+              {
+                "id": "bebida-fino",
+                "name": "Fino",
+                "description": "Manzanilla; Pedro Ximénez",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-refrescos",
+                "name": "Refrescos",
+                "description": "Coca-Cola; Coca-Cola Zero; Coca-Cola Zero-Zero; Fanta naranja; Fanta limón",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-rebujo",
+                "name": "Rebujo",
+                "description": "Chato 2€; caña 2,5€; cachi 7€"
+              },
+              {
+                "id": "bebida-tinto-verano",
+                "name": "Tinto de verano",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1€"
+              },
+              {
+                "id": "bebida-cafe-solo",
+                "name": "Café solo",
+                "price": "1€"
+              }
             ]
           }
         ]
@@ -4110,31 +4849,108 @@
             "title": "Raciones y pinchos",
             "votable": true,
             "items": [
-              { "id": "racion-papas-mojo-picon", "name": "Papas con mojo picón", "description": "Ración 5,50€; media ración 3,30€" },
-              { "id": "racion-carne-fiesta", "name": "Carne fiesta", "description": "Ración 6€; media ración 3,50€" },
-              { "id": "racion-platano-guanche", "name": "Plátano guanche", "price": "3€" },
-              { "id": "menu-del-dia", "name": "Menú del día", "description": "Preguntar en barra", "price": "8€" },
-              { "id": "racion-queso-sin-guayaba", "name": "Queso sin guayaba (ración)", "price": "5€" },
-              { "id": "racion-queso-con-guayaba", "name": "Queso con guayaba (ración)", "price": "5,50€" },
-              { "id": "pincho-queso-sin-guayaba", "name": "Queso sin guayaba (pincho)", "price": "1€" },
-              { "id": "pincho-queso-con-guayaba", "name": "Queso con guayaba (pincho)", "price": "1,50€" },
-              { "id": "bebida-tapa-dia", "name": "Bebida + tapa del día", "price": "3,50€" }
+              {
+                "id": "racion-papas-mojo-picon",
+                "name": "Papas con mojo picón",
+                "description": "Ración 5,50€; media ración 3,30€"
+              },
+              {
+                "id": "racion-carne-fiesta",
+                "name": "Carne fiesta",
+                "description": "Ración 6€; media ración 3,50€"
+              },
+              {
+                "id": "racion-platano-guanche",
+                "name": "Plátano guanche",
+                "price": "3€"
+              },
+              {
+                "id": "menu-del-dia",
+                "name": "Menú del día",
+                "description": "Preguntar en barra",
+                "price": "8€"
+              },
+              {
+                "id": "racion-queso-sin-guayaba",
+                "name": "Queso sin guayaba (ración)",
+                "price": "5€"
+              },
+              {
+                "id": "racion-queso-con-guayaba",
+                "name": "Queso con guayaba (ración)",
+                "price": "5,50€"
+              },
+              {
+                "id": "pincho-queso-sin-guayaba",
+                "name": "Queso sin guayaba (pincho)",
+                "price": "1€"
+              },
+              {
+                "id": "pincho-queso-con-guayaba",
+                "name": "Queso con guayaba (pincho)",
+                "price": "1,50€"
+              },
+              {
+                "id": "bebida-tapa-dia",
+                "name": "Bebida + tapa del día",
+                "price": "3,50€"
+              }
             ]
           },
           {
             "title": "Bebidas",
             "votable": false,
             "items": [
-              { "id": "bebida-cerveza", "name": "Cerveza", "description": "Caña; caña sin alcohol; caña con limón", "price": "2,50€" },
-              { "id": "bebida-vino-tinto", "name": "Vino tinto", "price": "1,30€" },
-              { "id": "bebida-vino-rosado", "name": "Vino rosado" },
-              { "id": "bebida-vino-blanco-canario", "name": "Vino blanco canario", "price": "1,80€" },
-              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "price": "2,30€" },
-              { "id": "bebida-chato-mosto", "name": "Chato de mosto", "description": "Vaso 2,50€; chato 1,50€" },
-              { "id": "bebida-refrescos", "name": "Refrescos", "description": "Coca-Cola; Coca-Cola Zero; Coca-Cola Zero-Zero; Fanta naranja; Fanta limón; Fuze Tea", "price": "2€" },
-              { "id": "bebida-agua", "name": "Agua", "price": "1€" },
-              { "id": "bebida-brisa-canaria", "name": "Brisa Canaria", "description": "Caña 2,50€; pinta 3,50€" },
-              { "id": "bebida-aire-guanche", "name": "Aire guanche" }
+              {
+                "id": "bebida-cerveza",
+                "name": "Cerveza",
+                "description": "Caña; caña sin alcohol; caña con limón",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-vino-tinto",
+                "name": "Vino tinto",
+                "price": "1,30€"
+              },
+              {
+                "id": "bebida-vino-rosado",
+                "name": "Vino rosado"
+              },
+              {
+                "id": "bebida-vino-blanco-canario",
+                "name": "Vino blanco canario",
+                "price": "1,80€"
+              },
+              {
+                "id": "bebida-tinto-verano",
+                "name": "Tinto de verano",
+                "price": "2,30€"
+              },
+              {
+                "id": "bebida-chato-mosto",
+                "name": "Chato de mosto",
+                "description": "Vaso 2,50€; chato 1,50€"
+              },
+              {
+                "id": "bebida-refrescos",
+                "name": "Refrescos",
+                "description": "Coca-Cola; Coca-Cola Zero; Coca-Cola Zero-Zero; Fanta naranja; Fanta limón; Fuze Tea",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1€"
+              },
+              {
+                "id": "bebida-brisa-canaria",
+                "name": "Brisa Canaria",
+                "description": "Caña 2,50€; pinta 3,50€"
+              },
+              {
+                "id": "bebida-aire-guanche",
+                "name": "Aire guanche"
+              }
             ]
           }
         ],
