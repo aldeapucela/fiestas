@@ -17626,15 +17626,17 @@
     "startTime": "20:00",
     "endTime": "23:00",
     "title": "Paco Devotion",
-    "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
     "location": "Plaza Poniente (La Boutique / Enboga)",
     "zone": "Plaza Poniente",
-    "description": "Actuación de Paco Devotion en Plaza Poniente, con la Boutique y Enboga",
-    "summary": "Paco Devotion en Plaza Poniente, con la Boutique y Enboga",
+    "description": "Programación musical de las Ferias Virgen de San Lorenzo en Plaza Poniente, con la actuación de Paco Devotion el viernes 4 de septiembre de 20:00 a 23:00 horas. La cita se celebra en Plaza Poniente, con La Boutique y Enboga.",
+    "summary": "Actuación de Paco Devotion en Plaza Poniente dentro de la programación de Ferias Virgen de San Lorenzo.",
     "performances": [
       "Paco Devotion"
     ],
-    "organizers": [],
+    "organizers": [
+      "Beluga, Enboga & la Boutique"
+    ],
     "collaborators": [],
     "coordinates": {
       "lat": 41.653157,
@@ -17651,6 +17653,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg"
     ]
   },
   {
@@ -17679,47 +17685,6 @@
       "query": "Calle del Bao, Valladolid, España",
       "accuracy": 1,
       "geocodedAt": "2026-08-29T11:03:09.286Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 553,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": "20:00",
-    "endTime": "23:00",
-    "title": "Ferias Virgen de San Lorenzo",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
-    "location": "Plaza Poniente (La Boutique / Enboga)",
-    "zone": "Zona Centro",
-    "description": "Programación musical de las Ferias Virgen de San Lorenzo en Plaza Poniente, con la actuación de Paco Devotion el viernes 4 de septiembre de 20:00 a 23:00 horas. La cita se celebra en Plaza Poniente, con La Boutique y Enboga.",
-    "summary": "Actuación de Paco Devotion en Plaza Poniente dentro de la programación de Ferias Virgen de San Lorenzo.",
-    "performances": [
-      "Paco Devotion"
-    ],
-    "organizers": [
-      "Beluga, Enboga & la Boutique"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza Poniente, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-29T18:02:08.678Z"
     },
     "type": "Música",
     "ticket": {
