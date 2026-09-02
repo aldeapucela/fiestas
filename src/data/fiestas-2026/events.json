@@ -24783,7 +24783,7 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/14036144d93f7cb7c7f41c4b75385e39498daa41_2_699x1024.jpeg",
     "location": "Dovleuve Paseo de Zorrilla 17",
     "zone": "Campo Grande",
-    "description": "El establecimiento Dovleuve presenta su programación musical de conciertos en terraza en el marco de las Fiestas de la Virgen de San Lorenzo. La actividad se desarrollará durante el mes de septiembre con diversas actuaciones en directo.",
+    "description": "El establecimiento Dovleuve presenta su programación musical de conciertos en terraza en el marco de las Fiestas de la Virgen de San Lorenzo. La actividad se desarrollará durante el mes de septiembre con diversas actuaciones en directo.\n\nInformación ampliada: La agrupación musical Tocado y Hundido se presenta en el marco de las Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar el próximo domingo 13 de septiembre a las 13:00 horas en el Paseo de Zorrilla.",
     "summary": "El establecimiento Dovleuve presenta su programación musical de conciertos en terraza en el marco de las Fiestas de la Virgen de San Lorenzo. La actividad se desarrollará durante el mes de septiembre con diversas actuaciones en directo.",
     "performances": [
       "Tocado y Hundido"
@@ -25889,6 +25889,204 @@
       "osmId": 33821228,
       "query": "Calle Cascajares, Valladolid, España",
       "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 785,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "title": "Santi Borja y Emilio (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/70a29f1e0663c09ab1ecb6afc7a762002de11df6_2_740x1024.jpeg",
+    "location": "Dovleuve, Paseo de Zorrilla 17",
+    "zone": "Campo Grande",
+    "description": "Santi Borja y Emilio presentan sus conciertos en terraza en el marco de las Fiestas de la Virgen de San Lorenzo. La cita tendrá lugar el sábado 5 de septiembre a las 13:00 horas.",
+    "summary": "Santi Borja y Emilio presentan sus conciertos en terraza en el marco de las Fiestas de la Virgen de San Lorenzo. La cita tendrá lugar el sábado 5 de septiembre a las 13:00 horas.",
+    "performances": [
+      "Santi Borja y Emilio"
+    ],
+    "organizers": [
+      "Dovleuve"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6425673,
+      "lng": -4.7362214,
+      "source": "Google Maps (consulta manual; ficha de Dovleuve Restaurante)",
+      "query": "Dovleuve, Paseo de Zorrilla 17, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T06:05:44.367Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 786,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "title": "Dos de Picas (Presentación musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/a4b71972f408498494bac212da91a7251adb1095_2_813x1024.jpeg",
+    "location": "Bar San Pio X, Calle Hogar",
+    "zone": "Zona Centro",
+    "description": "El Bar San Pio X invita a todos sus clientes a una tarde de música especial con la presentación de la canción ‘Dos de Picas’ de Miguel Baraja. El evento tendrá lugar el próximo 6 de septiembre a las 13:00 horas en el Barrio Girón.",
+    "summary": "El Bar San Pio X invita a todos sus clientes a una tarde de música especial con la presentación de la canción ‘Dos de Picas’ de Miguel Baraja. El evento tendrá lugar el próximo 6 de septiembre a las 13:00 horas en el Barrio Girón.",
+    "performances": [
+      "Dos de Picas"
+    ],
+    "organizers": [
+      "Bar San Pio X"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6547129,
+      "lng": -4.7460191,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 11963626786,
+      "query": "Bar San Pío X, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 787,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "title": "Pimpin de \"Los Lunares\" (Concierto en terraza)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f4c8b0dac9e442c406132128c3d15aec1192eedc_2_736x1024.jpeg",
+    "location": "Paseo de Zorrilla 17",
+    "zone": "Campo Grande",
+    "description": "Pimpin de “Los Lunares” (Concierto en terraza)",
+    "summary": "Pimpin de “Los Lunares” (Concierto en terraza)",
+    "performances": [
+      "Pimpin de Los Lunares"
+    ],
+    "organizers": [
+      "Dovleuve"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6426134,
+      "lng": -4.7362653,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 12798575572,
+      "query": "Paseo de Zorrilla 17, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T06:05:44.370Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 788,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "title": "Yaiza Herrero (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/59d471d5169007a7ac2295f9d43e93ce3982b9a4_2_739x1024.jpeg",
+    "location": "Dovleuve (Terraza), Paseo de Zorrilla 17",
+    "zone": "Campo Grande",
+    "description": "La artista Yaiza Herrero llega para ofrecer un concierto especial en el marco de las Fiestas Virgen de San Lorenzo. El evento tendrá lugar el próximo sábado 12 de septiembre a las 13:00 horas en la terraza del establecimiento.",
+    "summary": "La artista Yaiza Herrero llega para ofrecer un concierto especial en el marco de las Fiestas Virgen de San Lorenzo. El evento tendrá lugar el próximo sábado 12 de septiembre a las 13:00 horas en la terraza del establecimiento.",
+    "performances": [
+      "Yaiza Herrero"
+    ],
+    "organizers": [
+      "Dovleuve"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6425673,
+      "lng": -4.7362214,
+      "source": "Google Maps (consulta manual; ficha de Dovleuve Restaurante)",
+      "query": "Dovleuve (Terraza), Paseo de Zorrilla 17, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T06:05:44.371Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 789,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "13:00",
+    "endTime": "14:00",
+    "title": "Tocado y Hundido (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/585833b3ef5284b28a680ecd656592925a10abb2_2_528x1024.jpeg",
+    "location": "Dovleuve (Terraza), Paseo de Zorrilla 17",
+    "zone": "Campo Grande",
+    "description": "La banda Tocado y Hundido llega para ofrecer un espectáculo musical en el marco de las Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar el domingo 13 de septiembre a las 13:00 horas.",
+    "summary": "La banda Tocado y Hundido llega para ofrecer un espectáculo musical en el marco de las Fiestas de la Virgen de San Lorenzo. El evento tendrá lugar el domingo 13 de septiembre a las 13:00 horas.",
+    "performances": [
+      "Tocado y Hundido"
+    ],
+    "organizers": [
+      "Dovleuve"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6425673,
+      "lng": -4.7362214,
+      "source": "Google Maps (consulta manual; ficha de Dovleuve Restaurante)",
+      "query": "Terraza, Paseo de Zorrilla 17) Paseo de Zorrilla 17, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-02T06:05:44.371Z"
     },
     "type": "Música",
     "ticket": {
