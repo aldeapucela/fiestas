@@ -398,7 +398,23 @@
       "2026-09-05",
       "2026-09-11"
     ],
-    "source": "Verificación manual previa del programa de la fuente remota."
+    "occurrences": [
+      {
+        "date": "2026-09-05",
+        "startTime": "13:00",
+        "endTime": null,
+        "location": "Calle Cascajares (zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+        "performances": ["Dinosaurios DJs"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "18:00",
+        "endTime": null,
+        "location": "Calle Cascajares (zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+        "performances": ["Dinosaurios DJs"]
+      }
+    ],
+    "source": "Cartel remoto de Dinosaurios DJs descargado e inspeccionado visualmente: sesión el sábado 5 de septiembre de 2026 a las 13:00 (vermut) y el viernes 11 de septiembre a las 18:00 (tardeo), sin hora de cierre publicada, en Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava."
   },
   "2183": {
     "dates": [
@@ -1248,6 +1264,25 @@
       }
     ],
     "source": "Cartel remoto del 1er Torneo Baloncesto Veteranos inspeccionado visualmente (11 al 13 de septiembre, sin desglose diario) y ficha oficial de la Fundación Municipal de Deportes: https://www.fmdva.org/eventos/listado-de-eventos/1%C2%BA-torneo-baloncesto-veteranos-valladolid/. La ficha oficial concreta actividad el 12 de septiembre de 10:00 a 14:00 y de 16:00 a 20:00, y el 13 de septiembre de 10:00 a 14:00, en el Pabellón Polideportivo Lalo García. Coordenadas resueltas con OpenStreetMap Nominatim mediante la consulta «Pabellón Polideportivo Lalo García, Valladolid, España»: 41.6349531,-4.7662401."
+  },
+  "2214": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {"date": "2026-09-05", "startTime": "17:30", "endTime": "20:30", "location": "Calle Campanas", "performances": ["Los Pibes"]},
+      {"date": "2026-09-07", "startTime": "17:30", "endTime": "20:30", "location": "Calle Campanas", "performances": ["George Whaley"]},
+      {"date": "2026-09-08", "startTime": "17:30", "endTime": "20:30", "location": "Calle Campanas", "performances": ["Berni & Jorge Tejedor"]},
+      {"date": "2026-09-10", "startTime": "17:30", "endTime": "20:30", "location": "Calle Campanas", "performances": ["DJ Catarro"]},
+      {"date": "2026-09-11", "startTime": "17:30", "endTime": "20:30", "location": "Calle Campanas", "performances": ["Los de la Monda"]},
+      {"date": "2026-09-12", "startTime": "17:30", "endTime": "20:30", "location": "Calle Campanas", "performances": ["Apulse & Joel Marashi"]}
+    ],
+    "source": "Cartel remoto de El Campanazo descargado e inspeccionado visualmente: actividad los días 5 (Los Pibes), 7 (George Whaley), 8 (Berni & Jorge Tejedor), 10 (DJ Catarro), 11 (Los de la Monda) y 12 de septiembre de 2026 (Apulse & Joel Marashi), siempre de 17:30 a 20:30 en Calle Campanas; no hay actividad publicada los días 6 y 9."
   },
   "2388": {
     "dates": [
