@@ -1808,6 +1808,52 @@
         "lng": -4.7284904,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-cubanito",
+                "name": "Cubanito"
+              },
+              {
+                "id": "pincho-chapata-lomo",
+                "name": "Chapata de lomo",
+                "description": "con roquefort o pimientos"
+              },
+              {
+                "id": "pincho-chapata-calamares-bravos",
+                "name": "Chapata de calamares bravos"
+              },
+              {
+                "id": "pincho-mini-burguer-picadillo",
+                "name": "Mini burguer de picadillo",
+                "description": "con mostaza miel"
+              }
+            ]
+          },
+          {
+            "title": "Además",
+            "votable": false,
+            "items": [
+              {
+                "id": "ademas-tosta-gambas",
+                "name": "Tosta de gambas"
+              },
+              {
+                "id": "ademas-pancakes",
+                "name": "Pancakes"
+              },
+              {
+                "id": "ademas-racion-calamares",
+                "name": "Ración de calamares"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1956,6 +2002,54 @@
         "lng": -4.7280159,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-miami",
+                "name": "Miami",
+                "description": "perrito con cebolla crujiente, pepinillo y salsa cubana"
+              },
+              {
+                "id": "pincho-chapata-lomo",
+                "name": "Chapata de lomo",
+                "description": "con pimientos o roquefort"
+              },
+              {
+                "id": "pincho-chapata-calamares",
+                "name": "Chapata de calamares",
+                "description": "con alioli"
+              }
+            ]
+          },
+          {
+            "title": "Además",
+            "votable": false,
+            "items": [
+              {
+                "id": "ademas-pollopollo-tinga",
+                "name": "Pollopollo",
+                "description": "chapata de tinga de muslos de pollo deshuesados con pico de gallo y salsa groove"
+              },
+              {
+                "id": "ademas-racion-patatas-mojo-picon",
+                "name": "Racion de patatas mojo picón"
+              },
+              {
+                "id": "ademas-racion-calamares",
+                "name": "Racion de calamares"
+              },
+              {
+                "id": "ademas-pancakes",
+                "name": "Pancakes"
+              }
+            ]
+          }
+        ]
       }
     },
     {
