@@ -5306,13 +5306,19 @@
     "title": "Moreras Beach Fest “The Finisher and Friends”, “D´mentes On Fire”",
     "location": "Escenario Pistas Deportivas - Pº de las Moreras",
     "zone": "Moreras",
-    "description": "Moreras Beach Fest “The Finisher and Friends”, “D´mentes On Fire”, música en directo con el grupo Dúo D´Mentes y “Gene ration Techno-Dance” con DJs",
-    "summary": "Moreras Beach Fest “The Finisher and Friends”, “D´mentes On Fire”, música en directo con el grupo Dúo D´Mentes y “Gene ration Techno-Dance” con DJs",
+    "description": "Moreras Beach Fest presenta “The Finisher and Friends”, “D´mentes On Fire” y Generación Techno Dance el lunes 7 de septiembre en el Escenario Pistas Deportivas de Moreras, con Dúo D´Mentes, DJ Chack, Edu Kilez, Félix Pérez, DanyFesst y Finisher and Friends.",
+    "summary": "Moreras Beach Fest con Dúo D´Mentes, DJ Chack, Edu Kilez, Félix Pérez, DanyFesst y Finisher and Friends.",
     "performances": [
-      "Moreras Beach Fest “The Finisher and Friends”, “D´mentes On Fire”, música en directo con el grupo Dúo D´Mentes y “Gene"
+      "Dúo D´Mentes",
+      "DJ Chack",
+      "Edu Kilez",
+      "Félix Pérez",
+      "DanyFesst",
+      "Finisher and Friends"
     ],
     "organizers": [
-      "Coordinadora de Peñas"
+      "Coordinadora de Peñas",
+      "Ayuntamiento de Valladolid"
     ],
     "collaborators": [],
     "coordinates": {
@@ -5332,7 +5338,8 @@
       "Música",
       "Peñas",
       "Danza"
-    ]
+    ],
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/495dc55da32bcd3b6ca328e3199d62bcd2cee339_2_676x1023.jpeg"
   },
   {
     "id": 157,
@@ -21051,49 +21058,6 @@
       "query": "Plaza Federico Wattenberg, Valladolid, España",
       "accuracy": 1,
       "geocodedAt": "2026-08-31T21:04:11.198Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 654,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Generación Techno Dance (Evento)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/495dc55da32bcd3b6ca328e3199d62bcd2cee339_2_676x1023.jpeg",
-    "location": "Escenario Pistas Deportivas de Moreras",
-    "zone": "Moreras",
-    "description": "La fiesta Generación Techno Dance se llevará a cabo el próximo lunes 7 de septiembre en el escenario de las pistas deportivas de Moreras. Este evento promete una noche de ritmo y energía para todos los amantes de la música electrónica Información ampliada: la fiesta Generación Techno Dance se llevará a cabo el próximo lunes 7 de septiembre en el escenario de las pistas deportivas de Moreras. Este evento promete una noche de ritmo y energía para todos los amantes de la música electrónica",
-    "summary": "La fiesta Generación Techno Dance se llevará a cabo el próximo lunes 7 de septiembre en el escenario de las pistas deportivas de Moreras. Este evento promete una noche de ritmo y energía para todos los amantes de la música electrónica",
-    "performances": [
-      "DJ Chack",
-      "Edu Kilez",
-      "Félix Pérez",
-      "DanyFesst",
-      "Finisher and Friends"
-    ],
-    "organizers": [
-      "Ayuntamiento de Valladolid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6548258,
-      "lng": -4.7335351,
-      "source": "Google Maps (consulta manual; ficha de Pistas deportivas del Parque de las Moreras)",
-      "query": "Escenario Pistas Deportivas de Moreras, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-01T06:05:49.883Z"
     },
     "type": "Música",
     "ticket": {
