@@ -773,6 +773,9 @@ async function loadCasetas(vallabusStops = []) {
       placement: String(caseta.placement || '').trim(),
       image: String(caseta.image || '').trim(),
       imageAlt: String(caseta.imageAlt || '').trim(),
+      imageSource: String(caseta.imageSource || '').trim(),
+      imageCredit: String(caseta.imageCredit || '').trim(),
+      imageLicense: String(caseta.imageLicense || '').trim(),
       addressQuery,
       coordinates,
       details: normalizeCasetaDetails(caseta.details),
@@ -1306,7 +1309,7 @@ async function build() {
         imageAlt: caseta.imageAlt || 'Casetas feria de día | Fiestas Valladolid 2026',
         imageWidth: caseta.image ? 1280 : 1731,
         imageHeight: caseta.image ? 964 : 909,
-        imageType: caseta.image ? 'image/jpeg' : 'image/png',
+        imageType: caseta.image?.toLowerCase().endsWith('.png') ? 'image/png' : caseta.image ? 'image/jpeg' : 'image/png',
         url: publicBaseUrl + caseta.urlPath
       },
       caseta,

@@ -34,7 +34,7 @@
   <article class="fiestas-detail fiestas-caseta-detail" data-caseta-id="{{ caseta.id }}">
     <header class="fiestas-detail-top">
       <button class="fiestas-detail-top-button" type="button" data-fiestas-back aria-label="Volver al mapa de casetas">
-        <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+        <i class="fiestas-detail-back-icon fa-solid fa-arrow-left" aria-hidden="true"></i>
       </button>
       <p>Detalle de caseta</p>
       <div class="fiestas-detail-top-actions">
@@ -48,7 +48,7 @@
     </header>
 
     {% if caseta.image %}
-    <figure class="fiestas-detail-hero">
+    <figure class="fiestas-detail-hero{% if caseta.zone == 'Zona Ferias' %} fiestas-detail-hero--emblem{% endif %}">
       <button
         class="fiestas-detail-hero-button"
         type="button"
@@ -57,8 +57,15 @@
         data-image-alt="{{ caseta.imageAlt or caseta.name }}"
         aria-label="Ver foto de {{ caseta.name }} completa"
       >
-        <img src="{{ caseta.image }}" alt="{{ caseta.imageAlt or caseta.name }}" loading="eager" />
+        <img src="{{ caseta.image }}" alt="{{ caseta.imageAlt or caseta.name }}" loading="eager" fetchpriority="high" />
       </button>
+      {% if caseta.imageSource and (caseta.imageCredit or caseta.imageLicense) %}
+      <figcaption class="fiestas-image-attribution">
+        <a href="{{ caseta.imageSource }}" target="_blank" rel="noopener noreferrer" aria-label="Créditos de la imagen: {{ caseta.imageCredit }}{% if caseta.imageCredit and caseta.imageLicense %} - {% endif %}{{ caseta.imageLicense }}">
+          {{ caseta.imageCredit }}{% if caseta.imageCredit and caseta.imageLicense %} - {% endif %}{{ caseta.imageLicense }}
+        </a>
+      </figcaption>
+      {% endif %}
     </figure>
     <div class="detail-lightbox" data-fiestas-detail-lightbox role="dialog" aria-modal="true" aria-label="Imagen de {{ caseta.name }}" hidden>
       <button class="detail-lightbox-backdrop" type="button" data-fiestas-detail-lightbox-close aria-label="Cerrar imagen"></button>
@@ -68,6 +75,17 @@
         </button>
         {# Sin src inicial: openLightbox() lo asigna desde data-image-src al abrir. #}
         <img class="detail-lightbox-image" data-fiestas-detail-lightbox-image alt="{{ caseta.imageAlt or caseta.name }}" />
+        {% if caseta.imageSource and (caseta.imageCredit or caseta.imageLicense) %}
+        <a
+          class="fiestas-image-attribution fiestas-image-attribution--lightbox"
+          href="{{ caseta.imageSource }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Abrir créditos de la imagen: {{ caseta.imageCredit }}{% if caseta.imageCredit and caseta.imageLicense %} - {% endif %}{{ caseta.imageLicense }}"
+        >
+          {{ caseta.imageCredit }}{% if caseta.imageCredit and caseta.imageLicense %} - {% endif %}{{ caseta.imageLicense }}
+        </a>
+        {% endif %}
       </div>
     </div>
     {% endif %}

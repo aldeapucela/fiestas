@@ -157,6 +157,8 @@ function normalizeCasetas(entries) {
         location,
         placement,
         details,
+        image: String(entry.image || '').trim(),
+        imageAlt: String(entry.imageAlt || '').trim(),
         dietary: getDietaryLabels(details),
         searchText: normalizeText([
           name,
@@ -639,6 +641,9 @@ function casetaRow(caseta) {
   const href = buildCasetaDetailHref(caseta);
   const placement = caseta.placement || '';
   const saved = state.casetaFavorites.has(caseta.id);
+  const emblem = caseta.zone === 'Zona Ferias' && caseta.image
+    ? `<img src="${escapeAttribute(caseta.image)}" alt="" aria-hidden="true" loading="lazy" />`
+    : '<i class="fa-solid fa-store" aria-hidden="true"></i>';
   const distance = state.userLocation && caseta.coordinates
     ? formatDistance(distanceInKilometres(
       [state.userLocation.lat, state.userLocation.lng],
@@ -649,7 +654,7 @@ function casetaRow(caseta) {
   if (searchMatch) article.dataset.searchMatch = searchMatch.text;
   article.innerHTML = `
     <a class="fiestas-map-result-link" href="${href}">
-      <span class="fiestas-map-result-icon"><i class="fa-solid fa-store" aria-hidden="true"></i></span>
+      <span class="fiestas-map-result-icon${caseta.zone === 'Zona Ferias' && caseta.image ? ' fiestas-map-result-icon--emblem' : ''}">${emblem}</span>
       <span class="fiestas-map-result-copy">
         <span class="fiestas-map-result-title-line">
           <span class="fiestas-map-result-title">${escapeHtml(caseta.name)}</span>
