@@ -17177,8 +17177,8 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/29fc3965473a0c0489f406c57035ed4d22b167bc_2_472x1024.jpeg",
     "location": "Pera Limonera",
     "zone": "Zona Centro",
-    "description": "Super Cristongo llega a la Pera Limonera el domingo 6 de septiembre desde las 17:00 horas, con la actuación de las Doñas dentro de la programación de fiestas",
-    "summary": "Super Cristongo en la Pera Limonera, con actuación de las Doñas",
+    "description": "Super Cristongo llega a la Pera Limonera el domingo 6 de septiembre desde las 17:00 horas, con la actuación de Las Doñas dentro de la programación de fiestas.",
+    "summary": "Super Cristongo en la Pera Limonera, con actuación de Las Doñas.",
     "performances": [
       "Las Doñas",
       "Cristongo"
@@ -17210,7 +17210,8 @@
     ],
     "images": [
       "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/29fc3965473a0c0489f406c57035ed4d22b167bc_2_472x1024.jpeg",
-      "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg"
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/5/5fd3a52fa5356426efbfa6a306d301b76cd83db8_2_643x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg"
     ]
   },
   {
@@ -23371,16 +23372,16 @@
   },
   {
     "id": 730,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
     "startTime": "20:00",
     "endTime": "23:00",
     "title": "Xangai & Pani & Furones (Concierto)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/16aa4376bf6b4b8298fec6abcb712135576399e5_2_935x1024.jpeg",
     "location": "Restaurante Montellén, C. Sandoval, 7, 47003 Valladolid",
     "zone": "Zona Centro",
-    "description": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo lunes 7 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche",
-    "summary": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo lunes 7 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche",
+    "description": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo sábado 12 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche",
+    "summary": "El evento musical Xangai & Pani & Furones se llevará a cabo el próximo sábado 12 de septiembre, repartiéndose la actuación en dos escenarios diferentes durante la tarde y la noche",
     "performances": [
       "Xangai",
       "Pani",
@@ -24231,44 +24232,6 @@
     },
     "tags": [
       "Otros"
-    ]
-  },
-  {
-    "id": 767,
-    "date": "2026-09-06",
-    "dateLabel": "Domingo 6 de septiembre",
-    "startTime": "17:00",
-    "endTime": null,
-    "title": "Las Doñas (Gira de actuaciones)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/ba8a754ba22e381bd76a126f3c967ed32962f28d_2_772x1024.jpeg",
-    "location": "Cristongo / Pera Limonera, Paseo de Marcelino Martín ‘El Catarro’, Valladolid",
-    "zone": "Zona Centro",
-    "description": "Las Donas (Gira de actuaciones)",
-    "summary": "Las Donas (Gira de actuaciones)",
-    "performances": [
-      "Las Doñas"
-    ],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6571419,
-      "lng": -4.7329438,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 367406151,
-      "query": "La Pera Limonera, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
     ]
   },
   {
