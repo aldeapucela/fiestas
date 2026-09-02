@@ -1150,5 +1150,128 @@
       }
     ],
     "source": "Programa remoto de Ruta en Moto Ribera del Duero descargado e inspeccionado visualmente: salida y acreditaciones a las 09:00 en Bar La Real; llegada a Dehesa de los Canónigos a las 11:00; llegada a Carramimbre a las 12:25, cata a las 14:00 y fin de la visita a las 15:20; regreso y sorteo en Bar La Real a las 16:30. Google Maps confirmó los tres recintos; los desplazamientos no se crean como fichas separadas."
+  },
+  "2411": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Paul Moon"]},
+      {"date": "2026-09-05", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Xems Mulas"]},
+      {"date": "2026-09-06", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Paul Moon"]},
+      {"date": "2026-09-07", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Xems Mulas", "Xfranru"]},
+      {"date": "2026-09-08", "startTime": "20:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Craps"]},
+      {"date": "2026-09-08", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Jowi"]},
+      {"date": "2026-09-09", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Jowi"]},
+      {"date": "2026-09-10", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["La Deve Chacho", "Xfranru"]},
+      {"date": "2026-09-11", "startTime": "20:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Paco DVT"]},
+      {"date": "2026-09-11", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Jowi"]},
+      {"date": "2026-09-12", "startTime": "23:00", "endTime": null, "location": "Vándalo Bar", "performances": ["Xems Mulas"]}
+    ],
+    "source": "Cartel remoto de Vándalo en Fiestas descargado e inspeccionado visualmente: actividad los días 4, 5, 6, 7, 8, 9, 10, 11 y 12 de septiembre; los días 8 y 11 tienen sesiones de terraza a las 20:00 y sesiones nocturnas a las 23:00, y el resto comienza a las 23:00."
+  },
+  "2412": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "location": "Plaza Poniente", "performances": ["Paco Devotion"]},
+      {"date": "2026-09-05", "location": "Plaza Poniente", "performances": ["Luis Lopez", "Yorska"]},
+      {"date": "2026-09-06", "location": "Plaza Poniente", "performances": ["Dario Nuñez", "Queco", "Angel Rodriguez"]},
+      {"date": "2026-09-07", "location": "Plaza Poniente", "performances": ["Quilombros", "Yorska"]},
+      {"date": "2026-09-08", "location": "Plaza Poniente", "performances": ["Los Pichas", "Los de la Plaza"]},
+      {"date": "2026-09-09", "location": "Plaza Poniente", "performances": ["Queco", "Yorska", "Pani"]},
+      {"date": "2026-09-10", "location": "Plaza Poniente", "performances": ["Dos de Picas", "Queco"]},
+      {"date": "2026-09-11", "location": "Plaza Poniente", "performances": ["Los del Lio", "Jorge Tejedor"]},
+      {"date": "2026-09-12", "location": "Plaza Poniente", "performances": ["Siesta Club", "Chejo", "Escalante", "Element", "Omar Cantt"]},
+      {"date": "2026-09-13", "location": "Plaza Poniente", "performances": ["Apulse", "Yorska"]}
+    ],
+    "source": "Cartel remoto de Programación Musical Plaza Poniente descargado e inspeccionado visualmente: actividad diaria del 4 al 13 de septiembre, sin horas publicadas; actuaciones Paco Devotion; Luis Lopez y Yorska; Dario Nuñez, Queco y Angel Rodriguez; Quilombros y Yorska; Los Pichas y Los de la Plaza; Queco, Yorska y Pani; Dos de Picas y Queco; Los del Lio y Jorge Tejedor; Siesta Club, Chejo, Escalante, Element y Omar Cantt; Apulse y Yorska, respectivamente."
+  },
+  "2413": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-08",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {"date": "2026-09-05", "startTime": "13:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Santi Borja y Emilio"]},
+      {"date": "2026-09-06", "startTime": "13:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Pimpin de Los Lunares"]},
+      {"date": "2026-09-08", "startTime": "20:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Los Patricios"]},
+      {"date": "2026-09-12", "startTime": "13:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Yaiza Herrero"]},
+      {"date": "2026-09-13", "startTime": "13:00", "endTime": null, "location": "Dovleuve, Paseo de Zorrilla 17", "performances": ["Tocado y Hundido"]}
+    ],
+    "source": "Cartel remoto de Fiestas Virgen de San Lorenzo '26 descargado e inspeccionado visualmente: actuaciones el 5 de septiembre a las 13:00 (Santi Borja y Emilio), el 6 a las 13:00 (Pimpin de Los Lunares), el 8 a las 20:00 (Los Patricios), el 12 a las 13:00 (Yaiza Herrero) y el 13 a las 13:00 (Tocado y Hundido), todas en la terraza de Dovleuve, Paseo de Zorrilla 17."
+  },
+  "2419": {
+    "dates": ["2026-09-12", "2026-09-13"],
+    "occurrences": [
+      {
+        "date": "2026-09-12",
+        "startTime": "10:00",
+        "endTime": "14:00",
+        "location": "Pabellón Polideportivo Lalo García",
+        "performances": []
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "16:00",
+        "endTime": "20:00",
+        "location": "Pabellón Polideportivo Lalo García",
+        "performances": []
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "10:00",
+        "endTime": "14:00",
+        "location": "Pabellón Polideportivo Lalo García",
+        "performances": []
+      }
+    ],
+    "source": "Cartel remoto del 1er Torneo Baloncesto Veteranos inspeccionado visualmente (11 al 13 de septiembre, sin desglose diario) y ficha oficial de la Fundación Municipal de Deportes: https://www.fmdva.org/eventos/listado-de-eventos/1%C2%BA-torneo-baloncesto-veteranos-valladolid/. La ficha oficial concreta actividad el 12 de septiembre de 10:00 a 14:00 y de 16:00 a 20:00, y el 13 de septiembre de 10:00 a 14:00, en el Pabellón Polideportivo Lalo García. Coordenadas resueltas con OpenStreetMap Nominatim mediante la consulta «Pabellón Polideportivo Lalo García, Valladolid, España»: 41.6349531,-4.7662401."
+  },
+  "2388": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "startTime": "20:00", "endTime": "23:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["DJ Guti", "DJ Estefano Di Massi"]},
+      {"date": "2026-09-05", "startTime": "18:00", "endTime": "21:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Dinosaurios"]},
+      {"date": "2026-09-06", "startTime": "18:00", "endTime": "21:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Jamones"]},
+      {"date": "2026-09-07", "startTime": "13:00", "endTime": "16:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Juan La Forga"]},
+      {"date": "2026-09-08", "startTime": "18:00", "endTime": "21:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Los del Lío"]},
+      {"date": "2026-09-09", "startTime": "13:00", "endTime": "16:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Ralea"]},
+      {"date": "2026-09-10", "startTime": "13:00", "endTime": "16:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Los Pichas"]},
+      {"date": "2026-09-11", "startTime": "18:00", "endTime": "21:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Dinosaurios"]},
+      {"date": "2026-09-13", "startTime": "13:00", "endTime": "16:00", "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)", "performances": ["Bloody Mary"]}
+    ],
+    "source": "Cartel remoto de Cascajares Fest descargado e inspeccionado visualmente: actividad los días 4, 5, 6, 7, 8, 9, 10, 11 y 13 de septiembre de 2026, sin actividad el día 12; el cartel asigna respectivamente DJ Guti y DJ Estefano Di Massi (20:00–23:00), Dinosaurios (18:00–21:00), Jamones (18:00–21:00), Juan La Forga (13:00–16:00), Los del Lío (18:00–21:00), Ralea (13:00–16:00), Los Pichas (13:00–16:00), Dinosaurios (18:00–21:00) y Bloody Mary (13:00–16:00), siempre en el Escenario Cascajares. La ubicación se contrastó con Calle de Cascajares en OpenStreetMap Nominatim (41.6521922,-4.7240083) y con la referencia de Google Maps ya usada para los locales del mismo tramo."
   }
 }

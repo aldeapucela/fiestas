@@ -469,6 +469,15 @@ async function resolveCoordinates(remote, location, currentEvents) {
       source: 'Google Maps (consulta manual; centro aproximado de tres locales contiguos)',
       query: 'El Farolito, La Taberna del Farolito y Bar La Cárcava, Valladolid, España'
     },
+    2388: {
+      lat: 41.6521922,
+      lng: -4.7240083,
+      source: 'OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)',
+      osmType: 'way',
+      osmId: 33821228,
+      query: 'Calle Cascajares, Valladolid, España',
+      accuracy: 1
+    },
     2215: {
       lat: 41.6517901,
       lng: -4.7295341,
@@ -697,6 +706,7 @@ async function searchNominatim(query) {
 
 function typeFor(remoteId, remote = {}) {
   const knownType = {
+    2388: 'Música',
     2191: 'Música',
     1999: 'Otros',
     1784: 'Música',
