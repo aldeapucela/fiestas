@@ -3530,6 +3530,146 @@
         "osmId": 13290385301,
         "displayName": "Mercadillo del Recinto Ferial, Valladolid, España",
         "query": "Recinto ferial José Luis Bellido, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones y pinchos",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-arroz-zamorana",
+                "name": "Arroz a la zamorana",
+                "description": "(RACION)",
+                "price": "6,50 €"
+              },
+              {
+                "id": "racion-chichas",
+                "name": "Chichas",
+                "description": "de Ballesteros",
+                "price": "5,00 €"
+              },
+              {
+                "id": "bocadillo-chorizo",
+                "name": "Bocadillo de chorizo",
+                "description": "de Ballesteros",
+                "price": "5,50 €"
+              },
+              {
+                "id": "racion-empanada",
+                "name": "Empanada",
+                "price": "3,50 €"
+              },
+              {
+                "id": "racion-escabeche",
+                "name": "Escabeche",
+                "description": "(RACION)",
+                "price": "4,00 €"
+              },
+              {
+                "id": "racion-hornazo",
+                "name": "Hornazo",
+                "price": "3,50 €"
+              },
+              {
+                "id": "pincho-chorizo",
+                "name": "Pincho de chorizo",
+                "description": "de Ballesteros",
+                "price": "3,00 €"
+              },
+              {
+                "id": "pincho-queso-pastor",
+                "name": "Pincho de queso El Pastor",
+                "description": "de Santa Cristina de la Polvorosa",
+                "price": "2,00 €",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "racion-queso-pastor",
+                "name": "Racion de queso El Pastor",
+                "description": "de Santa Cristina de la Polvorosa",
+                "price": "10,00 €",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "racion-sopas-ajo-sagayuesa",
+                "name": "Sopas de ajo sagayuesa",
+                "price": "3,50 €"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-gaza",
+                "name": "Postres GAZA",
+                "price": "2,00 €"
+              }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-batido-chocolate-leche-gaza",
+                "name": "Batidos de chocolate y brick de leche GAZA",
+                "price": "1,50 €"
+              },
+              {
+                "id": "bebida-botella-chupitos-panizo",
+                "name": "Botella de chupitos de Panizo",
+                "price": "15,00 €"
+              },
+              {
+                "id": "bebida-botella-vino-toro",
+                "name": "Botella de vino",
+                "description": "tinto, blanco o rosado de Toro (Zamora)",
+                "price": "9,00 €"
+              },
+              {
+                "id": "bebida-chupito-mistela",
+                "name": "Chupito de mistela",
+                "price": "1,50 €"
+              },
+              {
+                "id": "bebida-chupito-panizo",
+                "name": "Chupito de Panizo",
+                "price": "1,50 €"
+              },
+              {
+                "id": "bebida-chato-mosto",
+                "name": "Chato de mosto",
+                "price": "1,50 €"
+              },
+              {
+                "id": "bebida-chato-vino-toro",
+                "name": "Chato de vino",
+                "description": "tinto, blanco o rosado de Toro (Zamora)",
+                "price": "1,50 €"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua"
+              },
+              {
+                "id": "bebida-refrescos",
+                "name": "Refrescos",
+                "description": "COCA COLA – FANTA, ETC."
+              },
+              {
+                "id": "bebida-cachi-cerveza",
+                "name": "Cachi de cerveza"
+              },
+              {
+                "id": "bebida-cana-cerveza",
+                "name": "Caña de cerveza"
+              }
+            ]
+          }
+        ]
       }
     },
     {
