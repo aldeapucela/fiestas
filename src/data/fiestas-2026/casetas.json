@@ -1349,7 +1349,7 @@
             ]
           },
           {
-            "title": "Debidas",
+            "title": "Bebidas",
             "votable": false,
             "items": [
               { "id": "bebida-vino-tinto", "name": "Vino tinto" },
