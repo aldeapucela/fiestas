@@ -10,6 +10,7 @@ import {
   planHasActivity,
   readFavoriteIds,
   readPlans,
+  resolveEventIdAlias,
   removeActivityFromPlan,
   setPlanActivity,
   subscribeToPlans,
@@ -722,7 +723,7 @@ export function setupPlanImportPage(rawEvents = []) {
   };
 
   const processText = (text, source = 'url') => {
-    const result = validateImport(text, eventIds);
+    const result = validateImport(text, eventIds, window.__FIESTAS_EVENT_ALIASES__ || {});
     if (!result.ok) {
       reset();
       setStatus(status, result.message, true);
@@ -1500,7 +1501,7 @@ async function copyText(text) {
   if (!copied) throw new Error('Copy failed');
 }
 
-export function validateImport(text, eventIds) {
+export function validateImport(text, eventIds, aliases = {}) {
   const source = String(text || '');
   if (new TextEncoder().encode(source).byteLength > MAX_IMPORT_BYTES) return { ok: false, message: 'El plan compartido supera el límite de 256 KiB.', errorType: 'file_too_large' };
   let value;
@@ -1538,8 +1539,9 @@ export function validateImport(text, eventIds) {
       return { ok: false, message: `El plan “${name}” usa un icono no compatible.`, errorType: 'invalid_icon' };
     }
     const ids = [...new Set(rawPlan.activityIds.map(String).map((id) => id.trim()).filter(Boolean))];
-    const validIds = ids.filter((id) => eventIds.has(id));
-    const missingIds = ids.filter((id) => !eventIds.has(id));
+    const resolvedIds = ids.map((id) => resolveEventIdAlias(id, aliases));
+    const validIds = [...new Set(resolvedIds.filter((id) => id && eventIds.has(id)))];
+    const missingIds = ids.filter((id, index) => !resolvedIds[index] || !eventIds.has(resolvedIds[index]));
     plans.push({
       name,
       icon: normalizePlanIcon(rawPlan.icon),

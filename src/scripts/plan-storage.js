@@ -1,6 +1,8 @@
 export const FAVORITES_STORAGE_KEY = 'fiestasPucela:favorites';
 export const PLANS_STORAGE_KEY = 'fiestasPucela:plans';
 export const PLANS_SCHEMA_VERSION = 1;
+export const EVENT_ID_MIGRATION_VERSION = 1;
+export const EVENT_ID_MIGRATION_STORAGE_KEY = 'fiestasPucela:event-id-migration';
 export const DEFAULT_PLAN_ICON = 'layers';
 export const PLAN_ICON_OPTIONS = Object.freeze([
   { id: 'stars', label: 'Estrellas', className: 'fa-star' },
@@ -33,6 +35,40 @@ export function readFavoriteIds() {
   const value = readJson(FAVORITES_STORAGE_KEY, []);
   if (!Array.isArray(value)) return [];
   return [...new Set(value.map(String).filter(Boolean))];
+}
+
+export function migrateStoredEventIds(aliases = {}, version = EVENT_ID_MIGRATION_VERSION) {
+  if (typeof window === 'undefined' || !window.localStorage) return false;
+  const migrationVersion = String(window.localStorage.getItem(EVENT_ID_MIGRATION_STORAGE_KEY) || '');
+  const currentVersion = String(version || EVENT_ID_MIGRATION_VERSION);
+  if (migrationVersion === currentVersion) return false;
+
+  const migrateIds = (ids) => [...new Set((Array.isArray(ids) ? ids : []).map((id) => resolveEventIdAlias(id, aliases)).filter(Boolean))];
+  const oldFavorites = readFavoriteIds();
+  const nextFavorites = migrateIds(oldFavorites);
+  const oldPlans = readPlans();
+  const nextPlans = oldPlans.map((plan) => ({ ...plan, activityIds: migrateIds(plan.activityIds) }));
+  const changed = JSON.stringify(oldFavorites) !== JSON.stringify(nextFavorites)
+    || JSON.stringify(oldPlans) !== JSON.stringify(nextPlans);
+  if (changed) {
+    writeFavoriteIds(nextFavorites);
+    writePlans(nextPlans);
+  }
+  try { window.localStorage.setItem(EVENT_ID_MIGRATION_STORAGE_KEY, currentVersion); } catch (_) {}
+  return changed;
+}
+
+export function resolveEventIdAlias(id, aliases = {}) {
+  let current = String(id || '').trim();
+  const visited = new Set();
+  while (Object.prototype.hasOwnProperty.call(aliases, current)) {
+    if (visited.has(current)) return null;
+    visited.add(current);
+    const target = aliases[current];
+    if (target === null || target === undefined || target === '') return null;
+    current = String(target).trim();
+  }
+  return current || null;
 }
 
 export function writeFavoriteIds(ids) {

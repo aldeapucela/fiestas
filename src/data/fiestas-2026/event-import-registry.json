@@ -1,0 +1,2755 @@
+{
+  "schemaVersion": 1,
+  "source": "eventos.aldeapucela.org",
+  "remoteEvents": {
+    "1298": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "162",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1306": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "97",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1307": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "58",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1310": {
+      "occurrences": {
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "281",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1312": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "8",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "31",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "82",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "191",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "228",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "268",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "285",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "328",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "380",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1426": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "196",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1427": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "351",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1428": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "17",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1562": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "20",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1688": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "431",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "1689": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "435",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "1690": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "436",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "1691": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "438",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "1692": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "440",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "1728": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "240",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1730": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "235",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1744": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "66",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1759": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "398",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1784": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "430",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "1804": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "345",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1884": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "395",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1885": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "55",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1886": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "361",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1887": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "293",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "1888": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "90",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1889": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "6",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1903": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "315",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1917": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "199",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1938": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "70",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1939": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "125",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1940": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "164",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1941": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "204",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1942": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "244",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1943": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "321",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1944": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "362",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1945": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "412",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1966": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "18",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1971": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "272",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1974": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "232",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1975": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "152",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1976": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "192",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1977": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "269",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1978": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "309",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "1979": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "349",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1980": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "403",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1981": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "54",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1982": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "118",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1983": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "9",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "1999": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        }
+      }
+    },
+    "2011": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "10",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "36",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "83",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "153",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "273",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "292",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "336",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "381",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2043": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "282",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2046": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "123",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2047": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "214",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2049": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "149",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2088": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "439",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2096": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "409",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2097": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "352",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2098": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "32",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2099": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "67",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2101": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "84",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2102": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "236",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2104": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "310",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2133": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "160",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2136": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "433",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2149": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "21",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "73",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "165",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "197",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "254",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "319",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "367",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2157": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "317",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2158": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 441, 817, 820."
+        }
+      }
+    },
+    "2159": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 432, 816, 819."
+        }
+      }
+    },
+    "2162": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "5",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2164": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "19",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2167": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "155",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2181": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 437, 819, 822."
+        }
+      }
+    },
+    "2182": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "277",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2183": {
+      "occurrences": {
+        "occ-001": {
+          "status": "linked",
+          "localEventId": "434",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-11": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-12": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-13": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-09": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        }
+      }
+    },
+    "2184": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "253",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2185": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "60",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2186": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "11",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2187": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "382",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2191": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "428",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2192": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "227",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2193": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "76",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2194": {
+      "occurrences": {
+        "occ-001": {
+          "status": "linked",
+          "localEventId": "441",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "482",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "483",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "484",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "485",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "486",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "487",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "488",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "489",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "490",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "441",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2198": {
+      "occurrences": {
+        "occ-001": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-05": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-06": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "806",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-09": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-10": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "807",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "805",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2200": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 447, 820, 823."
+        }
+      }
+    },
+    "2201": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 446, 793."
+        }
+      }
+    },
+    "2203": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 403, 822, 825."
+        }
+      }
+    },
+    "2212": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "474",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2213": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "516",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2214": {
+      "occurrences": {
+        "occ-001": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "508",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "510",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "511",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "513",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "514",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "515",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2215": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "584",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "590",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 591, 586."
+        },
+        "day-2026-09-08": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 592, 587."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "588",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "594",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 595, 590."
+        },
+        "day-2026-09-12": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 596, 591."
+        }
+      }
+    },
+    "2217": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "21",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2218": {
+      "occurrences": {
+        "occ-001": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "491",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "492",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "493",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "494",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "495",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "496",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "497",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "498",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "499",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2222": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "500",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "501",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "503",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "505",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "506",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "507",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2260": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        }
+      }
+    },
+    "2264": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "522",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2265": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 598, 690, 813, 815."
+        }
+      }
+    },
+    "2309": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 554, 555, 556, 557, 558, 559, 560, 561, 562."
+        }
+      }
+    },
+    "2310": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "573",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "574",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "575",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "576",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "577",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "578",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "579",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "580",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "581",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2312": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "572",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2313": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 597, 592."
+        }
+      }
+    },
+    "2314": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "563",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2315": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "564",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "565",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "566",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-09": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "569",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "570",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "571",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2316": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "582",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "783",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "584",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "586",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "587",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 588, 783, 809."
+        }
+      }
+    },
+    "2317": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "24",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2318": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "22",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2319": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "79",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2321": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "165",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2322": {
+      "occurrences": {
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "623",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "624",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "625",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "626",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "627",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2333": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "600",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "601",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "602",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "603",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "604",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "605",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "606",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "607",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "608",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "609",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2335": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 704, 810."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "811",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 566, 811, 812."
+        },
+        "day-2026-09-12": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 622, 812, 813."
+        }
+      }
+    },
+    "2337": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "610",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 611, 612."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "613",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "614",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 615, 616."
+        },
+        "day-2026-09-11": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 437, 808."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "618",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2338": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "628",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2340": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "638",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2341": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 703, 804."
+        }
+      }
+    },
+    "2342": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "629",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "630",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "631",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "632",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "633",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "634",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "635",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "636",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "637",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2343": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "415",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2345": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "640",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "641",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "642",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "643",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 644, 645."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "646",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "647",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 427, 649, 792."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "650",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2347": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "651",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2349": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "652",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2351": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "653",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2352": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "814",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2354": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "655",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2357": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "661",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2358": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "656",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "657",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "845",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "659",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "660",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2359": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
+        }
+      }
+    },
+    "2361": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 681, 763."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "682",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "683",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-13": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 684, 685."
+        }
+      }
+    },
+    "2362": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "686",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2363": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "668",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 669, 670."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "671",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "672",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "673",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "674",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "675",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "676",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 677, 678."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "679",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2366": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "716",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "717",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "718",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "719",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "720",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "721",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2367": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 687, 697."
+        }
+      }
+    },
+    "2368": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 690, 700."
+        }
+      }
+    },
+    "2369": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "691",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2370": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 689, 769."
+        }
+      }
+    },
+    "2371": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "687",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "688",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "689",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "690",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "691",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "692",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "693",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "694",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "695",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "696",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2372": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 688, 698."
+        }
+      }
+    },
+    "2374": {
+      "occurrences": {
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "708",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "709",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "710",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 622, 815, 818."
+        }
+      }
+    },
+    "2379": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "703",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "704",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 516, 826."
+        },
+        "day-2026-09-07": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 432, 827."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "828",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2380": {
+      "occurrences": {
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "712",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 415, 818, 821."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "714",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "715",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2382": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "702",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2387": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 722, 731."
+        }
+      }
+    },
+    "2388": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 776, 777, 778, 779, 780, 781, 782, 783, 784."
+        }
+      }
+    },
+    "2391": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "732",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2392": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 729, 730, 814, 816, 817."
+        }
+      }
+    },
+    "2395": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "722",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "723",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "764",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "725",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "765",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "766",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "728",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2396": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 723, 733."
+        }
+      }
+    },
+    "2397": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 734, 735, 736, 737, 738."
+        }
+      }
+    },
+    "2405": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "741",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2406": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "739",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2407": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "740",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2411": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "640",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "641",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "642",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "643",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "644",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "646",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "647",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "792",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "650",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2412": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "794",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "795",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "796",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "797",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "798",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "799",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "800",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "801",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "802",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "803",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2413": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "752",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "753",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "754",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "755",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "756",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2415": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "773",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2419": {
+      "occurrences": {
+        "day-2026-09-12": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 774, 775."
+        },
+        "day-2026-09-13": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 776, 775."
+        }
+      }
+    },
+    "2420": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "785",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2421": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "787",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2422": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "829",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2423": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "788",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2424": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 788, 789."
+        }
+      }
+    },
+    "2425": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "756",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2426": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "786",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2428": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 821, 824."
+        }
+      }
+    },
+    "2430": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "830",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2432": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "831",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2433": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "420",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2434": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 833, 841."
+        }
+      }
+    },
+    "2435": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "555",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2436": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 834, 842."
+        }
+      }
+    },
+    "2437": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 835, 843."
+        }
+      }
+    },
+    "2438": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 836, 844."
+        }
+      }
+    },
+    "2439": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "558",
+          "reason": "Coincidencia inicial por fecha, hora, título y lugar."
+        }
+      }
+    },
+    "2440": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "Hay varias fichas locales para la misma ocurrencia: 832, 840."
+        }
+      }
+    },
+    "2444": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "832",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "833",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "834",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "835",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "836",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "837",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "838",
+          "reason": "Censo histórico de informes de importación."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "839",
+          "reason": "Censo histórico de informes de importación."
+        }
+      }
+    }
+  },
+  "localAliases": {
+    "533": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "tardeos-de-ferias-ciclo-de-eventos"
+      ]
+    },
+    "543": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "ferias-2026-el-campanazo"
+      ]
+    },
+    "544": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "ferias-2026-el-campanazo"
+      ]
+    },
+    "583": {
+      "targetEventId": "783",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "dinosaurios-djs-sesiones-de-musica"
+      ]
+    },
+    "617": {
+      "targetEventId": "437",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "orbitalclub-sesiones-fiestas-2026"
+      ]
+    },
+    "619": {
+      "targetEventId": "704",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "las-donas-gira-de-actuaciones"
+      ]
+    },
+    "648": {
+      "targetEventId": "427",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "vandalo-en-fiestas-programacion-especial"
+      ]
+    },
+    "667": {
+      "targetEventId": "403",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "casa-con-dos-puertas-obra-de-teatro"
+      ]
+    },
+    "705": {
+      "targetEventId": "516",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "conciertos-de-fiestas-2026-en-la-pera-limonera"
+      ]
+    },
+    "706": {
+      "targetEventId": "432",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "conciertos-de-fiestas-2026-en-la-pera-limonera"
+      ]
+    },
+    "711": {
+      "targetEventId": "622",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "tardeos-canallas-ferias-2026"
+      ]
+    },
+    "713": {
+      "targetEventId": "415",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "conciertos-de-fiestas-2026-en-la-pera-limonera"
+      ]
+    },
+    "742": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "743": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "744": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "745": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "746": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "747": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "748": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "749": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "750": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "751": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "programacion-musical-plaza-poniente"
+      ]
+    },
+    "757": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "adn-club-en-moss-club-evento"
+      ]
+    },
+    "758": {
+      "targetEventId": "703",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "les-castizos-y-jorge-tejedor-concierto"
+      ]
+    },
+    "759": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "tardeos-de-ferias-ciclo-de-eventos"
+      ]
+    },
+    "760": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "tardeos-de-ferias-ciclo-de-eventos"
+      ]
+    },
+    "761": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "tardeos-de-ferias-ciclo-de-eventos"
+      ]
+    },
+    "768": {
+      "targetEventId": "566",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "las-donas-gira-de-actuaciones"
+      ]
+    },
+    "770": {
+      "targetEventId": "690",
+      "reason": "Evento fusionado durante la normalización del issue 66.",
+      "oldSlugs": [
+        "bandido-fiestas-de-san-lorenzo-2026"
+      ]
+    },
+    "771": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "sofia-gabanna-concierto"
+      ]
+    },
+    "772": {
+      "targetEventId": null,
+      "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
+      "oldSlugs": [
+        "assceussion-rave-fiestas-san-lorenzo"
+      ]
+    }
+  }
+}

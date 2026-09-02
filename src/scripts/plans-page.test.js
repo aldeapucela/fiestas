@@ -31,6 +31,18 @@ test('plan import accepts known icons and keeps only known activity ids', () => 
   assert.deepEqual(result.plans[0].missingIds, ['999']);
 });
 
+test('plan import resolves activity ids that were merged after being shared', () => {
+  const result = validateImport(payload({
+    name: 'Plan antiguo',
+    icon: 'music',
+    activityIds: ['583', '999']
+  }), new Set(['783']), { '583': '783' });
+
+  assert.equal(result.ok, true);
+  assert.deepEqual(result.plans[0].validIds, ['783']);
+  assert.deepEqual(result.plans[0].missingIds, ['999']);
+});
+
 test('plan import rejects icons that are not part of the supported set', () => {
   const result = validateImport(payload({
     name: 'Plan incompatible',

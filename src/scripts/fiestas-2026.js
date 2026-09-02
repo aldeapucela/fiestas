@@ -18,7 +18,7 @@ import {
   trackSearchResults,
   trackTicketsOpened
 } from './analytics.js';
-import { readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
+import { migrateStoredEventIds, readFavoriteIds, writeFavoriteIds } from './plan-storage.js';
 import { createCalendarLinks, createIcsFile } from './plan-export.js';
 import { setupPlanImportPage, setupPlanSelector, setupPlansPage } from './plans-page.js';
 import { setupCommunityPlanDetailPage, setupCommunityPlansPage } from './community-plans.js';
@@ -204,6 +204,10 @@ void init();
 
 async function init() {
   initTheme();
+  migrateStoredEventIds(
+    window.__FIESTAS_EVENT_ALIASES__ || {},
+    window.__FIESTAS_EVENT_ALIAS_VERSION__
+  );
   setupMenuDrawer();
   setupSubscribe();
   setupPlanSelector();

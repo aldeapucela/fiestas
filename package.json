@@ -11,6 +11,7 @@
     "build": "node scripts/build.mjs",
     "dev": "node scripts/dev.mjs",
     "events:import:ferias": "node scripts/import-eventos-ferias.mjs",
+    "events:registry:migrate": "node scripts/migrate-event-import-registry.mjs",
     "clean": "node -e \"import('node:fs/promises').then(fs=>fs.rm('dist',{recursive:true,force:true}))\"",
     "icons": "node scripts/build-icons.mjs",
     "images:link": "node scripts/link-event-images.mjs --write",

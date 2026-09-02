@@ -11,6 +11,7 @@ import sharp from 'sharp';
 import { readManifest, scanUsedIcons } from './build-icons.mjs';
 import { jsonForScript } from './json-for-script.mjs';
 import { casetaDetailPath, casetaLegacyPaths, casetaQrPath, getCasetaPublicSlug } from './caseta-routes.mjs';
+import { assertRegistryIntegrity, normalizeImportRegistry } from './event-import-registry.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -45,6 +46,7 @@ const vallabusNearbyRadiusMeters = 500;
 const vallabusNearbyFallbackRadiusMeters = 1000;
 const vallabusNearbyStopLimit = 3;
 const transitLineCollator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
+const eventImportRegistryPath = path.join(root, 'src', 'data', 'fiestas-2026', 'event-import-registry.json');
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
@@ -1066,7 +1068,7 @@ function normalizeTags(tags, type) {
   return [...new Set([primary, ...values].map((tag) => tag.trim()).filter(Boolean))];
 }
 
-function pageContext({ assetVersion, cssVersion, jsVersion }) {
+function pageContext({ assetVersion, cssVersion, jsVersion, eventAliases = {}, eventAliasVersion = '' }) {
   return {
     activeNav: 'fiestas-2026',
     pageCss: 'fiestas-2026.' + cssVersion + '.css',
@@ -1079,6 +1081,8 @@ function pageContext({ assetVersion, cssVersion, jsVersion }) {
     assetVersion,
     cssVersion,
     jsVersion,
+    eventAliases,
+    eventAliasVersion,
     communityPromptCampaign,
     // Integración externa aprobada: el modal de suscripción usa el calendario/RSS global de Aldea Pucela Eventos.
     categoryFeeds: [],
@@ -1109,6 +1113,10 @@ async function build() {
   const communityPlanMemberships = await loadCommunityPlanMemberships(communityPlans);
   const pwaFiles = await loadPwaFiles();
   const events = await loadEvents(vallabusStops);
+  const eventImportRegistry = normalizeImportRegistry(JSON.parse(await fs.readFile(eventImportRegistryPath, 'utf8')));
+  assertRegistryIntegrity(eventImportRegistry, events);
+  const eventAliases = Object.fromEntries(Object.entries(eventImportRegistry.localAliases).map(([id, alias]) => [id, alias.targetEventId]));
+  const eventAliasVersion = createHash('sha256').update(JSON.stringify(eventAliases)).digest('hex').slice(0, 12);
   const clientEventsJson = JSON.stringify(events.map(clientEvent));
   const eventsDataVersion = contentVersion([['assets/data/events.json', clientEventsJson]]);
   const eventsDataUrl = '/assets/data/events.' + eventsDataVersion + '.json';
@@ -1127,7 +1135,7 @@ async function build() {
     ['pwa/offline.html', pwaFiles.offlinePage]
   ]);
   await writePwaFiles(pwaFiles, { appVersion, cssVersion, jsVersion, eventsDataUrl });
-  const versions = { assetVersion, cssVersion, jsVersion };
+  const versions = { assetVersion, cssVersion, jsVersion, eventAliases, eventAliasVersion };
   const summary = buildSummary(events);
   const socialImage = publicBaseUrl + '/assets/social/fiestas-valladolid-2026.jpg';
   const casetasSocialImage = publicBaseUrl + '/assets/social/casetas-feria-de-dia.jpg';
@@ -1361,6 +1369,26 @@ async function build() {
       communityPlansForEvent: communityPlanMemberships.get(event.id) || [],
       hideDrawerFilters: true
     }));
+  }
+
+  for (const [oldId, alias] of Object.entries(eventImportRegistry.localAliases)) {
+    const oldSlugs = Array.isArray(alias.oldSlugs) ? alias.oldSlugs : [];
+    const target = alias.targetEventId == null
+      ? null
+      : events.find((event) => String(event.id) === String(alias.targetEventId));
+    for (const oldSlug of oldSlugs) {
+      const legacyPath = `e/${oldId}/${oldSlug}/index.html`;
+      if (target) {
+        await writeFile(legacyPath, render('fiestas-2026-event-redirect.njk', {
+          ...pageContext(versions),
+          redirectPath: target.urlPath
+        }));
+      } else {
+        await writeFile(legacyPath, render('fiestas-2026-event-unavailable.njk', {
+          ...pageContext(versions)
+        }));
+      }
+    }
   }
 
   const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', '/colaboradores/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.flatMap((caseta) => [caseta.urlPath, casetaQrPath(caseta.publicSlug)]), ...events.map((event) => event.urlPath)];

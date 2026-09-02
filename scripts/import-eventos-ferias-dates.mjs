@@ -126,7 +126,7 @@ function normalizeOccurrence(value = {}) {
   const occurrence = {
     date: String(value.date || '').slice(0, 10)
   };
-  for (const key of ['startTime', 'endTime', 'location', 'performances']) {
+  for (const key of ['key', 'startTime', 'endTime', 'location', 'performances']) {
     if (Object.prototype.hasOwnProperty.call(value, key)) {
       occurrence[key] = Array.isArray(value[key]) ? [...value[key]] : value[key];
     }
