@@ -2619,6 +2619,248 @@
         "lng": -4.7301394,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Calle María de Molina, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos — Pincho + bebida 4€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-croqueta-jamon-parmesano",
+                "name": "Croqueta de jamón y parmesano"
+              },
+              {
+                "id": "pincho-croqueta-tigre",
+                "name": "Croqueta de tigre"
+              },
+              {
+                "id": "pincho-pan-brioche-carne-mechada",
+                "name": "Pan brioche",
+                "description": "con carne mechada, cebolla encurtida y salsa mayosiracha"
+              },
+              {
+                "id": "pincho-marinera",
+                "name": "Marinera",
+                "description": "Ensaladilla con anchoa"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": false,
+            "items": [
+              {
+                "id": "racion-torrezno-soria-piparras",
+                "name": "Torrezno de Soria con piparras",
+                "price": "9€"
+              },
+              {
+                "id": "racion-ensaladilla-angelillo",
+                "name": "Ensaladilla Angelillo",
+                "price": "8€"
+              },
+              {
+                "id": "racion-rabas-estilo-santander",
+                "name": "Rabas estilo Santander",
+                "price": "14€"
+              },
+              {
+                "id": "racion-sardinas-norte-aceite-oliva",
+                "name": "Sardinas del norte en aceite de oliva virgen extra",
+                "price": "13€"
+              },
+              {
+                "id": "racion-patatas-bravas-angelillo",
+                "name": "Patatas bravas Angelillo",
+                "price": "8€"
+              },
+              {
+                "id": "racion-patatas-cabrales",
+                "name": "Patatas al Cabrales",
+                "price": "8€"
+              },
+              {
+                "id": "racion-croqueta-jamon",
+                "name": "Croqueta de jamón",
+                "price": "2€"
+              },
+              {
+                "id": "racion-croqueta-tigre",
+                "name": "Croqueta de tigre",
+                "price": "2€"
+              },
+              {
+                "id": "racion-guiso-dia",
+                "name": "Guiso del día",
+                "price": "6,5€"
+              }
+            ]
+          },
+          {
+            "title": "Bocadillos",
+            "votable": false,
+            "items": [
+              {
+                "id": "bocadillo-serranito",
+                "name": "Serranito",
+                "description": "(Lomo, Queso, Pimientos y Jamón)",
+                "price": "6€"
+              },
+              {
+                "id": "bocadillo-rabas",
+                "name": "Bocadillo de Rabas",
+                "price": "6€"
+              },
+              {
+                "id": "bocadillo-oreja-kimchi",
+                "name": "Bocadillo de Oreja con salsa Kimchi",
+                "price": "6€"
+              }
+            ]
+          },
+          {
+            "title": "Vinos",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-verdejo",
+                "name": "Verdejo",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-ribera",
+                "name": "Ribera",
+                "price": "2,5€"
+              },
+              {
+                "id": "bebida-frizzante",
+                "name": "Frizzante",
+                "price": "3€"
+              },
+              {
+                "id": "bebida-rosado",
+                "name": "Rosado",
+                "price": "1,5€"
+              }
+            ]
+          },
+          {
+            "title": "Tinto verano",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-tinto-verano-pequeno",
+                "name": "Tinto verano pequeño",
+                "price": "2,5€"
+              },
+              {
+                "id": "bebida-tinto-verano-canon",
+                "name": "Tinto verano cañón",
+                "price": "4€"
+              },
+              {
+                "id": "bebida-tinto-verano-cachi",
+                "name": "Tinto verano cachi",
+                "price": "8€"
+              }
+            ]
+          },
+          {
+            "title": "Lorenco",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-lorenco-pequeno",
+                "name": "Lorenco pequeño",
+                "price": "2,5€"
+              },
+              {
+                "id": "bebida-lorenco-canon",
+                "name": "Lorenco cañón",
+                "price": "4€"
+              },
+              {
+                "id": "bebida-lorenco-cachi",
+                "name": "Lorenco cachi",
+                "price": "8€"
+              }
+            ]
+          },
+          {
+            "title": "Calimocho",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-calimocho-pequeno",
+                "name": "Calimocho pequeño",
+                "price": "2,5€"
+              },
+              {
+                "id": "bebida-calimocho-canon",
+                "name": "Calimocho cañón",
+                "price": "4€"
+              },
+              {
+                "id": "bebida-calimocho-cachi",
+                "name": "Calimocho cachi",
+                "price": "8€"
+              }
+            ]
+          },
+          {
+            "title": "Cerveza",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-cana",
+                "name": "Caña",
+                "price": "2,5€"
+              },
+              {
+                "id": "bebida-canon",
+                "name": "Cañón",
+                "price": "4€"
+              },
+              {
+                "id": "bebida-cachi",
+                "name": "Cachi",
+                "price": "8€"
+              },
+              {
+                "id": "bebida-vermu",
+                "name": "Vermú",
+                "price": "3,50€"
+              }
+            ]
+          },
+          {
+            "title": "Refrescos",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1,5€"
+              },
+              {
+                "id": "bebida-refresco",
+                "name": "Refresco",
+                "price": "2€"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto",
+                "price": "1,5€"
+              },
+              {
+                "id": "bebida-redbull",
+                "name": "Redbull",
+                "price": "3,5€"
+              }
+            ]
+          }
+        ]
       }
     },
     {
