@@ -26188,5 +26188,880 @@
     "tags": [
       "Otros"
     ]
+  },
+  {
+    "id": 864,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Reumáticas Yeyé"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 865,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Marti Rasti y Jadeck Sunsplash"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 866,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Fiesta Tuenti"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 867,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Noise x Beluga (previa Rusowsky)"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 868,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "12:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Vermú con Plásticos de Reducto Sónico, Iván Fuzztone vs Fido"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 869,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "La Perdiz Roja, Marti Rasti y Jadeck Sunsplash"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 870,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Laura Lykkelau DJ set"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 871,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Beca Berlin DJ set"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 872,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Previa Carolina Durante con Sideburns DJ"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 873,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Moove Cris"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 874,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "La Cosa Latina: La Fiebre y Garbanzo"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 875,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Pepaj DJ set"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 876,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "San Lorenzo en Beluga (Programación de fiestas)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas En la plaza",
+    "zone": "Zona Centro",
+    "description": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "summary": "La celebración de San Lorenzo en Beluga presenta una variada programación de eventos musicales y fiestas que se desarrollarán a lo largo de varios días. La agenda incluye actuaciones de diversos artistas y sesiones de DJ en el local Beluga Cantabanas.",
+    "performances": [
+      "Karaoke fin de fiestas"
+    ],
+    "organizers": [
+      "Beluga Cantabanas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 877,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "Clubbing Beluga (Sesiones de música)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4615c1f65bc9956af10b26d2f1b36899c70e6b38_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas",
+    "zone": "Zona Centro",
+    "description": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "summary": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "performances": [
+      "Sesión nocturna con Dani Williams"
+    ],
+    "organizers": [
+      "Beluga Cantabarnas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 878,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "Clubbing Beluga (Sesiones de música)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4615c1f65bc9956af10b26d2f1b36899c70e6b38_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas",
+    "zone": "Zona Centro",
+    "description": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "summary": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "performances": [
+      "Sesión nocturna con DJ Jorge Santos"
+    ],
+    "organizers": [
+      "Beluga Cantabarnas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 879,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Clubbing Beluga (Sesiones de música)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4615c1f65bc9956af10b26d2f1b36899c70e6b38_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas",
+    "zone": "Zona Centro",
+    "description": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "summary": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "performances": [
+      "Sesión tardeo con DJ Cristal"
+    ],
+    "organizers": [
+      "Beluga Cantabarnas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 880,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "Clubbing Beluga (Sesiones de música)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4615c1f65bc9956af10b26d2f1b36899c70e6b38_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas",
+    "zone": "Zona Centro",
+    "description": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "summary": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "performances": [
+      "Sesión nocturna con DJ Spinky y Chema Díaz"
+    ],
+    "organizers": [
+      "Beluga Cantabarnas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 881,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Clubbing Beluga (Sesiones de música)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4615c1f65bc9956af10b26d2f1b36899c70e6b38_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas",
+    "zone": "Zona Centro",
+    "description": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "summary": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "performances": [
+      "Sesión tardeo con DJ Curro Puertas"
+    ],
+    "organizers": [
+      "Beluga Cantabarnas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 882,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Clubbing Beluga (Sesiones de música)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4615c1f65bc9956af10b26d2f1b36899c70e6b38_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas",
+    "zone": "Zona Centro",
+    "description": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "summary": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "performances": [
+      "Sesión tardeo con Chema Díaz"
+    ],
+    "organizers": [
+      "Beluga Cantabarnas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 883,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "Clubbing Beluga (Sesiones de música)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4615c1f65bc9956af10b26d2f1b36899c70e6b38_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas",
+    "zone": "Zona Centro",
+    "description": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "summary": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "performances": [
+      "Sesión nocturna con DJ Sirc Sadie"
+    ],
+    "organizers": [
+      "Beluga Cantabarnas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 884,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "Clubbing Beluga (Sesiones de música)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4615c1f65bc9956af10b26d2f1b36899c70e6b38_2_788x1024.jpeg",
+    "location": "Beluga Cantabarnas",
+    "zone": "Zona Centro",
+    "description": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "summary": "El espacio Beluga Cantabarnas presenta su programación de Clubbing Beluga en la planta baja, ofreciendo una serie de sesiones musicales que se extenderán durante varios días de la semana.",
+    "performances": [
+      "Sesión nocturna con DJ Rodrigo Barrientos"
+    ],
+    "organizers": [
+      "Beluga Cantabarnas"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 885,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "20:00",
+    "endTime": "21:00",
+    "title": "SON Estrella Galicia (Conciertos)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/33bd06a2cef304d4d934509835747c440ee2a0b1_2_820x1024.jpeg",
+    "location": "Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid",
+    "zone": "Zona Centro",
+    "description": "El evento SON Estrella Galicia llega a la ciudad con una propuesta musical única que reúne a tres bandas y tres estilos diferentes en una misma jornada. La cita tendrá lugar en la Terraza Bizarra el próximo domingo 6 de septiembre a las 20:00 horas.",
+    "summary": "El evento SON Estrella Galicia llega a la ciudad con una propuesta musical única que reúne a tres bandas y tres estilos diferentes en una misma jornada. La cita tendrá lugar en la Terraza Bizarra el próximo domingo 6 de septiembre a las 20:00 horas.",
+    "performances": [],
+    "organizers": [
+      "Bizarra / Estrella Galicia"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Restaurant Guru / OpenStreetMap (ficha de Bizarro Bar Independiente en la dirección publicada)",
+      "query": "Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
   }
 ]

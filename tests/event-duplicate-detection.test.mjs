@@ -59,6 +59,27 @@ test('no mezcla sesiones distintas con el mismo titulo generico', () => {
   assert.equal(duplicate, null);
 });
 
+test('no mezcla fichas distintas del mismo local con la misma hora', () => {
+  const duplicate = findLikelyDuplicateEvent({
+    date: '2026-09-04',
+    startTime: '22:00',
+    endTime: null,
+    title: 'Clubbing Beluga (Sesiones de música)',
+    location: 'Beluga Cantabarnas',
+    performances: ['Sesión nocturna con Dani Williams']
+  }, [{
+    id: 864,
+    date: '2026-09-04',
+    startTime: '22:00',
+    endTime: null,
+    title: 'San Lorenzo en Beluga (Programación de fiestas)',
+    location: 'Beluga Cantabarnas En la plaza',
+    performances: ['Reumáticas Yeyé']
+  }]);
+
+  assert.equal(duplicate, null);
+});
+
 test('detecta duplicados exactos por huella normalizada', () => {
   assert.equal(
     eventFingerprint({ date: '2026-09-08', startTime: '19:00', title: 'Día Íbero', location: 'Plaza España' }),

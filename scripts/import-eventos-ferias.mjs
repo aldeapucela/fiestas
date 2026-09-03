@@ -618,7 +618,8 @@ function locationFor(remote, occurrence = null) {
     2181: 'Orbital Club, Plaza de la Rinconada',
     1691: 'Casa de Zorrilla, Calle Fray Luis de Granada, 1',
     2088: 'Sala Porta Caeli',
-    1692: 'Casa de Zorrilla, Calle Fray Luis de Granada, 1'
+    1692: 'Casa de Zorrilla, Calle Fray Luis de Granada, 1',
+    2480: 'Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid'
   };
   return overrides[id] || cleanText([remote.venue, remote.address].filter(Boolean).join(', ') || remote.location);
 }
@@ -690,6 +691,12 @@ async function resolveCoordinates(remote, location, currentEvents) {
       lng: -4.7245378,
       source: 'Google Maps (ficha Faroles Rock coincidente en la dirección publicada)',
       query: 'Los Faroles Bar / Faroles Rock, C. Alonso Berruguete, 4, 47003 Valladolid, España'
+    },
+    2480: {
+      lat: 41.6520776,
+      lng: -4.7229442,
+      source: 'Restaurant Guru / OpenStreetMap (ficha de Bizarro Bar Independiente en la dirección publicada)',
+      query: 'Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid, España'
     }
   };
   if (known[id]) return known[id];
@@ -771,6 +778,18 @@ async function resolveCoordinates(remote, location, currentEvents) {
         osmType: 'node',
         osmId: 5376469221,
         query: 'Molly Malone, Plaza del Poniente, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['beluga', 'cantabarnas'],
+      coordinates: {
+        lat: 41.65312,
+        lng: -4.72633,
+        source: 'OpenStreetMap (ficha de Beluga, C. Ramón Núñez)',
+        osmType: 'node',
+        osmId: 9594267126,
+        query: 'Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España',
         accuracy: 1
       }
     },

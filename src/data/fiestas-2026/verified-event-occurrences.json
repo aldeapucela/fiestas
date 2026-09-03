@@ -1429,5 +1429,58 @@
       "2026-09-13"
     ],
     "source": "Cartel remoto de Jump Kingdom, descargado e inspeccionado visualmente el 3 de septiembre de 2026: confirma cinco días consecutivos de actividad, del 9 al 13 de septiembre de 2026, en Feria de Valladolid; no publica horario diario."
+  },
+  "2481": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "startTime": "22:00", "endTime": null, "location": "Beluga Cantabarnas", "performances": ["Sesión nocturna con Dani Williams"]},
+      {"date": "2026-09-05", "startTime": "22:00", "endTime": null, "location": "Beluga Cantabarnas", "performances": ["Sesión nocturna con DJ Jorge Santos"]},
+      {"date": "2026-09-06", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas", "performances": ["Sesión tardeo con DJ Cristal"]},
+      {"date": "2026-09-07", "startTime": "22:00", "endTime": null, "location": "Beluga Cantabarnas", "performances": ["Sesión nocturna con DJ Spinky y Chema Díaz"]},
+      {"date": "2026-09-09", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas", "performances": ["Sesión tardeo con DJ Curro Puertas"]},
+      {"date": "2026-09-10", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas", "performances": ["Sesión tardeo con Chema Díaz"]},
+      {"date": "2026-09-11", "startTime": "22:00", "endTime": null, "location": "Beluga Cantabarnas", "performances": ["Sesión nocturna con DJ Sirc Sadie"]},
+      {"date": "2026-09-12", "startTime": "22:00", "endTime": null, "location": "Beluga Cantabarnas", "performances": ["Sesión nocturna con DJ Rodrigo Barrientos"]}
+    ],
+    "source": "Cartel remoto de Clubbing Beluga, descargado e inspeccionado visualmente el 3 de septiembre de 2026: confirma sesiones los días 4, 5, 6, 7, 9, 10, 11 y 12 de septiembre, con los horarios y DJs asignados en las ocurrencias; no hay actividad publicada los días 8 ni 13. La ubicación se resuelve con la ficha cartográfica de Beluga en C. Ramón Núñez, Valladolid."
+  },
+  "2482": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "startTime": "22:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Reumáticas Yeyé"]},
+      {"date": "2026-09-05", "startTime": "22:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Marti Rasti y Jadeck Sunsplash"]},
+      {"date": "2026-09-06", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Fiesta Tuenti"]},
+      {"date": "2026-09-07", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Noise x Beluga (previa Rusowsky)"]},
+      {"date": "2026-09-08", "key": "day-2026-09-08-1200", "startTime": "12:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Vermú con Plásticos de Reducto Sónico, Iván Fuzztone vs Fido"]},
+      {"date": "2026-09-08", "key": "day-2026-09-08-1800", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["La Perdiz Roja, Marti Rasti y Jadeck Sunsplash"]},
+      {"date": "2026-09-09", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Laura Lykkelau DJ set"]},
+      {"date": "2026-09-10", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Beca Berlin DJ set"]},
+      {"date": "2026-09-11", "key": "day-2026-09-11-1800", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Previa Carolina Durante con Sideburns DJ"]},
+      {"date": "2026-09-11", "key": "day-2026-09-11-2200", "startTime": "22:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Moove Cris"]},
+      {"date": "2026-09-12", "key": "day-2026-09-12-1800", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["La Cosa Latina: La Fiebre y Garbanzo"]},
+      {"date": "2026-09-12", "key": "day-2026-09-12-2200", "startTime": "22:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Pepaj DJ set"]},
+      {"date": "2026-09-13", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Karaoke fin de fiestas"]}
+    ],
+    "source": "Cartel remoto de Beluga, descargado e inspeccionado visualmente el 3 de septiembre de 2026: confirma actividad diaria del 4 al 13 de septiembre, con dos sesiones diferenciadas los días 8, 11 y 12; los horarios y actuaciones quedan asignados en las ocurrencias. La ubicación se resuelve con la ficha cartográfica de Beluga en C. Ramón Núñez, Valladolid."
   }
 }

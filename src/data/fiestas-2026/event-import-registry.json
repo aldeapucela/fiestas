@@ -2821,6 +2821,128 @@
           "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
         }
       }
+    },
+    "2480": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "885",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2481": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "877",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "878",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "879",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "880",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "881",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "882",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "883",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "884",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2482": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "864",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "865",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "866",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "867",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-08-1200": {
+          "status": "linked",
+          "localEventId": "868",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-08-1800": {
+          "status": "linked",
+          "localEventId": "869",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "870",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "871",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-11-1800": {
+          "status": "linked",
+          "localEventId": "872",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-11-2200": {
+          "status": "linked",
+          "localEventId": "873",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-12-1800": {
+          "status": "linked",
+          "localEventId": "874",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-12-2200": {
+          "status": "linked",
+          "localEventId": "875",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "876",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
     }
   },
   "localAliases": {

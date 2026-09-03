@@ -84,7 +84,10 @@ function scoreDuplicate(local, candidate, originalEvent) {
   }
 
   const titleScore = overlap(local.titleCoreTokens, candidate.titleCoreTokens);
-  if (titleScore >= 0.8 && local.startTime === candidate.startTime) {
+  if (titleScore >= 0.8
+    && local.startTime === candidate.startTime
+    && local.titleCoreTokens.length > 1
+    && candidate.titleCoreTokens.length > 1) {
     return {
       event: originalEvent,
       score: Number((0.82 + Math.min(locationScore, 1) * 0.1).toFixed(3)),
