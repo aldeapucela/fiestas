@@ -2400,6 +2400,110 @@
         "query": "Acera de Recoletos, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:46.036Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Café pincho de feria ibérico · Con caña, vino o agua: 4€; con refresco: 4,50€; sin bebida: 3,50€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-montadito-secreto-iberico",
+                "name": "Montadito de secreto ibérico"
+              },
+              {
+                "id": "pincho-montadito-papada-iberica",
+                "name": "Montadito de papada ibérica"
+              },
+              {
+                "id": "pincho-pulga-jamon-iberico",
+                "name": "Pulga de jamón ibérico",
+                "description": "* Opción sin gluten:",
+                "price": "+1€",
+                "glutenFree": true
+              }
+            ]
+          },
+          {
+            "title": "Café pincho imperdible ibérico",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-jamon-iberico-cortado-cuchillo-media-racion",
+                "name": "Jamón ibérico cortado a cuchillo (½ ración)",
+                "price": "7,90€"
+              },
+              {
+                "id": "pincho-jamon-iberico-cortado-cuchillo-racion",
+                "name": "Jamón ibérico cortado a cuchillo (ración)",
+                "price": "13,90€"
+              },
+              {
+                "id": "pincho-tosta-solomillo-iberico",
+                "name": "Tosta de solomillo ibérico",
+                "price": "4,50€"
+              },
+              {
+                "id": "pincho-montadito-san-jamon",
+                "name": "Montadito San Jamón",
+                "price": "4,90€"
+              },
+              {
+                "id": "pincho-montadito-pluma-iberica",
+                "name": "Montadito de pluma ibérica",
+                "price": "4,90€"
+              }
+            ]
+          },
+          {
+            "title": "Postre",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso",
+                "name": "Tarta de queso",
+                "price": "5,90€"
+              }
+            ]
+          },
+          {
+            "title": "Pide tu",
+            "votable": false,
+            "items": [
+              {
+                "id": "pide-lorencito",
+                "name": "Lorencito",
+                "price": "2,50€"
+              }
+            ]
+          },
+          {
+            "title": "Botellas",
+            "votable": false,
+            "items": [
+              {
+                "id": "botella-conde-sirula-tinto-tempranillo",
+                "name": "Conde de Sirula tinto tempranillo D.O. Ribera del Duero",
+                "price": "13,90€"
+              },
+              {
+                "id": "botella-pedro-perules-tinto-tempranillo",
+                "name": "Pedro Perules tinto tempranillo D.O. Toro",
+                "price": "13,90€"
+              },
+              {
+                "id": "botella-marino-cepeda-verdejo",
+                "name": "Marino Cepeda verdejo",
+                "price": "11,90€"
+              },
+              {
+                "id": "botella-calderona-rosado",
+                "name": "Calderona rosado D.O. Cigales",
+                "price": "1,90€"
+              }
+            ]
+          }
+        ]
       }
     },
     {
