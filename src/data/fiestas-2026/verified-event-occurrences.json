@@ -1366,5 +1366,68 @@
       }
     ],
     "source": "Cartel remoto de Ferias 2026 de La Española, descargado e inspeccionado visualmente: actividad los días 4 (Vicky Groovy & Spinky), 5 (Chema Díaz), 7 (Sote; además Nuestro Balcón con Sote / Curro Puertas, Zachy DJ y Daniel Williams), 8 (Nuestro Balcón con John Ceb), 9 (Nuestro Balcón con Sirc Sadie, Chema Díaz y Spinky), 10 (Curro Puertas), 11 (Daniel Williams) y 12 de septiembre (Sirc Sadie); no hay actividad publicada el día 6 y el cartel no indica horarios. La ubicación frente a la Catedral se resolvió con OpenStreetMap Nominatim mediante la consulta «La Española Cuando Besa, C. Arribas, 6, Valladolid, España»: 41.6522738,-4.7236187, ficha «La Española Cuando Besa»; Google Maps confirmó el mismo establecimiento en C. Arribas, 6 con 41.652227,-4.7236123 mediante la consulta «La Española Frente a la Catedral, Valladolid»."
+  },
+  "2459": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "location": "Bicoca Records, Empecinado 5", "performances": ["Valladolid Suena en Grafito"]},
+      {"date": "2026-09-05", "location": "Bicoca Records, Empecinado 5", "performances": ["Los Jarabo", "DJ Flaco"]},
+      {"date": "2026-09-11", "location": "Bicoca Records, Empecinado 5", "performances": ["Single Party"]},
+      {"date": "2026-09-12", "location": "Bicoca Records, Empecinado 5", "performances": ["Cabina abierta"]}
+    ],
+    "source": "Cartel remoto de Bicoca Records, descargado e inspeccionado visualmente el 3 de septiembre de 2026: actividad únicamente los días 4 (Valladolid Suena en Grafito), 5 (Los Jarabo y DJ Flaco), 11 (Single Party) y 12 de septiembre (Cabina abierta), en Empecinado 5; no hay actividad publicada los días 6–10. La ubicación procede del cartel y de la ficha remota."
+  },
+  "2309": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-08",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {"date": "2026-09-04", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Paco Devotion"]},
+      {"date": "2026-09-05", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Luis López", "Yorska"]},
+      {"date": "2026-09-06", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Darío Núñez", "Queco", "Ángel Rodríguez"]},
+      {"date": "2026-09-07", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Quilombros", "Yorska"]},
+      {"date": "2026-09-08", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Los Pichas", "Los de la Plaza"]},
+      {"date": "2026-09-09", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Queco", "Yorska", "Pani"]},
+      {"date": "2026-09-10", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Dos de Picas", "Queco"]},
+      {"date": "2026-09-11", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Los del Lío", "Jorge Tejedor"]},
+      {"date": "2026-09-12", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Siesta Club", "Chejo", "Escalante", "Element", "Omar Cantt"]},
+      {"date": "2026-09-13", "startTime": "20:00", "endTime": "23:00", "location": "Plaza Poniente", "performances": ["Apulse", "Yorska"]}
+    ],
+    "source": "Cartel remoto de Ferias 2026 Virgen de San Lorenzo, descargado e inspeccionado visualmente el 3 de septiembre de 2026: actividad diaria del 4 al 13 de septiembre, siempre de 20:00 a 23:00 en Plaza Poniente, con las actuaciones asignadas a cada día en las ocurrencias; no hay huecos en el intervalo. La ubicación se conserva con la resolución Nominatim existente de Plaza Poniente (41.6531571,-4.7312823)."
+  },
+  "2461": {
+    "dates": [
+      "2026-09-05",
+      "2026-09-06"
+    ],
+    "occurrences": [
+      {"date": "2026-09-05", "startTime": "10:00", "endTime": "21:00", "location": "Plaza Juan de Austria (junto al Corte Inglés)", "performances": ["Mercadillo solidario y visita de animales en adopción", "Desfile de los perritos en adopción · 20:30"]},
+      {"date": "2026-09-06", "startTime": "10:00", "endTime": "21:00", "location": "Plaza Juan de Austria (junto al Corte Inglés)", "performances": ["Mercadillo solidario y visita de animales en adopción", "Desfile y concurso canino · 19:00", "Desfile de los perritos en adopción · 20:30", "Sorteo de cestas de perro y gato · 21:00"]}
+    ],
+    "source": "Cartel remoto del XVII Mercadillo Solidario Propatas, descargado e inspeccionado visualmente el 3 de septiembre de 2026: actividad los días 5 y 6 de septiembre, de 10:00 a 21:00 en Plaza Juan de Austria, junto al Corte Inglés; el cartel asigna las actividades adicionales de cada día a las horas indicadas."
+  },
+  "2445": {
+    "dates": [
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "source": "Cartel remoto de Jump Kingdom, descargado e inspeccionado visualmente el 3 de septiembre de 2026: confirma cinco días consecutivos de actividad, del 9 al 13 de septiembre de 2026, en Feria de Valladolid; no publica horario diario."
   }
 }

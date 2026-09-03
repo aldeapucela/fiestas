@@ -285,6 +285,55 @@
         }
       }
     },
+    "1904": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "34",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "92",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "134",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "178",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "213",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "251",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "290",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "333",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "390",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
     "1917": {
       "occurrences": {
         "single": {
@@ -621,6 +670,15 @@
         "single": {
           "status": "linked",
           "localEventId": "236",
+          "reason": "Relación histórica conservada por el importador."
+        }
+      }
+    },
+    "2103": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "278",
           "reason": "Relación histórica conservada por el importador."
         }
       }
@@ -1215,6 +1273,56 @@
         "single": {
           "status": "pending_review",
           "reason": "Hay varias fichas locales para la misma ocurrencia: 554, 555, 556, 557, 558, 559, 560, 561, 562."
+        },
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "420",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "554",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "555",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "556",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "557",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "558",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "559",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "560",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "561",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "562",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y actuaciones coincidentes."
         }
       }
     },
@@ -2398,6 +2506,15 @@
         }
       }
     },
+    "2431": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "863",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
     "2432": {
       "occurrences": {
         "single": {
@@ -2515,6 +2632,145 @@
           "status": "linked",
           "localEventId": "839",
           "reason": "Censo histórico de informes de importación."
+        }
+      }
+    },
+    "2445": {
+      "occurrences": {
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "857",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "858",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "859",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "860",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "861",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2446": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "170",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        }
+      }
+    },
+    "2448": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "856",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2449": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "851",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2452": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "850",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2453": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "360",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        }
+      }
+    },
+    "2454": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "862",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2458": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "852",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2459": {
+      "occurrences": {
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "846",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "847",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "848",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "849",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2461": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "853",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "854",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2462": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "855",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
         }
       }
     }

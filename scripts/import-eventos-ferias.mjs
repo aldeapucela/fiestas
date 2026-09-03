@@ -604,6 +604,7 @@ function locationFor(remote, occurrence = null) {
     2313: 'Plaza de Derecho (Facultad de Derecho, Universidad de Valladolid)',
     2265: 'Bandido Techno Room, Pl. del Pte., 4',
     2218: 'Calle Ebanistería, 2 (Zona Cantarranas)',
+    2431: 'Acera de Recoletos',
     2191: 'Fantasy Discc Pub, Calle Espíritu Santo, 9',
     1999: 'Centro Comercial Vallsur, Paseo de Zorrilla, 328',
     1784: 'Sala Sinfónica Jesús López Cobos, Centro Cultural Miguel Delibes',
@@ -683,7 +684,13 @@ async function resolveCoordinates(remote, location, currentEvents) {
     1692: { lat: 41.6563987, lng: -4.7235721, source: 'OpenStreetMap Nominatim' },
     2136: { lat: 41.6573, lng: -4.733252, source: 'Inferidas por proximidad a eventos de Playa de las Moreras' },
     2183: { lat: 41.656398, lng: -4.738248, source: 'Inferidas por proximidad a eventos de Feria de Valladolid' },
-    2194: { lat: 41.656398, lng: -4.738248, source: 'Inferidas por proximidad a eventos de Feria de Valladolid' }
+    2194: { lat: 41.656398, lng: -4.738248, source: 'Inferidas por proximidad a eventos de Feria de Valladolid' },
+    2454: {
+      lat: 41.6542815,
+      lng: -4.7245378,
+      source: 'Google Maps (ficha Faroles Rock coincidente en la dirección publicada)',
+      query: 'Los Faroles Bar / Faroles Rock, C. Alonso Berruguete, 4, 47003 Valladolid, España'
+    }
   };
   if (known[id]) return known[id];
 
