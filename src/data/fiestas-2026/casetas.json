@@ -1312,6 +1312,196 @@
         "query": "Plaza de la Universidad, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:37.841Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria — Pincho+bebida 4€ · Pincho sin bebida 3€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-brocheta-pollo",
+                "name": "Brocheta de pollo",
+                "description": "CON SALSA AHUMADA"
+              },
+              {
+                "id": "pincho-brocheta-langostinos",
+                "name": "Brocheta de langostinos",
+                "description": "AL AJADECITE"
+              },
+              {
+                "id": "pincho-empanada-morcilla-manzana",
+                "name": "Empanada",
+                "description": "DE MORCILLA Y MANZANA"
+              },
+              {
+                "id": "pincho-empanada-jamon-yorke-queso-bechamel",
+                "name": "Empanada",
+                "description": "DE JAMÓN YORKE, QUESO Y BECHAMEL"
+              },
+              {
+                "id": "pincho-empanada-pisto-huevo",
+                "name": "Empanada",
+                "description": "DE PISTO CON HUEVO",
+                "dietary": "vegetarian"
+              },
+              {
+                "id": "pincho-croissant-salmon-queso-cabra",
+                "name": "Croissant",
+                "description": "DE SALMÓN CON QUESO DE CABRA"
+              },
+              {
+                "id": "pincho-garbanzos-calamares",
+                "name": "Garbanzos",
+                "description": "CON CALAMARES"
+              },
+              {
+                "id": "pincho-chapata-lomo-cabrales",
+                "name": "Chapata",
+                "description": "DE LOMO AL CABRALES"
+              },
+              {
+                "id": "pincho-chapata-rabas-alioli",
+                "name": "Chapata",
+                "description": "DE RABAS CON ALIOLI"
+              },
+              {
+                "id": "pincho-chapata-chorizo-chimichurri",
+                "name": "Chapata",
+                "description": "DE CHORIZO CON CHIMICHURRI"
+              },
+              {
+                "id": "pincho-chapata-pollo-curry-alioli",
+                "name": "Chapata",
+                "description": "DE POLLO AL CURRY CON ALIOLI"
+              },
+              {
+                "id": "pincho-cucuruchos-mex-guacamole",
+                "name": "Cucuruchos mex",
+                "description": "CON GUACAMOLE"
+              },
+              {
+                "id": "pincho-brioche-cabrilles",
+                "name": "Brioche de Cabrilles"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-rabas",
+                "name": "Rabas",
+                "price": "5€"
+              },
+              {
+                "id": "racion-patatas-bravas",
+                "name": "Patatas bravas",
+                "price": "4€"
+              },
+              {
+                "id": "racion-patatas-cabrales",
+                "name": "Patatas al cabrales",
+                "price": "4€"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-coulant-queso-manchego-frambuesas",
+                "name": "Coulant",
+                "description": "DE QUESO MANCHEGO CON FRAMBUESAS",
+                "price": "4€"
+              },
+              {
+                "id": "postre-gofre-nata-chocolate",
+                "name": "Gofre",
+                "description": "CON NATA Y CHOCOLATE"
+              },
+              {
+                "id": "postre-bizcocho-tiramisu",
+                "name": "Bizcocho",
+                "description": "DE TIRAMISÚ"
+              }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-cana",
+                "name": "Caña",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-cana-radler",
+                "name": "Caña Radler",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-cana-0-0",
+                "name": "Caña 0,0",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-lorencito",
+                "name": "Lorencito",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-sangria-sidra",
+                "name": "Sangría de sidra",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-refresco",
+                "name": "Refresco",
+                "price": "2,50€"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto",
+                "price": "2,00€"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1,50€"
+              }
+            ]
+          },
+          {
+            "title": "Vino",
+            "votable": false,
+            "items": [
+              {
+                "id": "vino-sidra",
+                "name": "Sidra",
+                "price": "2,00€"
+              },
+              {
+                "id": "vino-tyllera-frizzante",
+                "name": "Tyllera frizzante",
+                "price": "2,00€"
+              },
+              {
+                "id": "vino-rosado-verdejo",
+                "name": "Rosado o verdejo",
+                "price": "2,50€"
+              }
+            ]
+          },
+          {
+            "title": "Botella de sidra 5€",
+            "votable": false,
+            "items": []
+          }
+        ]
       }
     },
     {
@@ -1854,11 +2044,11 @@
             "items": [
               {
                 "id": "pincho-mini-cheeseburger",
-                "name": "Mini Cheeseburger"
+                "name": "Mini cheeseburger"
               },
               {
                 "id": "pincho-ny-hot-dog",
-                "name": "NY Hot Dog"
+                "name": "NY Hot dog"
               }
             ]
           },
@@ -1952,7 +2142,7 @@
               },
               {
                 "id": "bebida-0-0-tostada",
-                "name": "0,0 Tostada",
+                "name": "0,0 tostada",
                 "price": "2,5"
               },
               {
