@@ -6,7 +6,9 @@ import { matchesSearch, normalizeText } from './search-text.js';
 
 const CENTER = [41.645726, -4.732919];
 const DEFAULT_ZOOM = 13;
-const USER_ZOOM = 14;
+// A deliberate click on the locate control should make nearby casetas easy
+// to inspect, so use a closer view than the city-wide default.
+const USER_ZOOM = 16;
 const MAX_CITY_COORDINATE_DISTANCE_KM = 12;
 const CARTO_BASEMAPS_API_KEY = 'cb1_27ug_1_19138f635d4f03358d12cb43';
 const CARTO_LAYERS = {

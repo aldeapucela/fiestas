@@ -40,6 +40,31 @@ test('las casetas se buscan y se filtran por dieta', async ({ page }) => {
   await expect.poll(() => page.locator(casetas).count()).toBe(total);
 });
 
+test('geolocalizar acerca el mapa dos niveles y centra la posición', async ({ page }) => {
+  const zoom16Requests = [];
+  page.on('request', (request) => {
+    const url = new URL(request.url());
+    if (url.hostname.endsWith('.basemaps.cartocdn.com') && /\/(?:light|dark)_all\/16\//.test(url.pathname)) {
+      zoom16Requests.push(url.href);
+    }
+  });
+  await page.context().grantPermissions(['geolocation']);
+  await page.context().setGeolocation({ latitude: 41.6038, longitude: -4.7165, accuracy: 20 });
+  await page.goto('/casetas/');
+  await expect(page.locator('.leaflet-container')).toBeVisible();
+
+  await page.locator('[data-fiestas-map-locate]').click();
+  await expect.poll(() => zoom16Requests.length, {
+    message: 'geolocalizar debe cargar las teselas del zoom 16'
+  }).toBeGreaterThan(0);
+  const mapBox = await page.locator('[data-fiestas-map]').boundingBox();
+  const userMarker = page.locator('.leaflet-overlay-pane .leaflet-interactive').first();
+  await expect(userMarker).toBeVisible();
+  const markerBox = await userMarker.boundingBox();
+  expect(Math.abs((markerBox.x + markerBox.width / 2) - (mapBox.x + mapBox.width / 2))).toBeLessThan(25);
+  expect(Math.abs((markerBox.y + markerBox.height / 2) - (mapBox.y + mapBox.height / 2))).toBeLessThan(25);
+});
+
 test('mantiene visible la búsqueda al abrir el cajón desde una URL compartida', async ({ page }) => {
   await page.goto('/casetas/?search=croquetas');
 
