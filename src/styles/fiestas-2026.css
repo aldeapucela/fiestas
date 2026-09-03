@@ -6173,6 +6173,32 @@ html.dark .fiestas-casetas-app .fiestas-caseta-result .fiestas-map-result-search
   text-align: center;
 }
 
+.fiestas-caseta-acecale-seal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0.9rem auto 0.15rem;
+}
+
+.fiestas-caseta-acecale-seal > span {
+  margin-bottom: 0.18rem;
+  color: #98a2b3;
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.fiestas-caseta-acecale-seal img {
+  display: block;
+  width: min(9.5rem, 50%);
+  height: auto;
+  filter: grayscale(1) contrast(0.85);
+  opacity: 0.34;
+}
+
 .fiestas-caseta-dietary-legend {
   display: flex;
   flex-wrap: wrap;
@@ -6372,6 +6398,12 @@ html.dark .fiestas-caseta-dietary-legend {
 
 html.dark .fiestas-caseta-price-note {
   color: #8994a5;
+}
+
+html.dark .fiestas-caseta-acecale-seal img {
+  background: transparent;
+  filter: grayscale(1) invert(1) contrast(0.85);
+  opacity: 0.48;
 }
 
 html.dark .fiestas-caseta-dietary-legend-icon--vegetarian,

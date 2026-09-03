@@ -782,6 +782,7 @@ async function loadCasetas(vallabusStops = []) {
       imageSource: String(caseta.imageSource || '').trim(),
       imageCredit: String(caseta.imageCredit || '').trim(),
       imageLicense: String(caseta.imageLicense || '').trim(),
+      acecaleCollaborator: caseta.acecaleCollaborator === true,
       addressQuery,
       coordinates,
       details: normalizeCasetaDetails(caseta.details),
