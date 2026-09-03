@@ -34,3 +34,11 @@ test('construye rutas legacy para la ficha y su QR', () => {
 test('normaliza nombres para los slugs derivados', () => {
   assert.equal(slugifyCaseta('Café-Bar La Castellana'), 'cafe-bar-la-castellana');
 });
+
+test('no crea una ruta legacy cuando el nombre no es único', () => {
+  assert.deepEqual(casetaLegacyPaths({
+    id: 'z5-06',
+    name: 'Café Ibérico',
+    publicSlug: 'cafe-iberico-recoletos'
+  }, { includeNameSlug: false }), []);
+});

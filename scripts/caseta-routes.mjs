@@ -26,10 +26,10 @@ export function casetaLegacyDetailPath(id, slug) {
   return `/c/${encodeURIComponent(String(id || '').trim())}/${encodeURIComponent(String(slug || '').trim())}/`;
 }
 
-export function casetaLegacyPaths(caseta) {
+export function casetaLegacyPaths(caseta, { includeNameSlug = true } = {}) {
   const publicSlug = getCasetaPublicSlug(caseta);
   const slugs = new Set([
-    slugifyCaseta(caseta?.name),
+    ...(includeNameSlug ? [slugifyCaseta(caseta?.name)] : []),
     ...(Array.isArray(caseta?.legacySlugs) ? caseta.legacySlugs : [])
   ].map((slug) => String(slug || '').trim()).filter(Boolean));
   return [...slugs].flatMap((slug) => {

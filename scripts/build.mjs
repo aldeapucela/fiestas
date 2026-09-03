@@ -10,7 +10,7 @@ import { transform as esbuildTransform } from 'esbuild';
 import sharp from 'sharp';
 import { readManifest, scanUsedIcons } from './build-icons.mjs';
 import { jsonForScript } from './json-for-script.mjs';
-import { casetaDetailPath, casetaLegacyPaths, casetaQrPath, getCasetaPublicSlug } from './caseta-routes.mjs';
+import { casetaDetailPath, casetaLegacyPaths, casetaQrPath, getCasetaPublicSlug, slugifyCaseta } from './caseta-routes.mjs';
 import { assertRegistryIntegrity, normalizeImportRegistry } from './event-import-registry.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -1304,6 +1304,12 @@ async function build() {
     }));
   }
 
+  const casetaNameSlugCounts = new Map();
+  for (const caseta of casetas) {
+    const nameSlug = slugifyCaseta(caseta.name);
+    casetaNameSlugCounts.set(nameSlug, (casetaNameSlugCounts.get(nameSlug) || 0) + 1);
+  }
+
   for (const caseta of casetas) {
     const casetaSocialImage = caseta.image
       ? publicBaseUrl + caseta.image
@@ -1332,7 +1338,10 @@ async function build() {
       ...pageContext(versions),
       caseta
     }));
-    for (const legacy of casetaLegacyPaths(caseta)) {
+    const nameSlug = slugifyCaseta(caseta.name);
+    for (const legacy of casetaLegacyPaths(caseta, {
+      includeNameSlug: casetaNameSlugCounts.get(nameSlug) === 1
+    })) {
       if (legacy.detail !== caseta.urlPath) {
         await writeFile(legacy.detail.slice(1) + 'index.html', render('fiestas-2026-caseta-redirect.njk', {
           ...pageContext(versions),
