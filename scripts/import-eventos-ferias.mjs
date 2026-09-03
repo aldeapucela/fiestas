@@ -105,7 +105,7 @@ const imageRemoteToLocal = {
   1903: [315],
   2157: [317],
   1884: [395],
-  1980: [403]
+  1980: [825]
 };
 
 registerKnownMatches(matchedRemoteToLocal, sourceEvents, localById, registry);
@@ -483,7 +483,7 @@ function buildMatchedRemoteToLocal(currentEvents) {
     1884: [395],
     1759: [398],
     2096: [409],
-    1980: [403],
+    1980: [825],
     1945: [412]
   };
 }
