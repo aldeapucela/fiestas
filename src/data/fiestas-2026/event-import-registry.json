@@ -2184,6 +2184,51 @@
         "single": {
           "status": "pending_review",
           "reason": "Hay varias fichas locales para la misma ocurrencia: 776, 777, 778, 779, 780, 781, 782, 783, 784."
+        },
+        "day-2026-09-04": {
+          "status": "linked",
+          "localEventId": "776",
+          "reason": "Misma fecha, hora, título y lugar normalizados."
+        },
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "777",
+          "reason": "Misma fecha, hora, título y lugar normalizados."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "778",
+          "reason": "Misma fecha, hora, título y lugar normalizados."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "779",
+          "reason": "Misma fecha, hora, título y lugar normalizados."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "780",
+          "reason": "Misma fecha, hora, título y lugar normalizados."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "781",
+          "reason": "Misma fecha, hora, título y lugar normalizados."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "782",
+          "reason": "Misma fecha, hora, título y lugar normalizados."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "783",
+          "reason": "Misma fecha, hora, título y lugar normalizados."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "784",
+          "reason": "Misma fecha, hora, título y lugar normalizados."
         }
       }
     },
@@ -2771,6 +2816,15 @@
           "status": "linked",
           "localEventId": "855",
           "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2463": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "418",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
         }
       }
     }
