@@ -7,6 +7,7 @@ import sharp from 'sharp';
 
 import {
   POST_HEIGHT,
+  POST_CAROUSEL_MAX_ITEMS,
   POST_MAX_ITEMS,
   POST_WIDTH,
   STORY_CONTENT_BOTTOM,
@@ -17,6 +18,7 @@ import {
   formatStoryDate,
   isDailyPopularDate,
   rankDailyPopularEvents,
+  rankDailyPostEvents,
   selectStoryPosterEvents
 } from '../src/scripts/daily-popular.js';
 import { generateDailyPopular } from '../scripts/generate-daily-popular.mjs';
@@ -46,6 +48,21 @@ test('ranks day events with normalized 60/40 saves and visits', () => {
   ]);
   assert.deepEqual(ranked.map((event) => event.id), [1, 3, 2]);
   assert.equal(ranked[0].popularityScore, 0.6);
+});
+
+test('ranks carousel posts by saves before visits', () => {
+  const events = [
+    { id: 1, date: '2026-09-04', title: 'Muchas visitas', startTime: '12:00' },
+    { id: 2, date: '2026-09-04', title: 'Más guardados', startTime: '13:00' },
+    { id: 3, date: '2026-09-04', title: 'Empate de guardados', startTime: '14:00' }
+  ];
+  const ranked = rankDailyPostEvents(events, [
+    { id: '1', saveCount: 10, visitCount: 100 },
+    { id: '2', saveCount: 20, visitCount: 1 },
+    { id: '3', saveCount: 20, visitCount: 8 }
+  ]);
+  assert.deepEqual(ranked.map((event) => event.id), [3, 2, 1]);
+  assert.equal(POST_CAROUSEL_MAX_ITEMS, 8);
 });
 
 test('does not repeat shared poster files in the story', () => {
@@ -83,6 +100,12 @@ test('generates story and vertical post images with a reusable manifest', async 
   assert.equal(result.manifest.imageUrl, 'https://fiestas.aldeapucela.org/daily-popular/2026-09-04.jpg');
   assert.equal(result.manifest.storyImageUrl, result.manifest.imageUrl);
   assert.equal(result.manifest.postImageUrl, 'https://fiestas.aldeapucela.org/daily-popular/2026-09-04-post.jpg');
+  assert.deepEqual(result.manifest.postImageUrls, [
+    'https://fiestas.aldeapucela.org/daily-popular/2026-09-04-post.jpg',
+    'https://fiestas.aldeapucela.org/daily-popular/2026-09-04-post-2.jpg'
+  ]);
+  assert.equal(result.outputPostImagePaths.length, 2);
+  assert.equal(result.manifest.postItems.length, 2);
   assert.equal(result.manifest.postImageWidth, POST_WIDTH);
   assert.equal(result.manifest.postImageHeight, POST_HEIGHT);
   assert.equal(POST_MAX_ITEMS, 4);

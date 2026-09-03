@@ -9,6 +9,7 @@ export const STORY_CONTENT_BOTTOM = STORY_HEIGHT - STORY_SAFE_BOTTOM;
 export const POST_WIDTH = 1080;
 export const POST_HEIGHT = 1440;
 export const POST_MAX_ITEMS = 4;
+export const POST_CAROUSEL_MAX_ITEMS = POST_MAX_ITEMS * 2;
 
 const titleCollator = new Intl.Collator('es', { sensitivity: 'base', numeric: true });
 
@@ -89,6 +90,20 @@ export function rankDailyPopularEvents(events, activities, limit = DAILY_POPULAR
       };
     })
     .sort(compareEvents)
+    .slice(0, Math.max(0, Number(limit) || 0));
+}
+
+export function rankDailyPostEvents(events, activities, limit = POST_CAROUSEL_MAX_ITEMS) {
+  return rankDailyPopularEvents(events, activities, Array.isArray(events) ? events.length : 0)
+    .sort((a, b) => {
+      if (b.saveCount !== a.saveCount) return b.saveCount - a.saveCount;
+      if (b.visitCount !== a.visitCount) return b.visitCount - a.visitCount;
+      const timeComparison = eventTime(a).localeCompare(eventTime(b));
+      if (timeComparison !== 0) return timeComparison;
+      const titleComparison = titleCollator.compare(String(a.title || ''), String(b.title || ''));
+      if (titleComparison !== 0) return titleComparison;
+      return titleCollator.compare(eventId(a), eventId(b));
+    })
     .slice(0, Math.max(0, Number(limit) || 0));
 }
 

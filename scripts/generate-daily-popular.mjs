@@ -7,6 +7,7 @@ import {
   DAILY_POPULAR_MAX_ITEMS,
   DAILY_POPULAR_START_DATE,
   POST_HEIGHT,
+  POST_CAROUSEL_MAX_ITEMS,
   POST_MAX_ITEMS,
   POST_WIDTH,
   STORY_CONTENT_BOTTOM,
@@ -17,6 +18,7 @@ import {
   dailyPopularDates,
   formatStoryDate,
   isDailyPopularDate,
+  rankDailyPostEvents,
   rankDailyPopularEvents,
 } from '../src/scripts/daily-popular.js';
 
@@ -104,11 +106,32 @@ function imageUrl(baseUrl, image) {
   return /^https?:\/\//i.test(image) ? image : `${baseUrl}${image}`;
 }
 
-function buildManifest({ baseUrl, date, events, rankedEvents, imagePath, postImagePath, metricsPayload }) {
+function manifestItems(baseUrl, rankedEvents) {
+  return rankedEvents.map((event, index) => ({
+    rank: index + 1,
+    eventId: String(event.id),
+    title: event.title,
+    date: event.date,
+    startTime: event.startTime || null,
+    endTime: event.endTime || null,
+    location: event.location || null,
+    url: eventUrl(baseUrl, event),
+    imageUrl: imageUrl(baseUrl, event.image),
+    imageSource: event.imageSource || null,
+    imageCredit: event.imageCredit || null,
+    imageLicense: event.imageLicense || null,
+    saveCount: event.saveCount,
+    visitCount: event.visitCount,
+    popularityScore: event.popularityScore
+  }));
+}
+
+function buildManifest({ baseUrl, date, events, rankedEvents, postRankedEvents, imagePath, postImagePaths, metricsPayload }) {
   const agendaUrl = `${baseUrl}/?date=${encodeURIComponent(date)}`;
+  const postImageUrls = postImagePaths.map((postImagePath) => `${baseUrl}${postImagePath}`);
   return {
     ok: true,
-    schemaVersion: 2,
+    schemaVersion: 3,
     festival: 'valladolid-2026',
     date,
     dateLabel: formatStoryDate(date),
@@ -123,29 +146,20 @@ function buildManifest({ baseUrl, date, events, rankedEvents, imagePath, postIma
     agendaUrl,
     imageUrl: `${baseUrl}${imagePath}`,
     storyImageUrl: `${baseUrl}${imagePath}`,
-    postImageUrl: `${baseUrl}${postImagePath}`,
+    postImageUrl: postImageUrls[0],
+    postImageUrls,
     imageWidth: STORY_WIDTH,
     imageHeight: STORY_HEIGHT,
     postImageWidth: POST_WIDTH,
     postImageHeight: POST_HEIGHT,
     safeArea: { top: STORY_SAFE_TOP, bottom: STORY_SAFE_BOTTOM },
-    items: rankedEvents.map((event, index) => ({
-      rank: index + 1,
-      eventId: String(event.id),
-      title: event.title,
-      date: event.date,
-      startTime: event.startTime || null,
-      endTime: event.endTime || null,
-      location: event.location || null,
-      url: eventUrl(baseUrl, event),
-      imageUrl: imageUrl(baseUrl, event.image),
-      imageSource: event.imageSource || null,
-      imageCredit: event.imageCredit || null,
-      imageLicense: event.imageLicense || null,
-      saveCount: event.saveCount,
-      visitCount: event.visitCount,
-      popularityScore: event.popularityScore
-    })),
+    items: manifestItems(baseUrl, rankedEvents),
+    postRanking: {
+      source: 'fiestas-saves',
+      order: 'saveCount desc, visitCount desc',
+      maxItems: POST_CAROUSEL_MAX_ITEMS
+    },
+    postItems: manifestItems(baseUrl, postRankedEvents),
     availableEvents: events.length
   };
 }
@@ -249,11 +263,13 @@ function buildStorySvg({ date, rankedEvents, posterImages, logoData }) {
 </svg>`;
 }
 
-function buildPostSvg({ date, posterImages, logoData }) {
+function buildPostSvg({ date, posterImages, logoData, pageIndex = 0 }) {
   const { weekday, day, month } = splitStoryDate(date);
   const posterXs = [105, 575];
   const posterYs = [445, 835];
-  const posters = posterImages.slice(0, POST_MAX_ITEMS).map((entry, index) => floatingPosterSvg(
+  const pageStart = pageIndex * POST_MAX_ITEMS;
+  const pageEnd = pageStart + POST_MAX_ITEMS;
+  const posters = posterImages.slice(pageStart, pageEnd).map((entry, index) => floatingPosterSvg(
     entry.event,
     index,
     entry.imageData,
@@ -322,9 +338,9 @@ async function preparePosterImage(event) {
     .toBuffer();
 }
 
-function storyVisualEvents(rankedEvents) {
+function storyVisualEvents(rankedEvents, limit = DAILY_POPULAR_MAX_ITEMS) {
   const usedImages = new Set();
-  return rankedEvents.slice(0, DAILY_POPULAR_MAX_ITEMS).map((event) => {
+  return rankedEvents.slice(0, limit).map((event) => {
     const image = typeof event.image === 'string'
       && (/^https?:\/\//i.test(event.image) || event.image.startsWith('/assets/'))
       && !usedImages.has(event.image)
@@ -340,7 +356,7 @@ async function prepareLogo() {
   return sharp(content).resize(70, 70, { fit: 'contain' }).png().toBuffer();
 }
 
-async function generateDailyImages({ date, posterEvents, storyOutputPath, postOutputPath }) {
+async function preparePosterEntries(posterEvents) {
   const posterImages = [];
   for (const { event, image: imagePath } of posterEvents) {
     let image = null;
@@ -353,13 +369,28 @@ async function generateDailyImages({ date, posterEvents, storyOutputPath, postOu
     }
     posterImages.push({ event, imageData: image?.toString('base64') || null });
   }
+  return posterImages;
+}
+
+async function generateDailyImages({ date, posterEvents, postPosterEvents, storyOutputPath, postOutputPaths }) {
+  const [posterImages, postPosterImages] = await Promise.all([
+    preparePosterEntries(posterEvents),
+    preparePosterEntries(postPosterEvents)
+  ]);
   const logo = await prepareLogo();
   const logoData = logo.toString('base64');
   const storySvg = buildStorySvg({ date, posterImages, logoData });
-  const postSvg = buildPostSvg({ date, posterImages, logoData });
+  const postSvgs = postOutputPaths.map((_, pageIndex) => buildPostSvg({
+    date,
+    posterImages: postPosterImages,
+    logoData,
+    pageIndex
+  }));
   await Promise.all([
     sharp(Buffer.from(storySvg)).jpeg({ quality: 90, chromaSubsampling: '4:4:4' }).toFile(storyOutputPath),
-    sharp(Buffer.from(postSvg)).jpeg({ quality: 90, chromaSubsampling: '4:4:4' }).toFile(postOutputPath)
+    ...postSvgs.map((postSvg, index) => (
+      sharp(Buffer.from(postSvg)).jpeg({ quality: 90, chromaSubsampling: '4:4:4' }).toFile(postOutputPaths[index])
+    ))
   ]);
 }
 
@@ -370,18 +401,46 @@ export async function generateDailyPopular({ date, events, metricsPayload, outpu
   const rankedAllEvents = rankDailyPopularEvents(dayEvents, metricsActivities(metricsPayload), dayEvents.length)
     .map((event, index) => ({ ...event, popularityRank: index + 1 }));
   const rankedEvents = rankedAllEvents.slice(0, DAILY_POPULAR_MAX_ITEMS);
+  const postRankedEvents = rankDailyPostEvents(dayEvents, metricsActivities(metricsPayload), POST_CAROUSEL_MAX_ITEMS);
   const posterEvents = storyVisualEvents(rankedEvents);
+  const postPosterEvents = storyVisualEvents(postRankedEvents, POST_CAROUSEL_MAX_ITEMS);
   await fs.mkdir(outputDir, { recursive: true });
   const imagePath = `/daily-popular/${date}.jpg`;
-  const postImagePath = `/daily-popular/${date}-post.jpg`;
+  const postImagePaths = [
+    `/daily-popular/${date}-post.jpg`,
+    `/daily-popular/${date}-post-2.jpg`
+  ];
   const outputImagePath = path.join(outputDir, `${date}.jpg`);
-  const outputPostImagePath = path.join(outputDir, `${date}-post.jpg`);
-  await generateDailyImages({ date, posterEvents, storyOutputPath: outputImagePath, postOutputPath: outputPostImagePath });
-  const manifest = buildManifest({ baseUrl, date, events: dayEvents, rankedEvents, imagePath, postImagePath, metricsPayload });
+  const outputPostImagePaths = postImagePaths.map((postImagePath) => path.join(outputDir, path.basename(postImagePath)));
+  await generateDailyImages({
+    date,
+    posterEvents,
+    postPosterEvents,
+    storyOutputPath: outputImagePath,
+    postOutputPaths: outputPostImagePaths
+  });
+  const manifest = buildManifest({
+    baseUrl,
+    date,
+    events: dayEvents,
+    rankedEvents,
+    postRankedEvents,
+    imagePath,
+    postImagePaths,
+    metricsPayload
+  });
   const content = `${JSON.stringify(manifest, null, 2)}\n`;
   await fs.writeFile(path.join(outputDir, `${date}.json`), content, 'utf8');
   const hash = createHash('sha256').update(content).digest('hex');
-  return { date, outputImagePath, outputPostImagePath, manifestPath: path.join(outputDir, `${date}.json`), manifest, manifestSha256: hash };
+  return {
+    date,
+    outputImagePath,
+    outputPostImagePath: outputPostImagePaths[0],
+    outputPostImagePaths,
+    manifestPath: path.join(outputDir, `${date}.json`),
+    manifest,
+    manifestSha256: hash
+  };
 }
 
 async function main() {
