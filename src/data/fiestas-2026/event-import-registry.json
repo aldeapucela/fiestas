@@ -491,8 +491,8 @@
       "occurrences": {
         "single": {
           "status": "linked",
-          "localEventId": "403",
-          "reason": "Relación histórica conservada por el importador."
+          "localEventId": "825",
+          "reason": "Evento local fusionado por decisión manual; conservar el destino unificado."
         }
       }
     },
@@ -984,9 +984,8 @@
           "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
         },
         "day-2026-09-07": {
-          "status": "linked",
-          "localEventId": "806",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-08": {
           "status": "pending_review",
@@ -1001,9 +1000,8 @@
           "reason": "Las fichas históricas de esta ocurrencia ya no existen y no se ha demostrado un sustituto."
         },
         "day-2026-09-11": {
-          "status": "linked",
-          "localEventId": "807",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-04": {
           "status": "ignored",
@@ -1816,9 +1814,8 @@
     "2352": {
       "occurrences": {
         "single": {
-          "status": "linked",
-          "localEventId": "814",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         }
       }
     },
@@ -2403,19 +2400,16 @@
           "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-10": {
-          "status": "linked",
-          "localEventId": "800",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-11": {
-          "status": "linked",
-          "localEventId": "801",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-12": {
-          "status": "linked",
-          "localEventId": "802",
-          "reason": "Censo histórico de informes de importación."
+          "status": "ignored",
+          "reason": "Evento local eliminado por decisión manual; no reimportar como ficha independiente."
         },
         "day-2026-09-13": {
           "status": "ignored",
@@ -2776,8 +2770,8 @@
       "occurrences": {
         "day-2026-09-04": {
           "status": "linked",
-          "localEventId": "846",
-          "reason": "Nueva ocurrencia importada con identidad registrada."
+          "localEventId": "600",
+          "reason": "Evento local fusionado por decisión manual; conservar el destino unificado."
         },
         "day-2026-09-05": {
           "status": "linked",
@@ -2791,8 +2785,8 @@
         },
         "day-2026-09-12": {
           "status": "linked",
-          "localEventId": "849",
-          "reason": "Nueva ocurrencia importada con identidad registrada."
+          "localEventId": "733",
+          "reason": "Evento local fusionado por decisión manual; conservar el destino unificado."
         }
       }
     },
@@ -2830,6 +2824,11 @@
     }
   },
   "localAliases": {
+    "403": {
+      "targetEventId": "825",
+      "reason": "Evento local fusionado por decisión manual; conservar el destino unificado.",
+      "oldSlugs": []
+    },
     "533": {
       "targetEventId": null,
       "reason": "Evento eliminado durante la normalización; se conserva como tombstone para impedir su recreación.",
@@ -2887,7 +2886,7 @@
       ]
     },
     "667": {
-      "targetEventId": "403",
+      "targetEventId": "825",
       "reason": "Evento fusionado durante la normalización del issue 66.",
       "oldSlugs": [
         "casa-con-dos-puertas-obra-de-teatro"
@@ -3222,6 +3221,11 @@
         "los-patricios-concierto"
       ]
     },
+    "841": {
+      "targetEventId": "554",
+      "reason": "Evento local fusionado por decisión manual; conservar el destino unificado.",
+      "oldSlugs": []
+    },
     "842": {
       "targetEventId": "556",
       "reason": "Evento fusionado por decisión manual; redirigir al evento conservado.",
@@ -3242,6 +3246,16 @@
       "oldSlugs": [
         "dos-de-picas-concierto"
       ]
+    },
+    "846": {
+      "targetEventId": "600",
+      "reason": "Evento local fusionado por decisión manual; conservar el destino unificado.",
+      "oldSlugs": []
+    },
+    "849": {
+      "targetEventId": "733",
+      "reason": "Evento local fusionado por decisión manual; conservar el destino unificado.",
+      "oldSlugs": []
     }
   }
 }

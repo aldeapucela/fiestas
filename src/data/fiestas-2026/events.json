@@ -13878,45 +13878,6 @@
     "imageLicense": "CC BY-SA 2.0"
   },
   {
-    "id": 403,
-    "date": "2026-09-13",
-    "dateLabel": "Domingo 13 de septiembre",
-    "startTime": "19:30",
-    "endTime": "20:30",
-    "title": "Casa con dos puertas mala es de guardar",
-    "location": "Sala Borja",
-    "zone": "Sala Borja",
-    "description": "Representación de la obra “La casa con dos puertas mala es de guardar”, de Calderón de la Barca, con dirección y adaptación de Néstor Vallejo. Función de Teatro Arcón de Olid el domingo 13 de septiembre a las 19:30 en Sala Borja Información ampliada: la obra de teatro ‘Casa con dos puertas’, escrita por el célebre autor Calderón de la Barca, se presentará el próximo 13 de septiembre a las 20:00 horas. El evento tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una oportunidad para disfrutar de un clásico del Siglo de Oro\n\nInformación ampliada: La obra de teatro ‘Casa con dos puertas’, escrita por el célebre autor Calderón de la Barca, se presentará el próximo 13 de septiembre a las 20:00 horas. El evento tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una oportunidad para disfrutar de un clásico del Siglo de Oro.",
-    "summary": "Teatro Arcón de Olid representa “La casa con dos puertas mala es de guardar”, de Calderón de la Barca, en Sala Borja",
-    "performances": [],
-    "organizers": [
-      "Teatro Arcón de Olid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6527404,
-      "lng": -4.7204461,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "node",
-      "osmId": 7102357207,
-      "query": "Sala Borja, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-26T17:02:56.437Z"
-    },
-    "type": "Teatro",
-    "ticket": {
-      "required": true,
-      "status": "required",
-      "label": "Entrada necesaria",
-      "url": "https://salaborja.es/",
-      "note": "El cartel indica venta en Entradium hasta el 31 de agosto y en taquilla del 1 al 13 de septiembre; revisa disponibilidad en Sala Borja."
-    },
-    "tags": [
-      "Teatro"
-    ],
-    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/8/8060ca0dc4314c64c68611b46e4e45833b8b00f6.jpeg"
-  },
-  {
     "id": 404,
     "date": "2026-09-13",
     "dateLabel": "Domingo 13 de septiembre",
@@ -17902,6 +17863,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e7c2b1c97ea4196e22d3590d0c5962855abb74fe_2_582x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/415c5b149dca9ee7910720fde2a4d75fed4d1485_2_584x1024.jpeg"
     ]
   },
   {
@@ -19454,6 +19419,10 @@
     },
     "tags": [
       "Exposición"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/original/2X/4/448fd7bcf730a6a53ce6639bd3ad3275a366abc5.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4f3d33a3c2f5f272d045a603615a99effbf8f5aa_2_789x1024.jpeg"
     ]
   },
   {
@@ -23634,6 +23603,10 @@
     },
     "tags": [
       "Música"
+    ],
+    "images": [
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/63c883c17d936d4f80cbb504215042c075491895_2_819x1024.jpeg",
+      "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4f3d33a3c2f5f272d045a603615a99effbf8f5aa_2_789x1024.jpeg"
     ]
   },
   {
@@ -24758,212 +24731,6 @@
     ]
   },
   {
-    "id": 800,
-    "date": "2026-09-10",
-    "dateLabel": "Jueves 10 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio",
-    "performances": [
-      "Dos de Picas",
-      "Queco"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 801,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio",
-    "performances": [
-      "Los del Lio",
-      "Jorge Tejedor"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 802,
-    "date": "2026-09-12",
-    "dateLabel": "Sábado 12 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programación musical Plaza Poniente",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2b1bc557787b4ec376b26951daaf038e7779f793_2_656x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio",
-    "summary": "La serie de eventos musicales en Plaza Poniente presenta una variada programación de actuaciones en vivo que se desarrollará durante el mes de septiembre. El ciclo incluye diversas fechas con artistas de distintos estilos para ofrecer una oferta cultural constante en el espacio",
-    "performances": [
-      "Siesta club",
-      "Chejo",
-      "Escalante",
-      "Element",
-      "Omar Cantt"
-    ],
-    "organizers": [
-      "@belugaenboga"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 806,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan club, C. Bao, s/n, Valladolid",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid",
-    "summary": "La serie de eventos denominada Tardeos de ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid",
-    "performances": [
-      "DJ Never",
-      "DJ Neke"
-    ],
-    "organizers": [
-      "In Clan club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6550846,
-      "lng": -4.7239775,
-      "source": "Google Maps (consulta manual; ficha de In Clan)",
-      "query": "In Clan, C. Bao, s/n, 47003 Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-02T09:17:29.000Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 807,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": "20:00",
-    "endTime": "22:00",
-    "title": "Tardeos de ferias (Ciclo de eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c015b3fea6a8e84257026c4a2ee8bf621e69996d_2_819x1024.jpeg",
-    "location": "In Clan club, C. Bao, s/n, Valladolid",
-    "zone": "Zona Centro",
-    "description": "La serie de eventos denominada Tardeos de ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid",
-    "summary": "La serie de eventos denominada Tardeos de ferias se desarrolla al aire libre en el club In Clan, ofreciendo una programación musical variada durante el mes de septiembre en Valladolid",
-    "performances": [
-      "DJ Julio",
-      "Lario DJ"
-    ],
-    "organizers": [
-      "In Clan club"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6550846,
-      "lng": -4.7239775,
-      "source": "Google Maps (consulta manual; ficha de In Clan)",
-      "query": "In Clan, C. Bao, s/n, 47003 Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-02T09:17:29.000Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 810,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
@@ -25034,45 +24801,6 @@
       "label": "Entrada no indicada",
       "url": null,
       "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 814,
-    "date": "2026-09-07",
-    "dateLabel": "Lunes 7 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Generación Techno Dance (Evento)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/495dc55da32bcd3b6ca328e3199d62bcd2cee339_2_676x1023.jpeg",
-    "location": "Escenario Pistas Deportivas de Moreras",
-    "zone": "Moreras",
-    "description": "La fiesta Generación Techno Dance se llevará a cabo el próximo lunes 7 de septiembre en el escenario de las pistas deportivas de Moreras. Este evento promete una noche de ritmo y energía para todos los amantes de la música electrónica",
-    "summary": "La fiesta Generación Techno Dance se llevará a cabo el próximo lunes 7 de septiembre en el escenario de las pistas deportivas de Moreras. Este evento promete una noche de ritmo y energía para todos los amantes de la música electrónica",
-    "performances": [
-      "Generación Techno Dance"
-    ],
-    "organizers": [
-      "Ayuntamiento de Valladolid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6548258,
-      "lng": -4.7335351,
-      "source": "Google Maps (consulta manual; ficha de Pistas deportivas del Parque de las Moreras)",
-      "query": "Escenario Pistas Deportivas de Moreras, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-02T09:17:12.111Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
     },
     "tags": [
       "Música"
@@ -25200,45 +24928,6 @@
     ]
   },
   {
-    "id": 820,
-    "date": "2026-09-08",
-    "dateLabel": "Martes 8 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Sofía Gabanna (Concierto)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/77db39a03497be519632cf026dd142ef56043dcf_2_781x1024.jpeg",
-    "location": "Playa de las Moreras",
-    "zone": "Moreras",
-    "description": "Sofía Gabanna llega al Lorencito festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en las Moreras, un espacio emblemático de la ciudad de Valladolid",
-    "summary": "Sofía Gabanna llega al Lorencito festival para ofrecer una actuación en directo el martes 8 de septiembre. El evento se llevará a cabo en las Moreras, un espacio emblemático de la ciudad de Valladolid",
-    "performances": [
-      "Sofía Gabanna"
-    ],
-    "organizers": [
-      "Ayuntamiento de Valladolid"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6572792,
-      "lng": -4.7335306,
-      "source": "Google Maps (consulta manual; ficha de Playa de las Moreras)",
-      "query": "Playa de las Moreras, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-09-02T09:17:29.000Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 821,
     "date": "2026-09-10",
     "dateLabel": "Jueves 10 de septiembre",
@@ -25265,41 +24954,6 @@
       "osmId": 367406151,
       "query": "La Pera Limonera, Valladolid, España",
       "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 822,
-    "date": "2026-09-11",
-    "dateLabel": "Viernes 11 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Minitel Valladolid (Evento) en Orbital club",
-    "image": "https://foro.aldeapucela.org/uploads/default/original/2X/d/dc9648469a48c62940338f5b63d0f8a2e4177f7e.jpeg",
-    "location": "Orbital club, Plaza de la Rinconada",
-    "zone": "Zona Centro",
-    "description": "Minitel Valladolid (Evento) en Orbital club en Plaza de la Rinconada",
-    "summary": "Minitel Valladolid (Evento) en Orbital club en Plaza de la Rinconada",
-    "performances": [],
-    "organizers": [
-      "@baila_minitel"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531507,
-      "lng": -4.7289254,
-      "source": "OpenStreetMap Nominatim (ficha local de Orbital Club)",
-      "query": "Orbital Club, Plaza de la Rinconada, Valladolid, España"
     },
     "type": "Música",
     "ticket": {
@@ -25358,12 +25012,12 @@
     "dateLabel": "Domingo 13 de septiembre",
     "startTime": "19:30",
     "endTime": "20:30",
-    "title": "Casa con dos puertas (Obra de teatro)",
+    "title": "Casa con dos puertas mala es de guardar",
     "image": "https://foro.aldeapucela.org/uploads/default/original/2X/8/8060ca0dc4314c64c68611b46e4e45833b8b00f6.jpeg",
-    "location": "Teatro Arcón de Olid (Sala Borja)",
-    "zone": "Zona Centro",
-    "description": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja",
-    "summary": "La compañía ofrece la representación de la obra “La casa con dos puertas mala es de guardar”, basada en el texto de Calderón de la Barca. El evento tendrá lugar el próximo domingo 13 de septiembre a las 19:30 horas en la Sala Borja",
+    "location": "Sala Borja",
+    "zone": "Sala Borja",
+    "description": "Representación de la obra “La casa con dos puertas mala es de guardar”, de Calderón de la Barca, con dirección y adaptación de Néstor Vallejo. Función de Teatro Arcón de Olid el domingo 13 de septiembre a las 19:30 en Sala Borja Información ampliada: la obra de teatro ‘Casa con dos puertas’, escrita por el célebre autor Calderón de la Barca, se presentará el próximo 13 de septiembre a las 20:00 horas. El evento tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una oportunidad para disfrutar de un clásico del Siglo de Oro\n\nInformación ampliada: La obra de teatro ‘Casa con dos puertas’, escrita por el célebre autor Calderón de la Barca, se presentará el próximo 13 de septiembre a las 20:00 horas. El evento tendrá lugar en las instalaciones de la Sala Borja, ofreciendo una oportunidad para disfrutar de un clásico del Siglo de Oro.",
+    "summary": "Teatro Arcón de Olid representa “La casa con dos puertas mala es de guardar”, de Calderón de la Barca, en Sala Borja",
     "performances": [],
     "organizers": [
       "Teatro Arcón de Olid"
@@ -25377,15 +25031,15 @@
       "osmId": 7102357207,
       "query": "Sala Borja, Valladolid, España",
       "accuracy": 1,
-      "geocodedAt": "2026-09-02T09:17:12.113Z"
+      "geocodedAt": "2026-08-26T17:02:56.437Z"
     },
     "type": "Teatro",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
+      "required": true,
+      "status": "required",
+      "label": "Entrada necesaria",
+      "url": "https://salaborja.es/",
+      "note": "El cartel indica venta en Entradium hasta el 31 de agosto y en taquilla del 1 al 13 de septiembre; revisa disponibilidad en Sala Borja."
     },
     "tags": [
       "Teatro"
@@ -25921,85 +25575,6 @@
     ]
   },
   {
-    "id": 841,
-    "date": "2026-09-05",
-    "dateLabel": "Sábado 5 de septiembre",
-    "startTime": "20:00",
-    "endTime": "23:00",
-    "title": "Virgen de San Lorenzo (Feria 2026)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/415c5b149dca9ee7910720fde2a4d75fed4d1485_2_584x1024.jpeg",
-    "location": "Plaza Poniente",
-    "zone": "Zona Centro",
-    "description": "La celebración de las ferias 2026 de la Virgen de San Lorenzo incluye una noche de música con la actuación de DJs invitados. El evento tendrá lugar el sábado 5 de septiembre en la Plaza Poniente, con un horario comprendido entre las 20:00h y las 23:00h",
-    "summary": "La celebración de las ferias 2026 de la Virgen de San Lorenzo incluye una noche de música con la actuación de DJs invitados. El evento tendrá lugar el sábado 5 de septiembre en la Plaza Poniente, con un horario comprendido entre las 20:00h y las 23:00h",
-    "performances": [],
-    "organizers": [
-      "Beluga, Enboga y la Boutique"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6531571,
-      "lng": -4.7312823,
-      "source": "OpenStreetMap Nominatim",
-      "osmType": "way",
-      "osmId": 24432961,
-      "query": "Plaza del Poniente, Valladolid, España",
-      "accuracy": 1
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 846,
-    "date": "2026-09-04",
-    "dateLabel": "Viernes 4 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programa Fiestas de Pucela - Bicoca Records",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4f3d33a3c2f5f272d045a603615a99effbf8f5aa_2_789x1024.jpeg",
-    "location": "Bicoca Records, Empecinado 5",
-    "zone": "Zona Centro",
-    "description": "Bicoca Records presenta su programación especial con motivo de las fiestas de Pucela, ofreciendo una serie de eventos musicales que tendrán lugar durante el mes de septiembre en la calle Empecinado.",
-    "summary": "Bicoca Records presenta su programación especial con motivo de las fiestas de Pucela, ofreciendo una serie de eventos musicales que tendrán lugar durante el mes de septiembre en la calle Empecinado.",
-    "performances": [
-      "Valladolid Suena en Grafito"
-    ],
-    "organizers": [
-      "Bicoca Records"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6564533,
-      "lng": -4.7220586,
-      "source": "Inferidas por coincidencia de lugar con el evento local 600",
-      "osmType": "node",
-      "osmId": 6564582082,
-      "query": "Bicoca Records, Empecinado 5, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-31T11:40:41.346Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
     "id": 847,
     "date": "2026-09-05",
     "dateLabel": "Sábado 5 de septiembre",
@@ -26055,47 +25630,6 @@
     "summary": "Bicoca Records presenta su programación especial con motivo de las fiestas de Pucela, ofreciendo una serie de eventos musicales que tendrán lugar durante el mes de septiembre en la calle Empecinado.",
     "performances": [
       "Single Party"
-    ],
-    "organizers": [
-      "Bicoca Records"
-    ],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.6564533,
-      "lng": -4.7220586,
-      "source": "Inferidas por coincidencia de lugar con el evento local 600",
-      "osmType": "node",
-      "osmId": 6564582082,
-      "query": "Bicoca Records, Empecinado 5, Valladolid, España",
-      "accuracy": 1,
-      "geocodedAt": "2026-08-31T11:40:41.346Z"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
-      "url": null,
-      "note": "La fuente remota no indica venta de entradas para este evento."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 849,
-    "date": "2026-09-12",
-    "dateLabel": "Sábado 12 de septiembre",
-    "startTime": null,
-    "endTime": null,
-    "title": "Programa Fiestas de Pucela - Bicoca Records",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/4f3d33a3c2f5f272d045a603615a99effbf8f5aa_2_789x1024.jpeg",
-    "location": "Bicoca Records, Empecinado 5",
-    "zone": "Zona Centro",
-    "description": "Bicoca Records presenta su programación especial con motivo de las fiestas de Pucela, ofreciendo una serie de eventos musicales que tendrán lugar durante el mes de septiembre en la calle Empecinado.",
-    "summary": "Bicoca Records presenta su programación especial con motivo de las fiestas de Pucela, ofreciendo una serie de eventos musicales que tendrán lugar durante el mes de septiembre en la calle Empecinado.",
-    "performances": [
-      "Cabina abierta"
     ],
     "organizers": [
       "Bicoca Records"
