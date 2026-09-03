@@ -1321,64 +1321,52 @@
             "items": [
               {
                 "id": "pincho-brocheta-pollo",
-                "name": "Brocheta de pollo",
-                "description": "CON SALSA AHUMADA"
+                "name": "Brocheta de pollo con salsa ahumada"
               },
               {
                 "id": "pincho-brocheta-langostinos",
-                "name": "Brocheta de langostinos",
-                "description": "AL AJADECITE"
+                "name": "Brocheta de langostinos al ajadecite"
               },
               {
                 "id": "pincho-empanada-morcilla-manzana",
-                "name": "Empanada",
-                "description": "DE MORCILLA Y MANZANA"
+                "name": "Empanada de morcilla y manzana"
               },
               {
                 "id": "pincho-empanada-jamon-yorke-queso-bechamel",
-                "name": "Empanada",
-                "description": "DE JAMÓN YORKE, QUESO Y BECHAMEL"
+                "name": "Empanada de jamón yorke, queso y bechamel"
               },
               {
                 "id": "pincho-empanada-pisto-huevo",
-                "name": "Empanada",
-                "description": "DE PISTO CON HUEVO",
+                "name": "Empanada de pisto con huevo",
                 "dietary": "vegetarian"
               },
               {
                 "id": "pincho-croissant-salmon-queso-cabra",
-                "name": "Croissant",
-                "description": "DE SALMÓN CON QUESO DE CABRA"
+                "name": "Croissant de salmón con queso de cabra"
               },
               {
                 "id": "pincho-garbanzos-calamares",
-                "name": "Garbanzos",
-                "description": "CON CALAMARES"
+                "name": "Garbanzos con calamares"
               },
               {
                 "id": "pincho-chapata-lomo-cabrales",
-                "name": "Chapata",
-                "description": "DE LOMO AL CABRALES"
+                "name": "Chapata de lomo al cabrales"
               },
               {
                 "id": "pincho-chapata-rabas-alioli",
-                "name": "Chapata",
-                "description": "DE RABAS CON ALIOLI"
+                "name": "Chapata de rabas con alioli"
               },
               {
                 "id": "pincho-chapata-chorizo-chimichurri",
-                "name": "Chapata",
-                "description": "DE CHORIZO CON CHIMICHURRI"
+                "name": "Chapata de chorizo con chimichurri"
               },
               {
                 "id": "pincho-chapata-pollo-curry-alioli",
-                "name": "Chapata",
-                "description": "DE POLLO AL CURRY CON ALIOLI"
+                "name": "Chapata de pollo al curry con alioli"
               },
               {
                 "id": "pincho-cucuruchos-mex-guacamole",
-                "name": "Cucuruchos mex",
-                "description": "CON GUACAMOLE"
+                "name": "Cucuruchos mex con guacamole"
               },
               {
                 "id": "pincho-brioche-cabrilles",
@@ -1413,19 +1401,16 @@
             "items": [
               {
                 "id": "postre-coulant-queso-manchego-frambuesas",
-                "name": "Coulant",
-                "description": "DE QUESO MANCHEGO CON FRAMBUESAS",
+                "name": "Coulant de queso manchego con frambuesas",
                 "price": "4€"
               },
               {
                 "id": "postre-gofre-nata-chocolate",
-                "name": "Gofre",
-                "description": "CON NATA Y CHOCOLATE"
+                "name": "Gofre con nata y chocolate"
               },
               {
                 "id": "postre-bizcocho-tiramisu",
-                "name": "Bizcocho",
-                "description": "DE TIRAMISÚ"
+                "name": "Bizcocho de tiramisú"
               }
             ]
           },
@@ -4293,6 +4278,164 @@
         "lng": -4.7384671,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Paseo de Zorrilla, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho feria + bebida 4",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-mini-cheeseburger",
+                "name": "Mini cheeseburger"
+              },
+              {
+                "id": "pincho-ny-hot-dog",
+                "name": "NY Hot dog"
+              }
+            ]
+          },
+          {
+            "title": "Pincho especial + bebida 4,2",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-mini-bundi",
+                "name": "Mini Bundi",
+                "description": "BEST SELLER!"
+              },
+              {
+                "id": "pincho-brioche-costilla-sweet-bbq",
+                "name": "Brioche costilla sweet BBQ"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-patatas",
+                "name": "Patatas",
+                "price": "6"
+              },
+              {
+                "id": "racion-buffalo",
+                "name": "Buffalo",
+                "price": "8"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso",
+                "name": "Tarta de queso",
+                "price": "5"
+              }
+            ]
+          },
+          {
+            "title": "Pincho castizo + bebida",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-boludito",
+                "name": "Boludito",
+                "price": "4"
+              },
+              {
+                "id": "pincho-tosta-langostino",
+                "name": "Tosta langostino",
+                "price": "4,5"
+              }
+            ]
+          },
+          {
+            "title": "Raciones castizas",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-torrezno",
+                "name": "Torrezno",
+                "price": "8,5"
+              },
+              {
+                "id": "racion-croquetas-ibericas",
+                "name": "Croquetas ibéricas",
+                "price": "8"
+              }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-agua",
+                "name": "Agua",
+                "price": "1,5"
+              },
+              {
+                "id": "bebida-cana",
+                "name": "Caña",
+                "price": "2,5"
+              },
+              {
+                "id": "bebida-0-0-tostada",
+                "name": "0,0 tostada",
+                "price": "2,5"
+              },
+              {
+                "id": "bebida-refresco",
+                "name": "Refresco",
+                "price": "2,5"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto",
+                "price": "2"
+              },
+              {
+                "id": "bebida-vermut-rojo",
+                "name": "Vermut rojo",
+                "price": "2,5"
+              },
+              {
+                "id": "bebida-tinto-verano",
+                "name": "Tinto de verano",
+                "price": "2,5"
+              },
+              {
+                "id": "bebida-lorenzito",
+                "name": "Lorenzito",
+                "price": "2,5"
+              },
+              {
+                "id": "bebida-monster",
+                "name": "Monster",
+                "price": "2,5"
+              },
+              {
+                "id": "bebida-vino-tinto",
+                "name": "Vino tinto",
+                "price": "2,5"
+              },
+              {
+                "id": "bebida-clarete",
+                "name": "Clarete",
+                "price": "2,2"
+              },
+              {
+                "id": "bebida-verdejo",
+                "name": "Verdejo",
+                "price": "2,2"
+              }
+            ]
+          }
+        ]
       }
     },
     {
