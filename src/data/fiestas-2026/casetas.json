@@ -2404,7 +2404,7 @@
       "details": {
         "menuSections": [
           {
-            "title": "Café pincho de feria ibérico · Con caña, vino o agua: 4€; con refresco: 4,50€; sin bebida: 3,50€",
+            "title": "Pincho de feria · Con caña, vino o agua: 4€; con refresco: 4,50€; sin bebida: 3,50€",
             "votable": true,
             "items": [
               {
@@ -2418,14 +2418,14 @@
               {
                 "id": "pincho-pulga-jamon-iberico",
                 "name": "Pulga de jamón ibérico",
-                "description": "* Opción sin gluten:",
+                "description": "*Opción sin gluten:",
                 "price": "+1€",
                 "glutenFree": true
               }
             ]
           },
           {
-            "title": "Café pincho imperdible ibérico",
+            "title": "Pincho imperdible",
             "votable": true,
             "items": [
               {
@@ -2488,7 +2488,7 @@
               },
               {
                 "id": "botella-pedro-perules-tinto-tempranillo",
-                "name": "Pedro Perules tinto tempranillo D.O. Toro",
+                "name": "Pedro Perúles tinto tempranillo D.O. Toro",
                 "price": "13,90€"
               },
               {
@@ -2499,7 +2499,7 @@
               {
                 "id": "botella-calderona-rosado",
                 "name": "Calderona rosado D.O. Cigales",
-                "price": "1,90€"
+                "price": "11,90€"
               }
             ]
           }
