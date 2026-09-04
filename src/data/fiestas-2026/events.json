@@ -26435,7 +26435,7 @@
     "date": "2026-09-09",
     "dateLabel": "Miércoles 9 de septiembre",
     "startTime": "18:00",
-    "endTime": null,
+    "endTime": "22:00",
     "title": "San Lorenzo en Beluga (Programación de fiestas)",
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/b/b75b8c2b9b86c6032fcf4be1eafe31c00a9ead3d_2_788x1024.jpeg",
     "location": "Beluga Cantabarnas En la plaza",
@@ -27077,7 +27077,9 @@
     "zone": "Zona Centro",
     "description": "La banda Sunday Killers llega a la Plaza de la Universidad para ofrecer un concierto en el marco de las Fiestas de Feria. La cita tendrá lugar el próximo viernes 4 de septiembre a las 21:30 horas.",
     "summary": "La banda Sunday Killers llega a la Plaza de la Universidad para ofrecer un concierto en el marco de las Fiestas de Feria. La cita tendrá lugar el próximo viernes 4 de septiembre a las 21:30 horas.",
-    "performances": [],
+    "performances": [
+      "Sunday Killers"
+    ],
     "organizers": [
       "Fiestas de Feria"
     ],
@@ -27115,7 +27117,9 @@
     "zone": "Zona Centro",
     "description": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
     "summary": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
-    "performances": [],
+    "performances": [
+      "Lykkelau DJ"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -27151,7 +27155,9 @@
     "zone": "Zona Centro",
     "description": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
     "summary": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
-    "performances": [],
+    "performances": [
+      "Lykkelau DJ"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
@@ -27159,42 +27165,6 @@
       "lng": -4.7229442,
       "source": "Restaurant Guru / OpenStreetMap (ficha de Bizarro Bar Independiente en la dirección publicada)",
       "query": "Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid, España"
-    },
-    "type": "Música",
-    "ticket": {
-      "required": false,
-      "status": "not_required",
-      "label": "Entrada libre",
-      "url": null,
-      "note": "La fuente remota indica que la entrada es libre o gratuita."
-    },
-    "tags": [
-      "Música"
-    ]
-  },
-  {
-    "id": 889,
-    "date": "2026-09-09",
-    "dateLabel": "Miércoles 9 de septiembre",
-    "startTime": "18:00",
-    "endTime": "22:00",
-    "title": "Programación de Septiembre (Eventos)",
-    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1d7d78a2d6fdb5a0c47d80d1c85f570b479a26c3_2_819x1024.jpeg",
-    "location": "Beluga Cantabarnas",
-    "zone": "Zona Centro",
-    "description": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
-    "summary": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
-    "performances": [],
-    "organizers": [],
-    "collaborators": [],
-    "coordinates": {
-      "lat": 41.65312,
-      "lng": -4.72633,
-      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
-      "osmType": "node",
-      "osmId": 9594267126,
-      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
-      "accuracy": 1
     },
     "type": "Música",
     "ticket": {
@@ -27220,7 +27190,9 @@
     "zone": "Zona Centro",
     "description": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
     "summary": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
-    "performances": [],
+    "performances": [
+      "Lykkelau DJ"
+    ],
     "organizers": [],
     "collaborators": [],
     "coordinates": {
