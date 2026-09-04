@@ -619,7 +619,8 @@ function locationFor(remote, occurrence = null) {
     1691: 'Casa de Zorrilla, Calle Fray Luis de Granada, 1',
     2088: 'Sala Porta Caeli',
     1692: 'Casa de Zorrilla, Calle Fray Luis de Granada, 1',
-    2480: 'Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid'
+    2480: 'Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid',
+    2489: 'Escenario Principal - Playa de las Moreras'
   };
   return overrides[id] || cleanText([remote.venue, remote.address].filter(Boolean).join(', ') || remote.location);
 }
@@ -697,6 +698,15 @@ async function resolveCoordinates(remote, location, currentEvents) {
       lng: -4.7229442,
       source: 'Restaurant Guru / OpenStreetMap (ficha de Bizarro Bar Independiente en la dirección publicada)',
       query: 'Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid, España'
+    },
+    2489: {
+      lat: 41.6573001,
+      lng: -4.7332525,
+      source: 'OpenStreetMap Nominatim (Playa de las Moreras; ubicación del escenario principal)',
+      osmType: 'way',
+      osmId: 61755548,
+      query: 'Playa de las Moreras, Valladolid, España',
+      accuracy: 1
     }
   };
   if (known[id]) return known[id];
@@ -790,6 +800,81 @@ async function resolveCoordinates(remote, location, currentEvents) {
         osmType: 'node',
         osmId: 9594267126,
         query: 'Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['cantarranillas'],
+      coordinates: {
+        lat: 41.6529774,
+        lng: -4.7261379,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'way',
+        osmId: 60306723,
+        query: 'Plaza de Cantarranillas, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['bizarro'],
+      coordinates: {
+        lat: 41.6520776,
+        lng: -4.7229442,
+        source: 'Restaurant Guru / OpenStreetMap (ficha de Bizarro Bar Independiente en la dirección publicada)',
+        query: 'Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid, España'
+      }
+    },
+    {
+      matches: ['plaza cantarranas'],
+      coordinates: {
+        lat: 41.6521,
+        lng: -4.7239,
+        source: 'OpenStreetMap Nominatim (alias local de Plaza Cantarranas)',
+        query: 'Plaza Cantarranas, Valladolid, España'
+      }
+    },
+    {
+      matches: ['cadenas de san gregorio', 'cadenas san gregorio'],
+      coordinates: {
+        lat: 41.6579263,
+        lng: -4.7220114,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'node',
+        osmId: 8365740532,
+        query: 'Cadenas de San Gregorio, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['plaza del salvador'],
+      coordinates: {
+        lat: 41.650982,
+        lng: -4.7250314,
+        source: 'OpenStreetMap Nominatim',
+        osmType: 'way',
+        osmId: 43306328,
+        query: 'Plaza del Salvador, Valladolid, España',
+        accuracy: 1
+      }
+    },
+    {
+      matches: ['fuente dorada'],
+      coordinates: {
+        lat: 41.652196,
+        lng: -4.726358,
+        source: 'OpenStreetMap Nominatim',
+        query: 'Plaza Fuente Dorada, Valladolid, España'
+      }
+    },
+    {
+      matches: ['escenario cascajares', 'cascajares'],
+      coordinates: {
+        lat: 41.6521922,
+        lng: -4.7240083,
+        source: 'OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)',
+        osmType: 'way',
+        osmId: 33821228,
+        query: 'Calle Cascajares, Valladolid, España',
         accuracy: 1
       }
     },

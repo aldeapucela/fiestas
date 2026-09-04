@@ -1482,5 +1482,106 @@
       {"date": "2026-09-13", "startTime": "18:00", "endTime": null, "location": "Beluga Cantabarnas En la plaza", "performances": ["Karaoke fin de fiestas"]}
     ],
     "source": "Cartel remoto de Beluga, descargado e inspeccionado visualmente el 3 de septiembre de 2026: confirma actividad diaria del 4 al 13 de septiembre, con dos sesiones diferenciadas los días 8, 11 y 12; los horarios y actuaciones quedan asignados en las ocurrencias. La ubicación se resuelve con la ficha cartográfica de Beluga en C. Ramón Núñez, Valladolid."
+  },
+  "2484": {
+    "dates": [
+      "2026-09-11"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-11",
+        "startTime": "19:00",
+        "endTime": null,
+        "location": "Plaza del Rosarillo, Plaza Coca y Plaza Gutiérrez Semprún hasta Playa las Moreras",
+        "performances": []
+      }
+    ],
+    "source": "Cartel remoto de Concentración de Charangas, descargado e inspeccionado visualmente el 4 de septiembre de 2026: confirma la actividad el viernes 11 de septiembre a las 19:00, partiendo de la Plaza del Rosarillo, Plaza Coca y Plaza Semprún y confluyendo en la Playa Las Moreras. La ruta coincide con la ficha local existente del mismo acto."
+  },
+  "2488": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-07",
+      "2026-09-09",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-04",
+        "startTime": "23:59",
+        "endTime": "04:30",
+        "location": "Plaza de Cantarranillas (Desván del Deseo)",
+        "performances": []
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "23:59",
+        "endTime": "04:30",
+        "location": "Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid",
+        "performances": []
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "18:00",
+        "endTime": "22:00",
+        "location": "Beluga Cantabarnas",
+        "performances": []
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Plaza de Cantarranillas (Desván del Deseo)",
+        "performances": []
+      }
+    ],
+    "source": "Cartel remoto de Programación de Septiembre, descargado e inspeccionado visualmente el 4 de septiembre de 2026: confirma sesiones únicamente los días 4 (23:59–04:30, logotipo dEseo), 7 (23:59–04:30, Bizarro), 9 (tardeo 18:00–22:00, Beluga) y 12 (tardeo 20:00–23:00, logotipo dEseo). El logotipo dEseo se contrasta con la ficha pública de Desván del Deseo en Plaza de Cantarranillas; las sesiones nocturnas se asignan a su fecha de inicio."
+  },
+  "2491": {
+    "dates": [
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-10",
+      "2026-09-12",
+      "2026-09-13"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-06",
+        "startTime": "18:00",
+        "endTime": null,
+        "location": "Plaza Cantarranas",
+        "performances": []
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Cadenas de San Gregorio",
+        "performances": []
+      },
+      {
+        "date": "2026-09-10",
+        "startTime": "20:00",
+        "endTime": null,
+        "location": "Plaza del Salvador",
+        "performances": []
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "14:00",
+        "endTime": null,
+        "location": "Plaza Fuente Dorada",
+        "performances": []
+      },
+      {
+        "date": "2026-09-13",
+        "startTime": "13:00",
+        "endTime": null,
+        "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+        "performances": []
+      }
+    ],
+    "source": "Cartel remoto de Bloody Mary, descargado e inspeccionado visualmente el 4 de septiembre de 2026: confirma conciertos el domingo 6 (18:00, Plaza Cantarranas), lunes 7 (21:00, Cadenas de San Gregorio), jueves 10 (20:00, Plaza del Salvador), sábado 12 (14:00, Fuente Dorada) y domingo 13 (13:00, Escenario Cascajares). El cartel no publica horas de finalización."
   }
 }

@@ -2232,7 +2232,7 @@
     "title": "Moreras Beach Fest “Especial Generación Z”",
     "location": "Paseo de las Moreras",
     "zone": "Moreras",
-    "description": "Moreras Beach Fest “Especial Generación Z”. Con los DJs Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac",
+    "description": "Moreras Beach Fest “Especial Generación Z”. Con los DJs Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac\n\nInformación ampliada: El evento Especial Generación Z se llevará a cabo el próximo 5 de septiembre a partir de las 20:30 horas. La cita tendrá lugar en los Campos de Vóley Playa “Las Moreras”, ofreciendo una propuesta musical vibrante para el inicio de la temporada.",
     "summary": "Moreras Beach Fest “Especial Generación Z”. Con los DJs Javier Vidal, Rubens, Vlad, Xeira, Joel Marashi, Meigo, Catarro y Morlac",
     "performances": [
       "Javier Vidal",
@@ -10418,7 +10418,7 @@
     "title": "Primera concentración de Charangas “Ohayo”, “Gaveta” y “Cucu Band”",
     "location": "Plaza del Rosarillo, Plaza Coca y Plaza Gutiérrez Semprún hasta Playa las Moreras",
     "zone": "Zona Centro",
-    "description": "Primera concentración de Charangas “Ohayo”, “Gaveta” y “Cucu Band”. Partiendo desde: Plaza del Rosarillo, Plaza Coca y Plaza Gutiérrez Semprún, confluyendo en Playa las Moreras",
+    "description": "Primera concentración de Charangas “Ohayo”, “Gaveta” y “Cucu Band”. Partiendo desde: Plaza del Rosarillo, Plaza Coca y Plaza Gutiérrez Semprún, confluyendo en Playa las Moreras\n\nInformación ampliada: La Coordinadora de Peñas organiza la Concentración de Charangas, un evento festivo que tendrá lugar el próximo 11 de septiembre. La actividad comenzará a las 19:00 horas con un recorrido que partirá desde la Plaza del Rosarillo.",
     "summary": "Primera concentración de Charangas “Ohayo”, “Gaveta” y “Cucu Band”. Partiendo desde: Plaza del Rosarillo, Plaza Coca y Plaza Gutiérrez Semprún, confluyendo en Playa las Moreras",
     "performances": [
       "“Ohayo”",
@@ -10444,7 +10444,8 @@
     },
     "tags": [
       "Peñas"
-    ]
+    ],
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/68b39a0302395ac6ce51907379d08ce1d7db01ec_2_765x1024.jpeg"
   },
   {
     "id": 304,
@@ -27051,6 +27052,407 @@
       "lng": -4.7229442,
       "source": "Restaurant Guru / OpenStreetMap (ficha de Bizarro Bar Independiente en la dirección publicada)",
       "query": "Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 886,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "21:30",
+    "endTime": "22:30",
+    "title": "Sunday Killers (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/3ddf9b8d7f6ea1eb817347a7c828b0c0e894a21a_2_756x1024.jpeg",
+    "location": "Plaza de la Universidad",
+    "zone": "Zona Centro",
+    "description": "La banda Sunday Killers llega a la Plaza de la Universidad para ofrecer un concierto en el marco de las Fiestas de Feria. La cita tendrá lugar el próximo viernes 4 de septiembre a las 21:30 horas.",
+    "summary": "La banda Sunday Killers llega a la Plaza de la Universidad para ofrecer un concierto en el marco de las Fiestas de Feria. La cita tendrá lugar el próximo viernes 4 de septiembre a las 21:30 horas.",
+    "performances": [],
+    "organizers": [
+      "Fiestas de Feria"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6528225,
+      "lng": -4.7223575,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 61281999,
+      "query": "Plaza de la Universidad, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 887,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "23:59",
+    "endTime": "04:30",
+    "title": "Programación de Septiembre (Eventos)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1d7d78a2d6fdb5a0c47d80d1c85f570b479a26c3_2_819x1024.jpeg",
+    "location": "Plaza de Cantarranillas (Desván del Deseo)",
+    "zone": "Zona Centro",
+    "description": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
+    "summary": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
+    "performances": [],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529774,
+      "lng": -4.7261379,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 60306723,
+      "query": "Plaza de Cantarranillas, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 888,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "23:59",
+    "endTime": "04:30",
+    "title": "Programación de Septiembre (Eventos)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1d7d78a2d6fdb5a0c47d80d1c85f570b479a26c3_2_819x1024.jpeg",
+    "location": "Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid",
+    "zone": "Zona Centro",
+    "description": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
+    "summary": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
+    "performances": [],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Restaurant Guru / OpenStreetMap (ficha de Bizarro Bar Independiente en la dirección publicada)",
+      "query": "Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 889,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "18:00",
+    "endTime": "22:00",
+    "title": "Programación de Septiembre (Eventos)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1d7d78a2d6fdb5a0c47d80d1c85f570b479a26c3_2_819x1024.jpeg",
+    "location": "Beluga Cantabarnas",
+    "zone": "Zona Centro",
+    "description": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
+    "summary": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
+    "performances": [],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.65312,
+      "lng": -4.72633,
+      "source": "OpenStreetMap (ficha de Beluga, C. Ramón Núñez)",
+      "osmType": "node",
+      "osmId": 9594267126,
+      "query": "Beluga, C. Ramón Núñez, 1, 47003 Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 890,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Programación de Septiembre (Eventos)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1d7d78a2d6fdb5a0c47d80d1c85f570b479a26c3_2_819x1024.jpeg",
+    "location": "Plaza de Cantarranillas (Desván del Deseo)",
+    "zone": "Zona Centro",
+    "description": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
+    "summary": "La programación cultural de septiembre de 2026 se desarrolla en la zona de la Catedral, específicamente en el espacio de Cantarranas. El calendario incluye diversas sesiones que abarcan desde el viernes 4 hasta el sábado 12 de septiembre.",
+    "performances": [],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6529774,
+      "lng": -4.7261379,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 60306723,
+      "query": "Plaza de Cantarranillas, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 891,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "18:00",
+    "endTime": null,
+    "title": "Bloody Mary (Conciertos Fiestas San Lorenzo 2026)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/88e74953e981e6a8f0924b46c4c9f5ce7b8bd38d_2_664x1024.jpeg",
+    "location": "Plaza Cantarranas",
+    "zone": "Zona Centro",
+    "description": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "summary": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "performances": [],
+    "organizers": [
+      "Fiestas de San Lorenzo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521,
+      "lng": -4.7239,
+      "source": "OpenStreetMap Nominatim (alias local de Plaza Cantarranas)",
+      "query": "Plaza Cantarranas, Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 892,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "21:00",
+    "endTime": null,
+    "title": "Bloody Mary (Conciertos Fiestas San Lorenzo 2026)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/88e74953e981e6a8f0924b46c4c9f5ce7b8bd38d_2_664x1024.jpeg",
+    "location": "Cadenas de San Gregorio",
+    "zone": "Zona Centro",
+    "description": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "summary": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "performances": [],
+    "organizers": [
+      "Fiestas de San Lorenzo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6579263,
+      "lng": -4.7220114,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 8365740532,
+      "query": "Cadenas de San Gregorio, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 893,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "20:00",
+    "endTime": null,
+    "title": "Bloody Mary (Conciertos Fiestas San Lorenzo 2026)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/88e74953e981e6a8f0924b46c4c9f5ce7b8bd38d_2_664x1024.jpeg",
+    "location": "Plaza del Salvador",
+    "zone": "Zona Centro",
+    "description": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "summary": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "performances": [],
+    "organizers": [
+      "Fiestas de San Lorenzo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.650982,
+      "lng": -4.7250314,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 43306328,
+      "query": "Plaza del Salvador, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 894,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "14:00",
+    "endTime": null,
+    "title": "Bloody Mary (Conciertos Fiestas San Lorenzo 2026)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/88e74953e981e6a8f0924b46c4c9f5ce7b8bd38d_2_664x1024.jpeg",
+    "location": "Plaza Fuente Dorada",
+    "zone": "Zona Centro",
+    "description": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "summary": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "performances": [],
+    "organizers": [
+      "Fiestas de San Lorenzo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.652196,
+      "lng": -4.726358,
+      "source": "OpenStreetMap Nominatim",
+      "query": "Plaza Fuente Dorada, Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 895,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "13:00",
+    "endTime": null,
+    "title": "Bloody Mary (Conciertos Fiestas San Lorenzo 2026)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/8/88e74953e981e6a8f0924b46c4c9f5ce7b8bd38d_2_664x1024.jpeg",
+    "location": "Escenario Cascajares (Calle Cascajares, zona de El Farolito, La Taberna del Farolito y La Cárcava)",
+    "zone": "Zona Centro",
+    "description": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "summary": "La agrupación musical Bloody Mary presenta su ciclo de conciertos en el marco de las Fiestas de San Lorenzo 2026. La programación se desarrollará a lo largo de varios días con actuaciones en distintos puntos emblemáticos de la localidad.",
+    "performances": [],
+    "organizers": [
+      "Fiestas de San Lorenzo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521922,
+      "lng": -4.7240083,
+      "source": "OpenStreetMap Nominatim (Calle de Cascajares; ubicación del Escenario Cascajares)",
+      "osmType": "way",
+      "osmId": 33821228,
+      "query": "Calle Cascajares, Valladolid, España",
+      "accuracy": 1
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 896,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Hard Tech (Evento de música electrónica)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/f8d8978194c42b8a279d15a91551f99fdce36092_2_747x1024.jpeg",
+    "location": "Escenario Principal - Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "El evento Hard Tech se llevará a cabo el próximo lunes 7 de septiembre en el Escenario Principal de la Playa de las Moreras, en Valladolid. Esta propuesta musical promete una experiencia vibrante al aire libre para los amantes de los ritmos intensos.",
+    "summary": "El evento Hard Tech se llevará a cabo el próximo lunes 7 de septiembre en el Escenario Principal de la Playa de las Moreras, en Valladolid. Esta propuesta musical promete una experiencia vibrante al aire libre para los amantes de los ritmos intensos.",
+    "performances": [],
+    "organizers": [
+      "Ayuntamiento de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6573001,
+      "lng": -4.7332525,
+      "source": "OpenStreetMap Nominatim (Playa de las Moreras; ubicación del escenario principal)",
+      "osmType": "way",
+      "osmId": 61755548,
+      "query": "Playa de las Moreras, Valladolid, España",
+      "accuracy": 1
     },
     "type": "Música",
     "ticket": {
