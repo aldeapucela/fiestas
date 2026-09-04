@@ -28165,5 +28165,44 @@
     "tags": [
       "Deporte"
     ]
+  },
+  {
+    "id": 915,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:30",
+    "endTime": "21:30",
+    "title": "X edición del Pucelarock (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c34e79624471f82124ba34d275fc0f5d2bd8173c_2_592x1024.jpeg",
+    "location": "Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "La décima edición del festival Pucelarock llega a la Playa de las Moreras el próximo 4 de septiembre de 2026. Este evento musical se celebra a partir de las 20:30 horas, ofreciendo una noche de música en directo en un entorno privilegiado.",
+    "summary": "La décima edición del festival Pucelarock llega a la Playa de las Moreras el próximo 4 de septiembre de 2026. Este evento musical se celebra a partir de las 20:30 horas, ofreciendo una noche de música en directo en un entorno privilegiado.",
+    "performances": [],
+    "organizers": [
+      "Calaveras y Diablitos Rock Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6573001,
+      "lng": -4.7332525,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 61755548,
+      "query": "Playa de las Moreras, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-04T21:03:43.335Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
   }
 ]

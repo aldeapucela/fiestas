@@ -3033,6 +3033,15 @@
         }
       }
     },
+    "2494": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "915",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
     "2495": {
       "occurrences": {
         "single": {
