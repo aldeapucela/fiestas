@@ -1245,47 +1245,29 @@
       "details": {
         "menuSections": [
           {
-            "title": "La especialidad",
+            "title": "Pinchos — 4€ con consumición",
             "votable": true,
             "items": [
+              { "id": "pincho-brioche-carrillera", "name": "Brioche de carrillera" },
+              { "id": "otro-serranito", "name": "Serranito ibérico" },
+              { "id": "otro-torreznos-soria-piparra", "name": "Montadito de torreznos" },
               {
-                "id": "pincho-brioche-carrillera",
-                "name": "Brioche de carrillera"
-              }
+                "id": "otro-patatas-chorizo",
+                "name": "Patatas con chorizo"
+              },
+              { "id": "otro-criollo-chimichurri", "name": "Chorizo criollo con chimichurri" },
+              { "id": "otro-secreto-iberico", "name": "Secretito ibérico" },
+              { "id": "otro-provolone-tomate", "name": "Provolone con tomate" },
+              { "id": "pincho-gilda-clasica", "name": "Gilda clásica", "price": "2,5€/unidad" }
             ]
           },
           {
-            "title": "Otras",
+            "title": "Raciones — 8€",
             "votable": false,
             "items": [
-              {
-                "id": "otro-patatas-chorizo",
-                "name": "Patatas con chorizo",
-                "description": "con salsa de pimientos y ajo"
-              },
-              {
-                "id": "otro-secreto-iberico",
-                "name": "Secreto ibérico",
-                "description": "con queso Edam y salsa Mayaki"
-              },
-              {
-                "id": "otro-criollo-chimichurri",
-                "name": "Criollo chimichurri"
-              },
-              {
-                "id": "otro-torreznos-soria-piparra",
-                "name": "Torreznos de Soria y piparra",
-                "description": "con salsa de piquillos y ajo"
-              },
-              {
-                "id": "otro-serranito",
-                "name": "Serranito",
-                "description": "lomo olla, jamón serrano, pimientos y tomate"
-              },
-              {
-                "id": "otro-provolone-tomate",
-                "name": "Provolone con tomate"
-              }
+              { "id": "racion-patatas-doble-chorizo", "name": "Patatas doble chorizo con salsa de piquillos y ajo" },
+              { "id": "racion-patatas-torreznos-gildas", "name": "Patatas con torreznos y gildas" },
+              { "id": "racion-morcilla-matachana", "name": "Morcilla de Matachana" }
             ]
           }
         ]
