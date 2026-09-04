@@ -1840,6 +1840,91 @@
         "query": "Calle de las Cadenas de San Gregorio, Valladolid, España",
         "accuracy": 1,
         "geocodedAt": "2026-08-29T20:59:38.000Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos 5.50€ + bebida",
+            "votable": true,
+            "items": []
+          },
+          {
+            "title": "Raciones 8.00€ 9.00€",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-tartaleta",
+                "name": "Tartaleta",
+                "description": "DE AGUACATE Y MAYONESA DE SRIRACHA"
+              },
+              {
+                "id": "racion-tosta-tomate-cruditos",
+                "name": "Tosta de tomate",
+                "description": "Y CRUDITOS DE VERDURAS"
+              },
+              {
+                "id": "racion-tosta-muhammara-caballa",
+                "name": "Tosta de muhammara",
+                "description": "Y FILETES DE CABALLA"
+              },
+              {
+                "id": "racion-tosta-jamon",
+                "name": "Tosta de jamón",
+                "description": "TOMATE, PIMIENTOS ASADOS Y ACEITE DE ALBAHACA"
+              },
+              {
+                "id": "racion-tosta-queso-cabra",
+                "name": "Tosta de queso de cabra",
+                "description": "CEBOLLA CARAMELIZADA, PASAS Y SALSA PEDRO XIMENEZ"
+              },
+              {
+                "id": "racion-taco-cochinilla-pibil",
+                "name": "Taco de cochinilla pibil",
+                "description": "Y CEBOLLA MARINADA"
+              },
+              {
+                "id": "racion-brochetas-kefta",
+                "name": "Brochetas de kefta",
+                "description": "CUSCÚS Y SALSA DE TOMATE AL CURRY"
+              },
+              {
+                "id": "racion-hamburguesa-arroz",
+                "name": "Hamburguesa de arroz",
+                "description": "CON SALSA DE MANGO"
+              },
+              {
+                "id": "racion-chorizo-criollo",
+                "name": "Chorizo criollo",
+                "description": "CON CHIMICHURRI"
+              },
+              {
+                "id": "racion-poke-tofu",
+                "name": "Poke de tofu",
+                "description": "VERDURAS Y SALSA TERIYAKI"
+              },
+              {
+                "id": "racion-tajine-verduras",
+                "name": "Tajine de verduras",
+                "description": "AL RAS EL HANOUT"
+              },
+              {
+                "id": "racion-pollo-teriyaki",
+                "name": "Pollo teriyaki",
+                "description": "CON VERDURAS"
+              },
+              {
+                "id": "racion-solomillo",
+                "name": "Solomillo",
+                "description": "CON ARROZ Y MAYONESA DE KIMCHI"
+              },
+              {
+                "id": "racion-currywurst",
+                "name": "Currywurst",
+                "description": "CON PATATAS CHIPS"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -4180,7 +4265,178 @@
       "location": "Plaza de la Universidad",
       "placement": "En la plaza",
       "addressQuery": "Plaza de la Universidad, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "A elegir entre: 4€ Pincho + bebida a elegir",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-bravas-ibericas",
+                "name": "Bravas ibéricas",
+                "description": "(1/7/7/12)"
+              },
+              {
+                "id": "pincho-brioche-pulled-pork",
+                "name": "Brioche de pulled pork",
+                "description": "(1/3/6/7/8/9/10)"
+              },
+              {
+                "id": "pincho-brioche-hijas",
+                "name": "Brioche Hijas",
+                "description": "con mayo de piparra (1/7/7/12)"
+              },
+              {
+                "id": "pincho-duo-croquetas",
+                "name": "Duo de croquetas",
+                "description": "(Jamón ibérico / chuletón) (1/3/7/12)"
+              }
+            ]
+          },
+          {
+            "title": "Bebida a elegir:",
+            "votable": false,
+            "items": [
+              {
+                "id": "bebida-cana",
+                "name": "Caña"
+              },
+              {
+                "id": "bebida-vino",
+                "name": "Vino"
+              },
+              {
+                "id": "bebida-lorenco",
+                "name": "Lorenco"
+              },
+              {
+                "id": "bebida-mosto",
+                "name": "Mosto"
+              },
+              {
+                "id": "bebida-agua",
+                "name": "Agua"
+              },
+              {
+                "id": "bebida-refresco",
+                "name": "Refresco",
+                "price": "+0,50€"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-cachopin",
+                "name": "Cachopín",
+                "description": "(1/3/7)",
+                "price": "5€"
+              },
+              {
+                "id": "racion-bravas",
+                "name": "Bravas",
+                "description": "(1/7/12)",
+                "price": "6€"
+              },
+              {
+                "id": "racion-oreja",
+                "name": "Oreja",
+                "description": "(7/12)",
+                "price": "6€"
+              },
+              {
+                "id": "racion-torrezno",
+                "name": "Torrezno",
+                "description": "(12)",
+                "price": "7€"
+              },
+              {
+                "id": "racion-croquetas-jamon",
+                "name": "Croquetas jamón",
+                "description": "(1/3/7)",
+                "price": "10€"
+              },
+              {
+                "id": "racion-croquetas-txuleton",
+                "name": "Croquetas txuletón",
+                "description": "(1/3/7/12)",
+                "price": "10€"
+              },
+              {
+                "id": "racion-montadito-serranito",
+                "name": "Montadito serranito",
+                "description": "(1/3/6/7/10/11/12)",
+                "price": "4,5€"
+              },
+              {
+                "id": "racion-hot-dog-iberico",
+                "name": "Hot dog ibérico",
+                "description": "(1/3/7/10/12)",
+                "price": "8€"
+              },
+              {
+                "id": "racion-burger-buey",
+                "name": "Burger buey",
+                "description": "(1/7/12)",
+                "price": "15€"
+              },
+              {
+                "id": "racion-media-jamon-cebo-campo",
+                "name": "1/2 ración jamón cebo campo",
+                "price": "16€"
+              },
+              {
+                "id": "racion-queso",
+                "name": "Ración queso",
+                "description": "(1/7/8)",
+                "price": "11€"
+              }
+            ]
+          },
+          {
+            "title": "Pinchos",
+            "votable": false,
+            "items": [
+              {
+                "id": "pincho-oferta-bebida",
+                "name": "Pincho + bebida",
+                "price": "4€"
+              },
+              {
+                "id": "pincho-oferta-refresco",
+                "name": "Pincho + refresco",
+                "price": "4,5€"
+              },
+              {
+                "id": "pincho-oferta-sin-bebida",
+                "name": "Pincho sin bebida",
+                "price": "3€"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso-galleta-lotus",
+                "name": "Tarta de queso con galleta Lotus",
+                "description": "(1/3/6/7)",
+                "price": "5€"
+              },
+              {
+                "id": "postre-brownie-chocolate",
+                "name": "Brownie de chocolate",
+                "description": "(1/3/5/6/7/8)",
+                "price": "5€"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z5-27",
