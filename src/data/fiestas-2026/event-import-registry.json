@@ -2978,6 +2978,11 @@
           "status": "linked",
           "localEventId": "890",
           "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "897",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
         }
       }
     },
