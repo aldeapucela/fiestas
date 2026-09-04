@@ -5367,7 +5367,67 @@
       "location": "Plaza Santa Cruz",
       "placement": "En la plaza",
       "addressQuery": "Plaza de Santa Cruz, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria — 4€ con bebida",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-poke-atun",
+                "name": "Poke atún"
+              },
+              {
+                "id": "pincho-poke-pollo",
+                "name": "Poke pollo"
+              },
+              {
+                "id": "pincho-fajita",
+                "name": "Fajita"
+              },
+              {
+                "id": "pincho-pechuguito",
+                "name": "Pechuguito"
+              },
+              {
+                "id": "pincho-morcillito",
+                "name": "Morcillito"
+              },
+              {
+                "id": "pincho-secreto-ajillo",
+                "name": "Secreto al ajillo"
+              },
+              {
+                "id": "pincho-lomo-roquefort",
+                "name": "Lomo roquefort"
+              },
+              {
+                "id": "pincho-perrito-espanol",
+                "name": "Perrito español"
+              }
+            ]
+          },
+          {
+            "title": "Tartas — 5€",
+            "votable": true,
+            "items": [
+              {
+                "id": "tarta-oreo",
+                "name": "De Oreo"
+              },
+              {
+                "id": "tarta-lotus",
+                "name": "De Lotus"
+              },
+              {
+                "id": "tarta-queso",
+                "name": "De queso"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "zf-01",
