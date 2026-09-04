@@ -317,6 +317,12 @@
         Descripción
       </h2>
       <p>{{ event.description or event.summary or 'No hay descripción ampliada para esta actividad.' }}</p>
+      {% if event.accessibility %}
+      <p class="fiestas-detail-accessibility-note">
+        <i class="fa-solid fa-headphones" aria-hidden="true"></i>
+        <span>{{ event.accessibility.note }}</span>
+      </p>
+      {% endif %}
     </section>
 
     <section class="fiestas-detail-card fiestas-detail-actions" aria-label="Acciones de actividad">

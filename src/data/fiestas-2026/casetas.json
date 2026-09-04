@@ -1883,12 +1883,7 @@
       "details": {
         "menuSections": [
           {
-            "title": "Pinchos 5.50€ + bebida",
-            "votable": true,
-            "items": []
-          },
-          {
-            "title": "Raciones 8.00€ 9.00€",
+            "title": "Pinchos 3.50€ + bebida",
             "votable": true,
             "items": [
               {
@@ -1935,31 +1930,42 @@
                 "id": "racion-chorizo-criollo",
                 "name": "Chorizo criollo",
                 "description": "CON CHIMICHURRI"
-              },
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
               {
                 "id": "racion-poke-tofu",
                 "name": "Poke de tofu",
-                "description": "VERDURAS Y SALSA TERIYAKI"
+                "description": "VERDURAS Y SALSA TERIYAKI",
+                "price": "8€"
               },
               {
                 "id": "racion-tajine-verduras",
                 "name": "Tajine de verduras",
-                "description": "AL RAS EL HANOUT"
+                "description": "AL RAS EL HANOUT",
+                "price": "8€"
               },
               {
                 "id": "racion-pollo-teriyaki",
                 "name": "Pollo teriyaki",
-                "description": "CON VERDURAS"
+                "description": "CON VERDURAS",
+                "price": "9€"
               },
               {
                 "id": "racion-solomillo",
                 "name": "Solomillo",
-                "description": "CON ARROZ Y MAYONESA DE KIMCHI"
+                "description": "CON ARROZ Y MAYONESA DE KIMCHI",
+                "price": "9€"
               },
               {
                 "id": "racion-currywurst",
                 "name": "Currywurst",
-                "description": "CON PATATAS CHIPS"
+                "description": "CON PATATAS CHIPS",
+                "price": "9€"
               }
             ]
           }

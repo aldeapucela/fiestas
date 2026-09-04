@@ -439,6 +439,10 @@
     "zone": "Plaza Mayor",
     "description": "Pregón de la feria y fiestas de la Virgen de San Lorenzo 2026 a cargo de Siloé. Acompañan dulzaineros del Valle. Chupinazo",
     "summary": "Pregón de la feria y fiestas de la Virgen de San Lorenzo 2026 a cargo de Siloé. Acompañan dulzaineros del Valle. Chupinazo",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Con medidas de accesibilidad incluidas en el programa."
+    },
     "performances": [
       "Acompañan dulzaineros del Valle. Chupinazo"
     ],
@@ -951,6 +955,10 @@
     "zone": "Portugalete",
     "description": "Horario: 12:30 a 14:30 y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
     "summary": "Horario: 12:30 a 14:30 y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Parque infantil y talleres accesibles."
+    },
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -2991,6 +2999,10 @@
     "zone": "Portugalete",
     "description": "Horario: 12:30 a 14:30 y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
     "summary": "Horario: 12:30 a 14:30 y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Parque infantil y talleres accesibles."
+    },
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -4528,6 +4540,10 @@
     "zone": "Portugalete",
     "description": "Horario: 12:30 a 14:30 h y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
     "summary": "Horario: 12:30 a 14:30 h y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Parque infantil y talleres accesibles."
+    },
     "performances": [
       "14:30 h y 17:00 a 21:00 h"
     ],
@@ -5977,6 +5993,10 @@
     "zone": "Portugalete",
     "description": "Horario: 12:30 a 14:30 h y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
     "summary": "Horario: 12:30 a 14:30 h y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Parque infantil y talleres accesibles."
+    },
     "performances": [
       "14:30 h y 17:00 a 21:00 h"
     ],
@@ -7293,6 +7313,10 @@
     "zone": "Portugalete",
     "description": "Parque infantil de hinchables y talleres",
     "summary": "Parque infantil de hinchables y talleres",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Parque infantil y talleres accesibles."
+    },
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -7453,6 +7477,10 @@
     "zone": "Moreras",
     "description": "El Tesoro de Roald Dahl. Libera Teatro. Intérprete de Lengua de Signos",
     "summary": "El Tesoro de Roald Dahl. Libera Teatro. Intérprete de Lengua de Signos",
+    "accessibility": {
+      "label": "LSE",
+      "note": "Con intérprete de Lengua de Signos Española (LSE)."
+    },
     "performances": [],
     "organizers": [
       "Aquavall"
@@ -8596,6 +8624,10 @@
     "zone": "Portugalete",
     "description": "Parque infantil de hinchables y talleres",
     "summary": "Parque infantil de hinchables y talleres",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Parque infantil y talleres accesibles."
+    },
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -8828,6 +8860,10 @@
     "zone": "Moreras",
     "description": "Colorado y más Coloreado. Yamparampán. Concierto Inclusivo",
     "summary": "Colorado y más Coloreado. Yamparampán. Concierto Inclusivo",
+    "accessibility": {
+      "label": "Inclusivo",
+      "note": "Concierto inclusivo."
+    },
     "performances": [],
     "organizers": [
       "Aquavall"
@@ -9922,6 +9958,10 @@
     "zone": "Portugalete",
     "description": "Parque infantil de hinchables y talleres",
     "summary": "Parque infantil de hinchables y talleres",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Parque infantil y talleres accesibles."
+    },
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -10968,6 +11008,10 @@
     "zone": "Plaza Mayor",
     "description": "Bravo Maldonado",
     "summary": "Bravo Maldonado",
+    "accessibility": {
+      "label": "Recursos auditivos",
+      "note": "Mochilas vibratorias y bucle magnético. Reserva hasta el día anterior."
+    },
     "performances": [
       "Bravo Maldonado"
     ],
@@ -11073,6 +11117,10 @@
     "zone": "Plaza Mayor",
     "description": "Carolina Durante Información ampliada: Carolina Durante llega a las fiestas de Valladolid para ofrecer un concierto en directo el próximo 11 de septiembre de 2026. La cita tendrá lugar en la Plaza Mayor de la ciudad a partir de las 23:00 horas\n\nInformación ampliada: Carolina Durante llega a las Fiestas de Valladolid para ofrecer un concierto en directo el próximo 11 de septiembre de 2026. La cita tendrá lugar en la Plaza Mayor de la ciudad a partir de las 23:00 horas.",
     "summary": "Carolina Durante llega a las fiestas de Valladolid para ofrecer un concierto en directo el próximo 11 de septiembre de 2026. La cita tendrá lugar en la Plaza Mayor de la ciudad a partir de las 23:00 horas",
+    "accessibility": {
+      "label": "Recursos auditivos",
+      "note": "Mochilas vibratorias y bucle magnético. Reserva hasta el día anterior."
+    },
     "performances": [
       "Carolina Durante"
     ],
@@ -11275,6 +11323,10 @@
     "zone": "Portugalete",
     "description": "Horario: 12:30 a 14:30 y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
     "summary": "Horario: 12:30 a 14:30 y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Parque infantil y talleres accesibles."
+    },
     "performances": [],
     "organizers": [],
     "collaborators": [],
@@ -12469,6 +12521,10 @@
     "zone": "Plaza Mayor",
     "description": "Ana Guerra Información ampliada: las fiestas de Valladolid presentan una noche musical de primer nivel el próximo 12 de septiembre de 2026. El evento tendrá lugar en la emblemática Plaza Mayor, ofreciendo un espectáculo al aire libre para todos los asistentes\n\nInformación ampliada: Las Fiestas de Valladolid presentan una noche musical de primer nivel el próximo 12 de septiembre de 2026. El evento tendrá lugar en la emblemática Plaza Mayor, ofreciendo un espectáculo al aire libre para todos los asistentes.",
     "summary": "Las fiestas de Valladolid presentan una noche musical de primer nivel el próximo 12 de septiembre de 2026. El evento tendrá lugar en la emblemática Plaza Mayor, ofreciendo un espectáculo al aire libre para todos los asistentes",
+    "accessibility": {
+      "label": "Recursos auditivos",
+      "note": "Mochilas vibratorias y bucle magnético. Reserva hasta el día anterior."
+    },
     "performances": [
       "Ana Guerra"
     ],
@@ -12781,6 +12837,10 @@
     "zone": "Plaza Mayor",
     "description": "Leire Martínez Información ampliada: las fiestas de Valladolid presentan una noche musical de primer nivel el próximo 12 de septiembre de 2026. El evento tendrá lugar en la emblemática Plaza Mayor, ofreciendo un espectáculo al aire libre para todos los asistentes\n\nInformación ampliada: Las Fiestas de Valladolid presentan una noche musical de primer nivel el próximo 12 de septiembre de 2026. El evento tendrá lugar en la emblemática Plaza Mayor, ofreciendo un espectáculo al aire libre para todos los asistentes.",
     "summary": "Las fiestas de Valladolid presentan una noche musical de primer nivel el próximo 12 de septiembre de 2026. El evento tendrá lugar en la emblemática Plaza Mayor, ofreciendo un espectáculo al aire libre para todos los asistentes",
+    "accessibility": {
+      "label": "Recursos auditivos",
+      "note": "Mochilas vibratorias y bucle magnético. Reserva hasta el día anterior."
+    },
     "performances": [
       "Leire Martínez"
     ],
@@ -13208,6 +13268,10 @@
     "zone": "Portugalete",
     "description": "Horario: 12:30 a 14:30 y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
     "summary": "Horario: 12:30 a 14:30 y 17:00 a 21:00 h. Parque infantil de hinchables y talleres",
+    "accessibility": {
+      "label": "Accesible",
+      "note": "Parque infantil y talleres accesibles."
+    },
     "performances": [],
     "organizers": [],
     "collaborators": [],

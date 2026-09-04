@@ -44,6 +44,7 @@ const LEAFLET_SCRIPT_INTEGRITY = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvT
 const valladolidCenter = [41.6523, -4.7245];
 const userLocationZoom = 14;
 const nearbyRadiusMeters = 2000;
+const UNKNOWN_END_GRACE_MINUTES = 2 * 60;
 const DETAIL_TRANSIT_LOCATION_CACHE_KEY = 'fiestasPucela:detail-transit-location';
 const DETAIL_TRANSIT_LOCATION_CACHE_TTL = 15 * 60 * 1000;
 const DETAIL_TRANSIT_LOCATION_WAIT = 2000;
@@ -85,6 +86,7 @@ const state = {
   types: [],
   areas: [],
   selectedDate: null,
+  showFinishedActivities: false,
   selectedTypes: new Set(),
   selectedAreas: new Set(),
   selectedTicketKinds: new Set(),
@@ -517,7 +519,9 @@ function bindControls() {
   els.dateStrip?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-date]');
     if (!button) return;
-    state.selectedDate = button.dataset.date || 'all';
+    const nextDate = button.dataset.date || 'all';
+    if (nextDate !== state.selectedDate) state.showFinishedActivities = false;
+    state.selectedDate = nextDate;
     if (state.view === 'map') setMapDateOpen(false);
     trackDateSelected(state.selectedDate, state.view);
     state.focusedClusterEventIds = null;
@@ -733,6 +737,16 @@ function updatePopularModeDom() {
 
 function bindEventCardInteractions(container) {
   container?.addEventListener('click', (event) => {
+    const finishedToggle = event.target.closest('[data-fiestas-finished-toggle]');
+    if (finishedToggle) {
+      event.preventDefault();
+      const list = document.getElementById(finishedToggle.getAttribute('aria-controls'));
+      const expanded = finishedToggle.getAttribute('aria-expanded') !== 'true';
+      finishedToggle.setAttribute('aria-expanded', String(expanded));
+      list?.toggleAttribute('hidden', !expanded);
+      state.showFinishedActivities = expanded;
+      return;
+    }
     const communityCta = event.target.closest('[data-fiestas-community-cta]');
     if (communityCta && communityCta.dataset.ctaMode !== 'community') {
       event.preventDefault();
@@ -1022,6 +1036,7 @@ function renderAgenda(events) {
 
   const groups = state.selectedDate === 'all' ? groupByDay(events) : [[state.selectedDate, events]];
   let renderedEventCount = 0;
+  const now = new Date();
   groups.forEach(([date, dayEvents]) => {
     const section = document.createElement('section');
     section.className = 'fiestas-day';
@@ -1037,16 +1052,76 @@ function renderAgenda(events) {
     `;
     section.append(header);
 
+    const finishedEvents = state.selectedDate !== 'all'
+      && date === localDateKey(now)
+      ? dayEvents.filter((event) => isFinishedAgendaEvent(event, now))
+      : [];
+    const finishedIds = new Set(finishedEvents.map((event) => event.id));
     const list = document.createElement('div');
     list.className = 'fiestas-event-list';
     dayEvents.forEach((event) => {
+      if (finishedIds.has(event.id)) return;
       list.append(eventCard(event));
       renderedEventCount += 1;
       if (renderedEventCount === COMMUNITY_PLANS_INSERT_AFTER) list.append(communityPlansCard());
     });
-    section.append(list);
+    if (finishedEvents.length) section.append(finishedActivitiesDisclosure(date, finishedEvents));
+    if (list.childElementCount) section.append(list);
     els.agenda.append(section);
   });
+}
+
+function localEventDateTime(date, time) {
+  const dateMatch = /^(\d{4})-(\d{2})-(\d{2})$/.exec(String(date || ''));
+  const timeMatch = /^(\d{1,2}):(\d{2})$/.exec(String(time || ''));
+  if (!dateMatch || !timeMatch) return null;
+  const value = new Date(
+    Number(dateMatch[1]),
+    Number(dateMatch[2]) - 1,
+    Number(dateMatch[3]),
+    Number(timeMatch[1]),
+    Number(timeMatch[2])
+  );
+  return Number.isNaN(value.getTime()) ? null : value;
+}
+
+function isFinishedAgendaEvent(event, now) {
+  const start = localEventDateTime(event.date, event.startTime);
+  if (!start || start > now) return false;
+
+  let end = event.endTime ? localEventDateTime(event.date, event.endTime) : null;
+  if (end && end <= start) end = new Date(end.getTime() + 24 * 60 * 60 * 1000);
+  if (!end) end = new Date(start.getTime() + UNKNOWN_END_GRACE_MINUTES * 60 * 1000);
+  return end <= now;
+}
+
+function finishedActivitiesDisclosure(date, events) {
+  const listId = `fiestas-finished-${date}`;
+  const disclosure = document.createElement('div');
+  disclosure.className = 'fiestas-finished-activities';
+
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'fiestas-finished-toggle';
+  toggle.dataset.fiestasFinishedToggle = 'true';
+  toggle.setAttribute('aria-controls', listId);
+  const expanded = state.showFinishedActivities;
+  toggle.setAttribute('aria-expanded', String(expanded));
+  toggle.innerHTML = `
+    <span>Actividades finalizadas</span>
+    <span class="fiestas-finished-count">${events.length}</span>
+    <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+  `;
+
+  const list = document.createElement('div');
+  list.id = listId;
+  list.className = 'fiestas-event-list fiestas-finished-list';
+  list.dataset.fiestasFinishedList = 'true';
+  list.hidden = !expanded;
+  events.forEach((event) => list.append(eventCard(event)));
+
+  disclosure.append(toggle, list);
+  return disclosure;
 }
 
 function communityPlansCard() {
@@ -1128,13 +1203,19 @@ function eventCard(event, options = {}) {
   const rankingMarkup = options.rankingMetric === 'visits' && options.rankingCount > 0
     ? `<span class="fiestas-event-ranking-count"><i class="fa-solid fa-eye" aria-hidden="true"></i>${escapeHtml(String(options.rankingCount))} visitas</span>`
     : '';
+  const accessibilityMarkup = event.accessibility
+    ? `<span class="fiestas-event-accessibility" role="img" aria-label="${escapeHtml(`${event.accessibility.label}: ${event.accessibility.note}`)}" title="${escapeHtml(event.accessibility.note)}"><i class="fa-solid fa-headphones" aria-hidden="true"></i></span>`
+    : '';
   link.href = event.urlPath;
   link.innerHTML = `
     <span class="fiestas-event-time">${timeMarkup(event)}</span>
     <span class="fiestas-event-art ${typeClass}${event.image ? ' has-image' : ''}" aria-hidden="true">${artMarkup}</span>
     <span class="fiestas-event-copy">
       ${dateMarkup}
-      <span class="fiestas-event-title">${escapeHtml(event.title || 'Actividad sin título')}</span>
+      <span class="fiestas-event-title">
+        <span class="fiestas-event-title-text">${escapeHtml(event.title || 'Actividad sin título')}</span>
+        ${accessibilityMarkup}
+      </span>
       <span class="fiestas-event-place"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span class="fiestas-event-place-text">${escapeHtml(place)}</span></span>
       ${rankingMarkup}
     </span>
@@ -2081,6 +2162,7 @@ function emptyState(message, canClear = false) {
 function applyInitialUrlState() {
   isApplyingUrlState = true;
   const params = new URLSearchParams(window.location.search);
+  const previousDate = state.selectedDate;
   const view = params.get('view');
   const eventId = params.get('event');
   state.view = isMapPath() || view === 'map' ? 'map' : 'agenda';
@@ -2103,6 +2185,7 @@ function applyInitialUrlState() {
       }
     }
   }
+  if (state.selectedDate !== previousDate) state.showFinishedActivities = false;
   setMenuOpen('type', false);
   setMenuOpen('area', false);
   setMenuOpen('ticket', false);

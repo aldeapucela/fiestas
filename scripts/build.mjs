@@ -649,6 +649,7 @@ async function loadEvents(vallabusStops = []) {
     tags: normalizeTags(event.tags, event.type),
     description: String(event.description || ''),
     summary: String(event.summary || ''),
+    accessibility: normalizeEventAccessibility(event.accessibility),
     performances: Array.isArray(event.performances) ? event.performances.map(String) : [],
     organizers: Array.isArray(event.organizers) ? event.organizers.map(String) : [],
     collaborators: Array.isArray(event.collaborators) ? event.collaborators.map(String) : [],
@@ -681,6 +682,13 @@ async function loadEvents(vallabusStops = []) {
         directionsUrl: event.coordinates ? 'https://www.google.com/maps/dir/?api=1&destination=' + encodeURIComponent(event.coordinates.lat + ',' + event.coordinates.lng) : ''
       };
     });
+}
+
+function normalizeEventAccessibility(value) {
+  if (!value || typeof value !== 'object') return null;
+  const label = String(value.label || '').trim();
+  const note = String(value.note || '').trim();
+  return label && note ? { label, note } : null;
 }
 
 function normalizeEventImages(event) {

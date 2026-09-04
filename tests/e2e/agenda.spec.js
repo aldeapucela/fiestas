@@ -1,6 +1,7 @@
 import { test, expect } from './fixtures.js';
 
 const cards = '[data-fiestas-card]';
+const visibleCards = `${cards}:visible`;
 
 // Los asserts van sobre invariantes ("filtrar reduce el número de tarjetas"),
 // nunca sobre títulos concretos, para que cambiar el programa no rompa la suite.
@@ -12,11 +13,13 @@ async function openSearchPanel(page) {
 }
 
 test.describe('agenda', () => {
+  test.use({ timezoneId: 'Europe/Madrid' });
+
   // Flujo 1
   test('renderiza tarjetas y el selector de fechas filtra el listado', async ({ page }) => {
     await page.goto('/?date=all');
 
-    await expect(page.locator(cards).first()).toBeVisible();
+    await expect(page.locator(visibleCards).first()).toBeVisible();
     const total = await page.locator(cards).count();
     expect(total).toBeGreaterThan(0);
 
@@ -63,15 +66,61 @@ test.describe('agenda', () => {
     await expect(dates.nth(9)).toHaveClass(/is-active/);
   });
 
+  test('señala las medidas de accesibilidad sin ocultarlas en la tarjeta', async ({ page }) => {
+    await page.goto('/?date=2026-09-09&q=tesoro');
+
+    const card = page.locator('[data-fiestas-card]:visible').first();
+    await expect(card).toBeVisible();
+    const accessibilityIcon = card.locator('.fiestas-event-title .fiestas-event-accessibility');
+    await expect(accessibilityIcon).toBeVisible();
+    await expect(accessibilityIcon).toHaveAttribute('aria-label', /LSE/);
+    await expect(accessibilityIcon.locator('i')).toHaveClass(/fa-headphones/);
+  });
+
+  test('pliega las actividades finalizadas sin forzar el scroll', async ({ page }) => {
+    const fixedNow = new Date('2026-09-04T16:31:00+02:00').getTime();
+    await page.addInitScript((timestamp) => {
+      const NativeDate = Date;
+      class FixedDate extends NativeDate {
+        constructor(...args) {
+          super(...(args.length ? args : [timestamp]));
+        }
+
+        static now() {
+          return timestamp;
+        }
+      }
+      FixedDate.parse = NativeDate.parse;
+      FixedDate.UTC = NativeDate.UTC;
+      window.Date = FixedDate;
+    }, fixedNow);
+    await page.goto('/?date=2026-09-04');
+
+    const toggle = page.locator('[data-fiestas-finished-toggle]');
+    const finishedList = page.locator('[data-fiestas-finished-list]');
+    await expect(toggle).toBeVisible();
+    await expect(toggle).toContainText('Actividades finalizadas');
+    await expect(finishedList).toBeHidden();
+
+    const scrollBefore = await page.evaluate(() => window.scrollY);
+    await toggle.click();
+    await expect(finishedList).toBeVisible();
+    await expect(toggle).toHaveAttribute('aria-expanded', 'true');
+    await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(scrollBefore);
+
+    await toggle.click();
+    await expect(finishedList).toBeHidden();
+  });
+
   // Flujo 2
   test('la búsqueda filtra y se puede limpiar', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator(cards).first()).toBeVisible();
+    await expect(page.locator(visibleCards).first()).toBeVisible();
     const total = await page.locator(cards).count();
 
     await openSearchPanel(page);
     // Término tomado del propio contenido: no depende de un evento concreto.
-    const title = await page.locator('.fiestas-event-title').first().textContent();
+    const title = await page.locator('.fiestas-event-title:visible').first().textContent();
     const term = title.trim().split(/\s+/).find((word) => word.length > 4) || title.trim();
 
     await page.locator('[data-fiestas-search]').fill(term);
@@ -85,7 +134,7 @@ test.describe('agenda', () => {
   // Flujo 3
   test('los filtros por tipo reducen el listado y se reflejan en la UI', async ({ page }) => {
     await page.goto('/');
-    await expect(page.locator(cards).first()).toBeVisible();
+    await expect(page.locator(visibleCards).first()).toBeVisible();
     const total = await page.locator(cards).count();
 
     await openSearchPanel(page);

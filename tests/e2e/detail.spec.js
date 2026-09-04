@@ -4,7 +4,7 @@ import { test, expect, loadClientEvents } from './fixtures.js';
 // la página ya tiene cargado: no depende de ningún evento concreto.
 async function detailPathWithCoordinates(page) {
   await page.goto('/');
-  await expect(page.locator('[data-fiestas-card]').first()).toBeVisible();
+  await expect(page.locator('[data-fiestas-card]:visible').first()).toBeVisible();
   const events = await loadClientEvents(page);
   const urlPath = (events.find((event) => event.coordinates) || {}).urlPath || '';
   expect(urlPath, 'debe existir al menos un evento con coordenadas').toBeTruthy();
@@ -26,4 +26,13 @@ test('la ficha de evento muestra título, hora, lugar y acceso al mapa', async (
 
   // Con coordenadas tiene que ofrecer el mapa.
   await expect(page.locator('[data-fiestas-detail-map]')).toBeVisible();
+});
+
+test('la ficha muestra una nota breve de accesibilidad cuando aplica', async ({ page }) => {
+  await page.goto('/e/216/el-tesoro-de-roald-dahl/');
+
+  const note = page.locator('.fiestas-detail-accessibility-note');
+  await expect(note).toBeVisible();
+  await expect(note).toContainText('LSE');
+  await expect(note).toContainText('Lengua de Signos Española');
 });
