@@ -579,6 +579,45 @@
         "query": "Plaza San Benito, Valladolid, España",
         "accuracy": 0.8,
         "geocodedAt": "2026-08-26"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho feria 4,00 €",
+            "votable": true,
+            "items": [
+              { "id": "pincho-patatas-camorra", "name": "Patatas Camorra" },
+              { "id": "pincho-patatas-trufadas", "name": "Patatas trufadas" },
+              { "id": "pincho-patatas-lux", "name": "Patatas Lux" },
+              { "id": "pincho-patatas-chicken-bbq", "name": "Patatas Chicken BBQ" },
+              { "id": "pincho-patatas-castellanas", "name": "Patatas castellanas" },
+              { "id": "pincho-pasta-pesto-genoves", "name": "Pasta pesto genovés" },
+              { "id": "pincho-pasta-ragu", "name": "Pasta ragú" },
+              { "id": "pincho-pasta-pomodoro", "name": "Pasta pomodoro" }
+            ]
+          },
+          {
+            "title": "Postres 6,90 €",
+            "votable": true,
+            "items": [
+              { "id": "postre-tarta-queso-chocolate-blanco", "name": "Tarta de queso con chocolate blanco" },
+              { "id": "postre-tarta-queso-pantera-rosa", "name": "Tarta de queso Pantera Rosa" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-agua", "name": "Agua", "price": "1,50 €" },
+              { "id": "bebida-mosto", "name": "Mosto", "price": "1,50 €" },
+              { "id": "bebida-refrescos", "name": "Refrescos", "price": "2,50 €" },
+              { "id": "bebida-cana-cerveza", "name": "Caña de cerveza", "price": "2,00 €" },
+              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "price": "2,50 €" },
+              { "id": "bebida-vino", "name": "Vino", "price": "2,00 €" },
+              { "id": "bebida-lorencito", "name": "Lorencito", "price": "2,00 €" }
+            ]
+          }
+        ]
       }
     },
     {
