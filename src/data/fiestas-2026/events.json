@@ -14684,7 +14684,7 @@
     "image": "/assets/events/paco-devotion-fiestas-valladolid-tour-2026.jpg",
     "location": "C/ Arribas, 18 (Bizarro)",
     "zone": "Zona Centro",
-    "description": "Actuación de Paco Devotion en la calle Arribas 18, con Bizarro",
+    "description": "Actuación de Paco Devotion en la calle Arribas 18, con Bizarro\n\nInformación ampliada: El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
     "summary": "Paco Devotion en la calle Arribas 18, con Bizarro",
     "performances": [
       "Paco Devotion"
@@ -27472,6 +27472,420 @@
     },
     "tags": [
       "Música"
+    ]
+  },
+  {
+    "id": 898,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "20:30",
+    "endTime": "21:30",
+    "title": "X edición del Pucelarock (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/c/c34e79624471f82124ba34d275fc0f5d2bd8173c_2_592x1024.jpeg",
+    "location": "Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "La décima edición del festival Pucelarock llega a la Playa de las Moreras el próximo 4 de septiembre de 2026. Este evento musical se celebra a partir de las 20:30 horas, ofreciendo una noche de música en directo en un entorno privilegiado.",
+    "summary": "La décima edición del festival Pucelarock llega a la Playa de las Moreras el próximo 4 de septiembre de 2026. Este evento musical se celebra a partir de las 20:30 horas, ofreciendo una noche de música en directo en un entorno privilegiado.",
+    "performances": [],
+    "organizers": [
+      "Calaveras y Diablitos Rock Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6573001,
+      "lng": -4.7332525,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 61755548,
+      "query": "Playa de las Moreras, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-04T10:05:19.501Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 899,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "22:30",
+    "endTime": "23:30",
+    "title": "Rumore con Lady Veneno (Espectáculo)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/2/2e7264715b01e16a547a3b310a1726246bba421c_2_702x1024.jpeg",
+    "location": "Lalupe Bar",
+    "zone": "Zona Centro",
+    "description": "La propuesta musical Rumore llega de la mano de Lady Veneno para ofrecer una noche de entretenimiento y ritmo. El evento tendrá lugar el próximo 4 de septiembre a partir de las 22:30 horas, bajo la organización de Lalupe Entertainment.",
+    "summary": "La propuesta musical Rumore llega de la mano de Lady Veneno para ofrecer una noche de entretenimiento y ritmo. El evento tendrá lugar el próximo 4 de septiembre a partir de las 22:30 horas, bajo la organización de Lalupe Entertainment.",
+    "performances": [],
+    "organizers": [
+      "Lalupe Entertainment"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6539028,
+      "lng": -4.7286085,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 5269964322,
+      "query": "Lalupe Bar, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-04T10:05:19.502Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 900,
+    "date": "2026-09-04",
+    "dateLabel": "Viernes 4 de septiembre",
+    "startTime": "00:00",
+    "endTime": null,
+    "title": "Fiestas Bizarro 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39b052ae1c09c92e4d9354519566d8628650648c_2_748x1024.jpeg",
+    "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "summary": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "performances": [
+      "Lykkelau"
+    ],
+    "organizers": [
+      "Bizarro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)",
+      "query": "Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 901,
+    "date": "2026-09-05",
+    "dateLabel": "Sábado 5 de septiembre",
+    "startTime": "00:00",
+    "endTime": null,
+    "title": "Fiestas Bizarro 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39b052ae1c09c92e4d9354519566d8628650648c_2_748x1024.jpeg",
+    "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "summary": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "performances": [
+      "Papitos"
+    ],
+    "organizers": [
+      "Bizarro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)",
+      "query": "Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 902,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Fiestas Bizarro 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39b052ae1c09c92e4d9354519566d8628650648c_2_748x1024.jpeg",
+    "location": "Bizarro Calle, C. Arribas, 18, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "summary": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "performances": [
+      "OH TRES TRES!",
+      "Error 97",
+      "La Gloria",
+      "Frente Popular del Sonido"
+    ],
+    "organizers": [
+      "Bizarro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)",
+      "query": "Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 903,
+    "date": "2026-09-06",
+    "dateLabel": "Domingo 6 de septiembre",
+    "startTime": "23:00",
+    "endTime": null,
+    "title": "Fiestas Bizarro 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39b052ae1c09c92e4d9354519566d8628650648c_2_748x1024.jpeg",
+    "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "summary": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "performances": [
+      "Funkforward"
+    ],
+    "organizers": [
+      "Bizarro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)",
+      "query": "Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 904,
+    "date": "2026-09-07",
+    "dateLabel": "Lunes 7 de septiembre",
+    "startTime": "00:00",
+    "endTime": null,
+    "title": "Fiestas Bizarro 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39b052ae1c09c92e4d9354519566d8628650648c_2_748x1024.jpeg",
+    "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "summary": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "performances": [
+      "Queen África"
+    ],
+    "organizers": [
+      "Bizarro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)",
+      "query": "Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 905,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "00:00",
+    "endTime": null,
+    "title": "Fiestas Bizarro 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39b052ae1c09c92e4d9354519566d8628650648c_2_748x1024.jpeg",
+    "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "summary": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "performances": [
+      "Mexicola DJ's"
+    ],
+    "organizers": [
+      "Bizarro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)",
+      "query": "Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 906,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "00:00",
+    "endTime": null,
+    "title": "Fiestas Bizarro 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39b052ae1c09c92e4d9354519566d8628650648c_2_748x1024.jpeg",
+    "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "summary": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "performances": [
+      "Inkilino"
+    ],
+    "organizers": [
+      "Bizarro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)",
+      "query": "Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 907,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "00:00",
+    "endTime": null,
+    "title": "Fiestas Bizarro 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39b052ae1c09c92e4d9354519566d8628650648c_2_748x1024.jpeg",
+    "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "summary": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "performances": [
+      "Sideburns & Tarafermo"
+    ],
+    "organizers": [
+      "Bizarro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)",
+      "query": "Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 908,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "00:00",
+    "endTime": null,
+    "title": "Fiestas Bizarro 2026",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/3/39b052ae1c09c92e4d9354519566d8628650648c_2_748x1024.jpeg",
+    "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+    "zone": "Zona Centro",
+    "description": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "summary": "El club Bizarro presenta su programación de fiestas para el año 2026, ofreciendo una variada agenda de eventos musicales en su espacio. La programación incluye diversas fechas a lo largo de los meses, con actuaciones que van desde el viernes 4 de abril hasta el sábado 12 de diciembre.",
+    "performances": [
+      "Papitos"
+    ],
+    "organizers": [
+      "Bizarro"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6520776,
+      "lng": -4.7229442,
+      "source": "Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)",
+      "query": "Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
     ]
   }
 ]

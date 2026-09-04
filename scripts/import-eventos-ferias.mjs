@@ -707,6 +707,12 @@ async function resolveCoordinates(remote, location, currentEvents) {
       osmId: 61755548,
       query: 'Playa de las Moreras, Valladolid, España',
       accuracy: 1
+    },
+    2496: {
+      lat: 41.6520776,
+      lng: -4.7229442,
+      source: 'Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)',
+      query: 'Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España'
     }
   };
   if (known[id]) return known[id];

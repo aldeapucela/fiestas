@@ -1583,5 +1583,94 @@
       }
     ],
     "source": "Cartel remoto de Bloody Mary, descargado e inspeccionado visualmente el 4 de septiembre de 2026: confirma conciertos el domingo 6 (18:00, Plaza Cantarranas), lunes 7 (21:00, Cadenas de San Gregorio), jueves 10 (20:00, Plaza del Salvador), sábado 12 (14:00, Fuente Dorada) y domingo 13 (13:00, Escenario Cascajares). El cartel no publica horas de finalización."
+  },
+  "2496": {
+    "dates": [
+      "2026-09-04",
+      "2026-09-05",
+      "2026-09-06",
+      "2026-09-07",
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-04",
+        "startTime": "00:00",
+        "endTime": null,
+        "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+        "performances": ["Lykkelau"]
+      },
+      {
+        "date": "2026-09-05",
+        "startTime": "00:00",
+        "endTime": null,
+        "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+        "performances": ["Papitos"]
+      },
+      {
+        "date": "2026-09-06",
+        "key": "day-2026-09-06-2000",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Bizarro Calle, C. Arribas, 18, Valladolid",
+        "performances": ["OH TRES TRES!", "Error 97", "La Gloria", "Frente Popular del Sonido"]
+      },
+      {
+        "date": "2026-09-06",
+        "key": "day-2026-09-06-2300",
+        "startTime": "23:00",
+        "endTime": null,
+        "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+        "performances": ["Funkforward"]
+      },
+      {
+        "date": "2026-09-07",
+        "startTime": "00:00",
+        "endTime": null,
+        "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+        "performances": ["Queen África"]
+      },
+      {
+        "date": "2026-09-09",
+        "startTime": "00:00",
+        "endTime": null,
+        "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+        "performances": ["Mexicola DJ's"]
+      },
+      {
+        "date": "2026-09-10",
+        "key": "day-2026-09-10-0000",
+        "startTime": "00:00",
+        "endTime": null,
+        "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+        "performances": ["Inkilino"]
+      },
+      {
+        "date": "2026-09-10",
+        "key": "day-2026-09-10-2000",
+        "startTime": "20:00",
+        "endTime": "23:00",
+        "location": "Bizarro Calle, C. Arribas, 18, Valladolid",
+        "performances": ["Paco Devotion"]
+      },
+      {
+        "date": "2026-09-11",
+        "startTime": "00:00",
+        "endTime": null,
+        "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+        "performances": ["Sideburns & Tarafermo"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "00:00",
+        "endTime": null,
+        "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
+        "performances": ["Papitos"]
+      }
+    ],
+    "source": "Cartel remoto de Bizarro Fiestas 2026, descargado e inspeccionado visualmente el 4 de septiembre de 2026: confirma actividad únicamente los días 4 (Lykkelau), 5 (Papitos), 6 (Bizarro Calle, 20:00–23:00, OH TRES TRES! con Error 97, La Gloria y Frente Popular del Sonido; Funkforward a las 23:00), 7 (Queen África), 9 (Mexicola DJ's), 10 (Bizarro Calle, 20:00–23:00, Paco Devotion; Inkilino a las 00:00), 11 (Sideburns & Tarafermo) y 12 (Papitos); no hay actividad publicada el día 8. Las sesiones de medianoche se asignan a su fecha de inicio. Google Maps confirmó Bizarro Bar Independiente en C. Arribas, 18, Valladolid, como la ubicación del club y de Bizarro Calle."
   }
 }
