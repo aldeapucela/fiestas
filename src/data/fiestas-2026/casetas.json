@@ -2713,6 +2713,120 @@
         "lng": -4.7286111,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Tostas & tapas",
+            "votable": true,
+            "items": [
+              {
+                "id": "tosta-gambas",
+                "name": "Tosta de gambas",
+                "price": "5€"
+              },
+              {
+                "id": "tosta-ventresca",
+                "name": "Tosta de ventresca",
+                "price": "5€"
+              },
+              {
+                "id": "tosta-jamon",
+                "name": "Tosta de jamón",
+                "price": "5€"
+              },
+              {
+                "id": "tosta-mini-burguer",
+                "name": "Mini burguer",
+                "price": "5€"
+              },
+              {
+                "id": "tosta-brioche-carrilera",
+                "name": "Brioche de carrilera",
+                "price": "6€"
+              },
+              {
+                "id": "tosta-serranito-iberico",
+                "name": "Serranito ibérico",
+                "price": "5€"
+              }
+            ]
+          },
+          {
+            "title": "Pintxo de feria + bebida 4€",
+            "votable": true,
+            "items": []
+          },
+          {
+            "title": "Sólo pintxo 2€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-torrejitos-guindilla-tempera",
+                "name": "Torrejitos con guindilla en tempera"
+              },
+              {
+                "id": "pincho-burrito",
+                "name": "Burrito"
+              },
+              {
+                "id": "pincho-croqueta-pidil",
+                "name": "Croqueta Pidil"
+              },
+              {
+                "id": "pincho-pulled-pork",
+                "name": "Pulled pork"
+              },
+              {
+                "id": "pincho-arroz-senorito",
+                "name": "Arroz del señorito"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-gravas",
+                "name": "Gravas",
+                "description": "(10 UDS)",
+                "price": "12€"
+              },
+              {
+                "id": "racion-radas",
+                "name": "Radas",
+                "price": "12€"
+              },
+              {
+                "id": "racion-ensaladilla-pulpo",
+                "name": "Ensaladilla de pulpo",
+                "price": "15€"
+              },
+              {
+                "id": "racion-salpicon-carrilera",
+                "name": "Salpicón de carrilera",
+                "description": "(8 UDS)",
+                "price": "10€"
+              },
+              {
+                "id": "racion-croquetas",
+                "name": "Croquetas",
+                "description": "(8 UDS)",
+                "price": "12€"
+              },
+              {
+                "id": "racion-mini-burguer-salsa-thai",
+                "name": "Mini burguer salsa Thai",
+                "description": "(10 UDS)",
+                "price": "12€"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "(Vino, agua, refresco +0,50 lata)"
+        ]
       }
     },
     {
