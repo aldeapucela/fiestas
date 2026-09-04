@@ -1598,14 +1598,14 @@
     "occurrences": [
       {
         "date": "2026-09-04",
-        "startTime": "00:00",
+        "startTime": "23:59",
         "endTime": null,
         "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
         "performances": ["Lykkelau"]
       },
       {
         "date": "2026-09-05",
-        "startTime": "00:00",
+        "startTime": "23:59",
         "endTime": null,
         "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
         "performances": ["Papitos"]
@@ -1628,14 +1628,14 @@
       },
       {
         "date": "2026-09-07",
-        "startTime": "00:00",
+        "startTime": "23:59",
         "endTime": null,
         "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
         "performances": ["Queen África"]
       },
       {
         "date": "2026-09-09",
-        "startTime": "00:00",
+        "startTime": "23:59",
         "endTime": null,
         "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
         "performances": ["Mexicola DJ's"]
@@ -1643,7 +1643,7 @@
       {
         "date": "2026-09-10",
         "key": "day-2026-09-10-0000",
-        "startTime": "00:00",
+        "startTime": "23:59",
         "endTime": null,
         "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
         "performances": ["Inkilino"]
@@ -1658,14 +1658,14 @@
       },
       {
         "date": "2026-09-11",
-        "startTime": "00:00",
+        "startTime": "23:59",
         "endTime": null,
         "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
         "performances": ["Sideburns & Tarafermo"]
       },
       {
         "date": "2026-09-12",
-        "startTime": "00:00",
+        "startTime": "23:59",
         "endTime": null,
         "location": "Bizarro Mini Club Independiente, C. Arribas, 18, Valladolid",
         "performances": ["Papitos"]
