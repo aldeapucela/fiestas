@@ -1,4 +1,5 @@
 import fs from 'node:fs/promises';
+import { normalizeEventDescription } from './event-description-normalizer.mjs';
 
 const eventsPath = 'src/data/fiestas-2026/events.json';
 const reportPath = 'docs/event-normalization-comparison.md';
@@ -52,7 +53,10 @@ for (const event of events) {
 
   for (const field of ['description', 'summary']) {
     if (typeof event[field] !== 'string') continue;
-    const normalized = dedupeInfoBlocks(event[field]);
+    const normalized = normalizeEventDescription(event[field], {
+      title: field === 'description' ? event.title : '',
+      removeTitleOnly: field === 'description'
+    });
     if (normalized === event[field]) continue;
     changes.repeatedInfoBlocks.push({
       id: event.id,
@@ -91,61 +95,12 @@ function uniqueStrings(values) {
   return result;
 }
 
-function dedupeInfoBlocks(text) {
-  const parts = String(text).split(infoMarker);
-  if (parts.length <= 2) return cleanText(text);
-
-  const base = cleanText(parts.shift());
-  const blocks = [];
-  const keys = [];
-
-  for (const raw of parts) {
-    const block = cleanText(raw);
-    if (!block) continue;
-
-    const key = simplify(block);
-    const existingIndex = keys.findIndex((existing) => sameMeaning(existing, key));
-    if (existingIndex >= 0) {
-      if (blockScore(block) > blockScore(blocks[existingIndex])) {
-        blocks[existingIndex] = block;
-      }
-      continue;
-    }
-
-    keys.push(key);
-    blocks.push(block);
-  }
-
-  return cleanText([
-    base,
-    blocks.length ? `${infoMarker} ${blocks.join(' Además, ')}` : ''
-  ].filter(Boolean).join(' '));
-}
-
 function cleanText(value) {
   return String(value)
     .replace(/<br\s*\/?>/gi, ' ')
     .replace(/\s+/g, ' ')
     .replace(/\s+([,.;:!?])/g, '$1')
     .trim();
-}
-
-function simplify(value) {
-  return cleanText(value)
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLocaleLowerCase('es-ES')
-    .replace(/[‘’“”"'´]/g, '')
-    .replace(/[^a-z0-9]+/g, ' ')
-    .trim();
-}
-
-function sameMeaning(left, right) {
-  return left === right || left.includes(right) || right.includes(left);
-}
-
-function blockScore(value) {
-  return (/^[A-ZÁÉÍÓÚÜÑ]/u.test(value) ? 1000 : 0) + value.length;
 }
 
 function countInfoBlocks(value) {

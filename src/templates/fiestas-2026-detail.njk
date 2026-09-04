@@ -316,7 +316,7 @@
         <i class="fa-solid {{ event.icon }}" aria-hidden="true"></i>
         Descripción
       </h2>
-      <p>{{ event.description or event.summary or 'No hay descripción ampliada para esta actividad.' }}</p>
+      <p class="fiestas-detail-description">{{ event.description or event.summary or 'No hay descripción ampliada para esta actividad.' }}</p>
       {% if event.accessibility %}
       <p class="fiestas-detail-accessibility-note">
         <i class="fa-solid fa-headphones" aria-hidden="true"></i>

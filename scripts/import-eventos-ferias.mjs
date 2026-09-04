@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 import { promisify } from 'node:util';
 import { buildImportGuard } from './event-import-guard.mjs';
 import { findLikelyDuplicateEvent } from './event-duplicate-detection.mjs';
+import { normalizeEventDescription } from './event-description-normalizer.mjs';
 import { isDailySeries, occurrencesFor } from './import-eventos-ferias-dates.mjs';
 import {
   assertRegistryIntegrity,
@@ -380,9 +381,10 @@ async function createLocalEvent(remote, id, currentEvents, occurrence = null, co
       ? null
       : timePart(remote.endsAt);
   const performances = occurrence?.performances || performancesFor(remote.id);
-  const description = Number(remote.id) === 2183
+  const descriptionSource = Number(remote.id) === 2183
     ? `${summary} El evento se celebra del 9 al 13 de septiembre de 2026.`
     : summary;
+  const description = normalizeEventDescription(descriptionSource, { title: cleanText(remote.title) }) || summary;
 
   return {
     id,
@@ -490,16 +492,23 @@ function buildMatchedRemoteToLocal(currentEvents) {
 
 function enrichExistingEvent(local, remote) {
   const remoteSummary = cleanText(remote.summary);
-  if (!remoteSummary) return false;
   let changed = false;
-  if (!containsText(local.description, remoteSummary)) {
-    const base = cleanText(local.description || local.title);
-    local.description = `${base}\n\nInformación ampliada: ${remoteSummary}`;
+
+  const currentDescription = local.description || '';
+  const descriptionSource = remoteSummary && !containsText(currentDescription, remoteSummary)
+    ? [currentDescription, remoteSummary].filter(Boolean).join('\n\n')
+    : currentDescription;
+  const normalizedDescription = normalizeEventDescription(descriptionSource, { title: local.title });
+  if (normalizedDescription !== currentDescription) {
+    local.description = normalizedDescription;
     changed = true;
   }
+
   if (!local.summary || local.summary === local.title) {
-    local.summary = remoteSummary;
-    changed = true;
+    if (remoteSummary) {
+      local.summary = remoteSummary;
+      changed = true;
+    }
   }
   return changed;
 }

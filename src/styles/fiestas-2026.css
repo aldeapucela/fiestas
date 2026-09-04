@@ -3002,6 +3002,10 @@
     font-weight: 500;
   }
 
+  .fiestas-detail-description {
+    white-space: pre-line;
+  }
+
   .fiestas-detail-card h2 i {
     color: #73579f;
   }
