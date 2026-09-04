@@ -7865,9 +7865,9 @@
     ],
     "collaborators": [],
     "coordinates": {
-      "lat": 41.6325,
-      "lng": -4.7458,
-      "source": "Manual/alias from OpenStreetMap geocoding"
+      "lat": 41.6531589,
+      "lng": -4.7191853,
+      "source": "OpenStreetMap Nominatim: tramo peatonal de Calle de Andrés de Laorden, Valladolid"
     },
     "type": "Música",
     "ticket": {
