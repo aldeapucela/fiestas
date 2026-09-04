@@ -57,8 +57,16 @@ jobs:
           node-version: 24
           cache: npm
 
+      - name: Cache installed dependencies
+        id: node-modules-cache
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-node24-modules-${{ hashFiles('package-lock.json') }}
+
       - name: Install dependencies
-        run: npm ci
+        if: steps.node-modules-cache.outputs.cache-hit != 'true'
+        run: npm ci --prefer-offline --no-audit --no-fund
 
       - name: Unit tests
         run: npm test
