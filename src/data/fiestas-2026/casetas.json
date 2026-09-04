@@ -895,6 +895,97 @@
         "query": "Calle Ferrari, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:35.819Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria + bebida 4.00€ — Montaditos",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-serranito",
+                "name": "Serranito",
+                "description": "Paleta Ibérica, Lomo al Ajillo, Tomate y Mahonesa."
+              },
+              {
+                "id": "pincho-campeon",
+                "name": "Campeón",
+                "description": "Crema de Queso, Pollo Asado y Salsa Miel Mostaza."
+              },
+              {
+                "id": "pincho-cuhango",
+                "name": "Cuhango",
+                "description": "Lomo Confitado, York, Queso Fundido y Pepinillos."
+              },
+              {
+                "id": "pincho-secreto-iberico-salsa-roquefort",
+                "name": "Secreto Ibérico",
+                "description": "con Salsa Roquefort."
+              },
+              {
+                "id": "pincho-tomaca",
+                "name": "Tomaca",
+                "description": "Paleta de Cerdo Ibérico con Tomate Rallado y AOVE."
+              },
+              {
+                "id": "pincho-vegetal",
+                "name": "Vegetal",
+                "description": "Atún, Lechuga, Tomate, Huevo Cocido y Mahonesa."
+              }
+            ]
+          },
+          {
+            "title": "Guiso de feria + bebida 4.00€ — Guiso de feria especialidades",
+            "votable": true,
+            "items": [
+              {
+                "id": "guiso-alubias-bogavante",
+                "name": "Alubias con Bogavante"
+              },
+              {
+                "id": "guiso-carrillera-tinto",
+                "name": "Carrillera al Tinto"
+              },
+              {
+                "id": "guiso-patatas-revolconas",
+                "name": "Patatas Revolconas",
+                "description": "un poco Picantonas."
+              }
+            ]
+          },
+          {
+            "title": "Sueltos",
+            "votable": false,
+            "items": [
+              {
+                "id": "suelto-torrezno",
+                "name": "Torrezno Suelto",
+                "price": "4€"
+              },
+              {
+                "id": "suelto-montadito",
+                "name": "Montadito Suelto",
+                "price": "3€"
+              },
+              {
+                "id": "suelto-guiso",
+                "name": "Guiso Suelto",
+                "price": "3€"
+              }
+            ]
+          },
+          {
+            "title": "Combos de ferias",
+            "votable": false,
+            "items": [
+              {
+                "id": "combo-dos-pinchos-torrezo",
+                "name": "Dos Pinchos Iguales o Combinados + Torrezo",
+                "price": "11€"
+              }
+            ]
+          }
+        ]
       }
     },
     {
