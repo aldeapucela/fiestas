@@ -297,6 +297,130 @@
         "lng": -4.7298978,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Calle Pasión, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos premiados",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-premiado-sensaciones",
+                "name": "Sensaciones",
+                "description": "PINCHO DE BRONCE (CRUCIAL DE VALLADOLID 2022)",
+                "price": "4,95€"
+              },
+              {
+                "id": "pincho-premiado-tigrestoit",
+                "name": "Tigrestoit",
+                "description": "GAMBA CON CRUJIENTE DE JAMÓN (CRUCIAL DE VALLADOLID 2021)",
+                "price": "4,95€"
+              },
+              {
+                "id": "pincho-premiado-obama-casabanca",
+                "name": "Obama en la Casabanca",
+                "description": "PINCHO DE ORO (CRUCIAL DE VALLADOLID 2009)",
+                "price": "4,95€"
+              },
+              {
+                "id": "pincho-premiado-pata-negra",
+                "name": "Pata Negra",
+                "description": "PINCHA (CRUCIAL DE VALLADOLID 2014)",
+                "price": "4,95€"
+              },
+              {
+                "id": "pincho-premiado-roemera",
+                "name": "Roemera",
+                "description": "PINCHO DE ORO (CRUCIAL DE VALLADOLID 2010) (BOLSA DE PINOS)",
+                "price": "4,95€"
+              }
+            ]
+          },
+          {
+            "title": "Tostadas",
+            "votable": true,
+            "items": [
+              {
+                "id": "tostada-gambas",
+                "name": "De gambas",
+                "price": "4,95€"
+              }
+            ]
+          },
+          {
+            "title": "Bocadillos mini",
+            "votable": true,
+            "items": [
+              {
+                "id": "bocadillo-mini-madridfusion",
+                "name": "Madridfusión",
+                "price": "4,95€"
+              },
+              {
+                "id": "bocadillo-mini-solomillo-pimientos",
+                "name": "Solomillo con pimientos",
+                "price": "4,95€"
+              },
+              {
+                "id": "bocadillo-mini-roquefort",
+                "name": "Al roquefort",
+                "price": "4,95€"
+              }
+            ]
+          },
+          {
+            "title": "Pincho de feria 4,00€",
+            "votable": true,
+            "items": []
+          },
+          {
+            "title": "Flamenquín",
+            "votable": true,
+            "items": [
+              {
+                "id": "flamenquin-h2o",
+                "name": "H2O + flamenquín"
+              },
+              {
+                "id": "flamenquin-h2o-huevo-roto-champinones",
+                "name": "H2O + huevo roto con salsa de champiñones"
+              }
+            ]
+          },
+          {
+            "title": "Guisos del día",
+            "votable": true,
+            "items": [
+              {
+                "id": "guiso-arroz-senore",
+                "name": "Arroz señore",
+                "price": "6,25€"
+              },
+              {
+                "id": "guiso-huevos-rotos-jamon",
+                "name": "Huevos rotos con jamón",
+                "price": "6,55€"
+              },
+              {
+                "id": "guiso-huevos-rotos-jijas",
+                "name": "Huevos rotos con jijas",
+                "price": "6,25€"
+              }
+            ]
+          },
+          {
+            "title": "Croquetas",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-croquetas-jamon-gambas",
+                "name": "Croquetas de jamón o gambas",
+                "description": "(4 unidades)",
+                "price": "4,60€"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -4391,6 +4515,44 @@
         "lng": -4.7307888,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Plaza de Santa Ana, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Carta",
+            "votable": true,
+            "items": [
+              {
+                "id": "carta-brocheta-langostino",
+                "name": "Brocheta de langostino",
+                "description": "con alioli y mojo verde",
+                "price": "3,80€"
+              },
+              {
+                "id": "carta-montadito-carrillera",
+                "name": "Montadito de carrillera",
+                "price": "4,50€"
+              },
+              {
+                "id": "carta-croquetas-jamon",
+                "name": "Croquetas caseras de jamón",
+                "description": "ración (6 uds)",
+                "price": "9,00€ (ud 1,80€)"
+              },
+              {
+                "id": "carta-montadito-crunchy-pollo",
+                "name": "Montadito de Crunchy de pollo",
+                "description": "con miel y mostaza",
+                "price": "4,50€"
+              },
+              {
+                "id": "carta-chorizo-sidra",
+                "name": "Chorizo a la sidra",
+                "price": "5,00€"
+              }
+            ]
+          }
+        ]
       }
     },
     {
