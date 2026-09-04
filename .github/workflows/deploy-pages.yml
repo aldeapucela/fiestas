@@ -77,6 +77,40 @@ jobs:
             npm run social:daily -- --all
           fi
 
+      - name: Preserve generated daily posters on source pushes
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          mkdir -p dist/daily-popular
+          dates=(
+            2026-09-04 2026-09-05 2026-09-06 2026-09-07 2026-09-08
+            2026-09-09 2026-09-10 2026-09-11 2026-09-12 2026-09-13
+          )
+
+          for date in "${dates[@]}"; do
+            for suffix in '' '-post' '-post-2'; do
+              file="${date}${suffix}.jpg"
+              url="https://fiestas.aldeapucela.org/daily-popular/${file}"
+              output="dist/daily-popular/${file}"
+              if curl --fail --silent --show-error --location --retry 3 --retry-delay 2 "$url" --output "$output"; then
+                echo "Conservado $file desde Pages"
+              else
+                rm -f "$output"
+                echo "No existe todavía $file en Pages"
+              fi
+            done
+
+            file="${date}.json"
+            url="https://fiestas.aldeapucela.org/daily-popular/${file}"
+            output="dist/daily-popular/${file}"
+            if curl --fail --silent --show-error --location --retry 3 --retry-delay 2 "$url" --output "$output"; then
+              echo "Conservado $file desde Pages"
+            else
+              rm -f "$output"
+              echo "No existe todavía $file en Pages"
+            fi
+          done
+
       - name: Configure Pages
         uses: actions/configure-pages@v5
         with:
