@@ -61,10 +61,15 @@ export function eventFingerprint(event = {}) {
 }
 
 function scoreDuplicate(local, candidate, originalEvent) {
+  const performanceScore = overlap(local.performanceTokens, candidate.performanceTokens);
+  const distinctKnownPerformances = local.performanceTokens.length
+    && candidate.performanceTokens.length
+    && performanceScore < 0.8;
   const exactFingerprint = local.date === candidate.date
     && local.startTime === candidate.startTime
     && local.title === candidate.title
-    && local.location === candidate.location;
+    && local.location === candidate.location
+    && !distinctKnownPerformances;
   if (exactFingerprint) {
     return { event: originalEvent, score: 1, reason: 'Misma fecha, hora, título y lugar normalizados.' };
   }
@@ -74,7 +79,10 @@ function scoreDuplicate(local, candidate, originalEvent) {
     return { event: originalEvent, score: 0, reason: 'Lugar distinto.' };
   }
 
-  const performanceScore = overlap(local.performanceTokens, candidate.performanceTokens);
+  if (distinctKnownPerformances) {
+    return { event: originalEvent, score: 0, reason: 'Actuaciones o sesiones distintas.' };
+  }
+
   if (performanceScore >= 0.8) {
     return {
       event: originalEvent,

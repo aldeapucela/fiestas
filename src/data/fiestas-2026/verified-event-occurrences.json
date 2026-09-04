@@ -1672,5 +1672,55 @@
       }
     ],
     "source": "Cartel remoto de Bizarro Fiestas 2026, descargado e inspeccionado visualmente el 4 de septiembre de 2026: confirma actividad únicamente los días 4 (Lykkelau), 5 (Papitos), 6 (Bizarro Calle, 20:00–23:00, OH TRES TRES! con Error 97, La Gloria y Frente Popular del Sonido; Funkforward a las 23:00), 7 (Queen África), 9 (Mexicola DJ's), 10 (Bizarro Calle, 20:00–23:00, Paco Devotion; Inkilino a las 00:00), 11 (Sideburns & Tarafermo) y 12 (Papitos); no hay actividad publicada el día 8. Las sesiones de medianoche se asignan a su fecha de inicio. Google Maps confirmó Bizarro Bar Independiente en C. Arribas, 18, Valladolid, como la ubicación del club y de Bizarro Calle."
+  },
+  "2499": {
+    "dates": [
+      "2026-09-09",
+      "2026-09-10",
+      "2026-09-11"
+    ],
+    "occurrences": [
+      {
+        "key": "day-2026-09-09-afternoon",
+        "date": "2026-09-09",
+        "startTime": null,
+        "endTime": null,
+        "location": "Feria de Valladolid",
+        "performances": ["Sesión de tarde: Benjamín U10 y Alevín U12 M - F"]
+      },
+      {
+        "key": "day-2026-09-10-morning",
+        "date": "2026-09-10",
+        "startTime": null,
+        "endTime": null,
+        "location": "Feria de Valladolid",
+        "performances": ["Sesión de mañana: Infantil U14 M - F"]
+      },
+      {
+        "key": "day-2026-09-10-afternoon",
+        "date": "2026-09-10",
+        "startTime": null,
+        "endTime": null,
+        "location": "Feria de Valladolid",
+        "performances": ["Sesión de tarde: Junior U18 M - F"]
+      },
+      {
+        "key": "day-2026-09-11-morning",
+        "date": "2026-09-11",
+        "startTime": null,
+        "endTime": null,
+        "location": "Feria de Valladolid",
+        "performances": ["Sesión de mañana: Cadete U16 M - F"]
+      },
+      {
+        "key": "day-2026-09-11-afternoon",
+        "date": "2026-09-11",
+        "startTime": null,
+        "endTime": null,
+        "location": "Feria de Valladolid",
+        "performances": ["Sesión de tarde: Absoluta +18 M - F"]
+      }
+    ],
+    "source": "Cartel remoto de 3x3 Feria de Valladolid, descargado e inspeccionado visualmente el 4 de septiembre de 2026: confirma cinco sesiones, el 9 por la tarde (Benjamín U10 y Alevín U12 M - F), el 10 por la mañana (Infantil U14 M - F) y por la tarde (Junior U18 M - F), y el 11 por la mañana (Cadete U16 M - F) y por la tarde (Absoluta +18 M - F). El cartel no publica horas concretas. La ubicación Feria de Valladolid se resolvió con OpenStreetMap Nominatim mediante la consulta «Feria de Valladolid, Valladolid, España»: 41.6556388,-4.7398018, ficha «Feria de Valladolid»."
   }
 }

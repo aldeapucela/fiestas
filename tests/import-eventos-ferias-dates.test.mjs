@@ -123,3 +123,40 @@ test('rechaza ocurrencias que dejan una fecha verificada sin representar', () =>
   assert.equal(result.verified, false);
   assert.match(result.reason, /Falta una ocurrencia/);
 });
+
+test('permite sesiones distintas el mismo día sin horario publicado', () => {
+  const result = occurrencesFor(vermuTorero, {
+    2222: {
+      dates: ['2026-09-05', '2026-09-06'],
+      occurrences: [
+        {
+          key: 'day-2026-09-05-afternoon',
+          date: '2026-09-05',
+          startTime: null,
+          endTime: null,
+          location: 'Feria de Valladolid',
+          performances: ['Benjamín U10 y Alevín U12 M - F']
+        },
+        {
+          key: 'day-2026-09-06-morning',
+          date: '2026-09-06',
+          startTime: null,
+          endTime: null,
+          location: 'Feria de Valladolid',
+          performances: ['Infantil U14 M - F']
+        },
+        {
+          key: 'day-2026-09-06-afternoon',
+          date: '2026-09-06',
+          startTime: null,
+          endTime: null,
+          location: 'Feria de Valladolid',
+          performances: ['Junior U18 M - F']
+        }
+      ]
+    }
+  });
+
+  assert.equal(result.verified, true);
+  assert.equal(result.occurrences.length, 3);
+});

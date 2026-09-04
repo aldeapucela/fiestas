@@ -3095,6 +3095,93 @@
           "reason": "Nueva ocurrencia importada con identidad registrada."
         }
       }
+    },
+    "2498": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "909",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2499": {
+      "occurrences": {
+        "day-2026-09-09-afternoon": {
+          "status": "linked",
+          "localEventId": "910",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-10-morning": {
+          "status": "linked",
+          "localEventId": "911",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-10-afternoon": {
+          "status": "linked",
+          "localEventId": "912",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-11-morning": {
+          "status": "linked",
+          "localEventId": "913",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        },
+        "day-2026-09-11-afternoon": {
+          "status": "linked",
+          "localEventId": "914",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2501": {
+      "occurrences": {
+        "day-2026-09-05": {
+          "status": "linked",
+          "localEventId": "34",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        },
+        "day-2026-09-06": {
+          "status": "linked",
+          "localEventId": "92",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        },
+        "day-2026-09-07": {
+          "status": "linked",
+          "localEventId": "134",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        },
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "178",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "213",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "251",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "290",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "333",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "390",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        }
+      }
     }
   },
   "localAliases": {

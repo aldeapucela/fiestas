@@ -80,6 +80,31 @@ test('no mezcla fichas distintas del mismo local con la misma hora', () => {
   assert.equal(duplicate, null);
 });
 
+test('no mezcla sesiones del mismo evento sin horario publicado', () => {
+  const sessions = [
+    {
+      id: 910,
+      date: '2026-09-10',
+      startTime: null,
+      endTime: null,
+      title: '3x3 Feria de Valladolid (Torneo de Baloncesto)',
+      location: 'Feria de Valladolid',
+      performances: ['Sesión de mañana: Infantil U14 M - F']
+    },
+    {
+      id: 911,
+      date: '2026-09-10',
+      startTime: null,
+      endTime: null,
+      title: '3x3 Feria de Valladolid (Torneo de Baloncesto)',
+      location: 'Feria de Valladolid',
+      performances: ['Sesión de tarde: Junior U18 M - F']
+    }
+  ];
+
+  assert.deepEqual(findPotentialDuplicatePairs(sessions), []);
+});
+
 test('detecta duplicados exactos por huella normalizada', () => {
   assert.equal(
     eventFingerprint({ date: '2026-09-08', startTime: '19:00', title: 'Día Íbero', location: 'Plaza España' }),

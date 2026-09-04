@@ -71,7 +71,15 @@ export function occurrencesFor(remote, verifiedOccurrences = {}, options = {}) {
   const missingDate = dateResolution.dates.find((date) => !occurrences.some((occurrence) => occurrence.date === date));
   const duplicateKeys = new Set();
   const duplicateOccurrence = occurrences.find((occurrence) => {
-    const key = [occurrence.date, occurrence.startTime || '', occurrence.endTime || '', occurrence.location || ''].join('|');
+    const key = occurrence.key
+      ? `key:${occurrence.key}`
+      : [
+        occurrence.date,
+        occurrence.startTime || '',
+        occurrence.endTime || '',
+        occurrence.location || '',
+        ...(occurrence.performances || [])
+      ].join('|');
     if (duplicateKeys.has(key)) return true;
     duplicateKeys.add(key);
     return false;
