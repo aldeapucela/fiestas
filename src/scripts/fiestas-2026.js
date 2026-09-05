@@ -1086,11 +1086,20 @@ function localEventDateTime(date, time) {
 }
 
 function isFinishedAgendaEvent(event, now) {
-  const start = localEventDateTime(event.date, event.startTime);
+  const realStart = event.realStartDate ? new Date(event.realStartDate) : null;
+  const hasRealStart = realStart && !Number.isNaN(realStart.getTime());
+  const start = hasRealStart ? realStart : localEventDateTime(event.date, event.startTime);
   if (!start || start > now) return false;
 
-  let end = event.endTime ? localEventDateTime(event.date, event.endTime) : null;
-  if (end && end <= start) end = new Date(end.getTime() + 24 * 60 * 60 * 1000);
+  const realStartDate = hasRealStart ? event.realStartDate.slice(0, 10) : null;
+  const realEnd = event.realEndDate ? new Date(event.realEndDate) : null;
+  const hasRealEnd = realEnd && !Number.isNaN(realEnd.getTime());
+  let end = hasRealEnd
+    ? realEnd
+    : event.endTime
+    ? localEventDateTime(realStartDate || event.date, event.endTime)
+    : null;
+  if (!hasRealEnd && end && end <= start) end = new Date(end.getTime() + 24 * 60 * 60 * 1000);
   if (!end) end = new Date(start.getTime() + UNKNOWN_END_GRACE_MINUTES * 60 * 1000);
   return end <= now;
 }

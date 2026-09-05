@@ -634,6 +634,8 @@ async function loadEvents(vallabusStops = []) {
     dateLabel: String(event.dateLabel || event.date || ''),
     startTime: String(event.startTime || ''),
     endTime: String(event.endTime || ''),
+    realStartDate: event.realStartDate ? String(event.realStartDate) : null,
+    realEndDate: event.realEndDate ? String(event.realEndDate) : null,
     title: String(event.title || 'Evento'),
     slug: event.slug ? slugify(event.slug) : '',
     image: images[0] || '',
