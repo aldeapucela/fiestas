@@ -167,6 +167,7 @@ const els = {
   scrollSearchToggle: document.querySelector('[data-fiestas-scroll-search]'),
   searchPanel: document.querySelector('[data-fiestas-search-panel]'),
   search: document.querySelector('[data-fiestas-search]'),
+  searchScope: document.querySelector('[data-fiestas-search-scope]'),
   filterSummary: document.querySelector('[data-fiestas-filter-summary]'),
   activeFilters: document.querySelector('[data-fiestas-active-filters]'),
   filterCount: document.querySelector('[data-fiestas-filter-count]'),
@@ -978,6 +979,8 @@ function renderShellState(filtered) {
     button.setAttribute('aria-pressed', String(active));
   });
 
+  if (els.searchScope) els.searchScope.hidden = !isUpcomingSearchActive();
+
   els.viewTabs.forEach((button) => {
     const active = button.dataset.viewTab === state.view;
     button.classList.toggle('is-active', active);
@@ -1020,6 +1023,7 @@ function renderShellState(filtered) {
 function renderAgenda(events) {
   els.agenda.classList.remove('is-loading');
   els.agenda.replaceChildren();
+  const searchInUpcoming = isUpcomingSearchActive();
 
   if (!state.events.length) {
     els.agenda.append(emptyState('La agenda todavía no tiene actividades cargadas.', true));
@@ -1027,20 +1031,24 @@ function renderAgenda(events) {
   }
 
   if (!events.length) {
-    const message = hasActiveFilters()
+    const message = searchInUpcoming
+      ? 'No hay actividades próximas que coincidan con la búsqueda.'
+      : hasActiveFilters()
       ? 'No hay actividades con esos filtros.'
       : 'No hay actividades para el día seleccionado.';
     els.agenda.append(emptyState(message, hasActiveFilters()));
     return;
   }
 
-  const groups = state.selectedDate === 'all' ? groupByDay(events) : [[state.selectedDate, events]];
+  const groups = searchInUpcoming || state.selectedDate === 'all'
+    ? groupByDay(events)
+    : [[state.selectedDate, events]];
   let renderedEventCount = 0;
   const now = new Date();
   groups.forEach(([date, dayEvents]) => {
     const section = document.createElement('section');
     section.className = 'fiestas-day';
-    section.classList.toggle('is-all-days', state.selectedDate === 'all');
+    section.classList.toggle('is-all-days', searchInUpcoming || state.selectedDate === 'all');
     section.id = `fiestas-day-${date}`;
 
     const header = document.createElement('div');
@@ -1052,7 +1060,8 @@ function renderAgenda(events) {
     `;
     section.append(header);
 
-    const finishedEvents = state.selectedDate !== 'all'
+    const finishedEvents = !searchInUpcoming
+      && state.selectedDate !== 'all'
       && date === localDateKey(now)
       ? dayEvents.filter((event) => isFinishedAgendaEvent(event, now))
       : [];
@@ -1447,14 +1456,20 @@ function renderUserMarker(leaflet) {
 
 function renderMapSheet(events, options = {}) {
   if (!els.mapSheet) return;
+  const searchInUpcoming = isUpcomingSearchActive();
   const withCoordinates = events.filter((event) => hasCoordinates(event.coordinates));
   const sheetEvents = getMapSheetEvents(events);
   const sorted = sortMapEvents(sheetEvents);
   const context = state.focusedClusterEventIds
     ? 'Actividades en este punto'
-    : state.locationStatus === 'granted' ? 'Cerca de ti' : state.selectedDate === 'all' ? 'Actividades' : 'Actividades del día';
+    : state.locationStatus === 'granted'
+      ? 'Cerca de ti'
+      : searchInUpcoming
+        ? 'Próximas actividades'
+        : state.selectedDate === 'all' ? 'Actividades' : 'Actividades del día';
   const count = state.focusedClusterEventIds ? sorted.length : withCoordinates.length;
-  const countText = `${count} ${count === 1 ? 'actividad' : 'actividades'} · ${compactDateLabel(state.selectedDate)}`;
+  const dateLabel = searchInUpcoming ? 'hoy y próximos días' : compactDateLabel(state.selectedDate);
+  const countText = `${count} ${count === 1 ? 'actividad' : 'actividades'} · ${dateLabel}`;
 
   els.mapSheet.classList.toggle('is-expanded', state.sheetState === 'expanded');
   els.mapSheet.classList.toggle('is-collapsed', state.sheetState === 'collapsed');
@@ -1730,8 +1745,14 @@ function bindMapSheetGestures() {
 }
 
 function getFilteredEvents() {
+  const searchInUpcoming = isUpcomingSearchActive();
+  const today = searchInUpcoming ? localDateKey(new Date()) : '';
   return state.events.filter((event) => {
-    if (state.selectedDate && state.selectedDate !== 'all' && event.date !== state.selectedDate) return false;
+    if (searchInUpcoming) {
+      if (String(event.date || '') < today) return false;
+    } else if (state.selectedDate && state.selectedDate !== 'all' && event.date !== state.selectedDate) {
+      return false;
+    }
     if (!matchesSearch(event.searchable, state.search)) return false;
     if (state.selectedTypes.size && !event.tags.some((tag) => state.selectedTypes.has(tag))) return false;
     if (state.selectedAreas.size && !state.selectedAreas.has(event.area)) return false;
@@ -1739,6 +1760,10 @@ function getFilteredEvents() {
     if (state.onlyFavorites && !state.favorites.has(event.id)) return false;
     return true;
   });
+}
+
+function isUpcomingSearchActive() {
+  return Boolean(state.search);
 }
 
 function renderControlLists() {

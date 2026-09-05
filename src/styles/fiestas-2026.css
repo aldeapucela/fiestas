@@ -614,6 +614,22 @@
     box-shadow: inset 0 0 0 1px #0f9f8d;
   }
 
+  .fiestas-search-scope {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin: 0.42rem 0.15rem 0;
+    color: #667085;
+    font-size: 0.75rem;
+    font-weight: 750;
+    line-height: 1.2;
+  }
+
+  .fiestas-search-scope i {
+    color: #0f9f8d;
+    font-size: 0.7rem;
+  }
+
   @keyframes fiestas-search-in {
     from {
       opacity: 0;
@@ -4222,6 +4238,14 @@
   html.dark .fiestas-detail-fact,
   html.dark .fiestas-detail-copy-fallback span {
     color: #d4d9e2;
+  }
+
+  html.dark .fiestas-search-scope {
+    color: #aab3c1;
+  }
+
+  html.dark .fiestas-search-scope i {
+    color: #71d8cb;
   }
 
   html.dark .fiestas-detail-fact + .fiestas-detail-fact,
