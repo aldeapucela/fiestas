@@ -1157,6 +1157,48 @@
         "query": "Calle Ferrari, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:35.819Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria — Montaditos — Pincho feria + cerveza / vino / agua 4€ · Pincho feria + refresco 4'20€",
+            "votable": true,
+            "items": [
+              { "id": "montadito-solomillo-cerdo-mermelada-pimiento-queso", "name": "Solomillo de cerdo con mermelada de pimiento y queso" },
+              { "id": "montadito-secreto-roquefort", "name": "Secreto al Roquefort" },
+              { "id": "montadito-morcilla-chutney-pimientos", "name": "Morcilla con chutney de pimientos" },
+              { "id": "montadito-oreja-brava", "name": "Oreja brava" },
+              { "id": "montadito-solomillo-whisky", "name": "Solomillo al whisky" }
+            ]
+          },
+          {
+            "title": "Guisos — Guisos + cerveza / vino / agua 4€ · Guisos + refresco 4'20€",
+            "votable": true,
+            "items": [
+              { "id": "guiso-morro-setas-kimchi", "name": "Guiso de morro setas y kimchi" },
+              { "id": "guiso-callos-garbanzos", "name": "Callos con garbanzos" }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-tigres", "name": "Racion de tigres" },
+              { "id": "racion-cazon-salsa-picante-mahonesa", "name": "Cazon con salsa picante o mahonesa" },
+              { "id": "racion-rabas-santanderinas", "name": "Rabas santanderinas" },
+              { "id": "racion-oreja-gallega", "name": "Oreja a la gallega" },
+              { "id": "racion-chorizo-sidra", "name": "Chorizo a la sidra", "price": "9€" }
+            ]
+          },
+          {
+            "title": "Postre",
+            "votable": true,
+            "items": [
+              { "id": "postre-brownie-chocolate", "name": "Brownie de chocolate", "price": "3'50€" },
+              { "id": "postre-tarta-orujo", "name": "Tarta de orujo" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -5470,7 +5512,40 @@
       "location": "Plaza Santa Cruz",
       "placement": "En la plaza",
       "addressQuery": "Plaza de Santa Cruz, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria — 4€ con bebida",
+            "votable": true,
+            "items": [
+              { "id": "pincho-choripan", "name": "Choripán" },
+              { "id": "pincho-costillito", "name": "Costillito" },
+              { "id": "pincho-torrezno-revolcona", "name": "Torrezno con revolcona" },
+              { "id": "pincho-pechuguito", "name": "Pechuguito" },
+              { "id": "pincho-montadito-rabas", "name": "Montadito de rabas" },
+              { "id": "pincho-montadito-pollo-miel-alioli", "name": "Montadito de pollo, miel y alioli" },
+              { "id": "pincho-zapatilla-jamon-asado", "name": "Zapatilla de jamón asado" }
+            ]
+          },
+          {
+            "title": "Ración de rabas",
+            "votable": true,
+            "items": [
+              { "id": "racion-rabas", "name": "Ración de rabas", "price": "10€" }
+            ]
+          },
+          {
+            "title": "Tartas — 5€",
+            "votable": true,
+            "items": [
+              { "id": "postre-tarta-oreo", "name": "De Oreo" },
+              { "id": "postre-tarta-lotus", "name": "De Lotus" },
+              { "id": "postre-tarta-queso", "name": "De queso" }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z7-06",
