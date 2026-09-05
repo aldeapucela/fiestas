@@ -46,12 +46,14 @@ test('guardar una actividad persiste en localStorage y sobrevive a recargar', as
 });
 
 test('Mi plan usa la miniatura optimizada de una actividad con imagen', async ({ page }) => {
-  await page.goto('/');
+  await page.goto('/?date=all');
   const card = page.locator('[data-fiestas-card]').filter({ hasText: 'Tío Tragaldabas' }).first();
   await expect(card).toBeVisible();
   await card.locator('[data-fiestas-save], .fiestas-event-save').first().click();
 
   await page.goto('/plan/');
+  const finishedToggle = page.locator('[data-plan-finished-toggle]').first();
+  if (await finishedToggle.count()) await finishedToggle.click();
   const image = page.locator('img.fiestas-plan-timeline-image').first();
   await expect(image).toBeVisible();
   await expect(image).toHaveAttribute('src', /\/assets\/events\/thumbs\/.*\.webp$/);
