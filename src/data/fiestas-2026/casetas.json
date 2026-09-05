@@ -32,7 +32,8 @@
               {
                 "id": "pincho-tarta-queso-toffee",
                 "name": "Tarta de queso",
-                "description": "con toffee"
+                "description": "con toffee",
+                "dietary": "vegetarian"
               },
               {
                 "id": "pincho-croqueton-bacalao",
@@ -64,11 +65,13 @@
             "items": [
               {
                 "id": "postre-tarta-queso",
-                "name": "Tarta de queso"
+                "name": "Tarta de queso",
+                "dietary": "vegetarian"
               },
               {
                 "id": "postre-brownie-chocolate-nueces",
-                "name": "Brownie de chocolate con nueces"
+                "name": "Brownie de chocolate con nueces",
+                "dietary": "vegetarian"
               }
             ]
           }
@@ -198,7 +201,8 @@
                 "id": "racion-papas-arrugas",
                 "name": "Papas arrugás",
                 "description": "con mojo rojo y mayo de humo",
-                "price": "5€"
+                "price": "5€",
+                "dietary": "vegetarian"
               }
             ]
           }
@@ -383,7 +387,8 @@
               },
               {
                 "id": "flamenquin-h2o-huevo-roto-champinones",
-                "name": "H2O + huevo roto con salsa de champiñones"
+                "name": "H2O + huevo roto con salsa de champiñones",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -635,7 +640,8 @@
               {
                 "id": "especialidad-risotto-funghi-tartufata",
                 "name": "Risotto",
-                "description": "funghi tartufata"
+                "description": "funghi tartufata",
+                "dietary": "vegetarian"
               },
               {
                 "id": "especialidad-panzerotto",
@@ -711,21 +717,21 @@
             "votable": true,
             "items": [
               { "id": "pincho-patatas-camorra", "name": "Patatas Camorra" },
-              { "id": "pincho-patatas-trufadas", "name": "Patatas trufadas" },
+              { "id": "pincho-patatas-trufadas", "name": "Patatas trufadas", "dietary": "vegetarian" },
               { "id": "pincho-patatas-lux", "name": "Patatas Lux" },
               { "id": "pincho-patatas-chicken-bbq", "name": "Patatas Chicken BBQ" },
               { "id": "pincho-patatas-castellanas", "name": "Patatas castellanas" },
-              { "id": "pincho-pasta-pesto-genoves", "name": "Pasta pesto genovés" },
+              { "id": "pincho-pasta-pesto-genoves", "name": "Pasta pesto genovés", "dietary": "vegetarian" },
               { "id": "pincho-pasta-ragu", "name": "Pasta ragú" },
-              { "id": "pincho-pasta-pomodoro", "name": "Pasta pomodoro" }
+              { "id": "pincho-pasta-pomodoro", "name": "Pasta pomodoro", "dietary": "vegetarian" }
             ]
           },
           {
             "title": "Postres 6,90 €",
             "votable": true,
             "items": [
-              { "id": "postre-tarta-queso-chocolate-blanco", "name": "Tarta de queso con chocolate blanco" },
-              { "id": "postre-tarta-queso-pantera-rosa", "name": "Tarta de queso Pantera Rosa" }
+              { "id": "postre-tarta-queso-chocolate-blanco", "name": "Tarta de queso con chocolate blanco", "dietary": "vegetarian" },
+              { "id": "postre-tarta-queso-pantera-rosa", "name": "Tarta de queso Pantera Rosa", "dietary": "vegetarian" }
             ]
           },
           {
@@ -802,7 +808,7 @@
             "title": "Postre",
             "votable": true,
             "items": [
-              { "id": "postre-chupa-chups-brownie", "name": "Chupa Chups Brownie" }
+              { "id": "postre-chupa-chups-brownie", "name": "Chupa Chups Brownie", "dietary": "vegetarian" }
             ]
           }
         ]
@@ -1223,7 +1229,8 @@
                 "id": "racion-papas-arrugas",
                 "name": "Papas arrugás",
                 "description": "con mojo rojo y mayo de humo",
-                "price": "5€"
+                "price": "5€",
+                "dietary": "vegetarian"
               }
             ]
           }
@@ -1257,7 +1264,7 @@
               },
               { "id": "otro-criollo-chimichurri", "name": "Chorizo criollo con chimichurri" },
               { "id": "otro-secreto-iberico", "name": "Secretito ibérico" },
-              { "id": "otro-provolone-tomate", "name": "Provolone con tomate" },
+              { "id": "otro-provolone-tomate", "name": "Provolone con tomate", "dietary": "vegetarian" },
               { "id": "pincho-gilda-clasica", "name": "Gilda clásica", "price": "2,5€/unidad" }
             ]
           },
@@ -1461,13 +1468,13 @@
               { "id": "pincho-moruno", "name": "Pincho moruno" },
               { "id": "pincho-tortitas-camaron", "name": "Tortitas de camarón" },
               { "id": "pincho-brocheta-langostinos", "name": "Brocheta de langostinos" },
-              { "id": "pincho-brabas", "name": "Brabas" },
+              { "id": "pincho-brabas", "name": "Brabas", "dietary": "vegetarian" },
               { "id": "pincho-super-perrito-caliente", "name": "Super perrito caliente" },
               { "id": "pincho-huevos-rotos-jijas", "name": "Huevos rotos con jijas" },
               { "id": "pincho-huevos-rotos-jamon", "name": "Huevos rotos con jamón" },
               { "id": "pincho-croqueta-jamon", "name": "Croqueta de jamon" },
               { "id": "pincho-bomba-carne", "name": "Bomba de carne" },
-              { "id": "pincho-patatas-bravas", "name": "Patatas bravas" }
+              { "id": "pincho-patatas-bravas", "name": "Patatas bravas", "dietary": "vegetarian" }
             ]
           },
           {
@@ -1555,7 +1562,7 @@
             "title": "Postre",
             "votable": true,
             "items": [
-              { "id": "postre-abisinio-crema", "name": "Abisinio de crema artesano", "price": "3,5€" }
+              { "id": "postre-abisinio-crema", "name": "Abisinio de crema artesano", "price": "3,5€", "dietary": "vegetarian" }
             ]
           }
         ]
@@ -1633,7 +1640,8 @@
               },
               {
                 "id": "pincho-cucuruchos-mex-guacamole",
-                "name": "Cucuruchos mex con guacamole"
+                "name": "Cucuruchos mex con guacamole",
+                "dietary": "vegetarian"
               },
               {
                 "id": "pincho-brioche-cabrilles",
@@ -1653,12 +1661,14 @@
               {
                 "id": "racion-patatas-bravas",
                 "name": "Patatas bravas",
-                "price": "4€"
+                "price": "4€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-patatas-cabrales",
                 "name": "Patatas al cabrales",
-                "price": "4€"
+                "price": "4€",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -1669,15 +1679,18 @@
               {
                 "id": "postre-coulant-queso-manchego-frambuesas",
                 "name": "Coulant de queso manchego con frambuesas",
-                "price": "4€"
+                "price": "4€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "postre-gofre-nata-chocolate",
-                "name": "Gofre con nata y chocolate"
+                "name": "Gofre con nata y chocolate",
+                "dietary": "vegetarian"
               },
               {
                 "id": "postre-bizcocho-tiramisu",
-                "name": "Bizcocho de tiramisú"
+                "name": "Bizcocho de tiramisú",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -1810,9 +1823,9 @@
             "title": "Postres",
             "votable": true,
             "items": [
-              { "id": "postre-tarta-yogur", "name": "Tarta de yogur", "description": "con arándanos" },
-              { "id": "postre-tarta-queso", "name": "Tarta de queso", "description": "con nuez, miel y galleta" },
-              { "id": "postre-tarta-dos-chocolates", "name": "Tarta de dos chocolates" }
+              { "id": "postre-tarta-yogur", "name": "Tarta de yogur", "description": "con arándanos", "dietary": "vegetarian" },
+              { "id": "postre-tarta-queso", "name": "Tarta de queso", "description": "con nuez, miel y galleta", "dietary": "vegetarian" },
+              { "id": "postre-tarta-dos-chocolates", "name": "Tarta de dos chocolates", "dietary": "vegetarian" }
             ]
           }
         ]
@@ -1848,11 +1861,11 @@
               { "id": "pincho-chapata-solomillo", "name": "Chapata solomillo", "description": "pimienta" },
               { "id": "pincho-brocheta-langostino-tempura", "name": "Brocheta de langostino tempura" },
               { "id": "pincho-empanadilla-oreja", "name": "Empanadilla de oreja" },
-              { "id": "pincho-chapata-lomo-seitan", "name": "Chapata lomo seitán", "description": "con pimientos" },
-              { "id": "pincho-chapata-proteina-guisante", "name": "Chapata proteína de guisante", "description": "alioli y pico de gallo" },
+              { "id": "pincho-chapata-lomo-seitan", "name": "Chapata lomo seitán", "description": "con pimientos", "dietary": "vegetarian" },
+              { "id": "pincho-chapata-proteina-guisante", "name": "Chapata proteína de guisante", "description": "alioli y pico de gallo", "dietary": "vegetarian" },
               { "id": "pincho-chapata-morcilla", "name": "Chapata de morcilla", "description": "con manzana" },
-              { "id": "pincho-piparras-rebozadas", "name": "Piparras rebozadas", "description": "con salsa yogur" },
-              { "id": "pincho-empanadilla-boletus", "name": "Empanadilla de boletus", "description": "trufa y queso" }
+              { "id": "pincho-piparras-rebozadas", "name": "Piparras rebozadas", "description": "con salsa yogur", "dietary": "vegetarian" },
+              { "id": "pincho-empanadilla-boletus", "name": "Empanadilla de boletus", "description": "trufa y queso", "dietary": "vegetarian" }
             ]
           },
           {
@@ -1974,7 +1987,8 @@
               {
                 "id": "racion-patatas-alioli-10-10",
                 "name": "Ración de patatas ali-oli al estilo 10&10",
-                "price": "5€"
+                "price": "5€",
+                "dietary": "vegetarian"
               }
             ]
           }
@@ -2013,17 +2027,20 @@
               {
                 "id": "crepe-azucar",
                 "name": "Azúcar",
-                "price": "5€"
+                "price": "5€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "crepe-nutella",
                 "name": "Nutella",
-                "price": "5€"
+                "price": "5€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "crepe-fresa",
                 "name": "Fresa",
-                "price": "6€"
+                "price": "6€",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -2046,7 +2063,8 @@
                 "id": "pincho-canutillos-crema-cafe-puchero",
                 "name": "Canutillos de crema",
                 "description": "CON CAFÉ PUCHERO",
-                "price": "4€"
+                "price": "4€",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -2057,17 +2075,20 @@
               {
                 "id": "postre-ponche-seguidiano",
                 "name": "Ponche seguidiano",
-                "price": "6€"
+                "price": "6€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "postre-tarta-pinones",
                 "name": "Tarta de piñones",
-                "price": "6,50€"
+                "price": "6,50€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "postre-ligote-tiramisu",
                 "name": "Ligote tiramisú",
-                "price": "6€"
+                "price": "6€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "postre-tarta-aniversario",
@@ -2077,12 +2098,14 @@
               {
                 "id": "postre-4-trufas-chocolate",
                 "name": "4 trufas de chocolate",
-                "price": "6€"
+                "price": "6€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "postre-2-canutillos-crema",
                 "name": "2 canutillos de crema",
-                "price": "3€"
+                "price": "3€",
+                "dietary": "vegetarian"
               }
             ]
           }
@@ -2117,12 +2140,14 @@
               {
                 "id": "racion-tartaleta",
                 "name": "Tartaleta",
-                "description": "DE AGUACATE Y MAYONESA DE SRIRACHA"
+                "description": "DE AGUACATE Y MAYONESA DE SRIRACHA",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-tosta-tomate-cruditos",
                 "name": "Tosta de tomate",
-                "description": "Y CRUDITOS DE VERDURAS"
+                "description": "Y CRUDITOS DE VERDURAS",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-tosta-muhammara-caballa",
@@ -2137,7 +2162,8 @@
               {
                 "id": "racion-tosta-queso-cabra",
                 "name": "Tosta de queso de cabra",
-                "description": "CEBOLLA CARAMELIZADA, PASAS Y SALSA PEDRO XIMENEZ"
+                "description": "CEBOLLA CARAMELIZADA, PASAS Y SALSA PEDRO XIMENEZ",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-taco-cochinilla-pibil",
@@ -2152,7 +2178,8 @@
               {
                 "id": "racion-hamburguesa-arroz",
                 "name": "Hamburguesa de arroz",
-                "description": "CON SALSA DE MANGO"
+                "description": "CON SALSA DE MANGO",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-chorizo-criollo",
@@ -2169,13 +2196,15 @@
                 "id": "racion-poke-tofu",
                 "name": "Poke de tofu",
                 "description": "VERDURAS Y SALSA TERIYAKI",
-                "price": "8€"
+                "price": "8€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-tajine-verduras",
                 "name": "Tajine de verduras",
                 "description": "AL RAS EL HANOUT",
-                "price": "8€"
+                "price": "8€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-pollo-teriyaki",
@@ -2295,7 +2324,8 @@
               {
                 "id": "postre-tarta-queso",
                 "name": "Tarta de queso",
-                "price": "5,90€"
+                "price": "5,90€",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -2417,7 +2447,8 @@
               {
                 "id": "racion-patatas",
                 "name": "Patatas",
-                "price": "6"
+                "price": "6",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-buffalo",
@@ -2433,7 +2464,8 @@
               {
                 "id": "postre-tarta-queso",
                 "name": "Tarta de queso",
-                "price": "5"
+                "price": "5",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -2576,7 +2608,8 @@
               {
                 "id": "pincho-burrito-fri-jol",
                 "name": "Burrito fri-jol",
-                "description": "FRIJOLES, ARROZ, MOZZARELLA, PICO DE GALLO Y SALSA BÚFALO"
+                "description": "FRIJOLES, ARROZ, MOZZARELLA, PICO DE GALLO Y SALSA BÚFALO",
+                "dietary": "vegetarian"
               },
               {
                 "id": "pincho-nachos-guaca",
@@ -2613,7 +2646,8 @@
               {
                 "id": "racion-bravas-cantina",
                 "name": "Bravas cantina",
-                "price": "4€"
+                "price": "4€",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -2625,7 +2659,8 @@
                 "id": "crepe-oreo-lotus",
                 "name": "Crepe",
                 "description": "OREO / Lotus",
-                "price": "5€"
+                "price": "5€",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -2954,7 +2989,8 @@
               {
                 "id": "especialidad-risotto-funghi-tartufata",
                 "name": "Risotto",
-                "description": "funghi tartufata"
+                "description": "funghi tartufata",
+                "dietary": "vegetarian"
               },
               {
                 "id": "especialidad-panzerotto",
@@ -3267,7 +3303,8 @@
               {
                 "id": "postre-tarta-queso",
                 "name": "Tarta de queso",
-                "price": "5,90€"
+                "price": "5,90€",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -3381,7 +3418,8 @@
               },
               {
                 "id": "ademas-pancakes",
-                "name": "Pancakes"
+                "name": "Pancakes",
+                "dietary": "vegetarian"
               },
               {
                 "id": "ademas-racion-calamares",
@@ -3422,7 +3460,7 @@
             "title": "Ración",
             "votable": true,
             "items": [
-              { "id": "racion-patatas-bravas-thai", "name": "Patatas bravas Thai" }
+              { "id": "racion-patatas-bravas-thai", "name": "Patatas bravas Thai", "dietary": "vegetarian" }
             ]
           }
         ]
@@ -3523,7 +3561,8 @@
               {
                 "id": "postre-tarta-queso",
                 "name": "Tarta de queso",
-                "price": "2,50€"
+                "price": "2,50€",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -3594,7 +3633,8 @@
               },
               {
                 "id": "ademas-racion-patatas-mojo-picon",
-                "name": "Racion de patatas mojo picón"
+                "name": "Racion de patatas mojo picón",
+                "dietary": "vegetarian"
               },
               {
                 "id": "ademas-racion-calamares",
@@ -3602,7 +3642,8 @@
               },
               {
                 "id": "ademas-pancakes",
-                "name": "Pancakes"
+                "name": "Pancakes",
+                "dietary": "vegetarian"
               }
             ]
           }
@@ -3813,7 +3854,7 @@
             "votable": true,
             "items": [
               { "id": "racion-calamares", "name": "Calamares", "price": "10,00€" },
-              { "id": "racion-patatas-braviolis", "name": "Patatas braviolis", "price": "6,00€" },
+              { "id": "racion-patatas-braviolis", "name": "Patatas braviolis", "price": "6,00€", "dietary": "vegetarian" },
               { "id": "racion-fingers", "name": "Fingers", "price": "9,00€" }
             ]
           },
@@ -3821,7 +3862,7 @@
             "title": "Postre",
             "votable": true,
             "items": [
-              { "id": "postre-tarta-hojaldre-nata-crema", "name": "Tarta de hojaldre, nata y crema", "price": "3,00€" }
+              { "id": "postre-tarta-hojaldre-nata-crema", "name": "Tarta de hojaldre, nata y crema", "price": "3,00€", "dietary": "vegetarian" }
             ]
           }
         ]
@@ -3863,7 +3904,8 @@
                 "id": "pincho-salmorejo-cordobes",
                 "name": "Salmorejo cordobés",
                 "description": "(Pincho-bebida)",
-                "price": "4,00€"
+                "price": "4,00€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "pincho-potaje-bacalao",
@@ -3880,7 +3922,8 @@
               {
                 "id": "racion-arroz-meloso-setas-boletus",
                 "name": "Arroz meloso de setas y boletus",
-                "price": "7,00€"
+                "price": "7,00€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-fingers-pollo-diablo",
@@ -4053,7 +4096,7 @@
             "title": "De postre (crepes y gofres) 5,50€",
             "votable": true,
             "items": [
-              { "id": "postre-dulces", "name": "Dulces", "description": "Nutela, fresa, dulce de leche o nata" },
+              { "id": "postre-dulces", "name": "Dulces", "description": "Nutela, fresa, dulce de leche o nata", "dietary": "vegetarian" },
               { "id": "postre-salados", "name": "Salados", "description": "Jamón y queso" }
             ]
           }
@@ -4375,12 +4418,14 @@
               {
                 "id": "racion-patatas-bravas-angelillo",
                 "name": "Patatas bravas Angelillo",
-                "price": "8€"
+                "price": "8€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-patatas-cabrales",
                 "name": "Patatas al Cabrales",
-                "price": "8€"
+                "price": "8€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-croqueta-jamon",
@@ -4700,7 +4745,8 @@
                 "id": "racion-bravas",
                 "name": "Bravas",
                 "description": "(1/7/12)",
-                "price": "6€"
+                "price": "6€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "racion-oreja",
@@ -4753,7 +4799,8 @@
                 "id": "racion-queso",
                 "name": "Ración queso",
                 "description": "(1/7/8)",
-                "price": "11€"
+                "price": "11€",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -4786,13 +4833,15 @@
                 "id": "postre-tarta-queso-galleta-lotus",
                 "name": "Tarta de queso con galleta Lotus",
                 "description": "(1/3/6/7)",
-                "price": "5€"
+                "price": "5€",
+                "dietary": "vegetarian"
               },
               {
                 "id": "postre-brownie-chocolate",
                 "name": "Brownie de chocolate",
                 "description": "(1/3/5/6/7/8)",
-                "price": "5€"
+                "price": "5€",
+                "dietary": "vegetarian"
               }
             ]
           }
@@ -5381,7 +5430,8 @@
                 "id": "postre-cofre-sirope-chocolate-nata",
                 "name": "Cofre",
                 "description": "con sirope de chocolate y nata",
-                "price": "3,50 €"
+                "price": "3,50 €",
+                "dietary": "vegetarian"
               }
             ]
           },
@@ -5477,15 +5527,18 @@
             "items": [
               {
                 "id": "tarta-oreo",
-                "name": "De Oreo"
+                "name": "De Oreo",
+                "dietary": "vegetarian"
               },
               {
                 "id": "tarta-lotus",
-                "name": "De Lotus"
+                "name": "De Lotus",
+                "dietary": "vegetarian"
               },
               {
                 "id": "tarta-queso",
-                "name": "De queso"
+                "name": "De queso",
+                "dietary": "vegetarian"
               }
             ]
           }
@@ -5524,7 +5577,7 @@
               { "id": "pincho-chorizo-aceite", "name": "Pincho de chorizo en aceite", "price": "2,50€" },
               { "id": "pincho-muralito", "name": "Muralito", "price": "2,50€" },
               { "id": "montado-lomo-aceite", "name": "Montado de lomo en aceite", "price": "5€" },
-              { "id": "racion-queso-cabra", "name": "Queso de cabra", "price": "4,50€" },
+              { "id": "racion-queso-cabra", "name": "Queso de cabra", "price": "4,50€", "dietary": "vegetarian" },
               { "id": "montado-pepito-ternera", "name": "Pepito de ternera", "price": "8,50€" },
               { "id": "racion-hornazo-castellano", "name": "Hornazo castellano al corte", "price": "4€" },
               { "id": "racion-alubias-barco", "name": "Alubias del barco", "price": "3,50€" }
@@ -5534,9 +5587,9 @@
             "title": "Postres y otros",
             "votable": true,
             "items": [
-              { "id": "postre-porcion-tarta", "name": "Porción de tarta", "description": "Yema; queso con membrillo", "price": "3€" },
-              { "id": "postre-yemas-santa-teresa", "name": "Yemas de Santa Teresa", "description": "Tradicionales o variadas; caja de 12 unidades", "price": "12€" },
-              { "id": "postre-caja-pastas-murallita", "name": "Caja de pastas «Murallita»", "price": "14€" },
+              { "id": "postre-porcion-tarta", "name": "Porción de tarta", "description": "Yema; queso con membrillo", "price": "3€", "dietary": "vegetarian" },
+              { "id": "postre-yemas-santa-teresa", "name": "Yemas de Santa Teresa", "description": "Tradicionales o variadas; caja de 12 unidades", "price": "12€", "dietary": "vegetarian" },
+              { "id": "postre-caja-pastas-murallita", "name": "Caja de pastas «Murallita»", "price": "14€", "dietary": "vegetarian" },
               { "id": "otros-bolsa-pipas", "name": "Bolsa de pipas Hijos de Calvo", "price": "2,50€" }
             ]
           },
@@ -5810,14 +5863,14 @@
             "title": "Raciones",
             "votable": true,
             "items": [
-              { "id": "pincho-canape-cabrales", "name": "Canapé de cabrales", "price": "2,50€" },
+              { "id": "pincho-canape-cabrales", "name": "Canapé de cabrales", "price": "2,50€", "dietary": "vegetarian" },
               { "id": "pincho-bollo-prenao", "name": "Bollo preñao", "price": "4,50€" },
               { "id": "racion-callos", "name": "Callos", "price": "8€" },
               { "id": "racion-callos-patatas-fritas", "name": "Callos con patatas fritas", "price": "8€" },
-              { "id": "racion-patatas-cabrales", "name": "Patatas al cabrales", "price": "5,50€" },
+              { "id": "racion-patatas-cabrales", "name": "Patatas al cabrales", "price": "5,50€", "dietary": "vegetarian" },
               { "id": "pincho-chorizo-sidra", "name": "Chorizo a la sidra", "price": "3,50€" },
               { "id": "racion-empanada", "name": "Empanada", "price": "5€" },
-              { "id": "pincho-culin-sidra-cabrales", "name": "Culín de sidra + pincho de cabrales", "price": "3€" },
+              { "id": "pincho-culin-sidra-cabrales", "name": "Culín de sidra + pincho de cabrales", "price": "3€", "dietary": "vegetarian" },
               { "id": "racion-fabada", "name": "Fabada", "price": "8€" }
             ]
           },
@@ -5825,8 +5878,8 @@
             "title": "Postres",
             "votable": true,
             "items": [
-              { "id": "postre-arroz-leche", "name": "Arroz con leche", "price": "3,50€" },
-              { "id": "postre-tarta-sidra", "name": "Tarta a la sidra" }
+              { "id": "postre-arroz-leche", "name": "Arroz con leche", "price": "3,50€", "dietary": "vegetarian" },
+              { "id": "postre-tarta-sidra", "name": "Tarta a la sidra", "dietary": "vegetarian" }
             ]
           },
           {
@@ -5902,10 +5955,10 @@
               { "id": "bocadito-rabas", "name": "Bocadito de rabas", "price": "4€" },
               { "id": "racion-anchoas-aceite", "name": "Anchoas en aceite", "price": "7€" },
               { "id": "racion-boquerones-vinagre", "name": "Boquerones en vinagre aliñados", "price": "4€" },
-              { "id": "queso-nata-pieza-grande", "name": "Queso de nata (pieza grande)", "description": "Pieza completa; 2 kg", "price": "25€" },
-              { "id": "queso-nata-pieza-pequena", "name": "Queso de nata (pieza pequeña)", "description": "Pieza completa; 0,530 kg", "price": "9€" },
-              { "id": "queso-nata-membrillo-pincho", "name": "Queso de nata con membrillo (pincho)", "price": "2€" },
-              { "id": "queso-nata-membrillo-racion", "name": "Queso de nata con membrillo (ración)", "price": "6€" },
+              { "id": "queso-nata-pieza-grande", "name": "Queso de nata (pieza grande)", "description": "Pieza completa; 2 kg", "price": "25€", "dietary": "vegetarian" },
+              { "id": "queso-nata-pieza-pequena", "name": "Queso de nata (pieza pequeña)", "description": "Pieza completa; 0,530 kg", "price": "9€", "dietary": "vegetarian" },
+              { "id": "queso-nata-membrillo-pincho", "name": "Queso de nata con membrillo (pincho)", "price": "2€", "dietary": "vegetarian" },
+              { "id": "queso-nata-membrillo-racion", "name": "Queso de nata con membrillo (ración)", "price": "6€", "dietary": "vegetarian" },
               { "id": "queso-nata-anchoa-pincho", "name": "Queso de nata con anchoa (pincho)", "price": "2€" },
               { "id": "queso-nata-anchoa-racion", "name": "Queso de nata con anchoa (ración)", "price": "7€" }
             ]
@@ -5914,10 +5967,10 @@
             "title": "Postres",
             "votable": true,
             "items": [
-              { "id": "postre-sobaos-grandes", "name": "Sobaos pasiegos grandes", "description": "Unidad 3€; paquete de 1 kg 13€" },
-              { "id": "postre-sobaos-pequenos", "name": "Sobaos pasiegos pequeños", "description": "Unidad 1,50€; paquete de 1 kg 13€" },
-              { "id": "postre-corbatas-unquera", "name": "Corbatas de Unquera", "description": "Unidad 1,50€; caja 9,50€" },
-              { "id": "postre-quesada-pasiega", "name": "Quesada pasiega", "description": "Pincho 2€; quesada 900 g 13,50€; al vacío 650 g 12€" }
+              { "id": "postre-sobaos-grandes", "name": "Sobaos pasiegos grandes", "description": "Unidad 3€; paquete de 1 kg 13€", "dietary": "vegetarian" },
+              { "id": "postre-sobaos-pequenos", "name": "Sobaos pasiegos pequeños", "description": "Unidad 1,50€; paquete de 1 kg 13€", "dietary": "vegetarian" },
+              { "id": "postre-corbatas-unquera", "name": "Corbatas de Unquera", "description": "Unidad 1,50€; caja 9,50€", "dietary": "vegetarian" },
+              { "id": "postre-quesada-pasiega", "name": "Quesada pasiega", "description": "Pincho 2€; quesada 900 g 13,50€; al vacío 650 g 12€", "dietary": "vegetarian" }
             ]
           },
           {
@@ -6062,7 +6115,7 @@
               { "id": "racion-tiras-calamar-mojo-balear", "name": "Tiras de calamar con mojo balear", "price": "9€" },
               { "id": "racion-huevos-sobrasada", "name": "Huevos fritos con patatas y salsa de sobrasada", "price": "8€" },
               { "id": "racion-tortilla-sobrasada-mahon", "name": "Tortilla de patata con sobrasada y queso Mahon", "price": "8,50€" },
-              { "id": "racion-ciurons-escaldins", "name": "Ciurons escaldins", "price": "7,50€" }
+              { "id": "racion-ciurons-escaldins", "name": "Ciurons escaldins", "price": "7,50€", "dietary": "vegetarian" }
             ]
           },
           {
@@ -6070,7 +6123,7 @@
             "votable": true,
             "items": [
               { "id": "postre-ensaimada", "name": "Ensaimada", "price": "4€" },
-              { "id": "postre-tarta-queso", "name": "Tarta de queso", "price": "3,50€" }
+              { "id": "postre-tarta-queso", "name": "Tarta de queso", "price": "3,50€", "dietary": "vegetarian" }
             ]
           },
           {
@@ -6119,10 +6172,10 @@
             "title": "Raciones y pinchos",
             "votable": true,
             "items": [
-              { "id": "racion-papas-alinas", "name": "Papas aliñás", "price": "5€" },
-              { "id": "racion-aceitunas", "name": "Aceitunas", "price": "2€" },
+              { "id": "racion-papas-alinas", "name": "Papas aliñás", "price": "5€", "dietary": "vegetarian" },
+              { "id": "racion-aceitunas", "name": "Aceitunas", "price": "2€", "dietary": "vegetarian" },
               { "id": "racion-adobo", "name": "Adobo", "price": "9,50€" },
-              { "id": "racion-berenjenas-miel-cana", "name": "Berenjenas con miel de caña", "price": "5€" },
+              { "id": "racion-berenjenas-miel-cana", "name": "Berenjenas con miel de caña", "price": "5€", "dietary": "vegetarian" },
               { "id": "bocadillo-calamares-bebida", "name": "Bocadillo de calamares + bebida", "price": "7,5€" },
               { "id": "racion-calamares-fritos", "name": "Calamares fritos", "price": "8,50€" },
               { "id": "racion-boquerones", "name": "Boquerones", "price": "9€" },
@@ -6130,8 +6183,8 @@
               { "id": "racion-tortitas-camarones", "name": "Tortitas de camarones (3 uds)", "price": "7,5€" },
               { "id": "racion-gambas-cocidas", "name": "Gambas cocidas", "price": "9€" },
               { "id": "racion-langostinos-plancha", "name": "Langostinos a la plancha", "price": "6€" },
-              { "id": "racion-salmorejo", "name": "Salmorejo", "price": "3€" },
-              { "id": "racion-gazpacho", "name": "Gazpacho", "price": "2€" }
+              { "id": "racion-salmorejo", "name": "Salmorejo", "price": "3€", "dietary": "vegetarian" },
+              { "id": "racion-gazpacho", "name": "Gazpacho", "price": "2€", "dietary": "vegetarian" }
             ]
           },
           {
@@ -6199,14 +6252,14 @@
             "title": "Raciones y pinchos",
             "votable": true,
             "items": [
-              { "id": "racion-papas-mojo-picon", "name": "Papas con mojo picón", "description": "Ración 5,50€; media ración 3,30€" },
+              { "id": "racion-papas-mojo-picon", "name": "Papas con mojo picón", "description": "Ración 5,50€; media ración 3,30€", "dietary": "vegetarian" },
               { "id": "racion-carne-fiesta", "name": "Carne fiesta", "description": "Ración 6€; media ración 3,50€" },
-              { "id": "racion-platano-guanche", "name": "Plátano guanche", "price": "3€" },
+              { "id": "racion-platano-guanche", "name": "Plátano guanche", "price": "3€", "dietary": "vegetarian" },
               { "id": "menu-del-dia", "name": "Menú del día", "description": "Preguntar en barra", "price": "8€" },
-              { "id": "racion-queso-sin-guayaba", "name": "Queso sin guayaba (ración)", "price": "5€" },
-              { "id": "racion-queso-con-guayaba", "name": "Queso con guayaba (ración)", "price": "5,50€" },
-              { "id": "pincho-queso-sin-guayaba", "name": "Queso sin guayaba (pincho)", "price": "1€" },
-              { "id": "pincho-queso-con-guayaba", "name": "Queso con guayaba (pincho)", "price": "1,50€" },
+              { "id": "racion-queso-sin-guayaba", "name": "Queso sin guayaba (ración)", "price": "5€", "dietary": "vegetarian" },
+              { "id": "racion-queso-con-guayaba", "name": "Queso con guayaba (ración)", "price": "5,50€", "dietary": "vegetarian" },
+              { "id": "pincho-queso-sin-guayaba", "name": "Queso sin guayaba (pincho)", "price": "1€", "dietary": "vegetarian" },
+              { "id": "pincho-queso-con-guayaba", "name": "Queso con guayaba (pincho)", "price": "1,50€", "dietary": "vegetarian" },
               { "id": "bebida-tapa-dia", "name": "Bebida + tapa del día", "price": "3,50€" }
             ]
           },
