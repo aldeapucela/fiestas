@@ -75,15 +75,17 @@ test('Mis guardados muestra todos los días y pliega las actividades pasadas', a
 
   const pastGroup = page.locator(`[data-plan-day-group="${past.date}"]`);
   const openGroup = page.locator(`[data-plan-day-group="${open.date}"]`);
-  await expect(pastGroup).toBeVisible();
-  await expect(openGroup).toBeVisible();
-  await expect(pastGroup.locator('h3')).toBeVisible();
-  await expect(pastGroup.locator('[data-plan-day-toggle]')).toHaveCount(0);
-  await expect(pastGroup.locator('[data-plan-finished-toggle]')).toHaveAttribute('aria-expanded', 'false');
-  await expect(pastGroup.locator('[data-plan-finished-list]')).toBeHidden();
+  const finishedToggle = page.locator('[data-plan-finished-toggle]');
+  const finishedList = page.locator('[data-plan-finished-list]');
+  await expect(finishedToggle).toHaveCount(1);
+  await expect(finishedToggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(finishedList).toBeHidden();
+  await expect(pastGroup).toBeHidden();
   await expect(openGroup.locator('h3')).toBeVisible();
-  await expect(openGroup.locator('[data-plan-day-toggle]')).toHaveCount(0);
-  await expect(openGroup.locator('[data-plan-finished-toggle]')).toHaveCount(0);
+  await finishedToggle.click();
+  await expect(finishedToggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(finishedList).toBeVisible();
+  await expect(pastGroup).toBeVisible();
 });
 
 test('los planes personalizados pliegan las actividades pasadas y mantienen los días visibles', async ({ page }) => {
@@ -112,15 +114,18 @@ test('los planes personalizados pliegan las actividades pasadas y mantienen los 
 
   const pastGroup = page.locator(`[data-plan-day-group="${past.date}"]`);
   const openGroup = page.locator(`[data-plan-day-group="${open.date}"]`);
-  await expect(pastGroup).toBeVisible();
-  await expect(pastGroup.locator('h3')).toBeVisible();
-  await expect(pastGroup.locator('[data-plan-day-toggle]')).toHaveCount(0);
-  await expect(pastGroup.locator('[data-plan-finished-toggle]')).toHaveAttribute('aria-expanded', 'false');
-  await expect(pastGroup.locator('[data-plan-finished-list]')).toBeHidden();
+  const finishedToggle = page.locator('[data-plan-finished-toggle]');
+  const finishedList = page.locator('[data-plan-finished-list]');
+  await expect(finishedToggle).toHaveCount(1);
+  await expect(finishedToggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(finishedList).toBeHidden();
+  await expect(pastGroup).toBeHidden();
   await expect(openGroup).toBeVisible();
   await expect(openGroup.locator('h3')).toBeVisible();
-  await expect(openGroup.locator('[data-plan-day-toggle]')).toHaveCount(0);
-  await expect(openGroup.locator('[data-plan-finished-toggle]')).toHaveCount(0);
+  await finishedToggle.click();
+  await expect(finishedToggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(finishedList).toBeVisible();
+  await expect(pastGroup).toBeVisible();
 });
 
 // Flujo 8

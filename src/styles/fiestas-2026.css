@@ -7195,6 +7195,12 @@ html.dark .fiestas-plan-selector-create input {
   gap: 0.3rem;
 }
 
+.fiestas-plan-finished-list {
+  display: grid;
+  min-width: 0;
+  gap: 1.05rem;
+}
+
 .fiestas-plan-date.is-active {
   background: #159b8b;
   color: #fff;
