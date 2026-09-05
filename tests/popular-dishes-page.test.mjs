@@ -117,3 +117,31 @@ test('falls back to the five highest-ranked dishes when a strict threshold is to
   assert.deepEqual(result.dishes.map((dish) => dish.dishName), ['A', 'B', 'C', 'D', 'E']);
   assert.equal(result.usedFallback, true);
 });
+
+test('falls back to the fifteen highest-ranked dishes without filters', () => {
+  const dishes = Array.from({ length: 20 }, (_, index) => ({
+    dishName: String.fromCharCode(65 + index),
+    likeCount: index < 4 ? 50 : 1
+  }));
+
+  const result = popularDishes.getPopularDishesForFilters(dishes);
+
+  assert.equal(result.threshold, 2);
+  assert.equal(result.dishes.length, 15);
+  assert.deepEqual(result.dishes.map((dish) => dish.dishName), [...'ABCDEFGHIJKLMNO']);
+  assert.equal(result.usedFallback, true);
+});
+
+test('keeps the five-dish fallback when a dietary filter is active', () => {
+  const dishes = Array.from({ length: 20 }, (_, index) => ({
+    dishName: String.fromCharCode(65 + index),
+    dietary: 'vegan',
+    likeCount: index < 4 ? 50 : 1
+  }));
+
+  const result = popularDishes.getPopularDishesForFilters(dishes, { dietary: 'vegan' });
+
+  assert.equal(result.dishes.length, 5);
+  assert.deepEqual(result.dishes.map((dish) => dish.dishName), [...'ABCDE']);
+  assert.equal(result.usedFallback, true);
+});

@@ -2,6 +2,7 @@ const CASETA_DISH_LIKES_API_URL = 'https://api.aldeapucela.org/fiestas/caseta-di
 const REQUEST_TIMEOUT = 5000;
 const popularDishCollator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const MIN_VISIBLE_POPULAR_DISHES = 5;
+const MIN_VISIBLE_UNFILTERED_POPULAR_DISHES = 15;
 const DIETARY_FILTERS = new Set(['vegetarian', 'vegan']);
 
 export function getPopularDishShareLabel(filters = {}) {
@@ -37,9 +38,14 @@ export function filterDishesByPreferences(dishes = [], filters = {}) {
 export function getPopularDishesForFilters(dishes = [], filters = {}) {
   const matchingDishes = filterDishesByPreferences(dishes, filters);
   const totalLikes = matchingDishes.reduce((sum, dish) => sum + Math.max(0, Number(dish?.likeCount) || 0), 0);
+  const hasFilters = DIETARY_FILTERS.has(filters.dietary) || filters.glutenFree === true;
   return {
     matchingDishes,
-    ...filterPopularDishes(matchingDishes, totalLikes)
+    ...filterPopularDishes(
+      matchingDishes,
+      totalLikes,
+      hasFilters ? MIN_VISIBLE_POPULAR_DISHES : MIN_VISIBLE_UNFILTERED_POPULAR_DISHES
+    )
   };
 }
 
@@ -51,7 +57,7 @@ export function getPopularDishThreshold(totalLikes) {
   return Math.max(5, Math.ceil(total * 0.02));
 }
 
-export function filterPopularDishes(dishes = [], totalLikes = null) {
+export function filterPopularDishes(dishes = [], totalLikes = null, minimumVisible = MIN_VISIBLE_POPULAR_DISHES) {
   const rankedDishes = Array.isArray(dishes) ? dishes : [];
   const total = Number(totalLikes);
   const resolvedTotal = Number.isFinite(total) && total >= 0
@@ -60,12 +66,15 @@ export function filterPopularDishes(dishes = [], totalLikes = null) {
   const threshold = getPopularDishThreshold(resolvedTotal);
   const filtered = rankedDishes.filter((dish) => dish.likeCount >= threshold);
 
-  if (filtered.length >= MIN_VISIBLE_POPULAR_DISHES || rankedDishes.length <= MIN_VISIBLE_POPULAR_DISHES) {
+  const resolvedMinimumVisible = Number.isInteger(minimumVisible) && minimumVisible > 0
+    ? minimumVisible
+    : MIN_VISIBLE_POPULAR_DISHES;
+  if (filtered.length >= resolvedMinimumVisible || rankedDishes.length <= resolvedMinimumVisible) {
     return { dishes: filtered, threshold, totalLikes: resolvedTotal, usedFallback: false };
   }
 
   return {
-    dishes: rankedDishes.slice(0, MIN_VISIBLE_POPULAR_DISHES),
+    dishes: rankedDishes.slice(0, resolvedMinimumVisible),
     threshold,
     totalLikes: resolvedTotal,
     usedFallback: true
