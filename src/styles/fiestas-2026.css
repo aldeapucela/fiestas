@@ -7189,6 +7189,12 @@ html.dark .fiestas-plan-selector-create input {
   font-weight: 850;
 }
 
+.fiestas-plan-day-group {
+  display: grid;
+  min-width: 0;
+  gap: 0.3rem;
+}
+
 .fiestas-plan-date.is-active {
   background: #159b8b;
   color: #fff;

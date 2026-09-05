@@ -3,6 +3,8 @@ import assert from 'node:assert/strict';
 
 import {
   createCommunityPlanUrl,
+  isPlanActivityPast,
+  isPlanDatePast,
   mergeCommunityPlanUpdates,
   plansMatchSource,
   validateImport
@@ -141,4 +143,14 @@ test('does not update a community plan after a local modification', () => {
 
   assert.equal(result.changed, false);
   assert.deepEqual(result.plans, [plan]);
+});
+
+test('past plan activities are identified without collapsing their day', () => {
+  const now = new Date(2026, 8, 5, 12);
+
+  assert.equal(isPlanDatePast('2026-09-04', now), true);
+  assert.equal(isPlanActivityPast({ date: '2026-09-04', startTime: '20:00' }, now), true);
+  assert.equal(isPlanActivityPast({ date: '2026-09-05', startTime: '11:00' }, now), false);
+  assert.equal(isPlanActivityPast({ date: '2026-09-05', startTime: '11:00', endTime: '12:00' }, now), true);
+  assert.equal(isPlanActivityPast({ date: '2026-09-06', startTime: '10:00' }, now), false);
 });

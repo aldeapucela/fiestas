@@ -1,6 +1,12 @@
 import { test, expect, loadClientEvents } from './fixtures.js';
 
 const FAVORITES_KEY = 'fiestasPucela:favorites';
+function localDateKey(date) {
+  const year = date.getFullYear();
+  const month = String(date.getMonth() + 1).padStart(2, '0');
+  const day = String(date.getDate()).padStart(2, '0');
+  return `${year}-${month}-${day}`;
+}
 
 function planHash(activityIds) {
   const payload = {
@@ -49,6 +55,70 @@ test('Mi plan usa la miniatura optimizada de una actividad con imagen', async ({
   const image = page.locator('img.fiestas-plan-timeline-image').first();
   await expect(image).toBeVisible();
   await expect(image).toHaveAttribute('src', /\/assets\/events\/thumbs\/.*\.webp$/);
+});
+
+test('Mis guardados muestra todos los días y pliega las actividades pasadas', async ({ page }) => {
+  await page.goto('/');
+  const events = await loadClientEvents(page);
+  const today = localDateKey(new Date());
+  const past = events.find((event) => event.date < today);
+  const open = events.find((event) => event.date > today);
+  expect(past).toBeTruthy();
+  expect(open).toBeTruthy();
+
+  await page.evaluate(({ pastId, openId }) => {
+    localStorage.setItem('fiestasPucela:favorites', JSON.stringify([pastId, openId]));
+  }, { pastId: past.id, openId: open.id });
+  await page.goto('/plan/');
+
+  const pastGroup = page.locator(`[data-plan-day-group="${past.date}"]`);
+  const openGroup = page.locator(`[data-plan-day-group="${open.date}"]`);
+  await expect(pastGroup).toBeVisible();
+  await expect(openGroup).toBeVisible();
+  await expect(pastGroup.locator('h3')).toBeVisible();
+  await expect(pastGroup.locator('[data-plan-day-toggle]')).toHaveCount(0);
+  await expect(pastGroup.locator('[data-plan-finished-toggle]')).toHaveAttribute('aria-expanded', 'false');
+  await expect(pastGroup.locator('[data-plan-finished-list]')).toBeHidden();
+  await expect(openGroup.locator('h3')).toBeVisible();
+  await expect(openGroup.locator('[data-plan-day-toggle]')).toHaveCount(0);
+  await expect(openGroup.locator('[data-plan-finished-toggle]')).toHaveCount(0);
+});
+
+test('los planes personalizados pliegan las actividades pasadas y mantienen los días visibles', async ({ page }) => {
+  await page.goto('/');
+  const events = await loadClientEvents(page);
+  const today = localDateKey(new Date());
+  const past = events.find((event) => event.date < today);
+  const open = events.find((event) => event.date > today);
+  expect(past).toBeTruthy();
+  expect(open).toBeTruthy();
+
+  await page.evaluate(({ pastId, openId }) => {
+    localStorage.setItem('fiestasPucela:plans', JSON.stringify({
+      schemaVersion: 1,
+      plans: [{
+        id: 'local-e2e-plan',
+        name: 'Plan E2E',
+        createdAt: '2026-08-01T10:00:00.000Z',
+        updatedAt: '2026-08-01T10:00:00.000Z',
+        activityIds: [pastId, openId],
+        icon: 'layers'
+      }]
+    }));
+  }, { pastId: past.id, openId: open.id });
+  await page.goto('/plan/?tab=plans&plan=local-e2e-plan');
+
+  const pastGroup = page.locator(`[data-plan-day-group="${past.date}"]`);
+  const openGroup = page.locator(`[data-plan-day-group="${open.date}"]`);
+  await expect(pastGroup).toBeVisible();
+  await expect(pastGroup.locator('h3')).toBeVisible();
+  await expect(pastGroup.locator('[data-plan-day-toggle]')).toHaveCount(0);
+  await expect(pastGroup.locator('[data-plan-finished-toggle]')).toHaveAttribute('aria-expanded', 'false');
+  await expect(pastGroup.locator('[data-plan-finished-list]')).toBeHidden();
+  await expect(openGroup).toBeVisible();
+  await expect(openGroup.locator('h3')).toBeVisible();
+  await expect(openGroup.locator('[data-plan-day-toggle]')).toHaveCount(0);
+  await expect(openGroup.locator('[data-plan-finished-toggle]')).toHaveCount(0);
 });
 
 // Flujo 8
