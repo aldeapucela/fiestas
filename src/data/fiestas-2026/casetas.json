@@ -1245,47 +1245,29 @@
       "details": {
         "menuSections": [
           {
-            "title": "La especialidad",
+            "title": "Pinchos — 4€ con consumición",
             "votable": true,
             "items": [
+              { "id": "pincho-brioche-carrillera", "name": "Brioche de carrillera" },
+              { "id": "otro-serranito", "name": "Serranito ibérico" },
+              { "id": "otro-torreznos-soria-piparra", "name": "Montadito de torreznos" },
               {
-                "id": "pincho-brioche-carrillera",
-                "name": "Brioche de carrillera"
-              }
+                "id": "otro-patatas-chorizo",
+                "name": "Patatas con chorizo"
+              },
+              { "id": "otro-criollo-chimichurri", "name": "Chorizo criollo con chimichurri" },
+              { "id": "otro-secreto-iberico", "name": "Secretito ibérico" },
+              { "id": "otro-provolone-tomate", "name": "Provolone con tomate" },
+              { "id": "pincho-gilda-clasica", "name": "Gilda clásica", "price": "2,5€/unidad" }
             ]
           },
           {
-            "title": "Otras",
+            "title": "Raciones — 8€",
             "votable": false,
             "items": [
-              {
-                "id": "otro-patatas-chorizo",
-                "name": "Patatas con chorizo",
-                "description": "con salsa de pimientos y ajo"
-              },
-              {
-                "id": "otro-secreto-iberico",
-                "name": "Secreto ibérico",
-                "description": "con queso Edam y salsa Mayaki"
-              },
-              {
-                "id": "otro-criollo-chimichurri",
-                "name": "Criollo chimichurri"
-              },
-              {
-                "id": "otro-torreznos-soria-piparra",
-                "name": "Torreznos de Soria y piparra",
-                "description": "con salsa de piquillos y ajo"
-              },
-              {
-                "id": "otro-serranito",
-                "name": "Serranito",
-                "description": "lomo olla, jamón serrano, pimientos y tomate"
-              },
-              {
-                "id": "otro-provolone-tomate",
-                "name": "Provolone con tomate"
-              }
+              { "id": "racion-patatas-doble-chorizo", "name": "Patatas doble chorizo con salsa de piquillos y ajo" },
+              { "id": "racion-patatas-torreznos-gildas", "name": "Patatas con torreznos y gildas" },
+              { "id": "racion-morcilla-matachana", "name": "Morcilla de Matachana" }
             ]
           }
         ]
@@ -1469,6 +1451,37 @@
         "query": "Plaza de la Universidad, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:37.841Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria — Pinchos",
+            "votable": true,
+            "items": [
+              { "id": "pincho-moruno", "name": "Pincho moruno" },
+              { "id": "pincho-tortitas-camaron", "name": "Tortitas de camarón" },
+              { "id": "pincho-brocheta-langostinos", "name": "Brocheta de langostinos" },
+              { "id": "pincho-brabas", "name": "Brabas" },
+              { "id": "pincho-super-perrito-caliente", "name": "Super perrito caliente" },
+              { "id": "pincho-huevos-rotos-jijas", "name": "Huevos rotos con jijas" },
+              { "id": "pincho-huevos-rotos-jamon", "name": "Huevos rotos con jamón" },
+              { "id": "pincho-croqueta-jamon", "name": "Croqueta de jamon" },
+              { "id": "pincho-bomba-carne", "name": "Bomba de carne" },
+              { "id": "pincho-patatas-bravas", "name": "Patatas bravas" }
+            ]
+          },
+          {
+            "title": "Pincho de feria — Chapatas",
+            "votable": true,
+            "items": [
+              { "id": "chapata-lomo-pimientos", "name": "Lomo con pimientos" },
+              { "id": "chapata-lomo-roquefort", "name": "Lomo al Roquefort" },
+              { "id": "chapata-pechuga-ali-oli", "name": "Pechuga con ali oli" },
+              { "id": "chapata-morcilla-leon", "name": "Morcilla de León" },
+              { "id": "chapata-chorizo-sidra", "name": "Chorizo a la sidra" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -3940,6 +3953,56 @@
         "lng": -4.7302649,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Calle María de Molina, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos — Pincho + bebida",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-montadito-oreja-adobo",
+                "name": "Montadito de oreja en adobo frita",
+                "description": "en salsa bangkok",
+                "price": "4€"
+              },
+              {
+                "id": "pincho-chiquiburguer-jero",
+                "name": "La chiquiburguer de Jero",
+                "price": "6€"
+              },
+              {
+                "id": "pincho-brioche-carrilleras-px",
+                "name": "Brioche de carrilleras en px",
+                "description": "cebolla roja y cilantro",
+                "price": "6€"
+              },
+              {
+                "id": "pincho-zamburrada-piquillos-kimchi",
+                "name": "Zamburrada flambeada",
+                "description": "en pomada de piquillos y kimchi",
+                "price": "6€"
+              }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-agua", "name": "Agua", "price": "1'5€" },
+              { "id": "bebida-refresco", "name": "Refresco", "price": "2'5€" },
+              { "id": "bebida-cana", "name": "Caña", "price": "3€" },
+              { "id": "bebida-mosto", "name": "Mosto", "price": "1'5€" },
+              { "id": "bebida-lorencito", "name": "Lorencito", "price": "2'5€" },
+              { "id": "bebida-tinto-verano", "name": "Tinto de verano", "price": "2'5€" },
+              { "id": "bebida-verdejo", "name": "Verdejo", "price": "2€" },
+              { "id": "bebida-tinto", "name": "Tinto", "price": "2'5€" },
+              { "id": "bebida-rosado", "name": "Rosado", "price": "1'5€" },
+              { "id": "bebida-frizzante", "name": "Frizzante", "price": "2'5€" },
+              { "id": "bebida-vermut", "name": "Vermut", "price": "3'5€" }
+            ]
+          }
+        ]
       }
     },
     {
