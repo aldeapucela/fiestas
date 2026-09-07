@@ -7920,6 +7920,14 @@ html.dark .fiestas-popular-tab:not(.is-active):hover {
   color: #e8ddf7;
 }
 
+html.dark .fiestas-popular-finished-toggle {
+  color: #aab3c1;
+}
+
+html.dark .fiestas-popular-finished-toggle i {
+  color: #c8b3e5;
+}
+
 html.dark .fiestas-event-ranking-count {
   color: #c8b3e5;
 }
@@ -8082,6 +8090,47 @@ html.dark .fiestas-popular-dish-likes {
 .fiestas-popular-tab:focus-visible {
   outline: 3px solid rgba(15, 159, 141, 0.42);
   outline-offset: 2px;
+}
+
+.fiestas-popular-options {
+  display: flex;
+  width: min(100%, 34rem);
+  justify-content: flex-end;
+  margin-top: -0.35rem;
+}
+
+.fiestas-popular-finished-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.15rem 0;
+  border: 0;
+  background: transparent;
+  color: #667085;
+  font: inherit;
+  font-size: 0.74rem;
+  font-weight: 750;
+  line-height: 1.2;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 0.16em;
+}
+
+.fiestas-popular-finished-toggle i {
+  color: #73579f;
+  font-size: 0.72rem;
+}
+
+.fiestas-popular-finished-toggle:hover,
+.fiestas-popular-finished-toggle:focus-visible {
+  color: #0f8f80;
+}
+
+.fiestas-popular-finished-toggle:focus-visible {
+  outline: 3px solid rgba(15, 159, 141, 0.42);
+  outline-offset: 3px;
+  border-radius: 0.2rem;
 }
 
 .fiestas-popular-list {

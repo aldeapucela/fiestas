@@ -97,6 +97,7 @@ const state = {
   visitCounts: new Map(),
   totalVisits: 0,
   popularMode: 'saves',
+  popularHideFinished: false,
   map: null,
   tileLayer: null,
   markers: null,
@@ -122,6 +123,7 @@ const els = {
   popularList: document.querySelector('[data-fiestas-popular-list]'),
   popularTabs: document.querySelector('[data-fiestas-popular-tabs]'),
   popularIntro: document.querySelector('[data-fiestas-popular-intro]'),
+  popularFinishedToggle: document.querySelector('[data-fiestas-popular-finished-toggle]'),
   popularDishesPage: document.querySelector('[data-fiestas-popular-dishes-page]'),
   agenda: document.querySelector('[data-fiestas-agenda]'),
   mapView: document.querySelector('[data-fiestas-map-view]'),
@@ -243,8 +245,10 @@ async function init() {
     try {
       state.events = normalizeEvents(await loadEvents());
       state.popularMode = getInitialPopularMode();
+      state.popularHideFinished = getInitialPopularFinishedState();
       bindSiteShareControls();
       bindPopularModeControls();
+      bindPopularFinishedControls();
       bindEventCardInteractions(els.popularList);
       renderPopularPage('loading');
       void loadSaveCounts().then((result) => renderPopularPage(result.ok ? 'ready' : 'error'));
@@ -434,6 +438,7 @@ function renderPopularPage(status = 'ready') {
 
   const isVisits = state.popularMode === 'visits';
   updatePopularModeDom();
+  updatePopularFinishedDom();
   container.replaceChildren();
   container.setAttribute('aria-busy', String(status === 'loading'));
 
@@ -454,9 +459,12 @@ function renderPopularPage(status = 'ready') {
     return;
   }
 
+  const rankingEvents = state.popularHideFinished
+    ? state.events.filter((event) => !isFinishedAgendaEvent(event, new Date()))
+    : state.events;
   const rankedEvents = isVisits
-    ? rankVisitedEvents(state.events, state.visitCounts, 3)
-    : rankPopularEvents(state.events, state.saveCounts, 10);
+    ? rankVisitedEvents(rankingEvents, state.visitCounts, 3)
+    : rankPopularEvents(rankingEvents, state.saveCounts, 10);
   const popularEvents = isVisits
     ? filterPopularVisitedEvents(rankedEvents, state.visitCounts, state.totalVisits).events
     : rankedEvents;
@@ -695,6 +703,10 @@ function getInitialPopularMode() {
   return new URLSearchParams(window.location.search).get('ranking') === 'visitas' ? 'visits' : 'saves';
 }
 
+function getInitialPopularFinishedState() {
+  return new URLSearchParams(window.location.search).get('finalizadas') === 'ocultas';
+}
+
 function bindPopularModeControls() {
   els.popularTabs?.addEventListener('click', (event) => {
     const button = event.target.closest('[data-fiestas-popular-mode]');
@@ -720,6 +732,21 @@ function bindPopularModeControls() {
   });
 }
 
+function bindPopularFinishedControls() {
+  els.popularFinishedToggle?.addEventListener('click', () => {
+    state.popularHideFinished = !state.popularHideFinished;
+    updatePopularFinishedUrl();
+    renderPopularPage('ready');
+  });
+}
+
+function updatePopularFinishedUrl() {
+  const url = new URL(window.location.href);
+  if (state.popularHideFinished) url.searchParams.set('finalizadas', 'ocultas');
+  else url.searchParams.delete('finalizadas');
+  window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`);
+}
+
 function updatePopularModeDom() {
   const isVisits = state.popularMode === 'visits';
   els.popularTabs?.querySelectorAll('[data-fiestas-popular-mode]').forEach((button) => {
@@ -734,6 +761,18 @@ function updatePopularModeDom() {
       : 'Estas son las actividades más guardadas por los vecinos y vecinas';
   }
   els.popularList?.setAttribute('aria-labelledby', isVisits ? 'fiestas-popular-tab-visits' : 'fiestas-popular-tab-saves');
+}
+
+function updatePopularFinishedDom() {
+  const toggle = els.popularFinishedToggle;
+  if (!toggle) return;
+  const hidden = state.popularHideFinished;
+  toggle.setAttribute('aria-pressed', String(hidden));
+  toggle.setAttribute('aria-label', hidden ? 'Mostrar actividades finalizadas' : 'Ocultar actividades finalizadas');
+  toggle.innerHTML = `
+    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+    <span>${hidden ? 'Mostrar finalizadas' : 'Ocultar finalizadas'}</span>
+  `;
 }
 
 function bindEventCardInteractions(container) {

@@ -20,6 +20,56 @@ test('populares permite cambiar al ranking por visitas', async ({ page }) => {
   await expect(page.locator('[data-fiestas-popular-list]')).toHaveAttribute('aria-labelledby', 'fiestas-popular-tab-visits');
 });
 
+test('populares permite ocultar finalizadas en ambos rankings', async ({ page }) => {
+  await page.addInitScript(() => {
+    const OriginalDate = Date;
+    const fixedNow = OriginalDate.parse('2026-09-07T12:00:00+02:00');
+    class TestDate extends OriginalDate {
+      constructor(...args) {
+        super(...(args.length ? args : [fixedNow]));
+      }
+
+      static now() {
+        return fixedNow;
+      }
+    }
+    TestDate.parse = OriginalDate.parse;
+    TestDate.UTC = OriginalDate.UTC;
+    window.Date = TestDate;
+  });
+  await page.route('**/fiestas/saves', (route) => route.fulfill({
+    status: 200,
+    contentType: 'application/json',
+    body: JSON.stringify({
+      ok: true,
+      activities: [
+        { id: '4', saveCount: 20, visitCount: 4 },
+        { id: '131', saveCount: 19, visitCount: 3 }
+      ],
+      totalVisits: 7
+    })
+  }));
+  await page.goto('/populares/');
+
+  const toggle = page.locator('[data-fiestas-popular-finished-toggle]');
+  await expect(toggle).toContainText('Ocultar finalizadas');
+  await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('[data-fiestas-card="4"]')).toBeVisible();
+  await expect(page.locator('[data-fiestas-card="131"]')).toBeVisible();
+
+  await toggle.click();
+
+  await expect(toggle).toContainText('Mostrar finalizadas');
+  await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+  await expect(page).toHaveURL(/finalizadas=ocultas/);
+  await expect(page.locator('[data-fiestas-card="4"]')).toHaveCount(0);
+  await expect(page.locator('[data-fiestas-card="131"]')).toBeVisible();
+
+  await page.getByRole('tab', { name: 'Por visitas', exact: true }).click();
+  await expect(page.locator('[data-fiestas-card="4"]')).toHaveCount(0);
+  await expect(page.locator('[data-fiestas-card="131"]')).toBeVisible();
+});
+
 test('el catálogo de planes vecinales renderiza y sus fichas abren', async ({ page }) => {
   const planDataRequests = [];
   page.on('request', (request) => {
