@@ -171,6 +171,20 @@ function contentVersion(seed) {
   return hash.digest('hex').slice(0, 12);
 }
 
+async function readFontAwesomeVersions() {
+  const fontDir = path.join(root, 'src', 'assets', 'fontawesome');
+  const versions = {};
+  for (const [key, fileName] of Object.entries({
+    solid: 'fa-solid-900.woff2',
+    regular: 'fa-regular-400.woff2',
+    brands: 'fa-brands-400.woff2'
+  })) {
+    const content = await fs.readFile(path.join(fontDir, fileName));
+    versions[key] = createHash('sha256').update(content).digest('hex').slice(0, 12);
+  }
+  return versions;
+}
+
 async function compileCss(cssVersionSeed) {
   const input = path.join(root, 'src', 'styles', 'fiestas-2026.css');
   const icons = await fs.readFile(path.join(root, 'src', 'styles', 'fontawesome-subset.css'), 'utf8');
@@ -221,11 +235,14 @@ async function loadPwaFiles() {
   };
 }
 
-async function writePwaFiles({ serviceWorker, offlinePage }, { appVersion, cssVersion, jsVersion, eventsDataUrl }) {
+async function writePwaFiles({ serviceWorker, offlinePage }, { appVersion, cssVersion, jsVersion, eventsDataUrl, fontAwesomeVersions }) {
   const renderedServiceWorker = serviceWorker
     .replaceAll('__APP_VERSION__', appVersion)
     .replaceAll('__CSS_VERSION__', cssVersion)
     .replaceAll('__JS_VERSION__', jsVersion)
+    .replaceAll('__FONT_SOLID_VERSION__', fontAwesomeVersions.solid)
+    .replaceAll('__FONT_REGULAR_VERSION__', fontAwesomeVersions.regular)
+    .replaceAll('__FONT_BRANDS_VERSION__', fontAwesomeVersions.brands)
     .replaceAll('__EVENTS_DATA_URL__', eventsDataUrl);
   await writeFile('sw.js', renderedServiceWorker);
   await writeFile('offline.html', offlinePage);
@@ -1079,7 +1096,7 @@ function normalizeTags(tags, type) {
   return [...new Set([primary, ...values].map((tag) => tag.trim()).filter(Boolean))];
 }
 
-function pageContext({ assetVersion, cssVersion, jsVersion, eventAliases = {}, eventAliasVersion = '' }) {
+function pageContext({ assetVersion, cssVersion, jsVersion, fontAwesomeVersions, eventAliases = {}, eventAliasVersion = '' }) {
   return {
     activeNav: 'fiestas-2026',
     pageCss: 'fiestas-2026.' + cssVersion + '.css',
@@ -1092,6 +1109,7 @@ function pageContext({ assetVersion, cssVersion, jsVersion, eventAliases = {}, e
     assetVersion,
     cssVersion,
     jsVersion,
+    fontAwesomeVersions,
     eventAliases,
     eventAliasVersion,
     communityPromptCampaign,
@@ -1115,6 +1133,7 @@ async function build() {
   const css = await compileCss(cssVersionSeed);
   const jsContents = await copyJs(jsVersionSeed);
   await copyStaticAssets(assetVersionSeed);
+  const fontAwesomeVersions = await readFontAwesomeVersions();
   const communityPlans = await copyCommunityPlansData(assetVersionSeed);
   await copyCommunityPlanFiles(assetVersionSeed);
   const vallabusStops = await loadVallabusStops();
@@ -1145,8 +1164,8 @@ async function build() {
     ['pwa/sw.js', pwaFiles.serviceWorker],
     ['pwa/offline.html', pwaFiles.offlinePage]
   ]);
-  await writePwaFiles(pwaFiles, { appVersion, cssVersion, jsVersion, eventsDataUrl });
-  const versions = { assetVersion, cssVersion, jsVersion, eventAliases, eventAliasVersion };
+  await writePwaFiles(pwaFiles, { appVersion, cssVersion, jsVersion, eventsDataUrl, fontAwesomeVersions });
+  const versions = { assetVersion, cssVersion, jsVersion, fontAwesomeVersions, eventAliases, eventAliasVersion };
   const summary = buildSummary(events);
   const socialImage = publicBaseUrl + '/assets/social/fiestas-valladolid-2026.jpg';
   const casetasSocialImage = publicBaseUrl + '/assets/social/casetas-feria-de-dia.jpg';

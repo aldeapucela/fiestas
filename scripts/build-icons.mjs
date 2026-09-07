@@ -2,6 +2,7 @@
 // used in templates, scripts and styles. Run `npm run icons` after adding or
 // removing icons; build.mjs fails if the manifest is out of date.
 import fs from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -74,12 +75,22 @@ async function generate() {
   await fs.rm(outputDir, { recursive: true, force: true });
   await fontawesomeSubset(subset, outputDir, { targetFormats: ['woff2'] });
 
+  const fontVersions = {};
+  for (const [key, fileName] of Object.entries({
+    solid: 'fa-solid-900.woff2',
+    regular: 'fa-regular-400.woff2',
+    brands: 'fa-brands-400.woff2'
+  })) {
+    const content = await fs.readFile(path.join(outputDir, fileName));
+    fontVersions[key] = createHash('sha256').update(content).digest('hex').slice(0, 12);
+  }
+
   const css = [
     '/* Generado por scripts/build-icons.mjs - no editar a mano. */',
     // font-display:block como el all.min.css original: un icono sin fuente debe ser invisible, nunca "tofu".
-    '@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url("/assets/fontawesome/fa-solid-900.woff2") format("woff2")}',
-    '@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url("/assets/fontawesome/fa-regular-400.woff2") format("woff2")}',
-    '@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url("/assets/fontawesome/fa-brands-400.woff2") format("woff2")}',
+    `@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:900;font-display:block;src:url("/assets/fontawesome/fa-solid-900.woff2?v=${fontVersions.solid}") format("woff2")}`,
+    `@font-face{font-family:"Font Awesome 6 Free";font-style:normal;font-weight:400;font-display:block;src:url("/assets/fontawesome/fa-regular-400.woff2?v=${fontVersions.regular}") format("woff2")}`,
+    `@font-face{font-family:"Font Awesome 6 Brands";font-style:normal;font-weight:400;font-display:block;src:url("/assets/fontawesome/fa-brands-400.woff2?v=${fontVersions.brands}") format("woff2")}`,
     '.fa,.fa-solid,.fa-regular,.fa-brands{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline-block;font-style:normal;font-variant:normal;line-height:1;text-rendering:auto}',
     '.fa,.fa-solid{font-family:"Font Awesome 6 Free";font-weight:900}',
     '.fa-regular{font-family:"Font Awesome 6 Free";font-weight:400}',

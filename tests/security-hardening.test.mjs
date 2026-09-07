@@ -45,3 +45,17 @@ test('templates do not reintroduce blocking Leaflet tags', async () => {
       `${name} should load Leaflet through the demand loader instead of blocking the page`);
   }
 });
+
+test('Font Awesome assets carry a content version through CSS, preload and the service worker', async () => {
+  const icons = await read('src/styles/fontawesome-subset.css');
+  const layout = await read('src/templates/layout.njk');
+  const serviceWorker = await read('src/pwa/sw.js');
+
+  assert.match(icons, /fa-solid-900\.woff2\?v=[a-f0-9]{12}/);
+  assert.match(icons, /fa-regular-400\.woff2\?v=[a-f0-9]{12}/);
+  assert.match(icons, /fa-brands-400\.woff2\?v=[a-f0-9]{12}/);
+  assert.match(layout, /fa-solid-900\.woff2\?v=\{\{ fontAwesomeVersions\.solid \}\}/);
+  assert.match(serviceWorker, /fa-solid-900\.woff2\?v=__FONT_SOLID_VERSION__/);
+  assert.match(serviceWorker, /fa-regular-400\.woff2\?v=__FONT_REGULAR_VERSION__/);
+  assert.match(serviceWorker, /fa-brands-400\.woff2\?v=__FONT_BRANDS_VERSION__/);
+});

@@ -62,7 +62,7 @@
     {# Font Awesome va ahora en un subset self-hosted dentro del CSS principal (npm run icons). #}
     <link rel="stylesheet" href="/assets/css/{{ pageCss }}" />
     {% if eventsDataUrl %}<link rel="preload" href="{{ eventsDataUrl }}" as="fetch" crossorigin data-fiestas-events />{% endif %}
-    <link rel="preload" href="/assets/fontawesome/fa-solid-900.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fontawesome/fa-solid-900.woff2?v={{ fontAwesomeVersions.solid }}" as="font" type="font/woff2" crossorigin />
     {% for moduleHref in modulePreloads %}<link rel="modulepreload" href="{{ moduleHref }}" />
     {% endfor %}<link rel="dns-prefetch" href="https://api.aldeapucela.org" />
     <link rel="dns-prefetch" href="https://stats.aldeapucela.org" />
