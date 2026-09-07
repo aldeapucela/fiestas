@@ -1012,6 +1012,15 @@
     white-space: nowrap;
   }
 
+  .fiestas-day-meta {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.8rem;
+    min-height: 1.3rem;
+  }
+
   .fiestas-event-list {
     display: grid;
     gap: 0.8rem;
@@ -1021,12 +1030,7 @@
     display: none;
   }
 
-  .fiestas-finished-activities {
-    display: grid;
-    gap: 0.8rem;
-  }
-
-  .fiestas-finished-activities + .fiestas-event-list {
+  .fiestas-event-list.has-finished {
     border-top: 1px solid #dfe3ea;
     padding-top: 0.9rem;
   }
@@ -1082,6 +1086,40 @@
 
   .fiestas-finished-toggle[aria-expanded='true'] i {
     transform: rotate(180deg);
+  }
+
+  .fiestas-agenda-sort-toggle {
+    display: inline-flex;
+    min-width: 0;
+    margin-left: auto;
+    align-items: center;
+    gap: 0.35rem;
+    border: 0;
+    background: transparent;
+    color: #8993a2;
+    cursor: pointer;
+    font: inherit;
+    font-size: 0.74rem;
+    font-weight: 800;
+    line-height: 1.2;
+    padding: 0.15rem 0;
+    text-align: left;
+    transition: color 0.16s ease;
+  }
+
+  .fiestas-agenda-sort-toggle i {
+    flex: 0 0 auto;
+    font-size: 0.7rem;
+  }
+
+  .fiestas-agenda-sort-toggle:hover,
+  .fiestas-agenda-sort-toggle:focus-visible {
+    color: #73579f;
+  }
+
+  .fiestas-agenda-sort-toggle:focus-visible {
+    outline: 2px solid rgba(15, 159, 141, 0.35);
+    outline-offset: 3px;
   }
 
   .fiestas-event-card {
@@ -4174,8 +4212,17 @@
     color: #8993a2;
   }
 
-  html.dark .fiestas-finished-activities + .fiestas-event-list {
+  html.dark .fiestas-event-list.has-finished {
     border-top-color: #313743;
+  }
+
+  html.dark .fiestas-agenda-sort-toggle {
+    color: #8993a2;
+  }
+
+  html.dark .fiestas-agenda-sort-toggle:hover,
+  html.dark .fiestas-agenda-sort-toggle:focus-visible {
+    color: #c8b3e5;
   }
 
   html.dark .fiestas-finished-list {

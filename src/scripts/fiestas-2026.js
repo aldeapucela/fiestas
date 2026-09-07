@@ -93,6 +93,7 @@ const state = {
   selectedTicketKinds: new Set(),
   search: '',
   onlyFavorites: false,
+  agendaSort: 'time',
   favorites: new Set(readFavorites()),
   saveCounts: new Map(),
   visitCounts: new Map(),
@@ -474,6 +475,7 @@ function applySaveCountsToDom() {
   });
   updateSaveCountElements();
   if (els.detail) updateDetailFavorite({ silent: true });
+  if (els.agenda && state.agendaSort === 'popular') render();
 }
 
 function renderPopularPage(status = 'ready') {
@@ -719,6 +721,13 @@ function bindControls() {
   });
 
   bindEventCardInteractions(els.agenda);
+
+  els.agenda?.addEventListener('click', (event) => {
+    const button = event.target.closest('[data-fiestas-agenda-sort]');
+    if (!button) return;
+    state.agendaSort = state.agendaSort === 'popular' ? 'time' : 'popular';
+    render();
+  });
 
   document.addEventListener('click', (event) => {
     if (!event.target.closest('[data-fiestas-map-date-toggle]') && !event.target.closest('#fiestas-date-panel')) {
@@ -1128,6 +1137,7 @@ function renderAgenda(events) {
   let renderedEventCount = 0;
   const now = new Date();
   groups.forEach(([date, dayEvents]) => {
+    const orderedDayEvents = sortAgendaEvents(dayEvents);
     const section = document.createElement('section');
     section.className = 'fiestas-day';
     section.classList.toggle('is-all-days', searchInUpcoming || state.selectedDate === 'all');
@@ -1145,18 +1155,28 @@ function renderAgenda(events) {
     const finishedEvents = !searchInUpcoming
       && state.selectedDate !== 'all'
       && date === localDateKey(now)
-      ? dayEvents.filter((event) => isFinishedAgendaEvent(event, now))
+      ? orderedDayEvents.filter((event) => isFinishedAgendaEvent(event, now))
       : [];
     const finishedIds = new Set(finishedEvents.map((event) => event.id));
+    const finishedDisclosure = finishedEvents.length
+      ? finishedActivitiesDisclosure(date, finishedEvents)
+      : null;
+    const dayMeta = document.createElement('div');
+    dayMeta.className = 'fiestas-day-meta';
+    if (finishedDisclosure) dayMeta.append(finishedDisclosure.toggle);
+    dayMeta.append(agendaSortToggle());
+    section.append(dayMeta);
+
+    if (finishedDisclosure) section.append(finishedDisclosure.list);
+
     const list = document.createElement('div');
-    list.className = 'fiestas-event-list';
-    dayEvents.forEach((event) => {
+    list.className = `fiestas-event-list${finishedEvents.length ? ' has-finished' : ''}`;
+    orderedDayEvents.forEach((event) => {
       if (finishedIds.has(event.id)) return;
       list.append(eventCard(event));
       renderedEventCount += 1;
       if (renderedEventCount === COMMUNITY_PLANS_INSERT_AFTER) list.append(communityPlansCard());
     });
-    if (finishedEvents.length) section.append(finishedActivitiesDisclosure(date, finishedEvents));
     if (list.childElementCount) section.append(list);
     els.agenda.append(section);
   });
@@ -1197,8 +1217,6 @@ function isFinishedAgendaEvent(event, now) {
 
 function finishedActivitiesDisclosure(date, events) {
   const listId = `fiestas-finished-${date}`;
-  const disclosure = document.createElement('div');
-  disclosure.className = 'fiestas-finished-activities';
 
   const toggle = document.createElement('button');
   toggle.type = 'button';
@@ -1220,8 +1238,22 @@ function finishedActivitiesDisclosure(date, events) {
   list.hidden = !expanded;
   events.forEach((event) => list.append(eventCard(event)));
 
-  disclosure.append(toggle, list);
-  return disclosure;
+  return { toggle, list };
+}
+
+function agendaSortToggle() {
+  const isPopular = state.agendaSort === 'popular';
+  const toggle = document.createElement('button');
+  toggle.type = 'button';
+  toggle.className = 'fiestas-agenda-sort-toggle';
+  toggle.dataset.fiestasAgendaSort = 'true';
+  toggle.setAttribute('aria-pressed', String(isPopular));
+  toggle.setAttribute('aria-label', isPopular
+    ? 'Ordenar actividades por hora'
+    : 'Ordenar actividades por popularidad');
+  toggle.title = isPopular ? 'Ordenar por hora' : 'Ordenar por popularidad';
+  toggle.innerHTML = `<i class="fa-solid fa-sort" aria-hidden="true"></i><span>${isPopular ? 'Hora de inicio' : 'Popularidad'}</span>`;
+  return toggle;
 }
 
 function communityPlansCard() {
@@ -2166,6 +2198,11 @@ function normalizeTags(tags, type) {
 
 function compareEvents(a, b) {
   return a.date.localeCompare(b.date) || sortMinutes(a.startTime) - sortMinutes(b.startTime) || collator.compare(a.title, b.title);
+}
+
+function sortAgendaEvents(events) {
+  if (state.agendaSort !== 'popular') return [...events];
+  return [...events].sort((a, b) => getSaveCount(b.id) - getSaveCount(a.id) || compareEvents(a, b));
 }
 
 function sortMinutes(time = '') {

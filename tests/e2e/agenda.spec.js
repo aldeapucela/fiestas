@@ -113,6 +113,35 @@ test.describe('agenda', () => {
     await expect(finishedList).toBeHidden();
   });
 
+  test('alterna entre el orden por hora y el orden por popularidad', async ({ page }) => {
+    await page.goto('/?date=2026-09-04');
+
+    const visibleEventCards = page.locator(`${cards}:visible`);
+    const initialIds = await visibleEventCards.evaluateAll((items) => items.map((item) => item.dataset.fiestasCard));
+    expect(initialIds.length).toBeGreaterThan(1);
+
+    const popularId = initialIds[1];
+    await page.evaluate((eventId) => {
+      window.localStorage.setItem('fiestasValladolid:popularMetrics:v1', JSON.stringify({
+        ok: true,
+        cachedAt: Date.now(),
+        activities: [{ id: eventId, saveCount: 99 }]
+      }));
+    }, popularId);
+    await page.route('**/fiestas/saves', (route) => route.abort());
+    await page.reload();
+
+    const sortToggle = page.locator('[data-fiestas-agenda-sort]').first();
+    await expect(sortToggle).toContainText('Popularidad');
+    await sortToggle.click();
+    await expect(sortToggle).toContainText('Hora de inicio');
+    await expect.poll(() => visibleEventCards.first().getAttribute('data-fiestas-card')).toBe(popularId);
+
+    await sortToggle.click();
+    await expect(sortToggle).toContainText('Popularidad');
+    await expect.poll(() => visibleEventCards.first().getAttribute('data-fiestas-card')).toBe(initialIds[0]);
+  });
+
   // Flujo 2
   test('la búsqueda filtra y se puede limpiar', async ({ page }) => {
     await page.goto('/');
