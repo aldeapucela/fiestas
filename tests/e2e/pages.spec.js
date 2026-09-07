@@ -39,6 +39,37 @@ test('el catálogo de planes vecinales renderiza y sus fichas abren', async ({ p
   await expect(page.locator('h1')).not.toBeEmpty();
 });
 
+test('los planes vecinales pliegan las actividades finalizadas', async ({ page }) => {
+  await page.addInitScript(() => {
+    const OriginalDate = Date;
+    const fixedNow = OriginalDate.parse('2026-09-07T12:00:00+02:00');
+    class TestDate extends OriginalDate {
+      constructor(...args) {
+        super(...(args.length ? args : [fixedNow]));
+      }
+
+      static now() {
+        return fixedNow;
+      }
+    }
+    window.Date = TestDate;
+  });
+  await page.goto('/planes/de-tardeo-en-tardeo/');
+
+  const finishedToggle = page.locator('[data-plan-finished-toggle]');
+  const finishedList = page.locator('[data-plan-finished-list]');
+  const pastGroup = page.locator('[data-plan-day-group="2026-09-04"]');
+  await expect(finishedToggle).toHaveCount(1);
+  await expect(finishedToggle).toHaveAttribute('aria-expanded', 'false');
+  await expect(finishedList).toBeHidden();
+  await expect(pastGroup).toBeHidden();
+
+  await finishedToggle.click();
+  await expect(finishedToggle).toHaveAttribute('aria-expanded', 'true');
+  await expect(finishedList).toBeVisible();
+  await expect(pastGroup).toBeVisible();
+});
+
 test('mi plan renderiza vacío sin errores', async ({ page }) => {
   await page.goto('/plan/');
   await expect(page.locator('[data-fiestas-plans-page]')).toBeVisible();

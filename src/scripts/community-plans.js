@@ -151,6 +151,7 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
   };
   let imported = null;
   let selectedDay = new URLSearchParams(window.location.search).get('date') || 'all';
+  const finishedExpansionOverrides = new Map();
 
   const addLinks = () => [...page.querySelectorAll('[data-community-plan-add]')];
 
@@ -208,6 +209,17 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
   });
 
   detail?.addEventListener('click', (event) => {
+    const finishedToggle = event.target.closest('[data-plan-finished-toggle]');
+    if (finishedToggle) {
+      const key = finishedToggle.dataset.planFinishedToggleKey || '';
+      const expanded = finishedToggle.getAttribute('aria-expanded') !== 'true';
+      if (key) finishedExpansionOverrides.set(key, expanded);
+      finishedToggle.setAttribute('aria-expanded', String(expanded));
+      const content = document.getElementById(finishedToggle.getAttribute('aria-controls') || '');
+      if (content) content.hidden = !expanded;
+      return;
+    }
+
     const dayButton = event.target.closest('[data-plan-day]');
     if (dayButton && !dayButton.disabled) {
       selectedDay = dayButton.dataset.planDay || 'all';
@@ -215,7 +227,7 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
       if (selectedDay === 'all') url.searchParams.delete('date');
       else url.searchParams.set('date', selectedDay);
       window.history.replaceState({}, '', url);
-      renderDetail(detail, entry, imported, selectedDay, events);
+      renderDetail(detail, entry, imported, selectedDay, events, finishedExpansionOverrides);
       syncAddedLinks();
       return;
     }
@@ -229,7 +241,7 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
     else ids.add(id);
     writeFavoriteIds([...ids]);
     trackFavoriteChanged(id, !isSaved);
-    renderDetail(detail, entry, imported, selectedDay, events);
+    renderDetail(detail, entry, imported, selectedDay, events, finishedExpansionOverrides);
     syncAddedLinks();
   });
 
@@ -240,7 +252,7 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
   window.addEventListener('popstate', () => {
     selectedDay = new URLSearchParams(window.location.search).get('date') || 'all';
     if (!imported) return;
-    renderDetail(detail, entry, imported, selectedDay, events);
+    renderDetail(detail, entry, imported, selectedDay, events, finishedExpansionOverrides);
     syncAddedLinks();
   });
 
@@ -251,12 +263,12 @@ export function setupCommunityPlanDetailPage(rawEvents = []) {
     }
     try {
       imported = await loadExportedPlan(entry.url, eventById);
-      renderDetail(detail, entry, imported, selectedDay, events);
+    renderDetail(detail, entry, imported, selectedDay, events, finishedExpansionOverrides);
       setStatus('', '');
       syncAddedLinks();
       const planAddCounts = await loadPlanAddCounts();
       entry.addCount = planAddCounts?.get(entry.id) ?? null;
-      renderDetail(detail, entry, imported, selectedDay, events);
+    renderDetail(detail, entry, imported, selectedDay, events, finishedExpansionOverrides);
       syncAddedLinks();
       if (new URLSearchParams(window.location.search).get('add') === '1') await addToMyPlans();
     } catch (_) {
@@ -513,7 +525,7 @@ function updatePlanAddCountBadges() {
   });
 }
 
-function renderDetail(container, entry, imported, selectedDay, events) {
+function renderDetail(container, entry, imported, selectedDay, events, finishedExpansionOverrides) {
   if (!container) return;
   container.replaceChildren();
 
@@ -531,7 +543,10 @@ function renderDetail(container, entry, imported, selectedDay, events) {
     container.append(warning);
   }
 
-  renderPlanTimeline(container, { id: `community-${entry.id}`, activityIds: imported.activityIds }, events, [], selectedDay);
+  renderPlanTimeline(container, { id: `community-${entry.id}`, activityIds: imported.activityIds }, events, [], selectedDay, {
+    collapsePastActivities: true,
+    finishedExpansionOverrides
+  });
 }
 
 function createCommunityPlanDetailHero(entry, imported) {
