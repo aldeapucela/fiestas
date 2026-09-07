@@ -1197,7 +1197,7 @@
     "title": "XXXIV exposición ferroviaria ASVAFER",
     "location": "C/ Estación de Ariza, s/n",
     "zone": "C/ Estación de Ariza, s/n",
-    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.",
+    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.\n\nPrecio: donativo de 3,50 € para adultos. Para niños de menos de 1,30 m incluye un viaje en el tren de modelismo tripulado; los viajes adicionales cuestan 1 €. El simulador de conducción de locomotora requiere un donativo adicional de 2 €.",
     "summary": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en familia",
     "performances": [],
     "organizers": [
@@ -1211,11 +1211,11 @@
     },
     "type": "Exposición",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "3,50 € adultos",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "Niños de menos de 1,30 m: incluye un viaje en el tren de modelismo tripulado. Viajes adicionales: 1 €. Simulador de conducción de locomotora: donativo adicional de 2 €."
     },
     "tags": [
       "Exposición"
@@ -3215,7 +3215,7 @@
     "title": "XXXIV exposición ferroviaria ASVAFER",
     "location": "C/ Estación de Ariza, s/n",
     "zone": "C/ Estación de Ariza, s/n",
-    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.",
+    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.\n\nPrecio: donativo de 3,50 € para adultos. Para niños de menos de 1,30 m incluye un viaje en el tren de modelismo tripulado; los viajes adicionales cuestan 1 €. El simulador de conducción de locomotora requiere un donativo adicional de 2 €.",
     "summary": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en familia",
     "performances": [],
     "organizers": [
@@ -3229,11 +3229,11 @@
     },
     "type": "Exposición",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "3,50 € adultos",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "Niños de menos de 1,30 m: incluye un viaje en el tren de modelismo tripulado. Viajes adicionales: 1 €. Simulador de conducción de locomotora: donativo adicional de 2 €."
     },
     "tags": [
       "Exposición"
@@ -4656,7 +4656,7 @@
     "title": "XXXIV exposición ferroviaria ASVAFER",
     "location": "C/ Estación de Ariza, s/n",
     "zone": "C/ Estación de Ariza, s/n",
-    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.",
+    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.\n\nPrecio: donativo de 3,50 € para adultos. Para niños de menos de 1,30 m incluye un viaje en el tren de modelismo tripulado; los viajes adicionales cuestan 1 €. El simulador de conducción de locomotora requiere un donativo adicional de 2 €.",
     "summary": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en familia",
     "performances": [],
     "organizers": [
@@ -4670,11 +4670,11 @@
     },
     "type": "Exposición",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "3,50 € adultos",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "Niños de menos de 1,30 m: incluye un viaje en el tren de modelismo tripulado. Viajes adicionales: 1 €. Simulador de conducción de locomotora: donativo adicional de 2 €."
     },
     "tags": [
       "Exposición"
@@ -6171,7 +6171,7 @@
     "title": "XXXIV exposición ferroviaria ASVAFER",
     "location": "C/ Estación de Ariza, s/n",
     "zone": "C/ Estación de Ariza, s/n",
-    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.",
+    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.\n\nPrecio: donativo de 3,50 € para adultos. Para niños de menos de 1,30 m incluye un viaje en el tren de modelismo tripulado; los viajes adicionales cuestan 1 €. El simulador de conducción de locomotora requiere un donativo adicional de 2 €.",
     "summary": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en familia",
     "performances": [],
     "organizers": [
@@ -6185,11 +6185,11 @@
     },
     "type": "Exposición",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "3,50 € adultos",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "Niños de menos de 1,30 m: incluye un viaje en el tren de modelismo tripulado. Viajes adicionales: 1 €. Simulador de conducción de locomotora: donativo adicional de 2 €."
     },
     "tags": [
       "Exposición"
@@ -7378,7 +7378,7 @@
     "title": "XXXIV exposición ferroviaria ASVAFER",
     "location": "C/ Estación de Ariza, s/n",
     "zone": "C/ Estación de Ariza, s/n",
-    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.",
+    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.\n\nPrecio: donativo de 3,50 € para adultos. Para niños de menos de 1,30 m incluye un viaje en el tren de modelismo tripulado; los viajes adicionales cuestan 1 €. El simulador de conducción de locomotora requiere un donativo adicional de 2 €.",
     "summary": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en familia",
     "performances": [],
     "organizers": [
@@ -7392,11 +7392,11 @@
     },
     "type": "Exposición",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "3,50 € adultos",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "Niños de menos de 1,30 m: incluye un viaje en el tren de modelismo tripulado. Viajes adicionales: 1 €. Simulador de conducción de locomotora: donativo adicional de 2 €."
     },
     "tags": [
       "Exposición"
@@ -8689,7 +8689,7 @@
     "title": "XXXIV exposición ferroviaria ASVAFER",
     "location": "C/ Estación de Ariza, s/n",
     "zone": "C/ Estación de Ariza, s/n",
-    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.",
+    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.\n\nPrecio: donativo de 3,50 € para adultos. Para niños de menos de 1,30 m incluye un viaje en el tren de modelismo tripulado; los viajes adicionales cuestan 1 €. El simulador de conducción de locomotora requiere un donativo adicional de 2 €.",
     "summary": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en familia",
     "performances": [],
     "organizers": [
@@ -8703,11 +8703,11 @@
     },
     "type": "Exposición",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "3,50 € adultos",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "Niños de menos de 1,30 m: incluye un viaje en el tren de modelismo tripulado. Viajes adicionales: 1 €. Simulador de conducción de locomotora: donativo adicional de 2 €."
     },
     "tags": [
       "Exposición"
@@ -10023,7 +10023,7 @@
     "title": "XXXIV exposición ferroviaria ASVAFER",
     "location": "C/ Estación de Ariza, s/n",
     "zone": "C/ Estación de Ariza, s/n",
-    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.",
+    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.\n\nPrecio: donativo de 3,50 € para adultos. Para niños de menos de 1,30 m incluye un viaje en el tren de modelismo tripulado; los viajes adicionales cuestan 1 €. El simulador de conducción de locomotora requiere un donativo adicional de 2 €.",
     "summary": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en familia",
     "performances": [],
     "organizers": [
@@ -10037,11 +10037,11 @@
     },
     "type": "Exposición",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "3,50 € adultos",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "Niños de menos de 1,30 m: incluye un viaje en el tren de modelismo tripulado. Viajes adicionales: 1 €. Simulador de conducción de locomotora: donativo adicional de 2 €."
     },
     "tags": [
       "Exposición"
@@ -11534,7 +11534,7 @@
     "title": "XXXIV exposición ferroviaria ASVAFER",
     "location": "C/ Estación de Ariza, s/n",
     "zone": "C/ Estación de Ariza, s/n",
-    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.",
+    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.\n\nPrecio: donativo de 3,50 € para adultos. Para niños de menos de 1,30 m incluye un viaje en el tren de modelismo tripulado; los viajes adicionales cuestan 1 €. El simulador de conducción de locomotora requiere un donativo adicional de 2 €.",
     "summary": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en familia",
     "performances": [],
     "organizers": [
@@ -11548,11 +11548,11 @@
     },
     "type": "Exposición",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "3,50 € adultos",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "Niños de menos de 1,30 m: incluye un viaje en el tren de modelismo tripulado. Viajes adicionales: 1 €. Simulador de conducción de locomotora: donativo adicional de 2 €."
     },
     "tags": [
       "Exposición"
@@ -13518,7 +13518,7 @@
     "title": "XXXIV exposición ferroviaria ASVAFER",
     "location": "C/ Estación de Ariza, s/n",
     "zone": "C/ Estación de Ariza, s/n",
-    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.",
+    "description": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en Familia.\n\nLa XXXIV Exposición Ferroviaria de ASVAFER se celebra del 5 al 13 de septiembre en la Estación de “La Esperanza” en Valladolid. Este evento invita a los asistentes a realizar un viaje al mundo del ferrocarril, ofreciendo una experiencia enriquecedora para todas las edades.\n\nPrecio: donativo de 3,50 € para adultos. Para niños de menos de 1,30 m incluye un viaje en el tren de modelismo tripulado; los viajes adicionales cuestan 1 €. El simulador de conducción de locomotora requiere un donativo adicional de 2 €.",
     "summary": "Un viaje al mundo del ferrocarril para todas las edades: maquetas, tren infantil, museo ferroviario, simulador de conducción de una locomotora eléctrica, etc. Ideal para pasar una buena tarde en familia",
     "performances": [],
     "organizers": [
@@ -13532,11 +13532,11 @@
     },
     "type": "Exposición",
     "ticket": {
-      "required": false,
-      "status": "unknown",
-      "label": "Entrada no indicada",
+      "required": true,
+      "status": "paid",
+      "label": "3,50 € adultos",
       "url": null,
-      "note": "El programa no indica venta de entradas para este evento."
+      "note": "Niños de menos de 1,30 m: incluye un viaje en el tren de modelismo tripulado. Viajes adicionales: 1 €. Simulador de conducción de locomotora: donativo adicional de 2 €."
     },
     "tags": [
       "Exposición"
