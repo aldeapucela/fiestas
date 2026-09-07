@@ -8099,7 +8099,7 @@ html.dark .fiestas-popular-dish-likes {
   box-sizing: border-box;
   justify-content: flex-end;
   margin-top: -0.35rem;
-  padding-inline: 0.2rem;
+  padding-inline: 0.2rem 0.65rem;
 }
 
 .fiestas-popular-finished-toggle {
