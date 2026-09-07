@@ -8094,13 +8094,17 @@ html.dark .fiestas-popular-dish-likes {
 
 .fiestas-popular-options {
   display: flex;
-  width: min(100%, 34rem);
+  width: 100%;
+  max-width: 34rem;
+  box-sizing: border-box;
   justify-content: flex-end;
   margin-top: -0.35rem;
+  padding-inline: 0.2rem;
 }
 
 .fiestas-popular-finished-toggle {
   display: inline-flex;
+  min-width: 0;
   align-items: center;
   gap: 0.35rem;
   padding: 0.15rem 0;
@@ -8115,6 +8119,7 @@ html.dark .fiestas-popular-dish-likes {
   text-decoration: underline;
   text-decoration-style: dotted;
   text-underline-offset: 0.16em;
+  white-space: nowrap;
 }
 
 .fiestas-popular-finished-toggle i {

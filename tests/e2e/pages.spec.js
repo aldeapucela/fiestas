@@ -54,6 +54,8 @@ test('populares permite ocultar finalizadas en ambos rankings', async ({ page })
   const toggle = page.locator('[data-fiestas-popular-finished-toggle]');
   await expect(toggle).toContainText('Ocultar finalizadas');
   await expect(toggle).toHaveAttribute('aria-pressed', 'false');
+  await expect(page.locator('[data-fiestas-popular-mode="visits"] i')).toHaveClass(/fa-eye/);
+  await expect(toggle.locator('i')).toHaveClass(/fa-clock/);
   await expect(page.locator('[data-fiestas-card="4"]')).toBeVisible();
   await expect(page.locator('[data-fiestas-card="131"]')).toBeVisible();
 
@@ -61,6 +63,7 @@ test('populares permite ocultar finalizadas en ambos rankings', async ({ page })
 
   await expect(toggle).toContainText('Mostrar finalizadas');
   await expect(toggle).toHaveAttribute('aria-pressed', 'true');
+  await expect(toggle.locator('i')).toHaveClass(/fa-clock/);
   await expect(page).toHaveURL(/finalizadas=ocultas/);
   await expect(page.locator('[data-fiestas-card="4"]')).toHaveCount(0);
   await expect(page.locator('[data-fiestas-card="131"]')).toBeVisible();

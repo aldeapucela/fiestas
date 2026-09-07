@@ -770,7 +770,7 @@ function updatePopularFinishedDom() {
   toggle.setAttribute('aria-pressed', String(hidden));
   toggle.setAttribute('aria-label', hidden ? 'Mostrar actividades finalizadas' : 'Ocultar actividades finalizadas');
   toggle.innerHTML = `
-    <i class="fa-solid fa-eye" aria-hidden="true"></i>
+    <i class="fa-solid fa-clock" aria-hidden="true"></i>
     <span>${hidden ? 'Mostrar finalizadas' : 'Ocultar finalizadas'}</span>
   `;
 }
