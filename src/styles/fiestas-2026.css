@@ -10410,6 +10410,42 @@ html.dark .fiestas-collaborator-card:focus-visible {
   gap: 0.45rem;
 }
 
+.fiestas-popular-dishes-zone-select-wrap {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.fiestas-popular-dishes-zone-select {
+  width: 100%;
+  min-height: 2.7rem;
+  appearance: none;
+  border: 1px solid #d9dee7;
+  border-radius: 0.75rem;
+  background: #fff;
+  color: #344054;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 800;
+  padding: 0.35rem 2.35rem 0.35rem 0.75rem;
+}
+
+.fiestas-popular-dishes-zone-select:hover,
+.fiestas-popular-dishes-zone-select:focus-visible {
+  border-color: #8bcfc5;
+  outline: 3px solid rgba(15, 159, 141, 0.2);
+  outline-offset: 1px;
+}
+
+.fiestas-popular-dishes-zone-select-wrap > i {
+  position: absolute;
+  right: 0.85rem;
+  pointer-events: none;
+  color: #667085;
+  font-size: 0.75rem;
+}
+
 .fiestas-popular-dishes-filter-option {
   display: inline-flex;
   min-height: 2.7rem;
@@ -10496,6 +10532,16 @@ html.dark .fiestas-popular-dishes-filter-option,
 html.dark .fiestas-popular-dishes-filter-close {
   border-color: #313743;
   background: #1a1f28;
+}
+
+html.dark .fiestas-popular-dishes-zone-select {
+  border-color: #313743;
+  background: #1a1f28;
+  color: #f5f3ee;
+}
+
+html.dark .fiestas-popular-dishes-zone-select-wrap > i {
+  color: #b9c1ce;
 }
 
 html.dark .fiestas-popular-dishes-filter-panel {

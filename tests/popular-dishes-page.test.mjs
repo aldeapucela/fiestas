@@ -6,15 +6,23 @@ const popularDishes = await import(`../src/scripts/popular-dishes-page.js?test=$
 test('reads dietary filters from shareable URLs', () => {
   assert.deepEqual(popularDishes.readPopularDishFilters('?dietary=vegan&gluten-free=1'), {
     dietary: 'vegan',
-    glutenFree: true
+    glutenFree: true,
+    zone: ''
   });
   assert.deepEqual(popularDishes.readPopularDishFilters('?diet=vegetarian&glutenFree=1'), {
     dietary: 'vegetarian',
-    glutenFree: true
+    glutenFree: true,
+    zone: ''
   });
   assert.deepEqual(popularDishes.readPopularDishFilters('?dietary=unknown&gluten-free=0'), {
     dietary: '',
-    glutenFree: false
+    glutenFree: false,
+    zone: ''
+  });
+  assert.deepEqual(popularDishes.readPopularDishFilters('?zone=Zona+2'), {
+    dietary: '',
+    glutenFree: false,
+    zone: 'Zona 2'
   });
 });
 
@@ -24,6 +32,7 @@ test('builds descriptive share labels for active dietary filters', () => {
   assert.equal(popularDishes.getPopularDishShareLabel({ dietary: 'vegan' }), 'Pinchos populares veganos');
   assert.equal(popularDishes.getPopularDishShareLabel({ glutenFree: true }), 'Pinchos populares sin gluten');
   assert.equal(popularDishes.getPopularDishShareLabel({ dietary: 'vegetarian', glutenFree: true }), 'Pinchos populares vegetarianos y sin gluten');
+  assert.equal(popularDishes.getPopularDishShareLabel({ zone: 'Zona 2' }), 'Pinchos populares · Z2 - San Benito');
 });
 
 test('filters dietary preferences before applying the popularity threshold', () => {
@@ -61,6 +70,18 @@ test('vegetarian filtering includes vegan dishes and gluten-free remains an inde
     'Vegano sin gluten',
     'Vegetariano sin gluten'
   ]);
+});
+
+test('filters popular dishes by the selected zone', () => {
+  const dishes = [
+    { dishName: 'Pincho de San Benito', zone: 'Zona 2', likeCount: 4 },
+    { dishName: 'Pincho de la Universidad', zone: 'Zona 3', likeCount: 8 }
+  ];
+
+  const result = popularDishes.getPopularDishesForFilters(dishes, { zone: 'Zona 2' });
+
+  assert.deepEqual(result.matchingDishes.map((dish) => dish.dishName), ['Pincho de San Benito']);
+  assert.deepEqual(result.dishes.map((dish) => dish.dishName), ['Pincho de San Benito']);
 });
 
 test('uses an adaptive vote threshold for popular dishes', () => {

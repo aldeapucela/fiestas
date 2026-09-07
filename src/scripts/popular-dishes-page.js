@@ -4,41 +4,62 @@ const popularDishCollator = new Intl.Collator('es', { numeric: true, sensitivity
 const MIN_VISIBLE_POPULAR_DISHES = 5;
 const MIN_VISIBLE_UNFILTERED_POPULAR_DISHES = 15;
 const DIETARY_FILTERS = new Set(['vegetarian', 'vegan']);
+const ZONE_LABELS = Object.freeze({
+  'Zona 1': 'Z1 - Plaza Mayor',
+  'Zona 2': 'Z2 - San Benito',
+  'Zona 3': 'Z3 - Plaza de la Universidad',
+  'Zona 4': 'Z4 - Catedral y Portugalete',
+  'Zona 5': 'Z5 - Acera de Recoletos',
+  'Zona 6': 'Z6 - Paseo Zorrilla · Plaza de Toros',
+  'Zona 7': 'Z7 - Plaza de Santa Cruz',
+  'Zona 8': 'Z8 - Plaza del Salvador',
+  'Zona Ferias': 'ZF - Recinto ferial José Luis Bellido'
+});
+const ZONE_FILTERS = new Set(Object.keys(ZONE_LABELS));
 
 export function getPopularDishShareLabel(filters = {}) {
   const dietaryLabel = filters.dietary === 'vegan'
     ? 'veganos'
     : filters.dietary === 'vegetarian' ? 'vegetarianos' : '';
-  if (dietaryLabel && filters.glutenFree === true) return `Pinchos populares ${dietaryLabel} y sin gluten`;
-  if (dietaryLabel) return `Pinchos populares ${dietaryLabel}`;
-  if (filters.glutenFree === true) return 'Pinchos populares sin gluten';
-  return 'Pinchos populares';
+  let label = 'Pinchos populares';
+  if (dietaryLabel && filters.glutenFree === true) label = `Pinchos populares ${dietaryLabel} y sin gluten`;
+  else if (dietaryLabel) label = `Pinchos populares ${dietaryLabel}`;
+  else if (filters.glutenFree === true) label = 'Pinchos populares sin gluten';
+  return filters.zone && ZONE_FILTERS.has(filters.zone)
+    ? `${label} · ${ZONE_LABELS[filters.zone]}`
+    : label;
 }
 
 export function readPopularDishFilters(search = '') {
   const params = new URLSearchParams(search);
   const dietary = params.get('dietary') || params.get('diet') || '';
+  const zone = params.get('zone') || '';
   return {
     dietary: DIETARY_FILTERS.has(dietary) ? dietary : '',
-    glutenFree: params.get('gluten-free') === '1' || params.get('glutenFree') === '1'
+    glutenFree: params.get('gluten-free') === '1' || params.get('glutenFree') === '1',
+    zone: ZONE_FILTERS.has(zone) ? zone : ''
   };
 }
 
 export function filterDishesByPreferences(dishes = [], filters = {}) {
   const dietary = DIETARY_FILTERS.has(filters.dietary) ? filters.dietary : '';
   const glutenFree = filters.glutenFree === true;
+  const zone = ZONE_FILTERS.has(filters.zone) ? filters.zone : '';
   return (Array.isArray(dishes) ? dishes : []).filter((dish) => {
+    const matchesZone = !zone || dish.zone === zone;
     const matchesDietary = !dietary
       || (dietary === 'vegetarian' && ['vegetarian', 'vegan'].includes(dish.dietary))
       || (dietary === 'vegan' && dish.dietary === 'vegan');
-    return matchesDietary && (!glutenFree || dish.glutenFree === true);
+    return matchesZone && matchesDietary && (!glutenFree || dish.glutenFree === true);
   });
 }
 
 export function getPopularDishesForFilters(dishes = [], filters = {}) {
   const matchingDishes = filterDishesByPreferences(dishes, filters);
   const totalLikes = matchingDishes.reduce((sum, dish) => sum + Math.max(0, Number(dish?.likeCount) || 0), 0);
-  const hasFilters = DIETARY_FILTERS.has(filters.dietary) || filters.glutenFree === true;
+  const hasFilters = DIETARY_FILTERS.has(filters.dietary)
+    || filters.glutenFree === true
+    || ZONE_FILTERS.has(filters.zone);
   return {
     matchingDishes,
     ...filterPopularDishes(
@@ -107,6 +128,7 @@ export function initPopularDishesPage() {
   const filterPanel = document.querySelector('[data-fiestas-popular-dishes-filter-panel]');
   const filterClose = document.querySelector('[data-fiestas-popular-dishes-filter-close]');
   const filterOptions = [...document.querySelectorAll('[data-fiestas-popular-dishes-filter]')];
+  const zoneSelect = document.querySelector('[data-fiestas-popular-dishes-zone]');
   const filterCount = document.querySelector('[data-fiestas-popular-dishes-filter-count]');
   const filterClear = document.querySelector('[data-fiestas-popular-dishes-filter-clear]');
   const shareButton = document.querySelector('[data-fiestas-share-site]');
@@ -137,6 +159,8 @@ export function initPopularDishesPage() {
     if (state.filters.glutenFree) url.searchParams.set('gluten-free', '1');
     else url.searchParams.delete('gluten-free');
     url.searchParams.delete('glutenFree');
+    if (state.filters.zone) url.searchParams.set('zone', state.filters.zone);
+    else url.searchParams.delete('zone');
     window.history.replaceState({}, '', `${url.pathname}${url.search}${url.hash}`);
   };
 
@@ -154,7 +178,9 @@ export function initPopularDishesPage() {
   };
 
   const updateFilterControls = () => {
-    const activeCount = Number(Boolean(state.filters.dietary)) + Number(state.filters.glutenFree);
+    const activeCount = Number(Boolean(state.filters.dietary))
+      + Number(state.filters.glutenFree)
+      + Number(Boolean(state.filters.zone));
     if (filterToggle) {
       filterToggle.classList.toggle('is-active', activeCount > 0);
       filterToggle.setAttribute('aria-expanded', String(state.filterPanelOpen));
@@ -174,6 +200,7 @@ export function initPopularDishesPage() {
       option.classList.toggle('is-active', active);
       option.setAttribute('aria-pressed', String(active));
     });
+    if (zoneSelect) zoneSelect.value = state.filters.zone;
     if (filterClear) filterClear.hidden = activeCount === 0;
   };
 
@@ -186,6 +213,13 @@ export function initPopularDishesPage() {
 
   filterToggle?.addEventListener('click', () => setFilterPanelOpen(!state.filterPanelOpen));
   filterClose?.addEventListener('click', () => setFilterPanelOpen(false));
+  zoneSelect?.addEventListener('change', () => {
+    state.filters.zone = ZONE_FILTERS.has(zoneSelect.value) ? zoneSelect.value : '';
+    updateFilterUrl();
+    updateShareMetadata();
+    updateFilterControls();
+    renderFilteredResults();
+  });
   filterOptions.forEach((option) => {
     option.addEventListener('click', () => {
       if (option.dataset.fiestasPopularDishesFilter === 'dietary') {
@@ -200,7 +234,7 @@ export function initPopularDishesPage() {
     });
   });
   filterClear?.addEventListener('click', () => {
-    state.filters = { dietary: '', glutenFree: false };
+    state.filters = { dietary: '', glutenFree: false, zone: '' };
     updateFilterUrl();
     updateShareMetadata();
     updateFilterControls();
@@ -321,6 +355,8 @@ function normalizeCasetas(entries) {
         id,
         name,
         slug,
+        publicSlug: String(entry.publicSlug || '').trim(),
+        zone: String(entry.zone || '').trim(),
         location: String(entry.location || '').trim(),
         color: String(entry.color || '#0f9f8d').trim(),
         details
@@ -342,6 +378,7 @@ function buildDishIndex(casetas) {
         index.set(`${caseta.id}/${dishId}`, {
           casetaName: caseta.name,
           dishName,
+          zone: caseta.zone,
           dietary: item.dietary || '',
           glutenFree: item.glutenFree === true,
           location: caseta.location || 'Ubicación por confirmar',
@@ -356,7 +393,7 @@ function buildDishIndex(casetas) {
 
 function normalizeCasetaId(value) {
   const normalized = String(value || '').trim().toLowerCase();
-  return /^z[1-7]-[0-9]+$/.test(normalized) ? normalized : '';
+  return /^z(?:[1-8]|f)-[0-9]+$/.test(normalized) ? normalized : '';
 }
 
 function normalizeDishId(value) {
