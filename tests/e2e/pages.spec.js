@@ -8,6 +8,22 @@ test('populares renderiza sin romperse aunque no haya datos de guardados', async
   await expect(page.locator('[data-fiestas-popular-list]')).toBeVisible();
 });
 
+test('populares usa el último ranking cacheado si la API no está disponible', async ({ page }) => {
+  await page.addInitScript(() => {
+    window.localStorage.setItem('fiestasValladolid:popularMetrics:v1', JSON.stringify({
+      ok: true,
+      cachedAt: Date.now(),
+      totalVisits: 7,
+      activities: [{ id: '4', saveCount: 20, visitCount: 4 }]
+    }));
+  });
+  await page.route('**/fiestas/saves', (route) => route.abort());
+  await page.goto('/populares/');
+
+  await expect(page.locator('[data-fiestas-card="4"]')).toBeVisible();
+  await expect(page.locator('[data-fiestas-popular-status]')).toHaveCount(0);
+});
+
 test('populares permite cambiar al ranking por visitas', async ({ page }) => {
   await page.goto('/populares/');
 

@@ -34,6 +34,7 @@ const DEFAULT_DOCUMENT_TITLE = document.title;
 const SITE_SHARE_URL = 'https://fiestas.aldeapucela.org/?mtm_campaign=share';
 const SITE_SHARE_MESSAGE = `Mira, la mejor web para seguir las fiestas y ferias de Valladolid 2026\n\n${SITE_SHARE_URL}`;
 const SAVE_COUNTS_API_URL = 'https://api.aldeapucela.org/fiestas/saves';
+const POPULAR_METRICS_STORAGE_KEY = 'fiestasValladolid:popularMetrics:v1';
 const CARTO_BASEMAPS_API_KEY = 'cb1_27ug_1_19138f635d4f03358d12cb43';
 const cartoLayers = {
   light: `https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png?key=${CARTO_BASEMAPS_API_KEY}`,
@@ -347,7 +348,7 @@ function getDateButtonLabel(button) {
 }
 
 async function loadSaveCounts() {
-  if (typeof window.fetch !== 'function') return { ok: false };
+  if (typeof window.fetch !== 'function') return restoreCachedPopularMetrics();
 
   const controller = typeof AbortController === 'function' ? new AbortController() : null;
   const timeoutId = window.setTimeout(() => controller?.abort(), 5000);
@@ -356,33 +357,76 @@ async function loadSaveCounts() {
       headers: { Accept: 'application/json' },
       signal: controller?.signal
     });
-    if (!response.ok) return { ok: false };
+    if (!response.ok) return restoreCachedPopularMetrics();
     const payload = await response.json();
-    if (payload?.ok !== true || !Array.isArray(payload.activities)) return { ok: false };
-
-    const saveCounts = new Map();
-    const visitCounts = new Map();
-    payload.activities.forEach((activity) => {
-      const id = String(activity?.id || '').trim();
-      const saveCount = Number(activity?.saveCount);
-      const visitCount = Number(activity?.visitCount);
-      if (!id) return;
-      if (Number.isFinite(saveCount) && saveCount > 0) saveCounts.set(id, saveCount);
-      if (Number.isFinite(visitCount) && visitCount > 0) visitCounts.set(id, visitCount);
-    });
-    state.saveCounts = saveCounts;
-    state.visitCounts = visitCounts;
-    const totalVisits = Number(payload.totalVisits);
-    state.totalVisits = Number.isFinite(totalVisits) && totalVisits >= 0
-      ? totalVisits
-      : [...visitCounts.values()].reduce((total, count) => total + count, 0);
-    applySaveCountsToDom();
+    if (!applyPopularMetrics(payload)) return restoreCachedPopularMetrics();
+    writeCachedPopularMetrics(payload);
     return { ok: true };
   } catch (_) {
-    // Los contadores son informativos: un fallo de la API no debe bloquear la agenda.
-    return { ok: false };
+    // Los contadores son informativos: si la API falla usamos el último ranking válido.
+    return restoreCachedPopularMetrics();
   } finally {
     window.clearTimeout(timeoutId);
+  }
+}
+
+function applyPopularMetrics(payload) {
+  if (payload?.ok !== true || !Array.isArray(payload.activities)) return false;
+
+  const saveCounts = new Map();
+  const visitCounts = new Map();
+  payload.activities.forEach((activity) => {
+    const id = String(activity?.id || '').trim();
+    const saveCount = Number(activity?.saveCount);
+    const visitCount = Number(activity?.visitCount);
+    if (!id) return;
+    if (Number.isFinite(saveCount) && saveCount > 0) saveCounts.set(id, saveCount);
+    if (Number.isFinite(visitCount) && visitCount > 0) visitCounts.set(id, visitCount);
+  });
+  state.saveCounts = saveCounts;
+  state.visitCounts = visitCounts;
+  const totalVisits = Number(payload.totalVisits);
+  state.totalVisits = Number.isFinite(totalVisits) && totalVisits >= 0
+    ? totalVisits
+    : [...visitCounts.values()].reduce((total, count) => total + count, 0);
+  applySaveCountsToDom();
+  return true;
+}
+
+function writeCachedPopularMetrics(payload) {
+  const activities = payload.activities
+    .map((activity) => {
+      const id = String(activity?.id || '').trim();
+      if (!id) return null;
+      const saveCount = Number(activity?.saveCount);
+      const visitCount = Number(activity?.visitCount);
+      return {
+        id,
+        ...(Number.isFinite(saveCount) && saveCount > 0 ? { saveCount } : {}),
+        ...(Number.isFinite(visitCount) && visitCount > 0 ? { visitCount } : {})
+      };
+    })
+    .filter(Boolean);
+  const totalVisits = Number(payload.totalVisits);
+  try {
+    if (!window.localStorage) return;
+    window.localStorage.setItem(POPULAR_METRICS_STORAGE_KEY, JSON.stringify({
+      ok: true,
+      activities,
+      totalVisits: Number.isFinite(totalVisits) && totalVisits >= 0 ? totalVisits : null,
+      cachedAt: Date.now()
+    }));
+  } catch (_) {}
+}
+
+function restoreCachedPopularMetrics() {
+  try {
+    const raw = window.localStorage?.getItem(POPULAR_METRICS_STORAGE_KEY);
+    if (!raw) return { ok: false };
+    const payload = JSON.parse(raw);
+    return applyPopularMetrics(payload) ? { ok: true, stale: true } : { ok: false };
+  } catch (_) {
+    return { ok: false };
   }
 }
 
