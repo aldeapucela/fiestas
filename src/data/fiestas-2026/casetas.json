@@ -1197,6 +1197,54 @@
         "query": "Plaza de Fuente Dorada, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:34.327Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria — Montaditos — Pincho feria + cerveza / vino / agua 4€ · Pincho feria + refresco 4,20€",
+            "votable": true,
+            "items": [
+              { "id": "montadito-pollo-guisado-salsa-cheddar", "name": "Pollo guisado en salsa cheddar" },
+              { "id": "montadito-morcilla-pimiento-caramelizado", "name": "Morcilla con pimiento caramelizado" },
+              { "id": "montadito-secreto-miel-mostaza", "name": "Secreto con salsa de miel y mostaza" },
+              { "id": "montadito-solomillo-roquefort", "name": "Solomillo al roquefort" }
+            ]
+          },
+          {
+            "title": "Tapa",
+            "votable": true,
+            "items": [
+              { "id": "tapa-patatas-remolino", "name": "Patatas remolino" }
+            ]
+          },
+          {
+            "title": "Guisos — Guisos + cerveza / vino / agua 4€ · Guisos + refresco 4,20€",
+            "votable": true,
+            "items": [
+              { "id": "guiso-morro-setas-kimchie", "name": "Guiso de morro setas y kimchie" },
+              { "id": "guiso-callos-garbanzos", "name": "Callos con garbanzos" }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-tigres", "name": "Racion de tigres", "price": "9€" },
+              { "id": "racion-cazon-salsa-picante-mahonesa", "name": "Cazon con salsa picante o mahonesa" },
+              { "id": "racion-rabas-santaferninas", "name": "Rabas santaferninas" },
+              { "id": "racion-oreja-gallega", "name": "Oreja a la gallega" },
+              { "id": "racion-chorizo-sidra", "name": "Chorizo a la sidra" }
+            ]
+          },
+          {
+            "title": "Postre",
+            "votable": true,
+            "items": [
+              { "id": "postre-brownie-chocolate", "name": "Brownie de chocolate", "price": "3,50€" },
+              { "id": "postre-tarta-orujo", "name": "Tarta de orujo" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -1329,6 +1377,32 @@
         "query": "Calle Ferrari, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:35.819Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria + bebida 4.00€",
+            "votable": true,
+            "items": [
+              { "id": "pincho-carrillera-iberica-roquefort", "name": "Carrillera ibérica al roquefort" },
+              { "id": "pincho-seta-rellena-queso-boletus", "name": "Seta rellena de queso y salsa de boletus" },
+              { "id": "pincho-milhoja-manzana-foie-jamon", "name": "Milhoja de manzana, foie y jamón" },
+              { "id": "pincho-garbanzos-callos", "name": "Garbanzos con callos" },
+              { "id": "pincho-brocheta-pollo-salsa-asiatica", "name": "Brocheta de pollo con salsa asiática" },
+              { "id": "pincho-chapatina-solomillo-queso", "name": "Chapatina de solomillo al queso" },
+              { "id": "pincho-chapatina-bonito-pimientos", "name": "Chapatina de bonito con pimientos" },
+              { "id": "pincho-chapatina-chorizo-criollo", "name": "Chapatina de chorizo criollo" }
+            ]
+          },
+          {
+            "title": "Postres 3.00€",
+            "votable": true,
+            "items": [
+              { "id": "postre-tarta-san-marcos", "name": "Tarta de San Marcos" },
+              { "id": "postre-tiramisu", "name": "Tiramisú" }
+            ]
+          }
+        ]
       }
     },
     {
