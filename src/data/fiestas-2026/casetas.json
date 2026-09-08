@@ -3443,6 +3443,61 @@
         "query": "Calle de las Cadenas de San Gregorio, Valladolid, España",
         "accuracy": 1,
         "geocodedAt": "2026-08-29T20:59:38.000Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-patatas-fritas-crunchy-cheddar-lacon",
+                "name": "Ración de patatas fritas crunchy con queso cheddar y lacón",
+                "description": "Bebida no incluida.",
+                "price": "6 €"
+              }
+            ]
+          },
+          {
+            "title": "Chapata + bebida — 4,50 €",
+            "votable": true,
+            "items": [
+              { "id": "chapata-carrilleras-vino-tinto", "name": "Chapata de carrilleras al vino tinto" },
+              { "id": "chapata-solomillo-queso-cheddar", "name": "Chapata de solomillo con queso cheddar" },
+              { "id": "chapata-panceta-chimichurri", "name": "Chapata de panceta con chimichurri" }
+            ]
+          },
+          {
+            "title": "Pinchos",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-moruno-miel-mostaza",
+                "name": "Pincho moruno con salsa miel y mostaza",
+                "description": "Bebida no incluida.",
+                "price": "4 €"
+              },
+              {
+                "id": "pincho-brocheta-miniburgers-cheddar",
+                "name": "Brocheta de 4 miniburgers con queso cheddar",
+                "description": "Bebida no incluida.",
+                "price": "4 €"
+              }
+            ]
+          },
+          {
+            "title": "Postres caseros — 5 €",
+            "votable": true,
+            "items": [
+              { "id": "postre-tarta-queso-horneada", "name": "Tarta de queso horneada" },
+              { "id": "postre-mousse-ferrero-rocher", "name": "Mousse de Ferrero Rocher" },
+              { "id": "postre-tarta-tres-chocolates", "name": "Tarta tres chocolates" }
+            ]
+          }
+        ],
+        "highlights": [
+          "Chapata sin bebida — 4 €"
+        ]
       }
     },
     {
