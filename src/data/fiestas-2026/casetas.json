@@ -86,7 +86,109 @@
       "location": "Plaza Martí y Monsó",
       "placement": "En la propia plaza",
       "addressQuery": "Plaza Martí y Monsó, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Entrantes y Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-patatas-bravas",
+                "name": "Patatas bravas",
+                "price": "3,5€",
+                "description": "(Huevos, lácteos, soja)"
+              },
+              {
+                "id": "racion-cecina-leon",
+                "name": "Cecina de León",
+                "price": "7€",
+                "description": "(Frutos secos)"
+              },
+              {
+                "id": "racion-mini-burger",
+                "name": "Mini Burger",
+                "price": "5€",
+                "description": "(Gluten, lácteos y huevo)"
+              },
+              {
+                "id": "racion-montadito-entrecot",
+                "name": "Montadito entrecot",
+                "price": "5€",
+                "description": "(Todos los alérgenos)"
+              }
+            ]
+          },
+          {
+            "title": "Pincho de Feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-morcilla-black-angus",
+                "name": "Morcilla de Black Angus",
+                "price": "4€",
+                "description": "sobre Hojaldre Caramelizado, Crema de Queso y Mermelada de Pimiento\n(Incluye: Copa de Vino de la Casa, Caña, Agua o Refresco)"
+              },
+              {
+                "id": "pincho-flautin-pollo-crujiente",
+                "name": "Flautín de Pollo Crujiente",
+                "price": "4€",
+                "description": "con Salsa de Miel y Mostaza\n(Incluye: Copa de Vino de la Casa, Caña, Agua o Refresco)"
+              },
+              {
+                "id": "pincho-croqueton-jamon-bacalao",
+                "name": "Croquetón de Jamón o Bacalao",
+                "price": "4€",
+                "description": "(Incluye: Copa de Vino de la Casa, Caña, Agua o Refresco)"
+              },
+              {
+                "id": "pincho-tarta-queso-villalon",
+                "name": "Tarta de Queso de Villalón",
+                "price": "4€",
+                "description": "con Toffee\n(Incluye: Copa de Vino de la Casa, Caña, Agua o Refresco)"
+              },
+              {
+                "id": "pincho-brownie-chocolate",
+                "name": "Brownie de Chocolate",
+                "price": "4€",
+                "description": "con Nueces\n(Incluye: Copa de Vino de la Casa, Caña, Agua o Refresco)"
+              }
+            ]
+          },
+          {
+            "title": "Devora las Ferias",
+            "votable": true,
+            "items": [
+              {
+                "id": "devora-fabada-asturiana",
+                "name": "Fabada Asturiana",
+                "price": "5€"
+              }
+            ]
+          },
+          {
+            "title": "Menús con Bebida",
+            "votable": true,
+            "items": [
+              {
+                "id": "menu-croqueta-entrecot-bebida",
+                "name": "Croqueta de entrecot + bebida",
+                "description": "(Huevos, gluten, lácteos)"
+              },
+              {
+                "id": "menu-brioche-carne-mechada-bebida",
+                "name": "Brioche de carne mechada + bebida",
+                "description": "(Todos los alérgenos)"
+              },
+              {
+                "id": "menu-guiso-dia-bebida",
+                "name": "Guiso del día + bebida",
+                "description": "(Todos los alérgenos)"
+              }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z1-03",
