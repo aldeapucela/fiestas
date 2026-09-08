@@ -3526,6 +3526,42 @@
         "query": "Calle Matías Sangrador, Valladolid, España",
         "accuracy": 1,
         "geocodedAt": "2026-08-29T21:25:41.000Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-japobravas", "name": "Japobravas", "price": "6.00 €" },
+              { "id": "racion-cecina-igp-leon", "name": "Cecina IGP León", "price": "9.00 €" },
+              { "id": "racion-oreja-a-a-gallega", "name": "Oreja a a gallega", "price": "8.00 €" },
+              { "id": "racion-croquetas-carabinero-gud", "name": "Croquetas de carabinero GUD", "price": "9.50 €" },
+              { "id": "racion-croqueta-carabinero", "name": "Croqueta carabinero", "description": "UD", "price": "2.00 €" }
+            ]
+          },
+          {
+            "title": "Postre",
+            "votable": true,
+            "items": [
+              { "id": "postre-coulant-chocolate", "name": "Coulant de chocolate", "price": "6.00 €" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-refrescos", "name": "Refrescos", "price": "3.00 €" },
+              { "id": "bebida-vino", "name": "Vino", "price": "2.50 €" },
+              { "id": "bebida-cana", "name": "Caña", "price": "2.50 €" },
+              { "id": "bebida-agua", "name": "Agua", "price": "2.00 €" }
+            ]
+          }
+        ],
+        "highlights": [
+          "Feria de dia",
+          "M C J D"
+        ]
       }
     },
     {
