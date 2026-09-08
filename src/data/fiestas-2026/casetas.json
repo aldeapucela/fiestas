@@ -3530,6 +3530,30 @@
       "details": {
         "menuSections": [
           {
+            "title": "Feria de día",
+            "votable": true,
+            "items": [
+              {
+                "id": "oferta-pincho-ferias",
+                "name": "Pincho de ferias",
+                "description": "Croqueta carabinero + bebida; Tapa Japobravas + bebida; Guiso del día + bebida",
+                "price": "4 €"
+              },
+              {
+                "id": "oferta-montadito-bebida",
+                "name": "Montadito + bebida",
+                "description": "Bebida de feria: agua, Lorencito, caña, o vino; Montado de chorizo kimchi; Montado de panceta adobada; Montado de pollo asado ali-oli",
+                "price": "5.50"
+              },
+              {
+                "id": "oferta-brioche-bebida",
+                "name": "Brioche + bebida",
+                "description": "Bebida de feria: agua, Lorencito, caña, o vino; Brioche de guiso de oreja; Minimacaburguer",
+                "price": "5.50"
+              }
+            ]
+          },
+          {
             "title": "Raciones",
             "votable": true,
             "items": [
@@ -3560,7 +3584,8 @@
         ],
         "highlights": [
           "Feria de dia",
-          "M C J D"
+          "M C J D",
+          "Pincho + refrescos +1€"
         ]
       }
     },
