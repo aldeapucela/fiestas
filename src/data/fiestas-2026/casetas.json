@@ -5468,6 +5468,32 @@
         "lng": -4.7279166,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Acera de Recoletos, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": false,
+            "items": [
+              { "id": "racion-callos-river", "name": "Callos River", "price": "10,00€" },
+              { "id": "racion-croquetas-river", "name": "Croquetas River", "description": "Ración", "price": "8,50€" },
+              { "id": "racion-morcilla-pimientos-asados", "name": "Morcilla con pimientos asados", "price": "6,00€" },
+              { "id": "racion-boquerones-fritos", "name": "Boquerones fritos", "price": "6,00€" },
+              { "id": "racion-solomillo-pollo-crujiente", "name": "Solomillo pollo crujiente", "price": "6,00€" },
+              { "id": "racion-torreno-suria", "name": "Torreno Suria", "price": "7,50€" },
+              { "id": "racion-patatas-bravas-salsa-casa", "name": "Patatas bravas salsa casa", "price": "5,00€" },
+              { "id": "racion-rabas-ajoli", "name": "Rabas ajoli", "price": "8,00€" }
+            ]
+          },
+          {
+            "title": "Lista postres",
+            "votable": false,
+            "items": [
+              { "id": "postre-tarta-queso", "name": "Tarta de queso", "price": "5,00€" },
+              { "id": "postre-mousse-limon", "name": "Mousse de limón", "price": "4,00€" }
+            ]
+          }
+        ]
       }
     },
     {
