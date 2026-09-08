@@ -1283,6 +1283,31 @@
       "details": {
         "menuSections": [
           {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-pollo-tikka-masala",
+                "name": "Pollo tikka masala",
+                "description": "Dados de pollo salteado con salsa tikka masala (curry suave) sobre base de arroz basmati con sésamo. Apto celíacos.",
+                "price": "4,00 €",
+                "glutenFree": true
+              },
+              {
+                "id": "pincho-noodles-thai-pollo",
+                "name": "Noodles thai de pollo",
+                "description": "Verduras salteadas con tiras de pollo, curry y cebolla frita, sobre cama de noodles de trigo.",
+                "price": "4,00 €"
+              },
+              {
+                "id": "pincho-lasana-morcilla",
+                "name": "Lasaña casera de morcilla",
+                "description": "Bechamel, morcilla y nuez. Lleva manzana.",
+                "price": "4,00 €"
+              }
+            ]
+          },
+          {
             "title": "Pincho especial Le Bistró",
             "votable": true,
             "items": [
@@ -1312,7 +1337,8 @@
           }
         ],
         "highlights": [
-          "Novedad"
+          "Novedad",
+          "Añade la bebida al pincho especial por +1 €"
         ]
       }
     },
