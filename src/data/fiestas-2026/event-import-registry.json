@@ -3396,6 +3396,57 @@
           "reason": "Nueva ocurrencia importada con identidad registrada."
         }
       }
+    },
+    "2509": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "918",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2514": {
+      "occurrences": {
+        "day-2026-09-08": {
+          "status": "linked",
+          "localEventId": "594",
+          "reason": "Coincidencia por fecha, hora y título exacto normalizado."
+        },
+        "day-2026-09-09": {
+          "status": "linked",
+          "localEventId": "595",
+          "reason": "Coincidencia por fecha, hora y título exacto normalizado."
+        },
+        "day-2026-09-10": {
+          "status": "linked",
+          "localEventId": "596",
+          "reason": "Coincidencia por fecha, hora y título exacto normalizado."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "597",
+          "reason": "Coincidencia por fecha, hora y título exacto normalizado."
+        },
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "598",
+          "reason": "Coincidencia por fecha, hora y título exacto normalizado."
+        },
+        "day-2026-09-13": {
+          "status": "linked",
+          "localEventId": "599",
+          "reason": "Coincidencia por fecha, hora y título exacto normalizado."
+        }
+      }
+    },
+    "2515": {
+      "occurrences": {
+        "single": {
+          "status": "pending_review",
+          "reason": "La fuente y el cartel no indican una ubicación concreta; se conserva pendiente sin crear ficha."
+        }
+      }
     }
   },
   "localAliases": {
