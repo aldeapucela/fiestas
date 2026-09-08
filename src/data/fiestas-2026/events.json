@@ -28322,5 +28322,44 @@
     "tags": [
       "Exposición"
     ]
+  },
+  {
+    "id": 919,
+    "date": "2026-09-08",
+    "dateLabel": "Martes 8 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Morerras Beach Fest (Festival)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/969d8294e2fdfe12d6892b503d9b6813845ced76_2_643x1024.jpeg",
+    "location": "Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "El Morerras Beach Fest se celebra este martes 8 de septiembre en la Playa de las Moreras, en Valladolid. Este festival promete una jornada de música y ambiente festivo en uno de los espacios naturales más emblemáticos de la ciudad.",
+    "summary": "El Morerras Beach Fest se celebra este martes 8 de septiembre en la Playa de las Moreras, en Valladolid. Este festival promete una jornada de música y ambiente festivo en uno de los espacios naturales más emblemáticos de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Coordinadora Peñas Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6573001,
+      "lng": -4.7332525,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 61755548,
+      "query": "Playa de las Moreras, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-08T18:10:03.118Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
   }
 ]

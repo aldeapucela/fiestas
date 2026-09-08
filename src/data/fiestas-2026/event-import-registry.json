@@ -3456,6 +3456,15 @@
           "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
         }
       }
+    },
+    "2522": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "919",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
     }
   },
   "localAliases": {
