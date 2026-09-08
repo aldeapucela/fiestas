@@ -3447,6 +3447,15 @@
           "reason": "La fuente y el cartel no indican una ubicación concreta; se conserva pendiente sin crear ficha."
         }
       }
+    },
+    "2517": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "203",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        }
+      }
     }
   },
   "localAliases": {
