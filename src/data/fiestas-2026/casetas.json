@@ -3530,27 +3530,41 @@
       "details": {
         "menuSections": [
           {
-            "title": "Feria de día",
+            "title": "Pincho de ferias — 4 €",
             "votable": true,
             "items": [
               {
-                "id": "oferta-pincho-ferias",
-                "name": "Pincho de ferias",
-                "description": "Croqueta carabinero + bebida; Tapa Japobravas + bebida; Guiso del día + bebida",
-                "price": "4 €"
+                "id": "pincho-croqueta-carabinero",
+                "name": "Croqueta carabinero",
+                "description": "+ bebida"
               },
               {
-                "id": "oferta-montadito-bebida",
-                "name": "Montadito + bebida",
-                "description": "Bebida de feria: agua, Lorencito, caña, o vino; Montado de chorizo kimchi; Montado de panceta adobada; Montado de pollo asado ali-oli",
-                "price": "5.50"
+                "id": "pincho-tapa-japobravas",
+                "name": "Tapa Japobravas",
+                "description": "+ bebida"
               },
               {
-                "id": "oferta-brioche-bebida",
-                "name": "Brioche + bebida",
-                "description": "Bebida de feria: agua, Lorencito, caña, o vino; Brioche de guiso de oreja; Minimacaburguer",
-                "price": "5.50"
+                "id": "pincho-guiso-dia",
+                "name": "Guiso del día",
+                "description": "+ bebida"
               }
+            ]
+          },
+          {
+            "title": "Montadito + bebida — 5.50",
+            "votable": true,
+            "items": [
+              { "id": "montadito-chorizo-kimchi", "name": "Montado de chorizo kimchi" },
+              { "id": "montadito-panceta-adobada", "name": "Montado de panceta adobada" },
+              { "id": "montadito-pollo-asado-ali-oli", "name": "Montado de pollo asado ali-oli" }
+            ]
+          },
+          {
+            "title": "Brioche + bebida — 5.50",
+            "votable": true,
+            "items": [
+              { "id": "brioche-guiso-oreja", "name": "Brioche de guiso de oreja" },
+              { "id": "brioche-minimacaburguer", "name": "Minimacaburguer" }
             ]
           },
           {
@@ -3585,6 +3599,7 @@
         "highlights": [
           "Feria de dia",
           "M C J D",
+          "Bebida de feria: agua, Lorencito, caña, o vino",
           "Pincho + refrescos +1€"
         ]
       }
