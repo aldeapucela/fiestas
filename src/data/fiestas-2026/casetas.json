@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "updatedAt": "2026-09-01",
+  "updatedAt": "2026-09-08",
   "casetas": [
     {
       "id": "z1-01",
@@ -47,7 +47,7 @@
           },
           {
             "title": "Otros platos",
-            "votable": false,
+            "votable": true,
             "items": [
               {
                 "id": "plato-fabada-asturiana",
@@ -1325,7 +1325,7 @@
           },
           {
             "title": "Sueltos",
-            "votable": false,
+            "votable": true,
             "items": [
               {
                 "id": "suelto-torrezno",
@@ -1578,7 +1578,7 @@
           },
           {
             "title": "Raciones — 8€",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "racion-patatas-doble-chorizo", "name": "Patatas doble chorizo con salsa de piquillos y ajo" },
               { "id": "racion-patatas-torreznos-gildas", "name": "Patatas con torreznos y gildas" },
@@ -1728,15 +1728,15 @@
             "title": "Bebidas",
             "votable": false,
             "items": [
-              "Vino tinto, Verdejo y rosado",
-              "Frizzante",
-              "Vermut de barril",
-              "Caña de cerveza y Radler",
-              "Cerveza sin alcohol (lata)",
-              "Lorencito",
-              "Mosto",
-              "Agua",
-              "Refresco"
+              { "id": "bebida-vino-tinto-verdejo-rosado", "name": "Vino tinto, Verdejo y rosado" },
+              { "id": "bebida-frizzante", "name": "Frizzante" },
+              { "id": "bebida-vermut-barril", "name": "Vermut de barril" },
+              { "id": "bebida-cana-cerveza-radler", "name": "Caña de cerveza y Radler" },
+              { "id": "bebida-cerveza-sin-alcohol-lata", "name": "Cerveza sin alcohol (lata)" },
+              { "id": "bebida-lorencito", "name": "Lorencito" },
+              { "id": "bebida-mosto", "name": "Mosto" },
+              { "id": "bebida-agua", "name": "Agua" },
+              { "id": "bebida-refresco", "name": "Refresco" }
             ]
           }
         ],
@@ -2178,63 +2178,63 @@
           },
           {
             "title": "Menú diario — Sábado",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "menu-diario-sabado-arroz-zamorana", "name": "Arroz zamorana" }
             ]
           },
           {
             "title": "Menú diario — Domingo",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "menu-diario-domingo-garbanzos-callos", "name": "Garbanzos con callos" }
             ]
           },
           {
             "title": "Menú diario — Lunes",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "menu-diario-lunes-patatas-carne", "name": "Patatas con carne" }
             ]
           },
           {
             "title": "Menú diario — Martes",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "menu-diario-martes-alubias-pintas", "name": "Alubias pintas", "description": "(oreja y chorizo)" }
             ]
           },
           {
             "title": "Menú diario — Miércoles",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "menu-diario-miercoles-patatas-marinera", "name": "Patatas marinera" }
             ]
           },
           {
             "title": "Menú diario — Jueves",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "menu-diario-jueves-garbanzos", "name": "Garbanzos", "description": "(chorizo y panceta)" }
             ]
           },
           {
             "title": "Menú diario — Viernes",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "menu-diario-viernes-marmitako", "name": "Marmitako" }
             ]
           },
           {
             "title": "Menú diario — Sábado",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "menu-diario-sabado-judiones-abuela", "name": "Judiones de la abuela" }
             ]
           },
           {
             "title": "Menú diario — Domingo",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "menu-diario-domingo-arroz-zamorana", "name": "Arroz zamorana" }
             ]
@@ -2635,7 +2635,7 @@
           },
           {
             "title": "Chapatas 6€ (bebida incluida)",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "chapata-calamares", "name": "Calamares" },
               { "id": "chapata-lomo-pimientos", "name": "Lomo con pimientos" }
@@ -2643,7 +2643,7 @@
           },
           {
             "title": "Raciones (bebida incluida en raciones)",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "racion-arroz-bogavante", "name": "Arroz con bogavante", "price": "5€" },
               { "id": "racion-arroz-zamorana", "name": "Arroz a la zamorana", "price": "5€" },
@@ -2657,7 +2657,7 @@
           },
           {
             "title": "Postres 4€",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "postre-natillas", "name": "Natillas" },
               { "id": "postre-arroz-leche", "name": "Arroz con leche" },
@@ -4049,14 +4049,14 @@
           },
           {
             "title": "Guiso del día",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "guiso-alubias-langostinos-chipirones", "name": "Alubias con langostinos y chipirones" }
             ]
           },
           {
             "title": "Bocadillos y croquetas",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "croquetas-jamon-chipirones-2-ud", "name": "Croquetas de Jamón y Chipirones", "description": "(2 UD)" },
               { "id": "bocadin-panceta", "name": "Bocadín de panceta", "description": "Con pimiento y queso" },
@@ -4065,7 +4065,7 @@
           },
           {
             "title": "Raciones",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "racion-nachos-chorizo-picante", "name": "Nachos con chorizo picante", "price": "8,50€" },
               { "id": "racion-croquetas-jamon-chipirones-6-ud", "name": "Croquetas de Jamón y Chipirones", "description": "(6 UD)", "price": "8,00€" },
@@ -4075,7 +4075,7 @@
           },
           {
             "title": "Postres",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "postre-tarta-lotus", "name": "Tarta de Lotus", "price": "5,80€" },
               { "id": "postre-tarta-queso", "name": "Tarta de queso", "price": "5,80€" }
@@ -4141,7 +4141,7 @@
           },
           {
             "title": "Además",
-            "votable": false,
+            "votable": true,
             "items": [
               {
                 "id": "ademas-tosta-gambas",
@@ -4262,13 +4262,25 @@
           },
           {
             "title": "Otros",
-            "votable": false,
+            "votable": true,
             "items": [
               {
                 "id": "pincho-unidad",
                 "name": "Pincho",
                 "price": "2,00€"
               },
+              {
+                "id": "postre-tarta-queso",
+                "name": "Tarta de queso",
+                "price": "2,50€",
+                "dietary": "vegetarian"
+              }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
               {
                 "id": "bebida-cana-vino-mosto",
                 "name": "Caña, vino, mosto",
@@ -4288,12 +4300,6 @@
                 "id": "bebida-refrescos",
                 "name": "Refrescos",
                 "price": "2,00€"
-              },
-              {
-                "id": "postre-tarta-queso",
-                "name": "Tarta de queso",
-                "price": "2,50€",
-                "dietary": "vegetarian"
               }
             ]
           },
@@ -4355,7 +4361,7 @@
           },
           {
             "title": "Además",
-            "votable": false,
+            "votable": true,
             "items": [
               {
                 "id": "ademas-pollopollo-tinga",
@@ -5124,7 +5130,7 @@
           },
           {
             "title": "Raciones",
-            "votable": false,
+            "votable": true,
             "items": [
               {
                 "id": "racion-torrezno-soria-piparras",
@@ -5177,7 +5183,7 @@
           },
           {
             "title": "Bocadillos",
-            "votable": false,
+            "votable": true,
             "items": [
               {
                 "id": "bocadillo-serranito",
@@ -5597,7 +5603,7 @@
         "menuSections": [
           {
             "title": "Raciones",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "racion-callos-river", "name": "Callos River", "price": "10,00€" },
               { "id": "racion-croquetas-river", "name": "Croquetas River", "description": "Ración", "price": "8,50€" },
@@ -5624,7 +5630,7 @@
           },
           {
             "title": "Postres",
-            "votable": false,
+            "votable": true,
             "items": [
               { "id": "postre-tarta-queso", "name": "Tarta de queso", "price": "5,00€" },
               { "id": "postre-mousse-limon", "name": "Mousse de limón", "price": "4,00€" }
@@ -7924,7 +7930,7 @@
         "menuSections": [
           {
             "title": "Platos carta",
-            "votable": false,
+            "votable": true,
             "items": [
               {
                 "id": "plato-pulpo-brasa",
@@ -7967,7 +7973,7 @@
           },
           {
             "title": "Postres",
-            "votable": false,
+            "votable": true,
             "items": [
               {
                 "id": "postre-paparajote",
