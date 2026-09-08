@@ -1177,6 +1177,41 @@
         "query": "Plaza de Fuente Dorada, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:34.327Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho especial Le Bistró",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-brioche-costillas-asadas",
+                "name": "Brioche de costillas asadas",
+                "description": "Pan tipo brioche relleno de carne de costilla a la barbacoa y cebolla encurtida",
+                "price": "6,00 €"
+              }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              {
+                "id": "postre-tarta-queso",
+                "name": "Tarta de queso",
+                "price": "4,50 €"
+              },
+              {
+                "id": "postre-tiramisu",
+                "name": "Tiramisú",
+                "price": "4,50 €"
+              }
+            ]
+          }
+        ],
+        "highlights": [
+          "Novedad"
+        ]
       }
     },
     {
