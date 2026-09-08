@@ -3566,6 +3566,54 @@
         "query": "Plaza del Salvador, 47002 Valladolid, España",
         "accuracy": 1,
         "geocodedAt": "2026-08-29T21:25:41.000Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria — Pincho + bebida (4.00€)",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-de-pollo",
+                "name": "Pincho de pollo"
+              },
+              {
+                "id": "pincho-perrito",
+                "name": "Perrito"
+              },
+              {
+                "id": "pincho-empanada",
+                "name": "Empanada"
+              },
+              {
+                "id": "pincho-alitas-pollo",
+                "name": "Alitas de pollo"
+              },
+              {
+                "id": "pincho-arroz-casa",
+                "name": "Arroz de la casa",
+                "description": "(a medio día)"
+              }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-torrezno-soria",
+                "name": "Torrezno de Soria",
+                "price": "7,00€"
+              },
+              {
+                "id": "racion-gambas-cocida",
+                "name": "Gambas cocida",
+                "description": "12U.",
+                "price": "7,00€"
+              }
+            ]
+          }
+        ]
       }
     },
     {
