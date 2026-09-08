@@ -3459,6 +3459,24 @@
             ]
           },
           {
+            "title": "Raciones — 8€",
+            "votable": true,
+            "items": [
+              {
+                "id": "racion-chorizo-sidra",
+                "name": "Ración de chorizo a la sidra"
+              },
+              {
+                "id": "racion-lacon-aove-pimenton-vera",
+                "name": "Ración de lacón con AOVE y pimentón de la Vera"
+              },
+              {
+                "id": "racion-carne-moruna",
+                "name": "Ración de carne moruna"
+              }
+            ]
+          },
+          {
             "title": "Chapata + bebida — 4,50 €",
             "votable": true,
             "items": [
@@ -3482,6 +3500,24 @@
                 "name": "Brocheta de 4 miniburgers con queso cheddar",
                 "description": "Bebida no incluida.",
                 "price": "4 €"
+              }
+            ]
+          },
+          {
+            "title": "Pincho + bebida — 4€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-tosta-chorizo-sidra",
+                "name": "Tosta de chorizo a la sidra"
+              },
+              {
+                "id": "pincho-tosta-queso-cabra-mermelada-tomate",
+                "name": "Tosta de queso fundido de cabra con mermelada de tomate"
+              },
+              {
+                "id": "pincho-tosta-lacon-aove-pimenton-vera",
+                "name": "Tosta de lacón con AOVE y pimentón de la Vera"
               }
             ]
           },
