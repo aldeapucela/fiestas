@@ -3465,6 +3465,15 @@
           "reason": "Nueva ocurrencia importada con identidad registrada."
         }
       }
+    },
+    "2524": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "920",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
     }
   },
   "localAliases": {

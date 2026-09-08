@@ -28361,5 +28361,44 @@
     "tags": [
       "Otros"
     ]
+  },
+  {
+    "id": 920,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "21:00",
+    "endTime": "23:00",
+    "title": "Concierto de Los Perets",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/7/7f428336bda63f9431d91691668ee7658f9da190_2_768x1024.jpeg",
+    "location": "Bambú",
+    "zone": "Zona Centro",
+    "description": "El grupo Los Perets llega para ofrecer un concierto especial en el marco de las Fiestas de San Lorenzo. El evento tendrá lugar el próximo 11 de septiembre, con un horario comprendido entre las 21:00 y las 23:00 horas.",
+    "summary": "El grupo Los Perets llega para ofrecer un concierto especial en el marco de las Fiestas de San Lorenzo. El evento tendrá lugar el próximo 11 de septiembre, con un horario comprendido entre las 21:00 y las 23:00 horas.",
+    "performances": [],
+    "organizers": [
+      "Bambú"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6623882,
+      "lng": -4.7368335,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 6642739935,
+      "query": "Bambú, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-08T19:04:02.126Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
   }
 ]
