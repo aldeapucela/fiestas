@@ -2618,6 +2618,67 @@
         "lng": -4.7231393,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Calle Solanilla, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho feria 4€",
+            "votable": true,
+            "items": [
+              { "id": "pincho-moruno", "name": "Moruno" },
+              { "id": "pincho-guiso-dia", "name": "Guiso del día" },
+              { "id": "pincho-revolconas", "name": "Revolconas" },
+              { "id": "pincho-albondigas", "name": "Albóndigas" },
+              { "id": "pincho-patatas-costilla", "name": "Patatas con costilla" },
+              { "id": "pincho-fideua", "name": "Fideuá" }
+            ]
+          },
+          {
+            "title": "Chapatas 6€ (bebida incluida)",
+            "votable": false,
+            "items": [
+              { "id": "chapata-calamares", "name": "Calamares" },
+              { "id": "chapata-lomo-pimientos", "name": "Lomo con pimientos" }
+            ]
+          },
+          {
+            "title": "Raciones (bebida incluida en raciones)",
+            "votable": false,
+            "items": [
+              { "id": "racion-arroz-bogavante", "name": "Arroz con bogavante", "price": "5€" },
+              { "id": "racion-arroz-zamorana", "name": "Arroz a la zamorana", "price": "5€" },
+              { "id": "racion-paella-marisco", "name": "Paella marisco", "price": "5€" },
+              { "id": "racion-lechazo", "name": "Lechazo", "price": "5€" },
+              { "id": "racion-brocheta-langostinos", "name": "Brocheta de langostinos", "price": "4€" },
+              { "id": "racion-escalope-cerdo-crujiente", "name": "Escalope de cerdo crujiente", "price": "5,50€" },
+              { "id": "racion-hamburguesa", "name": "Hamburguesa", "price": "5,50€" },
+              { "id": "racion-plato-jamon", "name": "Plato jamón", "price": "11,00€" }
+            ]
+          },
+          {
+            "title": "Postres 4€",
+            "votable": false,
+            "items": [
+              { "id": "postre-natillas", "name": "Natillas" },
+              { "id": "postre-arroz-leche", "name": "Arroz con leche" },
+              { "id": "postre-canutillos", "name": "Canutillos" },
+              { "id": "postre-pastelitos-variados", "name": "Pastelitos variados" },
+              { "id": "postre-san-lorenzo", "name": "San Lorenzo" }
+            ]
+          },
+          {
+            "title": "Bebida",
+            "votable": false,
+            "items": [
+              { "id": "bebida-lorencito", "name": "Lorencito", "price": "2,50€" },
+              { "id": "bebida-cana", "name": "Caña", "price": "2,50€" },
+              { "id": "bebida-refresco", "name": "Refresco", "price": "2,50€" },
+              { "id": "bebida-sangria", "name": "Sangría", "price": "2,50€" },
+              { "id": "bebida-ribera", "name": "Ribera", "price": "2,50€" },
+              { "id": "bebida-canas", "name": "Cañas", "price": "2€" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -3973,6 +4034,69 @@
         "query": "Acera de Recoletos, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:46.036Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de feria",
+            "votable": true,
+            "items": [
+              { "id": "pincho-feria-sin-bebida", "name": "Pincho de feria sin bebida", "price": "3,50€" },
+              { "id": "pincho-feria-con-bebida", "name": "Pincho de feria con bebida", "price": "4,00€" },
+              { "id": "pincho-feria-con-refresco", "name": "Pincho de feria con refresco", "price": "4,50€" },
+              { "id": "pincho-brioche-dani-garcia", "name": "Nuestra versión de \"El Brioche de Dani García\"", "description": "Carrillera ibérica, cebolla encurtida y mayonesa de chipotle", "price": "+0,50€" }
+            ]
+          },
+          {
+            "title": "Guiso del día",
+            "votable": false,
+            "items": [
+              { "id": "guiso-alubias-langostinos-chipirones", "name": "Alubias con langostinos y chipirones" }
+            ]
+          },
+          {
+            "title": "Bocadillos y croquetas",
+            "votable": false,
+            "items": [
+              { "id": "croquetas-jamon-chipirones-2-ud", "name": "Croquetas de Jamón y Chipirones", "description": "(2 UD)" },
+              { "id": "bocadin-panceta", "name": "Bocadín de panceta", "description": "Con pimiento y queso" },
+              { "id": "serranito-pollo", "name": "Serranito de pollo", "description": "Pollo, pimiento y jamón serrano" }
+            ]
+          },
+          {
+            "title": "Raciones",
+            "votable": false,
+            "items": [
+              { "id": "racion-nachos-chorizo-picante", "name": "Nachos con chorizo picante", "price": "8,50€" },
+              { "id": "racion-croquetas-jamon-chipirones-6-ud", "name": "Croquetas de Jamón y Chipirones", "description": "(6 UD)", "price": "8,00€" },
+              { "id": "racion-fingeros-pollo-salsa-tartara", "name": "Fingeros de pollo con salsa tártara", "price": "7,50€" },
+              { "id": "racion-poke-pollo-terna", "name": "Poke de pollo terna", "description": "Maíz, edamame, aguacate y cebolla", "price": "8,00€" }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": false,
+            "items": [
+              { "id": "postre-tarta-lotus", "name": "Tarta de Lotus", "price": "5,80€" },
+              { "id": "postre-tarta-queso", "name": "Tarta de queso", "price": "5,80€" }
+            ]
+          },
+          {
+            "title": "Bebidas",
+            "votable": false,
+            "items": [
+              { "id": "bebida-cana", "name": "Caña", "price": "2,50€" },
+              { "id": "bebida-vino-do-rueda-ribera-cigales", "name": "Vino (D.O. Rueda/Ribera/Cigales)", "price": "2,50€" },
+              { "id": "bebida-vino-frizzante", "name": "Vino frizzante", "price": "2,50€" },
+              { "id": "bebida-vino-crianza", "name": "Vino crianza", "price": "3,00€" },
+              { "id": "bebida-refresco", "name": "Refresco", "price": "3,00€" },
+              { "id": "bebida-agua", "name": "Agua", "price": "1,50€" },
+              { "id": "bebida-tinto-verano-lorencito", "name": "Tinto de verano/Lorencito", "price": "2,50€" },
+              { "id": "bebida-vermut", "name": "Vermut", "price": "2,50€" },
+              { "id": "bebida-mosto", "name": "Mosto", "price": "2,00€" }
+            ]
+          }
+        ]
       }
     },
     {
@@ -5486,13 +5610,30 @@
             ]
           },
           {
-            "title": "Lista postres",
+            "title": "Montaditos & tapas — Precios Tapas: Tapa + bebida 4€ · Con refresco 4,50€ · Sin bebida 3,50€",
+            "votable": true,
+            "items": [
+              { "id": "montado-carrilleras-guisadas-vino-tinto", "name": "Montado Carrilleras Guisadas al Vino Tinto" },
+              { "id": "montado-lagarto-iberico", "name": "Montado Lagarto Ibérico" },
+              { "id": "montado-pulpo-alioli", "name": "Montado Pulpo con Alioli" },
+              { "id": "pincho-moruno-carniceria-nina", "name": "Pincho Moruno de Carnicería NiNa" },
+              { "id": "montado-rabas-alioli", "name": "Montado Rabas Alioli" },
+              { "id": "palomita-ensaladilla-river", "name": "Palomita Ensaladilla del River" },
+              { "id": "montado-lacon-pimientos-asados", "name": "Montado Lacón con Pimientos Asados" }
+            ]
+          },
+          {
+            "title": "Postres",
             "votable": false,
             "items": [
               { "id": "postre-tarta-queso", "name": "Tarta de queso", "price": "5,00€" },
               { "id": "postre-mousse-limon", "name": "Mousse de limón", "price": "4,00€" }
             ]
           }
+        ],
+        "highlights": [
+          "Alérgenos: Gluten, huevo, pescado, mostaza, moluscos, leche",
+          "Consulte al personal en caso de alergias e intolerancias."
         ]
       }
     },
