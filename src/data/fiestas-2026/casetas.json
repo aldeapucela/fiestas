@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "festival": "valladolid-2026",
-  "updatedAt": "2026-09-08",
+  "updatedAt": "2026-09-09",
   "casetas": [
     {
       "id": "z1-01",
@@ -498,7 +498,27 @@
       "location": "Correos",
       "placement": "En la puerta",
       "addressQuery": "Calle Correos, Valladolid, España",
-      "coordinates": null
+      "coordinates": null,
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos de Feria 2026",
+            "votable": true,
+            "items": [
+              { "id": "pincho-alubias-carne", "name": "ALUBIAS con carne", "price": "4,00€" },
+              { "id": "pincho-tostada-ajo-tomate", "name": "TOSTADA con ajo y tomate", "price": "4,00€" },
+              { "id": "pincho-bacalao-rebozado", "name": "BACALAO rebozado", "price": "3,50€" },
+              { "id": "pincho-borrachito-350", "name": "Borrachito", "price": "3,50€" },
+              { "id": "pincho-borrachito-400", "name": "Borrachito", "price": "4,00€" },
+              { "id": "pincho-morcilla", "name": "+ Morcilla", "price": "4,00€" },
+              { "id": "pincho-croqueta", "name": "Croqueta", "price": "1,50€" },
+              { "id": "pincho-bacalao", "name": "Bacalao", "price": "3,00€" },
+              { "id": "pincho-rabas", "name": "Rabas", "price": "5,00€" },
+              { "id": "pincho-marritako", "name": "Marritako", "price": "3,50€" }
+            ]
+          }
+        ]
+      }
     },
     {
       "id": "z1-11",
