@@ -6178,6 +6178,46 @@
         "lng": -4.7469325,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Avenida Medina del Campo, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Raciones",
+            "votable": true,
+            "items": [
+              { "id": "racion-pulpo", "name": "Ración de Pulpo", "price": "19,00 €" },
+              { "id": "racion-gamba-fresca-huelva-docena", "name": "Gamba Fresca de Huelva (docena)", "price": "20,00 €" },
+              { "id": "racion-mejillon-vapor", "name": "Mejillón al Vapor", "price": "8,50 €" },
+              { "id": "racion-sardinas-brasa", "name": "Sardinas a la Brasa", "price": "12,00 €" },
+              { "id": "racion-jamon-iberico-bellota-100", "name": "Jamón Ibérico Bellota 100%", "price": "20,00 €" },
+              { "id": "racion-chuletilla-pincho-lechazo", "name": "Chuletilla o Pincho de Lechazo", "price": "25,00 €" },
+              { "id": "racion-pincho-moruno", "name": "Pincho Moruno", "price": "13,00 €" },
+              { "id": "racion-entrecot-ternera", "name": "Entrecot de Ternera", "price": "18,00 €" },
+              { "id": "racion-ensalada-mixta-grande", "name": "Ensalada Mixta Grande", "price": "13,00 €" },
+              { "id": "racion-chorizo-brasa", "name": "Chorizo a la Brasa", "price": "11,00 €" },
+              { "id": "racion-chorizo-criollo", "name": "Chorizo Criollo", "price": "11,00 €" }
+            ]
+          },
+          {
+            "title": "Vinos",
+            "votable": false,
+            "items": [
+              { "id": "vino-botella-albarino-075l", "name": "Botella de Albariño (0,75L)", "price": "17,00 €" },
+              { "id": "vino-botella-mogar-roble", "name": "Botella de Mogar (Roble)", "price": "16,00 €" },
+              { "id": "vino-botella-carramimbre", "name": "Botella de Carramimbre", "price": "16,00 €" },
+              { "id": "vino-botella-mauro", "name": "Botella de Mauro", "price": "45,00 €" }
+            ]
+          },
+          {
+            "title": "Postres",
+            "votable": true,
+            "items": [
+              { "id": "postre-tarta-queso", "name": "Tarta de Queso", "price": "5,00 €" },
+              { "id": "postre-leche-helada-tordesillas", "name": "Leche Helada Tordesillas", "price": "5,00 €" },
+              { "id": "postre-canutillos", "name": "Canutillos", "price": "4,50 €" }
+            ]
+          }
+        ]
       }
     },
     {
