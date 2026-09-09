@@ -3474,6 +3474,29 @@
           "reason": "Nueva ocurrencia importada con identidad registrada."
         }
       }
+    },
+    "2525": {
+      "occurrences": {
+        "day-2026-09-12": {
+          "status": "linked",
+          "localEventId": "360",
+          "reason": "Relación histórica conservada por el importador."
+        },
+        "day-2026-09-11": {
+          "status": "linked",
+          "localEventId": "921",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2527": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "625",
+          "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
+        }
+      }
     }
   },
   "localAliases": {

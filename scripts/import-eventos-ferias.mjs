@@ -155,10 +155,20 @@ for (const { remoteId, localId } of importGuard.duplicateRemoteEntries()) {
   registerKnownMatches({ [remoteId]: [localId] }, sourceEvents, localById, registry);
 }
 
+const partiallyMatchedRemoteIds = new Set([...knownMatchedRemoteIds].filter((remoteId) => {
+  const remote = sourceEvents.get(remoteId);
+  if (!remote) return false;
+  const resolution = occurrencesFor(remote, verifiedOccurrences, { maxDate: '2026-09-13' });
+  return resolution.verified && resolution.occurrences.some((occurrence, occurrenceIndex) => {
+    const key = occurrenceRegistryKey(remote, occurrence, occurrenceIndex);
+    return !getRegisteredOccurrence(registry, remoteId, key);
+  });
+}));
+
 const candidateEvents = windowEvents.filter((remote) => {
   const remoteId = Number(remote.id);
   return isValladolid(remote)
-    && !knownMatchedRemoteIds.has(remoteId)
+    && (!knownMatchedRemoteIds.has(remoteId) || partiallyMatchedRemoteIds.has(remoteId))
     && !importGuard.getDuplicateLocal(remoteId)
     && !importGuard.getBlockedRemote(remoteId);
 });
@@ -486,7 +496,8 @@ function buildMatchedRemoteToLocal(currentEvents) {
     1759: [398],
     2096: [409],
     1980: [825],
-    1945: [412]
+    1945: [412],
+    2525: [360]
   };
 }
 
@@ -1053,7 +1064,8 @@ function zoneFor(remoteId, location = '') {
     2181: 'Zona Centro',
     1691: 'Zona Centro',
     2088: 'Zona Centro',
-    1692: 'Zona Centro'
+    1692: 'Zona Centro',
+    2525: 'Huerta del Rey'
   }[Number(remoteId)];
   if (knownZone) return knownZone;
   const normalized = simplifyTitle(location);

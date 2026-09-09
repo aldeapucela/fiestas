@@ -12454,7 +12454,7 @@
     "title": "Night Glow",
     "location": "Explanada de la calle de las Mieses",
     "zone": "Explanada de la calle de las Mieses",
-    "description": "Actuación de los Pichas. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey\n\nEl evento Night Glow se celebrará el día 12 con una propuesta que combina la música y el espectáculo visual. La cita tendrá lugar en la explanada de la Avenida Mieses y la calle Los Recreos, comenzando a las 21:00 horas.",
+    "description": "Actuación de los Pichas. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey\n\nEl evento Night Glow se celebrará el día 12 con una propuesta que combina la música y el espectáculo visual. La cita tendrá lugar en la explanada de la Avenida Mieses y la calle Los Recreos, comenzando a las 21:00 horas.\n\nEl XXIII Open de Aerostación de Valladolid se celebra con una programación que incluye despegues de globos aerostáticos y un espectáculo nocturno. Las actividades principales tendrán lugar en la Explanada de la calle Mieses.",
     "summary": "Actuación de los Pichas. Concierto y espectáculo de globos aerostáticos. Trofeo Diego Criado del Rey",
     "performances": [
       "Actuación de los Pichas"
@@ -20279,7 +20279,7 @@
     "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/9482038eb184095cb6aef228c2ee9b00e9fec75c_2_820x1024.jpeg",
     "location": "Casetas, Plaza de la Universidad, Valladolid",
     "zone": "Zona Centro",
-    "description": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad",
+    "description": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad\n\nEl grupo musical Dos de Picas llega a las Casetas de la Plaza Universidad para una actuación especial. El evento tendrá lugar el próximo miércoles 9 de septiembre a las 21:00 horas, ofreciendo un encuentro musical en un entorno festivo.",
     "summary": "El grupo musical Dos de Picas presenta su nueva canción titulada ‘Ale Pucela, Ale Ale’ a través de una serie de actuaciones en diversos locales emblemáticos de Valladolid. La gira de presentación se llevará a cabo durante el mes de septiembre, recorriendo distintos puntos de la ciudad",
     "performances": [
       "Dos de Picas"
@@ -28399,6 +28399,43 @@
     },
     "tags": [
       "Música"
+    ]
+  },
+  {
+    "id": 921,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "19:00",
+    "endTime": null,
+    "title": "XXIII Open de Aerostación de Valladolid",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/e/e63c8dc83327d8f3b0e07b6082533886340430e7_2_692x1024.jpeg",
+    "location": "Explanada de la calle de las Mieses",
+    "zone": "Huerta del Rey",
+    "description": "El XXIII Open de Aerostación de Valladolid se celebra con una programación que incluye despegues de globos aerostáticos y un espectáculo nocturno. Las actividades principales tendrán lugar en la Explanada de la calle Mieses.",
+    "summary": "El XXIII Open de Aerostación de Valladolid se celebra con una programación que incluye despegues de globos aerostáticos y un espectáculo nocturno. Las actividades principales tendrán lugar en la Explanada de la calle Mieses.",
+    "performances": [
+      "Despegues"
+    ],
+    "organizers": [
+      "Ayuntamiento de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6629,
+      "lng": -4.7424,
+      "source": "Inferidas por coincidencia de lugar con el evento local 360",
+      "query": "Explanada de la calle de las Mieses, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
     ]
   }
 ]

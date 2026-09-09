@@ -1747,5 +1747,28 @@
       }
     ],
     "source": "Cartel remoto de 3x3 Feria de Valladolid, descargado e inspeccionado visualmente el 4 de septiembre de 2026: confirma cinco sesiones, el 9 por la tarde (Benjamín U10 y Alevín U12 M - F), el 10 por la mañana (Infantil U14 M - F) y por la tarde (Junior U18 M - F), y el 11 por la mañana (Cadete U16 M - F) y por la tarde (Absoluta +18 M - F). El cartel no publica horas concretas. La ubicación Feria de Valladolid se resolvió con OpenStreetMap Nominatim mediante la consulta «Feria de Valladolid, Valladolid, España»: 41.6556388,-4.7398018, ficha «Feria de Valladolid»."
+  },
+  "2525": {
+    "dates": [
+      "2026-09-11",
+      "2026-09-12"
+    ],
+    "occurrences": [
+      {
+        "date": "2026-09-11",
+        "startTime": "19:00",
+        "endTime": null,
+        "location": "Explanada de la calle de las Mieses",
+        "performances": ["Despegues"]
+      },
+      {
+        "date": "2026-09-12",
+        "startTime": "21:00",
+        "endTime": null,
+        "location": "Explanada de la calle de las Mieses",
+        "performances": ["Los Pichas"]
+      }
+    ],
+    "source": "Cartel remoto del XXIII Open de Aerostación de Valladolid, descargado e inspeccionado visualmente el 9 de septiembre de 2026: confirma despegues el viernes 11 a las 19:00 y espectáculo nocturno con concierto de Los Pichas el sábado 12 a las 21:00, ambos en la Explanada de la calle de las Mieses. No publica horas de finalización. La ubicación se contrastó con el evento local Night Glow (360), que conserva las coordenadas de la explanada."
   }
 }
