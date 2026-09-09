@@ -533,6 +533,32 @@
         "lng": -4.7295196,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Calle Pasión, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Carta",
+            "votable": true,
+            "items": [
+              {
+                "id": "carta-bocadillo-calamar",
+                "name": "Bocadillo de calamar",
+                "price": "6,50€"
+              }
+            ]
+          },
+          {
+            "title": "Pincho de feria — 4,00€",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-feria-mejillonera",
+                "name": "Pincho de feria",
+                "description": "vino de la casa, caña, lorencito o agua + 4 unidades de mejillones o tapa de bravas"
+              }
+            ]
+          }
+        ]
       }
     },
     {
@@ -5332,6 +5358,28 @@
         "lng": -4.7309316,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Plaza de Santa Ana, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Carta",
+            "votable": true,
+            "items": [
+              { "id": "carta-montadito-panceta", "name": "Montadito de panceta" },
+              { "id": "carta-lomillo-roquefort", "name": "Lomillo al roquefort" },
+              { "id": "carta-panceta-reina-fiestas", "name": "Panceta \"La reina de las fiestas\"" },
+              { "id": "carta-arroz-zamorana", "name": "Arroz a la zamorana" },
+              { "id": "carta-fingers-pollo", "name": "Fingers de pollo" },
+              { "id": "carta-croquetas-jamon-mejillones", "name": "Croquetas de jamón o de mejillones" },
+              { "id": "carta-callos-garbanzos", "name": "Callos con garbanzos" },
+              { "id": "carta-sardina-ahumada", "name": "Sardina ahumada" },
+              { "id": "carta-patatas-caseras", "name": "Patatas caseras" }
+            ]
+          }
+        ],
+        "highlights": [
+          "Todos los pinchos son pinchos de feria"
+        ]
       }
     },
     {
@@ -6435,6 +6483,34 @@
         "lng": -4.7350602,
         "source": "Mapa oficial Visit Valladolid 2026",
         "displayName": "Paseo de Zorrilla, Valladolid, España"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pinchos — Pincho + bebida 4€",
+            "votable": true,
+            "items": [
+              { "id": "pincho-pate-jaguco", "name": "Paté de Jaguco con lascas de jamón ibérico" },
+              { "id": "pincho-jamon-gulas", "name": "Jamón ibérico y gulas al ajillo" },
+              { "id": "pincho-foie-jamon-manzana", "name": "Foie, jamón y manzana" },
+              { "id": "pincho-cecina-langostino", "name": "Cecina con langostino al ajillo" },
+              { "id": "pincho-queso-anchoa", "name": "Queso curado en aceite y anchoa" },
+              { "id": "pincho-bejes-tresviso-nueces", "name": "Bejes Tresviso (queso Picón) y nueces" },
+              { "id": "pincho-cecina-queso-chocolate", "name": "Cecina con queso, chocolate y aceite de oliva" },
+              { "id": "pincho-adictivo-cebolla", "name": "Adictivo (queso azul) y cebolla caramelizada" },
+              { "id": "pincho-chipiron-foie", "name": "Chipirón y foie" },
+              { "id": "pincho-chipiron-rabo-toro", "name": "Chipirón y rabo de toro" },
+              { "id": "pincho-ventresca-cebolla-pimientos", "name": "Ventresca, cebolla y pimientos en almíbar" },
+              { "id": "pincho-bonito-anchoa-piparra", "name": "Bonito cantábrico, anchoa y piparra" },
+              { "id": "pincho-doblladillo-caballa", "name": "Doblladillo de caballa gaditana" },
+              { "id": "pincho-salmon-cangrejo-langostino", "name": "Salmón, cangrejo, calabacín y langostino" },
+              { "id": "pincho-rucula-pastrami", "name": "Rúcula, pastrami, tomate y mahonesa de mostaza" },
+              { "id": "pincho-melva-pimiento", "name": "Melva con pimiento del piquillo" },
+              { "id": "pincho-carrillera-mar-montana", "name": "Carrillera mar y montaña" },
+              { "id": "pincho-pastel-cabracho", "name": "Pastel de cabracho y gulas" }
+            ]
+          }
+        ]
       }
     },
     {
