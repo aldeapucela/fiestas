@@ -1205,6 +1205,52 @@
         "query": "Plaza San Benito, Valladolid, España",
         "accuracy": 0.8,
         "geocodedAt": "2026-08-26"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Carta",
+            "votable": true,
+            "items": [
+              {
+                "id": "carta-brocheta-langostino",
+                "name": "Brocheta langostino",
+                "description": "con ali-oli +bebida",
+                "price": "4€"
+              },
+              {
+                "id": "carta-arroz-negro-sepia",
+                "name": "Arroz negro",
+                "description": "con sepia y ali-oli +bebida",
+                "price": "4€"
+              },
+              {
+                "id": "carta-montado-lacon",
+                "name": "Montado de lacón a la gallega",
+                "description": "+bebida",
+                "price": "4,50€"
+              },
+              {
+                "id": "carta-brocheta-pollo-miel-mostaza",
+                "name": "Brocheta de pollo",
+                "description": "con miel & mostaza +bebida",
+                "price": "4€"
+              },
+              {
+                "id": "carta-salchichas-zaratan",
+                "name": "Salchichas de Zaratán",
+                "description": "al vino +bebida",
+                "price": "4€"
+              },
+              {
+                "id": "carta-montado-solomillo-roquefort",
+                "name": "Montado de solomillo",
+                "description": "con roquefort +bebida",
+                "price": "4€"
+              }
+            ]
+          }
+        ]
       }
     },
     {
