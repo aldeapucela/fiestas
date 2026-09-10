@@ -452,6 +452,21 @@
         "query": "Calle Calixto Fernandez de la Torre, Valladolid, Espana",
         "accuracy": 1,
         "geocodedAt": "2026-08-25T13:32:24.776Z"
+      },
+      "details": {
+        "menuSections": [
+          {
+            "title": "Pincho de feria",
+            "votable": true,
+            "items": [
+              {
+                "id": "pincho-bocadito-placer-cantabro",
+                "name": "Bocadito de Placer Cántabro",
+                "description": "Tartar de boquerón con mezcla de cebollas tiernas y piparras sobre una base de sobao pasiego bañado en crema de orujo de Liébana"
+              }
+            ]
+          }
+        ]
       }
     },
     {

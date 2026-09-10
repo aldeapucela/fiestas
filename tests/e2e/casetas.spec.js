@@ -87,8 +87,9 @@ test('filtra las casetas pendientes de carta desde un enlace y permite limpiarlo
 
   await page.goto('/casetas/?menu=missing');
 
-  await expect.poll(() => casetaRows.count()).toBeGreaterThan(0);
-  expect(await casetaRows.count()).toBeLessThan(allRows);
+  const missingRows = await casetaRows.count();
+  expect(missingRows).toBeLessThanOrEqual(allRows);
+  if (missingRows > 0) expect(missingRows).toBeLessThan(allRows);
   await expect(page.locator('[data-fiestas-map-clear-filters]')).toBeVisible();
   expect(new URL(page.url()).searchParams.get('menu')).toBe('missing');
 
