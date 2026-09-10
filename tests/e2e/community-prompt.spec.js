@@ -58,9 +58,12 @@ test('aparece tras dos días y una acción relevante, y respeta dos exposiciones
 
   await page.locator('[data-community-prompt-dismiss]').click();
   await expect(prompt).toBeHidden();
-  const afterFirstDismiss = await page.evaluate((key) => JSON.parse(localStorage.getItem(key)), COMMUNITY_PROMPT_STATE_KEY);
-  expect(afterFirstDismiss.exposureCount).toBe(1);
-  expect(afterFirstDismiss.nextEligibleAt).toBeGreaterThan(Date.now());
+  const afterFirstDismiss = await page.evaluate((key) => ({
+    state: JSON.parse(localStorage.getItem(key)),
+    now: Date.now()
+  }), COMMUNITY_PROMPT_STATE_KEY);
+  expect(afterFirstDismiss.state.exposureCount).toBe(1);
+  expect(afterFirstDismiss.state.nextEligibleAt).toBeGreaterThan(afterFirstDismiss.now);
 
   await page.reload();
   await expect(prompt).toBeHidden();
@@ -94,10 +97,13 @@ test('los clics de canal mantienen el banner abierto y aplican el silencio', asy
   await page.locator('[data-community-prompt-channel="whatsapp"]').click();
 
   await expect(prompt).toBeVisible();
-  const state = await page.evaluate((key) => JSON.parse(localStorage.getItem(key)), COMMUNITY_PROMPT_STATE_KEY);
-  expect(state.exposureCount).toBe(1);
-  expect(state.nextEligibleAt).toBeGreaterThan(Date.now());
-  expect(state.neverAgain).toBe(false);
+  const stateAfterChannelClick = await page.evaluate((key) => ({
+    state: JSON.parse(localStorage.getItem(key)),
+    now: Date.now()
+  }), COMMUNITY_PROMPT_STATE_KEY);
+  expect(stateAfterChannelClick.state.exposureCount).toBe(1);
+  expect(stateAfterChannelClick.state.nextEligibleAt).toBeGreaterThan(stateAfterChannelClick.now);
+  expect(stateAfterChannelClick.state.neverAgain).toBe(false);
 
   await page.locator('[data-community-prompt-channel="chat"]').evaluate((link) => {
     link.removeAttribute('target');

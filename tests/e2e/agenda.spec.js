@@ -68,6 +68,22 @@ test.describe('agenda', () => {
   });
 
   test('señala las medidas de accesibilidad sin ocultarlas en la tarjeta', async ({ page }) => {
+    const fixedNow = new Date('2026-09-05T12:00:00+02:00').getTime();
+    await page.addInitScript((timestamp) => {
+      const NativeDate = Date;
+      class FixedDate extends NativeDate {
+        constructor(...args) {
+          super(...(args.length ? args : [timestamp]));
+        }
+
+        static now() {
+          return timestamp;
+        }
+      }
+      FixedDate.parse = NativeDate.parse;
+      FixedDate.UTC = NativeDate.UTC;
+      window.Date = FixedDate;
+    }, fixedNow);
     await page.goto('/?date=2026-09-09&q=tesoro');
 
     const card = page.locator('[data-fiestas-card]:visible').first();

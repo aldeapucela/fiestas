@@ -17,5 +17,5 @@ test('el tema cambia y se conserva al navegar', async ({ page }) => {
   expect(stored).toBe(before ? 'light' : 'dark');
 
   await page.goto('/mapa/');
-  expect(await isDark()).toBe(!before);
+  await expect.poll(isDark).toBe(!before);
 });
