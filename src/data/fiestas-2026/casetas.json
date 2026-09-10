@@ -463,6 +463,21 @@
                 "id": "pincho-bocadito-placer-cantabro",
                 "name": "Bocadito de Placer Cántabro",
                 "description": "Tartar de boquerón con mezcla de cebollas tiernas y piparras sobre una base de sobao pasiego bañado en crema de orujo de Liébana"
+              },
+              {
+                "id": "pincho-huevo-roto-patatas-taberneras",
+                "name": "Huevo roto con patatas fritas taberneras 100%",
+                "description": "con morcilla cremosa, dulce de miel y pasas"
+              },
+              {
+                "id": "pincho-pulga-rabas-alioli",
+                "name": "Pulga de rabas frescas con alioli",
+                "description": "las mismas que servimos a nuestros clientes cada día en Valladolid y en las 4 tabernas de Santander"
+              },
+              {
+                "id": "pincho-emparrillado-tabernero",
+                "name": "Emparrillado tabernero",
+                "description": "Nuestra ternera de Ávila jugosa, macerada en salsa jamonera con nuestra torta pasiega y bandera de Padrón"
               }
             ]
           }
