@@ -2819,4 +2819,334 @@ html.dark .site-footer-copy a {
       transition: none;
     }
   }
+
+  .post-fiestas-welcome {
+    position: fixed;
+    z-index: 500;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+  }
+
+  .post-fiestas-welcome[hidden] {
+    display: none !important;
+  }
+
+  .post-fiestas-welcome-backdrop {
+    position: absolute;
+    inset: 0;
+    border: 0;
+    background: rgba(31, 36, 48, 0.48);
+    cursor: pointer;
+  }
+
+  .post-fiestas-welcome-panel {
+    position: relative;
+    width: min(100%, 32rem);
+    max-height: min(90dvh, 43rem);
+    overflow-y: auto;
+    border: 1px solid rgba(31, 36, 48, 0.12);
+    border-radius: 1.65rem;
+    background: #ffffff;
+    color: #1f2430;
+    padding: 1.45rem;
+    box-shadow: 0 1.5rem 4rem rgba(15, 18, 23, 0.3);
+    animation: post-fiestas-welcome-in 180ms ease both;
+  }
+
+  .post-fiestas-welcome-close {
+    position: absolute;
+    top: 0.85rem;
+    right: 0.85rem;
+    display: inline-flex;
+    width: 2.25rem;
+    height: 2.25rem;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: #737d8c;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  .post-fiestas-welcome-close:hover,
+  .post-fiestas-welcome-close:focus-visible {
+    background: #f1f5f4;
+    color: #1f2430;
+    outline: none;
+  }
+
+  .post-fiestas-welcome-heading {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding-right: 2.6rem;
+  }
+
+  .post-fiestas-welcome-logo {
+    width: 3.3rem;
+    height: 3.3rem;
+    flex: 0 0 auto;
+    object-fit: contain;
+  }
+
+  .post-fiestas-welcome-kicker {
+    margin: 0 0 0.22rem;
+    color: #0f9f8d;
+    font-size: 0.68rem;
+    font-weight: 850;
+    letter-spacing: 0.15em;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  .post-fiestas-welcome-panel h2 {
+    margin: 0;
+    color: #1f2430;
+    font-size: clamp(1.35rem, 5vw, 1.8rem);
+    font-weight: 850;
+    letter-spacing: -0.045em;
+    line-height: 1.06;
+  }
+
+  .post-fiestas-welcome-description {
+    margin: 1.15rem 0 0;
+    color: #5f6875;
+    font-size: 0.96rem;
+    line-height: 1.48;
+  }
+
+  .post-fiestas-welcome-transition {
+    margin: 1.05rem 0 0.65rem;
+    color: #66517d;
+    font-size: 1rem;
+    font-weight: 850;
+    letter-spacing: -0.02em;
+  }
+
+  .post-fiestas-welcome-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  .post-fiestas-welcome-action {
+    display: flex;
+    min-width: 0;
+    min-height: 4.1rem;
+    align-items: center;
+    gap: 0.65rem;
+    border: 1px solid rgba(31, 36, 48, 0.13);
+    border-radius: 0.95rem;
+    background: #f1f5f4;
+    color: #1f2430;
+    padding: 0.72rem 0.8rem;
+    text-decoration: none;
+    transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+  }
+
+  .post-fiestas-welcome-action:hover,
+  .post-fiestas-welcome-action:focus-visible {
+    border-color: rgba(15, 159, 141, 0.48);
+    outline: none;
+    transform: translateY(-1px);
+  }
+
+  .post-fiestas-welcome-action-primary {
+    border-color: transparent;
+    background: #0f9f8d;
+    color: #ffffff;
+  }
+
+  .post-fiestas-welcome-action-primary:hover,
+  .post-fiestas-welcome-action-primary:focus-visible {
+    border-color: transparent;
+    background: #087e70;
+  }
+
+  .post-fiestas-welcome-action > i {
+    flex: 0 0 1.25rem;
+    font-size: 1.1rem;
+    text-align: center;
+  }
+
+  .post-fiestas-welcome-action > span {
+    display: grid;
+    min-width: 0;
+    gap: 0.12rem;
+  }
+
+  .post-fiestas-welcome-action strong {
+    font-size: 0.82rem;
+    line-height: 1.15;
+  }
+
+  .post-fiestas-welcome-action small {
+    color: color-mix(in srgb, currentColor 72%, transparent);
+    font-size: 0.68rem;
+    line-height: 1.2;
+  }
+
+  .post-fiestas-welcome-community-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.9rem;
+    padding-top: 0.8rem;
+    border-top: 1px solid rgba(31, 36, 48, 0.1);
+  }
+
+  .post-fiestas-welcome-community-links a {
+    display: inline-flex;
+    min-width: 0;
+    align-items: center;
+    gap: 0.35rem;
+    color: #737d8c;
+    font-size: 0.74rem;
+    font-weight: 800;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  .post-fiestas-welcome-community-links a:hover,
+  .post-fiestas-welcome-community-links a:focus-visible {
+    color: #1f2430;
+    outline: none;
+    text-decoration: underline;
+    text-underline-offset: 0.18rem;
+  }
+
+  .post-fiestas-welcome-community-links i {
+    flex: 0 0 auto;
+    font-size: 0.95rem;
+  }
+
+  .post-fiestas-welcome-social-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    margin-top: 0.45rem;
+  }
+
+  .post-fiestas-welcome-social-links a {
+    display: inline-flex;
+    min-height: 1.9rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.3rem;
+    color: #98a2b3;
+    font-size: 0.72rem;
+    font-weight: 750;
+    line-height: 1.2;
+    text-decoration: none;
+  }
+
+  .post-fiestas-welcome-social-links a:hover,
+  .post-fiestas-welcome-social-links a:focus-visible {
+    color: #667085;
+    outline: none;
+  }
+
+  .post-fiestas-welcome-social-links i {
+    font-size: 1rem;
+  }
+
+  @keyframes post-fiestas-welcome-in {
+    from { opacity: 0; transform: translateY(0.75rem) scale(0.98); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  html.dark .post-fiestas-welcome-backdrop {
+    background: rgba(5, 8, 12, 0.68);
+  }
+
+  html.dark .post-fiestas-welcome-panel {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: #1a1f28;
+    color: #f4f4f5;
+  }
+
+  html.dark .post-fiestas-welcome-close {
+    color: #a7adb8;
+  }
+
+  html.dark .post-fiestas-welcome-close:hover,
+  html.dark .post-fiestas-welcome-close:focus-visible {
+    background: #202630;
+    color: #f4f4f5;
+  }
+
+  html.dark .post-fiestas-welcome-panel h2 {
+    color: #f4f4f5;
+  }
+
+  html.dark .post-fiestas-welcome-description {
+    color: #a7adb8;
+  }
+
+  html.dark .post-fiestas-welcome-transition {
+    color: #cdbce4;
+  }
+
+  html.dark .post-fiestas-welcome-action {
+    border-color: rgba(255, 255, 255, 0.1);
+    background: #202630;
+    color: #f4f4f5;
+  }
+
+  html.dark .post-fiestas-welcome-action-primary {
+    border-color: transparent;
+    background: #0f9f8d;
+    color: #ffffff;
+  }
+
+  html.dark .post-fiestas-welcome-community-links {
+    border-top-color: rgba(255, 255, 255, 0.1);
+  }
+
+  html.dark .post-fiestas-welcome-community-links a {
+    color: #a7adb8;
+  }
+
+  html.dark .post-fiestas-welcome-community-links a:hover,
+  html.dark .post-fiestas-welcome-community-links a:focus-visible {
+    color: #f4f4f5;
+  }
+
+  html.dark .post-fiestas-welcome-social-links a {
+    color: #7f8998;
+  }
+
+  html.dark .post-fiestas-welcome-social-links a:hover,
+  html.dark .post-fiestas-welcome-social-links a:focus-visible {
+    color: #b7c0cf;
+  }
+
+  @media (max-width: 480px) {
+    .post-fiestas-welcome {
+      padding: 0.6rem;
+    }
+
+    .post-fiestas-welcome-panel {
+      border-radius: 1.4rem;
+      padding: 1.15rem;
+    }
+
+    .post-fiestas-welcome-actions {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .post-fiestas-welcome-panel,
+    .post-fiestas-welcome-action {
+      animation: none;
+      transition: none;
+    }
+  }
 }

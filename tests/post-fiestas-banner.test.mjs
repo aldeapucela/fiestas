@@ -30,3 +30,59 @@ test('uses the Europe/Madrid calendar date for campaign visibility', () => {
     true
   );
 });
+
+test('shows the welcome dialog once per day and once per session', () => {
+  const createStorage = () => {
+    const values = new Map();
+    return {
+      getItem: (key) => values.get(key) || null,
+      setItem: (key, value) => values.set(key, String(value)),
+      removeItem: (key) => values.delete(key)
+    };
+  };
+  const storage = createStorage();
+  const sessionStorage = createStorage();
+  const firstVisit = new Date('2026-09-14T10:00:00.000Z');
+
+  assert.equal(
+    banner.shouldShowPostFiestasWelcome({
+      storage,
+      sessionStorage,
+      startDate: '2026-09-14',
+      now: firstVisit
+    }),
+    true
+  );
+
+  banner.markPostFiestasWelcomeSeen(storage, firstVisit);
+  banner.markPostFiestasWelcomeSeenInSession(sessionStorage, firstVisit);
+  assert.equal(
+    banner.shouldShowPostFiestasWelcome({
+      storage,
+      sessionStorage,
+      startDate: '2026-09-14',
+      now: firstVisit
+    }),
+    false
+  );
+
+  assert.equal(
+    banner.shouldShowPostFiestasWelcome({
+      storage,
+      sessionStorage,
+      startDate: '2026-09-14',
+      now: new Date('2026-09-15T10:00:00.000Z')
+    }),
+    true
+  );
+  assert.equal(
+    banner.shouldShowPostFiestasWelcome({
+      storage,
+      sessionStorage,
+      startDate: '2026-09-14',
+      now: firstVisit,
+      preview: true
+    }),
+    true
+  );
+});
