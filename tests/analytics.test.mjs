@@ -191,6 +191,22 @@ test('tracks community prompt views, channel clicks and exclusive dismissals', a
   ]);
 });
 
+test('tracks clicks from the post-fiestas banner by destination', async () => {
+  installBrowserGlobals();
+  const analytics = await import(`../src/scripts/analytics.js?post-fiestas-banner=${Date.now()}`);
+  const sent = [];
+
+  window._paq = { push: (event) => sent.push(event) };
+
+  assert.equal(analytics.trackPostFiestasBannerClicked('eventos_culturales'), true);
+  assert.equal(analytics.trackPostFiestasBannerClicked('resumen_semanal'), true);
+  assert.equal(analytics.trackPostFiestasBannerClicked('unknown'), false);
+  assert.deepEqual(sent, [
+    ['trackEvent', 'post_fiestas_banner', 'click', 'eventos_culturales'],
+    ['trackEvent', 'post_fiestas_banner', 'click', 'resumen_semanal']
+  ]);
+});
+
 test('publishes engagement signals even when Matomo is disabled', async () => {
   installBrowserGlobals();
   const signals = [];

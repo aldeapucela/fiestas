@@ -1,4 +1,9 @@
 @layer components {
+  :root {
+    --fiestas-bottom-nav-height: 4.85rem;
+    --fiestas-post-fiestas-banner-height: 3.55rem;
+  }
+
   .fiestas-app {
     min-height: 100vh;
     background: #fff;
@@ -1578,6 +1583,159 @@
 
   .fiestas-bottom-link.is-active .fiestas-bottom-icon {
     margin-top: 0;
+  }
+
+  .fiestas-post-fiestas-banner {
+    position: fixed;
+    right: 0;
+    bottom: calc(var(--fiestas-bottom-nav-height) + env(safe-area-inset-bottom));
+    left: 0;
+    z-index: 190;
+    min-height: var(--fiestas-post-fiestas-banner-height);
+    border-top: 1px solid #e3e6ec;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 -0.35rem 1rem rgba(44, 54, 65, 0.08);
+    color: #667085;
+  }
+
+  .fiestas-post-fiestas-banner[hidden] {
+    display: none !important;
+  }
+
+  .fiestas-post-fiestas-banner-inner {
+    display: grid;
+    grid-template-columns: 14% minmax(0, 1fr);
+    min-height: var(--fiestas-post-fiestas-banner-height);
+    box-sizing: border-box;
+    align-items: center;
+    gap: 0.35rem;
+    width: min(100%, 58rem);
+    margin: 0 auto;
+    padding: 0.45rem max(1rem, env(safe-area-inset-right)) 0.45rem max(1rem, env(safe-area-inset-left));
+  }
+
+  .fiestas-post-fiestas-banner-copy {
+    display: grid;
+    min-width: 0;
+    gap: 0.08rem;
+    text-align: left;
+  }
+
+  .fiestas-post-fiestas-banner p,
+  .fiestas-post-fiestas-banner nav {
+    margin: 0;
+    line-height: 1.35;
+  }
+
+  .fiestas-post-fiestas-banner p {
+    color: #596273;
+    font-size: 0.84rem;
+    font-weight: 800;
+    line-height: 1.25;
+  }
+
+  .fiestas-post-fiestas-banner nav {
+    font-size: 0.78rem;
+  }
+
+  .fiestas-post-fiestas-banner nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.2rem 0.45rem;
+  }
+
+  .fiestas-post-fiestas-banner-logo {
+    display: block;
+    justify-self: center;
+    align-self: center;
+    width: min(100%, 2.05rem);
+    height: 2.05rem;
+    object-fit: contain;
+    filter: grayscale(1);
+    opacity: 0.56;
+  }
+
+  .fiestas-post-fiestas-banner a {
+    color: #0f766e;
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.14em;
+  }
+
+  .fiestas-post-fiestas-banner a:hover,
+  .fiestas-post-fiestas-banner a:focus-visible {
+    color: #0f9f8d;
+  }
+
+  .fiestas-post-fiestas-banner a:focus-visible {
+    border-radius: 0.2rem;
+    outline: 3px solid rgba(15, 159, 141, 0.3);
+    outline-offset: 3px;
+  }
+
+  body:has(.fiestas-post-fiestas-banner:not([hidden])) .fiestas-app:not(.is-map-mode) {
+    padding-bottom: calc(var(--fiestas-bottom-nav-height) + var(--fiestas-post-fiestas-banner-height) + 1rem + env(safe-area-inset-bottom));
+  }
+
+  body:has(.fiestas-post-fiestas-banner:not([hidden])) .fiestas-app.is-map-mode .fiestas-map-view {
+    bottom: calc(var(--fiestas-bottom-nav-height) + var(--fiestas-post-fiestas-banner-height) + env(safe-area-inset-bottom));
+  }
+
+  body:has(.fiestas-post-fiestas-banner:not([hidden])) .scroll-top-btn {
+    bottom: calc(var(--fiestas-bottom-nav-height) + var(--fiestas-post-fiestas-banner-height) + 0.45rem + env(safe-area-inset-bottom));
+  }
+
+  body:has(.fiestas-post-fiestas-banner:not([hidden])) .fiestas-chatbot-launcher {
+    bottom: calc(var(--fiestas-bottom-nav-height) + var(--fiestas-post-fiestas-banner-height) + 0.85rem + env(safe-area-inset-bottom));
+  }
+
+  body:has(.fiestas-post-fiestas-banner:not([hidden])) .fiestas-chatbot-dialog {
+    bottom: calc(var(--fiestas-bottom-nav-height) + var(--fiestas-post-fiestas-banner-height) + 5.1rem + env(safe-area-inset-bottom));
+  }
+
+  /* El drawer necesita espacio de desplazamiento extra para que sus últimas
+     opciones no queden ocultas detrás del aviso fijo y la navegación inferior. */
+  body:has(.fiestas-post-fiestas-banner:not([hidden])) .menu-drawer-panel {
+    padding-bottom: calc(6rem + var(--fiestas-post-fiestas-banner-height) + env(safe-area-inset-bottom));
+  }
+
+  @media (max-width: 719px) {
+    .fiestas-post-fiestas-banner-inner {
+      gap: 0.35rem;
+      text-align: center;
+    }
+
+    .fiestas-post-fiestas-banner-copy {
+      text-align: left;
+    }
+  }
+
+  html.dark .fiestas-post-fiestas-banner {
+    border-color: #313743;
+    background: rgba(26, 31, 40, 0.98);
+    box-shadow: 0 -0.35rem 1rem rgba(0, 0, 0, 0.2);
+    color: #aeb7c5;
+  }
+
+  html.dark .fiestas-post-fiestas-banner p {
+    color: #b7c0cf;
+  }
+
+  html.dark .fiestas-post-fiestas-banner a {
+    color: #71d8cb;
+  }
+
+  html.dark .fiestas-post-fiestas-banner-logo {
+    filter: grayscale(1) brightness(1.35);
+    opacity: 0.62;
+  }
+
+  html.dark .fiestas-post-fiestas-banner a:hover,
+  html.dark .fiestas-post-fiestas-banner a:focus-visible {
+    color: #9ae9df;
   }
 
   .fiestas-map-view {

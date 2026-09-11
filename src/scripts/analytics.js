@@ -16,7 +16,8 @@ const categoryActions = {
   map: new Set(['open', 'select_marker', 'select_date', 'select_all_dates', 'apply_filter']),
   plan: new Set(['create', 'add_activity', 'remove_activity', 'add_to_calendar', 'add_community', 'export', 'import', 'share', 'import_error']),
   pwa: new Set(['install_clicked', 'install_accepted', 'install_cancelled', 'installed', 'ios_help_opened', 'sw_registration_error']),
-  community_prompt: new Set(['view', 'click', 'dismiss'])
+  community_prompt: new Set(['view', 'click', 'dismiss']),
+  post_fiestas_banner: new Set(['click'])
 };
 
 const COMMUNITY_PROMPT_CHANNELS = new Set(['chat', 'whatsapp', 'newsletter', 'instagram', 'facebook']);
@@ -228,6 +229,12 @@ export function trackCommunityPromptDismissed(reason, iteration) {
   const normalizedIteration = normalizeCommunityPromptIteration(iteration);
   if (!COMMUNITY_PROMPT_DISMISS_REASONS.has(normalizedReason) || !normalizedIteration) return false;
   return pushEvent('community_prompt', 'dismiss', normalizedReason, normalizedIteration);
+}
+
+export function trackPostFiestasBannerClicked(destination) {
+  const normalizedDestination = normalizeToken(destination);
+  if (!new Set(['eventos_culturales', 'resumen_semanal']).has(normalizedDestination)) return false;
+  return pushEvent('post_fiestas_banner', 'click', normalizedDestination);
 }
 
 export function trackPwaInstallClicked(source = 'install') {
