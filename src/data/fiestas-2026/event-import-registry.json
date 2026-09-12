@@ -3497,6 +3497,123 @@
           "reason": "Misma fecha, hora compatible, lugar equivalente y título coincidente."
         }
       }
+    },
+    "2530": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "934",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2533": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "924",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2536": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "933",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2539": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "926",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2540": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "929",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2546": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "927",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2549": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "928",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2550": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "925",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2551": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "932",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2552": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "930",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2553": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "931",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2556": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "923",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
+    },
+    "2557": {
+      "occurrences": {
+        "single": {
+          "status": "linked",
+          "localEventId": "922",
+          "reason": "Nueva ocurrencia importada con identidad registrada."
+        }
+      }
     }
   },
   "localAliases": {

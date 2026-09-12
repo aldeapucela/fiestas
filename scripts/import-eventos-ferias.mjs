@@ -640,7 +640,9 @@ function locationFor(remote, occurrence = null) {
     2088: 'Sala Porta Caeli',
     1692: 'Casa de Zorrilla, Calle Fray Luis de Granada, 1',
     2480: 'Bizarro Bar Independiente, C. Arribas, 18, 47002 Valladolid',
-    2489: 'Escenario Principal - Playa de las Moreras'
+    2489: 'Escenario Principal - Playa de las Moreras',
+    2530: 'LaLupe Bar Musical',
+    2546: 'LaLupe Bar Musical'
   };
   return overrides[id] || cleanText([remote.venue, remote.address].filter(Boolean).join(', ') || remote.location);
 }
@@ -733,6 +735,48 @@ async function resolveCoordinates(remote, location, currentEvents) {
       lng: -4.7229442,
       source: 'Google Maps y OpenStreetMap Nominatim (ficha de Bizarro Bar Independiente coincidente con el club del cartel)',
       query: 'Bizarro Bar Independiente / Bizarro Calle, C. Arribas, 18, 47002 Valladolid, España'
+    },
+    2539: {
+      lat: 41.6565666,
+      lng: -4.7333834,
+      source: 'Google Maps (Zona deportiva Playa de las Moreras; referencia del escenario principal)',
+      query: 'Zona deportiva Playa de las Moreras, Valladolid, España'
+    },
+    2549: {
+      lat: 41.6521466,
+      lng: -4.7329922,
+      source: 'Google Maps (ficha Skatepark Las Moreras)',
+      query: 'Skatepark Playa de las Moreras, Valladolid, España'
+    },
+    2550: {
+      lat: 41.6513323,
+      lng: -4.7038664,
+      source: 'Google Maps (ficha Bar La Leyenda Terraza Game; nombre y teléfono coinciden con la fuente. Maps muestra el nº 126 frente al nº 16 publicado)',
+      query: 'Bar La Leyenda Terraza Game, P.º de Juan Carlos I, 126, Valladolid, España'
+    },
+    2551: {
+      lat: 41.6522947,
+      lng: -4.7278318,
+      source: 'Google Maps (ficha El Lion d’Or; coincide el nombre, aunque Maps muestra Plaza Mayor, 4 y la fuente indica Calle Alarcón)',
+      query: 'Café Lion Dor, Calle Alarcón, Valladolid, España'
+    },
+    2552: {
+      lat: 41.6533536,
+      lng: -4.7238626,
+      source: 'Google Maps (ficha Plaza de Portugalete)',
+      query: 'Plaza de Portugalete, Valladolid, España'
+    },
+    2546: {
+      lat: 41.6539186,
+      lng: -4.7288064,
+      source: 'Google Maps (LA LUPE; búsqueda del evento y reseña de Maps sobre Lady Veneno coinciden; cartel de LaLuPe Entertainment)',
+      query: 'LA LUPE, C. Francisco Zarandona, 10, 47003 Valladolid, España'
+    },
+    2530: {
+      lat: 41.6539186,
+      lng: -4.7288064,
+      source: 'Google Maps (LA LUPE; inferido del cartel con marca LaLuPe Entertainment y ficha del local)',
+      query: 'LA LUPE, C. Francisco Zarandona, 10, 47003 Valladolid, España'
     }
   };
   if (known[id]) return known[id];
@@ -746,6 +790,15 @@ async function resolveCoordinates(remote, location, currentEvents) {
         lng: -4.728046,
         source: 'Google Maps (consulta manual; centro aproximado de Acera de Recoletos)',
         query: 'C. Acera de Recoletos, Valladolid, España'
+      }
+    },
+    {
+      matches: ['lalupe', 'la lupe'],
+      coordinates: {
+        lat: 41.6539186,
+        lng: -4.7288064,
+        source: 'Google Maps (ficha LA LUPE)',
+        query: 'LA LUPE, C. Francisco Zarandona, 10, 47003 Valladolid, España'
       }
     },
     {

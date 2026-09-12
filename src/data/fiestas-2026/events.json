@@ -28437,5 +28437,474 @@
     "tags": [
       "Otros"
     ]
+  },
+  {
+    "id": 922,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "16:00",
+    "endTime": null,
+    "title": "DJ Tú Deluxe Night (Fiesta)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0405628e0544cefe15fc35f69688d06735a2bb5e_2_768x1024.jpeg",
+    "location": "LaLupe",
+    "zone": "Zona Centro",
+    "description": "LaLupe Entertainment presenta la sesión Deluxe Night, un evento diseñado para disfrutar de una experiencia musical única. La cita tendrá lugar el sábado 12 de septiembre, comenzando con un tardeo a las 16:00 horas y continuando con la fiesta nocturna a partir de las 22:30 horas.",
+    "summary": "LaLupe Entertainment presenta la sesión Deluxe Night, un evento diseñado para disfrutar de una experiencia musical única. La cita tendrá lugar el sábado 12 de septiembre, comenzando con un tardeo a las 16:00 horas y continuando con la fiesta nocturna a partir de las 22:30 horas.",
+    "performances": [],
+    "organizers": [
+      "LaLupe Entertainment"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6539186,
+      "lng": -4.7288064,
+      "source": "Google Maps (ficha LA LUPE)",
+      "query": "LA LUPE, C. Francisco Zarandona, 10, 47003 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 923,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "20:00",
+    "endTime": "21:00",
+    "title": "Óscar de Rivera & Edu Sabanah (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/d1cc634c27e41d8cd704d6127f765f869021b77c_2_879x1024.jpeg",
+    "location": "Catedral",
+    "zone": "Zona Centro",
+    "description": "El próximo sábado 12 de septiembre se llevará a cabo una actuación musical en la emblemática Catedral de Valladolid. El evento comenzará a partir de las 20:00 horas, ofreciendo una velada única en uno de los entornos más significativos de la ciudad.",
+    "summary": "El próximo sábado 12 de septiembre se llevará a cabo una actuación musical en la emblemática Catedral de Valladolid. El evento comenzará a partir de las 20:00 horas, ofreciendo una velada única en uno de los entornos más significativos de la ciudad.",
+    "performances": [],
+    "organizers": [
+      "Los Ilustres Valladolid / Jero Catedral"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6525938,
+      "lng": -4.7233919,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 60418554,
+      "query": "Catedral, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-12T14:33:20.443Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 924,
+    "date": "2026-09-12",
+    "dateLabel": "Sábado 12 de septiembre",
+    "startTime": "22:00",
+    "endTime": "23:00",
+    "title": "Los 40 Sessions (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/0/0452514c74859a6c40a20c9b1dac16c9c6a223bc_2_1024x1007.jpeg",
+    "location": "Las Moreras",
+    "zone": "Moreras",
+    "description": "Los 40 Sessions llega a la ciudad de Valladolid para ofrecer una noche de música y entretenimiento. El evento se celebrará el próximo 12 de septiembre de 2026 a las 22:00 horas en el espacio de Las Moreras.",
+    "summary": "Los 40 Sessions llega a la ciudad de Valladolid para ofrecer una noche de música y entretenimiento. El evento se celebrará el próximo 12 de septiembre de 2026 a las 22:00 horas en el espacio de Las Moreras.",
+    "performances": [],
+    "organizers": [
+      "Ayuntamiento de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.656469,
+      "lng": -4.7325665,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 43308194,
+      "query": "Las Moreras, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-12T14:33:20.444Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 925,
+    "date": "2026-09-13",
+    "dateLabel": "Domingo 13 de septiembre",
+    "startTime": "14:00",
+    "endTime": "15:00",
+    "title": "Cante y Olé (Música en directo)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/6/61b5155630e1b2e05743ff256d428b011f360eb1_2_830x1024.jpeg",
+    "location": "La Leyenda Sports Bar, Paseo Juan Carlos I, 16",
+    "zone": "Zona Centro",
+    "description": "El evento musical Cante y Olé se llevará a cabo el próximo 13 de septiembre en las instalaciones de La Leyenda Sports Bar. La cita comenzará a partir de las 14:00 horas, ofreciendo una propuesta de música en directo para disfrutar durante la tarde.",
+    "summary": "El evento musical Cante y Olé se llevará a cabo el próximo 13 de septiembre en las instalaciones de La Leyenda Sports Bar. La cita comenzará a partir de las 14:00 horas, ofreciendo una propuesta de música en directo para disfrutar durante la tarde.",
+    "performances": [],
+    "organizers": [
+      "La Leyenda Sports Bar"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6513323,
+      "lng": -4.7038664,
+      "source": "Google Maps (ficha Bar La Leyenda Terraza Game; nombre y teléfono coinciden con la fuente. Maps muestra el nº 126 frente al nº 16 publicado)",
+      "query": "Bar La Leyenda Terraza Game, P.º de Juan Carlos I, 126, Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 926,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "23:50",
+    "endTime": null,
+    "title": "Remember Night (Fiesta)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/dd6ce808d9d3db4cc6c080457e019f648700ca13_2_582x1024.jpeg",
+    "location": "Escenario Principal Pistas Deportivas Playa “Las Moreras”",
+    "zone": "Moreras",
+    "description": "La fiesta Remember Night se celebra el próximo viernes 11 de septiembre, comenzando la actividad a partir de las 23:50 horas. El evento tendrá lugar en el Escenario Principal de las Pistas Deportivas Playa “Las Moreras”.",
+    "summary": "La fiesta Remember Night se celebra el próximo viernes 11 de septiembre, comenzando la actividad a partir de las 23:50 horas. El evento tendrá lugar en el Escenario Principal de las Pistas Deportivas Playa “Las Moreras”.",
+    "performances": [],
+    "organizers": [
+      "fiestas_vll"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6565666,
+      "lng": -4.7333834,
+      "source": "Google Maps (Zona deportiva Playa de las Moreras; referencia del escenario principal)",
+      "query": "Zona deportiva Playa de las Moreras, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 927,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "22:30",
+    "endTime": "23:30",
+    "title": "Rumore con Lady Veneno (Espectáculo)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/d3ca51faa6f8f200af90badbf71980073fded1fa_2_768x1024.jpeg",
+    "location": "LaLupe Bar Musical",
+    "zone": "Zona Centro",
+    "description": "El espectáculo musical Rumore con Lady Veneno llega a Valladolid en el marco de las celebraciones de las Ferias y Fiestas de 2026. La cita tendrá lugar el próximo 11 de septiembre, ofreciendo una propuesta de entretenimiento para disfrutar durante la noche vallisoletana.",
+    "summary": "El espectáculo musical Rumore con Lady Veneno llega a Valladolid en el marco de las celebraciones de las Ferias y Fiestas de 2026. La cita tendrá lugar el próximo 11 de septiembre, ofreciendo una propuesta de entretenimiento para disfrutar durante la noche vallisoletana.",
+    "performances": [],
+    "organizers": [
+      "Lalupe Entertainment"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6539186,
+      "lng": -4.7288064,
+      "source": "Google Maps (LA LUPE; búsqueda del evento y reseña de Maps sobre Lady Veneno coinciden; cartel de LaLuPe Entertainment)",
+      "query": "LA LUPE, C. Francisco Zarandona, 10, 47003 Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 928,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": "22:00",
+    "endTime": null,
+    "title": "Neverita x Lorencito (Sesión Musical)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/a/ad32fd86b2eab74d5590621429fa3d1f5c79b7f8_2_793x1024.jpeg",
+    "location": "Skatepark de Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "La sesión musical Neverita x Lorencito se llevará a cabo el próximo 11 de septiembre de 2026 en las instalaciones del Skatepark de Playa de las Moreras. El evento comenzará a las 22:00 horas y se extenderá durante toda la madrugada hasta las 04:00 horas.",
+    "summary": "La sesión musical Neverita x Lorencito se llevará a cabo el próximo 11 de septiembre de 2026 en las instalaciones del Skatepark de Playa de las Moreras. El evento comenzará a las 22:00 horas y se extenderá durante toda la madrugada hasta las 04:00 horas.",
+    "performances": [],
+    "organizers": [
+      "Fiestas de la Nuestra Señora Virgen de San Lorenzo"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6521466,
+      "lng": -4.7329922,
+      "source": "Google Maps (ficha Skatepark Las Moreras)",
+      "query": "Skatepark Playa de las Moreras, Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 929,
+    "date": "2026-09-11",
+    "dateLabel": "Viernes 11 de septiembre",
+    "startTime": null,
+    "endTime": null,
+    "title": "Gran Día de Penas (Evento)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/d10c2a0e68c5facb9ad459a9b262a1a3f627c9ba_2_757x1024.jpeg",
+    "location": "Playa de las Moreras",
+    "zone": "Moreras",
+    "description": "El Gran Día de Penas se celebra este viernes 11 de septiembre en la Playa de las Moreras. Este evento promete una jornada intensa de música y entretenimiento en un entorno privilegiado de la ciudad de Valladolid.",
+    "summary": "El Gran Día de Penas se celebra este viernes 11 de septiembre en la Playa de las Moreras. Este evento promete una jornada intensa de música y entretenimiento en un entorno privilegiado de la ciudad de Valladolid.",
+    "performances": [],
+    "organizers": [
+      "Ayuntamiento de Valladolid"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6573001,
+      "lng": -4.7332525,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "way",
+      "osmId": 61755548,
+      "query": "Playa de las Moreras, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-12T14:33:20.445Z"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 930,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "20:00",
+    "endTime": "23:00",
+    "title": "Daniel de Miguel y J. Morrison (Concierto)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/4/42546ee8b2418b73c6de7a6160b3b08de49a7c94_2_764x1024.jpeg",
+    "location": "Plaza Portugalete (al lado de la Catedral)",
+    "zone": "Zona Centro",
+    "description": "Daniel de Miguel y J. Morrison se presentan en un encuentro musical que tendrá lugar el próximo jueves 10 en la emblemática Plaza Portugalete. El evento se desarrollará en este espacio al aire libre, situado junto a la Catedral, ofreciendo una oportunidad única para disfrutar de la música en un entorno histórico.",
+    "summary": "Daniel de Miguel y J. Morrison se presentan en un encuentro musical que tendrá lugar el próximo jueves 10 en la emblemática Plaza Portugalete. El evento se desarrollará en este espacio al aire libre, situado junto a la Catedral, ofreciendo una oportunidad única para disfrutar de la música en un entorno histórico.",
+    "performances": [],
+    "organizers": [],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6533536,
+      "lng": -4.7238626,
+      "source": "Google Maps (ficha Plaza de Portugalete)",
+      "query": "Plaza de Portugalete, Valladolid, España"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 931,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "19:30",
+    "endTime": "23:00",
+    "title": "Tardeo de Ferias en Nuestra Caseta (Dubba & Alex Bang)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/1/1974bb9ac9cc5ce6a11ac144120e6efe0f62bfe4_2_848x1024.jpeg",
+    "location": "Talavera, Calle Rastro 1, 47001",
+    "zone": "Zona Centro",
+    "description": "El evento Tardeo de Ferias en Nuestra Caseta se llevará a cabo el próximo jueves 10 de septiembre en las instalaciones de Talavera. La jornada musical tendrá lugar en la calle Rastro 1, en la ciudad de Valladolid, comenzando a las 19:30 horas.",
+    "summary": "El evento Tardeo de Ferias en Nuestra Caseta se llevará a cabo el próximo jueves 10 de septiembre en las instalaciones de Talavera. La jornada musical tendrá lugar en la calle Rastro 1, en la ciudad de Valladolid, comenzando a las 19:30 horas.",
+    "performances": [],
+    "organizers": [
+      "Talavera"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.648261,
+      "lng": -4.7267987,
+      "source": "OpenStreetMap Nominatim",
+      "osmType": "node",
+      "osmId": 12594166580,
+      "query": "Talavera, Calle Rastro 1, 47001, Valladolid, España",
+      "accuracy": 1,
+      "geocodedAt": "2026-09-12T14:33:20.446Z"
+    },
+    "type": "Música",
+    "ticket": {
+      "required": false,
+      "status": "unknown",
+      "label": "Entrada no indicada",
+      "url": null,
+      "note": "La fuente remota no indica venta de entradas para este evento."
+    },
+    "tags": [
+      "Música"
+    ]
+  },
+  {
+    "id": 932,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "18:00",
+    "endTime": "20:00",
+    "title": "Sesión de Tardeo Los D4za",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/d/d38c7c5a07c5915e8c7161199678f5bf3dc92770_2_801x1024.jpeg",
+    "location": "Café Lion Dor, Calle Alarcón",
+    "zone": "Zona Centro",
+    "description": "La sesión de tardeo de Los D4za se llevará a cabo este jueves 10 de septiembre en la Calle Alarcón de Valladolid. El encuentro tendrá lugar en el emblemático Café Lion Dor, comenzando a las 18:00 horas.",
+    "summary": "La sesión de tardeo de Los D4za se llevará a cabo este jueves 10 de septiembre en la Calle Alarcón de Valladolid. El encuentro tendrá lugar en el emblemático Café Lion Dor, comenzando a las 18:00 horas.",
+    "performances": [],
+    "organizers": [
+      "Café Lion Dor"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6522947,
+      "lng": -4.7278318,
+      "source": "Google Maps (ficha El Lion d’Or; coincide el nombre, aunque Maps muestra Plaza Mayor, 4 y la fuente indica Calle Alarcón)",
+      "query": "Café Lion Dor, Calle Alarcón, Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 933,
+    "date": "2026-09-10",
+    "dateLabel": "Jueves 10 de septiembre",
+    "startTime": "16:00",
+    "endTime": "23:59",
+    "title": "Show con Miss Korax (Espectáculo)",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/9/91cd6eeb7d9fd428e84139bb31658dc038040ae3_2_738x1024.jpeg",
+    "location": "LaLupe Bar Musical",
+    "zone": "Zona Centro",
+    "description": "LaLupe Entertainment presenta el espectáculo de Miss Korax en el marco de las celebraciones de las Ferias y Fiestas de Valladolid 2026. El evento tendrá lugar el próximo 10 de septiembre, comenzando con las actividades de tarde a las 16:00 y continuando con la fiesta a partir de las 22:30.",
+    "summary": "LaLupe Entertainment presenta el espectáculo de Miss Korax en el marco de las celebraciones de las Ferias y Fiestas de Valladolid 2026. El evento tendrá lugar el próximo 10 de septiembre, comenzando con las actividades de tarde a las 16:00 y continuando con la fiesta a partir de las 22:30.",
+    "performances": [],
+    "organizers": [
+      "LaLupe Entertainment"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6539186,
+      "lng": -4.7288064,
+      "source": "Google Maps (ficha LA LUPE)",
+      "query": "LA LUPE, C. Francisco Zarandona, 10, 47003 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
+  },
+  {
+    "id": 934,
+    "date": "2026-09-09",
+    "dateLabel": "Miércoles 9 de septiembre",
+    "startTime": "16:00",
+    "endTime": "23:30",
+    "title": "Show Paquita Colita Donna Mercadonna",
+    "image": "https://foro.aldeapucela.org/uploads/default/optimized/2X/f/fff97af6552ede0cbd4e21a02282758f14e2499c_2_744x1024.jpeg",
+    "location": "LaLupe Bar Musical",
+    "zone": "Zona Centro",
+    "description": "El espectáculo ‘Show Paquita Colita Donna Mercadonna’ se celebra el próximo 9 de septiembre de 2026 en el marco de las Ferias y Fiestas de Valladolid. La cita tendrá lugar durante la tarde y la noche, con sesiones programadas a partir de las 16:00 y las 22:30 horas.",
+    "summary": "El espectáculo ‘Show Paquita Colita Donna Mercadonna’ se celebra el próximo 9 de septiembre de 2026 en el marco de las Ferias y Fiestas de Valladolid. La cita tendrá lugar durante la tarde y la noche, con sesiones programadas a partir de las 16:00 y las 22:30 horas.",
+    "performances": [],
+    "organizers": [
+      "LaLuPe"
+    ],
+    "collaborators": [],
+    "coordinates": {
+      "lat": 41.6539186,
+      "lng": -4.7288064,
+      "source": "Google Maps (LA LUPE; inferido del cartel con marca LaLuPe Entertainment y ficha del local)",
+      "query": "LA LUPE, C. Francisco Zarandona, 10, 47003 Valladolid, España"
+    },
+    "type": "Otros",
+    "ticket": {
+      "required": false,
+      "status": "not_required",
+      "label": "Entrada libre",
+      "url": null,
+      "note": "La fuente remota indica que la entrada es libre o gratuita."
+    },
+    "tags": [
+      "Otros"
+    ]
   }
 ]
