@@ -31,6 +31,27 @@ test('uses the Europe/Madrid calendar date for campaign visibility', () => {
   );
 });
 
+test('highlights the banner everywhere on its configured date', () => {
+  const classes = new Set();
+  const root = {
+    dataset: {
+      fiestasPostFiestasStart: '2026-09-11',
+      fiestasPostFiestasHighlightDate: '2026-09-13'
+    },
+    classList: { add: (className) => classes.add(className) },
+    querySelectorAll: () => [],
+    hidden: true
+  };
+
+  assert.equal(banner.setupPostFiestasBanner(root, new Date('2026-09-13T10:00:00+02:00')), true);
+  assert.equal(classes.has('is-highlighted'), true);
+  assert.equal(root.hidden, false);
+
+  classes.clear();
+  assert.equal(banner.setupPostFiestasBanner(root, new Date('2026-09-14T10:00:00+02:00')), true);
+  assert.equal(classes.has('is-highlighted'), false);
+});
+
 test('shows the welcome dialog once per day and once per session', () => {
   const createStorage = () => {
     const values = new Map();

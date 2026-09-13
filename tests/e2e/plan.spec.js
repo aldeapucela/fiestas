@@ -1,12 +1,8 @@
 import { test, expect, loadClientEvents } from './fixtures.js';
 
 const FAVORITES_KEY = 'fiestasPucela:favorites';
-function localDateKey(date) {
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, '0');
-  const day = String(date.getDate()).padStart(2, '0');
-  return `${year}-${month}-${day}`;
-}
+const PLAN_TEST_TODAY = '2026-09-10';
+const PLAN_TEST_NOW = new Date(`${PLAN_TEST_TODAY}T10:00:00.000Z`);
 
 function planHash(activityIds) {
   const payload = {
@@ -60,9 +56,10 @@ test('Mi plan usa la miniatura optimizada de una actividad con imagen', async ({
 });
 
 test('Mis guardados muestra todos los días y pliega las actividades pasadas', async ({ page }) => {
+  await page.clock.setFixedTime(PLAN_TEST_NOW);
   await page.goto('/');
   const events = await loadClientEvents(page);
-  const today = localDateKey(new Date());
+  const today = PLAN_TEST_TODAY;
   const past = events.find((event) => event.date < today);
   const open = events.find((event) => event.date > today);
   expect(past).toBeTruthy();
@@ -89,9 +86,10 @@ test('Mis guardados muestra todos los días y pliega las actividades pasadas', a
 });
 
 test('los planes personalizados pliegan las actividades pasadas y mantienen los días visibles', async ({ page }) => {
+  await page.clock.setFixedTime(PLAN_TEST_NOW);
   await page.goto('/');
   const events = await loadClientEvents(page);
-  const today = localDateKey(new Date());
+  const today = PLAN_TEST_TODAY;
   const past = events.find((event) => event.date < today);
   const open = events.find((event) => event.date > today);
   expect(past).toBeTruthy();

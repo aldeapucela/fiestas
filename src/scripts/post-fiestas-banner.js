@@ -85,6 +85,9 @@ export function shouldShowPostFiestasWelcome({ storage, sessionStorage, startDat
 export function setupPostFiestasBanner(root = document.querySelector('[data-fiestas-post-fiestas-banner]'), now = new Date()) {
   if (!root || !isPostFiestasBannerActive(root.dataset.fiestasPostFiestasStart, root.dataset.fiestasPostFiestasEnd, now)) return false;
 
+  if (root.dataset.fiestasPostFiestasHighlightDate === getMadridDate(now)) {
+    root.classList.add('is-highlighted');
+  }
   root.hidden = false;
   root.querySelectorAll('[data-fiestas-post-fiestas-link]').forEach((link) => {
     link.addEventListener('click', () => {

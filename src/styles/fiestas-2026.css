@@ -1676,6 +1676,31 @@
     outline-offset: 3px;
   }
 
+  .fiestas-post-fiestas-banner.is-highlighted {
+    border-top-color: #0f9f8d;
+    background: rgba(237, 249, 246, 0.98);
+  }
+
+  .fiestas-post-fiestas-banner.is-highlighted .fiestas-post-fiestas-banner-logo {
+    filter: none;
+    opacity: 0.86;
+  }
+
+  .fiestas-post-fiestas-banner.is-highlighted p {
+    color: #344054;
+  }
+
+  .fiestas-post-fiestas-banner.is-highlighted nav a:first-of-type {
+    color: #087e72;
+    font-weight: 900;
+    text-decoration-thickness: 0.12em;
+  }
+
+  .fiestas-post-fiestas-banner.is-highlighted nav a:last-of-type {
+    color: #667085;
+    font-weight: 700;
+  }
+
   body:has(.fiestas-post-fiestas-banner:not([hidden])) .fiestas-app:not(.is-map-mode) {
     padding-bottom: calc(var(--fiestas-bottom-nav-height) + var(--fiestas-post-fiestas-banner-height) + 1rem + env(safe-area-inset-bottom));
   }
@@ -1736,6 +1761,28 @@
   html.dark .fiestas-post-fiestas-banner a:hover,
   html.dark .fiestas-post-fiestas-banner a:focus-visible {
     color: #9ae9df;
+  }
+
+  html.dark .fiestas-post-fiestas-banner.is-highlighted {
+    border-top-color: #3bafa0;
+    background: rgba(29, 44, 43, 0.98);
+  }
+
+  html.dark .fiestas-post-fiestas-banner.is-highlighted .fiestas-post-fiestas-banner-logo {
+    filter: none;
+    opacity: 0.84;
+  }
+
+  html.dark .fiestas-post-fiestas-banner.is-highlighted p {
+    color: #d5e2df;
+  }
+
+  html.dark .fiestas-post-fiestas-banner.is-highlighted nav a:first-of-type {
+    color: #84e2d5;
+  }
+
+  html.dark .fiestas-post-fiestas-banner.is-highlighted nav a:last-of-type {
+    color: #b4c0c8;
   }
 
   .fiestas-map-view {
