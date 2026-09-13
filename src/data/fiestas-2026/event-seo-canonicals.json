@@ -1,10 +1,11 @@
 {
   "schemaVersion": 1,
   "sourceSnapshotSha256": "cc8462486af8afc725adf0da853a9e561479f2173dc540f8ffb1c36beb91539b",
-  "selectionCriteria": "Un único ID remoto vinculado; título, descripción local y resumen remoto, fecha, hora de inicio y ubicación coinciden.",
+  "selectionCriteria": "ID remoto único y destino verificado: coincidencia estricta de título, descripción, fecha, hora y ubicación, o reconciliación manual de identidad en el registro.",
   "targets": {
     "850": 2452,
     "454": 2359,
+    "472": 2183,
     "851": 2449,
     "852": 2458,
     "855": 2462,

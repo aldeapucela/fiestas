@@ -55,6 +55,15 @@ test('la ficha confirmada enlaza a Eventos antes de la descripción y usa su can
   })).toBe(true);
 });
 
+test('canoniza a Eventos la ficha diaria de un evento con fechas múltiples', async ({ page }) => {
+  await page.goto('/e/472/el-gran-viaje-partida-y-regreso-experiencia-inmersiva/');
+
+  const destination = 'https://eventos.aldeapucela.org/e/2183/el-gran-viaje-partida-y-regreso-experiencia-inmersiva/';
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', destination);
+  await expect(page.locator('meta[property="og:url"]')).toHaveAttribute('content', destination);
+  await expect(page.locator('.fiestas-detail-source-link a')).toHaveAttribute('href', destination);
+});
+
 test('la ficha ambigua conserva canonical propio y no inventa un enlace a Eventos', async ({ page }) => {
   await page.goto('/e/34/xxxiv-exposicion-ferroviaria-asvafer/');
 
