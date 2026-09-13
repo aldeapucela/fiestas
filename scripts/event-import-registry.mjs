@@ -24,7 +24,12 @@ export function normalizeImportRegistry(value) {
     const occurrences = remoteValue.occurrences && typeof remoteValue.occurrences === 'object'
       ? remoteValue.occurrences
       : {};
-    registry.remoteEvents[String(Number(remoteId))] = { occurrences: {} };
+    const normalizedRemoteId = String(Number(remoteId));
+    const urlPath = normalizeRemoteEventUrlPath(normalizedRemoteId, remoteValue.urlPath);
+    registry.remoteEvents[normalizedRemoteId] = {
+      ...(urlPath ? { urlPath } : {}),
+      occurrences: {}
+    };
     for (const [key, occurrenceValue] of Object.entries(occurrences)) {
       const occurrence = normalizeRegistryOccurrence(occurrenceValue);
       if (occurrence) registry.remoteEvents[String(Number(remoteId))].occurrences[key] = occurrence;
@@ -87,6 +92,22 @@ export function registerOccurrence(registry, remoteId, occurrenceKey, value) {
   if (!registry.remoteEvents[id]) registry.remoteEvents[id] = { occurrences: {} };
   registry.remoteEvents[id].occurrences[String(occurrenceKey)] = normalized;
   return normalized;
+}
+
+export function setRemoteEventUrlPath(registry, remoteId, value) {
+  const id = String(Number(remoteId));
+  const remoteEvent = registry?.remoteEvents?.[id];
+  if (!remoteEvent) return false;
+  const urlPath = normalizeRemoteEventUrlPath(id, value);
+  if (!urlPath) return false;
+  remoteEvent.urlPath = urlPath;
+  return true;
+}
+
+function normalizeRemoteEventUrlPath(remoteId, value) {
+  const urlPath = String(value || '').trim();
+  const match = /^\/e\/(\d+)\/[a-z0-9-]+\/$/.exec(urlPath);
+  return match && String(Number(match[1])) === String(Number(remoteId)) ? urlPath : null;
 }
 
 export function resolveLocalEventId(localId, aliases = {}) {

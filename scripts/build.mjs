@@ -12,6 +12,7 @@ import { readManifest, scanUsedIcons } from './build-icons.mjs';
 import { jsonForScript } from './json-for-script.mjs';
 import { casetaDetailPath, casetaLegacyPaths, casetaQrPath, getCasetaPublicSlug, slugifyCaseta } from './caseta-routes.mjs';
 import { assertRegistryIntegrity, normalizeImportRegistry } from './event-import-registry.mjs';
+import { attachEventSourcePages } from './event-source-pages.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
@@ -47,6 +48,7 @@ const vallabusNearbyFallbackRadiusMeters = 1000;
 const vallabusNearbyStopLimit = 3;
 const transitLineCollator = new Intl.Collator('es', { numeric: true, sensitivity: 'base' });
 const eventImportRegistryPath = path.join(root, 'src', 'data', 'fiestas-2026', 'event-import-registry.json');
+const eventSeoCanonicalsPath = path.join(root, 'src', 'data', 'fiestas-2026', 'event-seo-canonicals.json');
 const env = nunjucks.configure(path.join(root, 'src', 'templates'), { autoescape: true, noCache: true });
 
 env.addFilter('urlencode', (value) => encodeURIComponent(String(value || '')));
@@ -742,6 +744,7 @@ function detailImageUrl(image = '') {
 function clientEvent(event) {
   const {
     shareText, osmUrl, directionsUrl, canonicalUrl, mapUrl, ticketDetail, detailImage,
+    sourceEventUrl, seoCanonicalUrl,
     socialImagePath, socialImageAlt, socialImageWidth, socialImageHeight,
     ...rest
   } = event;
@@ -953,7 +956,7 @@ function eventStructuredData(event) {
     name: event.title,
     description: event.summary || event.description || event.dateLabel,
     startDate: eventDateTime(event.date, event.startTime),
-    url: event.canonicalUrl,
+    url: event.seoCanonicalUrl || event.canonicalUrl,
     image: [eventImageUrl(event)],
     eventStatus: 'https://schema.org/EventScheduled',
     eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
@@ -1142,8 +1145,13 @@ async function build() {
   await verifyCasetaQrPosters(casetas);
   const communityPlanMemberships = await loadCommunityPlanMemberships(communityPlans);
   const pwaFiles = await loadPwaFiles();
-  const events = await loadEvents(vallabusStops);
+  const sourceEvents = await loadEvents(vallabusStops);
   const eventImportRegistry = normalizeImportRegistry(JSON.parse(await fs.readFile(eventImportRegistryPath, 'utf8')));
+  const eventSeoCanonicals = JSON.parse(await fs.readFile(eventSeoCanonicalsPath, 'utf8'));
+  if (eventSeoCanonicals.schemaVersion !== 1 || !eventSeoCanonicals.targets || typeof eventSeoCanonicals.targets !== 'object') {
+    throw new Error('The event SEO canonical mapping has an invalid format.');
+  }
+  const events = attachEventSourcePages(sourceEvents, eventImportRegistry, eventSeoCanonicals.targets);
   assertRegistryIntegrity(eventImportRegistry, events);
   const eventAliases = Object.fromEntries(Object.entries(eventImportRegistry.localAliases).map(([id, alias]) => [id, alias.targetEventId]));
   const eventAliasVersion = createHash('sha256').update(JSON.stringify(eventAliases)).digest('hex').slice(0, 12);
@@ -1393,6 +1401,7 @@ async function build() {
       title: event.title + ' | Fiestas Valladolid 2026',
       meta: { description: event.summary || event.description || event.dateLabel },
       canonicalUrl: publicBaseUrl + event.urlPath,
+      seoCanonicalUrl: event.seoCanonicalUrl || event.canonicalUrl,
       social: {
         type: 'article', title: event.title + ' | Fiestas Valladolid 2026',
         description: event.summary || event.description || event.dateLabel,
@@ -1400,7 +1409,7 @@ async function build() {
         imageAlt: event.image ? event.title : event.socialImageAlt,
         imageWidth: event.image ? 1200 : event.socialImageWidth,
         imageHeight: event.image ? 630 : event.socialImageHeight,
-        imageType: 'image/jpeg', url: publicBaseUrl + event.urlPath
+        imageType: 'image/jpeg', url: event.seoCanonicalUrl || publicBaseUrl + event.urlPath
       },
       event,
       structuredData: eventStructuredData(event),
@@ -1430,7 +1439,7 @@ async function build() {
     }
   }
 
-  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', '/colaboradores/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.flatMap((caseta) => [caseta.urlPath, casetaQrPath(caseta.publicSlug)]), ...events.map((event) => event.urlPath)];
+  const urls = ['/', '/mapa/', '/casetas/', '/populares/', '/pinchos-populares/', '/planes/', '/colaboradores/', ...communityPlans.map((plan) => `/planes/${plan.id}/`), ...casetas.flatMap((caseta) => [caseta.urlPath, casetaQrPath(caseta.publicSlug)]), ...events.filter((event) => !event.seoCanonicalUrl).map((event) => event.urlPath)];
   const sitemap = [
     '<?xml version="1.0" encoding="UTF-8"?>',
     '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',

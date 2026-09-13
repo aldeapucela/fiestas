@@ -6,6 +6,7 @@ import {
   normalizeImportRegistry,
   occurrenceRegistryKey,
   registerOccurrence,
+  setRemoteEventUrlPath,
   resolveLocalEventId
 } from '../scripts/event-import-registry.mjs';
 
@@ -36,5 +37,19 @@ test('registra, normaliza y recupera enlaces históricos', () => {
     '583': { targetEventId: '783' },
     '783': { targetEventId: '437' }
   }), '437');
+  assert.deepEqual(normalizeImportRegistry(registry), registry);
+});
+
+test('conserva rutas remotas solo si coinciden con el ID de origen', () => {
+  const registry = emptyImportRegistry();
+  registerOccurrence(registry, 2412, 'day-2026-09-06', {
+    status: 'linked',
+    localEventId: 796,
+    reason: 'Migración'
+  });
+
+  assert.equal(setRemoteEventUrlPath(registry, 2412, '/e/2412/programa-fiesta/'), true);
+  assert.equal(setRemoteEventUrlPath(registry, 2412, '/e/9999/programa-fiesta/'), false);
+  assert.equal(registry.remoteEvents['2412'].urlPath, '/e/2412/programa-fiesta/');
   assert.deepEqual(normalizeImportRegistry(registry), registry);
 });

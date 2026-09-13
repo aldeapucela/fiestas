@@ -36,3 +36,29 @@ test('la ficha muestra una nota breve de accesibilidad cuando aplica', async ({ 
   await expect(note).toContainText('LSE');
   await expect(note).toContainText('Lengua de Signos Española');
 });
+
+test('la ficha confirmada enlaza a Eventos antes de la descripción y usa su canonical', async ({ page }) => {
+  await page.goto('/e/924/los-40-sessions-concierto/');
+
+  await expect(page.locator('link[rel="canonical"]'))
+    .toHaveAttribute('href', 'https://eventos.aldeapucela.org/e/2533/los-40-sessions-concierto/');
+  await expect(page.locator('meta[property="og:url"]'))
+    .toHaveAttribute('content', 'https://eventos.aldeapucela.org/e/2533/los-40-sessions-concierto/');
+  const sourceLink = page.locator('.fiestas-detail-source-link a');
+  await expect(sourceLink).toHaveAttribute('href', 'https://eventos.aldeapucela.org/e/2533/los-40-sessions-concierto/');
+  await expect(sourceLink).toContainText('Ver la ficha de Los 40 Sessions (Concierto) en eventos.aldeapucela.org');
+  expect(await page.evaluate(() => {
+    const sourceLink = document.querySelector('.fiestas-detail-source-link');
+    const description = document.querySelector('.fiestas-detail-description');
+    return Boolean(sourceLink && description &&
+      (sourceLink.compareDocumentPosition(description) & Node.DOCUMENT_POSITION_FOLLOWING));
+  })).toBe(true);
+});
+
+test('la ficha ambigua conserva canonical propio y no inventa un enlace a Eventos', async ({ page }) => {
+  await page.goto('/e/34/xxxiv-exposicion-ferroviaria-asvafer/');
+
+  await expect(page.locator('link[rel="canonical"]'))
+    .toHaveAttribute('href', 'https://fiestas.aldeapucela.org/e/34/xxxiv-exposicion-ferroviaria-asvafer/');
+  await expect(page.locator('.fiestas-detail-source-link')).toHaveCount(0);
+});

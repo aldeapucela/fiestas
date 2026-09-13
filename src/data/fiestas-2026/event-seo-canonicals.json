@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "sourceSnapshotSha256": "cc8462486af8afc725adf0da853a9e561479f2173dc540f8ffb1c36beb91539b",
+  "selectionCriteria": "Un único ID remoto vinculado; título, descripción local y resumen remoto, fecha, hora de inicio y ubicación coinciden.",
+  "targets": {
+    "850": 2452,
+    "454": 2359,
+    "851": 2449,
+    "852": 2458,
+    "855": 2462,
+    "856": 2448,
+    "862": 2454,
+    "877": 2481,
+    "886": 2490,
+    "899": 2495,
+    "909": 2498,
+    "915": 2506,
+    "916": 2507,
+    "917": 2508,
+    "920": 2524,
+    "922": 2557,
+    "923": 2556,
+    "924": 2533,
+    "925": 2550,
+    "926": 2539,
+    "928": 2549,
+    "930": 2552,
+    "931": 2553,
+    "932": 2551,
+    "933": 2536
+  }
+}

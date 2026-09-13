@@ -16,7 +16,8 @@ import {
   getRegisteredOccurrence,
   normalizeImportRegistry,
   occurrenceRegistryKey,
-  registerOccurrence
+  registerOccurrence,
+  setRemoteEventUrlPath
 } from './event-import-registry.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -328,6 +329,16 @@ for (const remote of candidateEvents) {
       location: local.location,
       title: local.title
     });
+  }
+}
+
+for (const remote of windowEvents) {
+  const remoteRegistryEntry = registry.remoteEvents[String(Number(remote.id))];
+  const hasLinkedOccurrences = Object.values(remoteRegistryEntry?.occurrences || {})
+    .some((occurrence) => occurrence.status === 'linked');
+  if (!hasLinkedOccurrences) continue;
+  if (!setRemoteEventUrlPath(registry, remote.id, remote.urlPath)) {
+    throw new Error(`No se pudo conservar la ruta pública de la ficha remota ${remote.id}.`);
   }
 }
 

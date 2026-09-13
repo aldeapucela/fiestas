@@ -16,7 +16,7 @@
     {# Integraciones externas aprobadas de Aldea Pucela Eventos. #}
     <link rel="alternate" type="application/rss+xml" title="Aldea Pucela Eventos RSS" href="https://eventos.aldeapucela.org/rss.xml" />
     <link rel="alternate" type="text/calendar" title="Aldea Pucela Eventos Calendario" href="https://eventos.aldeapucela.org/calendar.ics" />
-    {% if canonicalUrl %}<link rel="canonical" href="{{ canonicalUrl }}" />{% endif %}
+    {% if seoCanonicalUrl or canonicalUrl %}<link rel="canonical" href="{{ seoCanonicalUrl or canonicalUrl }}" />{% endif %}
     {% if robotsMeta %}<meta name="robots" content="{{ robotsMeta }}" />{% endif %}
     {% if structuredData %}<script type="application/ld+json">{{ structuredData | dumpForScript | safe }}</script>{% endif %}
     {% if social %}
