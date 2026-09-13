@@ -1,5 +1,16 @@
 import { test, expect } from './fixtures.js';
 
+test('la bienvenida postfiestas muestra el recuento final y se puede cerrar', async ({ page }) => {
+  await page.goto('/?postFiestasWelcome=preview');
+
+  const dialog = page.getByRole('dialog', { name: 'Gracias por acompañarnos' });
+  await expect(dialog).toBeVisible();
+  await expect(dialog).toContainText('Más de 140.000 visitas');
+
+  await page.locator('[data-fiestas-post-fiestas-welcome-close]').click();
+  await expect(dialog).toBeHidden();
+});
+
 // Flujo 10
 test('populares renderiza sin romperse aunque no haya datos de guardados', async ({ page }) => {
   await page.goto('/populares/');

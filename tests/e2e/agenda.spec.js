@@ -160,6 +160,22 @@ test.describe('agenda', () => {
 
   // Flujo 2
   test('la búsqueda filtra y se puede limpiar', async ({ page }) => {
+    const fixedNow = new Date('2026-09-05T12:00:00+02:00').getTime();
+    await page.addInitScript((timestamp) => {
+      const NativeDate = Date;
+      class FixedDate extends NativeDate {
+        constructor(...args) {
+          super(...(args.length ? args : [timestamp]));
+        }
+
+        static now() {
+          return timestamp;
+        }
+      }
+      FixedDate.parse = NativeDate.parse;
+      FixedDate.UTC = NativeDate.UTC;
+      window.Date = FixedDate;
+    }, fixedNow);
     await page.goto('/');
     await expect(page.locator(visibleCards).first()).toBeVisible();
     const total = await page.locator(cards).count();

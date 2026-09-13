@@ -74,6 +74,26 @@ export const test = base.extend({
     const consoleErrors = [];
     const failedResponses = [];
 
+    // El diálogo postfiestas está activo en producción desde el 14-09-2026.
+    // Marcarlo como visto mantiene aisladas las pruebas de otras interfaces y
+    // evita que su backdrop intercepte clics; la URL de preview aún lo fuerza.
+    await page.addInitScript(() => {
+      const values = Object.fromEntries(new Intl.DateTimeFormat('en', {
+        day: '2-digit',
+        month: '2-digit',
+        timeZone: 'Europe/Madrid',
+        year: 'numeric'
+      }).formatToParts(new Date()).map(({ type, value }) => [type, value]));
+      const today = `${values.year}-${values.month}-${values.day}`;
+
+      try {
+        localStorage.setItem('fiestasPucela:post-fiestas-welcome:last-shown-date:v1', today);
+        sessionStorage.setItem('fiestasPucela:post-fiestas-welcome:session:v1', today);
+      } catch (_) {
+        // About:blank u otros orígenes opacos no disponen de almacenamiento.
+      }
+    });
+
     page.on('console', (message) => {
       if (message.type() === 'error') consoleErrors.push(message.text());
     });
